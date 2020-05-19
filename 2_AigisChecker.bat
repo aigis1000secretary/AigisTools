@@ -5,3 +5,7 @@ xcopy .\AigisTools\out\files\ico_00.aar .\AigisChecker\Resources\ico_00.aar /Y /
 xcopy .\AigisTools\out\files\PlayerUnitTable.aar .\AigisChecker\Resources\PlayerUnitTable.aar /Y /S /I
 copy .\AigisTools\out\files\cards.txt .\AigisChecker\Resources\cards.txt /Y
 pause
+
+cd .\AigisChecker
+node .\index.js
+pause

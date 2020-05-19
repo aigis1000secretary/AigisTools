@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 // get local file list
@@ -70,7 +70,7 @@ let encodeBase64 = function(file) {
 const main = function() {
     // check resources
     let resources = "./Resources";
-    if (!fs.existsSync(resources)) { consoe.log("!fs.existsSync(resources)"); return; }
+    if (!fs.existsSync(resources)) { console.log("!fs.existsSync(resources)"); return; }
 
     // raw data path
     let cardsTxt = "./Resources/cards.txt";
