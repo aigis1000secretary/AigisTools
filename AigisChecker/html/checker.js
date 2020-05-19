@@ -531,3 +531,8 @@ function openImage() {
         window.open().document.write('<img src="' + image.src + '" />');
     });
 }
+
+function copyUrl() {
+    document.getElementById('sharebox').select();
+    document.execCommand('copy');
+}
