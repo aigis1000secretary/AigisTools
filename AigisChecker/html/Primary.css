@@ -86,7 +86,7 @@
 .sidebox .filterbox {
     border-left: 2px #3898ec solid;
     border-top: 2px #3898ec solid;
-    border-top-left-radius: 7px;
+    border-top-left-radius: 6px;
     margin: 2px 0px 5px 0px;
     padding: 1px 0px 1px 2px;
 }
@@ -97,7 +97,7 @@
     color: #fff;
     background-color: #3898ec;
     border: 2px #3898ec solid;
-    border-radius: 10px;
+    border-radius: 7px;
     margin: 1px 0px 1px 0px;
     padding: 1px 6px 1px 6px;
 }
@@ -116,7 +116,7 @@
     cursor: pointer;
     height: 17px;
     border: 2px #3898ec solid;
-    border-radius: 10px;
+    border-radius: 7px;
     margin: 1px 0px 1px 0px;
     padding: 1px 6px 1px 6px;
     color: #fff;
