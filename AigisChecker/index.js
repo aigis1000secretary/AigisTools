@@ -190,6 +190,20 @@ const main = function() {
             case 685:
                 name += "（異郷の盗賊）";
                 break;
+            case 686:
+                name += "（異郷の回復術士）";
+                assign = 6;
+                break;
+            case 694:
+                assign = 7;
+                break;
+            case 689:
+                name += "異郷の祝福者";
+                assign = 6;
+                break;
+            case 697:
+                assign = 7;
+                break;
             case 687:
                 name += "（異郷の騎士）";
                 break;
