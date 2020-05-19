@@ -50,19 +50,16 @@ function setUrlParams(flagList) {
     let urlData = _btoa(flagList);
 
     // set data to url
+    if (urlData.replace(/0/g, "") != "") { params.set("data", urlData); } else { params.delete("data"); }
     params.set("sortBy", sortMode);
-    params.set("data", urlData);
+
     history.pushState(null, null, url);
 
     // sharebox
-    if (urlData.replace(/0/g, "") != "") {
-        let sharebox = document.getElementById("sharebox");
-        sharebox.textContent = url;
-    } else {
-        // sharebox.textContent = "ここに共有する内容が表示されます"
-        params.delete("data");
-        sharebox.textContent = url;
-    }
+
+    let sharebox = document.getElementById("sharebox");
+    // sharebox.textContent = "ここに共有する内容が表示されます"
+    sharebox.textContent = url;
 }
 
 function getIconFlags() {
@@ -110,7 +107,7 @@ function bodyOnload() {
     let params = url.searchParams;
 
     // get url data
-    let sortBy = params.get("sortBy");
+    let sortBy = params.get("sortBy") || "";
 
     // sharebox
     switch (sortBy.toLowerCase()) {
