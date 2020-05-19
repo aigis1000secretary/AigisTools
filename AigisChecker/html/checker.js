@@ -136,22 +136,92 @@ function setHr(type) {
         let b = iconbox.children[i + 1];
         if (!a || !b || a.tagName != "IMG" || b.tagName != "IMG") continue;
 
+        // get icon data
         let aData = charaData.find(obj => obj && obj.id == a.id);
         let bData = charaData.find(obj => obj && obj.id == b.id);
         if (!aData || !bData) continue;
 
-        if (type == "rare") {
-            if ((aData.rare != bData.rare) || (aData.placeType != bData.placeType)) {
-                let br = document.createElement("hr");
-                a.parentNode.insertBefore(br, b);
-            }
-        } else if (type == "class") {
-            if (aData.placeType != bData.placeType) {
-                let br = document.createElement("hr");
-                a.parentNode.insertBefore(br, b);
-            }
-        } else if (aData[type] != undefined && bData[type] != undefined && (aData[type] != bData[type])) {
-            let br = document.createElement("hr");
+        // set text
+        let aText = "";
+        let bText = "";
+
+        if (type == "year") {
+            aText = aData.year + "年";
+            bText = bData.year + "年";
+
+        } else if (type == "rare") {
+            let textList = ["", "", "シルバー", "ゴールド", "プラチナ", "ブラック"];
+            aText = aData.rare == 3.5 ? "サファイア" : textList[parseInt(aData.rare)];
+            bText = bData.rare == 3.5 ? "サファイア" : textList[parseInt(bData.rare)];
+
+            if (aData.rare * 10 % 10 == 1) aText += "英傑";
+            if (bData.rare * 10 % 10 == 1) bText += "英傑";
+
+            textList = ["", "近接", "遠隔", "両用"];
+            aText += " " + textList[aData.placeType];
+            bText += " " + textList[bData.placeType];
+
+            if (aData.rare * 10 % 10 == 2) aText = "王子";
+            if (bData.rare * 10 % 10 == 2) bText = "王子";
+
+        } else if (type == "classId") {
+            let textList = ["", "近接", "遠隔", "両用"];
+            aText = textList[aData.placeType];
+            bText = textList[bData.placeType];
+
+        } else if (type == "kind") {
+            let textList = ["男性", "女性"];
+            aText = textList[aData.kind];
+            bText = textList[bData.kind];
+
+        } else if (type == "isEvent") {
+            let textList = ["ガチャ", "イベント"];
+            aText = textList[aData.isEvent];
+            bText = textList[bData.isEvent];
+
+        } else if (type == "assign") {
+            let textList = [];
+            textList[-5] = "流星ワールドアクター（流星WA）";
+            textList[-4] = "ガールズ・ブック・メイカー（GBM）";
+            textList[-3] = "封緘のグラセスタ（封緘）";
+            textList[-2] = "真・恋姫†夢想 - 革命（恋姫）";
+            textList[-1] = "ランス10-決戦-";
+            textList[0] = "王国";
+            textList[2] = "白の帝国";
+            textList[3] = "アルスラーン戦記（遠国）";
+            textList[5] = "砂漠の国";
+            textList[6] = "七つの大罪（異郷）";
+            textList[8] = "東の国";
+
+            aText += textList[aData.assign];
+            bText += textList[bData.assign];
+
+        } else if (type == "genus") {
+            let textList = [];
+            textList[0] = "通常";
+            textList[101] = "お正月";
+            textList[102] = "バレンタイン";
+            textList[103] = "学園";
+            textList[104] = "ジューンブライド";
+            textList[105] = "サマー";
+            textList[106] = "ハロウィン";
+            textList[107] = "聖夜";
+            textList[108] = "ちび";
+            textList[109] = "温泉";
+
+            aText = textList[aData.genus];
+            bText = textList[bData.genus];
+
+        }
+
+        // set hr?
+        let br = document.createElement("div");
+        br.className = "hr";
+        if (i == 0) {
+            br.textContent = aText;
+            a.parentNode.insertBefore(br, a);
+        } else if (aText != bText) {
+            br.textContent = bText;
             a.parentNode.insertBefore(br, b);
         }
     }
@@ -169,6 +239,7 @@ function sortByDate(ascending) {
     })
 
     init();
+    setHr("year");
 };
 
 function sortByRare(ascending) {
@@ -217,7 +288,7 @@ function sortByClass(ascending) {
     })
 
     init();
-    setHr("class");
+    setHr("classId");
 };
 
 function sortByKind() {
@@ -253,6 +324,8 @@ function sortByAssign() {
 
     charaData.sort(function compare(a, b) {
         // sort by assign
+        if (a.assign == 0) return 1;
+        if (b.assign == 0) return -1;
         if (a.assign != b.assign) return (a.assign < b.assign) ? -1 : 1;
 
         return 0;
@@ -267,7 +340,9 @@ function sortByGenus() {
 
     charaData.sort(function compare(a, b) {
         // sort by isEvent
-        if (a.genus != b.genus) return (a.genus > b.genus) ? -1 : 1;
+        if (a.genus == 0) return 1;
+        if (b.genus == 0) return -1;
+        if (a.genus != b.genus) return (a.genus < b.genus) ? -1 : 1;
 
         return 0;
     })

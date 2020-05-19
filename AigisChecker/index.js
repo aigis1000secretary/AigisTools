@@ -123,6 +123,7 @@ const main = function() {
         let assign = parseInt(cardsData[id][60]);
         let genus = parseInt(cardsData[id][61]);
         // let identity = parseInt(cardsData[id][62]);
+        let year = 0;
 
         // Hero rare data format
         switch (rare) {
@@ -200,6 +201,17 @@ const main = function() {
             rare = 5.2;
         }
 
+        // set year
+        if (id <= 85) year = 2013;
+        else if (id <= 201) year = 2014;
+        else if (id <= 323) year = 2015;
+        else if (id <= 437) year = 2016;
+        else if (id <= 572) year = 2017;
+        else if (id <= 726) year = 2018;
+        else if (id <= 942) year = 2019;
+        else if (id <= 1500) year = 2020;
+
+        // skip
         // skip who not a unit
         let skipList = [1];
         if (skipList.indexOf(id) != -1) continue;
@@ -224,6 +236,7 @@ const main = function() {
             isEvent,
             assign,
             genus, // identity,
+            year,
             img: "data:image/png;base64," + encodeBase64(iconPath),
         };
         // resultJson.push(obj);
