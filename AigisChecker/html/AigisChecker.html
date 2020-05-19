@@ -8,8 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./cards.js"></script>
     <script src="./checker.js"></script>
-    <script src="./html2canvas.js"></script>
-    <!-- <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 
     <link href='Primary.css' rel='stylesheet' type='text/css' />
 
@@ -42,8 +41,15 @@
                 <input type="button" onclick="openImage();" value="画像生成">
                 <input type="button" onclick="copyUrl();" value="コピペ">
                 <br>
+                <a id="twitterBtn"><img width=20 height=20 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAolBMVEUAAAAdo/QcpPQeo/UdofEdo/UbofIcn/EAgP8dofL///8aoPIWnvITnfIdpPYeqP0epvmGzfgho/LW7v2+5PuN0PhdvPY2rPT6/f/y+v7r9/7j9P7R7Pyv3vtxxPdWufVRt/U7rvQsqPMopvPa8P1mwPYyqvPv+f7J6fyf1/mU0vl3x/f2+/7G5/yl2vqY1fl8yfhGsvVCsfS14Pum2voKmfHMBW2/AAAACXRSTlMApzreubcmJQS558CdAAABmElEQVRIx9WW2XaCQAxA0bqFZFB2UQSRxX1t+/+/VrBaoR1G4PShva/hTjLAZCJltFsKVEBptaVPel1lBJUYKd1eZvRfhlCZ4UtfkgYdjiFwOgOprUAtlLbUGtVTRi1JgZooEtTmfypIjBGKlO9BSmJVtULKXI2r4ELDwgLmRE6ZekTB0SeeQrN1oYqZfGNmjF1AjoLhVN7gV4Sp8gP9Mk+QowS7dMEFu1c5eRjjVXQAXhbbSaORRXSt0pLzvGrI24umX6OGD4yQbfPGGhB4CjNvD7imn5CXV+YEXAXTNHeWelRBQXsbT2Uu40uZMnYcvjJZYElhe7mEFQJfobhM2bDS33JdosypVAF1wjNc0XmZn3SO4rFyhd54SXRNkAWTKeejWCQqjM7RD+VI4rNPC9MtvgJDQ7EC9G4beWMfitoFZf3EVgvbmYUkaEqhFXum4eSF5QlR2Md8Qy7gHAL2pPURnjfu7p5gpQZEz7slMQisrWqqnm8Dw4oNFollEP7pzv9rSoPrtcEl3mBUaDCQ1B97mgxXDUa4D7/fZdPAfGsIAAAAAElFTkSuQmCC"></a>
+                <a id="lineBtn"><img width=20 height=20 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAA9lBMVEUAAAAAuQAAvQAAugAAugAAtgAAswAAvAAAvQAAuAAAugAAvAAAuQAAvAAAuQAAuQAAuQD///8AtwAAtQAAuwAAswCK34oAwQAAvQD6/vph1GEEugSC3YIQvRBSz1IIuwjz/PPn+Ofa9dqu6a43yDcewR78//zp+eni9+Ld9t3M8czE78Sp6KmN4I0pxCkWvxb3/ffg9+Dc9dzT89O87byi5qJc01xPzk89yj3v++/s+uzH8MfA7sCy6rKc5Jx/3H912XVw2HBFzEUsxSwnxCcNvQ1623pKzUoSuhLX9NfQ8tC367eU4pRX0Vfk+OSm5qYyxjIiwiLiGSLGAAAAEHRSTlMA2tdEORIK9/bKyXl5Z2ZbmOsK5wAAAoZJREFUSMedlody6jAQRR1CCqnSbmwHFwx5GAihhprQO2mv/P/PPMuGwZbADNwZYEaaw12t5d2VVjqP3l49kJ16uLqNnkt+nV1HiMoRHKOSyPXZhjiNqI9krx7VyOmauL/cAOHQ5f3K44ILKSS8C9fn7ITzCPU5Yee5UckBUm+c7IomAIjIPghbbM6lKHcQQDDTmtFvNL4Hzb8z4KmHqHSnBgHzp5Cja2Ve+wsLg5HdSTG/C5rDV8rpU7PA7xKTfARA4oNuUaeNfkbyEXqRbldy5PfZIGAV6E4psBVp0BAZICI4pGHKJJBHYJKkocqVgUcKdI8MDCJQqrDl7Dv7jqeSNPvGMpXKVFKOshlmY0IAwaFn3o47P1/LUbVcqlKqLfPFpTmbmZ9stxVEoMcWX8mUIb9k7YngOE5b8ssATdu2a26iMYDo7uKzXlojOuCAJvDFkIuVSpwy9QIuMKvyiGnp3aaD4HQ8HrsXrxsMzHrmEGgXcZpmCDjKs916ECF5D5nQNZJmDw+cwOa1Ws2NrMBlrOEiVnlgGPWei9DUP2BIS1GULNudYxDRvIyhLMvNL7n5hI5fXZe7c5mpw65Mmktymf1R8ltx1P2t1JPFAotQyebZSpE94Y7OXRhU6B4lkEOgXA0neiBcfljEw4iqLSIERyHEW1t4xZhgtNOn4h5ERAi2cjs8NgSHELT724xym6IkIAQg3XgXytgUCYdwkK39+fDXgb4JRECEOm7ZrfwKeNeEQu4WWBGTfzyiPkGhk0mxrQw23UwNdRCImNcsRMRgt7IkWLBmwbekTVnLJ7xTCC3Ja3wikl5YHiA2vl3tFWBXez2iiR8+Khw+kBw+9hw5XB0xwv0HyaO6bsIS6RsAAAAASUVORK5CYII="></a>
+                <a id="plurkBtn"><img width=20 height=20 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAw1BMVEXsQjr////sQDfsPDP+///86en85eXtU0v62tj3wb7tVUz++fnsQjvsPjXsPzf99/f+9fX//f34r6zyhYD++/vsRDzsOzHwbmrsSEH87+7uWFHtT0fsRj7uWlT+/f374+Lzl5PwaGP88vH74N/619b99PP77Ov3vrv2sK72qaf1n5zxdnHwamXuXlftTEX51NL1op/ziYbygn770tD5z834yMb5xcP3trP1pKHxc275zMryfnrvYVv/+vr1nJnzjYrxe3dwM2BmAAAC50lEQVRIx43W6XqiMBQG4OQQlxYDouyLgPu+79p27v+qhiR2RooUvl8+Obwc4BAVYZ5OeH0ryKGnYx5O5NFlqUgFoXY8bj5Ip7KlEqDiUNOqEkZI5WKikjEXFZIQ+YuJsmamY6T1fUDZgKIor9alEUZylGkCkoSW7iJ4t5NP8IPMOmgwp+lFhdb+TPbVgap2w+vZ8tMIag4aukr6ghZrPgARoq82y9Q5jTqqvD8TMKKQ4FTIagbPjRiBJ+GdVZyJOrXziXsiBGdDTnYOgW9BiFzdHw/9oUaIMGPjJYHluiOOCM+Wp0hSo3YZdx99InhFjD8OLzuTgI1DDCg+fPDFQQxZAu4b60HCjUGfRme3VN7mzc8S4zZgpeqmAanJojEzRLYgQ2ot1kReL0E0pY95UW+nsT6TbJf7ihWqj/dH8e4LQ1TMLX8G/eVP0rAqybq280A8it6HeowbYr511sZZZMitybc0HwDM+uz693dxjaMPVrLgJ9nKyXqzhVj8zwF/U278BHTMSp1ZhrSfiD1V+YRmgpw4ufxO1jJ/TUTNOOisZfwr8TfX3e745YmnvAjZ7VfcXCICyr9NbE7519fBR/kkHSmu8lFGUJaYwUpnYhigcgTMeZ8LvEZFBAAUakre1BGbrl6D30lj+e66QbxthR3MRdeCgi52NOx2BzrBj6hb+gBF0/+O01ZQMWn+B6QvripLtiojJ0HO8uNwTIZrj6KXBM0ctl/qrgRgxlcsItc/Awooh9z77Bh9ZHm1215jHXrjr7ltKgjlEe9MxIkrjo653iBTYpVc0oh73HyHHANRySfIb3efTc9CL/P8YwF2O9SxiKatLCOPOAtGhGnMR46uJZGdUQCvhd9D6uXpFhV/Pjnu9m+flq+8FjToIn0ipZYkMAyQKMqJuSFIC12KSgf8FUZYnyAoTaSIJIQMotKGtlVGMFEnLpRAAF6UiIQk6fSmVlAriDuP+h3x50pEHlYLMmQdWP4C89REz0iuQg4AAAAASUVORK5CYII="></a>
+                <br>
 
-                <textarea id="sharebox">ここに共有する内容が表示されます</textarea>
+                <div class="textarea">
+                    <textarea id="sharebox">ここに共有する内容が表示されます</textarea>
+                </div>
+
             </div>
 
             <div class="sidebox">

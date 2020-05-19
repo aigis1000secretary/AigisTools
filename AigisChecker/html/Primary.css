@@ -115,19 +115,25 @@
     display: inline-block;
     cursor: pointer;
     height: 17px;
-    border: 2px #3898ec solid;
     border-radius: 7px;
     margin: 1px 0px 1px 0px;
     padding: 1px 6px 1px 6px;
     color: #fff;
     background-color: #3898ec;
-}
-
-.sidebox input[type="checkbox"]:checked+label span {
     text-decoration: line-through;
 }
 
+.sidebox input[type="checkbox"]+label span {
+    border: 2px #ec4438 solid;
+    background-color: #3898ec;
+}
+
+.sidebox input[type="checkbox"]:checked+label span {
+    border: 2px #3898ec solid;
+    text-decoration: none;
+}
+
 .sidebox input[type="checkbox"]+label span:hover {
-    color: #3898ec;
+    color: #000000;
     background-color: #fff;
 }

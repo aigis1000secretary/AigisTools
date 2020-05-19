@@ -59,7 +59,10 @@ function setUrlParams(flagList) {
 
     let sharebox = document.getElementById("sharebox");
     // sharebox.textContent = "ここに共有する内容が表示されます"
-    sharebox.textContent = url;
+    let shareText = "【千年戦争アイギス】ユニット所持チェッカー＋\n" + url + "\n #アイギス所持チェッカー \n #千年戦争アイギス ";
+
+    sharebox.textContent = shareText;
+    setShareButton(shareText);
 }
 
 function getIconFlags() {
@@ -422,6 +425,15 @@ function sortByAssign() {
         if (bData.assign == 0) return -1;
         if (aData.assign != bData.assign) return (aData.assign < bData.assign) ? -1 : 1;
 
+        // sort by rare
+        if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
+
+        // sort by group
+        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+
+        // sort by id
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
+
         return 0;
     })
 
@@ -438,6 +450,15 @@ function sortByGenus() {
         if (aData.genus == 0) return 1;
         if (bData.genus == 0) return -1;
         if (aData.genus != bData.genus) return (aData.genus < bData.genus) ? -1 : 1;
+
+        // sort by rare
+        if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
+
+        // sort by group
+        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+
+        // sort by id
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
         return 0;
     })
@@ -501,7 +522,7 @@ function filter(checkbox) {
         if (obj[key] != value) continue;
 
         let icon = document.getElementById(obj.id);
-        icon.alt = checkbox.checked ? "false" : "true";
+        icon.alt = checkbox.checked ? "true" : "false";
         icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
     }
 
@@ -530,9 +551,15 @@ function openImage() {
         image.src = canvas.toDataURL("image/png");
         window.open().document.write('<img src="' + image.src + '" />');
     });
-}
+};
 
 function copyUrl() {
     document.getElementById('sharebox').select();
     document.execCommand('copy');
-}
+};
+
+function setShareButton(currentUri) {
+    document.getElementById("twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
+    document.getElementById("lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
+    document.getElementById("plurkBtn").href = "http://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
+};
