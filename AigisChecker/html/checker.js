@@ -187,12 +187,17 @@ function init() {
 function setHr(type) {
     // get icon list
     let iconbox = document.getElementById("iconbox");
+    let hidden = false;
 
     for (let i = 0; i < iconbox.childElementCount; ++i) {
         // get image & id
         let a = iconbox.children[i];
         let b = iconbox.children[i + 1];
         if (!a || !b || a.tagName != "IMG" || b.tagName != "IMG") continue;
+        if (hidden) {
+            a.hidden = true;
+            b.hidden = true;
+        }
 
         // get icon data
         let aData = charaData.find(obj => obj && obj.id == a.id);
@@ -270,6 +275,8 @@ function setHr(type) {
             aText = textList[aData.genus];
             bText = textList[bData.genus];
 
+            if (bData.genus == 0) hidden = true;
+
         } else if (type == "yearGacha") {
             let aBool, bBool;
             aBool = (aData.isEvent == 0 && 5.0 <= aData.rare && aData.rare < 5.2) ? 1 : 0;
@@ -285,6 +292,9 @@ function setHr(type) {
 
             aText = aData.year + "年 " + aText;
             bText = bData.year + "年 " + bText;
+
+            if (!bBool) hidden = true;
+
         }
 
         // set hr or not
@@ -293,7 +303,7 @@ function setHr(type) {
         if (i == 0) {
             br.textContent = aText;
             a.parentNode.insertBefore(br, a);
-        } else if (aText != bText) {
+        } else if (aText != bText && !hidden) {
             br.textContent = bText;
             a.parentNode.insertBefore(br, b);
         }
