@@ -1,0 +1,3 @@
+* Attack speed script is confused about 7/8 alt
+* lv55 auto detect
+* Automatic guest coloring in mission_map.lua

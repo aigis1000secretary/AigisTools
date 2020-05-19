@@ -1,0 +1,12 @@
+release 2
+* Added download_all.lua
+* Added get_unit.lua
+* Added get_skill.lua
+* Added get_ability.lua
+* parse_missions.lua now includes info about guest units
+* parse_missions.lua now includes details about quest terms
+* Rewrite of parse_unitstats.lua
+* parse_unitstats.lua now includes multiple levels for tokens and silvers
+* Significant speed optimization for xml document decompression
+* Chrome's b64 encoding prefix is now detected and automatically ignored
+* Updated map.txt and enemy_gfx.txt

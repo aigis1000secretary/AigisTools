@@ -1,0 +1,954 @@
+Bandit
+Wolf
+Goblin Soldier
+Gargoyle
+Red Drake
+Baphomet
+Living Armor
+Lich
+Ogre
+Yellow Ooze
+Goblin Hero
+Red Bandit
+Red Bandit
+Black Wolf
+Grace
+Goblin King
+Red Gargoyle
+Gold Heavy Armor
+White Baphomet
+Black Axe Armor
+Gold Axe Armor
+Green Ooze
+Roper
+Silverwolf
+Soldier
+Heavy Armor
+Valkyrie
+Rogue
+Archer
+Mage
+Healer
+Witch
+Advanced Archer
+Advanced Valkyrie
+Red Goblin Soldier
+Black Goblin Soldier
+Red Goblin King
+Black Goblin King
+Red Wolf
+Red Living Armor
+Black Gargoyle
+Black Wyvern
+Red Ogre
+Black Ogre
+Princess
+Soldier
+Bandit
+Rogue
+Archer
+Advanced Archer
+Valkyrie
+Mage
+Goblin Hero (2)
+Black Goblin Wolf Rider
+Black Goblin Wolf Rider (2)
+Black Goblin Wolf Rider (3)
+Nanaly
+Despara
+Minerva
+Black Goblin Wolf Rider (4)
+Katie
+Witch
+Red Bandit
+Heavy Armor
+Advanced Valkyrie
+Dina
+Despara
+Goblin Archer
+Goblin Mage
+Red Goblin Archer
+Red Goblin Mage
+Black Goblin Archer
+Black Goblin Mage
+Red Goblin Hero
+Black Goblin Hero
+Goblin Wolfrider
+Red Goblin Wolfrider
+Flying Eye
+Flying Eye
+Desert Soldier
+Desert Soldier
+Red Demon
+Black Demon
+Flying Eye
+Desert Sword Lizardman
+Platinum Heavy Armor
+Desert Axe Lizardman
+Desert Spear Lizardman
+Mummy
+Mummy King
+Worm
+Red Worm
+Black Archdemon
+Demon Mage
+Demon Mage (melee)
+Scorpion
+Mummy Wizard
+Artillery Armor
+Mummy King
+Black Werewolf
+Preta
+Blue Oni (mononoke)
+Red Oni (mononoke)
+Black Oni (mononoke)
+Wind Weasel
+Crow Tengu (with staff)
+Crow Tengu
+Dorotabo
+
+
+
+Lizard Spearman
+Dragon Soldier
+
+
+
+
+
+
+Black Goblin Bomber
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lolonee
+
+
+
+
+
+
+
+
+
+
+Foot Soldier
+Ninja Master
+
+Flying Ninja
+
+
+Spirit Armor
+Pink Armor
+Red Armor
+Mage Armor
+
+Green Oni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pegasus Rider
+
+
+
+
+Giovanni
+Sanosuke
+Mortimer
+Eunice
+Conrad
+Cyrus
+Barbastroff
+Gold Werewolf (regenerating)
+Silverwolf (regenerating)
+Black Werewolf (regenerating)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Valkyrie (event)
+
+
+
+
+
+
+Red Skeleton Rider
+
+
+
+Green Skeleton Rider
+
+
+
+
+
+Emilia (1)
+Emilia (2)
+Horse Archer
+Heavy Valkyrie
+Horse Archer (2)
+Emilia (3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lolonee (Aura)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Eunice (aura)
+Cellia (2)
+Lyla
+Mortimer (aura)
+
+Holy Spirit (2)
+Anelia
+Holy Spirit (1)
+Cellia (1)
+Bandit (slow)
+Awakened Imelia (1)
+Pirate (2)
+Conrad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Awakened Imelia (2)
+Bandit Boss (slow)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

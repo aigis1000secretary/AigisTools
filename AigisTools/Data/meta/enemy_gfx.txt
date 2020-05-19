@@ -1,0 +1,720 @@
+Bandit
+Wolf
+Goblin Soldier
+Gargoyle
+Red Drake
+Baphomet
+Living Armor
+Lich
+Green Ooze
+Goblin Hero
+Bandit Boss
+Black Wolf
+Goblin King
+Red Gargoyle
+Katie
+White Baphomet
+Black Axe Armor
+Gold Armor
+Yellow Ooze
+Silverwolf
+Soldier
+Heavy Infantry
+Valkyrie
+Rogue
+Archer
+Mage
+Healer
+Witch
+Gold Axe Armor
+Red Goblin Soldier
+Black Goblin Soldier
+Red Goblin King
+Black Goblin King
+Red Wolf
+Red Living Armor
+Black Gargoyle
+Black Drake
+Advanced Archer
+Advanced Valkyrie
+Ogre
+Red Ogre
+Black Ogre
+Princess
+Shadow
+Platinum Armor
+Minerva
+Clissa
+Dina
+Grace
+Black Goblin Wolf Rider (Ranged)
+Black Goblin Wolf Rider (Melee)
+Nanaly
+Despara
+Goblin Archer
+Goblin Mage
+Desert Soldier
+White Axe Armor
+Red Goblin Hero
+Black Goblin Hero
+Black Goblin Archer
+Black Goblin Mage
+Worm
+Red Worm
+Wind God
+Wind God (Walking)
+Red Goblin Archer
+Red Goblin Mage
+Goblin Wolf Rider
+Red Goblin Wolf Rider
+Red Demon
+Black Archdemon
+Mummy King
+Flying Eye
+Mummy
+Roper
+Desert Lizard Spearman
+Demon Mage (Ranged)
+Demon Mage (Melee)
+Desert Lizard Swordsman
+Desert Lizard Axe Thrower
+Scorpion
+Mummy Mage
+Red Cannon Armor
+Black Werewolf
+Lizard Spearman
+Dragon Soldier
+Red Dragon Mage
+Dragon King
+Lizard Swordsman
+Lizard Knight
+The Grand Elder
+Green Dragon Mage
+Lizard Axe Thrower
+Skeleton
+Skeleton Swordsman
+Skeleton Lancer
+Lesser Demon
+Lilia (Awakened)
+Greater Demon
+Lucille (Ranged)
+Lucille (Melee)
+Paralysis Ninja
+Ninja (Fast)
+Ninja Master
+White Ninja (Stealth)
+Flying Ninja
+Kite Ninja
+Red Flail Goblin
+White Ninja (Running)
+Goblin Bomber
+Red Goblin Bomber
+Small Treant
+Large Treant
+Dark Elf Archer
+Dark Elf Mage
+Dark Elf Avenger
+Manticore (Tail Attack)
+Manticore (Bite Attack)
+Black Goblin Bomber
+Corin
+Eden
+Lesser Vampire
+Greater Vampire
+Gold Werewolf
+Bat
+Goblin Zombie
+Stone Golem
+Vampire Lord
+Vampire Lord (Transformed 1)
+Vampire Lord (Transformed 2)
+Fran
+Khuri
+Elizabeth
+Sue
+Preta
+Blue Oni
+Red Oni
+Black Oni
+Ochimusha Swordsman
+Ochimusha Swordsman (Berserk)
+Helmeted Ochimusha Swordsman
+Helmeted Ochimusha Swordsman (Berserk)
+Ochimusha Archer
+Helmeted Ochimusha Archer
+
+
+Crow Tengu (with staff)
+Crow Tengu (without staff)
+Wind Weasel
+Dorotabo
+Black Worm
+Sybilla
+Aisha
+Saki
+Deine
+Blue Snowman
+Red Snowman
+Small Blossoming Treant
+Large Blossoming Treant
+Iron Golem (Melee)
+Iron Golem (Ranged)
+Abel (Ranged)
+Abel (Melee)
+Pegasus Rider
+Emilia
+Lolonee
+Eliza
+Waltz
+Rita
+Momiji
+Stella (Awakened)
+Liddy (Awakened)
+Esther (Awakened)
+Nurarihyon
+Foot Soldier
+Ninja Master
+Nagi
+Flying Ninja (Switch to Ninja)
+Ushi-Oni
+Ninja (Slow)
+Spirit Armor
+Pink Heavy Armor
+Red Heavy Armor
+Heavy Mage Armor
+Miranda (Fast Attack)
+Miranda (Slow Attack)
+Green Cyclops
+Red Cyclops
+Black Cyclops
+Efreet
+Red Flying Demon
+Red Flying Demon (Drill)
+Black Flying Demon
+Red Dragon
+Red Dragon (Walking)
+Yellow Preta
+Red Crow Tengu (with staff)
+Red Crow Tengu (without staff)
+Pumpkin
+White Archdemon
+Red Crystal Guardian
+Green Crystal Guardian
+Horace
+Majin Amon
+Majin Amon (Second Form)
+Giovanni
+Sanosuke
+Mortimer
+Eunice
+Conrad
+Barbastroff
+Cyrus
+Blue Crystal Guardian
+Blue Ooze
+Blue Cyclops
+Demon King (Shadow)
+Black Scorpion
+Charlotte
+Demon King
+Chimera (Dragon Attack)
+Chimera (Lion Attack)
+Mithril Ooze
+Black Dragon Elder
+Gustav
+Automata
+Automata (Gun)
+Mithril Golem (Melee)
+Mithril Golem (Ranged)
+Broken Armored Soldier
+Thunder God
+Thunder God (Walking)
+Green Dragon
+Green Dragon (Walking)
+Blue Dragon
+Blue Dragon (Walking)
+Rion
+Fee
+Garania
+Dan
+Zaram
+Gellius (Awakened)
+Shiho
+Chloe
+Armored Soldier (Automata)
+Niel
+Sophie (Awakened)
+Pirate
+Green Sahagin (Swimming)
+Sahagin (Swimming)
+Gillman (Swimming)
+Gloria
+Gloria (Secret Skill)
+Lesser Demon Swordsman
+Second Coming of Majin Amon
+Second Coming of Majin Amon (Second Form)
+Yeti
+Snow Wolf
+Armored Rider
+Greater Demon
+Yurina (Awakened)
+Orthrus [1]
+Kanon (Fast Attack)
+Mel (Awakened)
+Janna (Awakened)
+Percis
+Horse Archer
+Heavy Armor Knight
+Kanon (Slow Attack)
+Verdinate
+Ancient Purple Demon
+Ancient Blue Demon
+Dark Knight
+Mage (Alternate)
+Red Cultist
+Black Cultist
+Blue Cultist
+Raven
+Holy Spirit
+Kerry (Awakened)
+Elva
+Yurina
+Themis
+Lilia
+Sherry
+Olivie
+Cellia (Awakened)
+Lynn
+Gina (Awakened)
+Verotte
+Swill
+Sue (Awakened)
+Rion (Awakened)
+Servant of Bezlebuth
+Oni Sword Ninja
+Oni Sword Ninja (Slow)
+Green Sahagin
+Green Gillman
+Sahagin
+Gillman
+Ghost Sailor Swordswoman
+Ghost Sailor Gunner
+Dragon Zombie (Claw Attack)
+Metus
+Dragon Zombie (Breath Attack)
+Reanbell (Slash Attack)
+Reanbell (Gun Attack)
+Green Skeleton Rider
+Dragon Knight Zombie
+Majin Furufuru
+Majin Furufuru (Second Form)
+Servant of Furufuru
+Greater Demon [2]
+Red Skeleton Rider
+Demon Cultist
+Oni Sword Ninja (Alt Pose)
+Red Cultist (Demon Transition)
+Orc Warrior
+Orc Warrior (Berserk)
+Imperial Soldier
+Thetis
+Red Crystal
+Greater Demon [3]
+Maid Golem
+Wood Golem
+Odette
+Ada
+Yellow Crystal
+Blue Crystal
+Axe Maid Golem (Melee)
+Axe Maid Golem (Ranged)
+Isabelle
+Isabelle (Flying)
+
+Imperial Pegasus Knight (Flying)
+Imperial Pegasus Knight
+Witch [2] (?)
+Orc Dagger Thrower
+Orc Dagger Thrower (Berserk)
+Orc Mage
+Orc Mage (Berserk)
+Orc Standard Bearer
+
+Orc Hero
+Orc Hero (Berserk)
+High Orc Warrior Orc
+High Orc Warrior Orc (Berserk)
+Black Mace Armor
+Pallis
+King of the Dead
+Black Crossbow Armor
+Yuno
+Dark Yuno
+Black Mage Armor
+Pumpkin Knight
+Pumpkin Mage
+Bone Dragon [1]
+Bone Dragon [2]
+Imelia
+Lieselotte
+Doppelganger
+High Orc Hero
+High Orc Hero (Berserk)
+Armored Gun Soldier (Automata)
+Prince (Doppel?)
+Mehlis (Doppel?)
+Ars (Doppel?)
+Roy (Doppel?)
+Gellius (Doppel?)
+Garania (Doppel?)
+Rita (Doppel?)
+Nanaly (Doppel?)
+Soldier (Doppel?)
+Archer (Doppel?)
+Mage (Doppel?)
+Valkyrie (Doppel?)
+Cellia (Doppel?)
+Automata
+Automata (Gun)
+Armored Goblin
+Dark Elf Rune Fencer (Melee)
+Dark Elf Rune Fencer (Ranged)
+Dragon Knight
+Mummy King (Fast)
+Armored Cyclops
+Nurarihyon (Sword)
+Oni Sword Claw Ninja [1]
+Oni Sword Claw Ninja [2]
+Red Armored Goblin
+High Orc Dagger Thrower
+High Orc Dagger Thrower
+High Orc Mage
+High Orc Mage
+
+
+Cerberus
+Archdemon Swordsman
+Archdemon Swordsman
+Barrad
+Green Assassin
+Green Assassin (Crossbow)
+Green Minotaur
+Red Minotaur
+*Rowanna
+Black Captain
+Black Armored Goblin
+Shutendoji
+Shutendoji (Second Form)
+Black Pirate
+Black Assassin
+Black Assassin (Crossbow)
+/White Thief
+/Black Thief
+Maribel
+Black Dragon
+Black Dragon (Walking)
+/Stag Rider
+/Armored Horse Archer
+/Dark Knight Swordsman
+/Dark Knight Swordsman
+/Weirdo
+
+Red Ant
+Purple Ant
+Black Ant
+Green Jelly
+Red Jelly
+Blue Jelly
+/Red Monk
+Dark Knight
+Ars
+Roy
+Belinda
+/? striped socks
+Demon Worm
+Lynn
+
+Ghost Soldier
+Red Skeleton Soldier
+Memento
+/Cloud Rider
+Minotaur
+Minotaur King
+
+
+Ape
+/Cloud Rider (dismounted)
+/?
+Kong
+/?
+Azami
+Black Chimera
+Black Chimera
+Black Ape
+Black Kong
+/?
+Goblin War Pig
+Goblin War Pig
+/?
+Goblin Emperor
+Black Armored Goblin
+Red Armored Goblin
+Lich (weak)
+Orthrus [2]
+Mounted Living Armor
+Crossbow Living Armor
+Greater Lich
+Black Cannon Armor
+Ertel
+/?
+/?
+/?
+/?
+/?
+/?
+Ertel
+/?
+/?
+/?
+Green Sahagin
+Merman Lancer
+Merman
+/Badass
+
+Beatrice
+Anelia (awakened)
+Captain
+/No Stand (todo)
+Gillman
+Viera
+/?
+/?
+/Weirdo
+/Green Weirdo
+/Sherry?
+Lilia (Awakened)
+Black Orc Standard Bearer
+/?
+Tiger
+Tiger
+Black Tiger
+Black Tiger
+/Guy being carried by goblins
+Red Drake
+Lesser Red Ant
+Lesser Purple Ant
+Lesser Black Ant
+/Tiger Man
+/Tiger Man (Flying)
+/Dancer?
+/?
+/?
+Gold Bat
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+
+
+/?
+Black Fire Demon (Upright)
+Black Fire Demon
+Black Knight Swordsman
+Robot Demon
+Robot Demon Sword
+Black Mace Armor
+Armored Bow Knight
+Black Mage Armor
+Red Goblin War Pig
+Red Goblin War Pig
+/?
+/valk?
+/Flame
+Lyla
+Black Armor Swordsman
+Green Crystal
+/?
+/?
+/Green Monk
+
+Chimera
+Half Red Demon
+Black Goblin Pig Rider
+Half Demon Mage
+Half Demon Mage
+Goblin Soldier
+Red Demon
+Black Archdemon
+Lesser Demon
+Red Flying Demon (Drill)
+Demon Worm
+Half Red Demon
+Half Greater Demon
+Half Red Demon Mage
+Half Red Demon Mage
+Double Drill Demon
+Double Drill Demon
+Naga
+/Archer
+/?
+/?
+/?
+/?
+Ant Queen
+Lesser Orc
+Lesser Orc
+Ghost Rogue
+Ghost Archer
+Ghost Valkyrie
+Ghost Mage
+/Ghost?
+/Ghost Thief
+/Ghost Thief (Crossbow)
+Black Cloak Orc
+Black Uncloak Orc
+
+
+Black Merman
+Black Merman Lancer
+Green Gillman
+/?
+Green Naga
+/Tiger Rider
+/Tiger Rider
+/?
+/?
+/?
+/?
+
+
+/?
+
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+
+/?
+/?
+/Demon Snake
+Blue Haunted Stump
+Blue Haunted Tree
+/Yellow Monk
+/Greater Lich Swordsman
+/?
+/?
+Boulder
+Boulder
+
+Pink Cyclops
+Yellow Cyclops
+Rita (Awakened)
+Waltz
+/? Mononoke w/ katana
+/?
+Imelia (Awakened)
+/Greater Red Oni
+/Blue Monk
+/?
+/?
+/Dragon Soldier (2016-09-09 unit)
+Soma
+/Valkyrie
+/Magic Fencer
+
+/?
+
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+/?
+
+/?
+/?
+Black Angel Bird
+Black Angel Bird
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Goblin Catapult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Goblin King (Cursed Weapon)
+
+
+Merman Javelineer (Cursed Weapon)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

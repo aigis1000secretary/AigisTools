@@ -1,0 +1,1084 @@
+[11] Enormous Hole
++route=0,1
+alert=11
+remap=EFDGH--CA-PONM-JILK
+skip=B
+
+[12] Invasion from Below
+remap=HCBAGFED-IJLK
++route=0,1,2,3
+alert=1111
+
+[13] Dragon Caller
++route=0,1,2,3,4
+remap=--GFEDCBAHIJKPONSRQWVUTLMXY
+alert=1-112
+
+[14] Dragonewt
++route=0,1,2,3,4,5
+remap=EDCBA-G-F-HIKMLJ
+alert=111---
+
+[15] Grand Invasion 1
+remap=KJIPGECAQHFDBLMNOSTRVWUYXZabcfedg
++route=0,1,2
+alert=-1-
+
+[16] Grand Invasion 2
+remap=ACBRQPODEFGHIJNMKLSTUVYWXZbcdea
+alert=--1--1
+
+[17] Grand Invasion 3
+remap=GFEDCBAHIJQPONMLKbaZYRSTUVWX
+alert=-1-1
+
+[18] Ryujin King
++route=0,1,2,3,4
+alert=L111L
+remap=PAJDMGQBKENHRCLFOISUWYacTVXZbd
+
+[50] The Fugitive
++route=3
+remap=ICBAJHGFEDKLNM
+alert=-112
+
+[51] A New Invasion
++route=0,1,2,3,4,5
+remap=IJKLMNOPQHGFEDCBAYZabcdVRSXWUT
+alert=11---3
+
+[52] Melee
++route=0,1,2,3,4,5,6,7,8,9
+alert=1113333333
+remap=ACBRQPODEFGHIJNMKLSTUVYWXZbcdea
+alert+y=0,0,0,12,-12
+
+[53] Dragonewt 2
++route=0,1,2,3,4,5
+remap=EDCBA-G-F-HIKMLJ
+alert=111---
+
+[54] Ryujin King 2
++route=0,1,2,3,4
+alert=L111L
+remap=PAJDMGQBKENHRCLFOISUWYacTVXZbd
+
+[55] The World of Darkness
+remap=ABCDEFGHIJKNOLMPQ
+alert=111
+
+[56] Depths of the Earth
++route=0
+alert=1
+
+[57] The Dragon's Nest
++route=0,1
+alert=11
+
+[58] The Grand Elder
+remap=LKACEGIBDFHJMNSTOPQR
++route=0,1,2,3,4,5,6
+alert=111-1-1
+
+[59] The Mystic Folklorist
+alert=111
+remap=GFEADCBHIJNMLK
+
+[60] Monster Extermination E
++route=4,5
+alert=111222
+remap=QPONMLKJIHGFEDCBAUTSRYXVW
+
+[61] Monster Extermination N
++route=1,2,3,4,5,6
+alert=112221
+remap=EDCBAHGIFSQRNJKPOML
+
+[62] Monster Extermination H
++route=0,1,2,3,4,5
+alert=111333
+remap=HGEFIABCDJKQRMPONL
+
+[63] Monster Extermination X
+alert=1
+remap=KJIPGECAQHFDBLMNOSTRVWUYXZabcfedg
+
+[64] Revenger
+remap=MLGFEDCBAHIJKRQPUTSYXWVNOabcZ
++route=0,3,4,5
+alert=1-1122
+alertfix=nnnnny
+
+[65] Servant of the Darkness
+remap=ACBRQPODEFGHIJNMKLSTUVYWXZbcdea
+alert=1-1111
+
+[66] Attack of the Wolves
+remap=GFEDCBAHIJQPONMLKbaZYRSTUVWX
+alert=1111
+
+[67] Battle in the Moonlight
+remap=MLGFEDCBAHIJKRQPUTSYXWVNOabcZ
+alert=111
+
+[68] Wolves' Den X
+remap=DCBAEFGHONMLKJIRQPUVWXTS
+alert=1111
+
+[69] Threat of the Silverwolves
+remap=IJKLMNOPQHGFEDCBAYZabcdVRSXWUT
+alert=11-1-
+
+[70] Vampire
+remap=KJIPGECAQHFDBLMNOSTRVWUYXZabcfedg
+alert=1
+
+[71] The Dweller in the Darkness X
+remap=ABCDEFGHIJOKLMN
+alert=1
++route=0
+
+[72] One-eyed ONI
+comment=.forestturn
+remap=FGEHIDCBARQPOLKJNM
+alert=11
+
+[73] ONI Extermination
+comment=.ruins
+remap=EDCBAFGHNMLKJIORSTPQ
+alert=11
+
+[74] ONI Counterattack
+comment=.arson
+remap=ACBRQPODESFGHIJNMKLTUVWZXYacdefb
+alert=11111
+
+[75] ONI Charge
+comment=.road
+alert=1
+
+[76] ONI' Rage X
+comment=.shrine
+remap=KEDCBANLFGHIJMOPRTSQ
+alert=111-----
+
+[84] War Declaration
+alert=111122-------
+remap=EDCBAJIHGFLKNMOPRTSQ
+
+[85] The Dark Saint
+alert=122
+remap=FEDCBAONMLGHIJK
+
+[86] Pursuit Battle
+alert=11--2
+remap=AIEDCBFGHSRQPONMJKL
+
+[87] The Black Surge
+remap=AJIHGFBCDELMNOUTSQRPKVWX
+alert=1
+
+[88] Decisive Battle X
+remap=ABDEGHCFIJKLUQRSTONMP
+alert=11112
+
+[112]
+remap=---------JIHGFEDABC
+alert=12222
+
+[113]
+remap=---------JIHGFEDABC
+alert=12222222
+
+[135]
+remap=AURGFJOCBIHMNDETVSQLKP
+alert=1--1--
+
+[138] Crystal Keeper E
+remap=FEDCBAONMLGHIJK
++route=1,3,4,5,6
+alert=122222
+
+[139] Crystal Keeper N
+remap=FEDCBAONMLGHIJK
++route=5,6,7
+alert=1222
+
+[140] Crystal Keeper H
+remap=FEDCBAONMLGHIJK
++route=8,9,10,11,12,13,14,15,16,17,18,19
+alert=-2--2--2--2-
+
+[141] Gem: White Archer EX
+remap=EDCBAIHGF-JKMONL
+alert=11-1-1
+
+[142] Gem: Unicorn Knight EX
+remap=DBYZEAFHGCONMLKJIRQPUVWaXTS
+alert=1111-
+
+[143] Gem: Legendary Pirate EX
+remap=PAJDMGZBKENHQCLFOIRUVXSTWY
+alert=111----
+
+[144] Gem: Herculean Girl EX
+remap=DCBAKLMEFGHIJNYOTPSQRUWVX
+alert=1-
+
+[145] Gem: Witch EX
+remap=HCQBARGFEUDNISJOMLKTP
+alert=11--
+alertfix=ynyn
+
+[146] Gem: Magic Armor Princess EX
+remap=QPONMLKJIHGFEDCBAUTSRYXVW
+alert=1111
+
+[147] Gem: Moon Shadow Bow Rider EX
+remap=FAGLDMHNJIBCEKUXOPVRTQSW
+alert=-1--1--1-1
+
+[202]
+remap=AKJ-IHGFBC-DELYXWVUTSRQMNOP
++route=64,60
+alert=11
+
+[203]
+remap=---------JIHGFEDABC
+alert=222-2113
+
+[204]
+remap=AIEDCBFGHSRQPONMJKLUT
++route=60
+alert=222
+alertoff=111
+
+[206]
+remap=AJIHGFBCDELMNOUTSQRPKVWX
+alert=1
+
+[208]
+remap=AURGFJOCBIHMNDETVSQLKP
+alert=1-1-1
+
+[209] Crystal Keeper X
+remap=FEDCBAPONMLRQGHIJKS
++route=20,21,22,23,24,25,26,30,31,32,33,40,41,42,43,44,50,51,52,53,54
+alert=22222232-22----2----2
+
+[210] Crystal Keeper G
+remap=FEDCBAONMLGHIJK
++route=60,61,62,63,64,66,67,68,69,70,71,72,73,74
+alert=2222-22222222-
+
+[251] The Battlefield of Warriors
+remap=ABCXDNLJHEMKIGFZYUROWVTSQP
++route=1,3,5
+alert=122
+
+[1001] Escape the Capital
+remap=BCAHGDEFI
+alert=1111
+
+[1002] Sacred Forest
+remap=GFEADCBHLKJI
+alert=11
+alertfix=yy
+
+[1003] Goddess Shrine
+remap=EDCBAJIHGFKLNPOM
+alert=-12
+alertfix=nyy
+
+[1004] Defend the Shrine!
+remap=EDCBAJIHGFKLNPOM
+alert=11-11-
+alertfix=yynyyn
+
+[1101] Pastoral Gate
+remap=MLGFEDCBAHIJKRQPUTSYXWVNOabcZ
+alert=111
+
+[1104] Gate Defense
+remap=MLGFEDCBAHIJKRQPUTSYXWVNOabcZ
+alert=1-1122
+alertfix=ynyyyy
+
+[1206] Armor of the Dead
+remap=EDCABJIFGHMLKNOQPR
+alert=11
+alertfix=yy
+
+[1207] Gatehouse Battle
+remap=IHGECABDFJKLMUTSRNOPQVW
+alert=1111222
+
+[1404] Hopeless Castle Town
+remap=KFELGHDCMABINJOUPXTQYSWRV
++route=0,2,3,4,5,6,7,12,13,14,15,16,17,18,19
+alert=111122233333333
+
+[1405] Wind God Conquest
+remap=WHIJKLMANBCVDEFGXOTUPQRSYZ
++route=4,5,6,10,11,12,20,21,22,23,24,32
+alert=11122233333L
+
+[1406] Advance of the Fallen Warriors
+remap=EFHGDYVRCWASTBaZPOJNQIUMKXbL
++route=0,2,4,6,8,7,21,26,28,5,16,13,14,15,9
+alert=333133311111311
+
+[1407] Thunder God Invasion
+remap=WHIJKLMANBCVDEFGXOTUPQRSYZ
++route=3
+alert=311211212-
+
+[1501] Invitation to the Magic City
+remap=HGFEKLJIDCBANMTUVSRWXOYQPZa
+alert=111
+
+[1502] The Iron Sword Fist
+remap=ULKJIHGFTCBADEQPSNMOR
++route=0,1,7,8,9,10,11,13,14,15,80,81
+alertfix=nynnnnnnnnnnnnn
+alert+x=0,45,0,0,0,0,0,0,0,0,0,0,0,0,0
+alert=LL2222222211
+
+[1503] The Iron Ax Fist
+remap=IFEDJWVHKBALCGQRPOMNTSU
++route=3,4,17,20
+alert=111L
+
+[2030] Dwarf Battle
+remap=FGEHIDCB-ARQPOLKJNM
+alert=11
+
+[3001] Drill: Blocks
+alert=11
+
+[3002] Drill: Healing
+alert=11
+
+[3003] Drill: Airborne
+remap=IHGFEDCBA
+alert=222
+
+[3004] Drill: Mages
+remap=CBAED
+alert=1
+
+[3005] Drill: Witches
+remap=CBAD
+alert=12
+
+[3006] Real Drill: Unit Points
+remap=QPONMLKJIHGFEDCBAUTSRYXVW
++route=21
+alert=-1211
+
+[3007] Real Drill: Strong Enemies
+remap=GFEADCBHLKJI
+alert=1112
+
+[3100] Drill: Witch Raid
+remap=EDCBAJIHGFKLNPOM
+alert=11-11-
+alertfix=yynyyn
+
+[3101] Drill: Witch Strike
+(identical to Witch Raid)
+remap=EDCBAJIHGFKLNPOM
+alert=11-11-
+alertfix=yynyyn
+
+[3102] Drill: Witch Base
+remap=DCBAEFGHONMLKJIRQPUVWXTS
+alert=11111
+
+[3103] Drill: Witch Feast
+remap=QPONMLKJIHGFEDCBAUTSRYXVW
+alert=1
+
+[4001] White Belt
+alert=111
+
+[4002] First Degree
+remap=CEABMGDFNHLKIJ
+alert=1-1
+
+[4003] Tenth Degree
+remap=GFEDCBAHONMIJKLUTVSRQP
+alert=-11113
+
+[4004] Assistant Instructor
+remap=ABCDOEFGHPIJKLMN
+alert=1
+
+[4005] Technique Awakened
+remap=AIEDCBFGHSRQPONMJKL
+alert=11-
+
+[4046] Black-winged Girl
+remap=TABCDEJIHGFSOPQLKRMN
+alert=-1-1
+
+[4047] Gate to Demon World
+remap=IJKLMNOPQHGFEDCBAWXYZabTRSVU
+alert=-1-112233
+
+[4048] Innocent Bloodlust
+remap=QPONMLKJIHGFEDCBAUTSRYXVW
+alert=-11-133322
+
+[4049] A Wicked Smile
+remap=EDCABJIFGHMLKNOQPR
++route=12,13
+alert=-1-1-13-32222
+
+[4050] Evil Appears X
+remap=IHGECABDFJKLMUTSRNOPQVW
+alert=1111-33-2223
+
+[4051] Cornered G
+remap=ACBRQPODEFGHIJNMKLSTUVYWXZbcdeaihgf
+alert=-11-1-1---1--33331
+
+[4130] The Demon Girl
+remap=ICBAHGFEDJKML
+alert=1
+
+[4131] The Dark Night of the Vampire
+remap=IJKLMNOPQHGFEDCBAYZabcdVRSXWUT
+alert=113
++route=3
+
+[4132] The Vampire's Attack
+remap=ACBRQPODEFGHIJNMKLSTUVYWXZbcdea
+alert=33311221--
+
+[4133] Dwelling of the Devil Wolves
+remap=DCBAEFGHONMLKJIRQPUVWXTS
+alert=31111
+
+[4134] A Vampire Banquet
+remap=AMLKJIHGBCDEFNaZYXWVUTSOPQR
+alert=13322
+
+[4135] Contagion
+remap=IGXBALKJHWCDEFVSUTMNRQPO
+alert=---1--12
+
+[4172] Lost Santa
++route=0,1,2,3,4,5,6,7,8,9,10,11,12
+alert=1111111111111
+remap=ABCDELHIJKFG
+ally=L
+
+[4174] Assault of Darkness
++route=0,1,2,3,4,5,6,7,8,9,10,11,12,13
+alert=33333333333333
+remap=QRMEABONDFCPSTGLHKIJ
+
+[4175] The Stone Giant
++route=4
+alert=113
+remap=ABCDEFGHIJOPTLKMNQRSU
+
+[4176] Assault of the Ancient Weapons
+remap=IGXBALKJHWCDEFVSUTMNRQPO
+alert=111
+
+[4177] Avenger's Memories
+remap=HIMLKNJGFEDOPBQRVTASUC
+alert=11-11
+ally=V
+
+[4178] New Year's Eve Battle
++route=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+alert=12-222222-----33--
+alert+x=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30
+
+[4179] Princess Shrine Visit
+alert=1
+remap=MNAOBCDEFGHIJKLPVWQTURS
+
+[4180] A Battle of Warriors
++route=0,3
+alert=1111111
+
+[4181] Black Wave
+remap=EDCBAJIHGFKLNPOM
+alert=111--1
+
+[4182] Fallen Angels
+remap=ATKJUIMCBLDEFHGPONVRWXSQY
++route=10,12,11,5,4,14,13,15
+ally=TU
+alert=-133333333
+
+[4187] Rural District Battle God
++route=20,70,71,72,73,74
+alert=1-11--2222L
+remap=FAGVDWHXJIBCEUQTKLRNPMOS
+alert+x=0,0,0,0,0,0,-20,-20,-20,-20,-20
+
+[4209] Island of Monsters Normal
+remap=DCBAIHGFEPQRMONKJL
++route=0,2,3,6
+alert=1112
+
+[4210] Island of Monsters Hard
+remap=DCBAIHGFEPQRMONKJL
++route=0,2,3,4,5,6,10,11,12,13
+alert=1111122222
+
+[4211] Island of Monsters Extra
+remap=DCBAIHGFEPQRMONKJL
++route=0,2,3,4,5,6,7,8,10,11,12,13
+alert=111112232222
+
+[4212] Island of Monsters God
+remap=DCBAIHGFEPQRMONKJL
++route=0,2,3,4,5,6,7,8,9,10,11,12,13
+alert=1111122322222
+
+[4235] Corin1
+remap=MLGFEDCBAHIJKRQPUTSYXWVNOabcZ
+alert=111
+
+[4236] Corin2
+remap=EDCABJIFGHMLKNOQPR
+alert=---111
+
+[4237] Corin3
+remap=EDCBAFGHNMLKJIORSTPQ
+alert=113-3
+
+[4238] Corin4
+remap=CBAKJIHGFEDMNLOPQRSYWVTXUZabcde
+alert=1-133
+
+[4239] Corin5
+remap=LKJGECAIHFDBMNOPRSQUTVWXYbaZ
+alert=----11122-2
++route=0,1,2,3,4,5,8,14,15,16
+
+[4240] Corin6
++route=2,4,5,6,7,8,9,10,11,12,13,14,15,16,30,31,32,33,35,36
+alert=123333333333333222222
+
+[4245] Sleeping Desert Treasure God
+remap=bWVTScXYZaHRQAUGFECBDIJMOdLPNK
++route=2,4,13,14,15,16,17,20,21,22,23,24,25,26,27,34,66,70,71,72,80,90
+alertfix=nnnnnnnnnnnnyynnnyyynn
+alertoff=0000000000001100000000
+alert=11222223333-3-111-3311
+
+[4246] Eden1
+alert=111111-112
+remap=BAQPONCDEFGHIMLJKRSTUXVWYabcdZ
+
+[4247] Eden2
+remap=EDCBAJIHGFKLNPOM
+alert=---11-1221
+
+[4248] Eden3
++route=0,1,2
+remap=ABCDEFGHIJOKLMN
+alert=122
+
+[4249] Eden4
++route=10,20,21,22,23,24,25,2,3,4,5,7
+alert=11122223333333
+remap=ACDEQRJBHIPGFdXZWYeUTVSfOKNLcabM
+
+[4250] Eden5
++route=11,5,3
+remap=EDCBAJIHGFKLNPOM
+alert=111122
+
+[4251] Eden6
+alert=-12
+remap=dcbfEDCBAHIJGFSQRTXWZaYVUghiejLNKkOPM
+
+[4252] Eden7
++route=1,2,3,4,42,14,54
+alert=111111111
+remap=SRTGHIJABCDEFQUXWMLOPNVK
+
+[4253] Eden8
+alert=-111
+remap=MLGFEDCBAHIJKRQPUTSYXWVNOabcZd
+ally=d
+
+[4255] A Trap Amongst the Blossoms
++route=2,3,20,21,22,23,15,25,8,17
+alert=2l333333-2-23
+ally=Aef
+remap=gKJDIdHGcBFCEaQXWVTUYZSRbNOPMLAef
+
+[4256] The Weak Monster's Saviors
++route=4
+alert=-11111
+remap=GHEIJKXLCNWMBFAbDUSVYTaZOPQR
+ally=ACDE
+
+[4257] Forbidden Power of the Giants
++route=0,2,4,5,6,8,9,10,20
+alert=1-33333-3
+remap=ABCDEFGHIJOPTLKMNQRSU
+
+[4258] Flying Pegasus Knights
++route=0,7,13,14,12,6,24,4,2,16,15,1,5,3
+alert=222222122--222
+remap=AMLKJIHGBCDEFaZYXWVUTSNOPQR
+
+[4259] The Dragon Knights' Challenge
++route=0,1,2,3,4,5,6,7,8,9
+alertfix=yyyyyyyyyy
+alertoff=0001121021
+zalert=11--1--11-
+remap=STUVWXABCDEFGJKLHIQOMNPRaZYbcd
+
+[4260] Monsters Blocking the Path
++route=30,31,32,33,34,35,36,37,38,39,40,41,10,12,14,17
+alert=33333333333333333333333333333333333333333
+remap=KJIPONMLGEHFQATDSBRC
+
+[4261] The Hearts of Maidens
++route=13,14,15,16,17
+alertfix=nnynn
+alertoff=00100
+alert+x=0,0,8,0,0
+alert=11111
+remap=HIJKLMANBCDEFGOTUPQRS
+
+[4262] Villagers Under Assault
+alert=11133
+remap=ABCDEFGNHIJKLMQPORSTWVUX
+
+[4263] Gale Edge
+alert=111
+
+[4264] Keystone of Sealing
+remap=NOGWFHPQKIXJLMSRTABVUCDE
++route=25,26,27,28,29,30
+alert=111111
+
+[4265] Great Yokai Nurarihyon
+remap=NOGWFHPQKIXJLMSRTABVUCDE
++route=13,9
+alert=1L12-11--3L
+alert+y=0,0,0,0,0,0,0,0,0,15,0
+
+[4266] Ninja Assault!
+remap=IJKLMNOPQHGFEDCBAYZabcdVRSXWUT
++route=8,10
+alert=1222211
+
+[4267] Yokai Ushi-Oni
+remap=ABCGQFEDHIJKMLONP
++route=0,5,6,7,8,9,10,11
+alert=31133333
+
+[4268] Anti-Yokai Ninja
+alert=11111111
+remap=KFELGHDCMABINJOUPXTQYSWRV
+
+[4269] Great Yokai War
+remap=HIJKLMANBCDEFGVOTUPQRS
++route=10,11,12,5,2,0
+alert=12133-11113111
+ally=V
+
+[4270] The Proud Holy Hammer Warrior
+remap=ABCDEFGHIJKLRQMNOPST
+alert=11
+
+[4271] Swift Red Armor
+remap=CBADEFGHLKJIMNOP
+alert=11
+
+[4272] Sorrowful Spirits
++route=2,3,4,6,10,11,12,13
+alert=113333-333333
+remap=AIEDCBFGHSRQPONMJKL
+
+[4273] An Impenetrable Iron Wall
++route=0,1,2,3,5,6,7,8,9,11,12,20
+alert=3333-33333331
+remap=ROFKAGLBHNMSCIDQEJP
+
+[4274] Magic and Armor
+alert=111
+remap=EDCBAFGHNMLKJIORSTPQ
+
+[4275] Armored Troops
++route=10,11,12,20,21,22
+alert=133111111
+remap=bcdZaIMNPQRYJOVXKLSTUWFGHCBEDA
+alertfix=nnnyyyyyy
+
+[4280] Demons in the Night God
++route=1,2,11,12,21,22,31,40,41,43,45,46
+alert=LLLLLLL22222
+remap=AEIMQBFJNRCGKOSDHLPTUVWXYZabcde
+
+[4281] Airborne Invasion
+alert=11122
+remap=FGEHIDCBARQPOLKJNM
+
+[4282] Assassins from Hell
+alert=1222222
+remap=FEDCBAMLKJIHGPONQWVURST
+
+[4283] Defend the Tower
++route=12
+alert=112222222222
+remap=CBAKJIHGFEDMNLOPQRSYWVTXUZabcde
+
+[4284] Sky Army
++route=32,24,19,26
+alert=222222222222222
+remap=OPQRWXYZakcbldefgSTUVhEFGKABjCDMNLJIHi
+
+[4285] Defeat the Fire Dragon
++route=8,9
+alert=11-323332
+remap=SHPQOIRMLJKNFDECTBGUVA
+
+[4286] Unlocking a Technique
++route=15,3,2,18,12
+alert=2222222222222222222222222222
+remap=FPEDCBAONMLGHIJK
+ally=P
+
+[4287] Black Shadows in the Sky
++route=40,41,42,43,0,46,45,44
+alert=23l333ll
+remap=ABCEDHOFGPIMJQLNK
+
+[4288] A Swordswoman's Revenge
+remap=STFHJIGEDCBALKMQRNOP
+alert=122222
+ally=T
+
+[4290] A Meeting on a Battlefield
+remap=EDCABJIFGHMLKNOQPR
+ally=N
+alert=11112222
+
+[4291] The Entrance to the Maze
+remap=JIHFGMRVPOSUQNLKDBAECT
+ally=T
+alert=1-1222
+
+[4292] Evil Protection
+remap=XWIOKJLMNUVTSRQPDCBAFEGH
+ally=H
+alert=--11-1
+
+[4293] A Maze where Darkness Dwells
+remap=VQJNXSOPMKRLWAFBDCEITGHU
+ally=U
+alert=11-1
+
+[4294] The Depths of the Maze
+remap=FEDCBAHGIJKLMPONQRSWTXUYVZ
+ally=Z
++route=24
+alert=111
+
+[4295] Intangible Monsters
+remap=HIKJPMROTULNQVFGDBAECS
+ally=S
+alert=1--1
+
+[4296] The Tree of Life
+remap=NELMFIPRHKOGJQABDCWSUTV
+ally=WTSVU
+alert=11-122
+
+[4297] Magic Resistant Beast
+remap=IGNHJOFKLQBDPAECM
+ally=M
+alert=-11221
+
+[4298] Signs of the Demon King
+remap=AMPLNROJQISVHGKFDBCETUeWXYfcdabZ
+ally=Z
++route=4
+alert=--11322
+
+[4299] Unexplored Territory
+remap=NFPIEUHMOVLJCGDKXWYZaARSBTQb
+ally=b
++route=2
+alert=111
+
+[4300] Mithril Cave
+remap=ONMFPEAQRDCBGUJLTIKHS
+ally=S
++route=4
+alert=111
+
+[4301] Stony Monsters
+remap=ABCGDEFNORSPQWJMLHVKTUI
+alert=111
+
+[4302] A Contest for Mithril
+remap=ABCIDEFGHONPQMLKJ
+alert=11
+
+[4303] A Mixed Force
+remap=ELKMDOACGIHPBJFNQRSTU
+alert=111
+
+[4304] Raging Flames
+remap=IHGFECDABQPOLMNKJ
++route=0,1,2,5,6,7,8,16,17
+alertfix=nnynnnnnnnnnnnnnnnnnnnnnnnnn
+alertoff=0010000000000000000000000000
+alert=3333333111
+
+[4305] Paralyzing Poison Needles
+remap=IGXBALKJHWCDEFVSUTMNRQOP
+alert=1
+ally=D
+
+[4306] Awakened Armored Soldiers
+remap=KGHIABCDEJFOMPNL
++route=11
+alert=11333-
+
+[4307] Magical Ancient Weapons
+remap=hijkGZbLBCEDdFfIJcAMNHOeKPXVaWTUQmlSYgR
++route=32,33
+alert=-11--1---111111
+
+[4308] Showdown at Fairy Village
+remap=ABCDEFGHIJKMLRNSPOQ
+alert=-12
+
+[4313] Awakening of Ryujins: God
+remap=VUTWSRQXPMIJGHLFEYZabcCBOKNAD
++route=3,6,8,15,16,17,18,19,21,22,23
+alert=11112222221
+
+[4314] Healer Training
+remap=EDCBAJIHGFKLNPOM
+ally=NK
+alert=---1111
+
+[4315] Path of the Archer
+remap=IBELJDMNCHKGAF
+ally=AF
++route=1
+alert=2
+alertfix=y
+
+[4316] Fiery Blood Training
+remap=GHIUTSRQPONMLKJYABDFXWZCVE
+ally=VE
+alert=111
+
+[4317] Combined Front
+remap=BCDEFAJKIHGOMNLPQSR
+ally=ACLJ
+alert=-1111
+
+[4318] Finished Assassination
+remap=AKJIMCBLDEFHGPONVTSRQUW
+ally=KJI
++route=0,1,2,3,5,6,7,8,9
+alert=333333333
+
+[4319] Beach Season
+remap=ONMLIPVTRJQWUSKABCDXEFGHY
+ally=OPQ
++route=16,25,26,27
+alert=-1111
+
+[4320] The Cavalrists' Duty
+remap=PAJDMGeQBKENHRCLFOISUWYacTVXZbd
+ally=eK
++route=0,1,2,3,4
+alert=11111
+alertfix=yyyyy
+
+[4324] The Threat of a Deadly Sword
+remap=ACBRQPODEFGHIJNMKLSTUVYWXZbcdea
+alert=-11111
+
+[4325] The Tribe of the Snow People
+remap=KLMNJDCBOAbdIHGFEPaZYWXcVUTQRS
++route=4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+alert=1-11333333333333332222
+
+[4328] Guidance of the Holy Knight
+remap=XFWVGHIJKAUMLBCDETaYbfZPSRdOQcNe
+ally=Z
+alert=111222
+alertfix=nnynnn
+
+[4329] A Determined Swordswoman
+remap=IJKLMNOPdHGFEDCBAXYZabcUQRWVTS
++route=3,4,6
+alert=11222
+ally=d
+
+[4336] Going Even Higher
+remap=aVLNMWAOEGFBCKJYIDHZQPbcSTXURedfgh
+alert=1-111--11-332
+
+[4337] School Friends
+remap=QPONMLVWfedUYXRSgcbTZahBiJjCAEFDHIGK
++route=0,1,2
+alert=111---------------------------
+
+[4338] Black Knight
+remap=ICBANQPHGFEDOSJKMRL
++route=0,5,3
+alert=1111
+
+[4339] Follower of a Demon Lord
+remap=LUYVSWTQRXZPOHJMFGNIKaAcBDbEC
++route=2,22,8
+alert=1-2112
+
+[4340] Road to the Altar
+remap=POQKFIGLMNRJHEBUADCTVSW
++route=0,1,5,9,16,17
+alert=111122
+
+[4341] Black Ceremony
+remap=OSeNQRUdMTXYJKZWFIgGPLHfABabDcCEV
++route=0,1,2,3,4,5,6,17,18
+alert=3333333111
+
+[4342] Forest of Demonic Beasts
+remap=RUABCDEJKSLMFGHITPZVXWQNYO
++route=5,24,16
+alert=131-3331-33
+
+[4343] Fate of the Fugitive Ninja
+remap=EDCABJIFGHMLKNOQPR
++route=9,10,11
+alert=111222
+
+[4344] Sounds of Darkness
+alert=12
+remap=ABCEDHOFGPQMILNJK
+alertfix=yn
+
+[4345] The Enemy Sharpens Its Fangs
+remap=aWZVUbGTLORYIMSNAPcQFXBKHCEJD
+alert=11-11
+
+[4346] Last Battle with the Fanatics
+remap=TUSVRKMJNOPQHILBCAWDGEF
++route=0,3,4,5,10,11,17,18,22,23
+alert=1311223333
+
+[4347] The Captured Ninja
+remap=fACBRQPODEgFGHIJNMKLSTUVYWXZbcdea
++route=8,9,10,11,21,14,17,16,13
+alert=111222233333
+
+[4330] Demons and Hellhounds
+remap=EDCBAJIHGFKLNPOM
+alert=1--1----LL
+
+[4359] Threat of the Crimson Fog
+
+[4360] Defensive Battle in the Forest
+
+[4361] Chase and Recapture
+
+[4362] Bone Power of the Demon Lord
+
+[4363] The Ninja and the Bandits
+remap=KAHTGUIFEDRCBSQPJLMNO
++route=10,13,14,15,19,20,21,22,24,27
+alert=13333222l32
+alert+x=0,0,0,0,0,0,0,0,-30,0,0
+
+[4364] Crimson Encirclement
+
+[4365] Evil Conspiracy
+
+[4366] Demon Worshipers
+remap=PMFVECDGHBAWXRQTSUINJLYKO
++route=2,3,7,8,9,11,12,13,14
+alertfix=nnnnnyyyy
+alert=111112222
+
+[4367] Pippins Decision
+remap=MLGFEDCBAHIJKRQPUTSYXWVNOabcZ
+ally=R
+alert=11111
+
+[4386] Defender of the Holy Forest
+remap=GFEWDJCHBKVITAURQPOSMLN
+ally=L
+alert=1
+
+[4387] Mad Warriors
+remap=GFEWDJCHBKVITAURQPOSMLN
++route=2,3,4,5
+alert=13333
+alertfix=nnyyn
+
+[4388] Lurking Bloodlust
+remap=ABCDHIJGFEONMKLUVWXYPQTSR
++route=20,21,22,23,24
+alert=1-133333
+
+[4389] Attack of the Berserkers
+remap=RQPONMLKJIHGFEABCDUaXTVSWZYb
++route=0,12,13,14,15,16,17
+alert=1333333
+
+[4390] Pure Blood Berserker
+remap=QPONMLKJIHGFEDCBAUTSRYXVW
++route=10,11,12,13,14,15
+alert=111333333
+
+[4391] A Path to the Forest Depths
+remap=ECBFSHATIDGRPONMQKJL
+alert=1111
+
+[4392] New Orcs
+remap=DbCOcRLFMGKIJeHPdNaETWSYZUAVQBX
++route=0
+alert=1
+
+[4393] Fury of the Warmaiden
+remap=FEDABYJKLMNGCXHIWURQTOSPV
+alert=11
+
+[4394] Pride of the Orcs
++route=3,5
+remap=ERDCABSFJGIHPNQMOKL
+alert=11
+
+[4395] What You've been Searching for
+remap=TSRQEDGOHICJFPMNeBKALadZVXYcUbW
+ally=EK
++route=0,1,2,6,8,9
+alert=111113
+
+[9003] 3 Kings G
+(route)=0,1,2,3,4,5,6,7,8,9,10,11,12,20,21,22,24,25,26,28,29,30,40,45,50,81,88,91,92,93,94,95,96,97,98
++route=5
+alertfix=yyy
+alert=111
+remap=PMJGDAQNKHEBROLIFCcaYWUSdbZXVT
+
+[9004] 竜姫の復活：知竜の双攻
+remap=LKACEGIBDFHJMNSTOPQR
+alert=111111111-1--------
+
+[9010] Black Revenger G
+remap=ABCDIJKLMTNOUPQRSHGFEVWXYZijkldcbafghe
+alert=112222111
