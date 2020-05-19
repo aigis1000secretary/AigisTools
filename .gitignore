@@ -1,0 +1,13 @@
+
+*.lnk
+Thumbs.db
+node_modules
+
+LocalProxy/AigisTools/
+
+AigisTools/Data/Cache/
+AigisTools/out/
+AigisTools/working/
+
+AigisChecker/Resources/
+AigisChecker/*.csv
