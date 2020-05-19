@@ -23,7 +23,7 @@ function _btoa(base2Str) {
     return base32Str;
 }
 
-function getUrlFlags() {
+function getUrlParams() {
     // URL obj
     let url = new URL(document.URL);
     let params = url.searchParams;
@@ -41,7 +41,7 @@ function getUrlFlags() {
     return urlData ? _atob(urlData) : "";
 }
 
-function setUrlFlags(flagList) {
+function setUrlParams(flagList) {
     // URL obj
     let url = new URL(document.URL);
     let params = url.searchParams;
@@ -50,6 +50,7 @@ function setUrlFlags(flagList) {
     let urlData = _btoa(flagList);
 
     // set data to url
+    params.set("sortBy", sortMode);
     params.set("data", urlData);
     history.pushState(null, null, url);
 
@@ -57,7 +58,11 @@ function setUrlFlags(flagList) {
     if (urlData.replace(/0/g, "") != "") {
         let sharebox = document.getElementById("sharebox");
         sharebox.textContent = url;
-    } else { sharebox.textContent = "ここに共有する内容が表示されます" }
+    } else {
+        // sharebox.textContent = "ここに共有する内容が表示されます"
+        params.delete("data");
+        sharebox.textContent = url;
+    }
 }
 
 function getIconFlags() {
@@ -88,6 +93,7 @@ function setIconFlags(flagList) {
     let iconbox = document.getElementById("iconbox");
     for (let i in iconbox.children) {
         let icon = iconbox.children[i];
+        if (icon.tagName != "IMG") continue;
         let id = icon.id;
         let flag = (flagArray[id] && flagArray[id] == "1") ? "true" : "false";
 
@@ -96,6 +102,56 @@ function setIconFlags(flagList) {
     }
 };
 
+// body onload method
+function bodyOnload() {
+
+    // URL obj
+    let url = new URL(document.URL);
+    let params = url.searchParams;
+
+    // get url data
+    let sortBy = params.get("sortBy");
+
+    // sharebox
+    switch (sortBy.toLowerCase()) {
+        case "date":
+            sortByDate(sortBy[0] == sortBy[0].toUpperCase());
+            break;
+
+        case "rare":
+            sortByRare(sortBy[0] == sortBy[0].toUpperCase());
+            break;
+
+        case "class":
+            sortByClass(sortBy[0] == sortBy[0].toUpperCase());
+            break;
+
+        case "kind":
+            sortByKind();
+            break;
+
+        case "isevent":
+            sortByEvent();
+            break;
+
+        case "assign":
+            sortByAssign();
+            break;
+
+        case "genus":
+            sortByGenus();
+            break;
+
+        case "yeargacha":
+            sortByYearGacha();
+            break;
+
+        default:
+            sortByRare(false);
+            break;
+    }
+}
+
 // init method
 function init() {
     let iconbox = document.getElementById("iconbox");
@@ -103,6 +159,7 @@ function init() {
     for (let i in charaData) {
         if (charaData[i] == null) continue;
 
+        // build dom element
         let icon = document.createElement("img");
         icon.className = "icon";
         icon.id = charaData[i].id;
@@ -113,25 +170,29 @@ function init() {
 
         icon.alt = "false";
         icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
+
+        // onclick event
         icon.addEventListener("click", function(e) {
             this.alt = this.alt == "true" ? "false" : "true";
             this.style = this.alt == "true" ? styleChecked : styleUnChecked;
             // set url data
-            flagList = getIconFlags();
-            setUrlFlags(flagList);
+            setUrlParams(getIconFlags());
         }, false);
+
+        // append
         iconbox.appendChild(icon);
     }
     // read url data
-    flagList = getUrlFlags()
-    setIconFlags(flagList)
+    setIconFlags(getUrlParams());
 }
 
 // hr method
 function setHr(type) {
+    // get icon list
     let iconbox = document.getElementById("iconbox");
-    bFlag = false;
+
     for (let i = 0; i < iconbox.childElementCount; ++i) {
+        // get image & id
         let a = iconbox.children[i];
         let b = iconbox.children[i + 1];
         if (!a || !b || a.tagName != "IMG" || b.tagName != "IMG") continue;
@@ -212,9 +273,24 @@ function setHr(type) {
             aText = textList[aData.genus];
             bText = textList[bData.genus];
 
+        } else if (type == "yearGacha") {
+            let aBool, bBool;
+            aBool = (aData.isEvent == 0 && 5.0 <= aData.rare && aData.rare < 5.2) ? 1 : 0;
+            bBool = (bData.isEvent == 0 && 5.0 <= bData.rare && bData.rare < 5.2) ? 1 : 0;
+            if (aBool) aText += "ガチャ ブラック "
+            if (bBool) bText += "ガチャ ブラック "
+
+            let al = [0, 5, 8];
+            aBool = (al.find(i => i == aData.assign) != undefined) && aData.genus == 0 && aData.rare * 10 % 10 == 0;
+            bBool = (al.find(i => i == bData.assign) != undefined) && bData.genus == 0 && bData.rare * 10 % 10 == 0;
+            if (!aBool) aText = "限定" + aText;
+            if (!bBool) bText = "限定" + bText;
+
+            aText = aData.year + "年 " + aText;
+            bText = bData.year + "年 " + bText;
         }
 
-        // set hr?
+        // set hr or not
         let br = document.createElement("div");
         br.className = "hr";
         if (i == 0) {
@@ -225,15 +301,21 @@ function setHr(type) {
             a.parentNode.insertBefore(br, b);
         }
     }
+
+    // set sort mode to url
+    setUrlParams(getIconFlags());
 };
 
 // sort method
+let sortMode = "";
+
 function sortByDate(ascending) {
+    sortMode = ascending ? "DATE" : "date";
     $(".iconbox").empty();
 
-    charaData.sort(function compare(a, b) {
+    charaData.sort(function compare(aData, bData) {
         // sort by id
-        if (a.id != b.id) return (!!ascending == (a.id < b.id)) ? -1 : 1;
+        if (aData.id != bData.id) return (!!ascending == (aData.id < bData.id)) ? -1 : 1;
 
         return 0;
     })
@@ -243,20 +325,21 @@ function sortByDate(ascending) {
 };
 
 function sortByRare(ascending) {
+    sortMode = ascending ? "RARE" : "rare";
     $(".iconbox").empty();
 
-    charaData.sort(function compare(a, b) {
+    charaData.sort(function compare(aData, bData) {
         // sort by rare
-        if (a.rare != b.rare) return (!!ascending == (a.rare < b.rare)) ? -1 : 1;
+        if (aData.rare != bData.rare) return (!!ascending == (aData.rare < bData.rare)) ? -1 : 1;
 
         // sort by group
-        if (a.sortGroupID != b.sortGroupID) return (a.sortGroupID < b.sortGroupID) ? -1 : 1;
+        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
 
         // sort by class
-        if (a.classId != b.classId) return (a.classId < b.classId) ? -1 : 1;
+        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
 
         // sort by id
-        if (a.id != b.id) return (a.id < b.id) ? -1 : 1;
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
         return 0;
     })
@@ -266,23 +349,24 @@ function sortByRare(ascending) {
 };
 
 function sortByClass(ascending) {
+    sortMode = ascending ? "CLASS" : "class";
     $(".iconbox").empty();
 
-    charaData.sort(function compare(a, b) {
+    charaData.sort(function compare(aData, bData) {
         // sort by placeType
-        if (a.placeType != b.placeType) return (a.placeType < b.placeType) ? -1 : 1;
+        if (aData.placeType != bData.placeType) return (aData.placeType < bData.placeType) ? -1 : 1;
 
         // sort by class
-        if (a.classId != b.classId) return (!!ascending == (a.classId < b.classId)) ? -1 : 1;
+        if (aData.classId != bData.classId) return (!!ascending == (aData.classId < bData.classId)) ? -1 : 1;
 
         // sort by rare
-        if (a.rare != b.rare) return (a.rare > b.rare) ? -1 : 1;
+        if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
 
         // sort by group
-        if (a.sortGroupID != b.sortGroupID) return (a.sortGroupID < b.sortGroupID) ? -1 : 1;
+        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
 
         // sort by id
-        if (a.id != b.id) return (a.id < b.id) ? -1 : 1;
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
         return 0;
     })
@@ -292,11 +376,12 @@ function sortByClass(ascending) {
 };
 
 function sortByKind() {
+    sortMode = "kind";
     $(".iconbox").empty();
 
-    charaData.sort(function compare(a, b) {
+    charaData.sort(function compare(aData, bData) {
         // sort by kind
-        if (a.kind != b.kind) return (a.kind < b.kind) ? -1 : 1;
+        if (aData.kind != bData.kind) return (aData.kind < bData.kind) ? -1 : 1;
 
         return 0;
     })
@@ -306,11 +391,12 @@ function sortByKind() {
 };
 
 function sortByEvent() {
+    sortMode = "isEvent";
     $(".iconbox").empty();
 
-    charaData.sort(function compare(a, b) {
+    charaData.sort(function compare(aData, bData) {
         // sort by isEvent
-        if (a.isEvent != b.isEvent) return (a.isEvent > b.isEvent) ? -1 : 1;
+        if (aData.isEvent != bData.isEvent) return (aData.isEvent > bData.isEvent) ? -1 : 1;
 
         return 0;
     })
@@ -320,13 +406,14 @@ function sortByEvent() {
 };
 
 function sortByAssign() {
+    sortMode = "assign";
     $(".iconbox").empty();
 
-    charaData.sort(function compare(a, b) {
+    charaData.sort(function compare(aData, bData) {
         // sort by assign
-        if (a.assign == 0) return 1;
-        if (b.assign == 0) return -1;
-        if (a.assign != b.assign) return (a.assign < b.assign) ? -1 : 1;
+        if (aData.assign == 0) return 1;
+        if (bData.assign == 0) return -1;
+        if (aData.assign != bData.assign) return (aData.assign < bData.assign) ? -1 : 1;
 
         return 0;
     })
@@ -336,19 +423,60 @@ function sortByAssign() {
 };
 
 function sortByGenus() {
+    sortMode = "genus";
     $(".iconbox").empty();
 
-    charaData.sort(function compare(a, b) {
-        // sort by isEvent
-        if (a.genus == 0) return 1;
-        if (b.genus == 0) return -1;
-        if (a.genus != b.genus) return (a.genus < b.genus) ? -1 : 1;
+    charaData.sort(function compare(aData, bData) {
+        // sort by genus
+        if (aData.genus == 0) return 1;
+        if (bData.genus == 0) return -1;
+        if (aData.genus != bData.genus) return (aData.genus < bData.genus) ? -1 : 1;
 
         return 0;
     })
 
     init();
     setHr("genus");
+};
+
+function sortByYearGacha() {
+    sortMode = "yearGacha";
+    $(".iconbox").empty();
+
+    charaData.sort(function compare(aData, bData) {
+        // sort rare
+        let aBool, bBool;
+        aBool = (aData.isEvent == 0 && 5.0 <= aData.rare && aData.rare < 5.2) ? 1 : 0;
+        bBool = (bData.isEvent == 0 && 5.0 <= bData.rare && bData.rare < 5.2) ? 1 : 0;
+        if (aBool != bBool) return aBool ? -1 : 1;
+
+        // sort 限定
+        let al = [0, 5, 8];
+        aBool = (al.find(i => i == aData.assign) != undefined) && aData.genus == 0 && aData.rare * 10 % 10 == 0;
+        bBool = (al.find(i => i == bData.assign) != undefined) && bData.genus == 0 && bData.rare * 10 % 10 == 0;
+        if (aBool != bBool) return aBool ? -1 : 1;
+
+
+        // sort by year
+        if (aData.year != bData.year) return (aData.year < bData.year) ? -1 : 1;
+
+        // // sort by placeType
+        // if (aData.placeType != bData.placeType) return (aData.placeType < bData.placeType) ? -1 : 1;
+
+        // sort by rare
+        if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
+
+        // sort by group
+        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+
+        // sort by id
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
+
+        return 0;
+    })
+
+    init();
+    setHr("yearGacha");
 };
 
 // selector
@@ -370,10 +498,9 @@ function filter(checkbox) {
         icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
     }
 
-
     // set url data
     let newList = getIconFlags();
-    setUrlFlags(newList);
+    setUrlParams(newList);
     // backup
     if (newList != flagList) {
         urlHistory.push(flagList);
@@ -385,7 +512,7 @@ let urlHistory = [];
 function undo() {
     let flagList = urlHistory.pop();
     if (!flagList) return;
-    setUrlFlags(flagList);
+    setUrlParams(flagList);
     setIconFlags(flagList);
 };
 
