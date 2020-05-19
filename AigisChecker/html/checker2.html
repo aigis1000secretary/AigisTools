@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>千年戦争アイギス - ユニット所持チェッカー＋</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="./cards.js"></script>
+    <script src="./checker.js"></script>
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+
+    <link href='Primary.css' rel='stylesheet' type='text/css' />
+
+</head>
+
+<body onload="sortByRare(false);">
+    <div class="mainbody">
+        <div class="Layout_header">
+            <span class="title">千年戦争アイギス - ユニット所持チェッカー＋</span>
+        </div>
+
+        <div class="Layout_Mainblock">
+            <!-- // init by js methods -->
+            <div class="iconbox" id="iconbox"> </div>
+        </div>
+
+        <div class="Layout_Sideblock">
+
+            <div class="sidebox">
+                <a itemprop="url" href="https://twitter.com/Aigis1000/" target="_blank">▼千年戦争アイギスtwitter公式アカウント</a><br>
+                <a itemprop="url" href="http://aigis1000.jp/" target="_blank">▼千年戦争アイギスA公式サイト</a><br>
+                <a itemprop="url" href="https://www.youtube.com/channel/UCl8iPEgu_N6iEYGYoWXc3gA" target="_blank">▼YouTube「千年戦争アイギス」公式チャンネル</a><br>
+            </div>
+
+            <div class="sidebox">
+                所有率を共有
+                <input type="button" onclick="openImage();" value="画像生成"><br>
+
+                <textarea id="sharebox">ここに共有する内容が表示されます</textarea>
+            </div>
+
+            <div class="sidebox">
+                ソート <br>
+
+                <input type="button" onclick="sortByRare(true);   " value="レア順（↗）">
+                <input type="button" onclick="sortByRare(false);  " value="（↘）">
+                <br>
+                <input type="button" onclick="sortByDate(true);   " value="実装順（↗）">
+                <input type="button" onclick="sortByDate(false);  " value="（↘）">
+                <br>
+                <input type="button" onclick="sortByClass(true);  " value="クラス順（↗）">
+                <input type="button" onclick="sortByClass(false); " value="（↘）">
+                <br> 属性別 <br>
+                <input type="button" onclick="sortByKind();       " value="性別">
+                <input type="button" onclick="sortByEvent();      " value="入手先">
+                <input type="button" onclick="sortByAssign();     " value="所属">
+                <input type="button" onclick="sortByGenus();      " value="節分">
+            </div>
+
+            <div class=sidebox>
+                一括選択/解除
+                <input type="button" onclick="undo(true);" value="戻す"> <br>
+
+                <div class="filterbox">
+                    <!-- placeType -->
+                    <input type="checkbox" id="f11" name="placeType" alt="1" onclick="filter(this);" />
+                    <label for="f11"><span>近接</span></label>
+
+                    <input type="checkbox" id="f12" name="placeType" alt="2" onclick="filter(this);" />
+                    <label for="f12"><span>遠隔</span></label>
+                </div>
+                <div class="filterbox">
+                    <!-- rare -->
+                    <input type="checkbox" id="f21" name="rare" alt="5" onclick="filter(this);" />
+                    <label for="f21"><span>ブラック</span></label>
+
+                    <input type="checkbox" id="f22" name="rare" alt="4" onclick="filter(this);" />
+                    <label for="f22"><span>プラチナ</span></label>
+
+                    <input type="checkbox" id="f23" name="rare" alt="3.5" onclick="filter(this);" />
+                    <label for="f23"><span>サファイア</span></label>
+
+                    <input type="checkbox" id="f24" name="rare" alt="3" onclick="filter(this);" />
+                    <label for="f24"><span>ゴールド</span></label>
+
+                    <input type="checkbox" id="f25" name="rare" alt="2" onclick="filter(this);" />
+                    <label for="f25"><span>シルバー</span></label>
+                </div>
+
+                <div class="filterbox">
+                    <!-- kind -->
+                    <input type="checkbox" id="f31" name="kind" alt="0" onclick="filter(this);" />
+                    <label for="f31"><span>男性</span></label>
+
+                    <input type="checkbox" id="f32" name="kind" alt="1" onclick="filter(this);" />
+                    <label for="f32"><span>女性</span></label>
+                </div>
+
+                <div class="filterbox">
+                    <!-- event -->
+                    <input type="checkbox" id="f41" name="isEvent" alt="1" onclick="filter(this);" />
+                    <label for="f41"><span>イベント</span></label>
+
+                    <input type="checkbox" id="f42" name="isEvent" alt="0" onclick="filter(this);" />
+                    <label for="f42"><span>ガチャ</span></label>
+                </div>
+
+                <div class="filterbox">
+                    <!-- assign -->
+                    <input type="checkbox" id="f51" name="assign" alt="0" onclick="filter(this);" />
+                    <label for="f51"><span>王国</span></label>
+
+                    <input type="checkbox" id="f52" name="assign" alt="2" onclick="filter(this);" />
+                    <label for="f52"><span>白の帝国</span></label>
+
+                    <input type="checkbox" id="f53" name="assign" alt="3" onclick="filter(this);" />
+                    <label for="f53"><span>アルスラーン戦記（遠国）</span></label>
+
+                    <input type="checkbox" id="f54" name="assign" alt="5" onclick="filter(this);" />
+                    <label for="f54"><span>砂漠の国</span></label>
+
+                    <input type="checkbox" id="f55" name="assign" alt="6" onclick="filter(this);" />
+                    <label for="f55"><span>七つの大罪（異郷）</span></label>
+
+                    <input type="checkbox" id="f56" name="assign" alt="8" onclick="filter(this);" />
+                    <label for="f56"><span>東の国</span></label>
+
+                    <input type="checkbox" id="f57" name="assign" alt="-1" onclick="filter(this);" />
+                    <label for="f57"><span>ランス10-決戦-</span></label>
+
+                    <input type="checkbox" id="f58" name="assign" alt="-2" onclick="filter(this);" />
+                    <label for="f58"><span>真・恋姫†夢想-革命（恋姫）</span></label>
+
+                    <input type="checkbox" id="f59" name="assign" alt="-3" onclick="filter(this);" />
+                    <label for="f59"><span>封緘のグラセスタ（封緘）</span></label>
+
+                    <input type="checkbox" id="f5a" name="assign" alt="-4" onclick="filter(this);" />
+                    <label for="f5a"><span>ガールズ・ブック・メイカー（GBM）</span></label>
+
+                    <input type="checkbox" id="f5b" name="assign" alt="-5" onclick="filter(this);" />
+                    <label for="f5b"><span>流星ワールドアクター（流星WA）</span></label>
+                </div>
+
+                <div class="filterbox">
+                    <!-- genus -->
+                    <input type="checkbox" id="f61" name="genus" alt="101" onclick="filter(this);" />
+                    <label for="f61"><span>お正月</span></label>
+
+                    <input type="checkbox" id="f62" name="genus" alt="102" onclick="filter(this);" />
+                    <label for="f62"><span>バレンタイン</span></label>
+
+                    <input type="checkbox" id="f63" name="genus" alt="103" onclick="filter(this);" />
+                    <label for="f63"><span>学園</span></label>
+
+                    <input type="checkbox" id="f64" name="genus" alt="104" onclick="filter(this);" />
+                    <label for="f64"><span>ジューンブライド</span></label>
+
+                    <input type="checkbox" id="f65" name="genus" alt="105" onclick="filter(this);" />
+                    <label for="f65"><span>サマー</span></label>
+
+                    <input type="checkbox" id="f66" name="genus" alt="106" onclick="filter(this);" />
+                    <label for="f66"><span>ハロウィン</span></label>
+
+                    <input type="checkbox" id="f67" name="genus" alt="107" onclick="filter(this);" />
+                    <label for="f67"><span>聖夜</span></label>
+
+                    <input type="checkbox" id="f68" name="genus" alt="108" onclick="filter(this);" />
+                    <label for="f68"><span>ちび</span></label>
+
+                    <input type="checkbox" id="f69" name="genus" alt="109" onclick="filter(this);" />
+                    <label for="f69"><span>温泉</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
