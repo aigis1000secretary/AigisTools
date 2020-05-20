@@ -31,12 +31,6 @@ function getUrlParams() {
     // get url data
     let urlData = params.get("data");
 
-    // sharebox
-    if (urlData && urlData.replace(/0/g, "") != "") {
-        let sharebox = document.getElementById("_sharebox");
-        sharebox.textContent = url;
-    } else { sharebox.textContent = "ここに共有する内容が表示されます" }
-
     // return flag list
     return urlData ? _atob(urlData) : "";
 }
@@ -56,12 +50,12 @@ function setUrlParams(flagList) {
     history.pushState(null, null, url);
 
     // sharebox
+    let shareText = "【千年戦争アイギス】ユニット所持チェッカー＋\n"
+    shareText += doStatistics() + "\n";
+    shareText += url;
+    shareText += "\n #アイギス所持チェッカー \n #千年戦争アイギス ";
 
-    let sharebox = document.getElementById("_sharebox");
-    // sharebox.textContent = "ここに共有する内容が表示されます"
-    let shareText = "【千年戦争アイギス】ユニット所持チェッカー＋\n" + url + "\n #アイギス所持チェッカー \n #千年戦争アイギス ";
-
-    sharebox.textContent = shareText;
+    document.getElementById("_sharebox").textContent = shareText;
     setShareButton(shareText);
 }
 
@@ -100,7 +94,7 @@ function setIconFlags(flagList) {
         icon.alt = flag;
         icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
     }
-};
+}
 
 // body onload method
 function bodyOnload() {
@@ -192,6 +186,7 @@ function setHr(type) {
     let iconbox = document.getElementById("iconbox");
     let hidden = false;
 
+    // set hr
     for (let i = 0; i < iconbox.childElementCount; ++i) {
         // get image & id
         let a = iconbox.children[i];
@@ -301,20 +296,22 @@ function setHr(type) {
         }
 
         // set hr or not
-        let br = document.createElement("div");
-        br.className = "hr";
+        let hr = document.createElement("div");
+        hr.className = "hr";
         if (i == 0) {
-            br.textContent = aText;
-            a.parentNode.insertBefore(br, a);
+            hr.innerHTML = `<span>${aText}</span>`;
+            a.parentNode.insertBefore(hr, a);
         } else if (aText != bText && !hidden) {
-            br.textContent = bText;
-            a.parentNode.insertBefore(br, b);
+            hr.innerHTML = `<span>${bText}</span>`;
+            a.parentNode.insertBefore(hr, b);
         }
     }
 
+    doStatistics();
+
     // set sort mode to url
     setUrlParams(getIconFlags());
-};
+}
 
 // sort method
 let sortMode = "";
@@ -332,7 +329,7 @@ function sortByDate(ascending) {
 
     init();
     setHr("year");
-};
+}
 
 function sortByRare(ascending) {
     sortMode = ascending ? "RARE" : "rare";
@@ -356,7 +353,7 @@ function sortByRare(ascending) {
 
     init();
     setHr("rare");
-};
+}
 
 function sortByClass(ascending) {
     sortMode = ascending ? "CLASS" : "class";
@@ -383,7 +380,7 @@ function sortByClass(ascending) {
 
     init();
     setHr("classId");
-};
+}
 
 function sortByKind() {
     sortMode = "kind";
@@ -398,7 +395,7 @@ function sortByKind() {
 
     init();
     setHr("kind");
-};
+}
 
 function sortByEvent() {
     sortMode = "isEvent";
@@ -413,7 +410,7 @@ function sortByEvent() {
 
     init();
     setHr("isEvent");
-};
+}
 
 function sortByAssign() {
     sortMode = "assign";
@@ -439,7 +436,7 @@ function sortByAssign() {
 
     init();
     setHr("assign");
-};
+}
 
 function sortByGenus() {
     sortMode = "genus";
@@ -465,7 +462,7 @@ function sortByGenus() {
 
     init();
     setHr("genus");
-};
+}
 
 function sortByYearGacha() {
     sortMode = "yearGacha";
@@ -505,7 +502,7 @@ function sortByYearGacha() {
 
     init();
     setHr("yearGacha");
-};
+}
 
 // selector
 function filter(checkbox) {
@@ -533,7 +530,7 @@ function filter(checkbox) {
     if (newList != flagList) {
         urlHistory.push(flagList);
     }
-};
+}
 // undo method
 let urlHistory = [];
 
@@ -542,7 +539,7 @@ function undo() {
     if (!flagList) return;
     setUrlParams(flagList);
     setIconFlags(flagList);
-};
+}
 
 // html result to image
 function openImage() {
@@ -551,15 +548,48 @@ function openImage() {
         image.src = canvas.toDataURL("image/png");
         window.open().document.write("<img src=\"" + image.src + "\" />");
     });
-};
+}
 
 function copyUrl() {
     document.getElementById("_sharebox").select();
     document.execCommand("copy");
-};
+}
 
 function setShareButton(currentUri) {
     document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
     document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
     document.getElementById("_plurkBtn").href = "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
-};
+}
+
+function doStatistics() {
+
+    let globalIconCount = 0;
+    let globalTrueCount = 0;
+
+    let iconCount = 0;
+    let trueCount = 0;
+    // set hr statistics text
+    let icon, hrList = document.getElementById("iconbox").getElementsByClassName("hr");
+    // get type count
+    for (let i = 0; i < hrList.length; ++i) {
+        icon = hrList[i];
+        let label = icon.children[0].textContent;
+        // get icon count
+        while (true) {
+            icon = icon.nextElementSibling;
+
+            if (!icon || icon.tagName != "IMG") break;
+            globalIconCount++;
+            globalTrueCount += icon.alt == "true" ? 1 : 0;
+
+            if (icon.hidden) break;
+            iconCount++;
+            trueCount += icon.alt == "true" ? 1 : 0;
+        }
+        // set text
+        hrList[i].innerHTML = `<span>${label}</span>:　　${Math.floor(100 * trueCount / iconCount)} % （${trueCount}/${iconCount}）`;
+        iconCount = 0;
+        trueCount = 0;
+    }
+    return `所有率: ${Math.floor(100 * globalTrueCount / globalIconCount)} % （${globalTrueCount}/${globalIconCount}）`
+}
