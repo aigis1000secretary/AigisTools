@@ -582,7 +582,7 @@ function doStatistics() {
             globalIconCount++;
             globalTrueCount += icon.alt == "true" ? 1 : 0;
 
-            if (icon.hidden) break;
+            if (icon.hidden) continue;
             iconCount++;
             trueCount += icon.alt == "true" ? 1 : 0;
         }
