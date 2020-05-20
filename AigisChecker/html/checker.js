@@ -587,7 +587,7 @@ function doStatistics() {
             trueCount += icon.alt == "true" ? 1 : 0;
         }
         // set text
-        hrList[i].innerHTML = `<span>${label}</span>:　　${Math.floor(100 * trueCount / iconCount)} % （${trueCount}/${iconCount}）`;
+        hrList[i].innerHTML = `<span>${label}</span><span style="float: right;">${Math.floor(100 * trueCount / iconCount)}%（${trueCount}/${iconCount}）</span>`;
         iconCount = 0;
         trueCount = 0;
     }
