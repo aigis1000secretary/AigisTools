@@ -33,7 +33,7 @@ function getUrlParams() {
 
     // sharebox
     if (urlData && urlData.replace(/0/g, "") != "") {
-        let sharebox = document.getElementById("sharebox");
+        let sharebox = document.getElementById("_sharebox");
         sharebox.textContent = url;
     } else { sharebox.textContent = "ここに共有する内容が表示されます" }
 
@@ -57,7 +57,7 @@ function setUrlParams(flagList) {
 
     // sharebox
 
-    let sharebox = document.getElementById("sharebox");
+    let sharebox = document.getElementById("_sharebox");
     // sharebox.textContent = "ここに共有する内容が表示されます"
     let shareText = "【千年戦争アイギス】ユニット所持チェッカー＋\n" + url + "\n #アイギス所持チェッカー \n #千年戦争アイギス ";
 
@@ -549,17 +549,17 @@ function openImage() {
     html2canvas(document.getElementById("Layout_Mainblock")).then(function(canvas) {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
-        window.open().document.write('<img src="' + image.src + '" />');
+        window.open().document.write("<img src=\"" + image.src + "\" />");
     });
 };
 
 function copyUrl() {
-    document.getElementById('sharebox').select();
-    document.execCommand('copy');
+    document.getElementById("_sharebox").select();
+    document.execCommand("copy");
 };
 
 function setShareButton(currentUri) {
-    document.getElementById("twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
-    document.getElementById("lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
-    document.getElementById("plurkBtn").href = "http://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
+    document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
+    document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
+    document.getElementById("_plurkBtn").href = "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
 };
