@@ -1,36 +1,46 @@
 .mainbody {
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     width: 960px;
     font-size: 12px;
     font-family: "-apple-system", BlinkMacSystemFont, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", Osaka, "sans-serif";
+    background-color: #efefef;
+    /* background-color: Yellow; */
 }
 
-.Layout_header {
+.Layout_Header {
+    float: left;
     width: 100%;
     max-width: 100%;
-    height: 100px;
-    background-color: #efefef;
+    min-height: 100px;
     /* background-color: Yellow; */
 }
 
 .Layout_Mainblock {
     float: left;
     max-width: 70%;
-    /* height: 400px; */
-    background-color: #efefef;
+    /* min-height: 100px; */
     /* background-color: greenyellow; */
 }
 
 .Layout_Sideblock {
-    float: left;
+    float: right;
     max-width: 30%;
-    /* height: 400px; */
-    background-color: #efefef;
+    /* min-height: 100px; */
     /* background-color: cadetblue; */
 }
 
-.Layout_header .title {
+.Layout_Bottom {
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    /* background-color: Red; */
+    padding: 0px 0px 0px 10px;
+}
+
+.Layout_Header .title {
     color: #000000;
     font-size: 24px;
     font-weight: 700;
@@ -136,4 +146,8 @@
 .sidebox input[type="checkbox"]+label span:hover {
     color: #000000;
     background-color: #fff;
+}
+
+.Layout_Bottom a {
+    color: #3878ec;
 }
