@@ -2,6 +2,7 @@
 *.lnk
 Thumbs.db
 node_modules
+.vscode
 
 LocalProxy/AigisTools/
 
