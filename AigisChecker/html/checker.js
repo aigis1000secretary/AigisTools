@@ -12,7 +12,6 @@ function _atob(base32Str) {
     }
     return base2Str;
 }
-
 function _btoa(base2Str) {
     let base32Str = "";
     while (base2Str.length > 0) {
@@ -34,7 +33,6 @@ function getUrlParams() {
     // return flag list
     return urlData ? _atob(urlData) : "";
 }
-
 function setUrlParams(flagList) {
     // URL obj
     let url = new URL(document.URL);
@@ -78,7 +76,6 @@ function getIconFlags() {
     // make flag list
     return flagArray.join(""); // .replace(/$0*/, "")
 }
-
 function setIconFlags(flagList) {
     // make flag list
     let flagArray = flagList.split("");
@@ -236,10 +233,9 @@ function setHr(type) {
             bText = textList[bData.kind];
 
         } else if (type == "isEvent") {
-            let textList = ["ガチャ", "イベント"];
-            aText = textList[aData.isEvent];
-            bText = textList[bData.isEvent];
-
+            let textList = ["ガチャ", "イベント", "小説"];
+            aText = textList[(aData.rare == 3.5) ? 2 : aData.isEvent];
+            bText = textList[(bData.rare == 3.5) ? 2 : bData.isEvent];
         } else if (type == "assign") {
             let textList = [];
             textList[-5] = "流星ワールドアクター（流星WA）";
@@ -298,10 +294,11 @@ function setHr(type) {
         // set hr or not
         let hr = document.createElement("div");
         hr.className = "hr";
+        hr.hidden = hidden;
         if (i == 0) {
             hr.innerHTML = `<span>${aText}</span>`;
             a.parentNode.insertBefore(hr, a);
-        } else if (aText != bText && !hidden) {
+        } else if (aText != bText) {
             hr.innerHTML = `<span>${bText}</span>`;
             a.parentNode.insertBefore(hr, b);
         }
@@ -313,9 +310,81 @@ function setHr(type) {
     setUrlParams(getIconFlags());
 }
 
+// doStatistics
+function doStatistics() {
+
+    let globalIconCount = 0;
+    let globalTrueCount = 0;
+
+    let iconCount = 0;
+    let trueCount = 0;
+
+    // set hr statistics text
+    let icon, hrList = document.getElementById("iconbox").getElementsByClassName("hr");
+    // get count in same type
+    for (let i = 0; i < hrList.length; ++i) {
+        // get label text
+        let label = hrList[i].children[0].textContent;
+        let checked = false;
+
+        icon = hrList[i];
+        // get icon count
+        while (true) {
+            icon = icon.nextElementSibling;
+
+            // keep loop in icon
+            if (!icon || icon.tagName != "IMG") break;
+            globalIconCount++;
+            globalTrueCount += icon.alt == "true" ? 1 : 0;
+
+            // if (icon.hidden) continue;
+            iconCount++;
+            trueCount += icon.alt == "true" ? 1 : 0;
+
+            if (icon.alt == "false") checked = true;
+        }
+        // set text & result & button
+        hrList[i].innerHTML = `<span>${label}</span><span style="float: right;">${Math.floor(100 * trueCount / iconCount)}%（${trueCount}/${iconCount}）</span>`;
+        hrList[i].innerHTML += `<input type="checkbox" id="f${i}" onclick="selectGroup(this);" /><label for="f${i}"><span>一括${checked ? "選択" : "解除"}</span></label>`;
+        hrList[i].getElementsByTagName("input")[0].checked = checked;
+
+        // reset icon count
+        iconCount = 0;
+        trueCount = 0;
+    }
+    return `所有率: ${Math.floor(100 * globalTrueCount / globalIconCount)} % （${globalTrueCount}/${globalIconCount}）`;
+}
+function selectGroup(checkbox) {
+    // get backup
+    let flagList = getIconFlags();
+
+    // get flag
+    checkbox.checked != checkbox.checked;
+    let checked = checkbox.checked;
+    // set new text
+    checkbox.nextElementSibling.children[0].textContent = `一括${checked ? "選択" : "解除"}`;
+    // set icon witch in group
+    let hr = checkbox.parentElement;
+    let icon = hr;
+    while (true) {
+        icon = icon.nextElementSibling;
+
+        if (!icon || icon.tagName != "IMG") break;
+        icon.alt = !checked;
+        icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
+    }
+
+    // set url data
+    let newList = getIconFlags();
+    setUrlParams(newList);
+    // backup
+    if (newList != flagList) {
+        urlHistory.push(flagList);
+    }
+}
+
 // sort method
 let sortMode = "";
-
 function sortByDate(ascending) {
     sortMode = ascending ? "DATE" : "date";
     $(".iconbox").empty();
@@ -330,7 +399,6 @@ function sortByDate(ascending) {
     init();
     setHr("year");
 }
-
 function sortByRare(ascending) {
     sortMode = ascending ? "RARE" : "rare";
     $(".iconbox").empty();
@@ -341,10 +409,8 @@ function sortByRare(ascending) {
 
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
-
         // sort by class
         if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
-
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -354,7 +420,6 @@ function sortByRare(ascending) {
     init();
     setHr("rare");
 }
-
 function sortByClass(ascending) {
     sortMode = ascending ? "CLASS" : "class";
     $(".iconbox").empty();
@@ -368,10 +433,8 @@ function sortByClass(ascending) {
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
-
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
-
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -381,7 +444,6 @@ function sortByClass(ascending) {
     init();
     setHr("classId");
 }
-
 function sortByKind() {
     sortMode = "kind";
     $(".iconbox").empty();
@@ -390,20 +452,41 @@ function sortByKind() {
         // sort by kind
         if (aData.kind != bData.kind) return (aData.kind < bData.kind) ? -1 : 1;
 
+        // sort by rare
+        if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
+        // sort by group
+        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+        // sort by class
+        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        // sort by id
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
+
         return 0;
     })
 
     init();
     setHr("kind");
 }
-
 function sortByEvent() {
     sortMode = "isEvent";
     $(".iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
+        // sort down rare 3.5
+        if (aData.rare == 3.5) return 1;
+        if (bData.rare == 3.5) return -1;
+
         // sort by isEvent
         if (aData.isEvent != bData.isEvent) return (aData.isEvent > bData.isEvent) ? -1 : 1;
+
+        // sort by rare
+        if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
+        // sort by group
+        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+        // sort by class
+        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        // sort by id
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
         return 0;
     })
@@ -411,7 +494,6 @@ function sortByEvent() {
     init();
     setHr("isEvent");
 }
-
 function sortByAssign() {
     sortMode = "assign";
     $(".iconbox").empty();
@@ -424,10 +506,10 @@ function sortByAssign() {
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
-
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
-
+        // sort by class
+        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -437,7 +519,6 @@ function sortByAssign() {
     init();
     setHr("assign");
 }
-
 function sortByGenus() {
     sortMode = "genus";
     $(".iconbox").empty();
@@ -450,10 +531,10 @@ function sortByGenus() {
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
-
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
-
+        // sort by class
+        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -463,7 +544,6 @@ function sortByGenus() {
     init();
     setHr("genus");
 }
-
 function sortByYearGacha() {
     sortMode = "yearGacha";
     $(".iconbox").empty();
@@ -481,7 +561,6 @@ function sortByYearGacha() {
         bBool = (al.find(i => i == bData.assign) != undefined) && bData.genus == 0 && bData.rare * 10 % 10 == 0;
         if (aBool != bBool) return aBool ? -1 : 1;
 
-
         // sort by year
         if (aData.year != bData.year) return (aData.year < bData.year) ? -1 : 1;
 
@@ -490,10 +569,10 @@ function sortByYearGacha() {
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
-
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
-
+        // sort by class
+        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -533,7 +612,6 @@ function filter(checkbox) {
 }
 // undo method
 let urlHistory = [];
-
 function undo() {
     let flagList = urlHistory.pop();
     if (!flagList) return;
@@ -562,37 +640,4 @@ function setShareButton(currentUri) {
     document.getElementById("_plurkBtn").href = isMobile() ?
         "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri) :
         "https://plurk.com/?qualifier=shares&content=" + encodeURIComponent(currentUri);
-}
-
-function doStatistics() {
-
-    let globalIconCount = 0;
-    let globalTrueCount = 0;
-
-    let iconCount = 0;
-    let trueCount = 0;
-    // set hr statistics text
-    let icon, hrList = document.getElementById("iconbox").getElementsByClassName("hr");
-    // get type count
-    for (let i = 0; i < hrList.length; ++i) {
-        icon = hrList[i];
-        let label = icon.children[0].textContent;
-        // get icon count
-        while (true) {
-            icon = icon.nextElementSibling;
-
-            if (!icon || icon.tagName != "IMG") break;
-            globalIconCount++;
-            globalTrueCount += icon.alt == "true" ? 1 : 0;
-
-            if (icon.hidden) continue;
-            iconCount++;
-            trueCount += icon.alt == "true" ? 1 : 0;
-        }
-        // set text
-        hrList[i].innerHTML = `<span>${label}</span><span style="float: right;">${Math.floor(100 * trueCount / iconCount)}%（${trueCount}/${iconCount}）</span>`;
-        iconCount = 0;
-        trueCount = 0;
-    }
-    return `所有率: ${Math.floor(100 * globalTrueCount / globalIconCount)} % （${globalTrueCount}/${globalIconCount}）`
 }

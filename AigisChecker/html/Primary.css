@@ -40,6 +40,8 @@
     padding: 0px 0px 0px 10px;
 }
 
+/* Layout_Header */
+
 .Layout_Header .title {
     color: #000000;
     font-size: 24px;
@@ -48,9 +50,9 @@
     margin: auto auto auto 20px;
 }
 
-/* .Layout_Iconarea { */
+/* .Layout_Mainblock { */
 
-.iconbox {
+.Layout_Mainblock .iconbox {
     float: left;
     border: 6px solid #c0e0ff;
     border-radius: 4px;
@@ -58,40 +60,75 @@
     padding: 10px 5px 5px 5px;
 }
 
-.iconbox .hr {
+.Layout_Mainblock .iconbox .icon {
+    margin: 2px 5px 0px 5px;
+}
+
+.Layout_Mainblock .iconbox .hr {
     font-size: 120%;
     font-weight: bold;
     margin: 6px 10px 6px 10px;
+    padding: 0px 0px 0px 7px;
     border-radius: 2px;
-    padding: 1px 0px 1px 7px;
     background: #a0c0ff;
-    color: #333;
+    height: 20px;
+    line-height: 20px;
 }
 
-.iconbox .icon {
-    margin: 2px 5px 0px 5px;
+.Layout_Mainblock .iconbox input[type="checkbox"] {
+    display: none;
+}
+
+.Layout_Mainblock .iconbox input[type="checkbox"]+label span {
+    float: right;
+    cursor: pointer;
+    height: calc(100% - 2px);
+    font-size: smaller;
+    font-weight: 100;
+    border-radius: 5px;
+    margin: 0px 6px 0px 6px;
+    padding: 0px 5px 0px 5px;
+}
+
+.Layout_Mainblock .iconbox input[type="checkbox"]+label span {
+    color: #000000;
+    /* background-color: #3898ec; */
+    border: 1px #ec4438 solid;
+    text-decoration: line-through;
+}
+
+.Layout_Mainblock .iconbox input[type="checkbox"]:checked+label span {
+    color: #000000;
+    /* background-color: #3898ec; */
+    border: 1px #3898ec solid;
+    text-decoration: none;
+}
+
+.Layout_Mainblock .iconbox input[type="checkbox"]+label span:hover {
+    color: #ffffff;
+    background-color: #3898ec;
 }
 
 /* Layout_Sideblock */
 
-.sidebox {
+.Layout_Sideblock .sidebox {
     float: left;
     max-width: 100%;
     padding: 3px 5px 5px 7px;
 }
 
-.sidebox a {
+.Layout_Sideblock .sidebox a {
     color: #3878ec;
 }
 
-.sidebox #_sharebox {
+.Layout_Sideblock .sidebox #_sharebox {
     width: 270px;
     height: 120px;
     max-width: 270px;
     min-height: 20px;
 }
 
-.sidebox .filterbox {
+.Layout_Sideblock .sidebox .filterbox {
     border-left: 2px #3898ec solid;
     border-top: 2px #3898ec solid;
     border-top-left-radius: 6px;
@@ -99,7 +136,7 @@
     padding: 1px 0px 1px 2px;
 }
 
-.sidebox input[type="button"] {
+.Layout_Sideblock .sidebox input[type="button"] {
     cursor: pointer;
     height: 26px;
     color: #fff;
@@ -110,16 +147,16 @@
     padding: 1px 6px 1px 6px;
 }
 
-.sidebox input[type="button"]:hover {
+.Layout_Sideblock .sidebox input[type="button"]:hover {
     color: #3898ec;
     background-color: #fff;
 }
 
-.sidebox input[type="checkbox"] {
+.Layout_Sideblock .sidebox input[type="checkbox"] {
     display: none;
 }
 
-.sidebox input[type="checkbox"]+label span {
+.Layout_Sideblock .sidebox input[type="checkbox"]+label span {
     display: inline-block;
     cursor: pointer;
     height: 17px;
@@ -131,20 +168,22 @@
     text-decoration: line-through;
 }
 
-.sidebox input[type="checkbox"]+label span {
+.Layout_Sideblock .sidebox input[type="checkbox"]+label span {
     border: 2px #ec4438 solid;
     background-color: #3898ec;
 }
 
-.sidebox input[type="checkbox"]:checked+label span {
+.Layout_Sideblock .sidebox input[type="checkbox"]:checked+label span {
     border: 2px #3898ec solid;
     text-decoration: none;
 }
 
-.sidebox input[type="checkbox"]+label span:hover {
+.Layout_Sideblock .sidebox input[type="checkbox"]+label span:hover {
     color: #000000;
     background-color: #fff;
 }
+
+/* Layout_Bottom */
 
 .Layout_Bottom a {
     color: #3878ec;
