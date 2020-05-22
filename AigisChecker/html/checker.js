@@ -59,7 +59,7 @@ function setUrlParams(flagList) {
 
 function getIconFlags() {
     // read flag from iconbox
-    let l = Math.ceil(maxCid / 5) * 5;
+    let l = Math.ceil(1 + maxCid / 5) * 5;
     let flagArray = new Array(l).fill("0");
     let maxIndex = 0;
     let iconList = document.getElementById("iconbox").getElementsByClassName("icon");
