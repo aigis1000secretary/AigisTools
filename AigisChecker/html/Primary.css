@@ -128,6 +128,22 @@
     min-height: 20px;
 }
 
+.Layout_Sideblock .sidebox input[type="button"] {
+    cursor: pointer;
+    height: 26px;
+    color: #fff;
+    background-color: #3898ec;
+    border: 2px #3898ec solid;
+    border-radius: 7px;
+    margin: 1px 0px 1px 0px;
+    padding: 1px 6px 1px 6px;
+}
+
+.Layout_Sideblock .sidebox input[type="button"]:hover {
+    color: #3898ec;
+    background-color: #fff;
+}
+
 /* Layout_Bottom */
 
 .Layout_Bottom a {
