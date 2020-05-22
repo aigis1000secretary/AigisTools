@@ -166,7 +166,7 @@ function init() {
         icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
 
         // onclick event
-        icon.addEventListener("click", function(e) {
+        icon.addEventListener("click", function (e) {
             this.alt = this.alt == "true" ? "false" : "true";
             this.style = this.alt == "true" ? styleChecked : styleUnChecked;
             // set url data
@@ -543,7 +543,7 @@ function undo() {
 
 // html result to image
 function openImage() {
-    html2canvas(document.getElementById("Layout_Mainblock")).then(function(canvas) {
+    html2canvas(document.getElementById("Layout_Mainblock")).then(function (canvas) {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
         window.open().document.write("<img src=\"" + image.src + "\" />");
