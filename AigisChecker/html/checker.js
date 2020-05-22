@@ -344,7 +344,7 @@ function doStatistics() {
             if (icon.alt == "false") checked = true;
         }
         // set text & result & button
-        hrList[i].innerHTML = `<span>${label}</span><span style="float: right;">${Math.floor(100 * trueCount / iconCount)}%（${trueCount}/${iconCount}）</span>`;
+        hrList[i].innerHTML = `<span>${label}</span><span class="count">${Math.floor(100 * trueCount / iconCount)}%（${trueCount}/${iconCount}）</span>`;
         hrList[i].innerHTML += `<input type="checkbox" id="f${i}" onclick="selectGroup(this);" /><label for="f${i}"><span>一括${checked ? "選択" : "解除"}</span></label>`;
         hrList[i].getElementsByTagName("input")[0].checked = checked;
 
