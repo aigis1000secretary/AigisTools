@@ -595,6 +595,7 @@ function undo() {
 
 // html result to image
 function openImage() {
+    $(window).scrollTop(0);
     html2canvas(document.getElementById("Layout_Mainblock")).then(function (canvas) {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
