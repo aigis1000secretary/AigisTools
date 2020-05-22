@@ -354,6 +354,7 @@ function doStatistics() {
     }
     return `所有率: ${Math.floor(100 * globalTrueCount / globalIconCount)} % （${globalTrueCount}/${globalIconCount}）`;
 }
+// selector
 function selectGroup(checkbox) {
     // get backup
     let flagList = getIconFlags();
@@ -583,33 +584,6 @@ function sortByYearGacha() {
     setHr("yearGacha");
 }
 
-// selector
-function filter(checkbox) {
-    // get backup
-    let flagList = getIconFlags();
-
-    let key = checkbox.name;
-    let value = checkbox.alt;
-
-    for (let i in charaData) {
-        let obj = charaData[i];
-
-        if (obj[key] == undefined) break; // continue;    // ?
-        if (obj[key] != value) continue;
-
-        let icon = document.getElementById(obj.id);
-        icon.alt = checkbox.checked ? "true" : "false";
-        icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
-    }
-
-    // set url data
-    let newList = getIconFlags();
-    setUrlParams(newList);
-    // backup
-    if (newList != flagList) {
-        urlHistory.push(flagList);
-    }
-}
 // undo method
 let urlHistory = [];
 function undo() {

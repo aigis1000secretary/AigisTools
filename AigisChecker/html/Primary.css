@@ -128,61 +128,6 @@
     min-height: 20px;
 }
 
-.Layout_Sideblock .sidebox .filterbox {
-    border-left: 2px #3898ec solid;
-    border-top: 2px #3898ec solid;
-    border-top-left-radius: 6px;
-    margin: 2px 0px 5px 0px;
-    padding: 1px 0px 1px 2px;
-}
-
-.Layout_Sideblock .sidebox input[type="button"] {
-    cursor: pointer;
-    height: 26px;
-    color: #fff;
-    background-color: #3898ec;
-    border: 2px #3898ec solid;
-    border-radius: 7px;
-    margin: 1px 0px 1px 0px;
-    padding: 1px 6px 1px 6px;
-}
-
-.Layout_Sideblock .sidebox input[type="button"]:hover {
-    color: #3898ec;
-    background-color: #fff;
-}
-
-.Layout_Sideblock .sidebox input[type="checkbox"] {
-    display: none;
-}
-
-.Layout_Sideblock .sidebox input[type="checkbox"]+label span {
-    display: inline-block;
-    cursor: pointer;
-    height: 17px;
-    border-radius: 7px;
-    margin: 1px 0px 1px 0px;
-    padding: 1px 6px 1px 6px;
-    color: #fff;
-    background-color: #3898ec;
-    text-decoration: line-through;
-}
-
-.Layout_Sideblock .sidebox input[type="checkbox"]+label span {
-    border: 2px #ec4438 solid;
-    background-color: #3898ec;
-}
-
-.Layout_Sideblock .sidebox input[type="checkbox"]:checked+label span {
-    border: 2px #3898ec solid;
-    text-decoration: none;
-}
-
-.Layout_Sideblock .sidebox input[type="checkbox"]+label span:hover {
-    color: #000000;
-    background-color: #fff;
-}
-
 /* Layout_Bottom */
 
 .Layout_Bottom a {
