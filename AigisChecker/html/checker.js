@@ -556,9 +556,12 @@ function copyUrl() {
 }
 
 function setShareButton(currentUri) {
+    function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
     document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
     document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
-    document.getElementById("_plurkBtn").href = "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
+    document.getElementById("_plurkBtn").href = isMobile() ?
+        "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri) :
+        "https://plurk.com/?qualifier=shares&content=" + encodeURIComponent(currentUri);
 }
 
 function doStatistics() {
