@@ -1,5 +1,6 @@
 ﻿const fs = require("fs");
 const path = require("path");
+global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 
 // get local file list
 let getFileList = function (dirPath) {
@@ -67,7 +68,7 @@ let encodeBase64 = function (file) {
     return Buffer.from(bitmap).toString('base64');
 }
 
-const main = function () {
+const main = async function () {
     // check resources
     let resources = "../AigisTools/out/files";
     if (!fs.existsSync(resources)) { console.log("!fs.existsSync(resources)"); return; }
@@ -75,6 +76,12 @@ const main = function () {
     // raw data path
     let cardsTxt = resources + "/cards.txt";
     let classTxt = resources + "/PlayerUnitTable.aar/002_ClassData.atb/ALTB_cldt.txt";
+
+    while (true) {
+        console.log("waiting raw files... ", cardsTxt);
+        if (fs.existsSync(cardsTxt)) { break; }
+        await sleep(1000);
+    }
 
     // set data list index
     let temp = [];

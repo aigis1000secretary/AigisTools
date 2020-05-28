@@ -14,7 +14,7 @@ local function execute(...)
   if verbose then
     io.stderr:write(command .. "\n")
   end
-  assert(os.execute("cmd /C timeout /T 2 1>&2"))
+  --assert(os.execute("cmd /C timeout /T 2 1>&2"))
   assert(os.execute("cmd /C " .. command .. " 1>&2"))
 end
 
