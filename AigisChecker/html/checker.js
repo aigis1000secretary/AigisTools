@@ -613,6 +613,6 @@ function setShareButton(currentUri) {
     document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
     document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
     document.getElementById("_plurkBtn").href = isMobile() ?
-        "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri) :
-        "https://plurk.com/?qualifier=shares&content=" + encodeURIComponent(currentUri);
+        "https://plurk.com/?qualifier=shares&content=" + encodeURIComponent(currentUri) :
+        "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
 }
