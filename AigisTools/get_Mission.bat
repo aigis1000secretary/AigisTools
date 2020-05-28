@@ -5,7 +5,7 @@ SET LUA_PATH_5_3=%~dp0Scripts\?.lua
 
 lua Scripts\get_file_list.lua
 
-lua Scripts\get_file.lua paev03.aar
+lua Scripts\parse_missions.lua > out\files\missions.txt
 
 pause
 exit

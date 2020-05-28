@@ -166,6 +166,9 @@ local mission_types = {
   "ReproduceMission",
   "SubjugationMission",
   "DevilAdventMission",
+  "RaidMission",
+  "TowerMission",
+  "AssaultMission",
 }
 
 local mission_alt = {

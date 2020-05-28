@@ -14,3 +14,4 @@ lua Scripts\get_file.lua ico_02.aar
 lua Scripts\get_file.lua ico_03.aar
 
 pause
+exit

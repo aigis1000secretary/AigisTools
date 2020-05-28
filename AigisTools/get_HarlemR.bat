@@ -11,3 +11,4 @@ lua Scripts\get_file.lua HarlemText.aar
 lua Scripts\get_file.lua prev03.aar
 
 pause
+exit
