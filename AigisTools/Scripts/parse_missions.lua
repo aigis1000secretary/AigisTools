@@ -156,6 +156,14 @@ for mapn in files:gmatch("Map(%d+)%.aar") do
   available_maps[mapn] = true
 end
 
+for mapn in files:gmatch("Map110001_(%d+)%.aar") do
+  mapn = 1100010000 + tonumber(mapn, 10)
+  assert(mapn)
+  assert(not available_maps[mapn])
+  available_maps[mapn] = true
+end
+--@@
+
 local mission_types = {
   "TutorialMission",
   "StoryMission",
@@ -230,9 +238,18 @@ local battletalks = {}
 
 local function handle_mission(mission, series, series_i, mtype)
   local mapn = tonumber(mission.MapNo)
+  if series == 110001 then
+    mapn = 1100010000 + tonumber(mission.MapNo)
+  end
+  --@@
   --if series then mapn = mapn + series // 100 end
   if available_maps[mapn] and not maps[mapn] then
-    local mapname = string.format("Map%03d.aar", mapn)
+    local mapname = string.format("Map%04d.aar", mapn)
+    if series == 110001 then
+      mapname = string.format("Map110001_%04d.aar", tonumber(mission.MapNo))
+	  mission.MapNo = string.format("110001_%04d", tonumber(mission.MapNo))
+	end
+    --@@
     --[[if series and not dl.listhasfile(nil, mapname) then
       mapname = string.format("Map%01d%03d.aar", series // 100000, mapn)
     end]]
