@@ -426,16 +426,14 @@ function sortByClass(ascending) {
     $(".iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
-        // sort by placeType
-        if (aData.placeType != bData.placeType) return (aData.placeType < bData.placeType) ? -1 : 1;
+        // sort by group
+        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
 
         // sort by class
         if (aData.classId != bData.classId) return (!!ascending == (aData.classId < bData.classId)) ? -1 : 1;
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
-        // sort by group
-        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -564,9 +562,6 @@ function sortByYearGacha() {
 
         // sort by year
         if (aData.year != bData.year) return (aData.year < bData.year) ? -1 : 1;
-
-        // // sort by placeType
-        // if (aData.placeType != bData.placeType) return (aData.placeType < bData.placeType) ? -1 : 1;
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;

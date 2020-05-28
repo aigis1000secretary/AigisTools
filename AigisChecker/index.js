@@ -117,12 +117,21 @@ const main = function() {
         let rare = parseInt(cardsData[id][7]);
         let classId = parseInt(cardsData[id][2]);
         let sortGroupID = classData[classId] ? parseInt(classData[classId][39]) : 0;
-        let placeType = classData[classId] ? parseInt(classData[classId][41]) : 0;
+        // 10: 聖霊, 20: 近接, 25: 王子, 30: 遠隔, 40: 兩用
+        let placeType = classData[classId] ? parseInt(classData[classId][41]) : 0;  // PlaceAttribute
+        // 0: 不可放置, 1: 近接, 2: 遠隔, 3: 兩用
         let kind = parseInt(cardsData[id][6]);
+        // 0: 男性, 1: 女性, 2: 無性(?), 3: 換金, 2: 經驗
         let isEvent = (parseInt(cardsData[id][48]) <= 15) ? 1 : 0; // _TradePoint
         let assign = parseInt(cardsData[id][60]);
+        // 2: 帝國, 3-4: 遠國, 5: 砂漠, 6-7: 異鄉, 8: 東國
         let genus = parseInt(cardsData[id][61]);
+        // 101: 新春, 102: 情人, 103: 學園, 104: 花嫁, 105: 夏季, 106: 萬聖, 107: 聖夜, 108: Q, 109: 溫泉
+        // let race = parseInt(cardsData[id][47]);
+        // // 101: 人類, 201: 獸人, 301: 龍人, 401: 森人, 402: 闇人, 403: 半森人, 501: 礦人, 601: 吸血鬼
+        // // 701: 惡魔, 702: 半惡魔, 801: 天使, 901: 妖怪, 1001: 仙人, 1101: 歐克, 1201: 黏土人, 1301: 哥布林, 9901: 聖靈
         // let identity = parseInt(cardsData[id][62]);
+        // // 1: アンデッド
         let year = 0;
 
         // Hero rare data format
@@ -235,7 +244,7 @@ const main = function() {
         // skip low rare
         if (rare <= 1) continue;
         // skip seirei
-        if (sortGroupID == 10) continue;
+        if (placeType == 0) continue;
         // skip Non-R18 Collaboration
         if (assign == 4 || assign == 7) continue;
 
