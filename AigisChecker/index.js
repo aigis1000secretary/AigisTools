@@ -2,7 +2,7 @@
 const path = require("path");
 
 // get local file list
-let getFileList = function(dirPath) {
+let getFileList = function (dirPath) {
     let result = [];
     let apiResult = fs.readdirSync(dirPath);
     for (let i in apiResult) {
@@ -14,7 +14,7 @@ let getFileList = function(dirPath) {
     }
     return result;
 };
-let rawDataToCsv = function(rawPath, csvPath) {
+let rawDataToCsv = function (rawPath, csvPath) {
     let raw = fs.readFileSync(rawPath).toString();
     let row0;
 
@@ -60,21 +60,21 @@ let rawDataToCsv = function(rawPath, csvPath) {
     }
     return result;
 };
-let encodeBase64 = function(file) {
+let encodeBase64 = function (file) {
     // read binary data
     var bitmap = fs.readFileSync(file);
     // convert binary data to base64 encoded string
     return Buffer.from(bitmap).toString('base64');
 }
 
-const main = function() {
+const main = function () {
     // check resources
-    let resources = "./Resources";
+    let resources = "../AigisTools/out/files";
     if (!fs.existsSync(resources)) { console.log("!fs.existsSync(resources)"); return; }
 
     // raw data path
-    let cardsTxt = "./Resources/cards.txt";
-    let classTxt = "./Resources/PlayerUnitTable.aar/002_ClassData.atb/ALTB_cldt.txt";
+    let cardsTxt = resources + "/cards.txt";
+    let classTxt = resources + "/PlayerUnitTable.aar/002_ClassData.atb/ALTB_cldt.txt";
 
     // set data list index
     let temp = [];
