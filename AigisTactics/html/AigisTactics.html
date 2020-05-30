@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>千年戦争アイギス - 作戦図＋</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./missionConfig.js"></script>
+  <script src="./questList.js"></script>
+  <script src="./tactics.js"></script>
+
+  <link href='Primary.css' rel='stylesheet' type='text/css' />
+
+</head>
+
+<body onload="bodyOnload();">
+  <div class="mainbody">
+
+    <div class="Layout_Mainblock">
+      <div class="Layout_Header">
+        <span class="title">千年戦争アイギス - 作戦図＋</span>
+      </div>
+
+      <!-- // init by js methods -->
+      <div class="mapbox">
+        <div class="hr">
+          <select class="mission" onchange="onChange(this);">
+            <option value="">＝＝ミッション＝＝</option>
+          </select>
+          <select class="quest" onchange="onChange(this);">
+            <option value="">＝＝クエスト＝＝</option>
+          </select>
+          <select class="map" onchange="onChange(this);">
+            <option value="">＝＝マップ＝＝</option>
+          </select>
+        </div>
+        <div class="mapimg" ondrop="drop(event);" ondragover="allowDrop(event);"
+          style="background-image:url(../../AigisTools/out/files/Map110001_0023.png);">
+          <div class="goal" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 30px; top: 172px;"></div>
+          <div class="goal" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 30px; top: 454px;"></div>
+          <div class="afar" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 209px; top: 308px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 180px; top: 170px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 320px; top: 170px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 460px; top: 170px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 600px; top: 170px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 740px; top: 170px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 890px; top: 170px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 130px; top: 460px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 270px; top: 460px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 410px; top: 460px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 550px; top: 460px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 690px; top: 460px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 840px; top: 460px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 413px; top: 243px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 366px; top: 316px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 319px; top: 389px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 715px; top: 316px;"></div>
+          <div class="near" ondrop="drop(event);" ondragover="allowDrop(event);" style="left: 865px; top: 316px;"></div>
+
+          <img class="icon" id="icon1" src="./icon.png" ondragstart="dragStart(event);">
+          <div class="range" hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Layout_Sideblock">
+      <div class="Layout_Header">
+      </div>
+
+      <div class="sidebox">
+        <a itemprop="url" href="https://twitter.com/Aigis1000/" target="_blank">▼千年戦争アイギスtwitter公式アカウント</a><br>
+        <a itemprop="url" href="http://aigis1000.jp/" target="_blank">▼千年戦争アイギスA公式サイト</a><br>
+        <a itemprop="url" href="https://www.youtube.com/channel/UCl8iPEgu_N6iEYGYoWXc3gA"
+          target="_blank">▼YouTube「千年戦争アイギス」公式チャンネル</a><br>
+      </div>
+
+    </div>
+
+    <div class="Layout_Bottom">
+      <br>All data are from <a href="http://millenniumwaraigis.wikia.com/wiki/Message_Wall:Lzlis">
+        AigisTools release 2</a>
+      <br> Copyright © <a href="https://aigis1000secretary.tw/github">aigis1000secretary</a>
+      <br> License is <a href="https://opensource.org/licenses/MIT">MIT</a><br>
+    </div>
+  </div>
+
+</body>
+
+</html>

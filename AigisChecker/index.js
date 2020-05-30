@@ -78,8 +78,8 @@ const main = async function () {
     let classTxt = resources + "/PlayerUnitTable.aar/002_ClassData.atb/ALTB_cldt.txt";
 
     while (true) {
-        console.log("waiting raw files... ", cardsTxt);
         if (fs.existsSync(cardsTxt)) { break; }
+        console.log("waiting raw files... ", cardsTxt);
         await sleep(1000);
     }
 

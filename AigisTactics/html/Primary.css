@@ -1,0 +1,183 @@
+.mainbody {
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 960px; */
+    min-width: 1240px;
+    font-size: 12px;
+    font-family: "-apple-system", BlinkMacSystemFont, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", Osaka, "sans-serif";
+    background-color: #efefef;
+    /* background-color: Yellow; */
+}
+
+.Layout_Header {
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    /* background-color: Yellow; */
+}
+
+.Layout_Mainblock {
+    float: left;
+    width: 70%;
+    min-width: 960px;
+    max-width: 70%;
+    /* min-height: 100px; */
+    /* background-color: greenyellow; */
+}
+
+.Layout_Sideblock {
+    float: right;
+    min-width: 280px;
+    max-width: 30%;
+    /* min-height: 100px; */
+    /* background-color: cadetblue; */
+}
+
+.Layout_Bottom {
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    /* background-color: Red; */
+    padding: 0px 0px 0px 10px;
+}
+
+/* Layout_Header */
+
+.Layout_Header .title {
+    color: #000000;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100px;
+    margin: auto auto auto 20px;
+}
+
+/* .Layout_Mainblock { */
+
+.Layout_Mainblock .mapbox {
+    float: left;
+}
+
+.Layout_Mainblock .mapbox .hr {
+    font-size: 120%;
+    font-weight: bold;
+    margin: 6px 10px 6px 10px;
+    padding: 7px 3px 6px 7px;
+    border-radius: 2px;
+    background: #a0c0ff;
+    height: 20px;
+    line-height: 20px;
+}
+
+.Layout_Mainblock .mapbox .mapimg {
+    background-color: rgba(255, 255, 255, 0.0);
+    background-blend-mode: lighten;
+    width: 960px;
+    height: 640px;
+    float: left;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.Layout_Mainblock .mapbox .mapimg[title="alpha"] {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.Layout_Mainblock .mapbox .goal {
+    background-image: url(./goal.png);
+    background-size: cover;
+    width: 109px;
+    height: 80px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 2;
+}
+
+.Layout_Mainblock .mapbox .near {
+    background-image: url(./near.png);
+    background-size: cover;
+    width: 84px;
+    height: 62px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 2;
+}
+
+.Layout_Mainblock .mapbox .afar {
+    background-image: url(./afar.png);
+    background-size: cover;
+    width: 84px;
+    height: 62px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 2;
+}
+
+.Layout_Mainblock .mapbox .icon {
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    left: 25px;
+    top: 25px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 3;
+}
+
+.Layout_Mainblock .mapbox .range {
+    /* background-size: cover; */
+    width: 600px;
+    height: 600px;
+    border-radius: 1000em;
+    background-color: rgba(0, 128, 0, 0.25);
+    border: 3px solid green;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 1;
+    /* left: 42px;
+    top: 31px; */
+}
+
+/* Layout_Sideblock */
+
+.Layout_Sideblock .sidebox {
+    float: left;
+    max-width: 100%;
+    padding: 3px 5px 5px 7px;
+}
+
+.Layout_Sideblock .sidebox a {
+    color: #3878ec;
+}
+
+.Layout_Sideblock .sidebox #_sharebox {
+    width: 270px;
+    height: 120px;
+    max-width: 270px;
+    min-height: 20px;
+}
+
+.Layout_Sideblock .sidebox input[type="button"] {
+    cursor: pointer;
+    height: 26px;
+    color: #fff;
+    background-color: #3898ec;
+    border: 2px #3898ec solid;
+    border-radius: 7px;
+    margin: 1px 0px 1px 0px;
+    padding: 1px 6px 1px 6px;
+}
+
+.Layout_Sideblock .sidebox input[type="button"]:hover {
+    color: #3898ec;
+    background-color: #fff;
+}
+
+/* Layout_Bottom */
+
+.Layout_Bottom a {
+    color: #3878ec;
+}
