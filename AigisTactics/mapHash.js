@@ -1,6 +1,7 @@
 const fs = require("fs");
 var Jimp = require('jimp');
 const child_process = require('child_process');
+global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 const md5f = function (str) { return require('crypto').createHash('md5').update(str).digest('hex'); }
 
 // get local file list
@@ -17,7 +18,7 @@ let getFileList = function (dirPath) {
     return result;
 };
 
-const main = function () {
+const main = async function () {
     let resources = "../AigisTools/out/files";
     if (!fs.existsSync(resources)) { console.log("!fs.existsSync(resources)"); return; }
 
@@ -39,16 +40,24 @@ const main = function () {
         if (!fs.existsSync(filepath)) {
             // fs.writeFileSync(filepath, png);
 
-            Jimp.read(resources + "/" + filename)
-                .then(img => {
-                    return img.quality(60) // set JPEG quality
-                        .write(filepath + ".jpg"); // save
-                }).then(() => {
-                    child_process.execSync(`cd ./html/maps/&ren ${md5}.jpg ${md5}`);
-                })
-                .catch(err => {
-                    console.error(err);
-                });
+            await new Promise(function (resolve, reject) {
+                Jimp.read(resources + "/" + filename)
+                    .then(img => {
+                        return img.quality(70) // set JPEG quality
+                            .write(filepath + ".jpg"); // save
+                    }).then(async () => {
+                        console.log("Jimp.quality(70).write()");
+                        await sleep(100);
+                        let log = child_process.execSync(`cd ./html/maps/&ren ${md5}.jpg ${md5}`).toString().trim();
+                        if (log != "") console.log(log);
+                    }).then(() => {
+                        console.log("");
+                        resolve();
+                    }).catch(err => {
+                        console.error(err);
+                        reject();
+                    });
+            });
         }
     }
 

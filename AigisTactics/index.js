@@ -286,7 +286,7 @@ const main = async function () {
     fs.writeFileSync("./html/questList.js", "let questList = " + JSON.stringify(questList));
 
 };
-main()//.catch(console.log);
+main()//.catch(console.error);
 
 
 
