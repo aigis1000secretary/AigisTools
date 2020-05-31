@@ -54,7 +54,7 @@ function onChange(select) {
         let missionSelect = document.getElementsByClassName("mission")[0];
         missionSelect.innerText = null;
         let items = [];
-        let missionIds = Object.keys(missionConfig);
+        let missionIds = Object.keys(missionNameList);
 
         switch (value) {
 
@@ -72,23 +72,23 @@ function onChange(select) {
 
             case "Goldrush": {
                 items = missionIds.filter((mId) => {
-                    return missionConfig[mId].indexOf("ゴールドラッシュ") != -1;
+                    return missionNameList[mId].indexOf("ゴールドラッシュ") != -1;
                 });
             } break;
 
             case "Emergency": {
                 items = missionIds.filter((mId) => {
                     return 200000 <= parseInt(mId) && parseInt(mId) < 300000 &&
-                        missionConfig[mId].indexOf("ゴールドラッシュ") == -1 &&
-                        missionConfig[mId].indexOf("異世界") == -1;
+                        missionNameList[mId].indexOf("ゴールドラッシュ") == -1 &&
+                        missionNameList[mId].indexOf("異世界") == -1;
                 });
                 items.sort((a, b) => { return b.localeCompare(a); })
             } break;
             case "Reproduce": {
                 items = missionIds.filter((mId) => {
                     return 300000 <= parseInt(mId) && parseInt(mId) < 310000 &&
-                        missionConfig[mId].indexOf("ゴールドラッシュ") == -1 &&
-                        missionConfig[mId].indexOf("異世界") == -1;
+                        missionNameList[mId].indexOf("ゴールドラッシュ") == -1 &&
+                        missionNameList[mId].indexOf("異世界") == -1;
                 });
             } break;
             case "DailyReproduce": {
@@ -99,7 +99,7 @@ function onChange(select) {
             case "Special": {
                 items = missionIds.filter((mId) => {
                     return 320000 <= parseInt(mId) && parseInt(mId) < 400000 ||
-                        missionConfig[mId].indexOf("異世界") != -1;
+                        missionNameList[mId].indexOf("異世界") != -1;
                 });
             } break;
 
@@ -129,7 +129,7 @@ function onChange(select) {
         missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
         for (let i in items) {
             let item = items[i];
-            missionSelect.options.add(new Option(missionConfig[item], item));
+            missionSelect.options.add(new Option(missionNameList[item], item));
         }
     } else if (select.className == "mission") {
         let i = select.selectedIndex;
@@ -158,13 +158,17 @@ function onChange(select) {
 
         let mapimg = document.getElementsByClassName("mapimg")[0];
         mapimg.innerHTML = null;
-        mapimg.style = "background-image:url(../../AigisTools/out/files/Map" + quest.map + ".png);";
+        let md5 = hashList["Map" + quest.map + ".png"];
+        mapimg.style = "background-image:url(./maps/" + md5 + ");";
 
         for (let i in quest.locationList) {
             let local = quest.locationList[i];
             let div = document.createElement("div");
-            div.className = local.ObjectID == 0 ? "goal" :
-                local.ObjectID < 300 ? "near" : "afar";
+            
+            if (local.ObjectID == 0) div.className = "goal";
+            else if (100 <= local.ObjectID && local.ObjectID < 200) continue;
+            else if (200 <= local.ObjectID && local.ObjectID < 300) div.className = "near";
+            else if (300 <= local.ObjectID && local.ObjectID < 400) div.className = "afar";
             div.style = "left: " + local.X + "px; top: " + local.Y + "px;";
 
             div.addEventListener("ondrop", drop, false);

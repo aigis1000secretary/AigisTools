@@ -253,7 +253,7 @@ const main = async function () {
             let obj = { ObjectID: locals[0], X: locals[1], Y: locals[2], _Command: locals[3] };
             locationList.push(obj);
         }
-        locationList.sort((a, b) => { return a.ObjectID < b.ObjectID; });
+        locationList.sort((a, b) => { return parseInt(a.ObjectID) < parseInt(b.ObjectID); });
 
         // build quest data
         let quest = {
@@ -271,17 +271,19 @@ const main = async function () {
 
     // output file 
     // console.log("output QxZpjdfV.json")
-    // fs.writeFileSync("./QxZpjdfV.json", "let QxZpjdfV = " + JSON.stringify(QxZpjdfV, null, 4));
+    // fs.writeFileSync("./QxZpjdfV.json", "let QxZpjdfV = " + JSON.stringify(QxZpjdfV, null, 1));
 
     // console.log("output missionQuestList.js")
-    // fs.writeFileSync("./missionQuestList.js", "let missionQuestList = " + JSON.stringify(missionQuestList, null, 4));
+    // fs.writeFileSync("./missionQuestList.js", "let missionQuestList = " + JSON.stringify(missionQuestList, null, 1));
 
     console.log("output missionNameList.js")
-    fs.writeFileSync("./html/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList, null, 4));
+    // fs.writeFileSync("./html/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList, null, 1));
+    fs.writeFileSync("./html/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList));
 
     console.log("output questList.js")
     questList.sort((a, b) => { return a.missionTitle.localeCompare(b.missionTitle); })
-    fs.writeFileSync("./html/questList.js", "let questList = " + JSON.stringify(questList, null, 4));
+    // fs.writeFileSync("./html/questList.js", "let questList = " + JSON.stringify(questList, null, 1));
+    fs.writeFileSync("./html/questList.js", "let questList = " + JSON.stringify(questList));
 
 };
 main()//.catch(console.log);
