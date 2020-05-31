@@ -187,13 +187,52 @@ function onChangeRange(select) {
     if (select.className != "rangebox") { return; }
     // change type
     let radius = select.value;
-    
+
     // set range element
     let range = document.getElementsByClassName("range")[0];
     if (!range) { return; }
 
     range.style.width = (radius * 1.5) + "px";
     range.style.height = (radius * 1.5) + "px";
+
+    // check visibility
+    if (range.style.visibility == "hidden") { return; }
+
+    setLocationOpacity(false);
+}
+
+// set locations opacity
+function setLocationOpacity(isHidden) {
+
+    let radius = parseInt(document.getElementsByClassName("rangebox")[0].children[0].value);
+    let x0 = parseInt(event.target.style.left);
+    let y0 = parseInt(event.target.style.top);
+    console.log(x0, y0)
+    let locals = document.querySelectorAll(".afar, .near");
+    for (let i in locals) {
+        let local = locals[i];
+        if (local.tagName != "DIV") continue;
+
+        if (isHidden) {
+            local.style.opacity = "1.0";
+        } else {
+            let x = parseInt(local.style.left);
+            let y = parseInt(local.style.top);
+            let distance = 1.332 * Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2));
+
+            if (x == 546 && y == 349) {
+                console.log(x, x0, y, y0, distance, radius)
+            }
+
+            if (distance <= radius) {
+                local.style.opacity = "1.0";
+            } else if (distance <= (radius + 40)) {
+                local.style.opacity = "0.5";
+            } else {
+                local.style.opacity = "0.2";
+            }
+        }
+    }
 }
 
 // mapimg method
@@ -240,7 +279,6 @@ function onDrop(event) {
     }
 }
 function onClick(event) {
-
     // set range element
     let range = document.getElementsByClassName("range")[0];
     if (!range) { return; }
@@ -259,7 +297,11 @@ function onClick(event) {
     // set visibility
     if (range.style.visibility == "hidden" || flag) {
         range.style.visibility = "visible";
+        flag = false;
     } else {
         range.style.visibility = "hidden";
+        flag = true;
     }
+
+    setLocationOpacity(flag);
 }
