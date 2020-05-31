@@ -2,29 +2,10 @@
 
 let bodyOnload = function () {
     questList.sort((a, b) => { return a.id.localeCompare(b.id); })
-
-    // let groupList = [];
-    // for (let i in missionData) {
-    //     let mission = missionData[i];
-    //     let groupId = /^\d+/.exec(mission.id).toString();
-    //     if (groupList.indexOf(groupId) == -1) groupList.push(groupId);
-    // }
-
-    // missionGroup = missionGroup.filter();
-    // let keys = Object.keys(missionGroup);
-    // for (let i in keys) {
-    //     let key = keys[i];
-    //     if (groupList.indexOf(key) == -1) delete missionGroup[key];
-    // }
-    // console.log(JSON.stringify(groupList, null, 4));
-    // console.log(JSON.stringify(keys, null, 4));
-    // console.log(JSON.stringify(missionGroup, null, 4));
-
-
-
     // console.log("bodyOnload");
 
     let typeSelect = document.getElementsByClassName("missionType")[0];
+
     // typeSelect.options.add(new Option("＝＝分類＝＝", ""));
     typeSelect.options.add(new Option("ストーリーミッション", "Story"));
     typeSelect.options.add(new Option("英傑の塔", "Tower"));
@@ -48,9 +29,11 @@ let bodyOnload = function () {
 // select options
 function onChange(select) {
     if (select.className == "missionType") {
+        // change type
         let i = select.selectedIndex;
         let value = select.options[i].value;
 
+        // get selected
         let missionSelect = document.getElementsByClassName("mission")[0];
         missionSelect.innerText = null;
         let items = [];
@@ -125,62 +108,96 @@ function onChange(select) {
             case "Challenge": { items = ["800001", "900001"]; } break;
         }
 
-        // 
+        // set select items
         missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
         for (let i in items) {
             let item = items[i];
             missionSelect.options.add(new Option(missionNameList[item], item));
         }
+
     } else if (select.className == "mission") {
+        // change mission
         let i = select.selectedIndex;
         let value = select.options[i].value;
 
+        // get selected
         let questSelect = document.getElementsByClassName("quest")[0];
         questSelect.innerText = null;
         let items = questList.filter((quest) => { return quest.missionId == value; });
 
-        // sort
+        // sort daily
         if (value == "700001") {
             items.sort((a, b) => { return a.questTitle[0].localeCompare(b.questTitle[0]); })
         }
 
+        // set select items
         let str = items.length == 0 ? "＝＝no data＝＝" : "＝＝クエスト＝＝ (" + items.length + ")"
         questSelect.options.add(new Option(str, ""));
         for (let i in items) {
             let item = items[i];
             questSelect.options.add(new Option(item.questTitle, item.id));
         }
+
     } else if (select.className == "quest") {
+        // change quest
         let i = select.selectedIndex;
         let value = select.options[i].value;
-        // get quest
+
+        // get selected
         let quest = questList.find((quest) => { return quest.id == value; });
 
+        // clear map image
         let mapimg = document.getElementsByClassName("mapimg")[0];
         mapimg.innerHTML = null;
+
+        // set range element
+        let range = document.createElement("div");
+        range.className = "range";
+        range.style.visibility = "hidden";
+        let radius = document.getElementsByClassName("rangebox")[0].children[0].value;
+        range.style.width = (radius * 1.5) + "px";
+        range.style.height = (radius * 1.5) + "px";
+        mapimg.appendChild(range);
+        // range.style.visibility = "visible";
+
+        // get bg map image
         let md5 = hashList["Map" + quest.map + ".png"];
         mapimg.style = "background-image:url(./maps/" + md5 + ");";
 
+        // get location data
         for (let i in quest.locationList) {
             let local = quest.locationList[i];
             let div = document.createElement("div");
-            
+
             if (local.ObjectID == 0) div.className = "goal";
             else if (100 <= local.ObjectID && local.ObjectID < 200) continue;
             else if (200 <= local.ObjectID && local.ObjectID < 300) div.className = "near";
             else if (300 <= local.ObjectID && local.ObjectID < 400) div.className = "afar";
             div.style = "left: " + local.X + "px; top: " + local.Y + "px;";
 
-            div.addEventListener("ondrop", drop, false);
-            div.addEventListener("ondragover", allowDrop, false);
+            div.addEventListener("ondrop", onDrop, false);
+            div.addEventListener("ondragover", onDragOver, false);
+            div.addEventListener("click", onClick, false);
 
             mapimg.appendChild(div);
         }
     }
 }
+function onChangeRange(select) {
+    if (select.className != "rangebox") { return; }
+    // change type
+    let radius = select.value;
+    
+    // set range element
+    let range = document.getElementsByClassName("range")[0];
+    if (!range) { return; }
+
+    range.style.width = (radius * 1.5) + "px";
+    range.style.height = (radius * 1.5) + "px";
+}
 
 // mapimg method
-function dragStart(event) {
+function onDragStart(event) {
     console.log("dragStart");
 
     // save drag image dom id
@@ -189,11 +206,11 @@ function dragStart(event) {
     // set map alpha 0.5
     document.getElementsByClassName("mapimg")[0].title = "alpha";
 }
-function allowDrop(event) {
+function onDragOver(event) {
     // console.log("allowDrop");
     event.preventDefault();
 }
-function drop(event) {
+function onDrop(event) {
     // console.log("drop");
     event.preventDefault();
 
@@ -220,5 +237,29 @@ function drop(event) {
         console.log(event)
         img.style.left = event.offsetX + "px";
         img.style.top = event.offsetY + "px";
+    }
+}
+function onClick(event) {
+
+    // set range element
+    let range = document.getElementsByClassName("range")[0];
+    if (!range) { return; }
+
+    // check posion
+    let flag = false;
+    if (range.style.left != event.target.style.left ||
+        range.style.top != event.target.style.top) {
+        flag = true;
+    }
+
+    // set position
+    range.style.left = event.target.style.left;
+    range.style.top = event.target.style.top;
+
+    // set visibility
+    if (range.style.visibility == "hidden" || flag) {
+        range.style.visibility = "visible";
+    } else {
+        range.style.visibility = "hidden";
     }
 }

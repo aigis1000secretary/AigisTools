@@ -12,6 +12,7 @@
   <script src="./tactics.js"></script>
 
   <link href='Primary.css' rel='stylesheet' type='text/css' />
+  <link href='LocationIcon.css' rel='stylesheet' type='text/css' />
 
 </head>
 
@@ -35,13 +36,22 @@
           <select class="quest" onchange="onChange(this);">
             <option value="">＝＝クエスト＝＝</option>
           </select>
+
+          <div class="rangebox" style=>
+            射程：
+            <input class="rangebox" type="number" value=260 onchange="onChangeRange(this);"></div>
         </div>
 
         <div class="mapimg" ondrop="drop(event);" ondragover="allowDrop(event);"
           style="background-image: url(./maps/4f414b3bb77dc850d6c0784c6e961bb6);">
 
           <!-- <img class="icon" id="icon1" src="./icon.png" ondragstart="dragStart(event);"> -->
-          <div class="range" hidden="true"></div>
+
+        </div>
+        <div class="mapbox">
+        </div>
+
+        <div class="hr">
         </div>
 
       </div>
