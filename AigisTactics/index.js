@@ -1,5 +1,5 @@
 const fs = require("fs");
-const path = require("path");
+// const path = require("path");
 const child_process = require('child_process');
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 console.json = async function (str) { return console.log(JSON.stringify(str, null, 4)); }
@@ -18,40 +18,6 @@ let getFileList = function (dirPath) {
     return result;
 };
 
-// rawToJson
-const rawToJson = function (rawPath) {
-    let rawData = fs.readFileSync(rawPath).toString().trim().split("\n");
-    let result = [];
-    let i = -1;
-
-    // readline
-    while (true) {
-        let line = rawData.shift();
-        if (!line) break;   // EOF
-
-        if (/\d+\/\d+\s+[\s\S]+Level/.test(line)) {
-            i++;
-            result[i] = {};
-            result[i].id = /\d+\/\d+/.exec(line).toString();
-            result[i].name = /\d\s+[\s\S]+Level/.exec(line).toString().replace(/^\d/, "").replace(/Level$/, "").trim();
-            result[i].locationList = [];
-            continue;
-        }
-        // get data
-        let keys = ["map", "location", "life", "startUP", "unitLimit"];
-        while (/[A-Za-z]+=[\d_]+/.test(line)) {
-            let str = /[A-Za-z]+=[\d_]+/.exec(line).toString();
-            line = line.replace(str, "");
-
-            let j = keys.indexOf(/[A-Za-z]+/.exec(str).toString());
-            if (j != -1) {
-                result[i][keys[j]] = /[\d_]+/.exec(str).toString();
-            }
-        }
-    }
-    return result;
-}
-
 const main = async function () {
     // check resources
     let resources = "../AigisTools/out/files";
@@ -67,7 +33,7 @@ const main = async function () {
         await sleep(1000);
     }
 
-    // filter resource name
+    // filter resource name some we need
     let filelist = fs.readFileSync(filesTxt).toString().trim().split("\n");
     for (let i = 0; i < filelist.length; ++i) {
         let filename = filelist[i].substr(89);
@@ -91,15 +57,18 @@ const main = async function () {
         let file = filelist[i];
         console.log(child_process.execSync('cd ../AigisTools/&get.bat ' + file).toString().trim());
     }
+
     // get resource list
     let resourceList = getFileList(resources);
-    let missionConfig = {};
+    let missionNameList = {};
+    let missionQuestList = [];
     let questList = [];
-    // get mission name raw
+
+    // get mission<=>name raw
     let rawtxt = resourceList.filter((file) => { return (/MissionConfig.atb[\S]+\.txt$/i.test(file)); });
     for (let i = 0; i < rawtxt.length; ++i) { rawtxt[i] = fs.readFileSync(rawtxt[i]).toString(); }
     rawtxt = rawtxt.join("\n").split("\n");
-    // read mission-name list
+    // read mission<=>name list
     for (let i in rawtxt) {
         let string = rawtxt[i].trim();
         if (/^\d+\s+\"[^\"]+\"/.test(string)) {
@@ -107,103 +76,102 @@ const main = async function () {
             string = /^\d+\s+\"[^\"]+\"/.exec(string).toString();
             let missionID = /^\d+/.exec(string).toString();
             let name = /\"[^\"]+\"/.exec(string).toString().replace(/\"/g, "");
-            missionConfig[missionID] = name;
+            missionNameList[missionID] = name;
         } else if (/^\d+\s+\d+\s+\"[^\"]+\"/.test(string)) {
             // DailyReproduceMissionConfig.atb
             string = /^\d+\s+\d+\s+\"[^\"]+\"/.exec(string).toString();
             let missionID = /^\d+/.exec(string).toString();
             let name = /\s+\d+\s+/.exec(string).toString().trim();
-            missionConfig[missionID] = name;
+            missionNameList[missionID] = name;
 
             let qIds = /\"[^\"]+\"/.exec(string).toString().replace(/\"/g, "").split(",");
             for (let j in qIds) {
                 let qId = missionID + "/" + qIds[j];
-                if (questList.indexOf(qId) == -1) { questList.push(qId); }
+                if (missionQuestList.indexOf(qId) == -1) { missionQuestList.push(qId); }
             }
 
         } else if (string != "" && !/MissionID/.test(string)) { console.log("[ERROR] " + string); }
     }
-    // get quest list raw
+
+    // get mission<=>quest raw
     rawtxt = resourceList.filter((file) => { return (/MissionQuestList.atb[\S]+\.txt$/i.test(file)); });
     for (let i = 0; i < rawtxt.length; ++i) { rawtxt[i] = fs.readFileSync(rawtxt[i]).toString(); }
     rawtxt = rawtxt.join("\n").split("\n");
-    // read mission-quest list
+    // read mission<=>quest list
     for (let i in rawtxt) {
         let string = rawtxt[i].trim();
         if (/^\d+\s+\d+/.test(string)) {
             string = /^\d+\s+\d+/.exec(string).toString();
             let qId = string.trim().replace(/\s+/, "/")
-            if (questList.indexOf(qId) == -1) { questList.push(qId); }
+            if (missionQuestList.indexOf(qId) == -1) { missionQuestList.push(qId); }
         } else if (string != "" && !/MissionID/.test(string)) { console.log("[ERROR] " + string); }
     }
-    questList.sort();
-
     // manual set mission name
     {
-        missionConfig["100001"] = "第一章　王都脱出";
-        missionConfig["100002"] = "第二章　王城奪還";
-        missionConfig["100003"] = "第三章　熱砂の砂漠";
-        missionConfig["100004"] = "第四章　東の国";
-        missionConfig["100005"] = "第五章　魔法都市";
-        missionConfig["100006"] = "第六章　密林の戦い";
-        missionConfig["100007"] = "第七章　魔の都";
-        missionConfig["100008"] = "第八章　魔神の体内";
-        missionConfig["100009"] = "第九章　鋼の都";
+        missionNameList["100001"] = "第一章　王都脱出";
+        missionNameList["100002"] = "第二章　王城奪還";
+        missionNameList["100003"] = "第三章　熱砂の砂漠";
+        missionNameList["100004"] = "第四章　東の国";
+        missionNameList["100005"] = "第五章　魔法都市";
+        missionNameList["100006"] = "第六章　密林の戦い";
+        missionNameList["100007"] = "第七章　魔の都";
+        missionNameList["100008"] = "第八章　魔神の体内";
+        missionNameList["100009"] = "第九章　鋼の都";
 
-        missionConfig["310001"] = "魔女を救え！";
-        missionConfig["310002"] = "魔女の娘";
-        missionConfig["310003"] = "闇の忍者軍団";
-        missionConfig["310004"] = "鬼を宿す剣士";
-        missionConfig["310005"] = "聖戦士の挑戦";
-        missionConfig["310006"] = "影の狙撃手";
-        missionConfig["310007"] = "魔人の宿命";
-        missionConfig["310008"] = "戦乙女の契約";
-        missionConfig["310009"] = "暗黒騎士団の脅威";
-        missionConfig["310010"] = "暗黒舞踏会";
-        missionConfig["310011"] = "魔術の秘法";
-        missionConfig["310012"] = "アンナと雪の美女";
-        missionConfig["310013"] = "山賊王への道";
-        missionConfig["310014"] = "竜騎士の誓い";
-        missionConfig["310015"] = "錬金術士と賢者の石";
-        missionConfig["310016"] = "モンクの修行場";
-        missionConfig["310017"] = "聖鎚闘士の挑戦";
-        missionConfig["310018"] = "鬼招きの巫女";
-        missionConfig["310019"] = "砲科学校の訓練生";
-        missionConfig["310020"] = "囚われの魔法剣士";
-        missionConfig["310021"] = "死霊の船と提督の決意";
-        missionConfig["310022"] = "帝国の天馬騎士";
-        missionConfig["310023"] = "暗黒騎士団と狙われた癒し手";
-        missionConfig["310024"] = "獣人の誇り";
-        missionConfig["310025"] = "白の帝国と偽りの都市";
-        missionConfig["310026"] = "堕天使の封印";
-        missionConfig["310027"] = "暗黒騎士団と聖夜の贈り物";
-        missionConfig["310028"] = "古代の機甲兵";
-        missionConfig["310029"] = "呪術師と妖魔の女王";
-        missionConfig["310030"] = "私掠船長と魔の海域";
-        missionConfig["310031"] = "ヴァンパイアと聖なる復讐者";
-        missionConfig["310032"] = "妖魔の女王と戦術の天才";
-        missionConfig["310033"] = "魔界蟻と囚われた男達";
-        missionConfig["310034"] = "天使たちの陰謀";
-        missionConfig["310035"] = "魔蝿の森と呪われた番人";
-        missionConfig["310036"] = "失われた竜の島";
-        missionConfig["310037"] = "帝国神官の帰還";
-        missionConfig["310038"] = "闇の組織と狙われた王子";
-        missionConfig["310039"] = "オーク格闘家の王子軍入門";
-        missionConfig["310040"] = "王子軍の夏祭り";
-        missionConfig["310041"] = "カリオペと恐怖の夜";
-        missionConfig["310042"] = "夢現のダークプリースト";
-        missionConfig["310043"] = "魔王軍の胎動";
-        missionConfig["310044"] = "彷徨える守護の盾";
-        missionConfig["310045"] = "渚に咲きし水着騎兵";
-        missionConfig["310046"] = "カボチャの国の魔法使い";
-        missionConfig["310047"] = "星に祈りし聖夜の癒し手";
-        missionConfig["310048"] = "学園騎兵科の新入生";
-        missionConfig["310049"] = "白き獣人と闇の組織";
-        missionConfig["310050"] = "砂浜を駆ける魔術師";
-        missionConfig["310051"] = "密林のハロウィンパーティー";
+        // missionConfig["310001"] = "魔女を救え！";
+        // missionConfig["310002"] = "魔女の娘";
+        // missionConfig["310003"] = "闇の忍者軍団";
+        // missionConfig["310004"] = "鬼を宿す剣士";
+        // missionConfig["310005"] = "聖戦士の挑戦";
+        // missionConfig["310006"] = "影の狙撃手";
+        // missionConfig["310007"] = "魔人の宿命";
+        // missionConfig["310008"] = "戦乙女の契約";
+        // missionConfig["310009"] = "暗黒騎士団の脅威";
+        // missionConfig["310010"] = "暗黒舞踏会";
+        // missionConfig["310011"] = "魔術の秘法";
+        // missionConfig["310012"] = "アンナと雪の美女";
+        // missionConfig["310013"] = "山賊王への道";
+        // missionConfig["310014"] = "竜騎士の誓い";
+        // missionConfig["310015"] = "錬金術士と賢者の石";
+        // missionConfig["310016"] = "モンクの修行場";
+        // missionConfig["310017"] = "聖鎚闘士の挑戦";
+        // missionConfig["310018"] = "鬼招きの巫女";
+        // missionConfig["310019"] = "砲科学校の訓練生";
+        // missionConfig["310020"] = "囚われの魔法剣士";
+        // missionConfig["310021"] = "死霊の船と提督の決意";
+        // missionConfig["310022"] = "帝国の天馬騎士";
+        // missionConfig["310023"] = "暗黒騎士団と狙われた癒し手";
+        // missionConfig["310024"] = "獣人の誇り";
+        // missionConfig["310025"] = "白の帝国と偽りの都市";
+        // missionConfig["310026"] = "堕天使の封印";
+        // missionConfig["310027"] = "暗黒騎士団と聖夜の贈り物";
+        // missionConfig["310028"] = "古代の機甲兵";
+        // missionConfig["310029"] = "呪術師と妖魔の女王";
+        // missionConfig["310030"] = "私掠船長と魔の海域";
+        // missionConfig["310031"] = "ヴァンパイアと聖なる復讐者";
+        // missionConfig["310032"] = "妖魔の女王と戦術の天才";
+        // missionConfig["310033"] = "魔界蟻と囚われた男達";
+        // missionConfig["310034"] = "天使たちの陰謀";
+        // missionConfig["310035"] = "魔蝿の森と呪われた番人";
+        // missionConfig["310036"] = "失われた竜の島";
+        // missionConfig["310037"] = "帝国神官の帰還";
+        // missionConfig["310038"] = "闇の組織と狙われた王子";
+        // missionConfig["310039"] = "オーク格闘家の王子軍入門";
+        // missionConfig["310040"] = "王子軍の夏祭り";
+        // missionConfig["310041"] = "カリオペと恐怖の夜";
+        // missionConfig["310042"] = "夢現のダークプリースト";
+        // missionConfig["310043"] = "魔王軍の胎動";
+        // missionConfig["310044"] = "彷徨える守護の盾";
+        // missionConfig["310045"] = "渚に咲きし水着騎兵";
+        // missionConfig["310046"] = "カボチャの国の魔法使い";
+        // missionConfig["310047"] = "星に祈りし聖夜の癒し手";
+        // missionConfig["310048"] = "学園騎兵科の新入生";
+        // missionConfig["310049"] = "白き獣人と闇の組織";
+        // missionConfig["310050"] = "砂浜を駆ける魔術師";
+        // missionConfig["310051"] = "密林のハロウィンパーティー";
     }
 
-    // get quest data    
+    // get quest raw data
     console.log("output get_xmlfile_missions");
     let QxZpjdfVRaw = child_process.execSync('cd ../AigisTools/&do get_xmlfile_missions.lua').toString().trim().replace(/nil/g, '"nil "');
     let QxZpjdfV = [];
@@ -211,92 +179,112 @@ const main = async function () {
     catch (e) { QxZpjdfV = eval("(" + QxZpjdfVRaw + ")"); }
 
     // set quest data
-    // console.log("set quest data");
-    for (let i = 0; i < questList.length; ++i) {
-        // get id
-        let id = questList[i].toString();
-        let name = id;
-        let missionId = /^\d+/.exec(id).toString();
-        let questId = /\d+$/.exec(id).toString();
+    for (let i in QxZpjdfV) {
+        let questRaw = QxZpjdfV[i];
 
-        // get quest data
-        let questRaw = QxZpjdfV.filter((quest) => { return quest.QuestID == questId; })
-        if (questRaw.length != 1) { continue; }
-        else questRaw = questRaw[0];
+        let id = "";
+        let questId = questRaw.QuestID.toString();
+        let questTitle = questRaw.QuestTitle;
+        let missionId = "";
+        let missionTitle = "";
+        let map = questRaw.MapNo.toString().padStart(4, "0");;
+        let location = questRaw.LocationNo.toString().padStart(2, "0");;
+        let life = questRaw.defHP.toString();
+        let startUP = questRaw.defAP.toString();
+        let unitLimit = questRaw.Capacity.toString();
+        let locationList = [];
 
-        // tower mapNo
-        let map = questRaw.MapNo.toString().padStart(4, "0");
+        // get mission id & check mission id valid
+        let questIds = missionQuestList.filter((fullId) => {
+            let qId = /\d+$/.exec(fullId).toString();
+            let mid = /^\d+/.exec(fullId).toString();
+            return qId == questId && missionNameList[mid];
+        });
+        if (questIds.length != 1) {
+            console.log("[ERROR] questId " + questId + " cant found mission id from <missionQuestList [" + questIds.length + "]>!");
+            continue;
+        }
+        missionId = /^\d+/.exec(questIds[0]).toString();
+
+        // get mission title
+        missionTitle = missionNameList[missionId];
+        if (!missionTitle) {
+            console.log("[ERROR] missionId " + missionId + " cant found mission title from <missionNameList>!");
+            continue;
+        }
+
+        // get quest title
+        let _NameText000000atb = "QuestNameText" + missionId + ".atb";
+        let nameTextTxt = resourceList.find((file) => { return (file.indexOf(_NameText000000atb) != -1 && /\.txt$/i.test(file)); });
+        if (!nameTextTxt) {
+            console.log("[ERROR] " + _NameText000000atb + "/ALTB_gdtx.txt not found !");
+            continue;
+        }
+        // QuestNameText000000.atb/ALTB_gdtx.txt
+        let nameList = fs.readFileSync(nameTextTxt).toString().replace(/ [ ]+/g, " ").split("\n");
+        nameList = nameList.filter((name) => { return /\"[^\"]+\"/.test(name); });
+        if (!nameList[questTitle]) {
+            console.log("[ERROR] questId " + questId + " cant found quest title list from <QuestNameText~.atb>!");
+
+            console.log(questTitle, typeof (questTitle), nameList[questTitle], nameList.length);
+            console.log("");
+
+            continue;
+        }
+        questTitle = nameList[questTitle].trim().replace(/\"/g, "");
+
+        // pad data
+        id = missionId + "/" + questId;
         if (missionId == "110001") { map = "110001_" + map; }
 
-        questList[i] = {
-            id,
-            name,
-            locationList: [],
-            missionId,
-            questId,
-            map,
-            location: questRaw.LocationNo.toString().padStart(2, "0"),
-            life: questRaw.defHP.toString(),
-            startUP: questRaw.defAP.toString(),
-            unitLimit: questRaw.Capacity.toString()
-        };
-    }
-
-    // set quest name
-    // console.log("set quest name");
-    rawtxt = resourceList.filter((file) => { return (/QuestNameText\d+.atb[\S]+\.txt$/i.test(file)); });
-    for (let i in rawtxt) {
-        let file = rawtxt[i];
-        let missionId = /\d+/i.exec(file).toString();
-
-        // get quest by missionid
-        let quests = questList.filter((quest) => { return quest.missionId == missionId; });
-        if (quests.length == 0 && missionId[0] == 2) {
-            missionId = (parseInt(missionId) + 100000).toString();
-            quests = questList.filter((quest) => { return quest.missionId == missionId; });
+        // copy map loacltion data
+        let _map0000aar = "Map" + map + ".aar";
+        let _location00atb = "Location" + location + ".atb";
+        let locationTxt = resourceList.find((file) => { return (file.indexOf(_map0000aar) != -1 && file.indexOf(_location00atb) != -1 && /\.txt$/i.test(file)); });
+        if (!locationTxt) {
+            console.log("[ERROR] " + _map0000aar + "/" + _location00atb + "/ALTB_loca.txt not found !");
+            continue;
         }
-
-        // get name list
-        let names = fs.readFileSync(file).toString().trim().split("\n").filter((line) => { return /\"[^\']+\"/.test(line); });
-
-        // if (names.length >= questCount && questCount != 0) {
-        if (quests.length > 0) {
-            for (let j in quests) {
-                let name = names[j];
-                if (!name) break;
-                quests[j].name = name.trim().replace(/^\"|\"$/g, "");
-            }
-        }
-    }
-
-    // copy map data
-    // console.log("copy map data");
-    for (let i in questList) {
-        let quest = questList[i];
-        if (!quest.map) continue;
-
-        let filename = "Map" + quest.map;
-        let _location = "Location" + quest.location;
-        let locationTxt = resourceList.find((file) => { return (file.indexOf(filename) != -1 && file.indexOf(_location) != -1 && /Location[\S]+\.txt$/i.test(file)); });
-        // Location.atb
+        // Location.atb/ALTB_loca.txt
         let locations = fs.readFileSync(locationTxt).toString().replace(/ [ ]+/g, " ").split("\n");
         for (let j in locations) {
             let locals = locations[j].trim().split(" ");
-            if (!/\d/.test(locals[0])) { continue; }
+            if (!/\d/.test(locals[0])) { continue; }    // <ObjectID   X   Y _Command>
             let obj = { ObjectID: locals[0], X: locals[1], Y: locals[2], _Command: locals[3] };
-            quest.locationList.push(obj);
+            locationList.push(obj);
         }
+        locationList.sort((a, b) => { return a.ObjectID < b.ObjectID; });
+
+        // build quest data
+        let quest = {
+            id,
+            questId, questTitle,
+            missionId, missionTitle,
+            map, location,
+            life, startUP, unitLimit,
+            locationList
+        };
+
+        questList.push(quest);
     }
 
+
     // output file 
-    console.log("output missionConfig.js")
-    fs.writeFileSync("./html/missionConfig.js", "let missionConfig = " + JSON.stringify(missionConfig, null, 4));
+    // console.log("output QxZpjdfV.json")
+    // fs.writeFileSync("./QxZpjdfV.json", "let QxZpjdfV = " + JSON.stringify(QxZpjdfV, null, 4));
+
+    // console.log("output missionQuestList.js")
+    // fs.writeFileSync("./missionQuestList.js", "let missionQuestList = " + JSON.stringify(missionQuestList, null, 4));
+
+    console.log("output missionNameList.js")
+    fs.writeFileSync("./html/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList, null, 4));
 
     console.log("output questList.js")
+    questList.sort((a, b) => { return a.missionTitle.localeCompare(b.missionTitle); })
     fs.writeFileSync("./html/questList.js", "let questList = " + JSON.stringify(questList, null, 4));
 
 };
-main().catch(console.log);
+main()//.catch(console.log);
 
 
 

@@ -1,6 +1,8 @@
 
 
 let bodyOnload = function () {
+    questList.sort((a, b) => { return a.id.localeCompare(b.id); })
+
     // let groupList = [];
     // for (let i in missionData) {
     //     let mission = missionData[i];
@@ -22,35 +24,35 @@ let bodyOnload = function () {
 
     // console.log("bodyOnload");
 
-    let missionSelect = document.getElementsByClassName("mission")[0];
-    missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
-    missionSelect.options.add(new Option("ストーリーミッション", "Story"));
-    missionSelect.options.add(new Option("英傑の塔", "Tower"));
-    missionSelect.options.add(new Option("曜日ミッション", "Daily"));
+    let typeSelect = document.getElementsByClassName("missionType")[0];
+    // typeSelect.options.add(new Option("＝＝分類＝＝", ""));
+    typeSelect.options.add(new Option("ストーリーミッション", "Story"));
+    typeSelect.options.add(new Option("英傑の塔", "Tower"));
+    typeSelect.options.add(new Option("曜日ミッション", "Daily"));
 
-    missionSelect.options.add(new Option("緊急ミッション", "Emergency"));
+    typeSelect.options.add(new Option("緊急ミッション", "Emergency"));
+    typeSelect.options.add(new Option("デイリー復刻", "DailyReproduce"));
 
-    missionSelect.options.add(new Option("ゴールドラッシュ", "Goldrush"));
-    missionSelect.options.add(new Option("復刻ミッション", "Reproduce"));
-    missionSelect.options.add(new Option("デイリー復刻", "DailyReproduce"));
+    typeSelect.options.add(new Option("魔神降臨", "Devil"));
+    typeSelect.options.add(new Option("神獣降臨", "Raid"));
 
-    missionSelect.options.add(new Option("大討伐", "Subjugation"));
-    missionSelect.options.add(new Option("魔神降臨", "Devil"));
-    missionSelect.options.add(new Option("神獣降臨", "Raid"));
-    missionSelect.options.add(new Option("特別ミッション", "Special"));
+    typeSelect.options.add(new Option("交流クエスト", "Harlem"));
+    typeSelect.options.add(new Option("戦術指南/チャレンジクエスト", "Challenge"));
 
-    missionSelect.options.add(new Option("交流クエスト", "Harlem"));
-    missionSelect.options.add(new Option("戦術指南/チャレンジクエスト", "Challenge"));
+    typeSelect.options.add(new Option("ゴールドラッシュ", "Goldrush"));
+    typeSelect.options.add(new Option("復刻ミッション", "Reproduce"));
+    typeSelect.options.add(new Option("大討伐", "Subjugation"));
+    typeSelect.options.add(new Option("特別ミッション", "Special"));
 }
 
 // select options
 function onChange(select) {
-    if (select.className == "mission") {
+    if (select.className == "missionType") {
         let i = select.selectedIndex;
         let value = select.options[i].value;
 
-        let questSelect = document.getElementsByClassName("quest")[0];
-        questSelect.innerText = null;
+        let missionSelect = document.getElementsByClassName("mission")[0];
+        missionSelect.innerText = null;
         let items = [];
         let missionIds = Object.keys(missionConfig);
 
@@ -80,6 +82,7 @@ function onChange(select) {
                         missionConfig[mId].indexOf("ゴールドラッシュ") == -1 &&
                         missionConfig[mId].indexOf("異世界") == -1;
                 });
+                items.sort((a, b) => { return b.localeCompare(a); })
             } break;
             case "Reproduce": {
                 items = missionIds.filter((mId) => {
@@ -123,30 +126,31 @@ function onChange(select) {
         }
 
         // 
-        questSelect.options.add(new Option("＝＝クエスト＝＝", ""));
+        missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
         for (let i in items) {
             let item = items[i];
-            questSelect.options.add(new Option(missionConfig[item], item));
+            missionSelect.options.add(new Option(missionConfig[item], item));
         }
-    } else if (select.className == "quest") {
+    } else if (select.className == "mission") {
         let i = select.selectedIndex;
         let value = select.options[i].value;
 
-        let mapSelect = document.getElementsByClassName("map")[0];
-        mapSelect.innerText = null;
+        let questSelect = document.getElementsByClassName("quest")[0];
+        questSelect.innerText = null;
         let items = questList.filter((quest) => { return quest.missionId == value; });
 
-        // sort 
+        // sort
         if (value == "700001") {
-            items.sort((a, b) => { return a.name[0].localeCompare(b.name[0]); })
+            items.sort((a, b) => { return a.questTitle[0].localeCompare(b.questTitle[0]); })
         }
 
-        mapSelect.options.add(new Option("＝＝マップ＝＝", ""));
+        let str = items.length == 0 ? "＝＝no data＝＝" : "＝＝クエスト＝＝ (" + items.length + ")"
+        questSelect.options.add(new Option(str, ""));
         for (let i in items) {
             let item = items[i];
-            mapSelect.options.add(new Option(item.name, item.id));
+            questSelect.options.add(new Option(item.questTitle, item.id));
         }
-    } else if (select.className == "map") {
+    } else if (select.className == "quest") {
         let i = select.selectedIndex;
         let value = select.options[i].value;
         // get quest
@@ -167,11 +171,8 @@ function onChange(select) {
             div.addEventListener("ondragover", allowDrop, false);
 
             mapimg.appendChild(div);
-
         }
-
     }
-
 }
 
 // mapimg method

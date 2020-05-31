@@ -25,14 +25,14 @@
       <!-- // init by js methods -->
       <div class="mapbox">
         <div class="hr">
+          <select class="missionType" onchange="onChange(this);">
+            <option value="">＝＝分類＝＝</option>
+          </select>
           <select class="mission" onchange="onChange(this);">
             <option value="">＝＝ミッション＝＝</option>
           </select>
           <select class="quest" onchange="onChange(this);">
             <option value="">＝＝クエスト＝＝</option>
-          </select>
-          <select class="map" onchange="onChange(this);">
-            <option value="">＝＝マップ＝＝</option>
           </select>
         </div>
         <div class="mapimg" ondrop="drop(event);" ondragover="allowDrop(event);"
