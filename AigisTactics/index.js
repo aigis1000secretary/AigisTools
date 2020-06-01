@@ -41,7 +41,7 @@ const main = async function () {
             // /Map\d+/i.test(filename) ||
             /MissionQuestList.atb/i.test(filename) ||
             /MissionConfig.atb/i.test(filename) ||
-            /QuestNameText.atb/i.test(filename)
+            /QuestNameText\d*.atb/i.test(filename)
         )) {
             if (!fs.existsSync(resources + "/" + filename)) // skip exist
             {
@@ -51,11 +51,12 @@ const main = async function () {
         }
         filelist[i] = "";
     }
+    filelist.sort();
     filelist = filelist.filter((file) => { return (file != ""); })
     // download resource file
     for (let i in filelist) {
         let file = filelist[i];
-        console.log(child_process.execSync('cd ../AigisTools/&get.bat ' + file).toString().trim());
+        console.log(child_process.execSync("cd ../AigisTools/&get.bat " + file).toString().trim());
     }
 
     // get resource list
