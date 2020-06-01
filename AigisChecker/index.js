@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 
@@ -228,7 +228,7 @@ const main = async function () {
                 name += "（異郷の妖精）";
                 break;
         }
-        if (name.indexOf("王子") != -1) {
+        if (name.indexOf("王子") != -1 && sortGroupID == 25) {
             rare = 5.2;
         }
 
@@ -242,19 +242,11 @@ const main = async function () {
         else if (id <= 942) year = 2019;
         else if (id <= 1500) year = 2020;
 
-        // skip
-        // skip who not a unit
-        let skipList = [1];
-        if (skipList.indexOf(id) != -1) continue;
-        // skip token
+        // token flag
         let sellPrice = parseInt(cardsData[id][11]);
-        if (sellPrice == 0) continue;
-        // skip low rare
-        if (rare <= 1) continue;
-        // skip seirei
-        if (placeType == 0) continue;
-        // skip Non-R18 Collaboration
-        if (assign == 4 || assign == 7) continue;
+        if (sellPrice == 0) { sortGroupID = 11; }
+        // Non-R18 Collaboration flag
+        if (assign == 4 || assign == 7) { sortGroupID = 13; };
 
         let obj = {
             id,

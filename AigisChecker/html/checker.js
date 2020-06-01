@@ -95,6 +95,25 @@ function setIconFlags(flagList) {
 
 // body onload method
 function bodyOnload() {
+    // skip data
+    let i = 0;
+    while (i < charaData.length) {
+        chara = charaData[i];
+        if (!chara) { ++i; continue; }
+
+        let skipList = [1];
+        if ((chara.rare <= 1) ||                    // skip low rare
+            (skipList.indexOf(chara.id) != -1) ||   // skip who not a unit
+            chara.sortGroupID == 10 ||              // skip seirei
+            chara.sortGroupID == 11 ||              // skip token
+            chara.sortGroupID == 12                 // skip Non-R18 chara
+        ) {
+            // skip
+            charaData.splice(i, 1);
+            continue;
+        }
+        ++i;
+    }
 
     // URL obj
     let url = new URL(document.URL);
