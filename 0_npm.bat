@@ -10,4 +10,9 @@ echo AigisChecker: npm install
 start npm install
 cd ..
 
+cd .\AigisTactics
+echo AigisTactics: npm install
+start npm install
+cd ..
+
 pause

@@ -1,5 +1,5 @@
 const fs = require("fs");
-var Jimp = require('jimp');
+const Jimp = require('jimp');
 const child_process = require('child_process');
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 const md5f = function (str) { return require('crypto').createHash('md5').update(str).digest('hex'); }
