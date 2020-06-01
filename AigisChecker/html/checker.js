@@ -42,7 +42,7 @@ function setUrlParams(flagList) {
     let urlData = _btoa(flagList);
 
     // set data to url
-    if (urlData.replace(/0/g, "") != "") { params.set("data", urlData); } else { params.delete("data"); }
+    if (!/^0+$/.test(urlData)) { params.set("data", urlData); } else { params.delete("data"); }
     params.set("sortBy", sortMode);
 
     history.pushState(null, null, url);
@@ -59,18 +59,18 @@ function setUrlParams(flagList) {
 
 function getIconFlags() {
     // read flag from iconbox
-    let l = Math.ceil(1 + maxCid / 5) * 5;
+    let l = Math.ceil(maxCid / 5) * 5;
     let flagArray = new Array(l).fill("0");
-    let maxIndex = 0;
+    // let maxIndex = 0;
     let iconList = document.getElementById("iconbox").getElementsByClassName("icon");
     for (let i in iconList) {
         let icon = iconList[i];
         let id = icon.id;
         let flag = (icon.alt == "true") ? "1" : "0";
         flagArray[id] = flag;
-        if (!isNaN(id)) {
-            maxIndex = Math.max(id, maxIndex);
-        }
+        // if (!isNaN(id)) {
+        //     maxIndex = Math.max(id, maxIndex);
+        // }
     }
 
     // make flag list

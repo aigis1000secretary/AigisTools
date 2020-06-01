@@ -1,4 +1,4 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 
@@ -112,11 +112,12 @@ const main = async function () {
     let icons = getFileList(resources + "/ico_00.aar");
 
     // console.table(icons);
-    let id;
+    let id, maxCid = 0;
     for (let i in icons) {
         // var
         let iconPath = icons[i];
         id = parseInt(path.basename(iconPath).replace("_001.png", ""));
+        maxCid = Math.max(id, maxCid);
 
         // set json data
         if (!cardsData[id]) continue;
@@ -214,7 +215,7 @@ const main = async function () {
                 assign = 7;
                 break;
             case 689:
-                name += "異郷の祝福者";
+                name += "（異郷の祝福者）";
                 assign = 6;
                 break;
             case 697:
@@ -274,7 +275,7 @@ const main = async function () {
     }
 
     // write to file
-    let cardsJs = ["var maxCid = " + (id + 1) + ";\nvar charaData = ["];
+    let cardsJs = ["var maxCid = " + maxCid.toString() + ";\nvar charaData = ["];
     for (let i in resultJson) {
         cardsJs.push("\t" + JSON.stringify(resultJson[i], null, 1).replace(/\s*\n\s*/g, "\t") + ",");
     }
