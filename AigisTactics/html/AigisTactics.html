@@ -35,9 +35,9 @@
       <div class="card">
 
         <div class="hr">
-          <select id="missionType" onchange="onChange(this);"> </select>
-          <select id="mission" onchange="onChange(this);"> </select>
-          <select id="quest" onchange="onChange(this);"> </select>
+          <select id="missionType" onchange="onChangeSelect(this);"> </select>
+          <select id="mission" onchange="onChangeSelect(this);"> </select>
+          <select id="quest" onchange="onChangeSelect(this);"> </select>
 
           <div class="inputbox"> 射程：
             <input id="rangebox" type="number" value=260 onchange="onChangeInput(this);">
@@ -53,9 +53,9 @@
       <div class="card">
 
         <div class="hr">
-          <select id="rare" onchange="onChange(this);"> </select>
-          <select id="class" onchange="onChange(this);"> </select>
-          <select id="kind" onchange="onChange(this);"> </select>
+          <select id="rare" onchange="onChangeSelect(this);"> </select>
+          <select id="class" onchange="onChangeSelect(this);"> </select>
+          <select id="kind" onchange="onChangeSelect(this);"> </select>
 
           <div class="inputbox"> フィルタ：
             <input id="filterbox" type="text" value=260 onchange="onChangeInput(this);">

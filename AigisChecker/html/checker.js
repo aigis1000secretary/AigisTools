@@ -102,8 +102,8 @@ function bodyOnload() {
         if (!chara) { ++i; continue; }
 
         let skipList = [1];
-        if ((chara.rare <= 1) ||                    // skip low rare
-            (skipList.indexOf(chara.id) != -1) ||   // skip who not a unit
+        if (skipList.indexOf(chara.id) != -1 ||     // skip who not a unit
+            chara.rare <= 1 ||                      // skip low rare
             chara.sortGroupID == 10 ||              // skip seirei
             chara.sortGroupID == 11 ||              // skip token
             chara.sortGroupID == 12                 // skip Non-R18 chara

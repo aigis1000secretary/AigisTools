@@ -74,8 +74,8 @@ body {
 }
 
 .card #mapimg {
-    /* background-color: rgba(255, 255, 255, 0.0); */
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.0);
+    /* background-color: rgba(255, 255, 255, 0.8); */
     background-blend-mode: lighten;
     width: 960px;
     height: 640px;
@@ -86,8 +86,8 @@ body {
 }
 
 .card #mapimg[title="alpha"] {
-    /* background-color: rgba(255, 255, 255, 0.5); */
-    background-color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 1.0); */
 }
 
 .card a {
@@ -122,18 +122,16 @@ body {
 }
 
 #mapimg .icon {
+    user-select: none;
     background-size: cover;
     width: 50px;
     height: 50px;
-    left: 25px;
-    top: 25px;
     transform: translate(-50%, -50%);
     position: absolute;
     z-index: 3;
 }
 
 #mapimg #range {
-    /* background-size: cover; */
     border-radius: 1000em;
     background-color: rgba(0, 128, 0, 0.35);
     border: 30px solid rgba(255, 255, 0, 0.35);
@@ -143,6 +141,9 @@ body {
 }
 
 #iconbox .iconbtn {
+    user-select: none;
+    width: 50px;
+    height: 50px;
     margin: 2px 5px 0px 5px;
 }
 
