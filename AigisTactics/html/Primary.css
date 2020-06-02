@@ -1,101 +1,100 @@
-.mainbody {
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 960px; */
-    min-width: 1240px;
+/* https://www.w3schools.com/css/trycss_website_layout_blog.htm */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: Arial; */
+    padding: 5px;
+    background: #f1f1f1;
+    width: 1330px;
     font-size: 12px;
-    font-family: "-apple-system", BlinkMacSystemFont, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", Osaka, "sans-serif";
-    background-color: #efefef;
-    /* background-color: Yellow; */
+    font-family: "-apple-system", "BlinkMacSystemFont", "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", "Osaka", "sans-serif";
+    /* background-color: #efefef; */
 }
 
-.Layout_Header {
-    float: left;
-    width: 100%;
-    max-width: 100%;
-    min-height: 100px;
-    /* background-color: Yellow; */
+/* Header/Blog Title */
+
+.header {
+    padding: 15px;
+    text-align: left;
+    background: white;
 }
 
-.Layout_Mainblock {
-    float: left;
-    width: 70%;
-    min-width: 960px;
-    max-width: 70%;
-    /* min-height: 100px; */
-    /* background-color: greenyellow; */
-}
-
-.Layout_Sideblock {
-    float: right;
-    min-width: 280px;
-    max-width: 30%;
-    /* min-height: 100px; */
-    /* background-color: cadetblue; */
-}
-
-.Layout_Bottom {
-    float: left;
-    width: 100%;
-    max-width: 100%;
-    min-height: 100px;
-    /* background-color: Red; */
-    padding: 0px 0px 0px 10px;
-}
-
-/* Layout_Header */
-
-.Layout_Header .title {
-    color: #000000;
+.header h1 {
     font-size: 24px;
     font-weight: 700;
-    line-height: 100px;
-    margin: auto auto auto 20px;
 }
 
-/* .Layout_Mainblock { */
+/* Create two unequal columns that floats next to each other */
 
-.Layout_Mainblock .mapbox {
+/* Left column */
+
+.leftcolumn {
     float: left;
+    /* width: 75%; */
+    width: 980px;
 }
 
-.Layout_Mainblock .mapbox .hr {
+/* Right column */
+
+.rightcolumn {
+    float: right;
+    /* width: 25%; */
+    width: 340px;
+    background-color: #f1f1f1;
+    padding-left: 10px;
+}
+
+/* Add a card effect for articles */
+
+.card {
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.card .hr {
     font-size: 120%;
     font-weight: bold;
-    margin: 6px 10px 6px 10px;
+    margin: 6px 8px 6px 8px;
     padding: 7px 3px 9px 7px;
     border-radius: 2px;
     background: #a0c0ff;
-    height: 20px;
-    line-height: 20px;
 }
 
-.Layout_Mainblock .mapbox .hr .rangebox {
+.card .hr .inputbox {
     float: right;
     margin-right: 4px;
 }
 
-.Layout_Mainblock .mapbox .hr select {
+.card .hr select {
     margin-top: 1px;
 }
 
-.Layout_Mainblock .mapbox .mapimg {
-    background-color: rgba(255, 255, 255, 0.0);
+.card #mapimg {
+    /* background-color: rgba(255, 255, 255, 0.0); */
+    background-color: rgba(255, 255, 255, 0.8);
     background-blend-mode: lighten;
     width: 960px;
     height: 640px;
-    /* float: left; */
     position: relative;
     z-index: 1;
     overflow: hidden;
+    margin: 10px 0px 0px 0px;
 }
 
-.Layout_Mainblock .mapbox .mapimg[title="alpha"] {
-    background-color: rgba(255, 255, 255, 0.5);
+.card #mapimg[title="alpha"] {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: rgba(255, 255, 255, 1.0);
 }
 
-.Layout_Mainblock .mapbox .goal {
+.card a {
+    color: #3878ec;
+}
+
+#mapimg .goal {
     background-size: cover;
     width: 109px;
     height: 80px;
@@ -104,7 +103,7 @@
     z-index: 2;
 }
 
-.Layout_Mainblock .mapbox .near {
+#mapimg .near {
     background-size: cover;
     width: 84px;
     height: 62px;
@@ -113,7 +112,7 @@
     z-index: 2;
 }
 
-.Layout_Mainblock .mapbox .afar {
+#mapimg .afar {
     background-size: cover;
     width: 84px;
     height: 62px;
@@ -122,7 +121,7 @@
     z-index: 2;
 }
 
-.Layout_Mainblock .mapbox .icon {
+#mapimg .icon {
     background-size: cover;
     width: 50px;
     height: 50px;
@@ -133,53 +132,45 @@
     z-index: 3;
 }
 
-.Layout_Mainblock .mapbox .range {
+#mapimg #range {
     /* background-size: cover; */
     border-radius: 1000em;
     background-color: rgba(0, 128, 0, 0.35);
-    border: 30px solid  rgba(255, 255, 0, 0.35);
+    border: 30px solid rgba(255, 255, 0, 0.35);
     transform: translate(-50%, -50%);
     position: absolute;
     z-index: 1;
 }
 
-/* Layout_Sideblock */
-
-.Layout_Sideblock .sidebox {
-    float: left;
-    max-width: 100%;
-    padding: 3px 5px 5px 7px;
+#iconbox .iconbtn {
+    margin: 2px 5px 0px 5px;
 }
 
-.Layout_Sideblock .sidebox a {
-    color: #3878ec;
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.Layout_Sideblock .sidebox #_sharebox {
-    width: 270px;
-    height: 120px;
-    max-width: 270px;
-    min-height: 20px;
+/* Footer */
+
+.footer {
+    padding: 10px;
+    text-align: left;
+    background: #ddd;
+    margin-top: 10px;
 }
 
-.Layout_Sideblock .sidebox input[type="button"] {
-    cursor: pointer;
-    height: 26px;
-    color: #fff;
-    background-color: #3898ec;
-    border: 2px #3898ec solid;
-    border-radius: 7px;
-    margin: 1px 0px 1px 0px;
-    padding: 1px 6px 1px 6px;
-}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 
-.Layout_Sideblock .sidebox input[type="button"]:hover {
-    color: #3898ec;
-    background-color: #fff;
-}
-
-/* Layout_Bottom */
-
-.Layout_Bottom a {
-    color: #3878ec;
+@media screen and (max-width: 960px) {
+    body {
+        width: 990px;
+    }
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
 }
