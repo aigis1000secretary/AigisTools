@@ -31,6 +31,13 @@ let bodyOnload = function () {
     select.options.add(new Option("＝＝クエスト＝＝", ""));
 
     iconboxInit();
+
+    let map = getUrlParams();
+    if (map) {
+        mapimgInit();
+        // let mId = /^\d+/.exec(map).toString();
+        // let qId = /\d+$/.exec(map).toString();
+    }
 }
 let iconboxInit = function () {
     // skip data
@@ -157,6 +164,89 @@ let addIcon = function (event) {
 }
 
 
+// url param method
+function getUrlParams() {
+    // URL obj
+    let url = new URL(document.URL);
+    let params = url.searchParams;
+
+    // get url data
+    let urlData = params.get("map");
+
+    // return flag list
+    return urlData || "";
+}
+function setUrlParams(questFullId) {
+    console.log("setUrlParams(", questFullId, ")")
+    // URL obj
+    let url = new URL(document.URL);
+    let params = url.searchParams;
+
+    // set data to url
+    params.set("map", questFullId);
+    history.pushState(null, null, url);
+
+    // // sharebox
+    // let shareText = "【千年戦争アイギス】ユニット所持チェッカー＋\n"
+    // shareText += doStatistics() + "\n";
+    // shareText += url;
+    // shareText += "\n #アイギス所持チェッカー \n #千年戦争アイギス ";
+
+    // document.getElementById("_sharebox").textContent = shareText;
+    // setShareButton(shareText);
+}
+// init map image
+let mapimgInit = function (id) {
+    if (!id || id == "") { return; }
+    setUrlParams(id);
+
+    // get selected
+    let quest = questList.find(quest => { return quest.id == id; });
+
+    // clear map image
+    let mapimg = document.getElementById("mapimg");
+    mapimg.innerHTML = null; iconCount = 0;
+
+    // set bg map image
+    let md5 = hashList["Map" + quest.map + ".png"];
+    mapimg.style.backgroundImage = "url(./maps/" + md5 + ")";
+
+    // set range element
+    let radius = parseInt(document.getElementById("rangebox").value) + 40;
+    let range = document.createElement("div");
+    range.id = "range";
+    range.style.visibility = "hidden";
+    range.style.width = (radius * 1.5) + "px";
+    range.style.height = (radius * 1.5) + "px";
+    range.className = "range";
+    range.addEventListener("ondrop", onDrop, false);
+    range.addEventListener("ondragover", onDragOver, false);
+    mapimg.appendChild(range);
+    // range.style.visibility = "visible";
+
+    // get location data
+    for (let i in quest.locationList) {
+        let local = quest.locationList[i];
+        let div = document.createElement("div");
+        div.style.left = local.X + "px";
+        div.style.top = local.Y + "px";
+
+        // check location type
+        if (local.ObjectID == 0) div.className = "goal";
+        else if (200 <= local.ObjectID && local.ObjectID < 300) div.className = "near";
+        else if (300 <= local.ObjectID && local.ObjectID < 400) div.className = "afar";
+        else continue;
+
+        // add event
+        div.addEventListener("ondrop", onDrop, false);
+        div.addEventListener("ondragover", onDragOver, false);
+        div.addEventListener("click", onClick, false);
+
+        mapimg.appendChild(div);
+    }
+}
+
+
 // select options
 let onChangeSelect = function (select) {
     if (select.id == "missionType") { onChangeSelectMissionType(select); }
@@ -278,51 +368,7 @@ let onChangeSelectQuest = function (select) {
     // change quest
     let i = select.selectedIndex;
     let value = select.options[i].value;
-
-    // get selected
-    let quest = questList.find(quest => { return quest.id == value; });
-
-    // clear map image
-    let mapimg = document.getElementById("mapimg");
-    mapimg.innerHTML = null; iconCount = 0;
-
-    // set bg map image
-    let md5 = hashList["Map" + quest.map + ".png"];
-    mapimg.style.backgroundImage = "url(./maps/" + md5 + ")";
-
-    // set range element
-    let radius = parseInt(document.getElementById("rangebox").value) + 40;
-    let range = document.createElement("div");
-    range.id = "range";
-    range.style.visibility = "hidden";
-    range.style.width = (radius * 1.5) + "px";
-    range.style.height = (radius * 1.5) + "px";
-    range.className = "range";
-    range.addEventListener("ondrop", onDrop, false);
-    range.addEventListener("ondragover", onDragOver, false);
-    mapimg.appendChild(range);
-    // range.style.visibility = "visible";
-
-    // get location data
-    for (let i in quest.locationList) {
-        let local = quest.locationList[i];
-        let div = document.createElement("div");
-        div.style.left = local.X + "px";
-        div.style.top = local.Y + "px";
-
-        // check location type
-        if (local.ObjectID == 0) div.className = "goal";
-        else if (200 <= local.ObjectID && local.ObjectID < 300) div.className = "near";
-        else if (300 <= local.ObjectID && local.ObjectID < 400) div.className = "afar";
-        else continue;
-
-        // add event
-        div.addEventListener("ondrop", onDrop, false);
-        div.addEventListener("ondragover", onDragOver, false);
-        div.addEventListener("click", onClick, false);
-
-        mapimg.appendChild(div);
-    }
+    mapimgInit(value);
 }
 
 let onChangeInput = function (select) {

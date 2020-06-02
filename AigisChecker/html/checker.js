@@ -44,7 +44,6 @@ function setUrlParams(flagList) {
     // set data to url
     if (!/^0+$/.test(urlData)) { params.set("data", urlData); } else { params.delete("data"); }
     params.set("sortBy", sortMode);
-
     history.pushState(null, null, url);
 
     // sharebox
