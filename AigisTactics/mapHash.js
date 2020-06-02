@@ -25,7 +25,7 @@ const main = async function () {
     let resourceList = fs.readdirSync(resources);
     resourceList = resourceList.filter((file) => { return (/^Map[\d_]+\.png$/i.test(file)); });
 
-    let hashList = {};
+    let mapHashList = {};
     let count = 0;
     for (let i in resourceList) {
         let filename = resourceList[i]
@@ -34,7 +34,7 @@ const main = async function () {
         // save hash list
         let png = fs.readFileSync(resources + "/" + filename);
         let md5 = md5f(png.toString());
-        hashList[filename] = md5;
+        mapHashList[filename] = md5;
 
         let filepath = "./html/maps/" + md5;
         if (!fs.existsSync(filepath)) {
@@ -61,7 +61,7 @@ const main = async function () {
         }
     }
 
-    console.log("output hashList.js")
-    fs.writeFileSync("./html/hashList.js", "let hashList = " + JSON.stringify(hashList));
+    console.log("output mapHashList.js")
+    fs.writeFileSync("./html/mapHashList.js", "let mapHashList = " + JSON.stringify(mapHashList));
 
 }; main();

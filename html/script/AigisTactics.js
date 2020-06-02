@@ -208,7 +208,7 @@ let mapimgInit = function (id) {
     mapimg.innerHTML = null; iconCount = 0;
 
     // set bg map image
-    let md5 = hashList["Map" + quest.map + ".png"];
+    let md5 = mapHashList["Map" + quest.map + ".png"];
     mapimg.style.backgroundImage = "url(./maps/" + md5 + ")";
 
     // set range element
