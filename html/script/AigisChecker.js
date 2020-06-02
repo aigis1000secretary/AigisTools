@@ -348,7 +348,7 @@ let doStatistics = function () {
         }
         // set text & result & button
         let ratio = `${Math.floor(100 * trueCount / iconCount)}%（${trueCount}/${iconCount}）`;
-        hrList[i].innerHTML = `<div style="margin-top: 1px;"><span>${label}</span><span style="float: right;">${ratio}</span><input type="checkbox" id="f${i}" onclick="selectGroup(this);"><label for="f${i}" style="float: right;">一括${checked ? "選択" : "解除"}</label></div>`;
+        hrList[i].innerHTML = `<div style="margin-top: 1px;"><span>${label}</span><span style="float: right;">${ratio}</span><input type="checkbox" id="f${i}" onclick="selectGroup(this);"><label for="f${i}">一括${checked ? "選択" : "解除"}</label></div>`;
         hrList[i].getElementsByTagName("input")[0].checked = checked;
 
         // reset icon count

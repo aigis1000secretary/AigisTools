@@ -59,6 +59,7 @@ body {
     padding: 2px 3px 4px 7px;
     border-radius: 2px;
     background: #a0c0ff;
+    position: relative;
 }
 
 .card .hr select {
@@ -84,6 +85,8 @@ body {
     border-radius: 5px;
     margin: 1px 6px 0px 6px;
     padding: 0px 5px 0px 5px;
+    position: absolute;
+    right: 150px;
 }
 
 .card .hr input[type="checkbox"]+label {
