@@ -278,13 +278,13 @@ const main = async function () {
     // fs.writeFileSync("./missionQuestList.js", "let missionQuestList = " + JSON.stringify(missionQuestList, null, 1));
 
     console.log("output missionNameList.js")
-    // fs.writeFileSync("./html/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList, null, 1));
-    fs.writeFileSync("./html/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList));
+    // fs.writeFileSync("../html/script/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList, null, 1));
+    fs.writeFileSync("../html/script/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList));
 
     console.log("output questList.js")
     questList.sort((a, b) => { return a.missionTitle.localeCompare(b.missionTitle); })
-    // fs.writeFileSync("./html/questList.js", "let questList = " + JSON.stringify(questList, null, 1));
-    fs.writeFileSync("./html/questList.js", "let questList = " + JSON.stringify(questList));
+    // fs.writeFileSync("../html/script/questList.js", "let questList = " + JSON.stringify(questList, null, 1));
+    fs.writeFileSync("../html/script/questList.js", "let questList = " + JSON.stringify(questList));
 
 };
 main()//.catch(console.error);

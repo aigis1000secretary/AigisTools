@@ -4,9 +4,4 @@ SET LUA_PATH=%~dp0Scripts\?.lua
 SET LUA_PATH_5_3=%~dp0Scripts\?.lua
 
 lua Scripts\get_file_list.lua
-
-lua Scripts\parse_missions.lua > out\files\_missions.txt
-
-pause
-move .\out\files\_missions.txt .\out\files\missions.txt
 exit

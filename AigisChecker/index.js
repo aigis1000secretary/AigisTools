@@ -246,7 +246,7 @@ const main = async function () {
         let sellPrice = parseInt(cardsData[id][11]);
         if (sellPrice == 0) { sortGroupID = 11; }
         // Non-R18 Collaboration flag
-        if (assign == 4 || assign == 7) { sortGroupID = 13; };
+        if (assign == 4 || assign == 7) { sortGroupID = 12; };
 
         let obj = {
             id,
@@ -273,7 +273,7 @@ const main = async function () {
     }
     cardsJs.push("]");
 
-    fs.writeFileSync("./html/cards.js", cardsJs.join("\n"));
+    fs.writeFileSync("../html/script/cards.js", cardsJs.join("\n"));
     console.log("fs.writeFileSync( cards.js )");
 
 };

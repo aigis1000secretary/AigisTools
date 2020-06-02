@@ -36,7 +36,7 @@ const main = async function () {
         let md5 = md5f(png.toString());
         mapHashList[filename] = md5;
 
-        let filepath = "./html/maps/" + md5;
+        let filepath = "../html/maps/" + md5;
         if (!fs.existsSync(filepath)) {
             // fs.writeFileSync(filepath, png);
 
@@ -48,7 +48,7 @@ const main = async function () {
                     }).then(async () => {
                         console.log("Jimp.quality(70).write()");
                         await sleep(100);
-                        let log = child_process.execSync(`cd ./html/maps/&ren ${md5}.jpg ${md5}`).toString().trim();
+                        let log = child_process.execSync(`cd ../html/maps/&ren ${md5}.jpg ${md5}`).toString().trim();
                         if (log != "") console.log(log);
                     }).then(() => {
                         console.log("");
@@ -62,6 +62,6 @@ const main = async function () {
     }
 
     console.log("output mapHashList.js")
-    fs.writeFileSync("./html/mapHashList.js", "let mapHashList = " + JSON.stringify(mapHashList));
+    fs.writeFileSync("../html/script/mapHashList.js", "let mapHashList = " + JSON.stringify(mapHashList));
 
 }; main();
