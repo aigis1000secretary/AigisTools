@@ -1,9 +1,6 @@
-const styleUnChecked = "opacity:0.4;";
-const styleChecked = "opacity:1.0;";
-const styleSize = "50";
 
 // url parameter method
-function _atob(base32Str) {
+let _atob = function (base32Str) {
     let base2Str = "";
     while (base32Str.length > 0) {
         let temp = base32Str.substr(0, 1);
@@ -12,7 +9,7 @@ function _atob(base32Str) {
     }
     return base2Str;
 }
-function _btoa(base2Str) {
+let _btoa = function (base2Str) {
     let base32Str = "";
     while (base2Str.length > 0) {
         let temp = base2Str.substr(0, 5);
@@ -22,7 +19,7 @@ function _btoa(base2Str) {
     return base32Str;
 }
 
-function getUrlParams() {
+let getUrlParams = function () {
     // URL obj
     let url = new URL(document.URL);
     let params = url.searchParams;
@@ -33,7 +30,7 @@ function getUrlParams() {
     // return flag list
     return urlData ? _atob(urlData) : "";
 }
-function setUrlParams(flagList) {
+let setUrlParams = function (flagList) {
     // URL obj
     let url = new URL(document.URL);
     let params = url.searchParams;
@@ -56,26 +53,22 @@ function setUrlParams(flagList) {
     setShareButton(shareText);
 }
 
-function getIconFlags() {
+let getIconFlags = function () {
     // read flag from iconbox
     let l = Math.ceil(maxCid / 5) * 5;
     let flagArray = new Array(l).fill("0");
-    // let maxIndex = 0;
-    let iconList = document.getElementById("iconbox").getElementsByClassName("icon");
+    let iconList = document.getElementById("iconbox").getElementsByClassName("iconbtn");
     for (let i in iconList) {
         let icon = iconList[i];
         let id = icon.id;
         let flag = (icon.alt == "true") ? "1" : "0";
         flagArray[id] = flag;
-        // if (!isNaN(id)) {
-        //     maxIndex = Math.max(id, maxIndex);
-        // }
     }
 
     // make flag list
-    return flagArray.join(""); // .replace(/$0*/, "")
+    return flagArray.join("");
 }
-function setIconFlags(flagList) {
+let setIconFlags = function (flagList) {
     // make flag list
     let flagArray = flagList.split("");
 
@@ -88,12 +81,11 @@ function setIconFlags(flagList) {
         let flag = (flagArray[id] && flagArray[id] == "1") ? "true" : "false";
 
         icon.alt = flag;
-        icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
     }
 }
 
 // body onload method
-function bodyOnload() {
+let bodyOnload = function () {
     // skip data
     let i = 0;
     while (i < charaData.length) {
@@ -162,7 +154,7 @@ function bodyOnload() {
 }
 
 // init method
-function init() {
+let init = function () {
     let iconbox = document.getElementById("iconbox");
 
     for (let i in charaData) {
@@ -170,20 +162,15 @@ function init() {
 
         // build dom element
         let icon = document.createElement("img");
-        icon.className = "icon";
+        icon.className = "iconbtn";
         icon.id = charaData[i].id;
         icon.title = charaData[i].name;
         icon.src = charaData[i].img;
-        icon.width = styleSize;
-        icon.height = styleSize;
-
         icon.alt = "false";
-        icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
 
         // onclick event
         icon.addEventListener("click", function (e) {
             this.alt = this.alt == "true" ? "false" : "true";
-            this.style = this.alt == "true" ? styleChecked : styleUnChecked;
             // set url data
             setUrlParams(getIconFlags());
         }, false);
@@ -196,7 +183,7 @@ function init() {
 }
 
 // hr method
-function setHr(type) {
+let setHr = function (type) {
     // get icon list
     let iconbox = document.getElementById("iconbox");
     let hidden = false;
@@ -322,14 +309,12 @@ function setHr(type) {
         }
     }
 
-    doStatistics();
-
     // set sort mode to url
     setUrlParams(getIconFlags());
 }
 
 // doStatistics
-function doStatistics() {
+let doStatistics = function () {
 
     let globalIconCount = 0;
     let globalTrueCount = 0;
@@ -342,7 +327,7 @@ function doStatistics() {
     // get count in same type
     for (let i = 0; i < hrList.length; ++i) {
         // get label text
-        let label = hrList[i].children[0].textContent;
+        let label = hrList[i].getElementsByTagName("span")[0].textContent;
         let checked = false;
 
         icon = hrList[i];
@@ -362,8 +347,8 @@ function doStatistics() {
             if (icon.alt == "false") checked = true;
         }
         // set text & result & button
-        hrList[i].innerHTML = `<span>${label}</span><span class="count">${Math.floor(100 * trueCount / iconCount)}%（${trueCount}/${iconCount}）</span>`;
-        hrList[i].innerHTML += `<input type="checkbox" id="f${i}" onclick="selectGroup(this);" /><label for="f${i}"><span>一括${checked ? "選択" : "解除"}</span></label>`;
+        let ratio = `${Math.floor(100 * trueCount / iconCount)}%（${trueCount}/${iconCount}）`;
+        hrList[i].innerHTML = `<div style="margin-top: 1px;"><span>${label}</span><span style="float: right;">${ratio}</span><input type="checkbox" id="f${i}" onclick="selectGroup(this);"><label for="f${i}" style="float: right;">一括${checked ? "選択" : "解除"}</label></div>`;
         hrList[i].getElementsByTagName("input")[0].checked = checked;
 
         // reset icon count
@@ -373,24 +358,22 @@ function doStatistics() {
     return `所有率: ${Math.floor(100 * globalTrueCount / globalIconCount)} % （${globalTrueCount}/${globalIconCount}）`;
 }
 // selector
-function selectGroup(checkbox) {
+let selectGroup = function (checkbox) {
     // get backup
     let flagList = getIconFlags();
 
     // get flag
-    checkbox.checked != checkbox.checked;
     let checked = checkbox.checked;
     // set new text
-    checkbox.nextElementSibling.children[0].textContent = `一括${checked ? "選択" : "解除"}`;
+    checkbox.nextElementSibling.textContent = `一括${checked ? "選択" : "解除"}`;
     // set icon witch in group
-    let hr = checkbox.parentElement;
+    let hr = checkbox.parentElement.parentElement;
     let icon = hr;
     while (true) {
         icon = icon.nextElementSibling;
 
         if (!icon || icon.tagName != "IMG") break;
         icon.alt = !checked;
-        icon.style = icon.alt == "true" ? styleChecked : styleUnChecked;
     }
 
     // set url data
@@ -404,9 +387,9 @@ function selectGroup(checkbox) {
 
 // sort method
 let sortMode = "";
-function sortByDate(ascending) {
+let sortByDate = function (ascending) {
     sortMode = ascending ? "DATE" : "date";
-    $(".iconbox").empty();
+    $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
         // sort by id
@@ -418,9 +401,9 @@ function sortByDate(ascending) {
     init();
     setHr("year");
 }
-function sortByRare(ascending) {
+let sortByRare = function (ascending) {
     sortMode = ascending ? "RARE" : "rare";
-    $(".iconbox").empty();
+    $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
         // sort by rare
@@ -439,9 +422,9 @@ function sortByRare(ascending) {
     init();
     setHr("rare");
 }
-function sortByClass(ascending) {
+let sortByClass = function (ascending) {
     sortMode = ascending ? "CLASS" : "class";
-    $(".iconbox").empty();
+    $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
         // sort by group
@@ -461,9 +444,9 @@ function sortByClass(ascending) {
     init();
     setHr("classId");
 }
-function sortByKind() {
+let sortByKind = function () {
     sortMode = "kind";
-    $(".iconbox").empty();
+    $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
         // sort by kind
@@ -484,9 +467,9 @@ function sortByKind() {
     init();
     setHr("kind");
 }
-function sortByEvent() {
+let sortByEvent = function () {
     sortMode = "isEvent";
-    $(".iconbox").empty();
+    $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
         // sort down rare 3.5
@@ -511,9 +494,9 @@ function sortByEvent() {
     init();
     setHr("isEvent");
 }
-function sortByAssign() {
+let sortByAssign = function () {
     sortMode = "assign";
-    $(".iconbox").empty();
+    $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
         // sort by assign
@@ -536,9 +519,9 @@ function sortByAssign() {
     init();
     setHr("assign");
 }
-function sortByGenus() {
+let sortByGenus = function () {
     sortMode = "genus";
-    $(".iconbox").empty();
+    $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
         // sort by genus
@@ -561,9 +544,9 @@ function sortByGenus() {
     init();
     setHr("genus");
 }
-function sortByYearGacha() {
+let sortByYearGacha = function () {
     sortMode = "yearGacha";
-    $(".iconbox").empty();
+    $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
         // sort rare
@@ -599,7 +582,7 @@ function sortByYearGacha() {
 
 // undo method
 let urlHistory = [];
-function undo() {
+let undo = function () {
     let flagList = urlHistory.pop();
     if (!flagList) return;
     setUrlParams(flagList);
@@ -607,21 +590,21 @@ function undo() {
 }
 
 // html result to image
-function openImage() {
+let openImage = function () {
     $(window).scrollTop(0);
-    html2canvas(document.getElementById("Layout_Mainblock")).then(function (canvas) {
+    html2canvas(document.getElementById("iconbox")).then(function (canvas) {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
         window.open().document.write("<img src=\"" + image.src + "\" />");
     });
 }
 
-function copyUrl() {
+let copyUrl = function () {
     document.getElementById("_sharebox").select();
     document.execCommand("copy");
 }
 
-function setShareButton(currentUri) {
+let setShareButton = function (currentUri) {
     function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
     document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
     document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);

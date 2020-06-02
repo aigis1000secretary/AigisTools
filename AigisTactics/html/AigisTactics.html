@@ -19,10 +19,23 @@
   <!-- css -->
   <link href='Primary.css' rel='stylesheet' type='text/css' />
   <link href='LocationIcon.css' rel='stylesheet' type='text/css' />
+  <style>
+    @media screen and (max-width: 960px) {
+      body {
+        max-width: 990px;
+      }
+
+      .leftcolumn,
+      .rightcolumn {
+        min-width: 100%;
+        padding: 0px;
+      }
+    }
+  </style>
 
 </head>
 
-<body onload="bodyOnload();">
+<body onload="bodyOnload();" style="width: 1330px;">
 
   <div class="header">
     <h1>千年戦争アイギス - 作戦図＋</h1>
@@ -30,7 +43,7 @@
 
   <div class="row">
 
-    <div class="leftcolumn">
+    <div class="leftcolumn" style="width: 980px;">
 
       <div class="card">
 
@@ -61,15 +74,14 @@
           </div>
         </div>
 
-        <div id="iconbox">
-
-        </div>
+        <!-- // init by js methods -->
+        <div id="iconbox"></div>
 
       </div>
 
     </div>
 
-    <div class="rightcolumn">
+    <div class="rightcolumn" style="width: 340px;">
 
       <div class="card">
         <a itemprop="url" href="https://twitter.com/Aigis1000/" target="_blank">▼千年戦争アイギスtwitter公式アカウント</a><br>

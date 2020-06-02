@@ -8,7 +8,6 @@ body {
     /* font-family: Arial; */
     padding: 5px;
     /* background: #f1f1f1; */
-    width: 1330px;
     background: #c0e0ff;
     font-size: 12px;
     font-family: "-apple-system", "BlinkMacSystemFont", "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", "Osaka", "sans-serif";
@@ -34,16 +33,14 @@ body {
 
 .leftcolumn {
     float: left;
-    /* width: 75%; */
-    width: 980px;
+    width: 75%;
 }
 
 /* Right column */
 
 .rightcolumn {
     float: right;
-    /* width: 25%; */
-    width: 340px;
+    width: 25%;
     padding-left: 10px;
 }
 
@@ -59,24 +56,72 @@ body {
     font-size: 120%;
     font-weight: bold;
     margin: 6px 8px 6px 8px;
-    padding: 7px 3px 9px 7px;
+    padding: 2px 3px 4px 7px;
     border-radius: 2px;
     background: #a0c0ff;
+}
+
+.card .hr select {
+    margin-top: 6px;
 }
 
 .card .hr .inputbox {
     /* float: right; */
     /* text-align: right; */
+    margin-top: 4px;
     margin-right: 4px;
 }
 
-.card .hr select {
-    margin-top: 1px;
+.card .hr input[type="checkbox"] {
+    display: none;
+}
+
+.card .hr input[type="checkbox"]+label {
+    user-select: none;
+    cursor: pointer;
+    font-size: smaller;
+    font-weight: 100;
+    border-radius: 5px;
+    margin: 1px 6px 0px 6px;
+    padding: 0px 5px 0px 5px;
+}
+
+.card .hr input[type="checkbox"]+label {
+    color: #000000;
+    border: 1px #ec4438 solid;
+    text-decoration: line-through;
+}
+
+.card .hr input[type="checkbox"]:checked+label {
+    color: #000000;
+    border: 1px #3898ec solid;
+    text-decoration: none;
+}
+
+.card .hr input[type="checkbox"]+label:hover {
+    color: #ffffff;
+    background-color: #3898ec;
+}
+
+.card input[type="button"] {
+    cursor: pointer;
+    height: 26px;
+    color: #fff;
+    background-color: #3898ec;
+    border: 2px #3898ec solid;
+    border-radius: 7px;
+    margin: 1px 0px 1px 0px;
+    padding: 1px 6px 1px 6px;
+}
+
+.card input[type="button"]:hover {
+    color: #3898ec;
+    background-color: #fff;
 }
 
 .card #mapimg {
-    /* background-color: rgba(255, 255, 255, 0.0); */
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.0);
+    /* background-color: rgba(255, 255, 255, 0.8); */
     background-blend-mode: lighten;
     width: 960px;
     height: 640px;
@@ -87,8 +132,8 @@ body {
 }
 
 .card #mapimg[title="alpha"] {
-    /* background-color: rgba(255, 255, 255, 0.5); */
-    background-color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 1.0); */
 }
 
 #mapimg .goal {
@@ -141,11 +186,22 @@ body {
     color: #3878ec;
 }
 
+.card #_sharebox {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 120px;
+}
+
 #iconbox .iconbtn {
     user-select: none;
     width: 50px;
     height: 50px;
     margin: 2px 5px 0px 5px;
+    opacity: 1.0;
+}
+
+#iconbox .iconbtn[alt="false"] {
+    opacity: 0.4;
 }
 
 /* Clear floats after the columns */
@@ -167,12 +223,9 @@ body {
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 
-@media screen and (max-width: 960px) {
-    body {
-        width: 990px;
-    }
+@media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {
         width: 100%;
-        padding: 0;
+        padding: 0px;
     }
 }
