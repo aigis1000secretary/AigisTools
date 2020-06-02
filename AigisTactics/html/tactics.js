@@ -159,12 +159,11 @@ let addIcon = function (event) {
 
 // select options
 let onChangeSelect = function (select) {
-    if (select.id == "missionType") { onChangeInputMissionType(select); }
-    else if (select.id == "mission") { onChangeInputMission(select); }
-    else if (select.id == "quest") { onChangeInputQuest(select); }
+    if (select.id == "missionType") { onChangeSelectMissionType(select); }
+    else if (select.id == "mission") { onChangeSelectMission(select); }
+    else if (select.id == "quest") { onChangeSelectQuest(select); }
 }
-
-let onChangeInputMissionType = function (select) {
+let onChangeSelectMissionType = function (select) {
     // change type
     let i = select.selectedIndex;
     let value = select.options[i].value;
@@ -252,7 +251,7 @@ let onChangeInputMissionType = function (select) {
         missionSelect.options.add(new Option(missionNameList[item], item));
     }
 }
-let onChangeInputMission = function (select) {
+let onChangeSelectMission = function (select) {
     // change mission
     let i = select.selectedIndex;
     let value = select.options[i].value;
@@ -275,7 +274,7 @@ let onChangeInputMission = function (select) {
         questSelect.options.add(new Option(item.questTitle, item.id));
     }
 }
-let onChangeInputQuest = function (select) {
+let onChangeSelectQuest = function (select) {
     // change quest
     let i = select.selectedIndex;
     let value = select.options[i].value;
@@ -328,6 +327,7 @@ let onChangeInputQuest = function (select) {
 
 let onChangeInput = function (select) {
     if (select.id == "rangebox") { onChangeInputRangebox(select); }
+    else if (select.id == "filterbox") { onChangeInputFilterbox(select); }
 }
 let onChangeInputRangebox = function (select) {
     // set range element
@@ -341,6 +341,25 @@ let onChangeInputRangebox = function (select) {
 
     setLocationOpacity(false);
 }
+let onChangeInputFilterbox = function (select) {
+    // set range element
+    let filter = select.value;
+
+    // get all button
+    let iconbtn = document.getElementsByClassName("iconbtn");
+    for (let i in Array.from(iconbtn)) {
+        let btn = iconbtn[i];
+
+        if (!!filter && btn.title.indexOf(filter) == -1) {
+            // btn.style.visibility = "hidden";
+            btn.hidden = true;
+        } else {
+            // btn.style.visibility = "visible";
+            btn.outerHTML = btn.outerHTML.replace("hidden", " ");
+        }
+    }
+}
+
 // set locations opacity
 let setLocationOpacity = function (isHidden) {
     let range = document.getElementById("range");
@@ -372,7 +391,8 @@ let setLocationOpacity = function (isHidden) {
     }
 }
 
-// mapimg method
+
+// event method
 let onDragStart = function (event) {
     // console.log("dragStart");
 
@@ -419,7 +439,7 @@ let onDrop = function (event) {
         img.style.top = parseInt(img.style.top) + endY - startY + "px";
     }
 }
-// location on click
+// location onClick
 let onClick = function (event) {
     // set range element
     let range = document.getElementById("range");
@@ -446,3 +466,5 @@ let onClick = function (event) {
 
     setLocationOpacity(flag);
 }
+
+

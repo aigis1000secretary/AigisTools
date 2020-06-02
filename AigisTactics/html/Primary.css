@@ -7,8 +7,9 @@
 body {
     /* font-family: Arial; */
     padding: 5px;
-    background: #f1f1f1;
+    /* background: #f1f1f1; */
     width: 1330px;
+    background: #c0e0ff;
     font-size: 12px;
     font-family: "-apple-system", "BlinkMacSystemFont", "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", "Osaka", "sans-serif";
     /* background-color: #efefef; */
@@ -43,7 +44,6 @@ body {
     float: right;
     /* width: 25%; */
     width: 340px;
-    background-color: #f1f1f1;
     padding-left: 10px;
 }
 
@@ -65,7 +65,8 @@ body {
 }
 
 .card .hr .inputbox {
-    float: right;
+    /* float: right; */
+    /* text-align: right; */
     margin-right: 4px;
 }
 
@@ -74,8 +75,8 @@ body {
 }
 
 .card #mapimg {
-    background-color: rgba(255, 255, 255, 0.0);
-    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* background-color: rgba(255, 255, 255, 0.0); */
+    background-color: rgba(255, 255, 255, 0.8);
     background-blend-mode: lighten;
     width: 960px;
     height: 640px;
@@ -86,12 +87,8 @@ body {
 }
 
 .card #mapimg[title="alpha"] {
-    background-color: rgba(255, 255, 255, 0.5);
-    /* background-color: rgba(255, 255, 255, 1.0); */
-}
-
-.card a {
-    color: #3878ec;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: rgba(255, 255, 255, 1.0);
 }
 
 #mapimg .goal {
@@ -138,6 +135,10 @@ body {
     transform: translate(-50%, -50%);
     position: absolute;
     z-index: 1;
+}
+
+.card a {
+    color: #3878ec;
 }
 
 #iconbox .iconbtn {
