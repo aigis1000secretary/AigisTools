@@ -34,7 +34,7 @@ let bodyOnload = function () {
 
     let map = getUrlParams();
     if (map) {
-        mapimgInit();
+        mapimgInit(map);
         // let mId = /^\d+/.exec(map).toString();
         // let qId = /\d+$/.exec(map).toString();
     }
@@ -174,7 +174,7 @@ function getUrlParams() {
     let urlData = params.get("map");
 
     // return flag list
-    return urlData || "";
+    return urlData || false;
 }
 function setUrlParams(questFullId) {
     console.log("setUrlParams(", questFullId, ")")
