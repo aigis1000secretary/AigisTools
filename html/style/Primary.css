@@ -11,7 +11,6 @@ body {
     background: #c0e0ff;
     font-size: 12px;
     font-family: "-apple-system", "BlinkMacSystemFont", "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", "Osaka", "sans-serif";
-    /* background-color: #efefef; */
 }
 
 /* Header/Blog Title */
@@ -21,6 +20,8 @@ body {
     text-align: left;
     background: white;
 }
+
+/*header-title*/
 
 .header h1 {
     font-size: 24px;
@@ -62,9 +63,13 @@ body {
     position: relative;
 }
 
+/*secelt*/
+
 .card .hr select {
     margin-top: 6px;
 }
+
+/*input box*/
 
 .card .hr .inputbox {
     /* float: right; */
@@ -72,6 +77,8 @@ body {
     margin-top: 4px;
     margin-right: 4px;
 }
+
+/* check box  */
 
 .card .hr input[type="checkbox"] {
     display: none;
@@ -106,6 +113,8 @@ body {
     background-color: #3898ec;
 }
 
+/* button */
+
 .card input[type="button"] {
     cursor: pointer;
     height: 26px;
@@ -120,69 +129,6 @@ body {
 .card input[type="button"]:hover {
     color: #3898ec;
     background-color: #fff;
-}
-
-.card #mapimg {
-    background-color: rgba(255, 255, 255, 0.0);
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    background-blend-mode: lighten;
-    width: 960px;
-    height: 640px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    margin: 10px 0px 0px 0px;
-}
-
-.card #mapimg[title="alpha"] {
-    background-color: rgba(255, 255, 255, 0.5);
-    /* background-color: rgba(255, 255, 255, 1.0); */
-}
-
-#mapimg .goal {
-    background-size: cover;
-    width: 109px;
-    height: 80px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 2;
-}
-
-#mapimg .near {
-    background-size: cover;
-    width: 84px;
-    height: 62px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 2;
-}
-
-#mapimg .afar {
-    background-size: cover;
-    width: 84px;
-    height: 62px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 2;
-}
-
-#mapimg .icon {
-    user-select: none;
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 3;
-}
-
-#mapimg #range {
-    border-radius: 1000em;
-    background-color: rgba(0, 128, 0, 0.35);
-    border: 30px solid rgba(255, 255, 0, 0.35);
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 1;
 }
 
 .card a {

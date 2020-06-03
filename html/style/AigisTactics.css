@@ -1,0 +1,140 @@
+/* map image */
+
+.card #mapimg {
+    background-color: rgba(255, 255, 255, 0.0);
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    background-blend-mode: lighten;
+    width: 960px;
+    height: 640px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0px 0px 0px;
+}
+
+.card #mapimg[title="alpha"] {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 1.0); */
+}
+
+#mapimg .goal {
+    background-size: cover;
+    width: 109px;
+    height: 80px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#mapimg .location {
+    font-size: 15px;
+    width: 84px;
+    height: 62px;
+    border-radius: 31px;
+    /* background-color: #c0e0ff; */
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#mapimg .near, #mapimg .afar {
+    background-size: cover;
+    width: 84px;
+    height: 62px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+}
+
+#mapimg .range {
+    border-radius: 1000em;
+    background-color: rgba(0, 128, 0, 0.35);
+    /* border: 2px solid rgba(0, 255, 0, 0.35); */
+    border: 2px solid seagreen;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    /* top: 50%;
+    left: 50%; */
+    /* opacity: 0; */
+    visibility: hidden;
+    pointer-events: none;
+    /* user-select: none; */
+    z-index: 0;
+}
+
+#mapimg .rangeText {
+    padding-left: 2px;
+    padding-right: 2px;
+    color: black;
+    background: steelblue;
+    /* background: #c0e0ff; */
+    position: absolute;
+    transform: translate(-50%, 0);
+    /* top: calc(50% + 31px);
+    left: 50%; */
+    visibility: hidden;
+    /* pointer-events: none; */
+    user-select: none;
+    z-index: 1;
+}
+
+#mapimg .inputrange {
+    width: 52px;
+    background: steelblue;
+    /* background: #c0e0ff; */
+    position: absolute;
+    transform: translate(-50%, 0);
+    /* top: calc(50% + 31px);
+    left: 50%; */
+    visibility: hidden;
+    opacity: 0.0;
+    pointer-events: auto;
+    /* user-select: none; */
+    z-index: 2;
+}
+
+#mapimg .inputrange:focus, #mapimg .inputrange:hover {
+    opacity: 1.0;
+}
+
+#mapimg .hitbox {
+    /* width: 66px; */
+    /* height: 66px; */
+    width: 60px;
+    height: 60px;
+    border-radius: 1000em;
+    background-color: rgba(128, 0, 0, 0.25);
+    border: 2px solid rgba(255, 0, 0, 0.65);
+    /* left: 50%;
+    top: 50%; */
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    z-index: 5;
+}
+
+#mapimg .distanceText {
+    padding-left: 2px;
+    padding-right: 2px;
+    color: black;
+    /* background: #c0e0ff; */
+    /* background: #ffc0c0; */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    /* top: 50%;
+    left: 50%; */
+    /* opacity: 0.0; */
+    pointer-events: none;
+    user-select: none;
+    z-index: 11;
+}
+
+#mapimg .icon {
+    user-select: none;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 12;
+}

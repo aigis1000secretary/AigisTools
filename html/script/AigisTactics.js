@@ -1,5 +1,5 @@
 
-
+let MapImg;
 let bodyOnload = function () {
     questList.sort((a, b) => { return a.id.localeCompare(b.id); })
     // console.log("bodyOnload");
@@ -32,6 +32,9 @@ let bodyOnload = function () {
 
     iconboxInit();
 
+    MapImg = document.getElementById("mapimg");
+    nowFocus = MapImg;
+    lastFocus = MapImg;
     let map = getUrlParams();
     if (map) {
         mapimgInit(map);
@@ -138,15 +141,13 @@ let iconboxInit = function () {
 }
 let iconCount = 0;
 let addIcon = function (event) {
+    console.debug("addIcon");
     // get chara id
     let id = event.target.alt;
 
     // get chara data
     let icon = charaData.find(icon => { return icon.id == id; })
     if (!icon) console.log("addIcon error", id);
-
-    // gat mapimg
-    let mapimg = document.getElementById("mapimg");
 
     // set newIcon element
     let newIcon = document.createElement("img");
@@ -159,7 +160,7 @@ let addIcon = function (event) {
 
     newIcon.addEventListener("dragstart", onDragStart, false);
 
-    mapimg.appendChild(newIcon);
+    MapImg.appendChild(newIcon);
     iconCount++;
 }
 
@@ -177,7 +178,6 @@ function getUrlParams() {
     return urlData || false;
 }
 function setUrlParams(questFullId) {
-    console.log("setUrlParams(", questFullId, ")")
     // URL obj
     let url = new URL(document.URL);
     let params = url.searchParams;
@@ -195,6 +195,8 @@ function setUrlParams(questFullId) {
     // document.getElementById("_sharebox").textContent = shareText;
     // setShareButton(shareText);
 }
+
+
 // init map image
 let mapimgInit = function (id) {
     if (!id || id == "") { return; }
@@ -204,46 +206,108 @@ let mapimgInit = function (id) {
     let quest = questList.find(quest => { return quest.id == id; });
 
     // clear map image
-    let mapimg = document.getElementById("mapimg");
-    mapimg.innerHTML = null; iconCount = 0;
+    MapImg.innerHTML = null;
+    iconCount = 0;
 
     // set bg map image
     let md5 = mapHashList["Map" + quest.map + ".png"];
-    mapimg.style.backgroundImage = "url(./maps/" + md5 + ")";
-
-    // set range element
-    let radius = parseInt(document.getElementById("rangebox").value) + 40;
-    let range = document.createElement("div");
-    range.id = "range";
-    range.style.visibility = "hidden";
-    range.style.width = (radius * 1.5) + "px";
-    range.style.height = (radius * 1.5) + "px";
-    range.className = "range";
-    range.addEventListener("ondrop", onDrop, false);
-    range.addEventListener("ondragover", onDragOver, false);
-    mapimg.appendChild(range);
-    // range.style.visibility = "visible";
+    MapImg.style.backgroundImage = "url(./maps/" + md5 + ")";
 
     // get location data
     for (let i in quest.locationList) {
-        let local = quest.locationList[i];
+        let location = quest.locationList[i];
+
+        // location
         let div = document.createElement("div");
-        div.style.left = local.X + "px";
-        div.style.top = local.Y + "px";
+        div.style.left = location.X + "px";
+        div.style.top = location.Y + "px";
 
         // check location type
-        if (local.ObjectID == 0) div.className = "goal";
-        else if (200 <= local.ObjectID && local.ObjectID < 300) div.className = "near";
-        else if (300 <= local.ObjectID && local.ObjectID < 400) div.className = "afar";
+        let imgname = ""
+        if (location.ObjectID == 0) { div.className = "goal"; MapImg.appendChild(div);; continue; }
+        else if (200 <= location.ObjectID && location.ObjectID < 300) { div.className = "location"; imgname = "near"; }
+        else if (300 <= location.ObjectID && location.ObjectID < 400) { div.className = "location"; imgname = "afar"; }
         else continue;
 
-        // add event
-        div.addEventListener("ondrop", onDrop, false);
-        div.addEventListener("ondragover", onDragOver, false);
-        div.addEventListener("click", onClick, false);
+        let dId = imgname + location.ObjectID;
+        div.id = dId;
+        MapImg.appendChild(div);
 
-        mapimg.appendChild(div);
+        // range
+        div = document.createElement("div");
+        div.className = "range";
+        div.title = dId;
+        div.style.left = location.X + "px";
+        div.style.top = location.Y + "px";
+        MapImg.appendChild(div);
+
+        // rangeText
+        div = document.createElement("div");
+        div.className = "rangeText";
+        div.title = dId;
+        div.style.left = location.X + "px";
+        div.style.top = (parseInt(location.Y) + 31) + "px";
+        MapImg.appendChild(div);
+
+        // inputrange
+        div = document.createElement("input");
+        div.className = "inputrange";
+        div.title = dId;
+        div.type = "number";
+        div.value = "0";
+        div.style.left = location.X + "px";
+        div.style.top = (parseInt(location.Y) + 31) + "px";
+        div.addEventListener("change", onChangeInput, false);
+        MapImg.appendChild(div);
+
+        // img
+        div = document.createElement("div");
+        div.className = imgname;
+        div.title = dId;
+        div.style.left = location.X + "px";
+        div.style.top = location.Y + "px";
+        MapImg.appendChild(div);
+
+        // hitbox
+        div = document.createElement("div");
+        div.className = "hitbox";
+        div.title = dId;
+        div.style.left = location.X + "px";
+        div.style.top = location.Y + "px";
+        MapImg.appendChild(div);
+
+        // distanceText
+        div = document.createElement("div");
+        div.className = "distanceText";
+        div.title = dId;
+        div.style.left = location.X + "px";
+        div.style.top = location.Y + "px";
+        MapImg.appendChild(div);
+
+
+
+        // if (imgname != "") {
+        //     let innerHTML = ""
+        //     innerHTML += `<div class="range"></div>`
+
+        //     innerHTML += `<div class="rangeText"></div>`
+        //     innerHTML += `<input class="inputrange" type="number" value="0" onchange="onChangeInput(this);">`
+
+        //     innerHTML += `<div class="${imgname}"></div>`;
+
+        //     innerHTML += `<div class="hitbox"></div>`
+        //     innerHTML += `<div class="distanceText"></div>`;
+
+        //     div.innerHTML = innerHTML;
+        //     div.id = imgname + location.ObjectID;
+        // }
+
+
+
+
     }
+
+    drawMapImage();
 }
 
 
@@ -371,76 +435,10 @@ let onChangeSelectQuest = function (select) {
     mapimgInit(value);
 }
 
-let onChangeInput = function (select) {
-    if (select.id == "rangebox") { onChangeInputRangebox(select); }
-    else if (select.id == "filterbox") { onChangeInputFilterbox(select); }
-}
-let onChangeInputRangebox = function (select) {
-    // set range element
-    let radius = parseInt(select.value) + 40;
-    let range = document.getElementById("range");
-    range.style.width = (radius * 1.5) + "px";
-    range.style.height = (radius * 1.5) + "px";
-
-    // check visibility
-    if (range.style.visibility == "hidden") { return; }
-
-    setLocationOpacity(false);
-}
-let onChangeInputFilterbox = function (select) {
-    // set range element
-    let filter = select.value;
-
-    // get all button
-    let iconbtn = document.getElementsByClassName("iconbtn");
-    for (let i in Array.from(iconbtn)) {
-        let btn = iconbtn[i];
-
-        if (!!filter && btn.title.indexOf(filter) == -1) {
-            // btn.style.visibility = "hidden";
-            btn.hidden = true;
-        } else {
-            // btn.style.visibility = "visible";
-            btn.outerHTML = btn.outerHTML.replace("hidden", " ");
-        }
-    }
-}
-
-// set locations opacity
-let setLocationOpacity = function (isHidden) {
-    let range = document.getElementById("range");
-    let radius = parseInt(document.getElementById("rangebox").value);
-    let x0 = parseInt(range.style.left);
-    let y0 = parseInt(range.style.top);
-
-    let locals = document.querySelectorAll(".afar, .near");
-    for (let i in locals) {
-        let local = locals[i];
-        if (local.tagName != "DIV") continue;
-
-        if (isHidden) {
-            local.style.opacity = "1.0";
-        } else {
-            // get distance
-            let x = parseInt(local.style.left);
-            let y = parseInt(local.style.top);
-            let distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
-
-            if (distance <= radius) {
-                local.style.opacity = "1.0";
-            } else if (distance <= (radius + 40)) {
-                local.style.opacity = "0.55";
-            } else {
-                local.style.opacity = "0.1";
-            }
-        }
-    }
-}
-
 
 // event method
 let onDragStart = function (event) {
-    // console.log("dragStart");
+    console.debug("dragStart");
 
     // save drag image dom id
     event.dataTransfer.setData("imgId", event.target.id);
@@ -448,20 +446,18 @@ let onDragStart = function (event) {
     event.dataTransfer.setData("startY", event.clientY);     // Get the vertical coordinate
 
     // set map image alpha 0.5
-    document.getElementById("mapimg").title = "alpha";
+    MapImg.title = "alpha";
 }
 let onDragOver = function (event) {
     // console.log("ondragover");
     event.preventDefault();
 }
 let onDrop = function (event) {
-    // console.log("drop");
+    console.debug("drop", event.target.className);
     event.preventDefault();
 
-    // get mapimg
-    let mapimg = document.getElementById("mapimg");
     // set map alpha 0.0
-    mapimg.title = "";
+    MapImg.title = "";
 
     // get drop area
     let target = event.target;
@@ -476,41 +472,186 @@ let onDrop = function (event) {
 
     // change img posion
     if (className == "goal") {
-        mapimg.removeChild(img);
-    } else if (className == "near" || className == "afar") {
+        MapImg.removeChild(img);
+    } else if (className == "location") {
         img.style.left = target.style.left;
         img.style.top = target.style.top;
-    } else if (className == "mapimg" || className == "range") {
+    } else// if (className == "mapimg" || className == "range")
+    {
         img.style.left = parseInt(img.style.left) + endX - startX + "px";
         img.style.top = parseInt(img.style.top) + endY - startY + "px";
     }
 }
-// location onClick
-let onClick = function (event) {
+
+
+// onChangeInput
+let onChangeInput = function (event) {
+    let select = event.target;
+    console.debug("onChangeInput");
+    if (select.className == "inputrange") { onChangeInputRange(select); }
+    else if (select.id == "filterbox") { onChangeInputFilterbox(select); }
+}
+let onChangeInputRange = function (select) {
+    console.debug("onChangeInputRange");
+    nowFocus = document.querySelector(`#${select.title}`);
+    lastFocus = MapImg;
+    drawMapImage();
+}
+let onChangeInputFilterbox = function (select) {
     // set range element
-    let range = document.getElementById("range");
+    let filter = select.value;
 
-    // check posion
-    let flag = false;
-    if (range.style.left != event.target.style.left ||
-        range.style.top != event.target.style.top) {
-        flag = true;
+    // get all button
+    let iconbtn = document.getElementsByClassName("iconbtn");
+    for (let i in Array.from(iconbtn)) {
+        let btn = iconbtn[i];
+
+        if (!!filter && btn.title.indexOf(filter) == -1) {
+            // btn.style.visibility = "hidden";
+            // btn.hidden = true;
+            btn.style.display = "none";
+        } else {
+            // btn.style.visibility = "visible";
+            // btn.outerHTML = btn.outerHTML.replace("hidden", " ");
+            btn.style.display = "inline";
+        }
     }
-
-    // set position
-    range.style.left = event.target.style.left;
-    range.style.top = event.target.style.top;
-
-    // set visibility
-    if (range.style.visibility == "hidden" || flag) {
-        range.style.visibility = "visible";
-        flag = false;
-    } else {
-        range.style.visibility = "hidden";
-        flag = true;
-    }
-
-    setLocationOpacity(flag);
 }
 
 
+// location onClick
+let nowFocus = "";
+let lastFocus = "";
+let onClick = function (event) {
+    console.debug("onClick", event.target.className);
+
+    if (event.target.className == "mapimg" || event.target.className == "location") {
+        nowFocus = event.target;
+        drawMapImage();
+    }
+
+    // if (event.target.className == "mapimg") { onClickMapimg(event); }
+    // else if (event.target.className == "location") { onClickLocation(event); }
+
+    // lastFocus = event.target;
+}
+// draw map image
+let drawMapImage = function () {
+    // get all location
+    let locations = Array.from(MapImg.getElementsByClassName("location"));
+    for (let i in locations) {
+        let location = locations[i];
+        let dId = locations[i].id;
+
+        // get element
+        let range = document.querySelector(`div.range[title=${dId}]`);
+        let rangeText = document.querySelector(`div.rangeText[title=${dId}]`);
+        let inputrange = document.querySelector(`input.inputrange[title=${dId}]`);
+        let hitbox = document.querySelector(`div.hitbox[title=${dId}]`);
+        let distanceText = document.querySelector(`div.distanceText[title=${dId}]`);
+
+        // get data
+        let type = /[^\d]+/.exec(dId).toString();
+        let rangeData = parseInt(inputrange.value);
+        if (isNaN(rangeData) || rangeData <= 40) { rangeData = 0; }        // check data
+        inputrange.value = rangeData;
+
+        // set text
+        let distance;
+        rangeText.innerText = rangeData;
+        if (nowFocus.className == "mapimg") {
+            distanceText.innerText = (type == "near" ? "近" : "遠");
+        } else if (nowFocus.className == "location") {
+            let x0 = parseInt(nowFocus.style.left);
+            let y0 = parseInt(nowFocus.style.top);
+
+            let x = parseInt(location.style.left);
+            let y = parseInt(location.style.top);
+            distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
+
+            distanceText.innerText = Math.round(distance);
+        }
+
+        // draw range circle size
+        range.style.width = (rangeData * 1.5) + "px";
+        range.style.height = (rangeData * 1.5) + "px";
+
+        // draw circle / text color & visibility
+        if (nowFocus.className == "mapimg") {
+            // distanceText
+            distanceText.style.color = (type == "near" ? "#ffffff" : "#000000");
+            distanceText.style.background = (type == "near" ? "#000000" : "#ffffff");
+
+            // hitbox
+            hitbox.style.visibility = "hidden";
+
+            // rangeText
+            rangeText.style.visibility = "hidden";
+            inputrange.style.visibility = "hidden";
+
+            // range
+            // no response
+        } else {
+            // distanceText
+            let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title=${nowFocus.id}]`).value);
+            if (nowFocusRange == 0) { nowFocusRange = 2000; }
+            distanceText.style.color = ((nowFocusRange + 40) > distance) ? "#000000" : "#ffffff";;
+            distanceText.style.background = ((nowFocusRange + 40) > distance) ? "#00ff00" : "#ff0000";;
+
+            // hitbox
+            hitbox.style.visibility = "visible";
+            // range
+            if (nowFocus == location) {
+                // switch
+                let visibility = "hidden";
+                if (range.style.visibility != "visible" || lastFocus.id != nowFocus.id) {
+                    visibility = "visible";
+                }
+                if (rangeData == 0) { visibility = "hidden"; }
+
+                range.style.visibility = visibility;
+            }
+
+            // rangeText
+            if (nowFocus == location) {
+                rangeText.style.visibility = "visible";
+                inputrange.style.visibility = "visible";
+
+            } else {
+                rangeText.style.visibility = range.style.visibility;
+                inputrange.style.visibility = range.style.visibility;
+            }
+        }
+
+        // let visibility = (range.style.visibility != "visible" ? "visible" : "hidden")
+        // range.style.visibility = visibility;
+
+
+
+        // distanceText.style.visibility = "visible";
+
+
+
+
+        // innerHTML += `<div class="range"></div>`
+
+        // innerHTML += `<div class="rangeText"></div>`
+        // innerHTML += `<input class="inputrange" type="number" value="0" onchange="onChangeInput(this);">`
+
+        // innerHTML += `<div class="${imgname}"></div>`;
+
+        // innerHTML += `<div class="hitbox"></div>`
+        // innerHTML += `<div class="distanceText"></div>`;
+
+
+    }
+
+    lastFocus = nowFocus;
+}
+
+
+
+
+// let onClickTest = function (event) {
+//     console.log(event.target);
+// }
