@@ -10,5 +10,6 @@ AigisTools/Data/Cache/
 AigisTools/out/
 AigisTools/working/
 
-AigisChecker/Resources/
 AigisChecker/*.csv
+
+Resources
