@@ -28,8 +28,8 @@
         max-width: 990px;
       }
 
-      .row>.leftcolumn,
-      .row>.rightcolumn {
+      body>.row>.leftcolumn,
+      body>.row>.rightcolumn {
         min-width: 100%;
         padding: 0px;
       }
@@ -48,39 +48,78 @@
 
     <div class="leftcolumn" style="width: 980px;">
 
+      <!-- mapimg box -->
       <div class="card">
-
         <div class="hr">
           <select id="missionType" onchange="onChangeSelect(this);"> </select>
           <select id="mission" onchange="onChangeSelect(this);"> </select>
           <select id="quest" onchange="onChangeSelect(this);"> </select>
         </div>
-
         <!-- init by js methods -->
         <div id="mapimg" class="mapimg" style="background-image: url(./maps/4f414b3bb77dc850d6c0784c6e961bb6);"
-          onclick="onClick(event);" ondrop="onDrop(event);" ondragover="onDragOver(event);">
+          onclick="onClick(event);" ondrop="onDrop(event);" ondragover="onDragOver(event);"> </div>
+      </div>
 
+      <!-- tool box -->
+      <div class="row">
+        <div class="leftcolumn" style="width: 40%;">
+          <div class="card">
+
+            <div class="hr"> メモ生成 </div>
+            <div class="memoresult"> </div>
+            <div class="inputbox">
+              <textarea id="textbox" style="min-height: 40px; max-width: 100%;"></textarea>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="leftcolumn" style="width: 30%; padding-left: 10px;">
+          <div class="card">
+
+            <div class="hr">
+              <div class="inputbox">色
+                <input id="outcolor" type="color" onchange="onChangeInput(event);">
+              </div>
+
+              <div class="inputbox">背景色
+                <input id="bgcolorbox" type="color" value="#000000" onchange="onChangeInput(event);">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="rightcolumn" style="width: 30%;">
+          <div class="card">
+
+            <div class="hr">
+              <div class="inputbox">射程倍率：
+                <input id="rangeratiobox" type="text" style="width: 155px;" onchange="onChangeInput(event);">
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
 
+      <!-- iconbox -->
       <div class="card">
-
         <div class="hr">
           <div class="inputbox"> フィルタ：
             <input id="filterbox" type="text" onchange="onChangeInput(event);">
           </div>
         </div>
-
         <!-- init by js methods -->
         <div id="iconbox"></div>
-
       </div>
 
     </div>
 
     <div class="rightcolumn" style="width: 340px;">
 
+      <!-- link box -->
       <div class="card">
         <a itemprop="url" href="https://twitter.com/Aigis1000/" target="_blank">▼千年戦争アイギスtwitter公式アカウント</a><br>
         <a itemprop="url" href="https://aigis1000.jp/" target="_blank">▼千年戦争アイギスA公式サイト</a><br>
@@ -88,6 +127,7 @@
           target="_blank">▼YouTube「千年戦争アイギス」公式チャンネル</a><br>
       </div>
 
+      <!-- share box -->
       <div class="card">
         作戦図を共有
         <input type="button" onclick="openImage();" value="画像生成">
@@ -100,7 +140,6 @@
         <a target="_blank" id="_plurkBtn"><img width=20 height=20
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAw1BMVEXsQjr////sQDfsPDP+///86en85eXtU0v62tj3wb7tVUz++fnsQjvsPjXsPzf99/f+9fX//f34r6zyhYD++/vsRDzsOzHwbmrsSEH87+7uWFHtT0fsRj7uWlT+/f374+Lzl5PwaGP88vH74N/619b99PP77Ov3vrv2sK72qaf1n5zxdnHwamXuXlftTEX51NL1op/ziYbygn770tD5z834yMb5xcP3trP1pKHxc275zMryfnrvYVv/+vr1nJnzjYrxe3dwM2BmAAAC50lEQVRIx43W6XqiMBQG4OQQlxYDouyLgPu+79p27v+qhiR2RooUvl8+Obwc4BAVYZ5OeH0ryKGnYx5O5NFlqUgFoXY8bj5Ip7KlEqDiUNOqEkZI5WKikjEXFZIQ+YuJsmamY6T1fUDZgKIor9alEUZylGkCkoSW7iJ4t5NP8IPMOmgwp+lFhdb+TPbVgap2w+vZ8tMIag4aukr6ghZrPgARoq82y9Q5jTqqvD8TMKKQ4FTIagbPjRiBJ+GdVZyJOrXziXsiBGdDTnYOgW9BiFzdHw/9oUaIMGPjJYHluiOOCM+Wp0hSo3YZdx99InhFjD8OLzuTgI1DDCg+fPDFQQxZAu4b60HCjUGfRme3VN7mzc8S4zZgpeqmAanJojEzRLYgQ2ot1kReL0E0pY95UW+nsT6TbJf7ihWqj/dH8e4LQ1TMLX8G/eVP0rAqybq280A8it6HeowbYr511sZZZMitybc0HwDM+uz693dxjaMPVrLgJ9nKyXqzhVj8zwF/U278BHTMSp1ZhrSfiD1V+YRmgpw4ufxO1jJ/TUTNOOisZfwr8TfX3e745YmnvAjZ7VfcXCICyr9NbE7519fBR/kkHSmu8lFGUJaYwUpnYhigcgTMeZ8LvEZFBAAUakre1BGbrl6D30lj+e66QbxthR3MRdeCgi52NOx2BzrBj6hb+gBF0/+O01ZQMWn+B6QvripLtiojJ0HO8uNwTIZrj6KXBM0ctl/qrgRgxlcsItc/Awooh9z77Bh9ZHm1215jHXrjr7ltKgjlEe9MxIkrjo653iBTYpVc0oh73HyHHANRySfIb3efTc9CL/P8YwF2O9SxiKatLCOPOAtGhGnMR46uJZGdUQCvhd9D6uXpFhV/Pjnu9m+flq+8FjToIn0ipZYkMAyQKMqJuSFIC12KSgf8FUZYnyAoTaSIJIQMotKGtlVGMFEnLpRAAF6UiIQk6fSmVlAriDuP+h3x50pEHlYLMmQdWP4C89REz0iuQg4AAAAASUVORK5CYII="></a>
         <br>
-
         <div class="_textarea">
           <textarea id="_sharebox">ここに共有する内容が表示されます</textarea>
         </div>
