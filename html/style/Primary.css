@@ -153,6 +153,11 @@ body {
     opacity: 0.4;
 }
 
+#iconbox .iconbtn:active {
+    background-color: #00000000;
+    border: 3px #ffffff00 solid;
+}
+
 /* Clear floats after the columns */
 
 .row:after {

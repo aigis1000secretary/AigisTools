@@ -167,6 +167,7 @@ let init = function () {
         icon.title = charaData[i].name;
         icon.src = charaData[i].img;
         icon.alt = "false";
+        icon.draggable = false;
 
         // onclick event
         icon.addEventListener("click", function (e) {

@@ -95,6 +95,7 @@ let iconboxInit = function () {
         icon.title = charaData[i].name; // + "," + charaData[i].classId;
         icon.src = charaData[i].img;
         icon.alt = charaData[i].id;
+        icon.draggable = false;
 
         // onclick event
         icon.addEventListener("click", addIcon, false);
