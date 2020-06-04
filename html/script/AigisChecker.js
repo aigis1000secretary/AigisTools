@@ -596,7 +596,7 @@ let openImage = function () {
     html2canvas(document.getElementById("iconbox")).then(function (canvas) {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
-        window.open().document.write("<img src=\"" + image.src + "\" />");
+        window.open().document.write(`<img src="${image.src}" />`);
     });
 }
 
