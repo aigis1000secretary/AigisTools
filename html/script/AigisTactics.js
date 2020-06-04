@@ -524,17 +524,13 @@ let onChangeInputFilterbox = function (select) {
 let nowFocus = "";
 let lastFocus = "";
 let onClick = function (event) {
-    console.debug("onClick", event.target.className);
+    console.debug("onClick", event.target.className, "<=", lastFocus.className);
 
-    if (event.target.className == "mapimg" || event.target.className == "location") {
+    let waitInput = (document.querySelector("#mapimg .inputrange:focus, #mapimg .inputrange:hover") != null);
+    if ((event.target.className == "mapimg" && !waitInput) || event.target.className == "location") {
         nowFocus = event.target;
         drawMapImage();
     }
-
-    // if (event.target.className == "mapimg") { onClickMapimg(event); }
-    // else if (event.target.className == "location") { onClickLocation(event); }
-
-    // lastFocus = event.target;
 }
 // draw map image
 let drawMapImage = function () {
@@ -554,7 +550,7 @@ let drawMapImage = function () {
         // get data
         let type = /[^\d]+/.exec(dId).toString();
         let rangeData = parseInt(inputrange.value);
-        if (isNaN(rangeData) || rangeData <= 40) { rangeData = 0; }        // check data
+        if (isNaN(rangeData) || rangeData < 40) { rangeData = 40; }        // check data
         inputrange.value = rangeData;
 
         // set text
@@ -595,7 +591,7 @@ let drawMapImage = function () {
         } else {
             // distanceText
             let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title=${nowFocus.id}]`).value);
-            if (nowFocusRange == 0) { nowFocusRange = 2000; }
+            if (nowFocusRange == 40) { nowFocusRange = 2000; }
             distanceText.style.color = ((nowFocusRange + 40) > distance) ? "#000000" : "#ffffff";;
             distanceText.style.background = ((nowFocusRange + 40) > distance) ? "#00ff00" : "#ff0000";;
 
@@ -608,7 +604,7 @@ let drawMapImage = function () {
                 if (range.style.visibility != "visible" || lastFocus.id != nowFocus.id) {
                     visibility = "visible";
                 }
-                if (rangeData == 0) { visibility = "hidden"; }
+                if (rangeData == 40) { visibility = "hidden"; }
 
                 range.style.visibility = visibility;
             }
