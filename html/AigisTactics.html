@@ -66,9 +66,11 @@
           <div class="card">
 
             <div class="hr"> メモ生成 </div>
-            <div class="memoresult"> </div>
+
+            <div id="memoresult"> </div>
             <div class="inputbox">
-              <textarea id="textbox" style="min-height: 40px; max-width: 100%;"></textarea>
+              <textarea id="textbox" style="min-height: 20px; max-width: 100%;"></textarea>
+               <!-- onchange="onChangeInput(event);" onmouseup	="onChangeInput(event);" -->
             </div>
 
           </div>
@@ -78,12 +80,14 @@
           <div class="card">
 
             <div class="hr">
-              <div class="inputbox">色
-                <input id="outcolor" type="color" onchange="onChangeInput(event);">
+              <div class="inputbox">ﾎﾞｰﾀﾞｰ色
+                <input id="outcolorbox" type="color" onchange="onChangeInput(event);">
               </div>
-
               <div class="inputbox">背景色
-                <input id="bgcolorbox" type="color" value="#000000" onchange="onChangeInput(event);">
+                <input id="bgcolorbox" type="color" value="#ffffff" onchange="onChangeInput(event);">
+              </div>
+              <div class="inputbox">文字色
+                <input id="textcolorbox" type="color" onchange="onChangeInput(event);">
               </div>
             </div>
 
@@ -95,7 +99,8 @@
 
             <div class="hr">
               <div class="inputbox">射程倍率：
-                <input id="rangeratiobox" type="text" style="width: 155px;" onchange="onChangeInput(event);">
+                <input id="rangeratiobox" type="text" value="1.0" style="width: 155px;"
+                  onchange="onChangeInput(event);">
               </div>
             </div>
 

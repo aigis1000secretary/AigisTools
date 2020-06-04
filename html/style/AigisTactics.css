@@ -120,3 +120,9 @@
     user-select: none;
     z-index: 25;
 }
+
+#mapimg .memo {
+    position: absolute;
+    user-select: none;
+    z-index: 25;
+}

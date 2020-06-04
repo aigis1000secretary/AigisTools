@@ -30,6 +30,7 @@ let bodyOnload = function () {
     select = document.getElementById("quest");
     select.options.add(new Option("＝＝クエスト＝＝", ""));
 
+    onChangeInputMemobox();
     iconboxInit();
 
     MapImg = document.getElementById("mapimg");
@@ -255,7 +256,7 @@ let mapimgInit = function (id) {
         div.className = "inputrange";
         div.title = dId;
         div.type = "number";
-        div.value = "0";
+        div.value = "40";
         div.style.left = location.X + "px";
         div.style.top = (parseInt(location.Y) + 31) + "px";
         div.addEventListener("change", onChangeInput, false);
@@ -491,9 +492,19 @@ let onChangeInput = function (event) {
     console.debug("onChangeInput");
     if (select.className == "inputrange") { onChangeInputRange(select); }
     else if (select.id == "filterbox") { onChangeInputFilterbox(select); }
+    else if (select.id == "rangeratiobox") { onChangeInputRatiobox(select); }
+    else if (select.type = "color" || select.id == "textbox") { onChangeInputMemobox(select); }
 }
 let onChangeInputRange = function (select) {
     console.debug("onChangeInputRange");
+
+    // check data
+    let value = parseInt(select.value);
+    if (isNaN(value) || value < 40) {
+        value = 40;
+        select.value = value;
+    }
+
     nowFocus = document.querySelector(`#${select.title}`);
     lastFocus = MapImg;
     drawMapImage();
@@ -530,6 +541,62 @@ let onChangeInputFilterbox = function (select) {
         }
     }
 }
+let onChangeInputRatiobox = function (select) {
+    console.debug("onChangeInputRatiobox");
+
+    // check data
+    let value = parseFloat(select.value);
+    if (isNaN(value) || value <= 0.0) {
+        value = 1.0;
+        select.value = value;
+    }
+
+
+    // nowFocus = lastFocus;
+    // lastFocus = nowFocus;
+    drawMapImage();
+}
+let onChangeInputMemobox = function (select) {
+    console.debug("onChangeInputRatiobox");
+    let box = document.getElementById("textbox");
+    let teColor = document.getElementById("textcolorbox").value;
+    let bgColor = document.getElementById("bgcolorbox").value;
+    let bdColor = document.getElementById("outcolorbox").value;
+
+    box.style.color = teColor;
+    box.style.background = bgColor;
+    box.style.border = "2px solid " + bdColor;
+
+}
+let addMomebox = function () {
+    console.debug("addMomebox");
+    let box = document.getElementById("textbox");
+
+    let div = document.createElement("div");
+    div.id = "memo" + iconCount;    // for drag
+    div.className = "memo";
+    div.style.width = box.offsetWidth + "px";
+    div.style.height = box.offsetHeight + "px";
+
+    div.style.paddingLeft = "3px";
+
+    div.style.color = box.style.color;
+    div.style.background = box.style.background;
+    div.style.border = box.style.border;
+    div.style.fontFamily = box.style.fontFamily;
+
+    div.style.left = "30px";
+    div.style.top = "30px";
+
+    div.innerText = box.value;
+    div.draggable = true;
+
+    div.addEventListener("dragstart", onDragStart, false);
+
+    MapImg.appendChild(div);
+}
+
+
 
 
 // location onClick
@@ -562,28 +629,26 @@ let drawMapImage = function () {
         // get data
         let type = /[^\d]+/.exec(dId).toString();
         let rangeData = parseInt(inputrange.value);
-        if (isNaN(rangeData) || rangeData < 40) { rangeData = 40; }        // check data
-        inputrange.value = rangeData;
+        let ratioData = parseFloat(document.getElementById("rangeratiobox").value);
 
-        // set text
+        // set rangeText
+        rangeText.innerText = rangeData + (ratioData == 1.0 ? "" : ` x${ratioData.toFixed(2)}`);
+        // set distanceText
         let distance;
-        rangeText.innerText = rangeData;
         if (nowFocus.className == "mapimg") {
             distanceText.innerText = (type == "near" ? "近" : "遠");
         } else if (nowFocus.className == "location") {
             let x0 = parseInt(nowFocus.style.left);
             let y0 = parseInt(nowFocus.style.top);
-
             let x = parseInt(location.style.left);
             let y = parseInt(location.style.top);
             distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
-
             distanceText.innerText = Math.round(distance);
         }
 
         // draw range circle size
-        range.style.width = (rangeData * 1.5) + "px";
-        range.style.height = (rangeData * 1.5) + "px";
+        range.style.width = (rangeData * ratioData * 1.5) + "px";
+        range.style.height = (rangeData * ratioData * 1.5) + "px";
 
         // draw circle / text color & visibility
         if (nowFocus.className == "mapimg") {
@@ -604,8 +669,8 @@ let drawMapImage = function () {
             // distanceText
             let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title=${nowFocus.id}]`).value);
             if (nowFocusRange == 40) { nowFocusRange = 2000; }
-            distanceText.style.color = ((nowFocusRange + 40) > distance) ? "#000000" : "#ffffff";;
-            distanceText.style.background = ((nowFocusRange + 40) > distance) ? "#00ff00" : "#ff0000";;
+            distanceText.style.color = ((nowFocusRange * ratioData + 40) > distance) ? "#000000" : "#ffffff";;
+            distanceText.style.background = ((nowFocusRange * ratioData + 40) > distance) ? "#00ff00" : "#ff0000";;
 
             // hitbox
             hitbox.style.visibility = "visible";
