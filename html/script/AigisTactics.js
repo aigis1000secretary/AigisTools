@@ -499,22 +499,34 @@ let onChangeInputRange = function (select) {
     drawMapImage();
 }
 let onChangeInputFilterbox = function (select) {
+    console.debug("onChangeInputFilterbox");
     // set range element
     let filter = select.value;
 
     // get all button
-    let iconbtn = document.getElementsByClassName("iconbtn");
-    for (let i in Array.from(iconbtn)) {
-        let btn = iconbtn[i];
+    let iconItems = document.getElementById("iconbox").children;
+    let hr = null, flag;
+    for (let i = 0; i < iconItems.length; ++i) {
+        let item = iconItems[i];
+        if (item.className == "hr") {
+            // set last hr visibility
+            if (hr != null) { hr.style.display = flag ? "block" : "none"; }
+            // cache last hr
+            hr = item;
+            flag = false;
+            continue;
+        }
 
-        if (!!filter && btn.title.indexOf(filter) == -1) {
+        // btn filter
+        if (!!filter && item.title.indexOf(filter) == -1) {
             // btn.style.visibility = "hidden";
             // btn.hidden = true;
-            btn.style.display = "none";
+            item.style.display = "none";
         } else {
             // btn.style.visibility = "visible";
             // btn.outerHTML = btn.outerHTML.replace("hidden", " ");
-            btn.style.display = "inline";
+            item.style.display = "unset";
+            flag = true;
         }
     }
 }
