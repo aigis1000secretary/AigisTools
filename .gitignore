@@ -1,8 +1,10 @@
 
 *.lnk
 Thumbs.db
-node_modules
 .vscode
+node_modules
+
+Resources
 
 LocalProxy/AigisTools/
 
@@ -10,5 +12,6 @@ AigisTools/Data/Cache/
 AigisTools/out/
 AigisTools/working/
 
-AigisChecker/Resources/
 AigisChecker/*.csv
+
+
