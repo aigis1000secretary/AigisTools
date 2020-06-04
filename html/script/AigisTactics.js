@@ -154,6 +154,7 @@ let addIcon = function (event) {
     let newIcon = document.createElement("img");
     newIcon.className = "icon";
     newIcon.title = icon.name; // + "," + icon.classId;
+    // newIcon.alt = "";   // cc/aw/aw2a/aw2b tag
     newIcon.src = icon.img;
     newIcon.id = "icon" + iconCount;    // for drag
     newIcon.style.left = 30 + parseInt(iconCount % 20) * 25 + "px";
@@ -187,14 +188,13 @@ function setUrlParams(questFullId) {
     params.set("map", questFullId);
     history.pushState(null, null, url);
 
-    // // sharebox
-    // let shareText = "【千年戦争アイギス】ユニット所持チェッカー＋\n"
-    // shareText += doStatistics() + "\n";
-    // shareText += url;
-    // shareText += "\n #アイギス所持チェッカー \n #千年戦争アイギス ";
+    // sharebox
+    let shareText = "【千年戦争アイギス】　作戦図＋\n"
+    shareText += url;
+    shareText += "\n #アイギス作戦図 \n #千年戦争アイギス ";
 
-    // document.getElementById("_sharebox").textContent = shareText;
-    // setShareButton(shareText);
+    document.getElementById("_sharebox").textContent = shareText;
+    setShareButton(shareText);
 }
 
 
@@ -631,36 +631,31 @@ let drawMapImage = function () {
                 inputrange.style.visibility = range.style.visibility;
             }
         }
-
-        // let visibility = (range.style.visibility != "visible" ? "visible" : "hidden")
-        // range.style.visibility = visibility;
-
-
-
-        // distanceText.style.visibility = "visible";
-
-
-
-
-        // innerHTML += `<div class="range"></div>`
-
-        // innerHTML += `<div class="rangeText"></div>`
-        // innerHTML += `<input class="inputrange" type="number" value="0" onchange="onChangeInput(this);">`
-
-        // innerHTML += `<div class="${imgname}"></div>`;
-
-        // innerHTML += `<div class="hitbox"></div>`
-        // innerHTML += `<div class="distanceText"></div>`;
-
-
     }
 
     lastFocus = nowFocus;
 }
 
+// html result to image
+let openImage = function () {
+    $(window).scrollTop(0);
+    html2canvas(document.getElementById("iconbox")).then(function (canvas) {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        window.open().document.write(`<img src="${image.src}" />`);
+    });
+}
 
+let copyUrl = function () {
+    document.getElementById("_sharebox").select();
+    document.execCommand("copy");
+}
 
-
-// let onClickTest = function (event) {
-//     console.log(event.target);
-// }
+let setShareButton = function (currentUri) {
+    function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
+    document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
+    document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
+    document.getElementById("_plurkBtn").href = isMobile() ?
+        "https://plurk.com/?qualifier=shares&content=" + encodeURIComponent(currentUri) :
+        "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
+}
