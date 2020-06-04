@@ -38,12 +38,12 @@ const main = async function () {
     for (let i = 0; i < filelist.length; ++i) {
         let filename = filelist[i].substr(89);
         if (!/^emc/i.test(filename) && (
-            // /Map\d+/i.test(filename) ||
+            /Map\d+/i.test(filename) ||
             /MissionQuestList.atb/i.test(filename) ||
             /MissionConfig.atb/i.test(filename) ||
             /QuestNameText\d*.atb/i.test(filename)
         )) {
-            if (!fs.existsSync(resources + "/" + filename)) // skip exist
+            if (/Mission\S+.atb/i.test(filename) || !fs.existsSync(resources + "/" + filename)) // skip exist
             {
                 filelist[i] = filename;
                 continue;
@@ -254,7 +254,6 @@ const main = async function () {
             let obj = { ObjectID: locals[0], X: locals[1], Y: locals[2], _Command: locals[3] };
             locationList.push(obj);
         }
-        locationList.sort((a, b) => { return parseInt(a.ObjectID) < parseInt(b.ObjectID); });
 
         // build quest data
         let quest = {
@@ -278,13 +277,32 @@ const main = async function () {
     // fs.writeFileSync("./missionQuestList.js", "let missionQuestList = " + JSON.stringify(missionQuestList, null, 1));
 
     console.log("output missionNameList.js")
-    // fs.writeFileSync("../html/script/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList, null, 1));
-    fs.writeFileSync("../html/script/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList));
+    fs.writeFileSync("../html/script/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList, null, "\t"));
+    // fs.writeFileSync("../html/script/missionNameList.js", "let missionNameList = " + JSON.stringify(missionNameList));
+
 
     console.log("output questList.js")
-    questList.sort((a, b) => { return a.missionTitle.localeCompare(b.missionTitle); })
-    // fs.writeFileSync("../html/script/questList.js", "let questList = " + JSON.stringify(questList, null, 1));
-    fs.writeFileSync("../html/script/questList.js", "let questList = " + JSON.stringify(questList));
+    // sort location
+    for (let i in questList) {
+        questList[i].locationList.sort((a, b) => {
+            if (parseInt(a.ObjectID) != parseInt(b.ObjectID)) return (parseInt(a.ObjectID) > parseInt(b.ObjectID)) ? -1 : 1;
+            if (parseInt(a.X) != parseInt(b.X)) return (parseInt(a.X) > parseInt(b.X)) ? -1 : 1;
+            if (parseInt(a.Y) != parseInt(b.Y)) return (parseInt(a.Y) > parseInt(b.Y)) ? -1 : 1;
+            return 0;
+        });
+    }
+    // sort quest
+    questList.sort(function compare(aData, bData) {
+        if (aData.missionTitle != bData.missionTitle) return (aData.missionTitle.localeCompare(bData.missionTitle) > 0) ? -1 : 1;
+        if (parseInt(aData.questId) != parseInt(bData.questId)) return (parseInt(aData.questId) < parseInt(bData.questId)) ? -1 : 1;
+        return 0;
+    })
+    // output
+    let dataList = ["let questList = ["];
+    for (let i in questList) {
+        dataList.push("\t" + JSON.stringify(questList[i], null, 1).replace(/\s*\n\s*/g, "\t") + ",");
+    }; dataList.push("]");
+    fs.writeFileSync("../html/script/questList.js", dataList.join("\n"));
 
 };
 main()//.catch(console.error);
