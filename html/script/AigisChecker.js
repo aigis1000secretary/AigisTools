@@ -44,7 +44,7 @@ let setUrlParams = function (flagList) {
     history.pushState(null, null, url);
 
     // sharebox
-    let shareText = "【千年戦争アイギス】ユニット所持チェッカー＋\n"
+    let shareText = "【千年戦争アイギス】　ユニット所持チェッカー＋\n"
     shareText += doStatistics() + "\n";
     shareText += url;
     shareText += "\n #アイギス所持チェッカー \n #千年戦争アイギス ";
@@ -596,7 +596,7 @@ let openImage = function () {
     html2canvas(document.getElementById("iconbox")).then(function (canvas) {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
-        window.open().document.write("<img src=\"" + image.src + "\" />");
+        window.open().document.write(`<img src="${image.src}" />`);
     });
 }
 

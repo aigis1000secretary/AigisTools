@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const Jimp = require('jimp');
 const child_process = require('child_process');
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
@@ -24,44 +25,64 @@ const main = async function () {
 
     let resourceList = fs.readdirSync(resources);
     resourceList = resourceList.filter((file) => { return (/^Map[\d_]+\.png$/i.test(file)); });
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/768_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/769_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/782_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/783_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/777_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/777_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/780_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/787_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/785_001.png");
+    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/793_001.png");
 
+    // map jpg
     let mapHashList = {};
     let count = 0;
     for (let i in resourceList) {
-        let filename = resourceList[i]
-        console.log("[", i, "/", resourceList.length, "] getting", filename, "md5...")
+        let resource = resourceList[i];
+        console.log("[", i, "/", resourceList.length, "] getting", resource, "md5...")
 
-        // save hash list
-        let png = fs.readFileSync(resources + "/" + filename);
-        let md5 = md5f(png.toString());
+        let sourcePath = resources + "/" + resource;
+        let filename = path.win32.basename(sourcePath);
+        let pngBinary = fs.readFileSync(sourcePath);
+        let md5 = md5f(pngBinary.toString());
         mapHashList[filename] = md5;
+        
+        if (/map/i.text(resource)) {
+            let outputDir = "../html/maps/";
+            let outputPath = outputDir + md5;
 
-        let filepath = "../html/maps/" + md5;
-        if (!fs.existsSync(filepath)) {
-            // fs.writeFileSync(filepath, png);
+            if (!fs.existsSync(outputPath)) {
+                // fs.writeFileSync(filepath, png);
+                await new Promise(function (resolve, reject) {
+                    Jimp.read(sourcePath)
+                        .then(img => {
+                            return img.quality(70) // set JPEG quality
+                                .write(outputPath + ".jpg"); // save
+                        }).then(async () => {
+                            console.log("Jimp.quality(70).write()");
+                            await sleep(100);
+                            let log = child_process.execSync(`cd ${outputDir}&ren ${md5}.jpg ${md5}`).toString().trim();
+                            if (log != "") console.log(log);
+                        }).then(() => {
+                            console.log("");
+                            resolve();
+                        }).catch(err => {
+                            console.error(err);
+                            reject();
+                        });
+                });
+            }
+        } else {
+            let outputDir = "../html/weather/";
+            let outputPath = outputDir + md5;
 
-            await new Promise(function (resolve, reject) {
-                Jimp.read(resources + "/" + filename)
-                    .then(img => {
-                        return img.quality(70) // set JPEG quality
-                            .write(filepath + ".jpg"); // save
-                    }).then(async () => {
-                        console.log("Jimp.quality(70).write()");
-                        await sleep(100);
-                        let log = child_process.execSync(`cd ../html/maps/&ren ${md5}.jpg ${md5}`).toString().trim();
-                        if (log != "") console.log(log);
-                    }).then(() => {
-                        console.log("");
-                        resolve();
-                    }).catch(err => {
-                        console.error(err);
-                        reject();
-                    });
-            });
+            fs.createReadStream(sourcePath).pipe(fs.createWriteStream(outputPath));
         }
     }
 
     console.log("output mapHashList.js")
-    fs.writeFileSync("../html/script/mapHashList.js", "let mapHashList = " + JSON.stringify(mapHashList));
+    fs.writeFileSync("../html/script/mapHashList.js", "let mapHashList = " + JSON.stringify(mapHashList, null, "\t"));
 
 }; main();

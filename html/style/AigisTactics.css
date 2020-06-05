@@ -4,6 +4,7 @@
     background-color: rgba(255, 255, 255, 0.0);
     /* background-color: rgba(255, 255, 255, 0.8); */
     background-blend-mode: lighten;
+    background-size: cover;
     width: 960px;
     height: 640px;
     position: relative;
@@ -117,6 +118,12 @@
     background-size: cover;
     position: absolute;
     transform: translate(-50%, -50%);
+    user-select: none;
+    z-index: 25;
+}
+
+#mapimg .memo {
+    position: absolute;
     user-select: none;
     z-index: 25;
 }

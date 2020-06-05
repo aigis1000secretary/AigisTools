@@ -30,6 +30,7 @@ let bodyOnload = function () {
     select = document.getElementById("quest");
     select.options.add(new Option("＝＝クエスト＝＝", ""));
 
+    onChangeInputMemobox();
     iconboxInit();
 
     MapImg = document.getElementById("mapimg");
@@ -154,6 +155,7 @@ let addIcon = function (event) {
     let newIcon = document.createElement("img");
     newIcon.className = "icon";
     newIcon.title = icon.name; // + "," + icon.classId;
+    // newIcon.alt = "";   // cc/aw/aw2a/aw2b tag
     newIcon.src = icon.img;
     newIcon.id = "icon" + iconCount;    // for drag
     newIcon.style.left = 30 + parseInt(iconCount % 20) * 25 + "px";
@@ -187,14 +189,13 @@ function setUrlParams(questFullId) {
     params.set("map", questFullId);
     history.pushState(null, null, url);
 
-    // // sharebox
-    // let shareText = "【千年戦争アイギス】ユニット所持チェッカー＋\n"
-    // shareText += doStatistics() + "\n";
-    // shareText += url;
-    // shareText += "\n #アイギス所持チェッカー \n #千年戦争アイギス ";
+    // sharebox
+    let shareText = "【千年戦争アイギス】　作戦図＋\n"
+    shareText += url;
+    shareText += "\n #アイギス作戦図 \n #千年戦争アイギス ";
 
-    // document.getElementById("_sharebox").textContent = shareText;
-    // setShareButton(shareText);
+    document.getElementById("_sharebox").textContent = shareText;
+    setShareButton(shareText);
 }
 
 
@@ -212,7 +213,7 @@ let mapimgInit = function (id) {
 
     // set bg map image
     let md5 = mapHashList["Map" + quest.map + ".png"];
-    MapImg.style.backgroundImage = "url(./maps/" + md5 + ")";
+    MapImg.style.backgroundImage = `url(./maps/${md5})`;
 
     // get location data
     for (let i in quest.locationList) {
@@ -255,7 +256,7 @@ let mapimgInit = function (id) {
         div.className = "inputrange";
         div.title = dId;
         div.type = "number";
-        div.value = "0";
+        div.value = "40";
         div.style.left = location.X + "px";
         div.style.top = (parseInt(location.Y) + 31) + "px";
         div.addEventListener("change", onChangeInput, false);
@@ -317,6 +318,7 @@ let onChangeSelect = function (select) {
     if (select.id == "missionType") { onChangeSelectMissionType(select); }
     else if (select.id == "mission") { onChangeSelectMission(select); }
     else if (select.id == "quest") { onChangeSelectQuest(select); }
+    else if (select.id == "weatherType") { onChangeSelectWeather(select); }
 }
 let onChangeSelectMissionType = function (select) {
     // change type
@@ -435,6 +437,28 @@ let onChangeSelectQuest = function (select) {
     let value = select.options[i].value;
     mapimgInit(value);
 }
+let onChangeSelectWeather = function (select) {
+    console.debug("onChangeSelectWeather");
+    // change quest
+    let i = select.selectedIndex;
+    let weather = select.options[i].value;
+    let ratioData = { "768_001.png": "0.7", "769_001.png": "0.5", "782_001.png": "0.8", "783_001.png": "0.65", "777_001.png": "0.7", "777_001.png": "0.5", "780_001.png": "0.8", "787_001.png": "0.7", "785_001.png": "0.7", "793_001.png": "0.6" }
+    let ratio = ratioData[weather] || 1.0;
+
+    let ratioBox = document.getElementById("rangeRatio");
+    ratioBox.value = ratio;
+
+    let bgimg = MapImg.style.backgroundImage.split(",")[0];
+    let weatherImg = `url(./weather/${mapHashList[weather]})`;
+
+    if (weather == "null") {
+        MapImg.style.backgroundImage = bgimg;
+    } else {
+        MapImg.style.backgroundImage = `${bgimg}, ${weatherImg}`;
+    }
+
+    onChangeInputRatio(ratioBox);
+}
 
 
 // event method
@@ -490,16 +514,26 @@ let onChangeInput = function (event) {
     let select = event.target;
     console.debug("onChangeInput");
     if (select.className == "inputrange") { onChangeInputRange(select); }
-    else if (select.id == "filterbox") { onChangeInputFilterbox(select); }
+    else if (select.id == "filterbox") { onChangeInputFilter(select); }
+    else if (select.id == "rangeRatio") { onChangeInputRatio(select); }
+    else if (select.type = "color" || select.id == "textbox") { onChangeInputMemobox(select); }
 }
 let onChangeInputRange = function (select) {
     console.debug("onChangeInputRange");
+
+    // check data
+    let value = parseInt(select.value);
+    if (isNaN(value) || value < 40) {
+        value = 40;
+        select.value = value;
+    }
+
     nowFocus = document.querySelector(`#${select.title}`);
     lastFocus = MapImg;
     drawMapImage();
 }
-let onChangeInputFilterbox = function (select) {
-    console.debug("onChangeInputFilterbox");
+let onChangeInputFilter = function (select) {
+    console.debug("onChangeInputFilter");
     // set range element
     let filter = select.value;
 
@@ -530,6 +564,64 @@ let onChangeInputFilterbox = function (select) {
         }
     }
 }
+let onChangeInputRatio = function (select) {
+    console.debug("onChangeInputRatio");
+
+    // check data
+    let value = parseFloat(select.value);
+    if (isNaN(value) || value <= 0.0) {
+        value = 1.0;
+        select.value = value;
+    }
+
+    nowFocus = MapImg;
+    lastFocus = null;
+    drawMapImage();
+}
+let onChangeInputMemobox = function (select) {
+    console.debug("onChangeInputRatio");
+    // WYSIWYG
+
+    let box = document.getElementById("textbox");
+    let teColor = document.getElementById("textcolorbox").value;
+    let bgColor = document.getElementById("bgcolorbox").value;
+    let bdColor = document.getElementById("outcolorbox").value;
+
+    box.style.overflow = "hidden";
+    box.style.color = teColor;
+    box.style.background = bgColor;
+    box.style.border = "2px solid " + bdColor;
+}
+let addMomebox = function () {
+    console.debug("addMomebox");
+    let box = document.getElementById("textbox");
+
+    let div = document.createElement("div");
+    div.id = "memo" + iconCount;    // for drag
+    div.className = "memo";
+    div.style.width = box.offsetWidth + "px";
+    div.style.height = box.offsetHeight + "px";
+
+    div.style.paddingLeft = "3px";
+
+    div.style.overflow = "hidden";
+    div.style.color = box.style.color;
+    div.style.background = box.style.background;
+    div.style.border = box.style.border;
+    div.style.fontFamily = box.style.fontFamily;
+
+    div.style.left = "30px";
+    div.style.top = "30px";
+
+    div.innerText = box.value;
+    div.draggable = true;
+
+    div.addEventListener("dragstart", onDragStart, false);
+
+    MapImg.appendChild(div);
+}
+
+
 
 
 // location onClick
@@ -562,32 +654,21 @@ let drawMapImage = function () {
         // get data
         let type = /[^\d]+/.exec(dId).toString();
         let rangeData = parseInt(inputrange.value);
-        if (isNaN(rangeData) || rangeData < 40) { rangeData = 40; }        // check data
-        inputrange.value = rangeData;
+        let ratioData = parseFloat(document.getElementById("rangeRatio").value);
 
-        // set text
-        let distance;
-        rangeText.innerText = rangeData;
-        if (nowFocus.className == "mapimg") {
-            distanceText.innerText = (type == "near" ? "近" : "遠");
-        } else if (nowFocus.className == "location") {
-            let x0 = parseInt(nowFocus.style.left);
-            let y0 = parseInt(nowFocus.style.top);
-
-            let x = parseInt(location.style.left);
-            let y = parseInt(location.style.top);
-            distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
-
-            distanceText.innerText = Math.round(distance);
-        }
 
         // draw range circle size
-        range.style.width = (rangeData * 1.5) + "px";
-        range.style.height = (rangeData * 1.5) + "px";
+        range.style.width = Math.round(rangeData * ratioData * 1.5) + "px";
+        range.style.height = Math.round(rangeData * ratioData * 1.5) + "px";
+
+        // set rangeText
+        // rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)} = \n${Math.round(rangeData * ratioData)}`;
+        rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)}`;
 
         // draw circle / text color & visibility
         if (nowFocus.className == "mapimg") {
             // distanceText
+            distanceText.innerText = (type == "near" ? "近" : "遠");
             distanceText.style.color = (type == "near" ? "#ffffff" : "#000000");
             distanceText.style.background = (type == "near" ? "#000000" : "#ffffff");
 
@@ -600,12 +681,19 @@ let drawMapImage = function () {
 
             // range
             // no response
-        } else {
+        } else if (nowFocus.className == "location") {
             // distanceText
+            let x0 = parseInt(nowFocus.style.left);
+            let y0 = parseInt(nowFocus.style.top);
+            let x = parseInt(location.style.left);
+            let y = parseInt(location.style.top);
+            let distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
+            distanceText.innerText = Math.round(distance);
+
             let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title=${nowFocus.id}]`).value);
-            if (nowFocusRange == 40) { nowFocusRange = 2000; }
-            distanceText.style.color = ((nowFocusRange + 40) > distance) ? "#000000" : "#ffffff";;
-            distanceText.style.background = ((nowFocusRange + 40) > distance) ? "#00ff00" : "#ff0000";;
+            let colorType = (nowFocusRange == 40) ? 0 : (((nowFocusRange * ratioData + 40) > distance) ? 1 : 2);
+            distanceText.style.color = ["black", "black", "white"][colorType];
+            distanceText.style.background = ["yellow", "#00ff00", "#ff0000"][colorType];
 
             // hitbox
             hitbox.style.visibility = "visible";
@@ -631,36 +719,31 @@ let drawMapImage = function () {
                 inputrange.style.visibility = range.style.visibility;
             }
         }
-
-        // let visibility = (range.style.visibility != "visible" ? "visible" : "hidden")
-        // range.style.visibility = visibility;
-
-
-
-        // distanceText.style.visibility = "visible";
-
-
-
-
-        // innerHTML += `<div class="range"></div>`
-
-        // innerHTML += `<div class="rangeText"></div>`
-        // innerHTML += `<input class="inputrange" type="number" value="0" onchange="onChangeInput(this);">`
-
-        // innerHTML += `<div class="${imgname}"></div>`;
-
-        // innerHTML += `<div class="hitbox"></div>`
-        // innerHTML += `<div class="distanceText"></div>`;
-
-
     }
 
     lastFocus = nowFocus;
 }
 
+// html result to image
+let openImage = function () {
+    $(window).scrollTop(0);
+    html2canvas(document.getElementById("iconbox")).then(function (canvas) {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        window.open().document.write(`<img src="${image.src}" />`);
+    });
+}
 
+let copyUrl = function () {
+    document.getElementById("_sharebox").select();
+    document.execCommand("copy");
+}
 
-
-// let onClickTest = function (event) {
-//     console.log(event.target);
-// }
+let setShareButton = function (currentUri) {
+    function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
+    document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
+    document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
+    document.getElementById("_plurkBtn").href = isMobile() ?
+        "https://plurk.com/?qualifier=shares&content=" + encodeURIComponent(currentUri) :
+        "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
+}

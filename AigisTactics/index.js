@@ -41,7 +41,8 @@ const main = async function () {
             /Map\d+/i.test(filename) ||
             /MissionQuestList.atb/i.test(filename) ||
             /MissionConfig.atb/i.test(filename) ||
-            /QuestNameText\d*.atb/i.test(filename)
+            /QuestNameText\d*.atb/i.test(filename)||
+            /BattleEffect.aar/i.test(filename)
         )) {
             if (/Mission\S+.atb/i.test(filename) || !fs.existsSync(resources + "/" + filename)) // skip exist
             {
