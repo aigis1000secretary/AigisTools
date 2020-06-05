@@ -99,8 +99,23 @@
 
             <div class="hr">
               <div class="inputbox">射程倍率：
-                <input id="rangeratiobox" type="text" value="1.0" style="width: 155px;"
+                <input id="rangeRatio" type="text" value="1.0" style="width: 155px;"
                   onchange="onChangeInput(event);">
+              </div>
+              <div class="inputbox"> 悪天候：
+                <select id="weatherType" onchange="onChangeSelect(this);">
+                  <option value="null">　　　無</option>
+                  <option value="768_001.png">　　吹雪</option>
+                  <option value="769_001.png">　猛吹雪</option>
+                  <option value="782_001.png">　　　雨</option>
+                  <option value="783_001.png">　　豪雨</option>
+                  <option value="777_001.png">　　　霧</option>
+                  <option value="777_001.png">　　濃霧</option>
+                  <option value="780_001.png">　　瘴霧</option>
+                  <option value="787_001.png">　紅の霧</option>
+                  <option value="785_001.png">　　砂嵐</option>
+                  <option value="793_001.png">　　強風</option>
+                </select>
               </div>
             </div>
 

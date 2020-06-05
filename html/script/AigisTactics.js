@@ -213,7 +213,7 @@ let mapimgInit = function (id) {
 
     // set bg map image
     let md5 = mapHashList["Map" + quest.map + ".png"];
-    MapImg.style.backgroundImage = "url(./maps/" + md5 + ")";
+    MapImg.style.backgroundImage = `url(./maps/${md5})`;
 
     // get location data
     for (let i in quest.locationList) {
@@ -318,6 +318,7 @@ let onChangeSelect = function (select) {
     if (select.id == "missionType") { onChangeSelectMissionType(select); }
     else if (select.id == "mission") { onChangeSelectMission(select); }
     else if (select.id == "quest") { onChangeSelectQuest(select); }
+    else if (select.id == "weatherType") { onChangeSelectWeather(select); }
 }
 let onChangeSelectMissionType = function (select) {
     // change type
@@ -436,6 +437,28 @@ let onChangeSelectQuest = function (select) {
     let value = select.options[i].value;
     mapimgInit(value);
 }
+let onChangeSelectWeather = function (select) {
+    console.debug("onChangeSelectWeather");
+    // change quest
+    let i = select.selectedIndex;
+    let weather = select.options[i].value;
+    let ratioData = { "768_001.png": "0.7", "769_001.png": "0.5", "782_001.png": "0.8", "783_001.png": "0.65", "777_001.png": "0.7", "777_001.png": "0.5", "780_001.png": "0.8", "787_001.png": "0.7", "785_001.png": "0.7", "793_001.png": "0.6" }
+    let ratio = ratioData[weather] || 1.0;
+
+    let ratioBox = document.getElementById("rangeRatio");
+    ratioBox.value = ratio;
+
+    let bgimg = MapImg.style.backgroundImage.split(",")[0];
+    let weatherImg = `url(./weather/${mapHashList[weather]})`;
+
+    if (weather == "null") {
+        MapImg.style.backgroundImage = bgimg;
+    } else {
+        MapImg.style.backgroundImage = `${bgimg}, ${weatherImg}`;
+    }
+
+    onChangeInputRatio(ratioBox);
+}
 
 
 // event method
@@ -491,8 +514,8 @@ let onChangeInput = function (event) {
     let select = event.target;
     console.debug("onChangeInput");
     if (select.className == "inputrange") { onChangeInputRange(select); }
-    else if (select.id == "filterbox") { onChangeInputFilterbox(select); }
-    else if (select.id == "rangeratiobox") { onChangeInputRatiobox(select); }
+    else if (select.id == "filterbox") { onChangeInputFilter(select); }
+    else if (select.id == "rangeRatio") { onChangeInputRatio(select); }
     else if (select.type = "color" || select.id == "textbox") { onChangeInputMemobox(select); }
 }
 let onChangeInputRange = function (select) {
@@ -509,8 +532,8 @@ let onChangeInputRange = function (select) {
     lastFocus = MapImg;
     drawMapImage();
 }
-let onChangeInputFilterbox = function (select) {
-    console.debug("onChangeInputFilterbox");
+let onChangeInputFilter = function (select) {
+    console.debug("onChangeInputFilter");
     // set range element
     let filter = select.value;
 
@@ -541,8 +564,8 @@ let onChangeInputFilterbox = function (select) {
         }
     }
 }
-let onChangeInputRatiobox = function (select) {
-    console.debug("onChangeInputRatiobox");
+let onChangeInputRatio = function (select) {
+    console.debug("onChangeInputRatio");
 
     // check data
     let value = parseFloat(select.value);
@@ -551,9 +574,8 @@ let onChangeInputRatiobox = function (select) {
         select.value = value;
     }
 
-
-    // nowFocus = lastFocus;
-    // lastFocus = nowFocus;
+    nowFocus = MapImg;
+    lastFocus = null;
     drawMapImage();
 }
 let onChangeInputMemobox = function (select) {
@@ -629,30 +651,21 @@ let drawMapImage = function () {
         // get data
         let type = /[^\d]+/.exec(dId).toString();
         let rangeData = parseInt(inputrange.value);
-        let ratioData = parseFloat(document.getElementById("rangeratiobox").value);
+        let ratioData = parseFloat(document.getElementById("rangeRatio").value);
 
-        // set rangeText
-        rangeText.innerText = rangeData + (ratioData == 1.0 ? "" : ` x${ratioData.toFixed(2)}`);
-        // set distanceText
-        let distance;
-        if (nowFocus.className == "mapimg") {
-            distanceText.innerText = (type == "near" ? "近" : "遠");
-        } else if (nowFocus.className == "location") {
-            let x0 = parseInt(nowFocus.style.left);
-            let y0 = parseInt(nowFocus.style.top);
-            let x = parseInt(location.style.left);
-            let y = parseInt(location.style.top);
-            distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
-            distanceText.innerText = Math.round(distance);
-        }
 
         // draw range circle size
-        range.style.width = (rangeData * ratioData * 1.5) + "px";
-        range.style.height = (rangeData * ratioData * 1.5) + "px";
+        range.style.width = Math.round(rangeData * ratioData * 1.5) + "px";
+        range.style.height = Math.round(rangeData * ratioData * 1.5) + "px";
+
+        // set rangeText
+        // rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)} = \n${Math.round(rangeData * ratioData)}`;
+        rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)}`;
 
         // draw circle / text color & visibility
         if (nowFocus.className == "mapimg") {
             // distanceText
+            distanceText.innerText = (type == "near" ? "近" : "遠");
             distanceText.style.color = (type == "near" ? "#ffffff" : "#000000");
             distanceText.style.background = (type == "near" ? "#000000" : "#ffffff");
 
@@ -665,12 +678,19 @@ let drawMapImage = function () {
 
             // range
             // no response
-        } else {
+        } else if (nowFocus.className == "location") {
             // distanceText
+            let x0 = parseInt(nowFocus.style.left);
+            let y0 = parseInt(nowFocus.style.top);
+            let x = parseInt(location.style.left);
+            let y = parseInt(location.style.top);
+            let distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
+            distanceText.innerText = Math.round(distance);
+
             let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title=${nowFocus.id}]`).value);
-            if (nowFocusRange == 40) { nowFocusRange = 2000; }
-            distanceText.style.color = ((nowFocusRange * ratioData + 40) > distance) ? "#000000" : "#ffffff";;
-            distanceText.style.background = ((nowFocusRange * ratioData + 40) > distance) ? "#00ff00" : "#ff0000";;
+            let colorType = (nowFocusRange == 40) ? 0 : (((nowFocusRange * ratioData + 40) > distance) ? 1 : 2);
+            distanceText.style.color = ["black", "black", "white"][colorType];
+            distanceText.style.background = ["yellow", "#00ff00", "#ff0000"][colorType];
 
             // hitbox
             hitbox.style.visibility = "visible";
