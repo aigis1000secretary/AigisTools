@@ -579,16 +579,18 @@ let onChangeInputRatio = function (select) {
     drawMapImage();
 }
 let onChangeInputMemobox = function (select) {
-    console.debug("onChangeInputRatiobox");
+    console.debug("onChangeInputRatio");
+    // WYSIWYG
+
     let box = document.getElementById("textbox");
     let teColor = document.getElementById("textcolorbox").value;
     let bgColor = document.getElementById("bgcolorbox").value;
     let bdColor = document.getElementById("outcolorbox").value;
 
+    box.style.overflow = "hidden";
     box.style.color = teColor;
     box.style.background = bgColor;
     box.style.border = "2px solid " + bdColor;
-
 }
 let addMomebox = function () {
     console.debug("addMomebox");
@@ -602,6 +604,7 @@ let addMomebox = function () {
 
     div.style.paddingLeft = "3px";
 
+    div.style.overflow = "hidden";
     div.style.color = box.style.color;
     div.style.background = box.style.background;
     div.style.border = box.style.border;
