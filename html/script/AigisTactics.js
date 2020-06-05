@@ -35,8 +35,6 @@ let bodyOnload = function () {
     iconboxInit();
 
     MapImg = document.getElementById("mapimg");
-    nowFocus = MapImg;
-    lastFocus = MapImg;
     let map = getUrlParams();
     if (map) {
         mapimgInit(map);
@@ -145,24 +143,31 @@ let iconboxInit = function () {
 let iconCount = 0;
 let addIcon = function (event) {
     console.debug("addIcon");
-    // get chara id
-    let id = event.target.alt;
 
+    let id = "icon" + iconCount;    // for drag
+    let alt = event.target.alt;   // cc/aw/aw2a/aw2b tag
+    let left = 30 + parseInt(iconCount % 20) * 25;
+    let top = 30 + parseInt(iconCount / 20) * 25;
+
+    _addIcon({ id, alt, left, top })
+}
+let _addIcon = function ({ id, alt, left, top }) {
     // get chara data
-    let icon = charaData.find(icon => { return icon.id == id; })
-    if (!icon) console.log("addIcon error", id);
+    let icon = charaData.find(icon => { return icon.id == parseInt(alt); })
+    if (!icon) console.log("addIcon error", alt);
 
     // set newIcon element
     let newIcon = document.createElement("img");
+
+    newIcon.id = id;    // for drag
+    newIcon.alt = alt;   // cc/aw/aw2a/aw2b tag
+    newIcon.style.left = left + "px";;
+    newIcon.style.top = top + "px";;
+
     newIcon.className = "icon";
     newIcon.title = icon.name; // + "," + icon.classId;
-    newIcon.alt = event.target.alt;   // cc/aw/aw2a/aw2b tag
 
     newIcon.src = icon.img;
-
-    newIcon.id = "icon" + iconCount;    // for drag
-    newIcon.style.left = 30 + parseInt(iconCount % 20) * 25 + "px";
-    newIcon.style.top = 30 + parseInt(iconCount / 20) * 25 + "px";
 
     newIcon.addEventListener("dragstart", onDragStart, false);
 
@@ -172,7 +177,7 @@ let addIcon = function (event) {
 
 
 // url param method
-function getUrlParams() {
+let getUrlParams = function () {
     // URL obj
     let url = new URL(document.URL);
     let params = url.searchParams;
@@ -183,7 +188,7 @@ function getUrlParams() {
     // return flag list
     return urlData || false;
 }
-function setUrlParams(questFullId) {
+let setUrlParams = function (questFullId) {
     // URL obj
     let url = new URL(document.URL);
     let params = url.searchParams;
@@ -200,9 +205,9 @@ function setUrlParams(questFullId) {
     document.getElementById("_sharebox").textContent = shareText;
     setShareButton(shareText);
 }
-function getMapSummary() {
+let getMapSummary = function () {
     // let mapInfo = MapImg.innerHTML.replace(/></g, ">\n<").split("\n");
-    let information = {};
+    let information = { MapId };
 
     for (let i in MapImg.childNodes) {
         let dom = MapImg.childNodes[i];
@@ -213,125 +218,107 @@ function getMapSummary() {
 
             if (range > 40) { information[title] = range; }
         } else if (dom.className == "icon") {
-            let id = dom.id;
-            let title = dom.title;
-            let alt = dom.alt;
-            let left = dom.style.left;
-            let top = dom.style.top;
+            let id = dom.id;    // "icon5"
+            let alt = dom.alt;  // "999aw2"
+            let left = parseInt(dom.style.left);
+            let top = parseInt(dom.style.top);
 
-            information[id] = { title, alt, left, top };
+            information[id] = { alt, left, top };
         } else if (dom.className == "memo") {
             let id = dom.id;
             let text = dom.innerHTML;
 
-            let width = dom.style.width;
-            let height = dom.style.height;
+            let width = parseInt(dom.style.width);
+            let height = parseInt(dom.style.height);
             let color = dom.style.color;
             let background = dom.style.background;
             let border = dom.style.border;
-            let left = dom.style.left;
-            let top = dom.style.top;
+            let left = parseInt(dom.style.left);
+            let top = parseInt(dom.style.top);
 
-            information[id] = { id, text, width, height, color, background, border, left, top };
+            information[id] = { text, width, height, color, background, border, left, top };
         }
     }
 
-    console.log(JSON.stringify(information, null, "\t"));
-
-
-
-
-
-    /*
-    
-        information = {
-            "afar307": "310",
-            "afar303": "230",
-            "afar302": "210",
-            "afar301": "406",
-            "afar300": "432",
-            "near204": "250",
-            "near203": "240",
-            "near202": "250",
-            "icon1": {
-                "title": "天才機甲士ウェンディ",
-                "alt": "",
-                "left": "326px",
-                "top": "322px"
-            },
-            "icon2": {
-                "title": "天才機甲士ウェンディ",
-                "alt": "",
-                "left": "407px",
-                "top": "172px"
-            },
-            "icon4": {
-                "title": "帝国元帥レオラ",
-                "alt": "",
-                "left": "159px",
-                "top": "250px"
-            },
-            "icon5": {
-                "title": "光の守護者アルティア",
-                "alt": "",
-                "left": "191px",
-                "top": "329px"
-            },
-            "icon6": {
-                "title": "刻詠の風水士リンネ",
-                "alt": "",
-                "left": "187px",
-                "top": "180px"
-            },
-            "icon7": {
-                "title": "帝国軍師レオナ",
-                "alt": "",
-                "left": "272px",
-                "top": "397px"
-            },
-            "icon8": {
-                "title": "無双の海賊デューオ",
-                "alt": "",
-                "left": "379px",
-                "top": "257px"
-            },
-            "icon9": {
-                "title": "悪魔召喚士リヴル",
-                "alt": "",
-                "left": "425px",
-                "top": "455px"
-            },
-            "icon10": {
-                "title": "光霊使いルフレ",
-                "alt": "",
-                "left": "147px",
-                "top": "410px"
-            },
-            "icon11": {
-                "title": "上級ライトエレメンタル",
-                "alt": "",
-                "left": "290px",
-                "top": "225px"
-            },
-            "memo12": {
-                "id": "memo12",
-                "text": "メモ生成メモ生成メモ生成メモ生成<br>メモ生成",
-                "width": "165px",
-                "height": "38px",
-                "color": "rgb(0, 0, 0)",
-                "background": "rgb(255, 255, 255)",
-                "border": "2px solid rgb(0, 0, 0)",
-                "left": "30px",
-                "top": "30px"
-            }
-        }
-    
-        */
-
-
+    // return JSON.stringify(information);
+    return information;
 }
+let setMapSummary = function (information) {
+    let keys = Object.keys(information);
 
+    mapimgInit(information["MapId"]);
 
+    for (let i in keys) {
+        let key = keys[i];
+        if (/afar\d+|near\d+/.test(key)) {
+            console.log(key)
+            document.querySelector(`input.inputrange[title = ${key}]`).value =
+                information[key];
+
+        } else if (/icon\d+/.test(key)) {
+            _addIcon({
+                id: key,
+                alt: information[key].alt,
+                left: information[key].left,
+                top: information[key].top
+            });
+
+        } else if (/memo\d+/.test(key)) {
+            _addMomebox({
+                id: key,
+                text: information[key].text,
+                width: information[key].width,
+                height: information[key].height,
+                color: information[key].color,
+                background: information[key].background,
+                border: information[key].border,
+                left: information[key].left,
+                top: information[key].top
+            }
+            );
+        }
+    }
+
+    drawMapImage();
+}
+let dataSave = function () {
+    let information = getMapSummary();
+    // // qrcode
+    // window.open().document.write(`<img src="https://chart.googleapis.com/chart?chs=300x300&chld=M|2&cht=qr&chl=${encodeURIComponent(data)}" /> `);
+
+    // json file
+    let quest = questList.find(quest => quest.id == MapId)
+    let name = `[${quest.missionTitle}] ${quest.questTitle}.json`;
+    let data = JSON.stringify(information, null, "\t");
+
+    // download file
+    function fake_click(obj) {
+        var ev = document.createEvent("MouseEvents");
+        ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        obj.dispatchEvent(ev);
+    }
+    let urlObject = window.URL || window.webkitURL || window;
+    let downloadData = new Blob([data]);
+    let save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+    save_link.href = urlObject.createObjectURL(downloadData);
+    save_link.download = name;
+    fake_click(save_link);
+}
+let dataRestore = function (event) {
+    let fileList = event.target.files;
+
+    if (fileList.length == 1) {
+        if (!fileList[0] || !fileList[0].type.match(/.json$/)) { return; }
+
+        var reader = new FileReader();
+
+        reader.readAsText(fileList[0], 'UTF-8');
+        reader.onload = function (e) { setMapSummary(JSON.parse(this.result)); };
+    }
+
+    // clear file
+    event.target.value = "";
+}
 
 // init map image
 let mapimgInit = function (id) {
@@ -342,9 +329,11 @@ let mapimgInit = function (id) {
     // get selected
     let quest = questList.find(quest => { return quest.id == id; });
 
-    // clear map image
+    // clear map data
     MapImg.innerHTML = null;
     iconCount = 0;
+    nowFocus = MapImg;
+    lastFocus = MapImg;
 
     // set bg map image
     let md5 = mapHashList["Map" + quest.map + ".png"];
@@ -700,7 +689,6 @@ let onChangeInputMemobox = function (select) {
     let bgColor = document.getElementById("bgcolorbox").value;
     let bdColor = document.getElementById("outcolorbox").value;
 
-    box.style.overflow = "hidden";
     box.style.color = teColor;
     box.style.background = bgColor;
     box.style.border = "2px solid " + bdColor;
@@ -709,32 +697,79 @@ let addMomebox = function () {
     console.debug("addMomebox");
     let box = document.getElementById("textbox");
 
+    text = box.value;
+    width = box.offsetWidth;
+    height = box.offsetHeight;
+    color = box.style.color;
+    background = box.style.background;
+    border = box.style.border;
+    left = 30;
+    top = 30;
+
+    _addMomebox({ text, width, height, color, background, border, left, top });
+}
+let _addMomebox = function ({ text, width, height, color, background, border, left, top }) {
+    console.debug("addMomebox");
+    let box = document.getElementById("textbox");
+
     let div = document.createElement("div");
     div.id = "memo" + iconCount;    // for drag
     div.className = "memo";
-    div.style.width = box.offsetWidth + "px";
-    div.style.height = box.offsetHeight + "px";
-
-    div.style.paddingLeft = "3px";
-
-    div.style.overflow = "hidden";
-    div.style.color = box.style.color;
-    div.style.background = box.style.background;
-    div.style.border = box.style.border;
-    div.style.fontFamily = box.style.fontFamily;
-
-    div.style.left = "30px";
-    div.style.top = "30px";
-
-    div.innerText = box.value;
     div.draggable = true;
+    div.style.paddingLeft = "3px";
+    div.style.fontFamily = box.style.fontFamily;
+    div.style.overflow = "hidden";
+
+    div.innerText = text;
+    div.style.width = width + "px";
+    div.style.height = height + "px";
+    div.style.color = color;
+    div.style.background = background;
+    div.style.border = border;
+    div.style.left = left + "px";
+    div.style.top = top + "px";
 
     div.addEventListener("dragstart", onDragStart, false);
 
     MapImg.appendChild(div);
+    iconCount++
 }
+let onClickMemo = function (memo) {
+    let box = document.getElementById("textbox");
+    let teColor = memo.style.color;
+    let bgColor = memo.style.background;
+    let bdColor = memo.style.border.replace("2px solid ", "");
 
+    if (/^rgb/.test(teColor)) {
+        teColor = "#" +
+            parseInt(/\([\d ]+,/.exec(teColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
+            parseInt(/,[ \d ]+,/.exec(teColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
+            parseInt(/,[ \d]+\)/.exec(teColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0")
+    }
+    if (/^rgb/.test(bgColor)) {
+        bgColor = "#" +
+            parseInt(/\([\d ]+,/.exec(bgColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
+            parseInt(/,[ \d ]+,/.exec(bgColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
+            parseInt(/,[ \d]+\)/.exec(bgColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0")
+    }
+    if (/^rgb/.test(bdColor)) {
+        bdColor = "#" +
+            parseInt(/\([\d ]+,/.exec(bdColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
+            parseInt(/,[ \d ]+,/.exec(bdColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
+            parseInt(/,[ \d]+\)/.exec(bdColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0")
+    }
 
+    document.getElementById("textcolorbox").value = teColor;
+    document.getElementById("bgcolorbox").value = bgColor;
+    document.getElementById("outcolorbox").value = bdColor;
+
+    box.innerHTML = memo.innerHTML;
+    box.style.width = memo.style.width;
+    box.style.height = memo.style.height;
+    box.style.color = teColor;
+    box.style.background = bgColor;
+    box.style.border = "2px solid " + bdColor;
+}
 
 
 // location onClick
@@ -743,7 +778,11 @@ let lastFocus = "";
 let mobileEvent = {};
 let onClick = function (event) {
     console.debug("onClick", event.target.className, "<=", lastFocus.className);
+    nowFocus = event.target;
 
+    if (nowFocus.className == "memo") { 
+        onClickMemo(nowFocus);
+    }
 
     if (!isMobile()) {
         let waitInput = (document.querySelector("#mapimg .inputrange:focus, #mapimg .inputrange:hover") != null);
@@ -752,8 +791,7 @@ let onClick = function (event) {
             drawMapImage();
         }
     } else {
-        nowFocus = event.target;
-        if (nowFocus.className == "icon") {
+        if (nowFocus.className == "icon" || nowFocus.className == "memo") {
             // save drag image dom id
             mobileEvent["imgId"] = nowFocus.id;
             mobileEvent["startX"] = event.clientX;     // Get the horizontal coordinate
@@ -761,7 +799,7 @@ let onClick = function (event) {
 
             lastFocus = nowFocus;
 
-        } else if (lastFocus.className == "icon") {
+        } else if (lastFocus.className == "icon" || nowFocus.className == "memo") {
             // move icon images
             let img = lastFocus;
             let target = nowFocus;
@@ -818,6 +856,7 @@ let drawMapImage = function () {
         let dId = locations[i].id;
 
         // get element
+        if (!dId) console.log(location);
         let range = document.querySelector(`div.range[title = ${dId}]`);
         let rangeText = document.querySelector(`div.rangeText[title = ${dId}]`);
         let inputrange = document.querySelector(`input.inputrange[title = ${dId}]`);
