@@ -724,13 +724,18 @@ let drawMapImage = function () {
         // rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)} = \n${Math.round(rangeData * ratioData)}`;
         rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)}`;
 
-        let setDistanceText = function (center, distanceText, location) {
+        let setDistanceText = function ({ center, distanceText, location, hitbox }) {
             if (center.className == "mapimg") {
+                // distanceText
                 distanceText.innerText = (type == "near" ? "近" : "遠");
                 distanceText.style.color = (type == "near" ? "#ffffff" : "#000000");
                 distanceText.style.background = (type == "near" ? "#000000" : "#ffffff");
+
+                // hitbox
+                hitbox.style.visibility = "hidden";
                 return;
             } else if (center.className == "location") {
+                // distanceText
                 let x0 = parseInt(center.style.left);
                 let y0 = parseInt(center.style.top);
                 let x = parseInt(location.style.left);
@@ -742,6 +747,12 @@ let drawMapImage = function () {
                 let colorType = (nowFocusRange == 40) ? 0 : (((nowFocusRange * ratioData + 40) > distance) ? 1 : 2);
                 distanceText.style.color = ["black", "black", "white"][colorType];
                 distanceText.style.background = ["yellow", "#00ff00", "#ff0000"][colorType];
+
+                // hitbox
+                colorType = ((nowFocusRange * ratioData + 40) > distance);
+                hitbox.style.backgroundColor = colorType ? "rgba(0, 128, 0, 0.2)" : "rgba(128, 0, 0, 0.2)";
+                hitbox.style.borderColor = colorType ? "rgba(0, 255, 0, 0.65)" : "rgba(255, 0, 0, 0.65)";
+                hitbox.style.visibility = "visible";
                 return;
             }
             console.error("setDistanceText error: Unknown type center ", center.className);
@@ -750,10 +761,8 @@ let drawMapImage = function () {
         // draw circle / text color & visibility
         if (nowFocus.className == "mapimg") {
             // distanceText
-            setDistanceText(nowFocus, distanceText);
-
             // hitbox
-            hitbox.style.visibility = "hidden";
+            setDistanceText({ center: nowFocus, distanceText, hitbox });
 
             // rangeText
             rangeText.style.visibility = "hidden";
@@ -763,10 +772,8 @@ let drawMapImage = function () {
             // no response
         } else if (nowFocus.className == "location") {
             // distanceText
-            setDistanceText(nowFocus, distanceText, location);
-
             // hitbox
-            hitbox.style.visibility = "visible";
+            setDistanceText({ center: nowFocus, distanceText, hitbox, location });
 
             // rangeText
             rangeText.style.visibility = (nowFocus == location) ? "visible" : range.style.visibility;
