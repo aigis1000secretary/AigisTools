@@ -1,5 +1,6 @@
 
 let MapImg;
+let MapId;
 let bodyOnload = function () {
     questList.sort((a, b) => { return a.id.localeCompare(b.id); })
     // console.log("bodyOnload");
@@ -155,8 +156,10 @@ let addIcon = function (event) {
     let newIcon = document.createElement("img");
     newIcon.className = "icon";
     newIcon.title = icon.name; // + "," + icon.classId;
-    // newIcon.alt = "";   // cc/aw/aw2a/aw2b tag
+    newIcon.alt = event.target.alt;   // cc/aw/aw2a/aw2b tag
+
     newIcon.src = icon.img;
+
     newIcon.id = "icon" + iconCount;    // for drag
     newIcon.style.left = 30 + parseInt(iconCount % 20) * 25 + "px";
     newIcon.style.top = 30 + parseInt(iconCount / 20) * 25 + "px";
@@ -197,12 +200,144 @@ function setUrlParams(questFullId) {
     document.getElementById("_sharebox").textContent = shareText;
     setShareButton(shareText);
 }
+function getMapSummary() {
+    // let mapInfo = MapImg.innerHTML.replace(/></g, ">\n<").split("\n");
+    let information = {};
+
+    for (let i in MapImg.childNodes) {
+        let dom = MapImg.childNodes[i];
+
+        if (dom.tagName == "INPUT") {
+            let title = dom.title;
+            let range = dom.value;
+
+            if (range > 40) { information[title] = range; }
+        } else if (dom.className == "icon") {
+            let id = dom.id;
+            let title = dom.title;
+            let alt = dom.alt;
+            let left = dom.style.left;
+            let top = dom.style.top;
+
+            information[id] = { title, alt, left, top };
+        } else if (dom.className == "memo") {
+            let id = dom.id;
+            let text = dom.innerHTML;
+
+            let width = dom.style.width;
+            let height = dom.style.height;
+            let color = dom.style.color;
+            let background = dom.style.background;
+            let border = dom.style.border;
+            let left = dom.style.left;
+            let top = dom.style.top;
+
+            information[id] = { id, text, width, height, color, background, border, left, top };
+        }
+    }
+
+    console.log(JSON.stringify(information, null, "\t"));
+
+
+
+
+
+    /*
+    
+        information = {
+            "afar307": "310",
+            "afar303": "230",
+            "afar302": "210",
+            "afar301": "406",
+            "afar300": "432",
+            "near204": "250",
+            "near203": "240",
+            "near202": "250",
+            "icon1": {
+                "title": "天才機甲士ウェンディ",
+                "alt": "",
+                "left": "326px",
+                "top": "322px"
+            },
+            "icon2": {
+                "title": "天才機甲士ウェンディ",
+                "alt": "",
+                "left": "407px",
+                "top": "172px"
+            },
+            "icon4": {
+                "title": "帝国元帥レオラ",
+                "alt": "",
+                "left": "159px",
+                "top": "250px"
+            },
+            "icon5": {
+                "title": "光の守護者アルティア",
+                "alt": "",
+                "left": "191px",
+                "top": "329px"
+            },
+            "icon6": {
+                "title": "刻詠の風水士リンネ",
+                "alt": "",
+                "left": "187px",
+                "top": "180px"
+            },
+            "icon7": {
+                "title": "帝国軍師レオナ",
+                "alt": "",
+                "left": "272px",
+                "top": "397px"
+            },
+            "icon8": {
+                "title": "無双の海賊デューオ",
+                "alt": "",
+                "left": "379px",
+                "top": "257px"
+            },
+            "icon9": {
+                "title": "悪魔召喚士リヴル",
+                "alt": "",
+                "left": "425px",
+                "top": "455px"
+            },
+            "icon10": {
+                "title": "光霊使いルフレ",
+                "alt": "",
+                "left": "147px",
+                "top": "410px"
+            },
+            "icon11": {
+                "title": "上級ライトエレメンタル",
+                "alt": "",
+                "left": "290px",
+                "top": "225px"
+            },
+            "memo12": {
+                "id": "memo12",
+                "text": "メモ生成メモ生成メモ生成メモ生成<br>メモ生成",
+                "width": "165px",
+                "height": "38px",
+                "color": "rgb(0, 0, 0)",
+                "background": "rgb(255, 255, 255)",
+                "border": "2px solid rgb(0, 0, 0)",
+                "left": "30px",
+                "top": "30px"
+            }
+        }
+    
+        */
+
+
+}
+
 
 
 // init map image
 let mapimgInit = function (id) {
     if (!id || id == "") { return; }
     setUrlParams(id);
+    MapId = id;
 
     // get selected
     let quest = questList.find(quest => { return quest.id == id; });
@@ -285,28 +420,6 @@ let mapimgInit = function (id) {
         div.style.left = location.X + "px";
         div.style.top = location.Y + "px";
         MapImg.appendChild(div);
-
-
-
-        // if (imgname != "") {
-        //     let innerHTML = ""
-        //     innerHTML += `<div class="range"></div>`
-
-        //     innerHTML += `<div class="rangeText"></div>`
-        //     innerHTML += `<input class="inputrange" type="number" value="0" onchange="onChangeInput(this);">`
-
-        //     innerHTML += `<div class="${imgname}"></div>`;
-
-        //     innerHTML += `<div class="hitbox"></div>`
-        //     innerHTML += `<div class="distanceText"></div>`;
-
-        //     div.innerHTML = innerHTML;
-        //     div.id = imgname + location.ObjectID;
-        // }
-
-
-
-
     }
 
     drawMapImage();
@@ -454,7 +567,7 @@ let onChangeSelectWeather = function (select) {
     if (weather == "null") {
         MapImg.style.backgroundImage = bgimg;
     } else {
-        MapImg.style.backgroundImage = `${bgimg}, ${weatherImg}`;
+        MapImg.style.backgroundImage = `${bgimg}, ${weatherImg} `;
     }
 
     onChangeInputRatio(ratioBox);
@@ -705,11 +818,11 @@ let drawMapImage = function () {
         let dId = locations[i].id;
 
         // get element
-        let range = document.querySelector(`div.range[title=${dId}]`);
-        let rangeText = document.querySelector(`div.rangeText[title=${dId}]`);
-        let inputrange = document.querySelector(`input.inputrange[title=${dId}]`);
-        let hitbox = document.querySelector(`div.hitbox[title=${dId}]`);
-        let distanceText = document.querySelector(`div.distanceText[title=${dId}]`);
+        let range = document.querySelector(`div.range[title = ${dId}]`);
+        let rangeText = document.querySelector(`div.rangeText[title = ${dId}]`);
+        let inputrange = document.querySelector(`input.inputrange[title = ${dId}]`);
+        let hitbox = document.querySelector(`div.hitbox[title = ${dId}]`);
+        let distanceText = document.querySelector(`div.distanceText[title = ${dId}]`);
 
         // get data
         let type = /[^\d]+/.exec(dId).toString();
@@ -721,8 +834,8 @@ let drawMapImage = function () {
         range.style.height = Math.round(rangeData * ratioData * 1.5) + "px";
 
         // set rangeText
-        // rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)} = \n${Math.round(rangeData * ratioData)}`;
-        rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)}`;
+        // rangeText.innerText = (ratioData == 1.0) ? rangeData : `${ rangeData } x ${ ratioData.toFixed(2) } = \n${ Math.round(rangeData * ratioData) } `;
+        rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)} `;
 
         let setDistanceText = function ({ center, distanceText, location, hitbox }) {
             if (center.className == "mapimg") {
@@ -743,7 +856,7 @@ let drawMapImage = function () {
                 let distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
                 distanceText.innerText = Math.round(distance);
 
-                let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title=${center.id}]`).value);
+                let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title = ${center.id}]`).value);
                 let colorType = (nowFocusRange == 40) ? 0 : (((nowFocusRange * ratioData + 40) > distance) ? 1 : 2);
                 distanceText.style.color = ["black", "black", "white"][colorType];
                 distanceText.style.background = ["yellow", "#00ff00", "#ff0000"][colorType];
@@ -796,21 +909,20 @@ let drawMapImage = function () {
     lastFocus = nowFocus;
 }
 
+
 // html result to image
 let openImage = function () {
     $(window).scrollTop(0);
     html2canvas(document.getElementById("iconbox")).then(function (canvas) {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
-        window.open().document.write(`<img src="${image.src}" />`);
+        window.open().document.write(`< img src = "${image.src}" /> `);
     });
 }
-
 let copyUrl = function () {
     document.getElementById("_sharebox").select();
     document.execCommand("copy");
 }
-
 let setShareButton = function (currentUri) {
     // function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
     document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
