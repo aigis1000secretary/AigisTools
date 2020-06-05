@@ -57,7 +57,7 @@
         </div>
         <!-- init by js methods -->
         <div id="mapimg" class="mapimg" style="background-image: url(./maps/4f414b3bb77dc850d6c0784c6e961bb6);"
-          onclick="onClick(event);" ondrop="onDrop(event);" ondragover="onDragOver(event);"> </div>
+          title="mapimg" onclick="onClick(event);" ondrop="onDrop(event);" ondragover="onDragOver(event);"> </div>
       </div>
 
       <!-- tool box -->
@@ -100,8 +100,7 @@
 
             <div class="hr">
               <div class="inputbox">射程倍率：
-                <input id="rangeRatio" type="text" value="1.0" style="width: 155px;"
-                  onchange="onChangeInput(event);">
+                <input id="rangeRatio" type="text" value="1.0" style="width: 155px;" onchange="onChangeInput(event);">
               </div>
               <div class="inputbox"> 悪天候：
                 <select id="weatherType" onchange="onChangeSelect(this);">

@@ -490,10 +490,6 @@ let onDrop = function (event) {
 
     // get drag image
     let img = document.getElementById(event.dataTransfer.getData("imgId"));
-    let startX = event.dataTransfer.getData("startX");
-    let startY = event.dataTransfer.getData("startY");
-    let endX = event.clientX;
-    let endY = event.clientY;
 
     // change img posion
     if (className == "goal") {
@@ -501,8 +497,12 @@ let onDrop = function (event) {
     } else if (className == "location") {
         img.style.left = target.style.left;
         img.style.top = target.style.top;
-    } else// if (className == "mapimg" || className == "range")
-    {
+    } else {
+        // if (className == "mapimg" || className == "range")
+        let startX = event.dataTransfer.getData("startX");
+        let startY = event.dataTransfer.getData("startY");
+        let endX = event.clientX;
+        let endY = event.clientY;
         img.style.left = parseInt(img.style.left) + endX - startX + "px";
         img.style.top = parseInt(img.style.top) + endY - startY + "px";
     }
@@ -528,8 +528,8 @@ let onChangeInputRange = function (select) {
         select.value = value;
     }
 
-    nowFocus = document.querySelector(`#${select.title}`);
-    lastFocus = MapImg;
+    nowFocus = document.getElementById(select.title);;
+    lastFocus = null;
     drawMapImage();
 }
 let onChangeInputFilter = function (select) {
@@ -627,13 +627,73 @@ let addMomebox = function () {
 // location onClick
 let nowFocus = "";
 let lastFocus = "";
+let mobileEvent = {};
 let onClick = function (event) {
     console.debug("onClick", event.target.className, "<=", lastFocus.className);
 
-    let waitInput = (document.querySelector("#mapimg .inputrange:focus, #mapimg .inputrange:hover") != null);
-    if ((event.target.className == "mapimg" && !waitInput) || event.target.className == "location") {
+
+    if (!isMobile()) {
+        let waitInput = (document.querySelector("#mapimg .inputrange:focus, #mapimg .inputrange:hover") != null);
+        if ((event.target.className == "mapimg" && !waitInput) || event.target.className == "location") {
+            nowFocus = event.target;
+            drawMapImage();
+        }
+    } else {
         nowFocus = event.target;
-        drawMapImage();
+        if (nowFocus.className == "icon") {
+            // save drag image dom id
+            mobileEvent["imgId"] = nowFocus.id;
+            mobileEvent["startX"] = event.clientX;     // Get the horizontal coordinate
+            mobileEvent["startY"] = event.clientY;     // Get the vertical coordinate
+
+            lastFocus = nowFocus;
+
+        } else if (lastFocus.className == "icon") {
+            // move icon images
+            let img = lastFocus;
+            let target = nowFocus;
+
+            let movetion = async function (img, vx, vy, del) {
+                let x0 = parseInt(img.style.left);
+                let y0 = parseInt(img.style.top);
+
+                for (let angle = 0; angle < 50; ++angle) {
+                    let d = Math.sin(Math.PI * angle * 0.01);
+                    img.style.left = x0 + Math.round(vx * d) + "px";
+                    img.style.top = y0 + Math.round(vy * d) + "px";
+                    await new Promise(resolve => setTimeout(resolve, 10));
+                }
+
+                if (!!del) {
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    MapImg.removeChild(img);
+                }
+            }
+
+            // change img posion
+            if (target.className == "goal") {
+                let vx = parseInt(target.style.left) - parseInt(img.style.left);
+                let vy = parseInt(target.style.top) - parseInt(img.style.top);
+                movetion(img, vx, vy, true);
+            } else if (target.className == "location") {
+                let vx = parseInt(target.style.left) - parseInt(img.style.left);
+                let vy = parseInt(target.style.top) - parseInt(img.style.top);
+                movetion(img, vx, vy);
+            } else {
+                let startX = mobileEvent["startX"];
+                let startY = mobileEvent["startY"];
+                let endX = event.clientX;
+                let endY = event.clientY;
+                let vx = endX - startX;
+                let vy = endY - startY;
+                movetion(img, vx, vy);
+            }
+
+            lastFocus = nowFocus;
+
+        } else if (event.target.className == "mapimg" || event.target.className == "location") {
+            drawMapImage();
+        }
     }
 }
 // draw map image
@@ -656,7 +716,6 @@ let drawMapImage = function () {
         let rangeData = parseInt(inputrange.value);
         let ratioData = parseFloat(document.getElementById("rangeRatio").value);
 
-
         // draw range circle size
         range.style.width = Math.round(rangeData * ratioData * 1.5) + "px";
         range.style.height = Math.round(rangeData * ratioData * 1.5) + "px";
@@ -665,12 +724,33 @@ let drawMapImage = function () {
         // rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)} = \n${Math.round(rangeData * ratioData)}`;
         rangeText.innerText = (ratioData == 1.0) ? rangeData : `${rangeData} x ${ratioData.toFixed(2)}`;
 
+        let setDistanceText = function (center, distanceText, location) {
+            if (center.className == "mapimg") {
+                distanceText.innerText = (type == "near" ? "近" : "遠");
+                distanceText.style.color = (type == "near" ? "#ffffff" : "#000000");
+                distanceText.style.background = (type == "near" ? "#000000" : "#ffffff");
+                return;
+            } else if (center.className == "location") {
+                let x0 = parseInt(center.style.left);
+                let y0 = parseInt(center.style.top);
+                let x = parseInt(location.style.left);
+                let y = parseInt(location.style.top);
+                let distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
+                distanceText.innerText = Math.round(distance);
+
+                let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title=${center.id}]`).value);
+                let colorType = (nowFocusRange == 40) ? 0 : (((nowFocusRange * ratioData + 40) > distance) ? 1 : 2);
+                distanceText.style.color = ["black", "black", "white"][colorType];
+                distanceText.style.background = ["yellow", "#00ff00", "#ff0000"][colorType];
+                return;
+            }
+            console.error("setDistanceText error: Unknown type center ", center.className);
+        }
+
         // draw circle / text color & visibility
         if (nowFocus.className == "mapimg") {
             // distanceText
-            distanceText.innerText = (type == "near" ? "近" : "遠");
-            distanceText.style.color = (type == "near" ? "#ffffff" : "#000000");
-            distanceText.style.background = (type == "near" ? "#000000" : "#ffffff");
+            setDistanceText(nowFocus, distanceText);
 
             // hitbox
             hitbox.style.visibility = "hidden";
@@ -683,40 +763,25 @@ let drawMapImage = function () {
             // no response
         } else if (nowFocus.className == "location") {
             // distanceText
-            let x0 = parseInt(nowFocus.style.left);
-            let y0 = parseInt(nowFocus.style.top);
-            let x = parseInt(location.style.left);
-            let y = parseInt(location.style.top);
-            let distance = Math.sqrt(Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / 0.75;
-            distanceText.innerText = Math.round(distance);
-
-            let nowFocusRange = parseInt(document.querySelector(`input.inputrange[title=${nowFocus.id}]`).value);
-            let colorType = (nowFocusRange == 40) ? 0 : (((nowFocusRange * ratioData + 40) > distance) ? 1 : 2);
-            distanceText.style.color = ["black", "black", "white"][colorType];
-            distanceText.style.background = ["yellow", "#00ff00", "#ff0000"][colorType];
+            setDistanceText(nowFocus, distanceText, location);
 
             // hitbox
             hitbox.style.visibility = "visible";
+
+            // rangeText
+            rangeText.style.visibility = (nowFocus == location) ? "visible" : range.style.visibility;
+            inputrange.style.visibility = (nowFocus == location) ? "visible" : range.style.visibility;
+
             // range
             if (nowFocus == location) {
                 // switch
                 let visibility = "hidden";
-                if (range.style.visibility != "visible" || lastFocus.id != nowFocus.id) {
+                if (range.style.visibility != "visible" || !lastFocus || lastFocus.id != nowFocus.id) {
                     visibility = "visible";
                 }
                 if (rangeData == 40) { visibility = "hidden"; }
 
                 range.style.visibility = visibility;
-            }
-
-            // rangeText
-            if (nowFocus == location) {
-                rangeText.style.visibility = "visible";
-                inputrange.style.visibility = "visible";
-
-            } else {
-                rangeText.style.visibility = range.style.visibility;
-                inputrange.style.visibility = range.style.visibility;
             }
         }
     }
@@ -740,10 +805,16 @@ let copyUrl = function () {
 }
 
 let setShareButton = function (currentUri) {
-    function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
+    // function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
     document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
     document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
     document.getElementById("_plurkBtn").href = isMobile() ?
         "https://plurk.com/?qualifier=shares&content=" + encodeURIComponent(currentUri) :
         "https://plurk.com/?qualifier=shares&status=" + encodeURIComponent(currentUri);
+}
+let isMobile = function () {
+    let u = navigator.userAgent;
+    let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    return isAndroid || isiOS;
 }

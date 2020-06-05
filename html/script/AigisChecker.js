@@ -606,7 +606,14 @@ let copyUrl = function () {
 }
 
 let setShareButton = function (currentUri) {
-    function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
+    // function isMobile() { try { document.createEvent("TouchEvent"); return true; } catch (e) { return false; } }
+    function isMobile() {
+        let u = navigator.userAgent;
+        let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        return isAndroid || isiOS;
+    }
+
     document.getElementById("_twitterBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(currentUri);
     document.getElementById("_lineBtn").href = "line://msg/text/" + encodeURIComponent(currentUri);
     document.getElementById("_plurkBtn").href = isMobile() ?
