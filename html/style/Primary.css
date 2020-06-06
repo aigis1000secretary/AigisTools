@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: "-apple-system", "BlinkMacSystemFont", "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", "Osaka", "sans-serif";
 }
 
 body {
@@ -10,7 +11,6 @@ body {
     /* background: #f1f1f1; */
     background: #c0e0ff;
     font-size: 12px;
-    font-family: "-apple-system", "BlinkMacSystemFont", "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", "Osaka", "sans-serif";
 }
 
 /* Header/Blog Title */

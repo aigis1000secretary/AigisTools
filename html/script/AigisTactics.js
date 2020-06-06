@@ -229,14 +229,13 @@ let getMapSummary = function () {
             let text = dom.innerHTML;
 
             let width = parseInt(dom.style.width);
-            let height = parseInt(dom.style.height);
             let color = dom.style.color;
             let background = dom.style.background;
             let border = dom.style.border;
             let left = parseInt(dom.style.left);
             let top = parseInt(dom.style.top);
 
-            information[id] = { text, width, height, color, background, border, left, top };
+            information[id] = { text, width, color, background, border, left, top };
         }
     }
 
@@ -268,7 +267,6 @@ let setMapSummary = function (information) {
                 id: key,
                 text: information[key].text,
                 width: information[key].width,
-                height: information[key].height,
                 color: information[key].color,
                 background: information[key].background,
                 border: information[key].border,
@@ -281,6 +279,7 @@ let setMapSummary = function (information) {
 
     drawMapImage();
 }
+
 let dataSave = function () {
     let information = getMapSummary();
     // // qrcode
@@ -291,25 +290,12 @@ let dataSave = function () {
     let name = `[${quest.missionTitle}] ${quest.questTitle}.json`;
     let data = JSON.stringify(information, null, "\t");
 
-    // download file
-    function fake_click(obj) {
-        var ev = document.createEvent("MouseEvents");
-        ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        obj.dispatchEvent(ev);
-    }
-    let urlObject = window.URL || window.webkitURL || window;
-    let downloadData = new Blob([data]);
-    let save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
-    save_link.href = urlObject.createObjectURL(downloadData);
-    save_link.download = name;
-    fake_click(save_link);
+    saveFile(name, data);
 }
 let dataRestore = function (event) {
     let fileList = event.target.files;
 
-    if (fileList.length == 1) {
-        if (!fileList[0] || !fileList[0].type.match(/.json$/)) { return; }
-
+    if (fileList.length == 1 && !!fileList[0]) {
         var reader = new FileReader();
 
         reader.readAsText(fileList[0], 'UTF-8');
@@ -319,6 +305,7 @@ let dataRestore = function (event) {
     // clear file
     event.target.value = "";
 }
+
 
 // init map image
 let mapimgInit = function (id) {
@@ -699,17 +686,15 @@ let addMomebox = function () {
 
     text = box.value;
     width = box.offsetWidth;
-    height = box.offsetHeight;
     color = box.style.color;
     background = box.style.background;
     border = box.style.border;
-    left = 30;
-    top = 30;
 
-    _addMomebox({ text, width, height, color, background, border, left, top });
+    _addMomebox({ text, width, color, background, border, left: 30, top: 30 });
 }
-let _addMomebox = function ({ text, width, height, color, background, border, left, top }) {
+let _addMomebox = function ({ text, width, color, background, border, left, top }) {
     console.debug("addMomebox");
+    console.debug(text, width, color, background, border, left, top);
     let box = document.getElementById("textbox");
 
     let div = document.createElement("div");
@@ -717,12 +702,11 @@ let _addMomebox = function ({ text, width, height, color, background, border, le
     div.className = "memo";
     div.draggable = true;
     div.style.paddingLeft = "3px";
-    div.style.fontFamily = box.style.fontFamily;
+    // div.style.fontFamily = box.style.fontFamily;
     div.style.overflow = "hidden";
 
     div.innerText = text;
     div.style.width = width + "px";
-    div.style.height = height + "px";
     div.style.color = color;
     div.style.background = background;
     div.style.border = border;
@@ -763,9 +747,8 @@ let onClickMemo = function (memo) {
     document.getElementById("bgcolorbox").value = bgColor;
     document.getElementById("outcolorbox").value = bdColor;
 
-    box.innerHTML = memo.innerHTML;
+    box.value = memo.innerHTML;
     box.style.width = memo.style.width;
-    box.style.height = memo.style.height;
     box.style.color = teColor;
     box.style.background = bgColor;
     box.style.border = "2px solid " + bdColor;
@@ -780,14 +763,13 @@ let onClick = function (event) {
     console.debug("onClick", event.target.className, "<=", lastFocus.className);
     nowFocus = event.target;
 
-    if (nowFocus.className == "memo") { 
+    if (nowFocus.className == "memo") {
         onClickMemo(nowFocus);
     }
 
     if (!isMobile()) {
         let waitInput = (document.querySelector("#mapimg .inputrange:focus, #mapimg .inputrange:hover") != null);
-        if ((event.target.className == "mapimg" && !waitInput) || event.target.className == "location") {
-            nowFocus = event.target;
+        if ((nowFocus.className == "mapimg" && !waitInput) || nowFocus.className == "location") {
             drawMapImage();
         }
     } else {
@@ -842,7 +824,7 @@ let onClick = function (event) {
 
             lastFocus = nowFocus;
 
-        } else if (event.target.className == "mapimg" || event.target.className == "location") {
+        } else if (nowFocus.className == "mapimg" || nowFocus.className == "location") {
             drawMapImage();
         }
     }
@@ -950,13 +932,19 @@ let drawMapImage = function () {
 
 
 // html result to image
-let openImage = function () {
-    $(window).scrollTop(0);
-    html2canvas(document.getElementById("iconbox")).then(function (canvas) {
-        var image = new Image();
-        image.src = canvas.toDataURL("image/png");
-        window.open().document.write(`< img src = "${image.src}" /> `);
-    });
+let saveFile = function (name, data) {
+    // download file
+    function fake_click(obj) {
+        var ev = document.createEvent("MouseEvents");
+        ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        obj.dispatchEvent(ev);
+    }
+    let urlObject = window.URL || window.webkitURL || window;
+    let downloadData = new Blob([data]);
+    let save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+    save_link.href = urlObject.createObjectURL(downloadData);
+    save_link.download = name;
+    fake_click(save_link);
 }
 let copyUrl = function () {
     document.getElementById("_sharebox").select();
