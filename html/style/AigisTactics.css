@@ -79,7 +79,7 @@
     visibility: hidden;
     opacity: 0.0;
     pointer-events: auto;
-    z-index: 20;
+    z-index: 26;
 }
 
 #mapimg .inputrange:focus, #mapimg .inputrange:hover {

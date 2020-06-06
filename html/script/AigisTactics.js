@@ -93,12 +93,12 @@ let iconboxInit = function () {
         // icon.id = charaData[i].id;
         icon.className = "iconbtn";
         icon.title = charaData[i].name; // + "," + charaData[i].classId;
-        icon.src = charaData[i].img;
         icon.alt = charaData[i].id;
         icon.draggable = false;
+        icon.src = charaData[i].img;
 
-        // onclick event
-        icon.addEventListener("click", addIcon, false);
+        // // onclick event
+        // icon.addEventListener("click", addIcon, false);
 
         // append
         iconbox.appendChild(icon);
@@ -141,12 +141,13 @@ let iconboxInit = function () {
     }
 }
 let iconCount = 0;
-let addIcon = function (event) {
+let onClickIconbox = function (event) {
+    if (event.target.className != "iconbtn") return;
     console.debug("addIcon");
 
     let alt = event.target.alt;   // cc/aw/aw2a/aw2b tag
-    let left = 30 + parseInt(iconCount % 20) * 25;
-    let top = 30 + parseInt(iconCount / 20) * 25;
+    let left = 30 + parseInt(iconCount % 20) * 25 + "px";
+    let top = 30 + parseInt(iconCount / 20) * 25 + "px";
 
     _addIcon({ alt, left, top })
 }
@@ -765,75 +766,86 @@ let onClickMemo = function (memo) {
 let nowFocus = "";
 let lastFocus = "";
 let mobileEvent = {};
-let onClick = function (event) {
+let onClickMapimg = function (event) {
     console.debug("onClick", event.target.className, "<=", lastFocus.className);
-    nowFocus = event.target;
 
+    let waitInput = (document.querySelector("#mapimg .inputrange:focus, #mapimg .inputrange:hover") != null);
+    if (waitInput) return;
+
+
+    nowFocus = event.target;
+    // get memo config
     if (nowFocus.className == "memo") {
         onClickMemo(nowFocus);
     }
 
-    if (!isMobile()) {
-        let waitInput = (document.querySelector("#mapimg .inputrange:focus, #mapimg .inputrange:hover") != null);
-        if ((nowFocus.className == "mapimg" && !waitInput) || nowFocus.className == "location") {
-            drawMapImage();
-        }
-    } else {
-        if (nowFocus.className == "icon" || nowFocus.className == "memo") {
-            // save drag image dom id
-            mobileEvent["imgId"] = nowFocus.id;
-            mobileEvent["startX"] = event.clientX;     // Get the horizontal coordinate
-            mobileEvent["startY"] = event.clientY;     // Get the vertical coordinate
+    // get move start data
+    if (nowFocus.className == "icon" || nowFocus.className == "memo") {
+        mobileEvent["imgId"] = nowFocus.id;
+        mobileEvent["startX"] = event.clientX;     // Get the horizontal coordinate
+        mobileEvent["startY"] = event.clientY;     // Get the vertical coordinate
 
-            lastFocus = nowFocus;
-
-        } else if (lastFocus.className == "icon" || nowFocus.className == "memo") {
-            // move icon images
-            let img = lastFocus;
-            let target = nowFocus;
-
-            let movetion = async function (img, vx, vy, del) {
-                let x0 = parseInt(img.style.left);
-                let y0 = parseInt(img.style.top);
-
-                for (let angle = 0; angle < 50; ++angle) {
-                    let d = Math.sin(Math.PI * angle * 0.01);
-                    img.style.left = x0 + Math.round(vx * d) + "px";
-                    img.style.top = y0 + Math.round(vy * d) + "px";
-                    await new Promise(resolve => setTimeout(resolve, 10));
-                }
-
-                if (!!del) {
-                    await new Promise(resolve => setTimeout(resolve, 500));
-                    MapImg.removeChild(img);
-                }
-            }
-
-            // change img posion
-            if (target.className == "goal") {
-                let vx = parseInt(target.style.left) - parseInt(img.style.left);
-                let vy = parseInt(target.style.top) - parseInt(img.style.top);
-                movetion(img, vx, vy, true);
-            } else if (target.className == "location") {
-                let vx = parseInt(target.style.left) - parseInt(img.style.left);
-                let vy = parseInt(target.style.top) - parseInt(img.style.top);
-                movetion(img, vx, vy);
-            } else {
-                let startX = mobileEvent["startX"];
-                let startY = mobileEvent["startY"];
-                let endX = event.clientX;
-                let endY = event.clientY;
-                let vx = endX - startX;
-                let vy = endY - startY;
-                movetion(img, vx, vy);
-            }
-
-            lastFocus = nowFocus;
-
-        } else if (nowFocus.className == "mapimg" || nowFocus.className == "location") {
-            drawMapImage();
-        }
+        lastFocus = nowFocus;
+        return;
     }
+
+    // move icon
+    if ((lastFocus.className == "icon" || lastFocus.className == "memo") &&
+        (nowFocus.className == "location" || nowFocus.className == "goal" || nowFocus.className == "mapimg")) {
+
+        // move icon images
+        let img = lastFocus;
+        let target = nowFocus;
+
+        let movetion = async function (img, vx, vy, del) {
+            let x0 = parseInt(img.style.left);
+            let y0 = parseInt(img.style.top);
+
+            for (let angle = 0; angle < 50; ++angle) {
+                let d = Math.sin(Math.PI * angle * 0.01);   // 0.0PI => 0.5PI / 0.0 => 1.0
+                img.style.left = x0 + Math.round(vx * d) + "px";
+                img.style.top = y0 + Math.round(vy * d) + "px";
+                await new Promise(resolve => setTimeout(resolve, 9));  // sleep(9ms)
+            }
+
+            if (!!del) {
+                await new Promise(resolve => setTimeout(resolve, 500));
+                MapImg.removeChild(img);
+            }
+        }
+
+        // change img posion
+        if (target.className == "goal") {
+            // delete item
+            let vx = parseInt(target.style.left) - parseInt(img.style.left);
+            let vy = parseInt(target.style.top) - parseInt(img.style.top);
+            movetion(img, vx, vy, true);
+
+        } else if (target.className == "location" && img.className == "icon") {
+            // move icon to location
+            let vx = parseInt(target.style.left) - parseInt(img.style.left);
+            let vy = parseInt(target.style.top) - parseInt(img.style.top);
+            movetion(img, vx, vy);
+
+        } else {
+            // move item to any position
+            let startX = mobileEvent["startX"];
+            let startY = mobileEvent["startY"];
+            let endX = event.clientX;
+            let endY = event.clientY;
+            let vx = endX - startX;
+            let vy = endY - startY;
+            movetion(img, vx, vy);
+        }
+
+        lastFocus = nowFocus;
+        return;
+    }
+
+    if (nowFocus.className == "mapimg" || nowFocus.className == "location") {
+        drawMapImage();
+    }
+
 }
 // draw map image
 let drawMapImage = function () {
