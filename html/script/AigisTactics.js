@@ -112,8 +112,8 @@ let iconboxInit = function () {
         if (!a || !b || a.tagName != "IMG" || b.tagName != "IMG") continue;
 
         // get icon data
-        let aData = charaData.find(chara => (chara && chara.id == a.alt));
-        let bData = charaData.find(chara => (chara && chara.id == b.alt));
+        let aData = charaData.find(chara => (chara && chara.id == parseInt(a.alt)));
+        let bData = charaData.find(chara => (chara && chara.id == parseInt(b.alt)));
         if (!aData || !bData) continue;
 
         // set text
@@ -249,31 +249,16 @@ let setMapSummary = function (information) {
     for (let i in keys) {
         let key = keys[i];
         if (/afar\d+|near\d+/.test(key)) {
-            console.log(key)
+            // set location range
             document.querySelector(`input.inputrange[title = ${key}]`).value =
                 information[key];
 
         } else if (/icon\d+/.test(key)) {
-            // _addIcon({
-            //     id: key,
-            //     alt: information[key].alt,
-            //     left: information[key].left,
-            //     top: information[key].top
-            // });
+            // set icon
             _addIcon(information[key]);
 
         } else if (/memo\d+/.test(key)) {
-            // _addMomebox({
-            //     id: key,
-            //     text: information[key].text,
-            //     width: information[key].width,
-            //     fontSize: information[key].fontSize,
-            //     color: information[key].color,
-            //     background: information[key].background,
-            //     border: information[key].border,
-            //     left: information[key].left,
-            //     top: information[key].top
-            // });
+            // set memo
             _addMomebox(information[key]);
         }
     }
@@ -732,22 +717,25 @@ let onClickMemo = function (memo) {
     let bdColor = memo.style.border.replace("2px solid ", "");
 
     if (/^rgb/.test(teColor)) {
+        let temp = teColor.replace(/[^\d,]+/g, "").split(",");
         teColor = "#" +
-            parseInt(/\([\d ]+,/.exec(teColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
-            parseInt(/,[ \d ]+,/.exec(teColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
-            parseInt(/,[ \d]+\)/.exec(teColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0")
+            parseInt(temp[0]).toString(16).padStart(2, "0") +
+            parseInt(temp[1]).toString(16).padStart(2, "0") +
+            parseInt(temp[2]).toString(16).padStart(2, "0");
     }
     if (/^rgb/.test(bgColor)) {
+        let temp = bgColor.replace(/[^\d,]+/g, "").split(",");
         bgColor = "#" +
-            parseInt(/\([\d ]+,/.exec(bgColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
-            parseInt(/,[ \d ]+,/.exec(bgColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
-            parseInt(/,[ \d]+\)/.exec(bgColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0")
+            parseInt(temp[0]).toString(16).padStart(2, "0") +
+            parseInt(temp[1]).toString(16).padStart(2, "0") +
+            parseInt(temp[2]).toString(16).padStart(2, "0");
     }
     if (/^rgb/.test(bdColor)) {
+        let temp = bdColor.replace(/[^\d,]+/g, "").split(",");
         bdColor = "#" +
-            parseInt(/\([\d ]+,/.exec(bdColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
-            parseInt(/,[ \d ]+,/.exec(bdColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0") +
-            parseInt(/,[ \d]+\)/.exec(bdColor).toString().replace(/^[^\d]+/, "")).toString(16).padStart(2, "0")
+            parseInt(temp[0]).toString(16).padStart(2, "0") +
+            parseInt(temp[1]).toString(16).padStart(2, "0") +
+            parseInt(temp[2]).toString(16).padStart(2, "0");
     }
 
     document.getElementById("textcolorbox").value = teColor;
