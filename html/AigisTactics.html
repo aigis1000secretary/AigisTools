@@ -70,9 +70,6 @@
             <div class="hr">
               メモ生成
               <input type="button" onclick="addMomebox();" value="生成">
-              字体
-              <input id="textSize" type="number" value="12" min="10" max="30" style="width: 40px;"
-                onchange="onChangeInput(event);">
             </div>
             <!-- <div id="memoresult"> </div> -->
             <div class="inputbox">
@@ -86,17 +83,33 @@
         <div class="leftcolumn" style="width: 30%; padding-left: 10px;">
           <div class="card">
 
-            <div class="hr">
-              <div class="inputbox">ﾎﾞｰﾀﾞｰ色
-                <input id="outcolorbox" type="color" onchange="onChangeInput(event);">
-              </div>
-              <div class="inputbox">背景色
-                <input id="bgcolorbox" type="color" value="#ffffff" onchange="onChangeInput(event);">
-              </div>
-              <div class="inputbox">文字色
-                <input id="textcolorbox" type="color" onchange="onChangeInput(event);">
+            <div class="leftcolumn" style="width: 55%;">
+              <div class="hr">
+
+                <div class="inputbox">
+                  ﾎﾞｰﾀﾞｰ色
+                  <input id="outcolorbox" type="color" onchange="onChangeInput(event);"><br>
+                  背景色
+                  <input id="bgcolorbox" type="color" value="#ffffff" onchange="onChangeInput(event);"><br>
+                  文字色
+                  <input id="textcolorbox" type="color" onchange="onChangeInput(event);"><br>
+                </div>
+
               </div>
             </div>
+
+            <div class="rightcolumn" style="width: 45%; padding-left: 0px;">
+              <div class="hr">
+
+                <div class="inputbox">
+                  字体
+                  <input id="textSize" type="number" value="12" min="10" max="30" style="width: 45px;"
+                    onchange="onChangeInput(event);">
+                </div>
+
+              </div>
+            </div>
+            <div style="clear: left"></div>
 
           </div>
         </div>
