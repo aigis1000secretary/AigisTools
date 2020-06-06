@@ -67,8 +67,12 @@
         <div class="leftcolumn" style="width: 40%;">
           <div class="card">
 
-            <div class="hr"> メモ生成
+            <div class="hr">
+              メモ生成
               <input type="button" onclick="addMomebox();" value="生成">
+              字体
+              <input id="textSize" type="number" value="12" min="10" max="30" style="width: 40px;"
+                onchange="onChangeInput(event);">
             </div>
             <!-- <div id="memoresult"> </div> -->
             <div class="inputbox">

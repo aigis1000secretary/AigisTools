@@ -144,30 +144,27 @@ let iconCount = 0;
 let addIcon = function (event) {
     console.debug("addIcon");
 
-    let id = "icon" + iconCount;    // for drag
     let alt = event.target.alt;   // cc/aw/aw2a/aw2b tag
     let left = 30 + parseInt(iconCount % 20) * 25;
     let top = 30 + parseInt(iconCount / 20) * 25;
 
-    _addIcon({ id, alt, left, top })
+    _addIcon({ alt, left, top })
 }
-let _addIcon = function ({ id, alt, left, top }) {
+let _addIcon = function ({ alt, left, top }) {
     // get chara data
     let icon = charaData.find(icon => { return icon.id == parseInt(alt); })
     if (!icon) console.log("addIcon error", alt);
 
     // set newIcon element
     let newIcon = document.createElement("img");
-
-    newIcon.id = id;    // for drag
-    newIcon.alt = alt;   // cc/aw/aw2a/aw2b tag
-    newIcon.style.left = left + "px";;
-    newIcon.style.top = top + "px";;
-
+    newIcon.id = "icon" + iconCount;    // for drag
     newIcon.className = "icon";
     newIcon.title = icon.name; // + "," + icon.classId;
-
     newIcon.src = icon.img;
+
+    newIcon.alt = alt;   // cc/aw/aw2a/aw2b tag
+    newIcon.style.left = left;
+    newIcon.style.top = top;
 
     newIcon.addEventListener("dragstart", onDragStart, false);
 
@@ -220,22 +217,23 @@ let getMapSummary = function () {
         } else if (dom.className == "icon") {
             let id = dom.id;    // "icon5"
             let alt = dom.alt;  // "999aw2"
-            let left = parseInt(dom.style.left);
-            let top = parseInt(dom.style.top);
+            let left = dom.style.left;
+            let top = dom.style.top;
 
             information[id] = { alt, left, top };
         } else if (dom.className == "memo") {
             let id = dom.id;
-            let text = dom.innerHTML;
 
-            let width = parseInt(dom.style.width);
+            let text = dom.innerHTML;
+            let width = dom.style.width;
+            let fontSize = dom.style.fontSize;
             let color = dom.style.color;
             let background = dom.style.background;
             let border = dom.style.border;
-            let left = parseInt(dom.style.left);
-            let top = parseInt(dom.style.top);
+            let left = dom.style.left;
+            let top = dom.style.top;
 
-            information[id] = { text, width, color, background, border, left, top };
+            information[id] = { text, width, fontSize, color, background, border, left, top };
         }
     }
 
@@ -255,25 +253,27 @@ let setMapSummary = function (information) {
                 information[key];
 
         } else if (/icon\d+/.test(key)) {
-            _addIcon({
-                id: key,
-                alt: information[key].alt,
-                left: information[key].left,
-                top: information[key].top
-            });
+            // _addIcon({
+            //     id: key,
+            //     alt: information[key].alt,
+            //     left: information[key].left,
+            //     top: information[key].top
+            // });
+            _addIcon(information[key]);
 
         } else if (/memo\d+/.test(key)) {
-            _addMomebox({
-                id: key,
-                text: information[key].text,
-                width: information[key].width,
-                color: information[key].color,
-                background: information[key].background,
-                border: information[key].border,
-                left: information[key].left,
-                top: information[key].top
-            }
-            );
+            // _addMomebox({
+            //     id: key,
+            //     text: information[key].text,
+            //     width: information[key].width,
+            //     fontSize: information[key].fontSize,
+            //     color: information[key].color,
+            //     background: information[key].background,
+            //     border: information[key].border,
+            //     left: information[key].left,
+            //     top: information[key].top
+            // });
+            _addMomebox(information[key]);
         }
     }
 
@@ -368,6 +368,7 @@ let mapimgInit = function (id) {
         div.title = dId;
         div.type = "number";
         div.value = "40";
+        div.min = "40";
         div.style.left = location.X + "px";
         div.style.top = (parseInt(location.Y) + 31) + "px";
         div.addEventListener("change", onChangeInput, false);
@@ -605,7 +606,7 @@ let onChangeInput = function (event) {
     if (select.className == "inputrange") { onChangeInputRange(select); }
     else if (select.id == "filterbox") { onChangeInputFilter(select); }
     else if (select.id == "rangeRatio") { onChangeInputRatio(select); }
-    else if (select.type = "color" || select.id == "textbox") { onChangeInputMemobox(select); }
+    else if (select.type == "color" || select.id == "textbox" || select.id == "textSize") { onChangeInputMemobox(select); }
 }
 let onChangeInputRange = function (select) {
     console.debug("onChangeInputRange");
@@ -675,7 +676,9 @@ let onChangeInputMemobox = function (select) {
     let teColor = document.getElementById("textcolorbox").value;
     let bgColor = document.getElementById("bgcolorbox").value;
     let bdColor = document.getElementById("outcolorbox").value;
+    let teSize = document.getElementById("textSize").value + "px";
 
+    box.style.fontSize = teSize;
     box.style.color = teColor;
     box.style.background = bgColor;
     box.style.border = "2px solid " + bdColor;
@@ -685,33 +688,36 @@ let addMomebox = function () {
     let box = document.getElementById("textbox");
 
     text = box.value;
-    width = box.offsetWidth;
+    width = box.offsetWidth + "px";
+    fontSize = box.style.fontSize;
     color = box.style.color;
     background = box.style.background;
     border = box.style.border;
 
-    _addMomebox({ text, width, color, background, border, left: 30, top: 30 });
+    _addMomebox({ text, width, fontSize, color, background, border, left: "30px", top: "30px" });
 }
-let _addMomebox = function ({ text, width, color, background, border, left, top }) {
+let _addMomebox = function ({ text, width, fontSize, color, background, border, left, top }) {
     console.debug("addMomebox");
     console.debug(text, width, color, background, border, left, top);
     let box = document.getElementById("textbox");
 
     let div = document.createElement("div");
-    div.id = "memo" + iconCount;    // for drag
     div.className = "memo";
     div.draggable = true;
     div.style.paddingLeft = "3px";
-    // div.style.fontFamily = box.style.fontFamily;
+    // div.style.paddingTop = "5px";
     div.style.overflow = "hidden";
 
+    div.id = "memo" + iconCount;    // for drag
     div.innerText = text;
-    div.style.width = width + "px";
+    div.style.width = width;
+    div.style.fontSize = fontSize;
+    // div.style.lineHeight = fontSize;
     div.style.color = color;
     div.style.background = background;
     div.style.border = border;
-    div.style.left = left + "px";
-    div.style.top = top + "px";
+    div.style.left = left;
+    div.style.top = top;
 
     div.addEventListener("dragstart", onDragStart, false);
 
