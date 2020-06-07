@@ -93,9 +93,10 @@ let iconboxInit = function () {
         // icon.id = charaData[i].id;
         icon.className = "iconbtn";
         icon.title = charaData[i].name; // + "," + charaData[i].classId;
-        icon.alt = charaData[i].id;
         icon.draggable = false;
-        icon.src = charaData[i].img;
+
+        icon.alt = charaData[i].id;
+        icon.src = "./icons/" + charaData[i].img;
 
         // // onclick event
         // icon.addEventListener("click", addIcon, false);
@@ -161,9 +162,18 @@ let _addIcon = function ({ alt, left, top }) {
     newIcon.id = "icon" + iconCount;    // for drag
     newIcon.className = "icon";
     newIcon.title = icon.name; // + "," + icon.classId;
-    newIcon.src = icon.img;
 
     newIcon.alt = alt;   // cc/aw/aw2a/aw2b tag
+    let status = alt.replace(parseInt(alt), "");
+    let iconHash = icon.img;
+    if (status == "aw")
+        iconHash = icon.imgaw || iconHash;
+    else if (status == "aw2A")
+        iconHash = icon.imgaw2A || icon.imgaw || iconHash;
+    else if (status == "aw2B")
+        iconHash = icon.imgaw2B || icon.imgaw || iconHash;
+    newIcon.src = "./icons/" + iconHash;
+
     newIcon.style.left = left;
     newIcon.style.top = top;
 
@@ -395,6 +405,7 @@ let onChangeSelect = function (select) {
     else if (select.id == "mission") { onChangeSelectMission(select); }
     else if (select.id == "quest") { onChangeSelectQuest(select); }
     else if (select.id == "weatherType") { onChangeSelectWeather(select); }
+    else if (select.id == "iconStatus") { onChangeSelectAwake(select); }
 }
 let onChangeSelectMissionType = function (select) {
     // change type
@@ -534,6 +545,31 @@ let onChangeSelectWeather = function (select) {
     }
 
     onChangeInputRatio(ratioBox);
+}
+let onChangeSelectAwake = function (select) {
+    console.debug("onChangeSelectAwake");
+    // get data
+    let i = select.selectedIndex;
+    let status = select.options[i].value;
+    console.log(status)
+    // get btns
+    let iconbtns = Array.from(document.getElementsByClassName("iconbtn"));
+    for (let i in iconbtns) {
+        // set icon status
+        let id = parseInt(iconbtns[i].alt);
+        iconbtns[i].alt = id + status;
+        console.log(iconbtns[i].alt)
+
+        // set icon image
+        let iconHash = charaData[i].img;
+        if (status == "aw")
+            iconHash = charaData[i].imgaw || iconHash;
+        else if (status == "aw2A")
+            iconHash = charaData[i].imgaw2A || charaData[i].imgaw || iconHash;
+        else if (status == "aw2B")
+            iconHash = charaData[i].imgaw2B || charaData[i].imgaw || iconHash;
+        iconbtns[i].src = "./icons/" + iconHash;
+    }
 }
 
 

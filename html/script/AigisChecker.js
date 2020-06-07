@@ -165,9 +165,9 @@ let init = function () {
         icon.className = "iconbtn";
         icon.id = charaData[i].id;
         icon.title = charaData[i].name;
-        icon.src = charaData[i].img;
         icon.alt = "false";
         icon.draggable = false;
+        icon.src = "./icons/" + charaData[i].img;
 
         // onclick event
         icon.addEventListener("click", function (e) {

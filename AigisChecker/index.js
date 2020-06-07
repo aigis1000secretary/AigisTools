@@ -1,6 +1,7 @@
 ﻿const fs = require("fs");
 const path = require("path");
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
+const md5f = function (str) { return require('crypto').createHash('md5').update(str).digest('hex'); }
 
 // get local file list
 let getFileList = function (dirPath) {
@@ -61,11 +62,19 @@ let rawDataToCsv = function (rawPath, csvPath) {
     }
     return result;
 };
-let encodeBase64 = function (file) {
-    // read binary data
-    var bitmap = fs.readFileSync(file);
-    // convert binary data to base64 encoded string
-    return Buffer.from(bitmap).toString('base64');
+let getIconMd5 = function (filePath) {
+    if (!filePath) { return undefined; }
+
+    // get file md5
+    let pngBinary = fs.readFileSync(filePath);
+    let md5 = md5f(pngBinary.toString());
+
+    // write file
+    let outputDir = "../html/icons/";
+    let outputPath = outputDir + md5;
+    fs.createReadStream(filePath).pipe(fs.createWriteStream(outputPath));
+
+    return md5;
 }
 
 const main = async function () {
@@ -109,18 +118,19 @@ const main = async function () {
     let resultJson = [];
 
     // get png list
-    let icons = getFileList(resources + "/ico_00.aar");
+    let icons = [].concat(
+        getFileList(resources + "/ico_00.aar"),
+        getFileList(resources + "/ico_01.aar"),
+        getFileList(resources + "/ico_02.aar"),
+        getFileList(resources + "/ico_03.aar"))
 
-    // console.table(icons);
-    let id, maxCid = 0;
-    for (let i in icons) {
-        // var
-        let iconPath = icons[i];
-        id = parseInt(path.basename(iconPath).replace("_001.png", ""));
+    let maxCid = 0;
+    for (let i in cardsData) {
+
+        let id = parseInt(i);
         maxCid = Math.max(id, maxCid);
 
         // set json data
-        if (!cardsData[id]) continue;
         let name = cardsData[id][0];
         let rare = parseInt(cardsData[id][7]);
         let classId = parseInt(cardsData[id][2]);
@@ -248,6 +258,16 @@ const main = async function () {
         // Non-R18 Collaboration flag
         if (assign == 4 || assign == 7) { sortGroupID = 12; };
 
+        // get image md5&get giles
+        let img, imgaw, imgaw2A, imgaw2B;
+        let iconName = id.toString().padStart(3, "0") + "_001.png";
+        img = getIconMd5(icons.find(file => (/ico_00.aar/.test(file) && file.indexOf(iconName) != -1)));
+        imgaw = getIconMd5(icons.find(file => (/ico_01.aar/.test(file) && file.indexOf(iconName) != -1)));
+        imgaw2A = getIconMd5(icons.find(file => (/ico_02.aar/.test(file) && file.indexOf(iconName) != -1)));
+        imgaw2B = getIconMd5(icons.find(file => (/ico_03.aar/.test(file) && file.indexOf(iconName) != -1)));
+        // no any img
+        if (!img && !imgaw && !imgaw2A && !imgaw2B) { continue; }
+
         let obj = {
             id,
             name,
@@ -260,7 +280,10 @@ const main = async function () {
             assign,
             genus, // identity,
             year,
-            img: "data:image/png;base64," + encodeBase64(iconPath),
+            img,
+            imgaw,
+            imgaw2A,
+            imgaw2B
         };
         // resultJson.push(obj);
         resultJson[id] = obj;

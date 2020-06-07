@@ -119,10 +119,10 @@
           <div class="card">
 
             <div class="hr">
-              <div class="inputbox">射程倍率：
+              <div class="inputbox">
+                射程倍率：
                 <input id="rangeRatio" type="text" value="1.0" style="width: 155px;" onchange="onChangeInput(event);">
-              </div>
-              <div class="inputbox"> 悪天候：
+                悪天候：
                 <select id="weatherType" onchange="onChangeSelect(this);">
                   <option value="null">　　　無</option>
                   <option value="769_001.png">　　吹雪</option>
@@ -147,8 +147,15 @@
       <!-- iconbox -->
       <div class="card">
         <div class="hr">
-          <div class="inputbox"> フィルタ：
+          <div class="inputbox">
+            フィルタ：
             <input id="filterbox" type="text" onchange="onChangeInput(event);">
+            <select id="iconStatus" onchange="onChangeSelect(this);">
+              <option value="">　　覚醒前</option>
+              <option value="aw">　　覚醒後</option>
+              <option value="aw2A">　第二覚醒A</option>
+              <option value="aw2B">　第二覚醒B</option>
+            </select>
           </div>
         </div>
         <!-- init by js methods -->

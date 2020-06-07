@@ -8,11 +8,10 @@ lua Scripts\get_file_list.lua
 lua Scripts\get_file.lua PlayerUnitTable.aar
 
 lua Scripts\get_file.lua ico_00.aar
-lua Scripts\parse_cards.lua > out\files\cards.txt
-
 lua Scripts\get_file.lua ico_01.aar
 lua Scripts\get_file.lua ico_02.aar
 lua Scripts\get_file.lua ico_03.aar
+lua Scripts\parse_cards.lua > out\files\cards.txt
 
 pause
 exit
