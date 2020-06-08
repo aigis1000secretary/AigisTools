@@ -275,7 +275,6 @@ let setMapSummary = function (information) {
 
     drawMapImage();
 }
-
 let dataSave = function () {
     let information = getMapSummary();
     // // qrcode
@@ -731,7 +730,7 @@ let _addMomebox = function ({ text, width, fontSize, color, background, border, 
     div.style.overflow = "hidden";
 
     div.id = "memo" + iconCount;    // for drag
-    div.innerText = text;
+    div.innerHTML = text;
     div.style.width = width;
     div.style.fontSize = fontSize;
     // div.style.lineHeight = fontSize;
