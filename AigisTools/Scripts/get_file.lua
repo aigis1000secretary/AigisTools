@@ -10,6 +10,7 @@ local fname, mode = ...
 local out = "out\\files\\"
 local working = "working\\"
 
+print("get_file.lua", fname)
 local copy = {
   [".png"] = true,
   [".ogg"] = true,
@@ -22,7 +23,6 @@ local copy = {
 local ext = fname:match("%.%w+")
 copy = copy[ext]
 
-print("get_file.lua", fname)
 local text = dl.getfile(nil, fname)
 if copy or mode == "copy" then
   local h = assert(io.open(out .. "\\" .. fname, 'wb'))

@@ -260,7 +260,7 @@ const main = async function () {
 
         // get image md5&get giles
         let img, imgaw, imgaw2A, imgaw2B;
-        let iconName = id.toString().padStart(3, "0") + "_001.png";
+        let iconName = "/" + id.toString().padStart(3, "0") + "_001.png";
         img = getIconMd5(icons.find(file => (/ico_00.aar/.test(file) && file.indexOf(iconName) != -1)));
         imgaw = getIconMd5(icons.find(file => (/ico_01.aar/.test(file) && file.indexOf(iconName) != -1)));
         imgaw2A = getIconMd5(icons.find(file => (/ico_02.aar/.test(file) && file.indexOf(iconName) != -1)));

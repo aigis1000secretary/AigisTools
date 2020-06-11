@@ -49,7 +49,7 @@ const main = async function () {
         let md5 = md5f(pngBinary.toString());
         mapHashList[filename] = md5;
         
-        if (/map/i.text(resource)) {
+        if (/map/i.test(resource)) {
             let outputDir = "../html/maps/";
             let outputPath = outputDir + md5;
 

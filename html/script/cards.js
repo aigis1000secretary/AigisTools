@@ -1,15 +1,15 @@
-var maxCid = 1010;
+var maxCid = 1014;
 var charaData = [
-	{	"id": 1,	"name": "主人公",	"rare": 5,	"classId": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998",	"imgaw": "8de4661d9114442464336ab7981113b1"	},
-	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classId": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf",	"imgaw": "37f148d21ec3c182f061ebda16938abf"	},
-	{	"id": 3,	"name": "王国重歩兵ラセル",	"rare": 1,	"classId": 201,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "95808ef2f9f4d0752c1c9047f4207614",	"imgaw": "1b580344a4cc0f259e34b44f9c3fc803"	},
-	{	"id": 4,	"name": "山賊 手下A",	"rare": 0,	"classId": 601,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "8a1359f19a6b7e4e8708f73472d2f49f",	"imgaw": "409ade55a0b24c84eb1d714f7afd7616"	},
-	{	"id": 5,	"name": "弓兵ウィルフレッド",	"rare": 1,	"classId": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "b3168ae9f9535aeb06939f7b56a98b9a",	"imgaw": "33bf0951a3a8a9918383b6e5457a2cb0"	},
-	{	"id": 6,	"name": "一般兵A",	"rare": 0,	"classId": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "67e36df2e37e96682f77156710f31af3",	"imgaw": "84d9c894371f3e8312a2d69b84460a4b"	},
+	{	"id": 1,	"name": "主人公",	"rare": 5,	"classId": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
+	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classId": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
+	{	"id": 3,	"name": "王国重歩兵ラセル",	"rare": 1,	"classId": 201,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "95808ef2f9f4d0752c1c9047f4207614"	},
+	{	"id": 4,	"name": "山賊 手下A",	"rare": 0,	"classId": 601,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "8a1359f19a6b7e4e8708f73472d2f49f"	},
+	{	"id": 5,	"name": "弓兵ウィルフレッド",	"rare": 1,	"classId": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "b3168ae9f9535aeb06939f7b56a98b9a"	},
+	{	"id": 6,	"name": "一般兵A",	"rare": 0,	"classId": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "67e36df2e37e96682f77156710f31af3"	},
 	{	"id": 7,	"name": "兵士長ユリアン",	"rare": 3,	"classId": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "76fc15a0a7572f1a4bdc1377db8f25d8",	"imgaw": "5a0750e6dc7270acb84a73d203612845"	},
 	{	"id": 8,	"name": "傭兵クレイブ",	"rare": 2,	"classId": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4e5b7055ac04b3ee18d7c47005e657ca"	},
 	{	"id": 9,	"name": "破壊者ギャレット",	"rare": 3,	"classId": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "aa0527432fe29364c86d55ce0b064000",	"imgaw": "813f1b94d1a0be9ce760d2eec7c2ff56"	},
-	{	"id": 10,	"name": "金色の盾ベルナール",	"rare": 2,	"classId": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "c082500d2cac0c257f3031d7ca5dd2ff",	"imgaw": "b3ce9742b113c8cef06f7757bbc8eff9"	},
+	{	"id": 10,	"name": "金色の盾ベルナール",	"rare": 2,	"classId": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "c082500d2cac0c257f3031d7ca5dd2ff"	},
 	{	"id": 11,	"name": "王国魔術師ロイ",	"rare": 1,	"classId": 10101,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "fe5ccc683559228d1458158a40059d76"	},
 	{	"id": 12,	"name": "魔導師ヴァレリー",	"rare": 2,	"classId": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "83eb3ea42bec6ec13e485dc69e2e0d7c"	},
 	{	"id": 13,	"name": "黒衣のサイラス",	"rare": 3,	"classId": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "571826221c3d5cd0af312a6864ac1104",	"imgaw": "a3eea19f6d28f5ea26586572dd48120b"	},
@@ -994,4 +994,8 @@ var charaData = [
 	{	"id": 1008,	"name": "ちびエレイン",	"rare": 3,	"classId": 20300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "2f19232d13cdedeec376458968329a06"	},
 	{	"id": 1009,	"name": "ちびフィオレ",	"rare": 3,	"classId": 31800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "8e6d81eb65a66411a272e038337c6e33"	},
 	{	"id": 1010,	"name": "約束の花嫁ディエーラ",	"rare": 5,	"classId": 12800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 104,	"year": 2020,	"img": "e5ca9a3c77ebbf56548430f454254ef0",	"imgaw": "b3ce9742b113c8cef06f7757bbc8eff9"	},
+	{	"id": 1011,	"name": "久遠の花嫁エターナー",	"rare": 5,	"classId": 10800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 104,	"year": 2020,	"img": "79c1208e40528b64b8452d0049464392",	"imgaw": "0d7283b591e2b5ae3a5c1567ee5c7d14"	},
+	{	"id": 1012,	"name": "ウェディングケーキ",	"rare": 5,	"classId": 16300,	"sortGroupID": 11,	"placeType": 2,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "8649571451db5ee39da1ad5c6714fdd7"	},
+	{	"id": 1013,	"name": "清心の花嫁スイレン",	"rare": 4,	"classId": 2500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 104,	"year": 2020,	"img": "536077659218301c4ba8ce80307fcc39",	"imgaw": "e7045ac661678781e6b070fd94a20269"	},
+	{	"id": 1014,	"name": "双花の結婚式リッカ",	"rare": 4,	"classId": 1800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 104,	"year": 2020,	"img": "92ff14c90b6d70cb8cc0a98186e34aed",	"imgaw": "ee171fac901bcc5ac5bca1ec2a3d844c"	},
 ]

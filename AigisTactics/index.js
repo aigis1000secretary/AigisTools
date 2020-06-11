@@ -44,7 +44,7 @@ const main = async function () {
             /QuestNameText\d*.atb/i.test(filename)||
             /BattleEffect.aar/i.test(filename)
         )) {
-            if (/Mission\S+.atb/i.test(filename) || !fs.existsSync(resources + "/" + filename)) // skip exist
+            if (/Mission\S+.atb/i.test(filename) || /QuestNameText\S+.atb/i.test(filename) || !fs.existsSync(resources + "/" + filename)) // skip exist
             {
                 filelist[i] = filename;
                 continue;
