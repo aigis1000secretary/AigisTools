@@ -4,6 +4,7 @@ const child_process = require('child_process');
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 console.json = async function (str) { return console.log(JSON.stringify(str, null, 4)); }
 
+const debug = false;
 // const debug = true;
 
 // get local file list
