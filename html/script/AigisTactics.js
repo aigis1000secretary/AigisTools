@@ -436,11 +436,14 @@ let onChangeSelectMissionType = function (select) {
             items = missionIds.filter(mId => {
                 return missionNameList[mId].indexOf("ゴールドラッシュ") != -1;
             });
+            // sort
+            // items.sort((a, b) => { return missionNameList[a].localeCompare(missionNameList[b]); })
+            items.sort((a, b) => { return parseInt(/\d+/.exec(missionNameList[a]).toString()) < parseInt(/\d+/.exec(missionNameList[b]).toString()) ? -1 : 1; })
         } break;
 
         case "Emergency": {
             items = missionIds.filter(mId => {
-                return 200000 <= parseInt(mId) && parseInt(mId) < 300000 &&
+                return 200000 <= parseInt(mId) && parseInt(mId) < 300000 && parseInt(mId) != 200129 &&
                     missionNameList[mId].indexOf("ゴールドラッシュ") == -1 &&
                     missionNameList[mId].indexOf("異世界") == -1;
             });
@@ -469,6 +472,19 @@ let onChangeSelectMissionType = function (select) {
             items = missionIds.filter(mId => {
                 return 400000 <= parseInt(mId) && parseInt(mId) < 500000
             });
+            // 復刻大討伐
+            for (let i = 0; i < items.length - 1; ++i) {
+                let title_i = missionNameList[items[i]];   // m-title
+                let flag = false;
+
+                for (let j = i + 1; j < items.length; ++j) {
+                    let title_j = missionNameList[items[j]];   // m-title
+                    if (title_i == title_j) { flag = true; break; }
+                }
+
+                if (flag) { items[i] = ""; }
+            }
+            items = items.filter(i => i != "");
         } break;
         case "Devil": {
             items = missionIds.filter(mId => {
@@ -487,11 +503,14 @@ let onChangeSelectMissionType = function (select) {
         case "Challenge": { items = ["800001", "900001"]; } break;
     }
 
+    // items.sort((a, b) => { return missionNameList[a].localeCompare(missionNameList[b]); });   // sort by missionId & reverse 
+
     // set select items
     missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
     for (let i in items) {
-        let item = items[i];
-        missionSelect.options.add(new Option(missionNameList[item], item));
+        let item = items[i];    // mid
+        let itemCount = questList.filter(quest => { return quest.missionId == item; }).length;
+        missionSelect.options.add(new Option(`${missionNameList[item]} ${itemCount == 0 ? "" : `(${itemCount})`}`, item));
     }
 }
 let onChangeSelectMission = function (select) {
@@ -504,13 +523,21 @@ let onChangeSelectMission = function (select) {
     questSelect.innerText = null;
     let items = questList.filter(quest => { return quest.missionId == value; });
 
-    // sort daily
+    // sort
     if (value == "700001") {
         items.sort((a, b) => { return a.questTitle[0].localeCompare(b.questTitle[0]); })
     }
+    if (value == "200133") {
+        // EmergencyMissionQuestList.atb
+        let sortList = [4795, 4796, 4798, 4801, 4803, 4806, 4797, 4799, 4800, 4802, 4804, 4805, 4838, 4841, 4840, 4839, 4842, 4843, 4844, 4845, 4846, 4848, 4847, 4850, 4849, 4855, 4852, 4853, 4854, 4851, 4856, 4857, 4858, 4863, 4862, 4866, 4861, 4864, 4860, 4865, 4859, 4871, 4872, 4873, 4868, 4869, 4870, 4867, 4874, 4879, 4876, 4877, 4882, 4875, 4878, 4881, 4880, 4889, 4886, 4883, 4884, 4885, 4888, 4887, 4890, 4895, 4894, 4897, 4892, 4893, 4898, 4891, 4896, 4905, 4902, 4901, 4900, 4903, 4906, 4899, 4904, 4911, 4908, 4913, 4912, 4907, 4910, 4909, 4914, 4921, 4922, 4915, 4920, 4917, 4918, 4919, 4916, 4927, 4926, 4923, 4924, 4925, 4930, 4929, 4928, 4933, 4938, 4934, 4936, 4932, 4937, 4931, 4935, 4939, 4943, 4940, 4944, 4941, 4945, 4942, 4946, 4947, 4954, 4948, 4951, 4949, 4953, 4950, 4952]
+        items.sort((a, b) => {
+            return a.questId == b.questId ? 0 :
+                sortList.indexOf(parseInt(a.questId)) < sortList.indexOf(parseInt(b.questId)) ? -1 : 1;
+        })
+    }
 
     // set select items
-    let str = items.length == 0 ? "＝＝no data＝＝" : "＝＝クエスト＝＝ (" + items.length + ")"
+    let str = items.length == 0 ? "＝＝no data＝＝" : "＝＝クエスト＝＝";
     questSelect.options.add(new Option(str, ""));
     for (let i in items) {
         let item = items[i];

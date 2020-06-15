@@ -4,6 +4,8 @@ const child_process = require('child_process');
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 console.json = async function (str) { return console.log(JSON.stringify(str, null, 4)); }
 
+// const debug = true;
+
 // get local file list
 let getFileList = function (dirPath) {
     let result = [];
@@ -17,6 +19,31 @@ let getFileList = function (dirPath) {
     }
     return result;
 };
+
+let rawDataToJson = function (rawString) {
+    let result = [];
+    let raw = rawString.split("\n");
+
+    let row = raw.shift();
+    let keys = row.replace(/\s+/g, " ").trim().split(" ");
+    // console.table(keys);
+    for (let i in raw) {
+        row = raw[i];
+        let values = row.replace(/\s+/g, " ").trim().split(" ");
+
+        if (keys.length != values.length) {
+            console.table(values);
+            // console.log("QxZpjdfV.txt data error");
+            continue;
+        }
+
+        let obj = {};
+        for (let j in keys) { obj[keys[j]] = values[j]; }
+        result.push(obj);
+    }
+
+    return result;
+}
 
 const main = async function () {
     // check resources
@@ -41,7 +68,7 @@ const main = async function () {
             /Map\d+/i.test(filename) ||
             /MissionQuestList.atb/i.test(filename) ||
             /MissionConfig.atb/i.test(filename) ||
-            /QuestNameText\d*.atb/i.test(filename)||
+            /QuestNameText\d*.atb/i.test(filename) ||
             /BattleEffect.aar/i.test(filename)
         )) {
             if (/Mission\S+.atb/i.test(filename) || /QuestNameText\S+.atb/i.test(filename) || !fs.existsSync(resources + "/" + filename)) // skip exist
@@ -55,9 +82,11 @@ const main = async function () {
     filelist.sort();
     filelist = filelist.filter((file) => { return (file != ""); })
     // download resource file
-    for (let i in filelist) {
-        let file = filelist[i];
-        console.log(child_process.execSync("cd ../AigisTools/&get.bat " + file).toString().trim());
+    if (!debug) {
+        for (let i in filelist) {
+            let file = filelist[i];
+            console.log(child_process.execSync("cd ../AigisTools/&get.bat " + file).toString().trim());
+        }
     }
 
     // get resource list
@@ -139,15 +168,15 @@ const main = async function () {
         missionNameList["310017"] = "アンナと雪の美女";
         missionNameList["310018"] = "戦乙女の契約";
         missionNameList["310019"] = "山賊王への道";
-        missionNameList["310020"] = "密林のハロウィンパーティー";
+        missionNameList["310020"] = "竜騎士の誓い";
         missionNameList["310021"] = "錬金術士と賢者の石";
         missionNameList["310022"] = "聖鎚闘士の挑戦";
-        missionNameList["310023"] = "闇の組織と狙われた王子";
+        missionNameList["310023"] = "砲科学校の訓練生";
         missionNameList["310024"] = "死霊の船と提督の決意";
         missionNameList["310025"] = "帝国の天馬騎士";
         missionNameList["310026"] = "暗黒騎士団と狙われた癒し手";
         missionNameList["310027"] = "白の帝国と偽りの都市";
-        missionNameList["310028"] = "密林のハロウィンパーティー";
+        missionNameList["310028"] = "暗黒騎士団と聖夜の贈り物";
         missionNameList["310029"] = "呪術師と妖魔の女王";
         missionNameList["310030"] = "私掠船長と魔の海域";
         missionNameList["310031"] = "ヴァンパイアと聖なる復讐者";
@@ -175,10 +204,16 @@ const main = async function () {
 
     // get quest raw data
     console.log("output get_xmlfile_missions");
-    let QxZpjdfVRaw = child_process.execSync('cd ../AigisTools/&do get_xmlfile_missions.lua').toString().trim().replace(/nil/g, '"nil "');
-    let QxZpjdfV = [];
-    try { QxZpjdfV = JSON.parse(QxZpjdfVRaw); }
-    catch (e) { QxZpjdfV = eval("(" + QxZpjdfVRaw + ")"); }
+
+    let QxZpjdfV;
+    if (debug) {
+        QxZpjdfV = rawDataToJson(fs.readFileSync("./QxZpjdfV.txt").toString().trim());
+    } else {
+        let QxZpjdfVRaw = child_process.execSync("cd ../AigisTools/&do get_xmlfile_missions.lua").toString().trim().replace(/nil/g, '"nil"');
+        QxZpjdfV = [];
+        try { QxZpjdfV = JSON.parse(QxZpjdfVRaw); }
+        catch (e) { QxZpjdfV = eval("(" + QxZpjdfVRaw + ")"); }
+    }
 
     // set quest data
     for (let i in QxZpjdfV) {
@@ -202,16 +237,18 @@ const main = async function () {
             let mid = /^\d+/.exec(fullId).toString();
             return qId == questId && missionNameList[mid];
         });
-        if (questIds.length != 1) {
-            console.log("[ERROR] questId " + questId + " cant found mission id from <missionQuestList [" + questIds.length + "]>!");
+        if (questIds.length < 1) {
+            console.log(`[ERROR] questId ${questId} cant found mission id from <missionQuestList>!`);
             continue;
         }
         missionId = /^\d+/.exec(questIds[0]).toString();
+        // 悪霊の迷宮
+        if (missionId == "200129") { missionId = "200133"; }
 
         // get mission title
         missionTitle = missionNameList[missionId];
         if (!missionTitle) {
-            console.log("[ERROR] missionId " + missionId + " cant found mission title from <missionNameList>!");
+            console.log(`[ERROR] missionId ${missionId} cant found mission title from <missionNameList>!`);
             continue;
         }
 
@@ -219,9 +256,21 @@ const main = async function () {
         let _NameText000000atb = "QuestNameText" + missionId + ".atb";
         let nameTextTxt = resourceList.find((file) => { return (file.indexOf(_NameText000000atb) != -1 && /\.txt$/i.test(file)); });
         if (!nameTextTxt) {
-            console.log("[ERROR] " + _NameText000000atb + "/ALTB_gdtx.txt not found !");
-            continue;
+
+            // 復刻
+            if (missionId[0] == "2" || missionId[0] == "3") {
+                missionId = (missionId[0] == "2" ? "3" : "2") + missionId.substr(1);
+                nameTextTxt = resourceList.find((file) => {
+                    return (file.indexOf("QuestNameText" + missionId + ".atb") != -1 && /\.txt$/i.test(file));
+                });
+            }
+
+            if (!nameTextTxt) {
+                console.log("[ERROR] " + _NameText000000atb + "/ALTB_gdtx.txt not found !");
+                continue;
+            }
         }
+
         // QuestNameText000000.atb/ALTB_gdtx.txt
         let nameList = fs.readFileSync(nameTextTxt).toString().replace(/ [ ]+/g, " ").split("\n");
         nameList = nameList.filter((name) => { return /\"[^\"]+\"/.test(name); });
@@ -266,7 +315,9 @@ const main = async function () {
             locationList
         };
 
-        questList.push(quest);
+        if (!questList.find(q => q.id == id)) {
+            questList.push(quest);
+        }
     }
 
 
