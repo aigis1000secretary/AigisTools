@@ -2,7 +2,7 @@
 local xmldoc = require("lib/xmldoc")
 local xml = require("lib/xml")
 
-local text = xmldoc.getfile(nil, "missions")
+local text = xmldoc.getfile(nil, "cards")
 local obj = xml.parse(text)
 
 local da = obj.contents

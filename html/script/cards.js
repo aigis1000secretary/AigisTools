@@ -1,4 +1,4 @@
-var maxCid = 1014;
+var maxCid = 1018;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classId": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classId": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -998,4 +998,8 @@ var charaData = [
 	{	"id": 1012,	"name": "ウェディングケーキ",	"rare": 5,	"classId": 16300,	"sortGroupID": 11,	"placeType": 2,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "8649571451db5ee39da1ad5c6714fdd7"	},
 	{	"id": 1013,	"name": "清心の花嫁スイレン",	"rare": 4,	"classId": 2500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 104,	"year": 2020,	"img": "536077659218301c4ba8ce80307fcc39",	"imgaw": "e7045ac661678781e6b070fd94a20269"	},
 	{	"id": 1014,	"name": "双花の結婚式リッカ",	"rare": 4,	"classId": 1800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 104,	"year": 2020,	"img": "92ff14c90b6d70cb8cc0a98186e34aed",	"imgaw": "ee171fac901bcc5ac5bca1ec2a3d844c"	},
+	{	"id": 1015,	"name": "ガニマール",	"rare": 4,	"classId": 126100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "15f0480792a74851c332846531492c4c",	"imgaw": "301bc40552bc70bd16ae197d04321e3f"	},
+	{	"id": 1016,	"name": "グリモワール",	"rare": 5,	"classId": 126200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "d80a8e655e04501eff3710ae26c36d63",	"imgaw": "9032b068bac06279d10f8b65f56c4907"	},
+	{	"id": 1017,	"name": "虫子",	"rare": 4,	"classId": 126300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "0d44f5166ec0d4f587aea1e9963f413d",	"imgaw": "243df96cb51c68ecff9092513cdf109f"	},
+	{	"id": 1018,	"name": "虫",	"rare": 5,	"classId": 126400,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "9e9f1cb5bd65435648d0ab1b331246c2"	},
 ]
