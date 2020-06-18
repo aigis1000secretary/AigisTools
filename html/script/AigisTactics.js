@@ -14,15 +14,15 @@ let bodyOnload = function () {
     select.options.add(new Option("緊急ミッション", "Emergency"));
     select.options.add(new Option("デイリー復刻", "DailyReproduce"));
 
+    select.options.add(new Option("復刻ミッション", "Reproduce"));
+    select.options.add(new Option("ゴールドラッシュ", "Goldrush"));
+    select.options.add(new Option("大討伐", "Subjugation"));
+
     select.options.add(new Option("魔神降臨", "Devil"));
     select.options.add(new Option("神獣降臨", "Raid"));
 
     select.options.add(new Option("交流クエスト", "Harlem"));
     select.options.add(new Option("戦術指南/チャレンジクエスト", "Challenge"));
-
-    select.options.add(new Option("ゴールドラッシュ", "Goldrush"));
-    select.options.add(new Option("復刻ミッション", "Reproduce"));
-    select.options.add(new Option("大討伐", "Subjugation"));
     select.options.add(new Option("特別ミッション", "Special"));
 
     select = document.getElementById("mission");
@@ -444,16 +444,14 @@ let onChangeSelectMissionType = function (select) {
         case "Emergency": {
             items = missionIds.filter(mId => {
                 return 200000 <= parseInt(mId) && parseInt(mId) < 300000 && parseInt(mId) != 200129 &&
-                    missionNameList[mId].indexOf("ゴールドラッシュ") == -1 &&
-                    missionNameList[mId].indexOf("異世界") == -1;
+                    missionNameList[mId].indexOf("ゴールドラッシュ") == -1;
             });
             items.sort((a, b) => { return b.localeCompare(a); });   // sort by missionId & reverse 
         } break;
         case "Reproduce": {
             items = missionIds.filter(mId => {
                 return 300000 <= parseInt(mId) && parseInt(mId) < 310000 &&
-                    missionNameList[mId].indexOf("ゴールドラッシュ") == -1 &&
-                    missionNameList[mId].indexOf("異世界") == -1;
+                    missionNameList[mId].indexOf("ゴールドラッシュ") == -1;
             });
         } break;
         case "DailyReproduce": {

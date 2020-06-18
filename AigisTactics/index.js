@@ -94,7 +94,7 @@ const main = async function () {
     let resourceList = getFileList(resources);
     let missionNameList = {};
     let missionQuestList = [];
-    let questList = [];
+    let questList = JSON.parse(fs.readFileSync("../html/script/questList.js").toString().replace(/^let questList = /, "").replace(/,\s+\]$/, "]"));
 
     // get mission<=>name raw
     let rawtxt = resourceList.filter((file) => { return (/MissionConfig.atb[\S]+\.txt$/i.test(file)); });
@@ -309,15 +309,18 @@ const main = async function () {
         // build quest data
         let quest = {
             id,
-            questId, questTitle,
-            missionId, missionTitle,
+            missionTitle, questTitle,
+            missionId, questId,
             map, location,
             life, startUP, unitLimit,
             locationList
         };
 
-        if (!questList.find(q => q.id == id)) {
+        let j = questList.findIndex(q => { return (q.missionTitle == missionTitle && q.questId == questId) });
+        if (j == -1) {
             questList.push(quest);
+        } else {
+            questList[j] = quest;
         }
     }
 
