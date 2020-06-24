@@ -50,14 +50,31 @@ module.exports = {
                 fs.writeFile(filepath + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
             }
         }
+        //  else if (url.indexOf('/oS5aZ5ll') != -1) {
+        //     // army information
+        //     console.log(url);
+
+        //     if (/(\S{8})$/.test(url)) {
+        //         let filename = /(\S{8})$/.exec(url)[0];
+        //         fs.writeFile(filepath + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
+        //     }
+        // }
+        //  else if (/\/[\S]{8}$/.test(url)) {
+        //     console.log(url);
+
+        //     if (/(\S{8})$/.test(url)) {
+        //         let filename = /(\S{8})$/.exec(url)[0];
+        //         fs.writeFile(filepath + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
+        //     }
+        // }
 
         return null;
     },
 
     *beforeDealHttpsRequest(requestDetail) {
         let hostlist = [
-	        "millennium-war.net:443",    // AigisR units information / missions information
-	        "all.millennium-war.net:443"    // Aigis units information / missions information
+            "millennium-war.net:443",    // AigisR units information / missions information
+            "all.millennium-war.net:443"    // Aigis units information / missions information
         ];
         return (hostlist.indexOf(requestDetail.host) != -1);
     }
