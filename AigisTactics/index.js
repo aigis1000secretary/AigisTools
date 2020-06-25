@@ -201,6 +201,7 @@ const main = async function () {
         missionNameList["310049"] = "白き獣人と闇の組織";
         missionNameList["310050"] = "砂浜を駆ける魔術師";
         missionNameList["310051"] = "密林のハロウィンパーティー";
+        missionNameList["310052"] = "デーモンサンタのおもちゃ工場";
     }
 
     // get quest raw data
