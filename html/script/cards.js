@@ -1,4 +1,4 @@
-var maxCid = 1019;
+var maxCid = 1028;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classId": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classId": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1003,4 +1003,7 @@ var charaData = [
 	{	"id": 1017,	"name": "虫子",	"rare": 4,	"classId": 126300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "0d44f5166ec0d4f587aea1e9963f413d",	"imgaw": "243df96cb51c68ecff9092513cdf109f"	},
 	{	"id": 1018,	"name": "虫",	"rare": 5,	"classId": 126400,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "9e9f1cb5bd65435648d0ab1b331246c2"	},
 	{	"id": 1019,	"name": "妖狸ヤシマ",	"rare": 5,	"classId": 15800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "6063662cbfe76884496d1d912df1fb19",	"imgaw": "51796af5e5db453c49065712c98a3ef6"	},
+	{	"id": 1020,	"name": "ちびアンリ",	"rare": 3,	"classId": 32700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "200cc837c7869d85b45e3ea38e2d2de9"	},
+	{	"id": 1021,	"name": "ちびクラリーチェ",	"rare": 3,	"classId": 33400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "b91690336bf1c80358c26703e8cf1caa"	},
+	{	"id": 1024,	"name": "ダミー7",	"rare": 0,	"classId": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "9f40e4e873e133f2783899bfd6bf4501",	"imgaw": "9f40e4e873e133f2783899bfd6bf4501",	"imgaw2A": "9f40e4e873e133f2783899bfd6bf4501",	"imgaw2B": "9f40e4e873e133f2783899bfd6bf4501"	},
 ]
