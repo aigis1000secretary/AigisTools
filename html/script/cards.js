@@ -1,4 +1,4 @@
-var maxCid = 1028;
+var maxCid = 1030;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classId": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classId": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1005,5 +1005,13 @@ var charaData = [
 	{	"id": 1019,	"name": "妖狸ヤシマ",	"rare": 5,	"classId": 15800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "6063662cbfe76884496d1d912df1fb19",	"imgaw": "51796af5e5db453c49065712c98a3ef6"	},
 	{	"id": 1020,	"name": "ちびアンリ",	"rare": 3,	"classId": 32700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "200cc837c7869d85b45e3ea38e2d2de9"	},
 	{	"id": 1021,	"name": "ちびクラリーチェ",	"rare": 3,	"classId": 33400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "b91690336bf1c80358c26703e8cf1caa"	},
-	{	"id": 1024,	"name": "ダミー7",	"rare": 0,	"classId": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "9f40e4e873e133f2783899bfd6bf4501",	"imgaw": "9f40e4e873e133f2783899bfd6bf4501",	"imgaw2A": "9f40e4e873e133f2783899bfd6bf4501",	"imgaw2B": "9f40e4e873e133f2783899bfd6bf4501"	},
+	{	"id": 1022,	"name": "妖狐の海水浴キュウビ",	"rare": 5,	"classId": 2000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "117784460494aeff7ff26a0fc32bdbb8",	"imgaw": "dfa6327107873cbb679e93506210fefc"	},
+	{	"id": 1023,	"name": "砂浜の司教エレオノーラ",	"rare": 5,	"classId": 14800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "3df200578dccf0b28dd878c2dfb477c3",	"imgaw": "c41c4543d6ac2dcf5260e78e272b6d9c"	},
+	{	"id": 1024,	"name": "真夏の剣聖ジークリンデ",	"rare": 5,	"classId": 3000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "63d784efc5a573cd6c0aa305d13f35f5",	"imgaw": "dd264095c5d80b9fdab95d9076bc51c6",	"imgaw2A": "9f40e4e873e133f2783899bfd6bf4501",	"imgaw2B": "9f40e4e873e133f2783899bfd6bf4501"	},
+	{	"id": 1025,	"name": "水兵の夏休みフレイ",	"rare": 4,	"classId": 1900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "0da23f5a4345f22ebcd14cd8ae98e359",	"imgaw": "561b49879ffd4ede392df182b618492d"	},
+	{	"id": 1026,	"name": "海の看板娘リーゼロッテ",	"rare": 4,	"classId": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "f6f32971bbc63a69598d3c769a18a218",	"imgaw": "b5132ff69befdffbe6a6fdbeb88b8780"	},
+	{	"id": 1027,	"name": "軍師の息抜きレオナ",	"rare": 4,	"classId": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "0a59e91dbeb8dc953cfcdf70e9e9f515",	"imgaw": "ab42b0439bac8e25119787203fdecdb2"	},
+	{	"id": 1028,	"name": "魅惑の夏元帥レオラ",	"rare": 4,	"classId": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "d118a2bce91a90c1f80097c2712d78fa",	"imgaw": "5aa202f6023b84aa715c1fb8f2d0691f"	},
+	{	"id": 1029,	"name": "妖狐分身",	"rare": 5,	"classId": 16400,	"sortGroupID": 11,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "1b9c95f4610c5dc3e9912810298e3dbf"	},
+	{	"id": 1030,	"name": "天狐分身",	"rare": 5,	"classId": 16430,	"sortGroupID": 11,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "f34c82bc7183b4eb32c73f37a6689c40"	},
 ]
