@@ -4,8 +4,8 @@ const child_process = require('child_process');
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
 console.json = async function (str) { return console.log(JSON.stringify(str, null, 4)); }
 
-const debug = false;
-// const debug = true;
+let debug = false;
+// debug = true;
 
 // get local file list
 let getFileList = function (dirPath) {
@@ -108,6 +108,17 @@ const main = async function () {
             string = /^\d+\s+\"[^\"]+\"/.exec(string).toString();
             let missionID = /^\d+/.exec(string).toString();
             let name = /\"[^\"]+\"/.exec(string).toString().replace(/\"/g, "");
+
+            // delete 復刻大討伐
+            if ((400000 <= parseInt(missionID) && parseInt(missionID) < 500000) &&
+                Object.values(missionNameList).indexOf(name) != -1) {
+                for (let j of Object.keys(missionNameList)) {
+                    if (missionNameList[j] == name) {
+                        if (parseInt(missionID) > parseInt(j)) { delete missionNameList[j]; }
+                        else { missionID = j; }
+                    }
+                }
+            }
             missionNameList[missionID] = name;
         } else if (/^\d+\s+\d+\s+\"[^\"]+\"/.test(string)) {
             // DailyReproduceMissionConfig.atb
@@ -236,8 +247,8 @@ const main = async function () {
         // get mission id & check mission id valid
         let questIds = missionQuestList.filter((fullId) => {
             let qId = /\d+$/.exec(fullId).toString();
-            let mid = /^\d+/.exec(fullId).toString();
-            return qId == questId && missionNameList[mid];
+            let mId = /^\d+/.exec(fullId).toString();
+            return qId == questId && missionNameList[mId];
         });
         if (questIds.length < 1) {
             console.log(`[ERROR] questId ${questId} cant found mission id from <missionQuestList>!`);

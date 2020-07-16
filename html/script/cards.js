@@ -1,4 +1,4 @@
-var maxCid = 1030;
+var maxCid = 1040;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classId": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classId": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -510,7 +510,7 @@ var charaData = [
 	{	"id": 514,	"name": "遠国の弓兵",	"rare": 4,	"classId": 10000,	"sortGroupID": 12,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 4,	"genus": 0,	"year": 2017,	"img": "fa5dfbff5221a23fabc9a7c84da18f84"	},
 	{	"id": 515,	"name": "遠国の公子",	"rare": 4,	"classId": 6410,	"sortGroupID": 12,	"placeType": 1,	"kind": 0,	"isEvent": 0,	"assign": 4,	"genus": 0,	"year": 2017,	"img": "3ffa12be784075db8b246743470c43e6"	},
 	{	"id": 516,	"name": "化け猫",	"rare": 5,	"classId": 6500,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"img": "17a6dc24112244139612c4046c98ab40"	},
-	{	"id": 517,	"name": "夏陽の騎馬乙女エレイン",	"rare": 3,	"classId": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 105,	"year": 2017,	"img": "459276bbc801008f17f8160b49288473",	"imgaw": "6ac2c9fba6ad12d4c04cb94fac3cfdae"	},
+	{	"id": 517,	"name": "夏陽の騎馬乙女エレイン",	"rare": 3,	"classId": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 105,	"year": 2017,	"img": "459276bbc801008f17f8160b49288473",	"imgaw": "6ac2c9fba6ad12d4c04cb94fac3cfdae",	"imgaw2B": "5e9540092852d4a3244094d242876e53"	},
 	{	"id": 518,	"name": "夜涼の射的兵ダニエラ",	"rare": 3,	"classId": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 105,	"year": 2017,	"img": "983da4fe1938ef4d933c28d3ddcf94cb",	"imgaw": "5f0cff96fcf1c35c22596858ac323273",	"imgaw2B": "eae54bbbc7e488338d7e7625c44f663c"	},
 	{	"id": 519,	"name": "常夏の兎司祭ポーラ",	"rare": 4,	"classId": 10800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 105,	"year": 2017,	"img": "8864ed7f2b4a884b335d15c0dc7e42e1",	"imgaw": "8a315736e87a508df57a9d3837ecf480"	},
 	{	"id": 520,	"name": "デーモン",	"rare": 5,	"classId": 4220,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"img": "9f8df623afae48c133074616f3fb63d9"	},
@@ -896,7 +896,7 @@ var charaData = [
 	{	"id": 908,	"name": "深淵を知る者アトナテス",	"rare": 4.1,	"classId": 121700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"img": "eabc71c06f5cfa88f68aae9d27b87bd6",	"imgaw": "eabc71c06f5cfa88f68aae9d27b87bd6"	},
 	{	"id": 909,	"name": "ターゲットマーカー",	"rare": 5,	"classId": 121800,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"img": "66d48494500b7058c57963008834ce60"	},
 	{	"id": 910,	"name": "等身大クイーン人形",	"rare": 5,	"classId": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"img": "db944a8ae8576e61717d918531c91bcd"	},
-	{	"id": 911,	"name": "戦場指揮官ルヴェア",	"rare": 4,	"classId": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"img": "b02846c01d2f7314851db017170e4dd8",	"imgaw": "b58f1c956e27fcde003d49c7147a7c76"	},
+	{	"id": 911,	"name": "戦場指揮官ルヴェア",	"rare": 4,	"classId": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"img": "b02846c01d2f7314851db017170e4dd8",	"imgaw": "b58f1c956e27fcde003d49c7147a7c76",	"imgaw2B": "42273f8ff92864c2caeb6670a7903eb5"	},
 	{	"id": 912,	"name": "呪術師カタラ",	"rare": 4,	"classId": 12300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"img": "b394551cb483d5a6e3ff384bec0ce337",	"imgaw": "95d0d523b4b9f32ad2eed05e56f6a847"	},
 	{	"id": 913,	"name": "ちびドロテア",	"rare": 3,	"classId": 32500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2019,	"img": "921c5fd5b07b649a5190e5e371ca25d2"	},
 	{	"id": 914,	"name": "ちびレアン",	"rare": 3,	"classId": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2019,	"img": "312183cbd0d46093b5c1a74ada62a40d"	},
