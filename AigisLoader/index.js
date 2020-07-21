@@ -4,7 +4,6 @@ const path = require("path");
 const child_process = require('child_process');
 const iconv = require("iconv-lite");
 const Jimp = require('jimp');
-const { parse } = require("path");
 
 // switch
 const dlRaw = process.env.NODE_DLALL == "false" ? false : true;

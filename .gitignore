@@ -12,6 +12,4 @@ AigisTools/Data/Cache/
 AigisTools/out/
 AigisTools/working/
 
-AigisChecker/*.csv
-
-Resources
+AigisLoader/debug.js
