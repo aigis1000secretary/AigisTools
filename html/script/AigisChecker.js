@@ -228,7 +228,7 @@ let setHr = function (type) {
             if (aData.rare * 10 % 10 == 2) aText = "王子";
             if (bData.rare * 10 % 10 == 2) bText = "王子";
 
-        } else if (type == "classId") {
+        } else if (type == "classID") {
             let textList = ["", "近接", "遠隔", "両用"];
             aText = textList[aData.placeType];
             bText = textList[bData.placeType];
@@ -413,7 +413,7 @@ let sortByRare = function (ascending) {
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
         // sort by class
-        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -432,7 +432,7 @@ let sortByClass = function (ascending) {
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
 
         // sort by class
-        if (aData.classId != bData.classId) return (!!ascending == (aData.classId < bData.classId)) ? -1 : 1;
+        if (aData.classID != bData.classID) return (!!ascending == (aData.classID < bData.classID)) ? -1 : 1;
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
@@ -443,7 +443,7 @@ let sortByClass = function (ascending) {
     })
 
     init();
-    setHr("classId");
+    setHr("classID");
 }
 let sortByKind = function () {
     sortMode = "kind";
@@ -458,7 +458,7 @@ let sortByKind = function () {
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
         // sort by class
-        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -485,7 +485,7 @@ let sortByEvent = function () {
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
         // sort by class
-        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -510,7 +510,7 @@ let sortByAssign = function () {
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
         // sort by class
-        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -535,7 +535,7 @@ let sortByGenus = function () {
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
         // sort by class
-        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -570,7 +570,7 @@ let sortByYearGacha = function () {
         // sort by group
         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
         // sort by class
-        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 

@@ -1,6 +1,6 @@
 
 let MapImg;
-let MapId;
+let MapID;
 let bodyOnload = function () {
     questList.sort((a, b) => { return a.id.localeCompare(b.id); })
     // console.log("bodyOnload");
@@ -38,8 +38,6 @@ let bodyOnload = function () {
     let map = getUrlParams();
     if (map) {
         mapimgInit(map);
-        // let mId = /^\d+/.exec(map).toString();
-        // let qId = /\d+$/.exec(map).toString();
     }
 }
 let iconboxInit = function () {
@@ -76,7 +74,7 @@ let iconboxInit = function () {
         }
 
         // sort by class
-        if (aData.classId != bData.classId) return (aData.classId < bData.classId) ? -1 : 1;
+        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
@@ -92,7 +90,7 @@ let iconboxInit = function () {
         let icon = document.createElement("img");
         // icon.id = charaData[i].id;
         icon.className = "iconbtn";
-        icon.title = charaData[i].name; // + "," + charaData[i].classId;
+        icon.title = charaData[i].name; // + "," + charaData[i].classID;
         icon.draggable = false;
 
         icon.alt = charaData[i].id;
@@ -161,7 +159,7 @@ let _addIcon = function ({ alt, left, top }) {
     let newIcon = document.createElement("img");
     newIcon.id = "icon" + iconCount;    // for drag
     newIcon.className = "icon";
-    newIcon.title = icon.name; // + "," + icon.classId;
+    newIcon.title = icon.name; // + "," + icon.classID;
 
     newIcon.alt = alt;   // cc/aw/aw2a/aw2b tag
     let status = alt.replace(parseInt(alt), "");
@@ -196,13 +194,13 @@ let getUrlParams = function () {
     // return flag list
     return urlData || false;
 }
-let setUrlParams = function (questFullId) {
+let setUrlParams = function (questFullID) {
     // URL obj
     let url = new URL(document.URL);
     let params = url.searchParams;
 
     // set data to url
-    params.set("map", questFullId);
+    params.set("map", questFullID);
     history.pushState(null, null, url);
 
     // sharebox
@@ -215,7 +213,7 @@ let setUrlParams = function (questFullId) {
 }
 let getMapSummary = function () {
     // let mapInfo = MapImg.innerHTML.replace(/></g, ">\n<").split("\n");
-    let information = { MapId };
+    let information = { MapID };
 
     for (let i in MapImg.childNodes) {
         let dom = MapImg.childNodes[i];
@@ -254,7 +252,7 @@ let getMapSummary = function () {
 let setMapSummary = function (information) {
     let keys = Object.keys(information);
 
-    mapimgInit(information["MapId"]);
+    mapimgInit(information["MapID"]);
 
     for (let i in keys) {
         let key = keys[i];
@@ -281,8 +279,8 @@ let dataSave = function () {
     // window.open().document.write(`<img src="https://chart.googleapis.com/chart?chs=300x300&chld=M|2&cht=qr&chl=${encodeURIComponent(data)}" /> `);
 
     // json file
-    let quest = questList.find(quest => quest.id == MapId)
-    let name = `[${quest.missionTitle}] ${quest.questTitle}.json`;
+    let quest = questList.find(quest => quest.id == MapID)
+    let name = `[${quest.missionTitle}] ${quest.questName}.json`;
     let data = JSON.stringify(information, null, "\t");
 
     saveFile(name, data);
@@ -306,7 +304,7 @@ let dataRestore = function (event) {
 let mapimgInit = function (id) {
     if (!id || id == "") { return; }
     setUrlParams(id);
-    MapId = id;
+    MapID = id;
 
     // get selected
     let quest = questList.find(quest => { return quest.id == id; });
@@ -337,14 +335,14 @@ let mapimgInit = function (id) {
         else if (300 <= location.ObjectID && location.ObjectID < 400) { div.className = "location"; imgname = "afar"; }
         else continue;
 
-        let dId = imgname + location.ObjectID;
-        div.id = dId;
+        let dID = imgname + location.ObjectID;
+        div.id = dID;
         MapImg.appendChild(div);
 
         // range
         div = document.createElement("div");
         div.className = "range";
-        div.title = dId;
+        div.title = dID;
         div.style.left = location.X + "px";
         div.style.top = location.Y + "px";
         MapImg.appendChild(div);
@@ -352,7 +350,7 @@ let mapimgInit = function (id) {
         // rangeText
         div = document.createElement("div");
         div.className = "rangeText";
-        div.title = dId;
+        div.title = dID;
         div.style.left = location.X + "px";
         div.style.top = (parseInt(location.Y) + 31) + "px";
         MapImg.appendChild(div);
@@ -360,7 +358,7 @@ let mapimgInit = function (id) {
         // inputrange
         div = document.createElement("input");
         div.className = "inputrange";
-        div.title = dId;
+        div.title = dID;
         div.type = "number";
         div.value = "40";
         div.min = "40";
@@ -372,7 +370,7 @@ let mapimgInit = function (id) {
         // img
         div = document.createElement("div");
         div.className = imgname;
-        div.title = dId;
+        div.title = dID;
         div.style.left = location.X + "px";
         div.style.top = location.Y + "px";
         MapImg.appendChild(div);
@@ -380,7 +378,7 @@ let mapimgInit = function (id) {
         // hitbox
         div = document.createElement("div");
         div.className = "hitbox";
-        div.title = dId;
+        div.title = dID;
         div.style.left = location.X + "px";
         div.style.top = location.Y + "px";
         MapImg.appendChild(div);
@@ -388,7 +386,7 @@ let mapimgInit = function (id) {
         // distanceText
         div = document.createElement("div");
         div.className = "distanceText";
-        div.title = dId;
+        div.title = dID;
         div.style.left = location.X + "px";
         div.style.top = location.Y + "px";
         MapImg.appendChild(div);
@@ -416,67 +414,67 @@ let onChangeSelectMissionType = function (select) {
     // clear items
     missionSelect.innerText = null;
     let items = [];
-    let missionIds = Object.keys(missionNameList);
+    let missionIDs = Object.keys(missionTitleList);
 
     switch (value) {
 
         case "Story": {
-            items = missionIds.filter(mId => {
-                return parseInt(mId) < 110000;
+            items = missionIDs.filter(mID => {
+                return parseInt(mID) < 110000;
             });
         } break;
 
         case "Tower": {
-            items = missionIds.filter(mId => {
-                return 110000 <= parseInt(mId) && parseInt(mId) < 200000;
+            items = missionIDs.filter(mID => {
+                return 110000 <= parseInt(mID) && parseInt(mID) < 200000;
             });
         } break;
 
         case "Goldrush": {
-            items = missionIds.filter(mId => {
-                return missionNameList[mId].indexOf("ゴールドラッシュ") != -1;
+            items = missionIDs.filter(mID => {
+                return missionTitleList[mID].indexOf("ゴールドラッシュ") != -1;
             });
             // sort
-            // items.sort((a, b) => { return missionNameList[a].localeCompare(missionNameList[b]); })
-            items.sort((a, b) => { return parseInt(/\d+/.exec(missionNameList[a]).toString()) < parseInt(/\d+/.exec(missionNameList[b]).toString()) ? -1 : 1; })
+            // items.sort((a, b) => { return missionTitleList[a].localeCompare(missionTitleList[b]); })
+            items.sort((a, b) => { return parseInt(/\d+/.exec(missionTitleList[a]).toString()) < parseInt(/\d+/.exec(missionTitleList[b]).toString()) ? -1 : 1; })
         } break;
 
         case "Emergency": {
-            items = missionIds.filter(mId => {
-                return 200000 <= parseInt(mId) && parseInt(mId) < 300000 && parseInt(mId) != 200129 &&
-                    missionNameList[mId].indexOf("ゴールドラッシュ") == -1;
+            items = missionIDs.filter(mID => {
+                return 200000 <= parseInt(mID) && parseInt(mID) < 300000 && parseInt(mID) != 200129 &&
+                    missionTitleList[mID].indexOf("ゴールドラッシュ") == -1;
             });
-            items.sort((a, b) => { return b.localeCompare(a); });   // sort by missionId & reverse 
+            items.sort((a, b) => { return b.localeCompare(a); });   // sort by missionID & reverse 
         } break;
         case "Reproduce": {
-            items = missionIds.filter(mId => {
-                return 300000 <= parseInt(mId) && parseInt(mId) < 310000 &&
-                    missionNameList[mId].indexOf("ゴールドラッシュ") == -1;
+            items = missionIDs.filter(mID => {
+                return 300000 <= parseInt(mID) && parseInt(mID) < 310000 &&
+                    missionTitleList[mID].indexOf("ゴールドラッシュ") == -1;
             });
         } break;
         case "DailyReproduce": {
-            items = missionIds.filter(mId => {
-                return 310000 <= parseInt(mId) && parseInt(mId) < 320000
+            items = missionIDs.filter(mID => {
+                return 310000 <= parseInt(mID) && parseInt(mID) < 320000
             });
         } break;
         case "Special": {
-            items = missionIds.filter(mId => {
-                return 320000 <= parseInt(mId) && parseInt(mId) < 400000 ||
-                    missionNameList[mId].indexOf("異世界") != -1;
+            items = missionIDs.filter(mID => {
+                return 320000 <= parseInt(mID) && parseInt(mID) < 400000 ||
+                    missionTitleList[mID].indexOf("異世界") != -1;
             });
         } break;
 
         case "Subjugation": {
-            items = missionIds.filter(mId => {
-                return 400000 <= parseInt(mId) && parseInt(mId) < 500000
+            items = missionIDs.filter(mID => {
+                return 400000 <= parseInt(mID) && parseInt(mID) < 500000
             });
             // 復刻大討伐
             for (let i = 0; i < items.length - 1; ++i) {
-                let title_i = missionNameList[items[i]];   // m-title
+                let title_i = missionTitleList[items[i]];   // m-title
                 let flag = false;
 
                 for (let j = i + 1; j < items.length; ++j) {
-                    let title_j = missionNameList[items[j]];   // m-title
+                    let title_j = missionTitleList[items[j]];   // m-title
                     if (title_i == title_j) { flag = true; break; }
                 }
 
@@ -485,13 +483,13 @@ let onChangeSelectMissionType = function (select) {
             items = items.filter(i => i != "");
         } break;
         case "Devil": {
-            items = missionIds.filter(mId => {
-                return 500000 <= parseInt(mId) && parseInt(mId) < 600000
+            items = missionIDs.filter(mID => {
+                return 500000 <= parseInt(mID) && parseInt(mID) < 600000
             });
         } break;
         case "Raid": {
-            items = missionIds.filter(mId => {
-                return 900001 < parseInt(mId) && parseInt(mId) < 1000000
+            items = missionIDs.filter(mID => {
+                return 900001 < parseInt(mID) && parseInt(mID) < 1000000
             });
         } break;
 
@@ -501,14 +499,14 @@ let onChangeSelectMissionType = function (select) {
         case "Challenge": { items = ["800001", "900001"]; } break;
     }
 
-    // items.sort((a, b) => { return missionNameList[a].localeCompare(missionNameList[b]); });   // sort by missionId & reverse 
+    // items.sort((a, b) => { return missionTitleList[a].localeCompare(missionTitleList[b]); });   // sort by missionID & reverse 
 
     // set select items
     missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
     for (let i in items) {
         let item = items[i];    // mid
-        let itemCount = questList.filter(quest => { return quest.missionId == item; }).length;
-        missionSelect.options.add(new Option(`${missionNameList[item]} ${itemCount == 0 ? "" : `(${itemCount})`}`, item));
+        let itemCount = questList.filter(quest => { return quest.missionID == item; }).length;
+        missionSelect.options.add(new Option(`${missionTitleList[item]} ${itemCount == 0 ? "" : `(${itemCount})`}`, item));
     }
 }
 let onChangeSelectMission = function (select) {
@@ -519,18 +517,18 @@ let onChangeSelectMission = function (select) {
     // get selected
     let questSelect = document.getElementById("quest");
     questSelect.innerText = null;
-    let items = questList.filter(quest => { return quest.missionId == value; });
+    let items = questList.filter(quest => { return quest.missionID == value; });
 
     // sort
     if (value == "700001") {
-        items.sort((a, b) => { return a.questTitle[0].localeCompare(b.questTitle[0]); })
+        items.sort((a, b) => { return a.questName[0].localeCompare(b.questName[0]); })
     }
     if (value == "200133") {
         // EmergencyMissionQuestList.atb
         let sortList = [4795, 4796, 4798, 4801, 4803, 4806, 4797, 4799, 4800, 4802, 4804, 4805, 4838, 4841, 4840, 4839, 4842, 4843, 4844, 4845, 4846, 4848, 4847, 4850, 4849, 4855, 4852, 4853, 4854, 4851, 4856, 4857, 4858, 4863, 4862, 4866, 4861, 4864, 4860, 4865, 4859, 4871, 4872, 4873, 4868, 4869, 4870, 4867, 4874, 4879, 4876, 4877, 4882, 4875, 4878, 4881, 4880, 4889, 4886, 4883, 4884, 4885, 4888, 4887, 4890, 4895, 4894, 4897, 4892, 4893, 4898, 4891, 4896, 4905, 4902, 4901, 4900, 4903, 4906, 4899, 4904, 4911, 4908, 4913, 4912, 4907, 4910, 4909, 4914, 4921, 4922, 4915, 4920, 4917, 4918, 4919, 4916, 4927, 4926, 4923, 4924, 4925, 4930, 4929, 4928, 4933, 4938, 4934, 4936, 4932, 4937, 4931, 4935, 4939, 4943, 4940, 4944, 4941, 4945, 4942, 4946, 4947, 4954, 4948, 4951, 4949, 4953, 4950, 4952]
         items.sort((a, b) => {
-            return a.questId == b.questId ? 0 :
-                sortList.indexOf(parseInt(a.questId)) < sortList.indexOf(parseInt(b.questId)) ? -1 : 1;
+            return a.questID == b.questID ? 0 :
+                sortList.indexOf(parseInt(a.questID)) < sortList.indexOf(parseInt(b.questID)) ? -1 : 1;
         })
     }
 
@@ -539,7 +537,7 @@ let onChangeSelectMission = function (select) {
     questSelect.options.add(new Option(str, ""));
     for (let i in items) {
         let item = items[i];
-        questSelect.options.add(new Option(item.questTitle, item.id));
+        questSelect.options.add(new Option(item.questName, item.id));
     }
 }
 let onChangeSelectQuest = function (select) {
@@ -602,7 +600,7 @@ let onDragStart = function (event) {
     console.debug("dragStart");
 
     // save drag image dom id
-    event.dataTransfer.setData("imgId", event.target.id);
+    event.dataTransfer.setData("imgID", event.target.id);
     event.dataTransfer.setData("startX", event.clientX);     // Get the horizontal coordinate
     event.dataTransfer.setData("startY", event.clientY);     // Get the vertical coordinate
 
@@ -625,7 +623,7 @@ let onDrop = function (event) {
     let className = target.className;
 
     // get drag image
-    let img = document.getElementById(event.dataTransfer.getData("imgId"));
+    let img = document.getElementById(event.dataTransfer.getData("imgID"));
 
     // change img posion
     if (className == "goal") {
@@ -829,7 +827,7 @@ let onClickMapimg = function (event) {
 
     // get move start data
     if (nowFocus.className == "icon" || nowFocus.className == "memo") {
-        mobileEvent["imgId"] = nowFocus.id;
+        mobileEvent["imgID"] = nowFocus.id;
         mobileEvent["startX"] = event.clientX;     // Get the horizontal coordinate
         mobileEvent["startY"] = event.clientY;     // Get the vertical coordinate
 
@@ -901,18 +899,18 @@ let drawMapImage = function () {
     let locations = Array.from(MapImg.getElementsByClassName("location"));
     for (let i in locations) {
         let location = locations[i];
-        let dId = locations[i].id;
+        let dID = locations[i].id;
 
         // get element
-        if (!dId) console.log(location);
-        let range = document.querySelector(`div.range[title = ${dId}]`);
-        let rangeText = document.querySelector(`div.rangeText[title = ${dId}]`);
-        let inputrange = document.querySelector(`input.inputrange[title = ${dId}]`);
-        let hitbox = document.querySelector(`div.hitbox[title = ${dId}]`);
-        let distanceText = document.querySelector(`div.distanceText[title = ${dId}]`);
+        if (!dID) console.log(location);
+        let range = document.querySelector(`div.range[title = ${dID}]`);
+        let rangeText = document.querySelector(`div.rangeText[title = ${dID}]`);
+        let inputrange = document.querySelector(`input.inputrange[title = ${dID}]`);
+        let hitbox = document.querySelector(`div.hitbox[title = ${dID}]`);
+        let distanceText = document.querySelector(`div.distanceText[title = ${dID}]`);
 
         // get data
-        let type = /[^\d]+/.exec(dId).toString();
+        let type = /[^\d]+/.exec(dID).toString();
         let rangeData = parseInt(inputrange.value);
         let ratioData = parseFloat(document.getElementById("rangeRatio").value);
 

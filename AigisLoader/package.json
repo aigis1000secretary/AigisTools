@@ -1,5 +1,5 @@
 {
-  "name": "checkerjson",
+  "name": "aigisloader",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "child_process": "^1.0.2",
+    "iconv-lite": "^0.6.2",
+    "jimp": "^0.14.0"
   }
 }

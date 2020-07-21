@@ -247,9 +247,9 @@ local function parse(id)
       end
       local info = influence_lookup[influence.Data_InfluenceType]
       if info then
-        out = out .. "\t" .. info.name .. " (" .. influence.Data_InfluenceType .. "): "
+        out = out .. "\t" .. " (" .. influence.Data_InfluenceType .. ") " .. info.name .. ": "
       else
-        out = out .. "\tID " .. influence.Data_InfluenceType .. ": "
+        out = out .. "\t" .. " (" .. influence.Data_InfluenceType .. ") " .. "ID " .. influence.Data_InfluenceType .. ": "
       end
       if influence.Data_InfluenceType ~= 1 and influence.Data_Target ~= 0 then
         local target = influence.Data_Target

@@ -13,7 +13,7 @@ for i = 1, count do
   print("	{")
   for _, elt in ipairs(da) do
     local num = tonumber(elt.contents[i].contents)
-	if num == nil then num = "nil" end
+	if num == nil then num = "null" end
     print('		"' .. elt.tag .. '": ' .. num .. ',')
   end
   print("	},")

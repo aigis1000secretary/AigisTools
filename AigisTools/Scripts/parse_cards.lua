@@ -37,7 +37,7 @@ local nametext = parse_al.parse(text)
 for i, t in ipairs(nametext) do
   local unit = units_by_cardid[i]
   if unit then
-    unit._name = t[1].v
+    unit._name = '"' .. t[1].v .. '"'
   end
 end
 
