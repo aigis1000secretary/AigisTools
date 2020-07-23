@@ -12,10 +12,10 @@ const main = async function () {
         await dbox.fileBackup("CharaDatabase.json").catch(console.error);
         await dbox.fileUpload("CharaDatabase.json", fs.readFileSync("./CharaDatabase.json").toString()).catch(console.error);
 
-        console.log(this.name + " uploaded!");
+        console.log("CharaDatabase.json uploaded!");
         return true;
     } catch (error) {
-        console.log(this.name + " uploading error...");
+        console.log("CharaDatabase.json uploading error...");
         throw error;
     }
 }; main();
