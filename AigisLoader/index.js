@@ -93,7 +93,8 @@ const getIconMd5 = function (filepath) {
     // copy file
     let outputDir = "./html/icons/";
     let outputPath = outputDir + md5;
-    fs.createReadStream(filepath).pipe(fs.createWriteStream(outputPath));
+    if (!fs.existsSync(outputPath))
+        fs.createReadStream(filepath).pipe(fs.createWriteStream(outputPath));
 
     return md5;
 }
@@ -119,18 +120,24 @@ const downloadRawData = async function () {
         if (/^$/i.test(filename)) { return false; }
         if (/^Emc/i.test(filename)) { return false; }
 
+        // mission data
+        if (/MissionConfig\.atb/i.test(filename) ||
+            /MissionQuestList\.atb/i.test(filename)) { return dlRaw; }
+
+        // cards data
+        if (/PlayerUnitTable\.aar/i.test(filename) ||
+            /NameText\.atb/i.test(filename) ||
+            /Ability(List|Text)\.atb/i.test(filename) ||
+            /Skill(List|Text|TypeList|InfluenceConfig)\.atb/i.test(filename)) { return dlRaw; }
+
+        // map img
         if (/Map\d+/i.test(filename) ||
             /BattleEffect\.aar/i.test(filename)) {
             // skip exist
             if (!fs.existsSync(resourcesPath + "/" + filename)) { return dlImg; }
         }
 
-        if (/MissionConfig\.atb/i.test(filename) ||
-            /MissionQuestList\.atb/i.test(filename) ||
-            /PlayerUnitTable\.aar/i.test(filename) ||
-            /Ability(List|Text)\.atb/i.test(filename) ||
-            /Skill(List|Text|TypeList|InfluenceConfig)\.atb/i.test(filename)) { return true; }
-
+        // larg size data
         if (/QuestNameText\d*\.atb/i.test(filename) ||
             /ico_\d+/i.test(filename)) { return dlImg; }
 
@@ -919,6 +926,7 @@ const aigisCharacter = async function () {
         let _name = card._name;
         if (card.Rare == 10 && ! /聖霊/.test(card._name)) { _name = card._name + "【白金英傑】"; }
         if (card.Rare == 11 && ! /聖霊/.test(card._name)) { _name = card._name + "【黒英傑】"; }
+        let _subName = nameTextData.find((e) => e.Message == card._name); _subName = _subName ? _subName.RealName : "";
 
 
         // skill/AB
@@ -1025,6 +1033,7 @@ const aigisCharacter = async function () {
 
         let obj = {
             name: _name,
+            subName: _subName,
             ability, ability_aw,
             skill, skill_aw,
             urlName,
@@ -1050,16 +1059,7 @@ const aigisCharacter = async function () {
     fs.writeFileSync("./AigisLoader/CharaDatabase.json", JSON.stringify(resultArray, null, "\t").replace(/\": /g, "\":\t"));
     console.log("fs.writeFileSync( ./AigisLoader/CharaDatabase.json )");
 
-    // console.log("aigisMapHash done\n");
-
-
-
-
-
-
-
-
-
+    console.log("aigisCharacter done\n");
 }
 
 let missionListData;
@@ -1071,14 +1071,14 @@ let skillTypeData;
 let skillInflData;
 let abilityListData;
 let abilityTextData;
-
+let nameTextData;
 
 const main = async function () {
     if (!fs.existsSync(resourcesPath)) { console.log("!fs.existsSync(resources)"); return; }
 
     console.log(`resourcesPath: ${resourcesPath}`);
 
-    if (dlRaw) { await downloadRawData(); }
+    await downloadRawData();
 
     let missionListTxt = resourcesPath + "/missions.txt";
     let cardListTxt = resourcesPath + "/cards.txt";
@@ -1089,6 +1089,8 @@ const main = async function () {
     let skillInflTxt = resourcesPath + "/SkillInfluenceConfig.atb/ALTB_sytx.txt";
     let abilityListTxt = resourcesPath + "/AbilityList.atb/ALTB_aylt.txt";
     let abilityTextTxt = resourcesPath + "/AbilityText.atb/ALTB_aytx.txt";
+    let nameTextTxt = resourcesPath + "/NameText.atb/ALTB_gdtx.txt";
+
     // let abilityCfgsTxt = resources + "/AbilityConfig.atb/ALTB_acfg.txt";
 
     missionListData = JSON.parse(fs.readFileSync(missionListTxt).toString().replace(/(,)(\s*)([\]\}])/g, (m, p1, p2, p3) => `${p2}${p3}`));
@@ -1100,6 +1102,7 @@ const main = async function () {
     skillInflData = rawDataToJson(skillInflTxt);
     abilityListData = rawDataToJson(abilityListTxt);
     abilityTextData = rawDataToJson(abilityTextTxt);
+    nameTextData = rawDataToJson(nameTextTxt);
 
     await aigisChecker();
     await aigisTactics();
