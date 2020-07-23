@@ -6,8 +6,8 @@ const iconv = require("iconv-lite");
 const Jimp = require('jimp');
 
 // switch
-const dlRaw = process.env.NODE_DLALL == "false" ? false : true;
-const dlAllRaw = false;
+const dlRaw = process.env.NODE_DLRAW == "false" ? false : true;
+const dlImg = process.env.NODE_DLIMG == "false" ? false : true;;
 
 // vars
 const aigisToolPath = `./AigisTools`;
@@ -122,13 +122,17 @@ const downloadRawData = async function () {
         if (/Map\d+/i.test(filename) ||
             /BattleEffect\.aar/i.test(filename)) {
             // skip exist
-            if (dlAllRaw || !fs.existsSync(resourcesPath + "/" + filename)) { return true; }
+            if (!fs.existsSync(resourcesPath + "/" + filename)) { return dlImg; }
         }
 
         if (/MissionConfig\.atb/i.test(filename) ||
-            /QuestNameText\d*\.atb/i.test(filename) ||
+            /MissionQuestList\.atb/i.test(filename) ||
             /PlayerUnitTable\.aar/i.test(filename) ||
-            /ico_\d+/i.test(filename)) { return true; }
+            /Ability(List|Text)\.atb/i.test(filename) ||
+            /Skill(List|Text|TypeList|InfluenceConfig)\.atb/i.test(filename)) { return true; }
+
+        if (/QuestNameText\d*\.atb/i.test(filename) ||
+            /ico_\d+/i.test(filename)) { return dlImg; }
 
         return false;
     });
