@@ -934,7 +934,11 @@ const aigisCharacter = async function () {
         let skill = "", skill_aw = "";
         let _ability, _ability_aw;
         let _skill, _skill_aw;
-        let className = classListData.find(ele => ele.ClassID == card.InitClassID).Name.trim();
+        let className = classListData.find(ele => ele.ClassID == card.InitClassID).Name.trim().replace(/^(ちび|下級)?(中級)?/, "");
+        if (/聖霊|技強化ユニット/.test(className) && !/戦の聖霊/.test(className)) { className = "聖霊"; }
+        if (/大邪仙/.test(className)) { className = "邪仙"; }
+        if (/屍道士/.test(className)) { className = "キョンシー"; }
+        if (/デモンマスター/.test(className)) { className = "デモンサモナー"; }
 
         if (card.CardID.in(1, 309, 552, 554, 563, 604, 644, 690, 741, 771, 775, 782, 929, 950)) {
             if (card.CardID == 1) { _name = "王子【通常】"; }

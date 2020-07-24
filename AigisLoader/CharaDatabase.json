@@ -8,7 +8,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b0%ec%c8%cc%ca%bc%41",
 		"rarity":	"アイアン",
-		"class":	"下級ソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"一般兵A【弓】",
@@ -19,7 +19,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b0%ec%c8%cc%ca%bc%41%a1%da%b5%dd%a1%db",
 		"rarity":	"アイアン",
-		"class":	"下級アーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"一般兵A【重装】",
@@ -30,7 +30,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b0%ec%c8%cc%ca%bc%41%a1%da%bd%c5%c1%f5%a1%db",
 		"rarity":	"アイアン",
-		"class":	"下級ヘビーアーマー"
+		"class":	"ヘビーアーマー"
 	},
 	{
 		"name":	"一般兵A【魔法】",
@@ -41,7 +41,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b0%ec%c8%cc%ca%bc%41%a1%da%cb%e2%cb%a1%a1%db",
 		"rarity":	"アイアン",
-		"class":	"下級メイジ"
+		"class":	"メイジ"
 	},
 	{
 		"name":	"一般兵B",
@@ -52,7 +52,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b0%ec%c8%cc%ca%bc%42",
 		"rarity":	"アイアン",
-		"class":	"下級ソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"一般兵B【弓】",
@@ -63,7 +63,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b0%ec%c8%cc%ca%bc%42%a1%da%b5%dd%a1%db",
 		"rarity":	"アイアン",
-		"class":	"下級アーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"一般兵B【重装】",
@@ -74,7 +74,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b0%ec%c8%cc%ca%bc%42%a1%da%bd%c5%c1%f5%a1%db",
 		"rarity":	"アイアン",
-		"class":	"下級ヘビーアーマー"
+		"class":	"ヘビーアーマー"
 	},
 	{
 		"name":	"一般兵B【魔法】",
@@ -85,7 +85,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b0%ec%c8%cc%ca%bc%42%a1%da%cb%e2%cb%a1%a1%db",
 		"rarity":	"アイアン",
-		"class":	"下級メイジ"
+		"class":	"メイジ"
 	},
 	{
 		"name":	"下忍",
@@ -96,7 +96,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b2%bc%c7%a6",
 		"rarity":	"アイアン",
-		"class":	"下級忍者"
+		"class":	"忍者"
 	},
 	{
 		"name":	"密林の射手",
@@ -107,7 +107,7 @@
 		"skill_aw":	"",
 		"urlName":	"%cc%a9%ce%d3%a4%ce%bc%cd%bc%ea",
 		"rarity":	"アイアン",
-		"class":	"下級アーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"山賊 手下A",
@@ -118,7 +118,7 @@
 		"skill_aw":	"",
 		"urlName":	"%bb%b3%c2%b1%20%bc%ea%b2%bcA",
 		"rarity":	"アイアン",
-		"class":	"下級バンデット"
+		"class":	"バンデット"
 	},
 	{
 		"name":	"山賊 手下B",
@@ -129,7 +129,7 @@
 		"skill_aw":	"",
 		"urlName":	"%bb%b3%c2%b1%20%bc%ea%b2%bcB",
 		"rarity":	"アイアン",
-		"class":	"下級バンデット"
+		"class":	"バンデット"
 	},
 	{
 		"name":	"海賊手下",
@@ -140,7 +140,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b3%a4%c2%b1%bc%ea%b2%bc",
 		"rarity":	"アイアン",
-		"class":	"下級パイレーツ"
+		"class":	"パイレーツ"
 	},
 	{
 		"name":	"砂漠兵士",
@@ -151,7 +151,7 @@
 		"skill_aw":	"",
 		"urlName":	"%ba%bd%c7%f9%ca%bc%bb%ce",
 		"rarity":	"アイアン",
-		"class":	"下級ソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"足軽",
@@ -162,7 +162,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c2%ad%b7%da",
 		"rarity":	"アイアン",
-		"class":	"下級サムライ"
+		"class":	"サムライ"
 	},
 	{
 		"name":	"鉄聖霊アイナ",
@@ -173,7 +173,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"アイアン",
-		"class":	"鉄の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"お宝泥棒レダ",
@@ -206,7 +206,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a2%a5%a4%a5%b7%a5%e3",
 		"rarity":	"ゴールド",
-		"class":	"ちび後衛戦術家"
+		"class":	"後衛戦術家"
 	},
 	{
 		"name":	"ちびアマンダ",
@@ -217,7 +217,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a2%a5%de%a5%f3%a5%c0",
 		"rarity":	"ゴールド",
-		"class":	"ちびバンデット"
+		"class":	"バンデット"
 	},
 	{
 		"name":	"ちびアリシア",
@@ -228,7 +228,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a2%a5%ea%a5%b7%a5%a2",
 		"rarity":	"ゴールド",
-		"class":	"ちびロイヤルガード"
+		"class":	"ロイヤルガード"
 	},
 	{
 		"name":	"ちびアリス",
@@ -239,7 +239,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a2%a5%ea%a5%b9",
 		"rarity":	"ゴールド",
-		"class":	"ちびモンク"
+		"class":	"モンク"
 	},
 	{
 		"name":	"ちびアルティア",
@@ -250,7 +250,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a2%a5%eb%a5%c6%a5%a3%a5%a2",
 		"rarity":	"ゴールド",
-		"class":	"ちびソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"ちびアンリ",
@@ -261,7 +261,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a2%a5%f3%a5%ea",
 		"rarity":	"ゴールド",
-		"class":	"ちびエンチャンター"
+		"class":	"エンチャンター"
 	},
 	{
 		"name":	"ちびイーリス",
@@ -272,7 +272,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a4%a1%bc%a5%ea%a5%b9",
 		"rarity":	"ゴールド",
-		"class":	"ちびヒーラー"
+		"class":	"ヒーラー"
 	},
 	{
 		"name":	"ちびイブキ",
@@ -283,7 +283,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a4%a5%d6%a5%ad",
 		"rarity":	"ゴールド",
-		"class":	"ちびセーラー"
+		"class":	"セーラー"
 	},
 	{
 		"name":	"ちびイリス",
@@ -294,7 +294,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a4%a5%ea%a5%b9",
 		"rarity":	"ゴールド",
-		"class":	"ちびヒーラー"
+		"class":	"ヒーラー"
 	},
 	{
 		"name":	"ちびイングリッド",
@@ -305,7 +305,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a4%a5%f3%a5%b0%a5%ea%a5%c3%a5%c9",
 		"rarity":	"ゴールド",
-		"class":	"ちび魔法剣士"
+		"class":	"魔法剣士"
 	},
 	{
 		"name":	"ちびヴルム",
@@ -316,7 +316,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%f4%a5%eb%a5%e0",
 		"rarity":	"ゴールド",
-		"class":	"ちび中級竜兵"
+		"class":	"竜兵"
 	},
 	{
 		"name":	"ちびエターナー",
@@ -327,7 +327,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a8%a5%bf%a1%bc%a5%ca%a1%bc",
 		"rarity":	"ゴールド",
-		"class":	"ちびビショップ"
+		"class":	"ビショップ"
 	},
 	{
 		"name":	"ちびエルン",
@@ -338,7 +338,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a8%a5%eb%a5%f3",
 		"rarity":	"ゴールド",
-		"class":	"ちびエンジェル"
+		"class":	"エンジェル"
 	},
 	{
 		"name":	"ちびエレイン",
@@ -349,7 +349,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%a8%a5%ec%a5%a4%a5%f3",
 		"rarity":	"ゴールド",
-		"class":	"ちびワルキューレ"
+		"class":	"ワルキューレ"
 	},
 	{
 		"name":	"ちびオリヴィエ",
@@ -360,7 +360,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%aa%a5%ea%a5%f4%a5%a3%a5%a8",
 		"rarity":	"ゴールド",
-		"class":	"ちびプリンセス"
+		"class":	"プリンセス"
 	},
 	{
 		"name":	"ちびカヨウ",
@@ -371,7 +371,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ab%a5%e8%a5%a6",
 		"rarity":	"ゴールド",
-		"class":	"ちび妖狐"
+		"class":	"妖狐"
 	},
 	{
 		"name":	"ちびキャリー",
@@ -382,7 +382,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ad%a5%e3%a5%ea%a1%bc",
 		"rarity":	"ゴールド",
-		"class":	"ちびワルキューレ"
+		"class":	"ワルキューレ"
 	},
 	{
 		"name":	"ちびキュウビ",
@@ -393,7 +393,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ad%a5%e5%a5%a6%a5%d3",
 		"rarity":	"ゴールド",
-		"class":	"ちび妖狐"
+		"class":	"妖狐"
 	},
 	{
 		"name":	"ちびキュテリ",
@@ -404,7 +404,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ad%a5%e5%a5%c6%a5%ea",
 		"rarity":	"ゴールド",
-		"class":	"ちびローグ"
+		"class":	"ローグ"
 	},
 	{
 		"name":	"ちびクラリーチェ",
@@ -415,7 +415,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%af%a5%e9%a5%ea%a1%bc%a5%c1%a5%a7",
 		"rarity":	"ゴールド",
-		"class":	"ちびエレメンタラー"
+		"class":	"エレメンタラー"
 	},
 	{
 		"name":	"ちびクリッサ",
@@ -426,7 +426,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%af%a5%ea%a5%c3%a5%b5",
 		"rarity":	"ゴールド",
-		"class":	"ちびワルキューレ"
+		"class":	"ワルキューレ"
 	},
 	{
 		"name":	"ちびクロエ",
@@ -437,7 +437,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%af%a5%ed%a5%a8",
 		"rarity":	"ゴールド",
-		"class":	"ちびエンジェル"
+		"class":	"エンジェル"
 	},
 	{
 		"name":	"ちびケイティ",
@@ -448,7 +448,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b1%a5%a4%a5%c6%a5%a3",
 		"rarity":	"ゴールド",
-		"class":	"ちびソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"ちびコーネリア",
@@ -459,7 +459,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b3%a1%bc%a5%cd%a5%ea%a5%a2",
 		"rarity":	"ゴールド",
-		"class":	"ちびダークファイター"
+		"class":	"ダークファイター"
 	},
 	{
 		"name":	"ちびコノハ",
@@ -470,7 +470,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b3%a5%ce%a5%cf",
 		"rarity":	"ゴールド",
-		"class":	"ちび天狗"
+		"class":	"天狗"
 	},
 	{
 		"name":	"ちびサブリナ",
@@ -481,7 +481,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b5%a5%d6%a5%ea%a5%ca",
 		"rarity":	"ゴールド",
-		"class":	"ちびパイレーツ"
+		"class":	"パイレーツ"
 	},
 	{
 		"name":	"ちびシズカ",
@@ -492,7 +492,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b7%a5%ba%a5%ab",
 		"rarity":	"ゴールド",
-		"class":	"ちびサムライ"
+		"class":	"サムライ"
 	},
 	{
 		"name":	"ちびシャルロット",
@@ -503,7 +503,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b7%a5%e3%a5%eb%a5%ed%a5%c3%a5%c8",
 		"rarity":	"ゴールド",
-		"class":	"ちび魔法剣士"
+		"class":	"魔法剣士"
 	},
 	{
 		"name":	"ちびシルヴィア",
@@ -514,7 +514,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b7%a5%eb%a5%f4%a5%a3%a5%a2",
 		"rarity":	"ゴールド",
-		"class":	"ちびヴァンパイアプリンセス"
+		"class":	"ヴァンパイアプリンセス"
 	},
 	{
 		"name":	"ちびシルセス",
@@ -525,7 +525,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b7%a5%eb%a5%bb%a5%b9",
 		"rarity":	"ゴールド",
-		"class":	"ちびメイジアーマー"
+		"class":	"メイジアーマー"
 	},
 	{
 		"name":	"ちびスーシェン",
@@ -536,7 +536,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b9%a1%bc%a5%b7%a5%a7%a5%f3",
 		"rarity":	"ゴールド",
-		"class":	"ちび屍道士"
+		"class":	"キョンシー"
 	},
 	{
 		"name":	"ちびスピカ",
@@ -547,7 +547,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%b9%a5%d4%a5%ab",
 		"rarity":	"ゴールド",
-		"class":	"ちびアーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"ちびセーラ",
@@ -558,7 +558,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%bb%a1%bc%a5%e9",
 		"rarity":	"ゴールド",
-		"class":	"ちびメイド"
+		"class":	"メイド"
 	},
 	{
 		"name":	"ちびセシリー",
@@ -569,7 +569,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%bb%a5%b7%a5%ea%a1%bc",
 		"rarity":	"ゴールド",
-		"class":	"ちびローグ"
+		"class":	"ローグ"
 	},
 	{
 		"name":	"ちびゼノビア",
@@ -580,7 +580,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%bc%a5%ce%a5%d3%a5%a2",
 		"rarity":	"ゴールド",
-		"class":	"ちびソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"ちびソーマ",
@@ -591,7 +591,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%bd%a1%bc%a5%de",
 		"rarity":	"ゴールド",
-		"class":	"ちびアーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"ちびソフィー",
@@ -602,7 +602,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%bd%a5%d5%a5%a3%a1%bc",
 		"rarity":	"ゴールド",
-		"class":	"ちびエンジェル"
+		"class":	"エンジェル"
 	},
 	{
 		"name":	"ちびソラノ",
@@ -613,7 +613,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%bd%a5%e9%a5%ce",
 		"rarity":	"ゴールド",
-		"class":	"ちびサモナー"
+		"class":	"サモナー"
 	},
 	{
 		"name":	"ちびチズル",
@@ -624,7 +624,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%c1%a5%ba%a5%eb",
 		"rarity":	"ゴールド",
-		"class":	"ちびサムライ"
+		"class":	"サムライ"
 	},
 	{
 		"name":	"ちびディエーラ",
@@ -635,7 +635,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%c7%a5%a3%a5%a8%a1%bc%a5%e9",
 		"rarity":	"ゴールド",
-		"class":	"ちびマーチャント"
+		"class":	"マーチャント"
 	},
 	{
 		"name":	"ちびティニー",
@@ -646,7 +646,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%c6%a5%a3%a5%cb%a1%bc",
 		"rarity":	"ゴールド",
-		"class":	"ちび鍛冶職人"
+		"class":	"鍛冶職人"
 	},
 	{
 		"name":	"ちびデスピア",
@@ -657,7 +657,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%c7%a5%b9%a5%d4%a5%a2",
 		"rarity":	"ゴールド",
-		"class":	"ちびウィッチ"
+		"class":	"ウィッチ"
 	},
 	{
 		"name":	"ちびテミス",
@@ -668,7 +668,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%c6%a5%df%a5%b9",
 		"rarity":	"ゴールド",
-		"class":	"ちびプリンセス"
+		"class":	"プリンセス"
 	},
 	{
 		"name":	"ちびドロシー",
@@ -679,7 +679,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%c9%a5%ed%a5%b7%a1%bc",
 		"rarity":	"ゴールド",
-		"class":	"ちびアベンジャー"
+		"class":	"アベンジャー"
 	},
 	{
 		"name":	"ちびドロテア",
@@ -690,7 +690,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%c9%a5%ed%a5%c6%a5%a2",
 		"rarity":	"ゴールド",
-		"class":	"ちびダークプリースト"
+		"class":	"ダークプリースト"
 	},
 	{
 		"name":	"ちびトワ",
@@ -701,7 +701,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%c8%a5%ef",
 		"rarity":	"ゴールド",
-		"class":	"ちびクロノウィッチ"
+		"class":	"クロノウィッチ"
 	},
 	{
 		"name":	"ちびナタク",
@@ -712,7 +712,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ca%a5%bf%a5%af",
 		"rarity":	"ゴールド",
-		"class":	"ちび仙人"
+		"class":	"仙人"
 	},
 	{
 		"name":	"ちびナナリー",
@@ -723,7 +723,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ca%a5%ca%a5%ea%a1%bc",
 		"rarity":	"ゴールド",
-		"class":	"ちびアーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"ちびピピン",
@@ -734,7 +734,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%d4%a5%d4%a5%f3",
 		"rarity":	"ゴールド",
-		"class":	"ちび風水使い"
+		"class":	"風水使い"
 	},
 	{
 		"name":	"ちびフーリ",
@@ -745,7 +745,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%d5%a1%bc%a5%ea",
 		"rarity":	"ゴールド",
-		"class":	"ちびヴァンパイアハンター"
+		"class":	"ヴァンパイアハンター"
 	},
 	{
 		"name":	"ちびフィオレ",
@@ -756,7 +756,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%d5%a5%a3%a5%aa%a5%ec",
 		"rarity":	"ゴールド",
-		"class":	"ちびドルイド"
+		"class":	"ドルイド"
 	},
 	{
 		"name":	"ちびフレデリカ",
@@ -767,7 +767,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%d5%a5%ec%a5%c7%a5%ea%a5%ab",
 		"rarity":	"ゴールド",
-		"class":	"ちび砲術士"
+		"class":	"砲術士"
 	},
 	{
 		"name":	"ちびベルナ",
@@ -778,7 +778,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%d9%a5%eb%a5%ca",
 		"rarity":	"ゴールド",
-		"class":	"ちびローグ"
+		"class":	"ローグ"
 	},
 	{
 		"name":	"ちびベルニス",
@@ -789,7 +789,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%d9%a5%eb%a5%cb%a5%b9",
 		"rarity":	"ゴールド",
-		"class":	"ちびヘビーアーマー"
+		"class":	"ヘビーアーマー"
 	},
 	{
 		"name":	"ちびポーラ",
@@ -800,7 +800,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%dd%a1%bc%a5%e9",
 		"rarity":	"ゴールド",
-		"class":	"ちびビショップ"
+		"class":	"ビショップ"
 	},
 	{
 		"name":	"ちびマキナ",
@@ -811,7 +811,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%de%a5%ad%a5%ca",
 		"rarity":	"ゴールド",
-		"class":	"ちびアルケミスト"
+		"class":	"アルケミスト"
 	},
 	{
 		"name":	"ちびマツリ",
@@ -822,7 +822,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%de%a5%c4%a5%ea",
 		"rarity":	"ゴールド",
-		"class":	"ちび前衛戦術家"
+		"class":	"前衛戦術家"
 	},
 	{
 		"name":	"ちびミコト",
@@ -833,7 +833,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%df%a5%b3%a5%c8",
 		"rarity":	"ゴールド",
-		"class":	"ちび陰陽師"
+		"class":	"陰陽師"
 	},
 	{
 		"name":	"ちびミレイユ",
@@ -844,7 +844,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%df%a5%ec%a5%a4%a5%e6",
 		"rarity":	"ゴールド",
-		"class":	"ちびロイヤルガード"
+		"class":	"ロイヤルガード"
 	},
 	{
 		"name":	"ちびメープル",
@@ -855,7 +855,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%e1%a1%bc%a5%d7%a5%eb",
 		"rarity":	"ゴールド",
-		"class":	"ちびドルイド"
+		"class":	"ドルイド"
 	},
 	{
 		"name":	"ちびメーリス",
@@ -866,7 +866,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%e1%a1%bc%a5%ea%a5%b9",
 		"rarity":	"ゴールド",
-		"class":	"ちびメイジ"
+		"class":	"メイジ"
 	},
 	{
 		"name":	"ちびメル",
@@ -877,7 +877,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%e1%a5%eb",
 		"rarity":	"ゴールド",
-		"class":	"ちび砲術士"
+		"class":	"砲術士"
 	},
 	{
 		"name":	"ちびモモ",
@@ -888,7 +888,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%e2%a5%e2",
 		"rarity":	"ゴールド",
-		"class":	"ちびモンク"
+		"class":	"モンク"
 	},
 	{
 		"name":	"ちびモルテナ",
@@ -899,7 +899,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%e2%a5%eb%a5%c6%a5%ca",
 		"rarity":	"ゴールド",
-		"class":	"ちび魔物使い"
+		"class":	"魔物使い"
 	},
 	{
 		"name":	"ちびラピス",
@@ -910,7 +910,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%e9%a5%d4%a5%b9",
 		"rarity":	"ゴールド",
-		"class":	"ちびデモンマスター"
+		"class":	"デモンサモナー"
 	},
 	{
 		"name":	"ちびリディ",
@@ -921,7 +921,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ea%a5%c7%a5%a3",
 		"rarity":	"ゴールド",
-		"class":	"ちびペガサスライダー"
+		"class":	"ペガサスライダー"
 	},
 	{
 		"name":	"ちびリノ",
@@ -932,7 +932,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ea%a5%ce",
 		"rarity":	"ゴールド",
-		"class":	"ちびサモナー"
+		"class":	"サモナー"
 	},
 	{
 		"name":	"ちびレアン",
@@ -943,7 +943,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ec%a5%a2%a5%f3",
 		"rarity":	"ゴールド",
-		"class":	"ちびヘビーアーマー"
+		"class":	"ヘビーアーマー"
 	},
 	{
 		"name":	"ちびレオナ",
@@ -954,7 +954,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ec%a5%aa%a5%ca",
 		"rarity":	"ゴールド",
-		"class":	"ちび後衛戦術家"
+		"class":	"後衛戦術家"
 	},
 	{
 		"name":	"ちびロゼット",
@@ -965,7 +965,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%a5%ed%a5%bc%a5%c3%a5%c8",
 		"rarity":	"ゴールド",
-		"class":	"ちびプリンセス"
+		"class":	"プリンセス"
 	},
 	{
 		"name":	"ちび金光聖菩",
@@ -976,7 +976,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%c1%a4%d3%b6%e2%b8%f7%c0%bb%ca%ee",
 		"rarity":	"ゴールド",
-		"class":	"ちび大邪仙"
+		"class":	"邪仙"
 	},
 	{
 		"name":	"テミス",
@@ -1240,7 +1240,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ゴールド",
-		"class":	"小祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"小祝福金聖霊プレジール",
@@ -1251,7 +1251,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ゴールド",
-		"class":	"小祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"山賊娘リーフ",
@@ -1350,7 +1350,7 @@
 		"skill_aw":	"▸白竜の陣備え\n防御力が永続的に1.3倍、出撃コストが20回復、自動発動、使用後「援軍要請Ⅳ」に変化",
 		"urlName":	"%c4%eb%b9%f1%ce%b5%bf%cd%a5%b5%a1%bc%a5%d9%a5%a4%a5%f3",
 		"rarity":	"ゴールド",
-		"class":	"中級竜兵"
+		"class":	"竜兵"
 	},
 	{
 		"name":	"帝国重装歩兵フィリーネ",
@@ -1471,7 +1471,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ゴールド",
-		"class":	"技の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"新春の弓巫女ソーマ",
@@ -1757,7 +1757,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ゴールド",
-		"class":	"祝福の金聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"神官戦士エレット",
@@ -1801,7 +1801,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ゴールド",
-		"class":	"絆の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"緑森の番人フウカ",
@@ -1944,7 +1944,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ゴールド",
-		"class":	"金の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"鉄甲闘士モモ",
@@ -1988,7 +1988,7 @@
 		"skill_aw":	"▸闇竜の憤怒\n30秒ＨＰと攻撃と防御が1.7倍に上昇",
 		"urlName":	"%b0%c7%ce%b5%a4%ce%a5%b4%a5%e9%a5%a4%a5%a2",
 		"rarity":	"ゴールド",
-		"class":	"中級竜兵"
+		"class":	"竜兵"
 	},
 	{
 		"name":	"風水士クルル",
@@ -2164,7 +2164,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"サファイア",
-		"class":	"小祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"帝国封印剣士フォルテ",
@@ -2274,7 +2274,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"サファイア",
-		"class":	"祝福の青聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"神鎖の救命師サルース",
@@ -2538,7 +2538,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"シルバー",
-		"class":	"小祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"山賊頭モーティマ",
@@ -2703,7 +2703,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"シルバー",
-		"class":	"技の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"新緑の兵士フィリス",
@@ -2912,7 +2912,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"シルバー",
-		"class":	"極銀の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"見習い拳士マオ",
@@ -2978,7 +2978,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"シルバー",
-		"class":	"銀の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"鋼鉄の女レアン",
@@ -3022,7 +3022,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c0%c4%ce%b5%a4%ce%a5%ac%a5%c9%a5%e9%a5%b9",
 		"rarity":	"シルバー",
-		"class":	"中級竜兵"
+		"class":	"竜兵"
 	},
 	{
 		"name":	"魔女カリオペ",
@@ -3594,7 +3594,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"プラチナ",
-		"class":	"刻の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"剣の聖女ゼノビア",
@@ -4254,7 +4254,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"プラチナ",
-		"class":	"小祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"屍骸道士ランファ",
@@ -4826,7 +4826,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"プラチナ",
-		"class":	"技の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"技の白金英聖霊セリア",
@@ -4837,7 +4837,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"プラチナ",
-		"class":	"技の英聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"技工兵ドリー",
@@ -5233,7 +5233,7 @@
 		"skill_aw":	"▸火竜の炎陣\n20秒出撃している全員の攻撃力が20％上昇、防御力無視の遠距離範囲攻撃を行う",
 		"urlName":	"%b2%d0%ce%b5%a4%ce%a5%a4%a5%b0%a5%cb%a5%b9",
 		"rarity":	"プラチナ",
-		"class":	"中級竜兵"
+		"class":	"竜兵"
 	},
 	{
 		"name":	"火遊びハンタードルチェ",
@@ -5552,7 +5552,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"プラチナ",
-		"class":	"白金の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"盗賊シプリア",
@@ -5893,7 +5893,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"プラチナ",
-		"class":	"絆の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"絆の白金英聖霊セリア",
@@ -5904,7 +5904,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"プラチナ",
-		"class":	"極白の英聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"織姫",
@@ -6157,7 +6157,7 @@
 		"skill_aw":	"▸風壁の護り\n防御力が永続的に1.4倍、ブロック数が永続的に3に上昇、自動発動し、効果終了後スキルが強化\n▸風壁の護り\n防御力が永続的に1.7倍、ブロック数が永続的に4に上昇、自動発動し、効果終了後スキルが強化\n▸風壁の護り\n防御力が永続的に2倍、ブロック数が永続的に5に上昇、自動発動し、効果終了後スキルが変化\n▸蒼竜の覚醒\n攻撃力2.5倍、ブロックした全ての敵に攻撃を行う、自動発動+効果時間無限",
 		"urlName":	"%c1%f3%ce%b5%a4%ce%a5%ea%a5%ad%a5%e5%a5%ce%a5%b9",
 		"rarity":	"プラチナ",
-		"class":	"中級竜兵"
+		"class":	"竜兵"
 	},
 	{
 		"name":	"蒼紅の復讐者レティシア",
@@ -7191,7 +7191,7 @@
 		"skill_aw":	"",
 		"urlName":	"%a4%e4%a4%af%a4%e2",
 		"rarity":	"ブラック",
-		"class":	"技強化ユニット"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"リリカ",
@@ -7334,7 +7334,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"光彩の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"光闇の騎士ヘイオス",
@@ -7664,7 +7664,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"小祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"小祝福聖霊プレーゼ",
@@ -7675,7 +7675,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"小祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"小祝福黒聖霊ファラハ",
@@ -7686,7 +7686,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"小祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"屍仙道士スーシェン",
@@ -7785,7 +7785,7 @@
 		"skill_aw":	"▸真竜の覚醒\n15秒防御力無視の遠距離範囲攻撃、全味方への攻撃を100％無効化、終了時に現在ＨＰが半減",
 		"urlName":	"%c4%eb%b9%f1%b6%e4%ce%b5%a5%f4%a5%eb%a5%e0",
 		"rarity":	"ブラック",
-		"class":	"中級竜兵"
+		"class":	"竜兵"
 	},
 	{
 		"name":	"帝国騎士団長ディアナ",
@@ -7818,7 +7818,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"常夏の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"常闇聖霊オニキス",
@@ -7829,7 +7829,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"常闇の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"年賀の着衣始 鬼刃姫",
@@ -7939,7 +7939,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"技の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"技の黒英聖霊フローリカ",
@@ -7950,7 +7950,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"技の英聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"技強化大聖霊ムジカ",
@@ -7961,7 +7961,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"技強化の大聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"技強化聖霊クリスティア",
@@ -7972,7 +7972,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"技強化の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"技覚醒聖霊ナイアス",
@@ -7983,7 +7983,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"技覚醒の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"技覚醒英聖霊ナイアス",
@@ -7994,7 +7994,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"技覚醒の英聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"振袖の金竜姫エルドラ",
@@ -8093,7 +8093,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"時の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"暗黒聖夜騎士コーネリア",
@@ -8632,7 +8632,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"祝福聖霊ハッピー",
@@ -8643,7 +8643,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"祝福聖霊ハッピー【５周年】",
@@ -8654,7 +8654,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"祝福聖霊ハッピー【６周年】",
@@ -8665,7 +8665,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"祝福の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"神和ぎの踊り子ミヤビ",
@@ -8819,7 +8819,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"極星の聖霊女王"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"絆の黒聖霊フローリカ",
@@ -8830,7 +8830,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"絆の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"絆の黒英聖霊フローリカ",
@@ -8841,7 +8841,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"極黒の英聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"絢爛の吸血鬼エマ",
@@ -8907,7 +8907,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"聖霊女王"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"聖魔殺しの銃手ソシエ",
@@ -8929,7 +8929,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"育成の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"至宝の使い手リアナ",
@@ -8984,7 +8984,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"覚醒の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"誓いの妖精姫オリヴィエ",
@@ -9446,7 +9446,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブラック",
-		"class":	"黒の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"黒衣の騎士ダリューン",
@@ -9468,7 +9468,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c3%e6%c7%a6%a5%cf%a5%e4%a5%c6",
 		"rarity":	"ブロンズ",
-		"class":	"下級忍者"
+		"class":	"忍者"
 	},
 	{
 		"name":	"妖精郷の戦士アトラ",
@@ -9479,7 +9479,7 @@
 		"skill_aw":	"",
 		"urlName":	"%cd%c5%c0%ba%b6%bf%a4%ce%c0%ef%bb%ce%a5%a2%a5%c8%a5%e9",
 		"rarity":	"ブロンズ",
-		"class":	"下級ソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"密林の老練射手ガガ",
@@ -9490,7 +9490,7 @@
 		"skill_aw":	"",
 		"urlName":	"%cc%a9%ce%d3%a4%ce%cf%b7%ce%fd%bc%cd%bc%ea%a5%ac%a5%ac",
 		"rarity":	"ブロンズ",
-		"class":	"下級アーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"山賊バーガン",
@@ -9501,7 +9501,7 @@
 		"skill_aw":	"",
 		"urlName":	"%bb%b3%c2%b1%a5%d0%a1%bc%a5%ac%a5%f3",
 		"rarity":	"ブロンズ",
-		"class":	"下級バンデット"
+		"class":	"バンデット"
 	},
 	{
 		"name":	"帝国歩兵ディルク",
@@ -9512,7 +9512,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c4%eb%b9%f1%ca%e2%ca%bc%a5%c7%a5%a3%a5%eb%a5%af",
 		"rarity":	"ブロンズ",
-		"class":	"下級ソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"弓兵アルス",
@@ -9523,7 +9523,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b5%dd%ca%bc%a5%a2%a5%eb%a5%b9",
 		"rarity":	"ブロンズ",
-		"class":	"下級アーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"弓兵ウィルフレッド",
@@ -9534,7 +9534,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b5%dd%ca%bc%a5%a6%a5%a3%a5%eb%a5%d5%a5%ec%a5%c3%a5%c9",
 		"rarity":	"ブロンズ",
-		"class":	"下級アーチャー"
+		"class":	"アーチャー"
 	},
 	{
 		"name":	"海賊マウロ",
@@ -9545,7 +9545,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b3%a4%c2%b1%a5%de%a5%a6%a5%ed",
 		"rarity":	"ブロンズ",
-		"class":	"下級パイレーツ"
+		"class":	"パイレーツ"
 	},
 	{
 		"name":	"熟練兵ハシム",
@@ -9556,7 +9556,7 @@
 		"skill_aw":	"",
 		"urlName":	"%bd%cf%ce%fd%ca%bc%a5%cf%a5%b7%a5%e0",
 		"rarity":	"ブロンズ",
-		"class":	"下級ソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"熟練足軽ヨジロウ",
@@ -9567,7 +9567,7 @@
 		"skill_aw":	"",
 		"urlName":	"%bd%cf%ce%fd%c2%ad%b7%da%a5%e8%a5%b8%a5%ed%a5%a6",
 		"rarity":	"ブロンズ",
-		"class":	"下級サムライ"
+		"class":	"サムライ"
 	},
 	{
 		"name":	"王国兵士ヘクター",
@@ -9578,7 +9578,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b2%a6%b9%f1%ca%bc%bb%ce%a5%d8%a5%af%a5%bf%a1%bc",
 		"rarity":	"ブロンズ",
-		"class":	"下級ソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"王国兵士レオ",
@@ -9589,7 +9589,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b2%a6%b9%f1%ca%bc%bb%ce%a5%ec%a5%aa",
 		"rarity":	"ブロンズ",
-		"class":	"下級ソルジャー"
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"王国重歩兵ラセル",
@@ -9600,7 +9600,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b2%a6%b9%f1%bd%c5%ca%e2%ca%bc%a5%e9%a5%bb%a5%eb",
 		"rarity":	"ブロンズ",
-		"class":	"下級ヘビーアーマー"
+		"class":	"ヘビーアーマー"
 	},
 	{
 		"name":	"王国魔術師ロイ",
@@ -9611,7 +9611,7 @@
 		"skill_aw":	"",
 		"urlName":	"%b2%a6%b9%f1%cb%e2%bd%d1%bb%d5%a5%ed%a5%a4",
 		"rarity":	"ブロンズ",
-		"class":	"下級メイジ"
+		"class":	"メイジ"
 	},
 	{
 		"name":	"竜人戦士",
@@ -9622,7 +9622,7 @@
 		"skill_aw":	"",
 		"urlName":	"%ce%b5%bf%cd%c0%ef%bb%ce",
 		"rarity":	"ブロンズ",
-		"class":	"下級竜兵"
+		"class":	"竜兵"
 	},
 	{
 		"name":	"老魔術師ゼンメル",
@@ -9633,7 +9633,7 @@
 		"skill_aw":	"",
 		"urlName":	"%cf%b7%cb%e2%bd%d1%bb%d5%a5%bc%a5%f3%a5%e1%a5%eb",
 		"rarity":	"ブロンズ",
-		"class":	"下級メイジ"
+		"class":	"メイジ"
 	},
 	{
 		"name":	"銅聖霊サラ",
@@ -9644,7 +9644,7 @@
 		"skill_aw":	"",
 		"urlName":	"%c6%c3%bc%ec%b7%bf",
 		"rarity":	"ブロンズ",
-		"class":	"銅の聖霊"
+		"class":	"聖霊"
 	},
 	{
 		"name":	"魔界魔術師ネヴィン",
@@ -9655,6 +9655,6 @@
 		"skill_aw":	"",
 		"urlName":	"%cb%e2%b3%a6%cb%e2%bd%d1%bb%d5%a5%cd%a5%f4%a5%a3%a5%f3",
 		"rarity":	"ブロンズ",
-		"class":	"下級メイジ"
+		"class":	"メイジ"
 	}
 ]
