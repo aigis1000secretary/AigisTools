@@ -1,4 +1,4 @@
-var maxCid = 1040;
+var maxCid = 1045;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1023,5 +1023,7 @@ var charaData = [
 	{	"id": 1037,	"name": "真夏の公演ナターリエ",	"rare": 4,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "ba60c8e21ff92319e0138bbc38e97eb7",	"imgaw": "e4721e66fee9483ad4c3c4848b801199"	},
 	{	"id": 1038,	"name": "完全無欠の夏休みメーア",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "3ebeb02ea0f5c83815b3a25e6935a0f4",	"imgaw": "56047b1bf2644b5558a0e1d39678fd55"	},
 	{	"id": 1039,	"name": "夏風の治癒士エリアス",	"rare": 4,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "c5940310b12a7cd1d17d21594c6135e2",	"imgaw": "587c6ed20721fc3d09574bc8468e3ec7"	},
-	{	"id": 1040,	"name": "真夏のいざないローザ",	"rare": 4,	"classID": 12100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "4df7b3540bcf15d853bdce3c4ce99741",	"imgaw": "cfa7f598af4ef542a386610825b75ba6"	}
+	{	"id": 1040,	"name": "真夏のいざないローザ",	"rare": 4,	"classID": 12100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 105,	"year": 2020,	"img": "4df7b3540bcf15d853bdce3c4ce99741",	"imgaw": "cfa7f598af4ef542a386610825b75ba6"	},
+	{	"id": 1041,	"name": "ちびメフィスト",	"rare": 3,	"classID": 23500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 108,	"year": 2020,	"img": "68205de13965cb43ba8bc8e978fc4956"	},
+	{	"id": 1042,	"name": "ちびリーゼロッテ",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 108,	"year": 2020,	"img": "4ff2d92b93f406e91074a1e4eb6879fa"	}
 ]

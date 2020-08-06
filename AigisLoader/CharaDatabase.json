@@ -869,6 +869,17 @@
 		"class":	"メイジ"
 	},
 	{
+		"name":	"ちびメフィスト",
+		"subName":	"ちびメフィスト",
+		"ability":	"▹魔神転生\n自身が死亡または撤退した場合、一定時間後に再出撃が可能",
+		"ability_aw":	"",
+		"skill":	"▹闇の進撃\n攻撃力1.5倍、デーモン系、オーク、ゴブリン属性ユニットの防御力1.5倍、自動発動+効果時間無限",
+		"skill_aw":	"",
+		"urlName":	"%a4%c1%a4%d3%a5%e1%a5%d5%a5%a3%a5%b9%a5%c8",
+		"rarity":	"ゴールド",
+		"class":	"魔神"
+	},
+	{
 		"name":	"ちびメル",
 		"subName":	"ちびメル",
 		"ability":	"",
@@ -911,6 +922,17 @@
 		"urlName":	"%a4%c1%a4%d3%a5%e9%a5%d4%a5%b9",
 		"rarity":	"ゴールド",
 		"class":	"デモンサモナー"
+	},
+	{
+		"name":	"ちびリーゼロッテ",
+		"subName":	"ちびリーゼロッテ",
+		"ability":	"",
+		"ability_aw":	"",
+		"skill":	"▹援軍要請Ⅲ\n出撃コストが15回復",
+		"skill_aw":	"",
+		"urlName":	"%a4%c1%a4%d3%a5%ea%a1%bc%a5%bc%a5%ed%a5%c3%a5%c6",
+		"rarity":	"ゴールド",
+		"class":	"ソルジャー"
 	},
 	{
 		"name":	"ちびリディ",
