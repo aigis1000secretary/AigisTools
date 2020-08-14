@@ -2,12 +2,14 @@
 
 cd .\LocalProxy
 echo LocalProxy: npm install
-start npm install
+npm install
+npm update
 cd ..
 
 cd .\AigisLoader
 echo AigisChecker: npm install
-start npm install
+npm install
+npm update
 cd ..
 
 pause

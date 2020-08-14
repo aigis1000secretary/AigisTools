@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "anyproxy": "^4.1.2"
+    "anyproxy": "^4.1.3"
   }
 }

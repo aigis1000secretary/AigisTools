@@ -621,7 +621,10 @@ const aigisMapHash = async function () {
 
 const aigisCharacter = async function () {
 
-    let regTest = /^([^\n、＃]+)([\n、＃]+)(@?)([^\n、＃]+)/g;
+    // arrayDataToCsv(skillListData, "./AigisLoader/skillList.csv");
+    // arrayDataToCsv(skillTextData, "./AigisLoader/skillText.csv");
+    // arrayDataToCsv(skillTypeData, "./AigisLoader/skillType.csv");
+    // arrayDataToCsv(skillInflData, "./AigisLoader/skillInfl.csv");
 
     let textFormat = function (str) {
 
@@ -821,6 +824,9 @@ const aigisCharacter = async function () {
                     if (!!pow_string && m3 != 0) {
                         // pow_string = pow_string.replace("POW", m3);
                         pow_string = pow_string.replace("POW", Math.max(m3, m4));
+                        if (iType.in(3, 5)) {
+                            pow_string = `(${pow_string}) - 1`;
+                        }
                     }
                     if (!pow_string && iType.in(12, 13)) {
                         pow_string = a1 + 1;
@@ -832,39 +838,40 @@ const aigisCharacter = async function () {
                 if (iType == 6 && card.InitClassID == 12500) { desc = Math.round(desc / 0.115) / 10; }
 
                 // iType == 187 即死
+                let desc100 = Math.round(desc * 100);
                 if (iType == 2) { text = text.replace(/<ATK>|<POW_R>|<PATK>/, desc); }         // ATK
-                if (iType == 3) { text = text.replace(/<ATK>|<POW_I>/, desc * 100); }   // ALL ATK
+                if (iType == 3) { text = text.replace(/<ATK>|<POW_I>/, desc100); }   // ALL ATK
                 if (iType == 4) { text = text.replace(/<DEF>|<POW_R>/, desc); }         // DEF
-                if (iType == 5) { text = text.replace(/<DEF>|<POW_I>/, desc * 100); }   // ALL DEF
+                if (iType == 5) { text = text.replace(/<DEF>|<POW_I>/, desc100); }   // ALL DEF
                 if (iType == 6) { text = text.replace(/<RNG>|<POW_R>/, desc); }
                 if (iType == 7) { text = text.replace(/<NUM_SHOT>/, desc); }
                 if (iType == 8) { text = text.replace(/<AREA>|<POW_R>/, desc); }
-                if (iType == 9) { text = text.replace(/<AVOID>/, desc * 100); }
-                if (iType == 10) { text = text.replace(/<AVOID>/, desc * 100); }
+                if (iType == 9) { text = text.replace(/<AVOID>/, desc100); }
+                if (iType == 10) { text = text.replace(/<AVOID>/, desc100); }
                 if (iType == 11) { text = text.replace(/<POW_R>/, desc); }              // HP
                 if (iType == 12) { text = text.replace(/<NUM_BLOCK>/, desc); }
                 if (iType == 13) { text = text.replace(/<NUM_ATK>/, desc); }
                 if (iType == 19) { text = text.replace(/<MDEF>|<POW_R>/, desc); }
                 if (iType == 22) { text = text.replace(/<NUM_TRG>/, desc); }
-                if (iType == 31) { text = text.replace(/<POW_I>/, desc * 100); }        // HEAL
-                if (iType == 32) { text = text.replace(/<POW_I>/, desc * 100); }        // ADD COST
-                if (iType == 33) { text = text.replace(/<POW_I>/, desc * 100); }        // PH DEF%
-                if (iType == 34) { text = text.replace(/<MDEF>/, desc * 100); }         // MDEF
-                if (iType == 35) { text = text.replace(/<POW_I>/, desc * 100); }        // ATK+HP
-                if (iType == 37) { text = text.replace(/<POW_I>/, desc * 100); }        // ATK DEBUFF
-                if (iType == 54) { text = text.replace(/<POW_I>/, desc * 100); }        // LUK DEF
+                if (iType == 31) { text = text.replace(/<POW_I>/, desc100); }        // HEAL
+                if (iType == 32) { text = text.replace(/<POW_I>/, desc100); }        // ADD COST
+                if (iType == 33) { text = text.replace(/<POW_I>/, desc100); }        // PH DEF%
+                if (iType == 34) { text = text.replace(/<MDEF>/, desc100); }         // MDEF
+                if (iType == 35) { text = text.replace(/<POW_I>/, desc100); }        // ATK+HP
+                if (iType == 37) { text = text.replace(/<POW_I>/, desc100); }        // ATK DEBUFF
+                if (iType == 54) { text = text.replace(/<POW_I>/, desc100); }        // LUK DEF
                 if (iType == 83) { text = text.replace(/<POW_R>/, desc); }
-                if (iType == 83) { text = text.replace(/<POW_I>/, desc * 100); }        // MAX HP
+                if (iType == 83) { text = text.replace(/<POW_I>/, desc100); }        // MAX HP
                 if (iType == 85) { text = text.replace(/<POW_R>/, desc); }
                 if (iType == 89) { text = text.replace(/<ATK>|<POW_R>/, desc); }
                 if (iType == 90) { text = text.replace(/<DEF>|<POW_R>/, desc); }
-                if (iType == 103) { text = text.replace(/<POW_I>/, desc * 100); }   // ATK DEBUFF
-                if (iType == 105) { text = text.replace(/<POW_I>/, desc * 100); }   // UNKNOWN
-                if (iType == 108) { text = text.replace(/<POW_I>/, desc * 100); }   // HP CUT
+                if (iType == 103) { text = text.replace(/<POW_I>/, desc100); }   // ATK DEBUFF
+                if (iType == 105) { text = text.replace(/<POW_I>/, desc100); }   // UNKNOWN
+                if (iType == 108) { text = text.replace(/<POW_I>/, desc100); }   // HP CUT
                 if (iType == 137) { text = text.replace(/<POW_R>/, desc); }         // AB BUFF
                 if (iType == 141) { text = text.replace(/<ATK>|<POW_R>/, desc); }
                 if (iType == 142) { text = text.replace(/<DEF>|<POW_R>/, desc); }
-                if (iType == 178) { text = text.replace(/<POW_I>/, desc * 100); }
+                if (iType == 178) { text = text.replace(/<POW_I>/, desc100); }
 
                 // if (iType == 121) { change skill text }
 

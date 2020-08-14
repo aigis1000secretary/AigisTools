@@ -2,6 +2,8 @@
 const fs = require('fs');
 
 let filepath = "./AigisTools/";
+let filepathA = "./AigisTools/";
+let filepathR = "./AigisTools/";
 // 
 module.exports = {
     summary: 'AigisTools auxiliary proxy',
@@ -25,13 +27,17 @@ module.exports = {
             let folderName = "aigis_" +
                 updateDate.getFullYear().toString() + "_" +
                 (updateDate.getMonth() + 1).toString().padStart(2, "0") + "_" +
-                updateDate.getDate().toString().padStart(2, "0") +
-                (url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 ? "R" : "");
+                updateDate.getDate().toString().padStart(2, "0");
             // get filepath 
             filepath = "./AigisTools/Data/XML/" + folderName + "/";
+            filepathA = "./AigisTools/Data/XML/" + folderName + "/"
+            filepathR = "./AigisTools/Data/XML/" + folderName + "R/"
+            filepath = (url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 ? filepathR : filepathA);
 
             // check dir
             if (!fs.existsSync(filepath)) { fs.mkdirSync(filepath, { recursive: true }); }
+            if (!fs.existsSync(filepathA)) { fs.mkdirSync(filepathA, { recursive: true }); }
+            if (!fs.existsSync(filepathR)) { fs.mkdirSync(filepathR, { recursive: true }); }
 
             // xml.txt
             fs.writeFile("./AigisTools/xml.txt", folderName, (err) => { if (err) console.log(err); else console.log('xml.txt   has been saved!'); });
@@ -47,7 +53,8 @@ module.exports = {
 
             if (/(\S{8})$/.test(url)) {
                 let filename = /(\S{8})$/.exec(url)[0];
-                fs.writeFile(filepath + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
+                fs.writeFile(filepathA + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
+                fs.writeFile(filepathR + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
             }
         }
         //  else if (url.indexOf('/oS5aZ5ll') != -1) {
