@@ -1027,6 +1027,6 @@ var charaData = [
 	{	"id": 1041,	"name": "ちびメフィスト",	"rare": 3,	"classID": 23500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 108,	"year": 2020,	"img": "68205de13965cb43ba8bc8e978fc4956"	},
 	{	"id": 1042,	"name": "ちびリーゼロッテ",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 108,	"year": 2020,	"img": "4ff2d92b93f406e91074a1e4eb6879fa"	},
 	{	"id": 1043,	"name": "宵の花鎖スピリア",	"rare": 5,	"classID": 14000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 105,	"year": 2020,	"img": "a7b6aa8cc8baf88a4bc2d440345f992d",	"imgaw": "56f260a8c837ed5aa7c6a42805af2f94"	},
-	{	"id": 1044,	"name": "祭夜の神官戦士フェルミ",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 105,	"year": 2020,	"img": "77da7efc3728844c7401f084348198bb",	"imgaw": "f0bea972e187481d6e76687195ed8aa9"	},
+	{	"id": 1044,	"name": "祭夜の神官戦士フェルミ",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 105,	"year": 2020,	"img": "7e7f53b92edcde117b86005535566e5e",	"imgaw": "5c52b4b2178040b41411ec6cfb7af13d"	},
 	{	"id": 1045,	"name": "夜祭の重装砲兵レギーナ",	"rare": 4,	"classID": 4400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 105,	"year": 2020,	"img": "369863db2f3b0009b6fd20ef72a999de",	"imgaw": "8a31c3e266e836d47a30b1452baa7c04"	}
 ]

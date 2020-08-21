@@ -29,10 +29,14 @@ module.exports = {
                 (updateDate.getMonth() + 1).toString().padStart(2, "0") + "_" +
                 updateDate.getDate().toString().padStart(2, "0");
             // get filepath 
-            filepath = "./AigisTools/Data/XML/" + folderName + "/";
             filepathA = "./AigisTools/Data/XML/" + folderName + "/"
             filepathR = "./AigisTools/Data/XML/" + folderName + "R/"
-            filepath = (url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 ? filepathR : filepathA);
+            if (url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') == -1) {
+                filepath = filepathA;
+            } else {
+                filepath = filepathR;
+                folderName = folderName + "R";
+            }
 
             // check dir
             if (!fs.existsSync(filepath)) { fs.mkdirSync(filepath, { recursive: true }); }
