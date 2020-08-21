@@ -518,7 +518,11 @@ const aigisTactics = async function () {
             if (parseInt(a.Y) != parseInt(b.Y)) return (parseInt(a.Y) > parseInt(b.Y)) ? -1 : 1;
             return 0;
         });
-        quest.locationList = quest.locationList.filter((item) => item === quest.locationList.find(((pos) => pos.ObjectID == item.ObjectID)));
+        quest.locationList = quest.locationList.filter((item) => item === quest.locationList.find(((pos) =>
+            pos.ObjectID == item.ObjectID &&
+            pos.X == item.X &&
+            pos.Y == item.Y
+        )));
     }
 
     // sort quest
