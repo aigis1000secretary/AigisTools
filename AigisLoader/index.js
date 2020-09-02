@@ -301,8 +301,8 @@ const aigisChecker = async function () {
     cardsJs.push("]");
 
     // write to file
-    fs.writeFileSync("./html/script/cardList.js", cardsJs.join("\n"));
-    console.log("fs.writeFileSync( ./html/script/cardList.js )");
+    fs.writeFileSync("./html/script/rawCardList.js", cardsJs.join("\n"));
+    console.log("fs.writeFileSync( ./html/script/rawCardList.js )");
 
     console.log("aigisChecker done\n");
 }
@@ -312,7 +312,7 @@ const aigisTactics = async function () {
     // arrayDataToCsv(missionListData, "./AigisLoader/mission.csv");
 
     let resourceList = getFileList(resourcesPath);
-    let questList = JSON.parse(fs.readFileSync("./html/script/questList.js").toString().replace(/^let questList = /, "").replace(/(,)(\s*)([\]\}])/g, (m, p1, p2, p3) => `${p2}${p3}`));
+    let questList = JSON.parse(fs.readFileSync("./html/script/rawQuestList.js").toString().replace(/^let questList = /, "").replace(/(,)(\s*)([\]\}])/g, (m, p1, p2, p3) => `${p2}${p3}`));
     // let questList = [];
 
     // set quest data
@@ -540,8 +540,8 @@ const aigisTactics = async function () {
     questJs.push("]");
 
     // write to file
-    fs.writeFileSync("./html/script/questList.js", questJs.join("\n"));
-    console.log("fs.writeFileSync( ./html/script/questList.js )");
+    fs.writeFileSync("./html/script/rawQuestList.js", questJs.join("\n"));
+    console.log("fs.writeFileSync( ./html/script/rawQuestList.js )");
 
     // ready to write to file
     let missionJS = ["let missionTitleList = {"];
@@ -555,8 +555,8 @@ const aigisTactics = async function () {
     missionJS.push("}");
 
     // write to file
-    fs.writeFileSync("./html/script/missionTitleList.js", missionJS.join("\n"));
-    console.log("fs.writeFileSync( ./html/script/missionTitleList.js )");
+    fs.writeFileSync("./html/script/rawMissionTitleList.js", missionJS.join("\n"));
+    console.log("fs.writeFileSync( ./html/script/rawMissionTitleList.js )");
 
     console.log("aigisChecker done\n");
 }
@@ -617,8 +617,8 @@ const aigisMapHash = async function () {
         }
     }
 
-    fs.writeFileSync("./html/script/mapHashList.js", "let mapHashList = " + JSON.stringify(mapHashList, null, "\t"));
-    console.log("fs.writeFileSync( ./html/script/mapHashList.js )");
+    fs.writeFileSync("./html/script/rawMapHashList.js", "let mapHashList = " + JSON.stringify(mapHashList, null, "\t"));
+    console.log("fs.writeFileSync( ./html/script/rawMapHashList.js )");
 
     console.log("aigisMapHash done\n");
 }
@@ -850,7 +850,7 @@ const aigisCharacter = async function () {
                 if (iType == 6) { text = text.replace(/<RNG>|<POW_R>/, desc); }
                 if (iType == 7) { text = text.replace(/<NUM_SHOT>/, desc); }
                 if (iType == 8) { text = text.replace(/<AREA>|<POW_R>/, desc); }
-                if (iType == 9) { text = text.replace(/<AVOID>/, desc100); }
+                if (iType == 9) { text = text.replace(/<AVOID>|<POW_I>/, desc100); }
                 if (iType == 10) { text = text.replace(/<AVOID>/, desc100); }
                 if (iType == 11) { text = text.replace(/<POW_R>/, desc); }              // HP
                 if (iType == 12) { text = text.replace(/<NUM_BLOCK>/, desc); }
