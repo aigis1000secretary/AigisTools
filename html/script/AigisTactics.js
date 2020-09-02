@@ -320,8 +320,7 @@ let mapimgInit = function (id) {
     MapImg.style.backgroundImage = `url(./maps/${md5})`;
 
     // get location data
-    for (let i in quest.locationList) {
-        let location = quest.locationList[i];
+    for (let location of mapDataList[quest.map][quest.location]) {
 
         // location
         let div = document.createElement("div");
@@ -468,19 +467,18 @@ let onChangeSelectMissionType = function (select) {
             items = missionIDs.filter(mID => {
                 return 400000 <= parseInt(mID) && parseInt(mID) < 500000
             });
-            // 復刻大討伐
-            for (let i = 0; i < items.length - 1; ++i) {
-                let title_i = missionList[items[i]];   // m-title
-                let flag = false;
+            // // remove 復刻大討伐
+            // for (let i = 0; i < items.length - 1; ++i) {
+            //     let title_i = missionList[items[i]];   // m-title
+            //     let flag = false;
 
-                for (let j = i + 1; j < items.length; ++j) {
-                    let title_j = missionList[items[j]];   // m-title
-                    if (title_i == title_j) { flag = true; break; }
-                }
+            //     for (let j = i + 1; j < items.length; ++j) {
+            //         let title_j = missionList[items[j]];   // m-title
+            //         if (title_i == title_j) { flag = true; break; }
+            //     }
 
-                if (flag) { items[i] = ""; }
-            }
-            items = items.filter(i => i != "");
+            //     if (flag) { items[i] = ""; }
+            // }; items = items.filter(i => i != "");
         } break;
         case "Devil": {
             items = missionIDs.filter(mID => {
@@ -506,7 +504,10 @@ let onChangeSelectMissionType = function (select) {
     for (let i in items) {
         let item = items[i];    // mid
         let itemCount = questList.filter(quest => { return quest.missionID == item; }).length;
-        missionSelect.options.add(new Option(`${missionList[item]} ${itemCount == 0 ? "" : `(${itemCount})`}`, item));
+        // missionSelect.options.add(new Option(`${missionList[item]} ${itemCount == 0 ? "" : `(${itemCount})`}`, item));
+        if (itemCount != 0) {
+            missionSelect.options.add(new Option(`${missionList[item]} (${itemCount})`, item));
+        }
     }
 }
 let onChangeSelectMission = function (select) {
