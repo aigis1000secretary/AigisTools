@@ -414,7 +414,7 @@ let onChangeSelectMissionType = function (select) {
     // clear items
     missionSelect.innerText = null;
     let items = [];
-    let missionIDs = Object.keys(missionTitleList);
+    let missionIDs = Object.keys(missionList);
 
     switch (value) {
 
@@ -432,24 +432,24 @@ let onChangeSelectMissionType = function (select) {
 
         case "Goldrush": {
             items = missionIDs.filter(mID => {
-                return missionTitleList[mID].indexOf("ゴールドラッシュ") != -1;
+                return missionList[mID].indexOf("ゴールドラッシュ") != -1;
             });
             // sort
-            // items.sort((a, b) => { return missionTitleList[a].localeCompare(missionTitleList[b]); })
-            items.sort((a, b) => { return parseInt(/\d+/.exec(missionTitleList[a]).toString()) < parseInt(/\d+/.exec(missionTitleList[b]).toString()) ? -1 : 1; })
+            // items.sort((a, b) => { return missionList[a].localeCompare(missionList[b]); })
+            items.sort((a, b) => { return parseInt(/\d+/.exec(missionList[a]).toString()) < parseInt(/\d+/.exec(missionList[b]).toString()) ? -1 : 1; })
         } break;
 
         case "Emergency": {
             items = missionIDs.filter(mID => {
                 return 200000 <= parseInt(mID) && parseInt(mID) < 300000 && parseInt(mID) != 200129 &&
-                    missionTitleList[mID].indexOf("ゴールドラッシュ") == -1;
+                    missionList[mID].indexOf("ゴールドラッシュ") == -1;
             });
             items.sort((a, b) => { return b.localeCompare(a); });   // sort by missionID & reverse 
         } break;
         case "Reproduce": {
             items = missionIDs.filter(mID => {
                 return 300000 <= parseInt(mID) && parseInt(mID) < 310000 &&
-                    missionTitleList[mID].indexOf("ゴールドラッシュ") == -1;
+                    missionList[mID].indexOf("ゴールドラッシュ") == -1;
             });
         } break;
         case "DailyReproduce": {
@@ -460,7 +460,7 @@ let onChangeSelectMissionType = function (select) {
         case "Special": {
             items = missionIDs.filter(mID => {
                 return 320000 <= parseInt(mID) && parseInt(mID) < 400000 ||
-                    missionTitleList[mID].indexOf("異世界") != -1;
+                    missionList[mID].indexOf("異世界") != -1;
             });
         } break;
 
@@ -470,11 +470,11 @@ let onChangeSelectMissionType = function (select) {
             });
             // 復刻大討伐
             for (let i = 0; i < items.length - 1; ++i) {
-                let title_i = missionTitleList[items[i]];   // m-title
+                let title_i = missionList[items[i]];   // m-title
                 let flag = false;
 
                 for (let j = i + 1; j < items.length; ++j) {
-                    let title_j = missionTitleList[items[j]];   // m-title
+                    let title_j = missionList[items[j]];   // m-title
                     if (title_i == title_j) { flag = true; break; }
                 }
 
@@ -499,14 +499,14 @@ let onChangeSelectMissionType = function (select) {
         case "Challenge": { items = ["800001", "900001"]; } break;
     }
 
-    // items.sort((a, b) => { return missionTitleList[a].localeCompare(missionTitleList[b]); });   // sort by missionID & reverse 
+    // items.sort((a, b) => { return missionList[a].localeCompare(missionList[b]); });   // sort by missionID & reverse 
 
     // set select items
     missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
     for (let i in items) {
         let item = items[i];    // mid
         let itemCount = questList.filter(quest => { return quest.missionID == item; }).length;
-        missionSelect.options.add(new Option(`${missionTitleList[item]} ${itemCount == 0 ? "" : `(${itemCount})`}`, item));
+        missionSelect.options.add(new Option(`${missionList[item]} ${itemCount == 0 ? "" : `(${itemCount})`}`, item));
     }
 }
 let onChangeSelectMission = function (select) {
