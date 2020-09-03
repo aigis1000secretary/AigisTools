@@ -1,4 +1,4 @@
-var maxCid = 1047;
+var maxCid = 1057;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1030,5 +1030,8 @@ var charaData = [
 	{	"id": 1044,	"name": "祭夜の神官戦士フェルミ",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 105,	"year": 2020,	"img": "7e7f53b92edcde117b86005535566e5e",	"imgaw": "5c52b4b2178040b41411ec6cfb7af13d"	},
 	{	"id": 1045,	"name": "夜祭の重装砲兵レギーナ",	"rare": 4,	"classID": 4400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 105,	"year": 2020,	"img": "369863db2f3b0009b6fd20ef72a999de",	"imgaw": "8a31c3e266e836d47a30b1452baa7c04"	},
 	{	"id": 1046,	"name": "飛行警備隊長クレール",	"rare": 5,	"classID": 18000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "dc96b792b62ad6c9012c82263ecc16a6",	"imgaw": "e784b58561ce1922f32e62ef91445b39"	},
-	{	"id": 1047,	"name": "紅蓮の兵士長ノーマ",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "0c0c607ccd5b0602fef5490c3517cb42",	"imgaw": "8a0c025eaaa4451299a74abc600dd2fe"	}
+	{	"id": 1047,	"name": "紅蓮の兵士長ノーマ",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "0c0c607ccd5b0602fef5490c3517cb42",	"imgaw": "8a0c025eaaa4451299a74abc600dd2fe"	},
+	{	"id": 1050,	"name": "ちびテンマ",	"rare": 3,	"classID": 56000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 108,	"year": 2020,	"img": "bddf7b2e83acd46c0510611be4ddf9a8"	},
+	{	"id": 1051,	"name": "ちびリアナ",	"rare": 3,	"classID": 30200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "f2367b1df8862ce7205d8369a2dfa42d"	},
+	{	"id": 1052,	"name": "趙紅明",	"rare": 4,	"classID": 7600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "cc34a2665d093bfd75cd7da4955a011c",	"imgaw": "183006c8a6f94a419e6a07b07e860ff5"	}
 ]
