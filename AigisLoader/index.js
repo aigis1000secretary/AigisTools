@@ -529,43 +529,46 @@ const aigisQuestList = async function () {
 
 const aigisMapHash = async function () {
 
-    let resourceList = fs.readdirSync(resourcesPath).filter((file) => (/^Map[\d_]+\.png$/i.test(file)));
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/768_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/769_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/782_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/783_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/777_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/777_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/780_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/787_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/785_001.png");
-    resourceList.push("BattleEffect.aar/228_tex_weather.atx/frames/793_001.png");
+    let rawList = resourceList.filter((file) => (/Map[\d_]+\.png$/i.test(file)));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+768_001\.png$/i.test(file))));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+769_001\.png$/i.test(file))));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+782_001\.png$/i.test(file))));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+783_001\.png$/i.test(file))));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+777_001\.png$/i.test(file))));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+780_001\.png$/i.test(file))));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+787_001\.png$/i.test(file))));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+785_001\.png$/i.test(file))));
+    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+793_001\.png$/i.test(file))));
 
     // map png
-    let mapHashList = {};
-    for (let resource of resourceList) {
+    let mapHashList = eval(`(${fs.readFileSync("./html/script/rawMapHashList.js").toString().replace(/^let mapHashList = /, "")})`);
+    for (let sourcePath of rawList) {
 
-        let sourcePath = resourcesPath + "/" + resource;
         let fileName = path.win32.basename(sourcePath);
         let pngBinary = fs.readFileSync(sourcePath);
-        let md5 = md5f(pngBinary.toString());
-        mapHashList[fileName] = md5;
+        let pngMd5 = md5f(pngBinary.toString());
+        // check data
+        if (mapHashList[fileName] && mapHashList[fileName] != pngMd5) {
+            console.log(` file ${fileName} md5 changed... ${pngMd5}`);
+        } else {
+            mapHashList[fileName] = pngMd5;
+        }
 
-        let outputDir = /^map/i.test(resource) ? "./html/maps/" : "./html/weather/";
-        let outputPath = outputDir + md5;
+        let outputDir = /^map/i.test(fileName) ? "./html/maps/" : "./html/weather/";
+        let outputPath = outputDir + pngMd5;
 
         if (!fs.existsSync(outputPath)) {
-            if (/^map/i.test(resource)) {
+            if (/^map/i.test(fileName)) {
                 await new Promise(function (resolve, reject) {
                     Jimp.read(sourcePath)
                         .then(img => {
-                            console.log(` getting ${resource} md5...`);
+                            console.log(` getting ${fileName} md5...`);
                             return img.quality(70) // set JPEG quality
                                 .write(outputPath + ".jpg"); // save
                         }).then(async () => {
                             console.log("Jimp.quality(70).write()");
                             await sleep(100);
-                            let log = child_process.execSync(`cd ${outputDir}&ren ${md5}.jpg ${md5}`).toString().trim();
+                            let log = child_process.execSync(`cd ${outputDir}&ren ${pngMd5}.jpg ${pngMd5}`).toString().trim();
                             if (log != "") console.log(log);
                         }).then(() => {
                             console.log("");
@@ -577,7 +580,7 @@ const aigisMapHash = async function () {
                         });
                 });
             } else {
-                console.log(` getting ${resource} md5...`);
+                console.log(` getting ${fileName} md5...`);
                 fs.createReadStream(sourcePath).pipe(fs.createWriteStream(outputPath));
             }
         }
@@ -592,7 +595,7 @@ const aigisMapHash = async function () {
 const aigisMapData = async function () {
 
     // map position
-    let mapDataList = {};
+    let mapDataList = eval(`(${fs.readFileSync("./html/script/rawMapDataList.js").toString().replace(/^let mapDataList = /, "")})`);
 
     let rawList = resourceList.filter((file) => /Map\d\S+\.aar\S+Location\d+\S+\.txt$/i.test(file));
     rawList.sort();
@@ -626,7 +629,12 @@ const aigisMapData = async function () {
         let mapNo = raw.replace(/^(.+Map)(\d\S+)(\.aar.+)$/, (m, p1, p2, p3) => (p2));
         let locationNo = raw.replace(/^(.+Location)(\d+)(\.atb.+)$/, (m, p1, p2, p3) => (p2));
         if (!mapDataList[mapNo]) { mapDataList[mapNo] = {}; };
-        mapDataList[mapNo][locationNo] = locationList;
+        // check data
+        if (mapDataList[mapNo][locationNo] && JSON.stringify(mapDataList[mapNo][locationNo]) != JSON.stringify(locationList)) {
+            console.log(` map Map${mapNo} location List changed...`);
+        } else {
+            mapDataList[mapNo][locationNo] = locationList;
+        }
     }
 
     let jsString = JSON.stringify(mapDataList, null, '\t')
@@ -1154,4 +1162,20 @@ const main = async function () {
     await aigisCharacter();
 
 
-}; main();
+};
+main();
+
+
+// const debug = async function () {
+//     let questList = eval(fs.readFileSync("./html/script/rawQuestList.js").toString().replace(/^let questList = /, ""));
+//     // let mapHashList = JSON.parse(fs.readFileSync("./html/script/rawMapHashList.js").toString().replace(/^let mapHashList = /, ""));
+//     let mapHashList = eval(`(${fs.readFileSync("./html/script/rawMapHashList.js").toString().replace(/^let mapHashList = /, "")})`);
+
+//     for (let quest of questList) {
+//         let mapName = `Map${quest.map}.png`;
+//         // console.log(mapHashList[mapName]);
+//         if (mapHashList[mapName] == "1af385e955caf0a4cd51da219e051725") {
+//             console.log(`${quest.missionTitle}\t${quest.questName}\t${mapName}`);
+//         }
+//     }
+// }; debug();

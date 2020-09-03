@@ -25,6 +25,8 @@ let bodyOnload = function () {
     select.options.add(new Option("戦術指南/チャレンジクエスト", "Challenge"));
     select.options.add(new Option("特別ミッション", "Special"));
 
+    // select.options.add(new Option("DEBUG", "Debug"));
+
     select = document.getElementById("mission");
     select.options.add(new Option("＝＝ミッション＝＝", ""));
 
@@ -495,6 +497,12 @@ let onChangeSelectMissionType = function (select) {
         case "Harlem": { items = ["600001"]; } break;
 
         case "Challenge": { items = ["800001", "900001"]; } break;
+
+        case "Debug": {
+            missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
+            missionSelect.options.add(new Option("DEBUG", "Debug"));
+            return;
+        } break;
     }
 
     // items.sort((a, b) => { return missionList[a].localeCompare(missionList[b]); });   // sort by missionID & reverse 
@@ -531,6 +539,11 @@ let onChangeSelectMission = function (select) {
             return a.questID == b.questID ? 0 :
                 sortList.indexOf(parseInt(a.questID)) < sortList.indexOf(parseInt(b.questID)) ? -1 : 1;
         })
+    }
+
+    // debug 
+    if (value == "Debug") {
+        items = questList.filter(() => true);
     }
 
     // set select items
