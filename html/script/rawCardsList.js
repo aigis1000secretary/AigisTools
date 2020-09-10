@@ -1,4 +1,4 @@
-var maxCid = 1057;
+var maxCid = 1061;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1033,5 +1033,14 @@ var charaData = [
 	{	"id": 1047,	"name": "紅蓮の兵士長ノーマ",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "0c0c607ccd5b0602fef5490c3517cb42",	"imgaw": "8a0c025eaaa4451299a74abc600dd2fe"	},
 	{	"id": 1050,	"name": "ちびテンマ",	"rare": 3,	"classID": 56000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 108,	"year": 2020,	"img": "bddf7b2e83acd46c0510611be4ddf9a8"	},
 	{	"id": 1051,	"name": "ちびリアナ",	"rare": 3,	"classID": 30200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "f2367b1df8862ce7205d8369a2dfa42d"	},
-	{	"id": 1052,	"name": "趙紅明",	"rare": 4,	"classID": 7600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "cc34a2665d093bfd75cd7da4955a011c",	"imgaw": "183006c8a6f94a419e6a07b07e860ff5"	}
+	{	"id": 1052,	"name": "趙紅明",	"rare": 4,	"classID": 7600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "cc34a2665d093bfd75cd7da4955a011c",	"imgaw": "183006c8a6f94a419e6a07b07e860ff5"	},
+	{	"id": 1053,	"name": "翠花の領主メアリ",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "f99ce2326cfcbe5eb93555d1c86e69e5",	"imgaw": "31a229cbc13213e9bb80c69aea138c14"	},
+	{	"id": 1054,	"name": "炎の厨師タオパオ",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "62878a230d7b96b85c28fc1111c72102",	"imgaw": "a1ba80fd5b9b57ffcc4697e230385edb"	},
+	{	"id": 1055,	"name": "かまいたち金糸雀姉妹",	"rare": 4,	"classID": 126500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "307f0cf558035a14f143468e50843bc9",	"imgaw": "0881f32fa2d9f939a1c4a65c18cc8b40"	},
+	{	"id": 1056,	"name": "東の料理番ヤマブキ",	"rare": 3,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "cb92b4f750551ec3159c4573f119800f",	"imgaw": "59d05731a05496147719380f84f0a972"	},
+	{	"id": 1057,	"name": "ちびオーガスタ",	"rare": 3,	"classID": 225500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "31af29e7d079f241290efef525142144"	},
+	{	"id": 1058,	"name": "かまいたちハヤセ",	"rare": 5,	"classID": 126600,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "33a959e2e1e45907da3ad135cb6b12fe"	},
+	{	"id": 1059,	"name": "疾風かまいたちハヤセ",	"rare": 5,	"classID": 126630,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "55ea4329a8ecb8167f24f70ed801c410"	},
+	{	"id": 1060,	"name": "かまいたちキシマ",	"rare": 5,	"classID": 126700,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "c5fe8ac917a536d1526592540970ba3b"	},
+	{	"id": 1061,	"name": "疾風かまいたちキシマ",	"rare": 5,	"classID": 126730,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "96e7b01e3c118c8fe4b5c1625d4b564b"	}
 ]
