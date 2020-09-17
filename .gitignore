@@ -1,7 +1,8 @@
 
 *.lnk
-Thumbs.db
+*.csv
 .vscode
+Thumbs.db
 node_modules
 
 Resources

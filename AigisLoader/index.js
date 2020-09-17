@@ -336,6 +336,7 @@ const aigisMissionList = async function () {
         missionList[100007] = "第七章　魔の都";
         missionList[100008] = "第八章　魔神の体内";
         missionList[100009] = "第九章　鋼の都";
+        missionList[100010] = "第十章　海底";
         missionList[200232] = "ゴールドラッシュ23";
         missionList[310001] = "魔女を救え！";
         missionList[310002] = "魔女の娘";
@@ -394,8 +395,9 @@ const aigisMissionList = async function () {
     // ready to write to file
     let keys = Object.keys(missionList);
     keys.sort(function compare(a, b) {
-        if (missionList[a] == missionList[b]) return 0;
-        return (missionList[a].localeCompare(missionList[b]) > 0) ? -1 : 1;
+        if (missionList[a] != missionList[b]) return (missionList[a].localeCompare(missionList[b]) > 0) ? -1 : 1;
+        if (a != b) return (a < b ? -1 : 1);
+        return 0;
     });
     let jsString = [];
     for (let key of keys) { jsString.push(`\t"${key}": "${missionList[key]}"`); }
@@ -902,6 +904,7 @@ const aigisCharacter = async function () {
                 if (iType == 141) { text = text.replace(/<ATK>|<POW_R>/, desc); }
                 if (iType == 142) { text = text.replace(/<DEF>|<POW_R>/, desc); }
                 if (iType == 178) { text = text.replace(/<POW_I>/, desc100); }
+                if (iType == 200) { text = text.replace(/<RNG>/, desc); }
 
                 // if (iType == 121) { change skill text }
 

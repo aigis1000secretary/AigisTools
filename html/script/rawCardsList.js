@@ -1,4 +1,4 @@
-var maxCid = 1061;
+var maxCid = 1070;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1042,5 +1042,9 @@ var charaData = [
 	{	"id": 1058,	"name": "かまいたちハヤセ",	"rare": 5,	"classID": 126600,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "33a959e2e1e45907da3ad135cb6b12fe"	},
 	{	"id": 1059,	"name": "疾風かまいたちハヤセ",	"rare": 5,	"classID": 126630,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "55ea4329a8ecb8167f24f70ed801c410"	},
 	{	"id": 1060,	"name": "かまいたちキシマ",	"rare": 5,	"classID": 126700,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "c5fe8ac917a536d1526592540970ba3b"	},
-	{	"id": 1061,	"name": "疾風かまいたちキシマ",	"rare": 5,	"classID": 126730,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "96e7b01e3c118c8fe4b5c1625d4b564b"	}
+	{	"id": 1061,	"name": "疾風かまいたちキシマ",	"rare": 5,	"classID": 126730,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "96e7b01e3c118c8fe4b5c1625d4b564b"	},
+	{	"id": 1062,	"name": "見習い海巫女リバン",	"rare": 2,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "a713ac52047bd38a8a94b733b212df59"	},
+	{	"id": 1063,	"name": "下級深海兵",	"rare": 1,	"classID": 126801,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "837fb8d3f56e96d798d49bb3a20a78b1"	},
+	{	"id": 1064,	"name": "奇想の発明家タバサ",	"rare": 4,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "18fe5fd24e09c59a28c0a5cfc5c0a2f3",	"imgaw": "5188cb61ecd1ce7c1c2f389022833631"	},
+	{	"id": 1065,	"name": "潜水騎士マルスィ",	"rare": 3,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "a73b83ddf16947717f27d250b021ba5a",	"imgaw": "c71ecb033e673426805edd0b217871de"	}
 ]
