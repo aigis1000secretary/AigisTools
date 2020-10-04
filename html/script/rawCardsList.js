@@ -1,4 +1,4 @@
-var maxCid = 1070;
+var maxCid = 1079;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1049,5 +1049,14 @@ var charaData = [
 	{	"id": 1065,	"name": "潜水騎士マルスィ",	"rare": 3,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "a73b83ddf16947717f27d250b021ba5a",	"imgaw": "c71ecb033e673426805edd0b217871de"	},
 	{	"id": 1066,	"name": "白泉",	"rare": 5,	"classID": 47,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "850bba58389152aec971efbbd9068c6f"	},
 	{	"id": 1067,	"name": "封妖の弓士レンゲ",	"rare": 4,	"classID": 6000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "2cbdf7802b2cbcebedf45dbe2168184e",	"imgaw": "4e2ac383d4ee163a52703f1c2be4b75c"	},
-	{	"id": 1068,	"name": "風花の槍士トモエ",	"rare": 5,	"classID": 121500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "0c8ad9f24505d31c75ce56a94f53cf66",	"imgaw": "7f632191811e19228ad7700caa687c0c"	}
+	{	"id": 1068,	"name": "風花の槍士トモエ",	"rare": 5,	"classID": 121500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "0c8ad9f24505d31c75ce56a94f53cf66",	"imgaw": "7f632191811e19228ad7700caa687c0c"	},
+	{	"id": 1069,	"name": "符術士アキラ",	"rare": 5,	"classID": 16700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "a6e7629e748a1a5ae16d327426812f08",	"imgaw": "d9631c8b9489282bd9a68d62b01fe896"	},
+	{	"id": 1070,	"name": "ちびディーナ",	"rare": 3,	"classID": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "5b09e7f0a91dd3bcbbf889314d6da4b7"	},
+	{	"id": 1071,	"name": "ちびミネルバ",	"rare": 3,	"classID": 30400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "a7b4d2308020e9f5f898b24b55077f9b"	},
+	{	"id": 1072,	"name": "山岳霊符",	"rare": 5,	"classID": 18200,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "2df28b771a52d2f98f317a60ce2f1f17"	},
+	{	"id": 1073,	"name": "大山嶺霊符",	"rare": 5,	"classID": 18230,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "268a13c250641eed319689669a8a8998"	},
+	{	"id": 1074,	"name": "火球霊符",	"rare": 5,	"classID": 18300,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "4f6bd113921d617cd1bb1454dd3858a6"	},
+	{	"id": 1075,	"name": "陽光霊符",	"rare": 5,	"classID": 18330,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "1f3f0003a195a84de1776ab29a670fe6"	},
+	{	"id": 1076,	"name": "清泉霊符",	"rare": 5,	"classID": 18400,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "6d297b240c4c30549e6996b2665fc31f"	},
+	{	"id": 1077,	"name": "ミズチ",	"rare": 5,	"classID": 36,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "e1d4b2810db191ffd6a82c1f7725058f"	}
 ]
