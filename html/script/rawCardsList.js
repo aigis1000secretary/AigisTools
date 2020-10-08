@@ -1058,5 +1058,6 @@ var charaData = [
 	{	"id": 1074,	"name": "火球霊符",	"rare": 5,	"classID": 18300,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "4f6bd113921d617cd1bb1454dd3858a6"	},
 	{	"id": 1075,	"name": "陽光霊符",	"rare": 5,	"classID": 18330,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "1f3f0003a195a84de1776ab29a670fe6"	},
 	{	"id": 1076,	"name": "清泉霊符",	"rare": 5,	"classID": 18400,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "6d297b240c4c30549e6996b2665fc31f"	},
-	{	"id": 1077,	"name": "ミズチ",	"rare": 5,	"classID": 36,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "e1d4b2810db191ffd6a82c1f7725058f"	}
+	{	"id": 1077,	"name": "ミズチ",	"rare": 5,	"classID": 36,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "e1d4b2810db191ffd6a82c1f7725058f"	},
+	{	"id": 1079,	"name": "易占竜ペドラ",	"rare": 4,	"classID": 10500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "e1f2065b77ce8660a3a56da209e4c6e7",	"imgaw": "e65800a76bf9b7cee87dfd2208964a3a"	}
 ]
