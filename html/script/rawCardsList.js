@@ -1,4 +1,4 @@
-var maxCid = 1079;
+var maxCid = 1083;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1059,5 +1059,9 @@ var charaData = [
 	{	"id": 1075,	"name": "陽光霊符",	"rare": 5,	"classID": 18330,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "1f3f0003a195a84de1776ab29a670fe6"	},
 	{	"id": 1076,	"name": "清泉霊符",	"rare": 5,	"classID": 18400,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "6d297b240c4c30549e6996b2665fc31f"	},
 	{	"id": 1077,	"name": "ミズチ",	"rare": 5,	"classID": 36,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "e1d4b2810db191ffd6a82c1f7725058f"	},
-	{	"id": 1079,	"name": "易占竜ペドラ",	"rare": 4,	"classID": 10500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "e1f2065b77ce8660a3a56da209e4c6e7",	"imgaw": "e65800a76bf9b7cee87dfd2208964a3a"	}
+	{	"id": 1079,	"name": "易占竜ペドラ",	"rare": 4,	"classID": 10500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "e1f2065b77ce8660a3a56da209e4c6e7",	"imgaw": "e65800a76bf9b7cee87dfd2208964a3a"	},
+	{	"id": 1080,	"name": "菓子祭の魔術師メメント",	"rare": 4,	"classID": 11600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "bd67f84d2a39b95872af1f2a21186bb2",	"imgaw": "a0d4affd29c6045feb385029e62458d3"	},
+	{	"id": 1081,	"name": "秋祭の召喚士リヴル",	"rare": 4,	"classID": 13300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "33a297f2575d5f31ff61329af0ff8581",	"imgaw": "3a811f09d847cde9d3623bd3815564a9"	},
+	{	"id": 1082,	"name": "怪夜の仮装剣士アンブレ",	"rare": 5,	"classID": 4000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "8bb5a37bd313573377a829c42fad8b9b",	"imgaw": "e0c0c530bd072761dea1c6e36cf00a5c",	"imgaw2A": "e0c0c530bd072761dea1c6e36cf00a5c",	"imgaw2B": "e0c0c530bd072761dea1c6e36cf00a5c"	},
+	{	"id": 1083,	"name": "パンプキンデウス",	"rare": 5,	"classID": 127000,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "152a5f88163187ae3ff3d3c8fe23c19f"	}
 ]
