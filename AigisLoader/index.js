@@ -551,7 +551,11 @@ const aigisMapHash = async function () {
         let pngMd5 = md5f(pngBinary.toString());
         // check data
         if (mapHashList[fileName] && mapHashList[fileName] != pngMd5) {
-            console.log(` file ${fileName} md5 changed... ${pngMd5}`);
+            if (!["1af385e955caf0a4cd51da219e051725", "bc0b659e8611a7f0f28977af403c9e91"].includes(pngMd5)) {
+                mapHashList[fileName] = pngMd5;
+            } else {
+                console.log(` file ${fileName} md5 changed... Need data check!! ${pngMd5}`);
+            }
         } else {
             mapHashList[fileName] = pngMd5;
         }
@@ -597,6 +601,7 @@ const aigisMapHash = async function () {
 const aigisMapData = async function () {
 
     // map position
+    // let mapHashList = eval(`(${fs.readFileSync("./html/script/rawMapHashList.js").toString().replace(/^let mapHashList = /, "")})`);
     let mapDataList = eval(`(${fs.readFileSync("./html/script/rawMapDataList.js").toString().replace(/^let mapDataList = /, "")})`);
 
     let rawList = resourceList.filter((file) => /Map\d\S+\.aar\S+Location\d+\S+\.txt$/i.test(file));
@@ -633,7 +638,14 @@ const aigisMapData = async function () {
         if (!mapDataList[mapNo]) { mapDataList[mapNo] = {}; };
         // check data
         if (mapDataList[mapNo][locationNo] && JSON.stringify(mapDataList[mapNo][locationNo]) != JSON.stringify(locationList)) {
-            console.log(` map Map${mapNo} location List changed...`);
+            let sourcePath = raw.replace(/(\.aar.+)$/, ".png");
+            let pngBinary = fs.readFileSync(sourcePath);
+            let pngMd5 = md5f(pngBinary.toString());
+            if (!["1af385e955caf0a4cd51da219e051725", "bc0b659e8611a7f0f28977af403c9e91"].includes(pngMd5)) {
+                mapDataList[mapNo][locationNo] = locationList;
+            } else {
+                console.log(` map Map${mapNo} location List changed... Need data check!!`);
+            }
         } else {
             mapDataList[mapNo][locationNo] = locationList;
         }
