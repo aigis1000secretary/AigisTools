@@ -553,8 +553,8 @@ const aigisMapHash = async function () {
         if (mapHashList[fileName] && mapHashList[fileName] != pngMd5) {
             if (!["1af385e955caf0a4cd51da219e051725", "bc0b659e8611a7f0f28977af403c9e91"].includes(pngMd5)) {
                 mapHashList[fileName] = pngMd5;
-            } else {
-                console.log(` file ${fileName} md5 changed... Need data check!! ${pngMd5}`);
+                // } else {
+                // console.log(` file ${fileName} md5 changed... Need data check!! ${pngMd5}`);
             }
         } else {
             mapHashList[fileName] = pngMd5;
@@ -621,9 +621,9 @@ const aigisMapData = async function () {
         }
 
         locationList.sort((a, b) => {
-            if (parseInt(a.ObjectID) != parseInt(b.ObjectID)) return (parseInt(a.ObjectID) > parseInt(b.ObjectID)) ? -1 : 1;
-            if (parseInt(a.X) != parseInt(b.X)) return (parseInt(a.X) > parseInt(b.X)) ? -1 : 1;
-            if (parseInt(a.Y) != parseInt(b.Y)) return (parseInt(a.Y) > parseInt(b.Y)) ? -1 : 1;
+            if (parseInt(a.ObjectID) != parseInt(b.ObjectID)) return (parseInt(a.ObjectID) < parseInt(b.ObjectID)) ? -1 : 1;
+            if (parseInt(a.X) != parseInt(b.X)) return (parseInt(a.X) < parseInt(b.X)) ? -1 : 1;
+            if (parseInt(a.Y) != parseInt(b.Y)) return (parseInt(a.Y) < parseInt(b.Y)) ? -1 : 1;
             return 0;
         });
         // locationList = quest.locationList.filter((item) => item === quest.locationList.find(((pos) =>
@@ -643,8 +643,8 @@ const aigisMapData = async function () {
             let pngMd5 = md5f(pngBinary.toString());
             if (!["1af385e955caf0a4cd51da219e051725", "bc0b659e8611a7f0f28977af403c9e91"].includes(pngMd5)) {
                 mapDataList[mapNo][locationNo] = locationList;
-            } else {
-                console.log(` map Map${mapNo} location List changed... Need data check!!`);
+                // } else {
+                // console.log(` map Map${mapNo} location List changed... Need data check!!`);
             }
         } else {
             mapDataList[mapNo][locationNo] = locationList;
@@ -656,6 +656,9 @@ const aigisMapData = async function () {
         .replace(/\n\t\t\t\{/g, "{")
         .replace(/\n\t\t\t\}/g, "}")
         .replace(/\n\t\t\]/g, "]")
+        .replace(/\{\n\t\t"/g, "{\t\"")
+        .replace(/\n\t\t"/g, "\n\t\t\t\t\"")
+        .replace(/\n\t\}/g, "}")
     // let jsString = JSON.stringify(mapDataList)
     fs.writeFileSync("./html/script/rawMapDataList.js", "let mapDataList = " + jsString);
     console.log("fs.writeFileSync( ./html/script/rawMapDataList.js )");
