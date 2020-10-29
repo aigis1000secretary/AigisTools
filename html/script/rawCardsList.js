@@ -1,4 +1,4 @@
-var maxCid = 1083;
+var maxCid = 1092;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1063,5 +1063,14 @@ var charaData = [
 	{	"id": 1080,	"name": "菓子祭の魔術師メメント",	"rare": 4,	"classID": 11600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "bd67f84d2a39b95872af1f2a21186bb2",	"imgaw": "a0d4affd29c6045feb385029e62458d3"	},
 	{	"id": 1081,	"name": "秋祭の召喚士リヴル",	"rare": 4,	"classID": 13300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "33a297f2575d5f31ff61329af0ff8581",	"imgaw": "3a811f09d847cde9d3623bd3815564a9"	},
 	{	"id": 1082,	"name": "怪夜の仮装剣士アンブレ",	"rare": 5,	"classID": 4000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "8bb5a37bd313573377a829c42fad8b9b",	"imgaw": "e0c0c530bd072761dea1c6e36cf00a5c",	"imgaw2A": "e0c0c530bd072761dea1c6e36cf00a5c",	"imgaw2B": "e0c0c530bd072761dea1c6e36cf00a5c"	},
-	{	"id": 1083,	"name": "パンプキンデウス",	"rare": 5,	"classID": 127000,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "152a5f88163187ae3ff3d3c8fe23c19f"	}
+	{	"id": 1083,	"name": "パンプキンデウス",	"rare": 5,	"classID": 127000,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 106,	"year": 2020,	"img": "152a5f88163187ae3ff3d3c8fe23c19f"	},
+	{	"id": 1084,	"name": "鷹翼の鳥人戦士",	"rare": 1,	"classID": 18701,	"sortGroupID": 40,	"placeType": 3,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "d1a35addbddde48210fd68f99755257d"	},
+	{	"id": 1085,	"name": "隼翼の鳥人弓士",	"rare": 1,	"classID": 18801,	"sortGroupID": 40,	"placeType": 3,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "9eb7647bffc9cde8abe482bca36a072a"	},
+	{	"id": 1086,	"name": "鷲翼の戦士ライノー",	"rare": 4,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "901429e947622b6f3abe95da435b8031",	"imgaw": "01363f61238348869dd9e9e86009b4b9"	},
+	{	"id": 1087,	"name": "巡り咲く者アンブローズ",	"rare": 5.1,	"classID": 18500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "e2efc260bc1beb540031a8de6255f88b",	"imgaw": "e2efc260bc1beb540031a8de6255f88b"	},
+	{	"id": 1088,	"name": "巡り咲く者アンブローズ",	"rare": 4.1,	"classID": 18500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "1aae50afcc5877f734750b56e00e6b68",	"imgaw": "1aae50afcc5877f734750b56e00e6b68"	},
+	{	"id": 1089,	"name": "万機の祖たる者アージェ",	"rare": 5.1,	"classID": 127100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "0cb5129a6d35491d91618a99c3c62281",	"imgaw": "0cb5129a6d35491d91618a99c3c62281"	},
+	{	"id": 1090,	"name": "万機の祖たる者アージェ",	"rare": 4.1,	"classID": 127100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "def614b250747262fa18f25ac4c3128a",	"imgaw": "def614b250747262fa18f25ac4c3128a"	},
+	{	"id": 1091,	"name": "魔導ドローン",	"rare": 5,	"classID": 127200,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "523823bd8a5629c9030bef720bbd559f"	},
+	{	"id": 1092,	"name": "ブルームペタル",	"rare": 5,	"classID": 18600,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "c46d3e587bc3ad1f16155bf881d2d5fe"	}
 ]
