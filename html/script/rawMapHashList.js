@@ -2700,5 +2700,9 @@ let mapHashList = {
 	"Map4218.png": "d970bc558fc2ad1b4e670aae22f0a231",
 	"Map4219.png": "d970bc558fc2ad1b4e670aae22f0a231",
 	"Map4220.png": "d970bc558fc2ad1b4e670aae22f0a231",
-	"Map4221.png": "5c82f0582b16d2e4ba1f85f021a3fd6a"
+	"Map4221.png": "5c82f0582b16d2e4ba1f85f021a3fd6a",
+	"Map4222.png": "5ab049b825789acdfdcbe390b056462c",
+	"Map4223.png": "bdbfa5d8f4c23d2ef303886849fbb9c4",
+	"Map4224.png": "bdbfa5d8f4c23d2ef303886849fbb9c4",
+	"Map4225.png": "3899e50d9f327109c04011b6433e3598"
 }

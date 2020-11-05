@@ -1,4 +1,4 @@
-var maxCid = 1092;
+var maxCid = 1097;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1072,5 +1072,10 @@ var charaData = [
 	{	"id": 1089,	"name": "万機の祖たる者アージェ",	"rare": 5.1,	"classID": 127100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "0cb5129a6d35491d91618a99c3c62281",	"imgaw": "0cb5129a6d35491d91618a99c3c62281"	},
 	{	"id": 1090,	"name": "万機の祖たる者アージェ",	"rare": 4.1,	"classID": 127100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "def614b250747262fa18f25ac4c3128a",	"imgaw": "def614b250747262fa18f25ac4c3128a"	},
 	{	"id": 1091,	"name": "魔導ドローン",	"rare": 5,	"classID": 127200,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "523823bd8a5629c9030bef720bbd559f"	},
-	{	"id": 1092,	"name": "ブルームペタル",	"rare": 5,	"classID": 18600,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "c46d3e587bc3ad1f16155bf881d2d5fe"	}
+	{	"id": 1092,	"name": "ブルームペタル",	"rare": 5,	"classID": 18600,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "c46d3e587bc3ad1f16155bf881d2d5fe"	},
+	{	"id": 1093,	"name": "鳶翼の鳥人戦士",	"rare": 2,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "3c98e85ff5a4f16e96d4bdfdd39bff81"	},
+	{	"id": 1094,	"name": "雀翼の射手アエロ",	"rare": 2,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "3845aa0c3dce3fed5ae1377ae8fa0e6c"	},
+	{	"id": 1095,	"name": "潜泳騎士セディナ",	"rare": 4,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "a579fa3afc408815cf14f0bbd36959bf",	"imgaw": "ad8da5d58bc8e5e73cb21b1e9f6ea709"	},
+	{	"id": 1096,	"name": "ちびジークリンデ",	"rare": 3,	"classID": 23000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 108,	"year": 2020,	"img": "adaf775d4642d85d5be0f79b2045e22e"	},
+	{	"id": 1097,	"name": "ちびアンジェリーネ",	"rare": 3,	"classID": 20500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 2,	"genus": 108,	"year": 2020,	"img": "fd0202934b67ab80b829470366542067"	}
 ]
