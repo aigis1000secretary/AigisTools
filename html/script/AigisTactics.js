@@ -481,6 +481,7 @@ let onChangeSelectMissionType = function (select) {
 
             //     if (flag) { items[i] = ""; }
             // }; items = items.filter(i => i != "");
+            items.sort((a, b) => { return b.localeCompare(a); });   // sort by missionID & reverse 
         } break;
         case "Devil": {
             items = missionIDs.filter(mID => {
