@@ -1,4 +1,4 @@
-var maxCid = 1104;
+var maxCid = 1111;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -790,7 +790,7 @@ var charaData = [
 	{	"id": 795,	"name": "帝国暗部ヴィクター",	"rare": 3,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2019,	"img": "1fb7afa76933d1140e8b22c97933435f",	"imgaw": "47a9e765f97df5c363a259476b9f86bf"	},
 	{	"id": 796,	"name": "帝国槍騎士メーア",	"rare": 3,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2019,	"img": "83abe928a97f1c495b96778b9b897919",	"imgaw": "d016bb6c79d23abb9fb580e17893b111"	},
 	{	"id": 797,	"name": "帝国狙撃兵ヒルデ",	"rare": 4,	"classID": 13100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2019,	"img": "8e832f062989aea2b01910563bef24fe",	"imgaw": "94d4ee3e6c50cdf931a8223e129d1046"	},
-	{	"id": 798,	"name": "帝国剣士ヴァイス",	"rare": 4,	"classID": 3000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2019,	"img": "efd0a94ba75309075bbe099d8f843351",	"imgaw": "8bf5fb00e6f87f41832664f80ab76d65"	},
+	{	"id": 798,	"name": "帝国剣士ヴァイス",	"rare": 4,	"classID": 3000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2019,	"img": "efd0a94ba75309075bbe099d8f843351",	"imgaw": "8bf5fb00e6f87f41832664f80ab76d65",	"imgaw2A": "e0995093ea36ac2e5c373ae934a76e1c"	},
 	{	"id": 799,	"name": "帝国司教エレオノーラ",	"rare": 5,	"classID": 14800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2019,	"img": "4574a444cf5321a92df2bdd216d20d80",	"imgaw": "1cfb56b385c9275798af528cbe372e2b"	},
 	{	"id": 800,	"name": "小祝福聖霊プレーゼ",	"rare": 5,	"classID": 35,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"img": "564fae534def24f0bbe4b90f4aee51e3"	},
 	{	"id": 801,	"name": "ちびマツリ",	"rare": 3,	"classID": 21500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 108,	"year": 2019,	"img": "d5f85d16f0c03b8817c5759eb0f45703"	},
@@ -1084,5 +1084,12 @@ var charaData = [
 	{	"id": 1101,	"name": "覚賀鳥の射手オーキュ",	"rare": 4,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "a56e0d6900640f3d0b08de3b0d154b60",	"imgaw": "a7ee32076e4862d410833bb6e6a1338c"	},
 	{	"id": 1102,	"name": "スカイウォリアートークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "8c44410e61243675a15b85dd7fac19e1"	},
 	{	"id": 1103,	"name": "スカイシュータートークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "11ed230aae5a752dfb066cf850199473"	},
-	{	"id": 1104,	"name": "ヨシノ",	"rare": 5,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "7fd2a48772fe9d2fe01d2d5db89864cc",	"imgaw": "fbd2a58e878ec97c3fa4330c276ee160",	"imgaw2A": "0fa2114e820e1ee0883dfaadc8b2367b",	"imgaw2B": "7b8fd5129357e0220d751b4a5e8e566f"	}
+	{	"id": 1104,	"name": "ヨシノ",	"rare": 5,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "7fd2a48772fe9d2fe01d2d5db89864cc",	"imgaw": "fbd2a58e878ec97c3fa4330c276ee160",	"imgaw2A": "0fa2114e820e1ee0883dfaadc8b2367b",	"imgaw2B": "7b8fd5129357e0220d751b4a5e8e566f"	},
+	{	"id": 1105,	"name": "彷徨の幻獣使いツキコ",	"rare": 5,	"classID": 14200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2020,	"img": "9b5557f032a1887bbee6f969a57aafc2",	"imgaw": "143d82ffda38d0595c0221da9403d38d"	},
+	{	"id": 1106,	"name": "帝国発明家ヘンドリカ",	"rare": 4,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2020,	"img": "aa6eb8585b01b7b2334414febc37a435",	"imgaw": "be2714057ac73d85382a105f7e824d4e"	},
+	{	"id": 1107,	"name": "帝国斥候カーナ",	"rare": 4,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2020,	"img": "431af3302967db866b84327f697eeab3",	"imgaw": "eb4c116f96c7982b8885fd39a2f6a46e"	},
+	{	"id": 1108,	"name": "帝国飛行士ケイトリッジ",	"rare": 3,	"classID": 18000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 0,	"assign": 2,	"genus": 0,	"year": 2020,	"img": "072e994d4cf681c21967ca4208279764",	"imgaw": "57bdd24a9ef5db76a7be463c469ee841"	},
+	{	"id": 1109,	"name": "白翼の戦士パリオス",	"rare": 5,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "87c5f6c04a64f9b31b6f95599fe3a716",	"imgaw": "7359b1ed774ee961285f7e4b59f72531"	},
+	{	"id": 1110,	"name": "銀腕を掲げし者トラム",	"rare": 4.1,	"classID": 127400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "926d0e8a4c9cdbb1ca0a98583fe55c07",	"imgaw": "926d0e8a4c9cdbb1ca0a98583fe55c07"	},
+	{	"id": 1111,	"name": "グングニル王子",	"rare": 5.2,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "2186dea6c487eed2dfc4596eee43883c"	}
 ]
