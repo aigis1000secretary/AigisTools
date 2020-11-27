@@ -68,9 +68,9 @@ local function getlist_raw(list)
     assert(h:close())
     base = "http://assets.millennium-war.com/"
   else
-  
     local part1, part2
-    base, part1, part2 = list:match('(http://assets%.millennium%-war%..../)([%x]+)/([%d%l]+)')
+    --base, part1, part2 = list:match('(http://assets%.millennium%-war%..../)([%x]+)/([%d%l]+)')
+    base, part1, part2 = list:match('(https://drc1bk94f7rq8%.cloudfront%..../)([%x]+)/([%d%l]+)')
     assert(base)
     local fname = getfile_raw(base, part1, part2)
     local h = assert(io.open(fname, 'rb'))

@@ -390,12 +390,15 @@ const aigisMissionList = async function () {
         missionList[310050] = "砂浜を駆ける魔術師";
         missionList[310051] = "密林のハロウィンパーティー";
         missionList[310052] = "デーモンサンタのおもちゃ工場";
+        missionList[310053] = "迷子の悪魔召喚士";
+        missionList[310054] = "捧げし信仰、奪われた意思";
     }
 
     // ready to write to file
     let keys = Object.keys(missionList);
     keys.sort(function compare(a, b) {
-        if (missionList[a] != missionList[b]) return (missionList[a].localeCompare(missionList[b]) > 0) ? -1 : 1;
+        if (!!missionList[a] && !!missionList[b] &&
+            missionList[a] != missionList[b]) return (missionList[a].localeCompare(missionList[b]) > 0) ? -1 : 1;
         if (a != b) return (a < b ? -1 : 1);
         return 0;
     });
@@ -513,7 +516,8 @@ const aigisQuestList = async function () {
 
     // sort quest
     questList.sort(function compare(a, b) {
-        if (a.missionTitle != b.missionTitle) return (a.missionTitle.localeCompare(b.missionTitle) > 0) ? -1 : 1;
+        if (!!a.missionTitle && !!b.missionTitle &&
+            a.missionTitle != b.missionTitle) return (a.missionTitle.localeCompare(b.missionTitle) > 0) ? -1 : 1;
         if (parseInt(a.questID) != parseInt(b.questID)) return (parseInt(a.questID) < parseInt(b.questID)) ? -1 : 1;
         return 0;
     })

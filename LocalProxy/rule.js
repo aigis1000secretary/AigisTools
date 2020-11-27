@@ -85,7 +85,8 @@ module.exports = {
     *beforeDealHttpsRequest(requestDetail) {
         let hostlist = [
             "millennium-war.net:443",    // AigisR units information / missions information
-            "all.millennium-war.net:443"    // Aigis units information / missions information
+            "all.millennium-war.net:443",    // Aigis units information / missions information
+			"drc1bk94f7rq8.cloudfront.net:443"
         ];
         return (hostlist.indexOf(requestDetail.host) != -1);
     }
