@@ -1,4 +1,4 @@
-var maxCid = 1114;
+var maxCid = 1117;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -253,7 +253,7 @@ var charaData = [
 	{	"id": 251,	"name": "月影の弓騎兵リオン",	"rare": 5,	"classID": 2600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2015,	"img": "78ca4631edda572c30ae4c82de96b0ae",	"imgaw": "8f76d45f873f56fbc5418a3dab50d2a8"	},
 	{	"id": 252,	"name": "雷竜騎士エレニア",	"rare": 4,	"classID": 2500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2015,	"img": "29aff0908af90130eba677b634c9bb55",	"imgaw": "56c08564b6249dac94a1296be2e7c8b8"	},
 	{	"id": 253,	"name": "旅の司祭ポーラ",	"rare": 4,	"classID": 10800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"img": "d07856b18fbacff79006c715a1f75880",	"imgaw": "811c807d7c1d8c276dc1eb3d28c6c92e",	"imgaw2A": "ec1565dff76d7792464ed271a7ee9d4c"	},
-	{	"id": 254,	"name": "お宝泥棒レダ",	"rare": 3,	"classID": 12200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2015,	"img": "4fa8e3d4a909ca163c95915207093e44",	"imgaw": "dd39464b1f1de8fb5b96e4e7edaeb412"	},
+	{	"id": 254,	"name": "お宝泥棒レダ",	"rare": 3,	"classID": 12200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2015,	"img": "4fa8e3d4a909ca163c95915207093e44",	"imgaw": "dd39464b1f1de8fb5b96e4e7edaeb412",	"imgaw2A": "ba457aa5b7075e35ab85435dac0adcc9"	},
 	{	"id": 255,	"name": "神官戦士セラ",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"img": "db76f3eb4150651f5724a21131cdecbb",	"imgaw": "353eb166f26a7569b0a15ff35a4c49c3"	},
 	{	"id": 256,	"name": "妖精魔鎧兵ライチ",	"rare": 3,	"classID": 2400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"img": "3b78cc91e9e455d648d0afbd30e741cf",	"imgaw": "fac22dda93648d4ba0c44c38ce6c859b",	"imgaw2A": "11feea917d1449ceb45cdfb2ad89b998",	"imgaw2B": "73b9cc80eae0ae110c99bb5bfc3f679b"	},
 	{	"id": 257,	"name": "森の守り手ローリエ",	"rare": 3,	"classID": 11800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2015,	"img": "5a3a488be91adf20aeb51956a2e3c220",	"imgaw": "c42e2b728873c4f290a5f416b82b978a",	"imgaw2B": "d20528487566b3e33bf7fabb8e164bed"	},
@@ -1093,5 +1093,8 @@ var charaData = [
 	{	"id": 1110,	"name": "銀腕を掲げし者トラム",	"rare": 4.1,	"classID": 127400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "926d0e8a4c9cdbb1ca0a98583fe55c07",	"imgaw": "926d0e8a4c9cdbb1ca0a98583fe55c07"	},
 	{	"id": 1111,	"name": "グングニル王子",	"rare": 5.2,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "2186dea6c487eed2dfc4596eee43883c"	},
 	{	"id": 1113,	"name": "ちびティファ",	"rare": 3,	"classID": 22500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "cd62b5fc61ed6155f73aa8ea11938e0b"	},
-	{	"id": 1114,	"name": "ちびジュノン",	"rare": 3,	"classID": 20400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "11e1a1704af9650097b684597129210e"	}
+	{	"id": 1114,	"name": "ちびジュノン",	"rare": 3,	"classID": 20400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "11e1a1704af9650097b684597129210e"	},
+	{	"id": 1115,	"name": "聖なる銀夜ティファ",	"rare": 5,	"classID": 2500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 107,	"year": 2020,	"img": "f2be2506e22055236f0ece0eb50d1ff5",	"imgaw": "701e2d50043ccc45ccce15d4c857fc38"	},
+	{	"id": 1116,	"name": "光と闇の聖夜ヘイオス",	"rare": 5,	"classID": 1200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 107,	"year": 2020,	"img": "75a43f6720df271d9f1692a29c400c47",	"imgaw": "a5855e3075f02cfcfd0e8af768f2b55f"	},
+	{	"id": 1117,	"name": "聖夜の踊り子ブレリア",	"rare": 4,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 107,	"year": 2020,	"img": "dc5b26cf40abbbdf0c60e39f1d880003",	"imgaw": "0eae2e769b375d8328923cc3299e8f77"	}
 ]
