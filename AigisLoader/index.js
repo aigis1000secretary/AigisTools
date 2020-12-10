@@ -417,6 +417,29 @@ const aigisQuestList = async function () {
     let questList = [];
     questList = eval(fs.readFileSync("./html/script/rawQuestList.js").toString().replace(/^let questList = /, ""));
 
+    // format quest list
+    for (let i = 0; i < questList.length; ++i) {
+        let id = "mID/qID";
+        let questID = "QuestID";
+        let questName = "QuestTitle";
+        let missionID = "mID";
+        let missionTitle = "mTitle";
+        let map = "map";
+        let location = "location";
+        let life = "life";
+        let startUP = "startUP";
+        let unitLimit = "unitLimit";
+
+        let quest = {
+            id, map,
+            missionTitle, questName,
+            missionID, questID,
+            location,
+            life, startUP, unitLimit
+        };
+        questList[i] = Object.assign(quest, questList[i]);
+    }
+
     // set quest data
     for (let questRaw of questListData) {
         let id = "mID/qID";
@@ -432,10 +455,10 @@ const aigisQuestList = async function () {
 
         // build quest data
         let quest = {
-            id,
+            id, map,
             missionTitle, questName,
             missionID, questID,
-            map, location,
+            location,
             life, startUP, unitLimit
         };
         let q = questList.find((q) => (q.questID == questID));
@@ -547,7 +570,7 @@ const aigisMapHash = async function () {
     rawList.push(resourceList.find((file) => (/BattleEffect[\S]+793_001\.png$/i.test(file))));
 
     // map png
-    let mapHashList = eval(`(${fs.readFileSync("./html/script/rawMapHashList.js").toString().replace(/^let mapHashList = /, "")})`);
+    let mapHashList = eval(`(${fs.readFileSync("./html/script/rawMapHashList.js").toString().replace("let mapHashList = ", "")})`);
     for (let sourcePath of rawList) {
 
         let fileName = path.win32.basename(sourcePath);
@@ -596,7 +619,18 @@ const aigisMapHash = async function () {
         }
     }
 
-    fs.writeFileSync("./html/script/rawMapHashList.js", "let mapHashList = " + JSON.stringify(mapHashList, null, "\t"));
+    // ready to write to file
+    let jsString = JSON.stringify(mapHashList, null, "\t")
+    .replace(/[\{\}\,]/g, "")
+    .replace(/[\n\t]+/g, "\n")
+    .replace(/^\n+|\n+$/g, "")
+    .split("\n");
+    
+    // console.log(`<${jsString}>`)
+    // sort quest
+    jsString.sort();
+
+    fs.writeFileSync("./html/script/rawMapHashList.js", `let mapHashList = {\n\t${jsString.join(",\n\t")}\n}`);
     console.log("fs.writeFileSync( ./html/script/rawMapHashList.js )");
 
     console.log("aigisMapHash done\n");
