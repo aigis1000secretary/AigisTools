@@ -1,4 +1,4 @@
-var maxCid = 1125;
+var maxCid = 1132;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1104,5 +1104,12 @@ var charaData = [
 	{	"id": 1122,	"name": "魚人戦士オーベッド",	"rare": 2,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "8b02a5e01018263a057731250232fbc6"	},
 	{	"id": 1123,	"name": "森の魔女ユーティ",	"rare": 4,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "7578d79e9597a0ca44f1b1a9c214fb3a",	"imgaw": "c9a9264a86895b42a1a37168b95754ee"	},
 	{	"id": 1124,	"name": "スケルトンナイト",	"rare": 5,	"classID": 2370,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "534f659222d1372786238d38f86ba542"	},
-	{	"id": 1125,	"name": "リッチ",	"rare": 5,	"classID": 2380,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "39026f85173fa26e7ed3952dc75082e3"	}
+	{	"id": 1125,	"name": "リッチ",	"rare": 5,	"classID": 2380,	"sortGroupID": 11,	"placeType": 3,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "39026f85173fa26e7ed3952dc75082e3"	},
+	{	"id": 1126,	"name": "晴着の親衛隊シャディア",	"rare": 5,	"classID": 8900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 101,	"year": 2020,	"img": "bd5b8ff11769578a4bfad7abcecb3bdd",	"imgaw": "2e2fdbc1e649c5f82eeb340dee4d7e4c"	},
+	{	"id": 1127,	"name": "新春召喚始めグリム",	"rare": 5,	"classID": 15900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 101,	"year": 2020,	"img": "8871df1e9224963d236dde1968564f53",	"imgaw": "ce02a7bae015aaa12700659905e7d5d7"	},
+	{	"id": 1128,	"name": "メカゴブリン女王【並行世界】",	"rare": 5,	"classID": 19100,	"sortGroupID": 11,	"placeType": 2,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "3712c8c62c247691d91b631a408b8892"	},
+	{	"id": 1129,	"name": "本気のメカゴブリン女王【並行世界】",	"rare": 5,	"classID": 19130,	"sortGroupID": 11,	"placeType": 2,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "ecf2cc777545c718f8bd7a506bba5f6b"	},
+	{	"id": 1130,	"name": "悪魔の新春祝いエフネ",	"rare": 4,	"classID": 125600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 101,	"year": 2020,	"img": "ff472432f8a1decfc9c9d18e05dc9e29",	"imgaw": "8b6152b9283e0b69bf8463d6d478d3c4"	},
+	{	"id": 1131,	"name": "等身大ガオレオン人形",	"rare": 5,	"classID": 48,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "e561d99b07a5a66263f0bc4e385a021c"	},
+	{	"id": 1132,	"name": "デウスエクスマキナ人形",	"rare": 5,	"classID": 49,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "8d56f3175eb6287e8ec63707e59b5d71"	}
 ]
