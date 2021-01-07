@@ -1,4 +1,4 @@
-var maxCid = 1132;
+var maxCid = 1135;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1111,5 +1111,8 @@ var charaData = [
 	{	"id": 1129,	"name": "本気のメカゴブリン女王【並行世界】",	"rare": 5,	"classID": 19130,	"sortGroupID": 11,	"placeType": 2,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "ecf2cc777545c718f8bd7a506bba5f6b"	},
 	{	"id": 1130,	"name": "悪魔の新春祝いエフネ",	"rare": 4,	"classID": 125600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 101,	"year": 2020,	"img": "ff472432f8a1decfc9c9d18e05dc9e29",	"imgaw": "8b6152b9283e0b69bf8463d6d478d3c4"	},
 	{	"id": 1131,	"name": "等身大ガオレオン人形",	"rare": 5,	"classID": 48,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "e561d99b07a5a66263f0bc4e385a021c"	},
-	{	"id": 1132,	"name": "デウスエクスマキナ人形",	"rare": 5,	"classID": 49,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "8d56f3175eb6287e8ec63707e59b5d71"	}
+	{	"id": 1132,	"name": "デウスエクスマキナ人形",	"rare": 5,	"classID": 49,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "8d56f3175eb6287e8ec63707e59b5d71"	},
+	{	"id": 1133,	"name": "ちびシャディア",	"rare": 3,	"classID": 28900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "0c3a1bcebdd137112e06a540dad9cf5e"	},
+	{	"id": 1134,	"name": "ちびオロチヒメ",	"rare": 3,	"classID": 32300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 108,	"year": 2020,	"img": "a110aeb98bac5b52e2ffa97236bbaec6"	},
+	{	"id": 1135,	"name": "ナンディ王子",	"rare": 5.2,	"classID": 9960,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "b975d26cca3f005f07a47d23b22900b9"	}
 ]
