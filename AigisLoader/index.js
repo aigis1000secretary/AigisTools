@@ -146,6 +146,7 @@ const downloadRawData = async function () {
     });
 
     // download
+    rawList.sort();
     for (let rawFile of rawList) {
         console.log(`get ${rawFile}`);
         child_process.execSync(`cd ${aigisToolPath} & get ${rawFile}`).toString().trim();
@@ -462,7 +463,7 @@ const aigisQuestList = async function () {
             life, startUP, unitLimit
         };
         let q = questList.find((q) => (q.questID == questID));
-        if (q) {
+        if (q && !q.questID.in(203, 213, 223, 233, 243)) {
             q = questList.indexOf(q);
             questList[q] = quest;
         } else {
@@ -621,11 +622,11 @@ const aigisMapHash = async function () {
 
     // ready to write to file
     let jsString = JSON.stringify(mapHashList, null, "\t")
-    .replace(/[\{\}\,]/g, "")
-    .replace(/[\n\t]+/g, "\n")
-    .replace(/^\n+|\n+$/g, "")
-    .split("\n");
-    
+        .replace(/[\{\}\,]/g, "")
+        .replace(/[\n\t]+/g, "\n")
+        .replace(/^\n+|\n+$/g, "")
+        .split("\n");
+
     // console.log(`<${jsString}>`)
     // sort quest
     jsString.sort();
