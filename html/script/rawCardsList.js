@@ -1,4 +1,4 @@
-var maxCid = 1135;
+var maxCid = 1142;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1114,5 +1114,11 @@ var charaData = [
 	{	"id": 1132,	"name": "デウスエクスマキナ人形",	"rare": 5,	"classID": 49,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "8d56f3175eb6287e8ec63707e59b5d71"	},
 	{	"id": 1133,	"name": "ちびシャディア",	"rare": 3,	"classID": 28900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "0c3a1bcebdd137112e06a540dad9cf5e"	},
 	{	"id": 1134,	"name": "ちびオロチヒメ",	"rare": 3,	"classID": 32300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 8,	"genus": 108,	"year": 2020,	"img": "a110aeb98bac5b52e2ffa97236bbaec6"	},
-	{	"id": 1135,	"name": "ナンディ王子",	"rare": 5.2,	"classID": 9960,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "b975d26cca3f005f07a47d23b22900b9"	}
+	{	"id": 1135,	"name": "ナンディ王子",	"rare": 5.2,	"classID": 9960,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "b975d26cca3f005f07a47d23b22900b9"	},
+	{	"id": 1137,	"name": "湯けむり吸血鬼エマ",	"rare": 5,	"classID": 2900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "ac73f403e11b2a9c59a477c706d20498",	"imgaw": "084675ab76889770a694222a6b1a1f43"	},
+	{	"id": 1138,	"name": "弓兵の湯浴みソーマ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "75a7a7f86707623557e1a6730e13302e",	"imgaw": "76bc6ddbe48f43119fda42004b004efc"	},
+	{	"id": 1139,	"name": "温泉の魔神憑きサオシュ",	"rare": 4,	"classID": 3500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "b9c3c573c578a04b9b42be01542896da",	"imgaw": "2733660a2724aa26c77744ba13ea801e"	},
+	{	"id": 1140,	"name": "秘湯の幻",	"rare": 5,	"classID": 127600,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	},
+	{	"id": 1141,	"name": "秘湯の幻",	"rare": 5,	"classID": 127670,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	},
+	{	"id": 1142,	"name": "秘湯の幻",	"rare": 5,	"classID": 127680,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	}
 ]
