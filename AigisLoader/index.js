@@ -216,22 +216,21 @@ const aigisCardsList = async function () {
             case 581: { assign = -1; break; }
 
             // 真・恋姫†夢想-革命
-            case 648: case 649: case 650:
-            case 651: case 652: case 848:
-            case 849: case 850: case 851:
-            case 852: { assign = -2; break; }
+            case 648: case 649: case 650: case 651: case 652:   // 2018/07
+            case 848: case 849: case 850: case 851: case 852:   // 2019/08
+                { assign = -2; break; }
 
             //  封緘のグラセスタ
             case 719:
             case 720: { assign = -3; break; }
 
             //  ガールズ・ブック・メイカー（GBM）
-            case 815: case 816: case 817:
-            case 818: { assign = -4; break; }
+            case 815: case 816: case 817: case 818: case 819:   // 2019/06
+            case 1015: case 1016: case 1017: case 1018: // 2020/06
+                { assign = -4; break; }
 
             //  流星ワールドアクター
-            case 955:
-            case 956: { assign = -5; break; }
+            case 955: case 956: { assign = -5; break; }
 
             case 497: { name += "（遠国の近衛兵）"; break; }
             case 498: { name += "（遠国の前衛戦術家）"; break; }
@@ -466,7 +465,7 @@ const aigisQuestList = async function () {
         if (q && !q.questID.in(203, 213, 223, 233, 243)) {
             q = questList.indexOf(q);
             questList[q] = quest;
-        } else {
+        } else if (missionID != "mID") {
             questList.push(quest);
         }
     }
