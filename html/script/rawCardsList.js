@@ -1,4 +1,4 @@
-var maxCid = 1142;
+var maxCid = 1144;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1120,5 +1120,7 @@ var charaData = [
 	{	"id": 1139,	"name": "温泉の魔神憑きサオシュ",	"rare": 4,	"classID": 3500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "b9c3c573c578a04b9b42be01542896da",	"imgaw": "2733660a2724aa26c77744ba13ea801e"	},
 	{	"id": 1140,	"name": "秘湯の幻",	"rare": 5,	"classID": 127600,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	},
 	{	"id": 1141,	"name": "秘湯の幻",	"rare": 5,	"classID": 127670,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	},
-	{	"id": 1142,	"name": "秘湯の幻",	"rare": 5,	"classID": 127680,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	}
+	{	"id": 1142,	"name": "秘湯の幻",	"rare": 5,	"classID": 127680,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	},
+	{	"id": 1143,	"name": "天槍騎士団スルーズ",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "abfd19c30c83067743dd2aaee8684dd8"	},
+	{	"id": 1144,	"name": "くノ一チヨメ",	"rare": 5,	"classID": 1000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "66d6e4ba9800ce2139ea69a19238ce5e",	"imgaw": "c49e956e73e961966f6a1dd7dae5cfdd"	}
 ]

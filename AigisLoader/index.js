@@ -466,6 +466,7 @@ const aigisQuestList = async function () {
             q = questList.indexOf(q);
             questList[q] = quest;
         } else if (missionID != "mID") {
+            // } else {
             questList.push(quest);
         }
     }
@@ -885,6 +886,11 @@ const aigisCharacter = async function () {
                 return eval(iExpression);
             });
 
+            // // debug msg
+            // if (name.includes("閃いた")) {
+            //     console.log(`${name}\t text:\n${text}`);
+            // }
+
             for (let influence of infl) {
                 let iType = influence.Data_InfluenceType;
 
@@ -922,13 +928,21 @@ const aigisCharacter = async function () {
 
                 if (iType == 6 && card.InitClassID == 12500) { desc = Math.round(desc / 0.115) / 10; }
 
+                // // debug msg
+                // if (name.includes("閃いた")) {
+                //     console.log(`${name}\t iType: ${iType}\t desc001: ${desc}`);
+                // }
+                // if (skillID == 617) {
+                //     console.log(`${name}\t iType: ${iType}\t desc: ${desc}`);
+                // }
+
                 // iType == 187 即死
                 let desc100 = Math.round(desc * 100);
                 if (iType == 2) { text = text.replace(/<ATK>|<POW_R>|<PATK>/, desc); }         // ATK
                 if (iType == 3) { text = text.replace(/<ATK>|<POW_I>/, desc100); }   // ALL ATK
                 if (iType == 4) { text = text.replace(/<DEF>|<POW_R>/, desc); }         // DEF
                 if (iType == 5) { text = text.replace(/<DEF>|<POW_I>/, desc100); }   // ALL DEF
-                if (iType == 6) { text = text.replace(/<RNG>|<POW_R>/, desc); }
+                if (iType == 6) { text = text.includes("<RNG>") ? text.replace(/<RNG>/, desc) : text = text.replace(/<POW_R>/, desc) }	// RNG
                 if (iType == 7) { text = text.replace(/<NUM_SHOT>/, desc); }
                 if (iType == 8) { text = text.replace(/<AREA>|<POW_R>/, desc); }
                 if (iType == 9) { text = text.replace(/<AVOID>|<POW_I>/, desc100); }
@@ -1178,7 +1192,11 @@ let abilityTextData;
 let nameTextData;
 
 const main = async function () {
-    if (!fs.existsSync(resourcesPath)) { console.log("!fs.existsSync(resources)"); return; }
+    if (!fs.existsSync(resourcesPath)) {
+        console.log("!fs.existsSync(resources)");
+        // return;
+        fs.mkdirSync(resourcesPath);
+    }
 
     console.log(`resourcesPath: ${resourcesPath}`);
 
