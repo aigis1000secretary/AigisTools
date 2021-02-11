@@ -453,6 +453,8 @@ const aigisQuestList = async function () {
         let startUP = questRaw.defAP;
         let unitLimit = questRaw.Capacity;
 
+        if ([203, 213, 223, 233, 243].includes(questID)) continue;
+
         // build quest data
         let quest = {
             id, map,
@@ -462,10 +464,10 @@ const aigisQuestList = async function () {
             life, startUP, unitLimit
         };
         let q = questList.find((q) => (q.questID == questID));
-        if (q && !q.questID.in(203, 213, 223, 233, 243)) {
+        if (q) {
             q = questList.indexOf(q);
             questList[q] = quest;
-        } else if (missionID != "mID") {
+        } else {
             // } else {
             questList.push(quest);
         }
@@ -860,6 +862,11 @@ const aigisCharacter = async function () {
                 let infl0 = skillInflData[i];
                 if (infl0.Data_ID != 0 && infl0.Data_ID != type.ID_Influence) { break; }
                 infl.push(infl0);
+            }
+
+            if (skillID == 1659) {
+                // for  eval(iExpression);
+                var HasAbiInf = () => { return false; };
             }
 
             infl = infl.filter(ele => {

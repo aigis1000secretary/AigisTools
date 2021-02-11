@@ -1,4 +1,4 @@
-var maxCid = 1147;
+var maxCid = 1153;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "11feea917d1449ceb45cdfb2ad89b998"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2013,	"img": "4de9148de1403c9b40ed030df0ffbfbf"	},
@@ -1121,9 +1121,14 @@ var charaData = [
 	{	"id": 1140,	"name": "秘湯の幻",	"rare": 5,	"classID": 127600,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	},
 	{	"id": 1141,	"name": "秘湯の幻",	"rare": 5,	"classID": 127670,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	},
 	{	"id": 1142,	"name": "秘湯の幻",	"rare": 5,	"classID": 127680,	"sortGroupID": 11,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 109,	"year": 2020,	"img": "cd7b44684d402b6a00e6ec8e73e9863c",	"imgaw": "cd7b44684d402b6a00e6ec8e73e9863c"	},
-	{	"id": 1143,	"name": "天槍騎士団スルーズ",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "abfd19c30c83067743dd2aaee8684dd8"	},
+	{	"id": 1143,	"name": "天槍騎士団スルーズ",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "abfd19c30c83067743dd2aaee8684dd8",	"imgaw": "7040b13aeccae38de3b4d3eec1e17e24"	},
 	{	"id": 1144,	"name": "くノ一チヨメ",	"rare": 5,	"classID": 1000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 8,	"genus": 0,	"year": 2020,	"img": "66d6e4ba9800ce2139ea69a19238ce5e",	"imgaw": "c49e956e73e961966f6a1dd7dae5cfdd"	},
 	{	"id": 1145,	"name": "陽光の獅盾テレーゼ",	"rare": 4,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "71c7785d5247721598654849f92c9f81",	"imgaw": "5d6065924ccc031647d6a8505cc317e2"	},
 	{	"id": 1146,	"name": "ちびエマ",	"rare": 3,	"classID": 22900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "2315697126331f12537769b34449a2bb"	},
-	{	"id": 1147,	"name": "ちびメメント",	"rare": 3,	"classID": 31600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "c2344af2e979c60fd69143371cc140be"	}
+	{	"id": 1147,	"name": "ちびメメント",	"rare": 3,	"classID": 31600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"img": "c2344af2e979c60fd69143371cc140be"	},
+	{	"id": 1149,	"name": "慕情の指揮官ルヴェア",	"rare": 4,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 102,	"year": 2020,	"img": "c9d5f1113c44f458070eab0ddd6f9302",	"imgaw": "1a0af7e5b19a88c3f8883793205a8f4c"	},
+	{	"id": 1150,	"name": "ガトーショコラ",	"rare": 5,	"classID": 127700,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "ebb41735fa35de78873d5516c6a1eb74"	},
+	{	"id": 1151,	"name": "お披露目ガトーショコラ",	"rare": 5,	"classID": 127720,	"sortGroupID": 11,	"placeType": 1,	"kind": 2,	"isEvent": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"img": "38805f96c7b19767c5c48f6824f99d80"	},
+	{	"id": 1152,	"name": "内緒の告白エレット",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 1,	"assign": 0,	"genus": 102,	"year": 2020,	"img": "5052a14a0d268eb6c7e9758c40c54528"	},
+	{	"id": 1153,	"name": "神業菓子職人オーガスタ",	"rare": 5,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"isEvent": 0,	"assign": 0,	"genus": 102,	"year": 2020,	"img": "347fd47ee6a925e4d063d828d180ead4",	"imgaw": "79cc086bf90dca33e86f351ccfb8d8fe"	}
 ]
