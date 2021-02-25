@@ -253,15 +253,15 @@ const aigisCardsList = async function () {
         }
 
         // set year
-        if (id <= 85) year = 2013;
-        else if (id <= 201) year = 2014;
-        else if (id <= 323) year = 2015;
-        else if (id <= 437) year = 2016;
-        else if (id <= 572) year = 2017;
-        else if (id <= 726) year = 2018;
-        else if (id <= 942) year = 2019;
-        else if (id <= 1500) year = 2020;
-        else if (id <= 1126) year = 2021;
+        if (id > 1125) year = 2021;
+        else if (id > 942) year = 2020;
+        else if (id > 726) year = 2019;
+        else if (id > 572) year = 2018;
+        else if (id > 437) year = 2017;
+        else if (id > 323) year = 2016;
+        else if (id > 201) year = 2015;
+        else if (id > 85) year = 2014;
+        else year = 2013;
 
         // token flag
         let sellPrice = card.SellPrice;
