@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>千年戦争アイギス　作戦図＋</title>
+  <!-- jq -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- data -->
+  <script src="./script/rawMissionList.js"></script>
+  <script src="./script/rawQuestList.js"></script>
+  <script src="./script/rawMapHashList.js"></script>
+  <script src="./script/rawMapDataList.js"></script>
+  <script src="./script/rawCardsList.js"></script>
+
+  <!-- script -->
+  <script src="./script/AigisTactics.js"></script>
+  <script src="./script/html2canvas.js"></script>
+  <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
+
+
+
+  <!-- css -->
+  <link href='./style/Primary.css' rel='stylesheet' type='text/css' />
+  <link href='./style/AigisTactics.css' rel='stylesheet' type='text/css' />
+  <link href='./style/mapIcon.css' rel='stylesheet' type='text/css' />
+  <link href='./style/shareBoxIcon.css' rel='stylesheet' type='text/css' />
+  <style>
+    @media screen and (max-width: 960px) {
+      body {
+        max-width: 990px;
+      }
+
+      body>.row>.leftcolumn,
+      body>.row>.rightcolumn {
+        min-width: 100%;
+        padding: 0px;
+      }
+    }
+  </style>
+
+</head>
+
+<body onload="bodyOnload();" style="width: 1330px;">
+
+  <div class="header">
+    <h1>千年戦争アイギス　作戦図＋</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="leftcolumn" style="width: 980px;">
+
+      <!-- mapimg box -->
+      <div class="card">
+        <div class="hr">
+          <select id="missionType" onchange="onChangeSelect(this);"> </select>
+          <select id="mission" onchange="onChangeSelect(this);"> </select>
+          <select id="quest" onchange="onChangeSelect(this);"> </select>
+        </div>
+        <!-- init by js methods -->
+        <div id="mapimg" class="mapimg" style="background-image: url(./maps/4f414b3bb77dc850d6c0784c6e961bb6);" title=""
+          onclick="onClickMapimg(event);" ondrop="onDrop(event);" ondragover="onDragOver(event);">
+        </div>
+      </div>
+
+      <!-- tool box -->
+      <div class="row">
+        <div class="leftcolumn" style="width: 40%;">
+          <div class="card">
+
+            <div class="hr">
+              メモ生成
+              <input type="button" onclick="addMomebox();" value="生成">
+            </div>
+            <!-- <div id="memoresult"> </div> -->
+            <div class="inputbox">
+              <textarea id="textbox" style="min-height: 20px; max-width: 100%; overflow: hidden;"></textarea>
+              <!-- onchange="onChangeInputMemobox(event);" onmouseup	="onChangeInputMemobox(event);" -->
+            </div>
+
+          </div>
+        </div>
+
+        <div class="leftcolumn" style="width: 30%; padding-left: 10px;">
+          <div class="card">
+
+            <div class="leftcolumn" style="width: 55%;">
+              <div class="hr">
+
+                <div class="inputbox">
+                  ﾎﾞｰﾀﾞｰ色
+                  <input id="outcolorbox" type="color" onchange="onChangeInput(event);"><br>
+                  背景色
+                  <input id="bgcolorbox" type="color" value="#ffffff" onchange="onChangeInput(event);"><br>
+                  文字色
+                  <input id="textcolorbox" type="color" onchange="onChangeInput(event);"><br>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="rightcolumn" style="width: 45%; padding-left: 0px;">
+              <div class="hr">
+
+                <div class="inputbox">
+                  字体
+                  <input id="textSize" type="number" value="12" min="10" max="30" style="width: 45px;"
+                    onchange="onChangeInput(event);">
+                </div>
+
+              </div>
+            </div>
+            <div style="clear: left"></div>
+
+          </div>
+        </div>
+
+        <div class="rightcolumn" style="width: 30%;">
+          <div class="card">
+
+            <div class="hr">
+              <div class="inputbox">
+                射程倍率：
+                <input id="rangeRatio" type="text" value="1.0" style="width: 155px;" onchange="onChangeInput(event);">
+                悪天候：
+                <select id="weatherType" onchange="onChangeSelect(this);">
+                  <option value="null">　　　無</option>
+                  <option value="769_001.png">　　吹雪</option>
+                  <option value="768_001.png">　猛吹雪</option>
+                  <option value="782_001.png">　　　雨</option>
+                  <option value="783_001.png">　　豪雨</option>
+                  <option value="777_001.png">　　　霧</option>
+                  <option value="777_001.png">　　濃霧</option>
+                  <option value="780_001.png">　　瘴霧</option>
+                  <option value="787_001.png">　紅の霧</option>
+                  <option value="785_001.png">　　砂嵐</option>
+                  <option value="793_001.png">　　強風</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- iconbox -->
+      <div class="card">
+        <div class="hr">
+          <div class="inputbox">
+            フィルタ：
+            <input id="filterbox" type="text" onchange="onChangeInput(event);">
+            <select id="iconStatus" onchange="onChangeSelect(this);">
+              <option value="">　　覚醒前</option>
+              <option value="aw">　　覚醒後</option>
+              <option value="aw2A">　第二覚醒A</option>
+              <option value="aw2B">　第二覚醒B</option>
+            </select>
+          </div>
+        </div>
+        <!-- init by js methods -->
+        <div id="iconbox" onclick="onClickIconbox(event);"> </div>
+      </div>
+
+    </div>
+
+    <div class="rightcolumn" style="width: 340px;">
+
+      <!-- link box -->
+      <div class="card">
+        <a itemprop="url" href="https://twitter.com/Aigis1000/" target="_blank">▼千年戦争アイギスtwitter公式アカウント</a><br>
+        <a itemprop="url" href="https://aigis1000.jp/" target="_blank">▼千年戦争アイギスA公式サイト</a><br>
+        <a itemprop="url" href="https://youtube.com/channel/UCl8iPEgu_N6iEYGYoWXc3gA"
+          target="_blank">▼YouTube「千年戦争アイギス」公式チャンネル</a><br>
+      </div>
+      <div class="card">
+        <a itemprop="url" href="./AigisChecker.html">▼千年戦争アイギス　ユニット所持チェッカー＋</a><br>
+      </div>
+
+      <!-- share box -->
+      <div class="card">
+        作戦図を共有
+        <!-- <input type="button" onclick="openImage();" value="画像生成"> -->
+        <input type="button" onclick="copyUrl();" value="コピペ">
+        <br>
+        <a target="_blank" id="_twitterBtn">
+          <div></div>
+        </a>
+        <a target="_blank" id="_lineBtn">
+          <div></div>
+        </a>
+        <a target="_blank" id="_plurkBtn">
+          <div></div>
+        </a>
+        <br>
+        <div class="_textarea">
+          <textarea id="_sharebox" style="min-height: 80px;">ここに共有する内容が表示されます</textarea>
+        </div>
+        データ保存： <br>
+        <input type="button" style="height: 32px;" onclick="dataSave();" value="保存（JSON）"> <br>
+        データ復元： <br>
+        <input type="file" style="height: 32px;" onchange="dataRestore(event);" accept=".json">
+      </div>
+
+      <!-- <div class="card"> </div> -->
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    All data are from <a href="http://millenniumwaraigis.wikia.com/wiki/Message_Wall:Lzlis">AigisTools release 2</a>
+    <br> Copyright © <a href="https://github.com/aigis1000secretary">aigis1000secretary</a>
+    <br> License is <a href="https://opensource.org/licenses/MIT">MIT</a>
+  </div>
+
+
+
+</body>
+
+</html>

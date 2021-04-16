@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>千年戦争アイギス　ユニット所持チェッカー＋</title>
+  <!-- jq -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- data -->
+  <script src="./script/rawCardsList.js"></script>
+
+  <!-- script -->
+  <script src="./script/AigisChecker.js"></script>
+  <script src="./script/html2canvas.js"></script>
+  <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
+
+  <!-- css -->
+  <link href='./style/Primary.css' rel='stylesheet' type='text/css' />
+  <link href='./style/AigisChecker.css' rel='stylesheet' type='text/css' />
+  <link href='./style/shareBoxIcon.css' rel='stylesheet' type='text/css' />
+
+</head>
+
+<body onload="bodyOnload();">
+
+
+  <div class="header">
+    <h1>千年戦争アイギス　ユニット所持チェッカー＋</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="leftcolumn">
+
+      <div class="card">
+
+        <!-- // init by js methods -->
+        <div id="iconbox"> </div>
+
+      </div>
+
+    </div>
+
+    <div class="rightcolumn">
+
+      <div class="card">
+        <a itemprop="url" href="https://twitter.com/Aigis1000/" target="_blank">▼千年戦争アイギスtwitter公式アカウント</a><br>
+        <a itemprop="url" href="http://aigis1000.jp/" target="_blank">▼千年戦争アイギスA公式サイト</a><br>
+        <a itemprop="url" href="https://www.youtube.com/channel/UCl8iPEgu_N6iEYGYoWXc3gA"
+          target="_blank">▼YouTube「千年戦争アイギス」公式チャンネル</a><br>
+      </div>
+      <div class="card">
+        <a itemprop="url" href="./AigisTactics.html">▼千年戦争アイギス　作戦図＋</a><br>
+      </div>
+
+      <div class="card">
+        所有率を共有
+        <input type="button" onclick="openImage();" value="画像生成">
+        <input type="button" onclick="copyUrl();" value="コピペ">
+        <br>
+        <a target="_blank" id="_twitterBtn">
+          <div></div>
+        </a>
+        <a target="_blank" id="_lineBtn">
+          <div></div>
+        </a>
+        <a target="_blank" id="_plurkBtn">
+          <div></div>
+        </a>
+        <br>
+
+        <div class="_textarea">
+          <textarea id="_sharebox">ここに共有する内容が表示されます</textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        ソート <br>
+
+        <input type="button" onclick="sortByRare(true);   " value="レア順（↗）">
+        <input type="button" onclick="sortByRare(false);  " value="（↘）">
+        <br>
+        <input type="button" onclick="sortByDate(true);   " value="実装順（↗）">
+        <input type="button" onclick="sortByDate(false);  " value="（↘）">
+        <br>
+        <input type="button" onclick="sortByClass(true);  " value="クラス順（↗）">
+        <input type="button" onclick="sortByClass(false); " value="（↘）">
+        <br> 属性別 <br>
+        <input type="button" onclick="sortByKind();       " value="性別">
+        <input type="button" onclick="sortByEvent();      " value="入手先">
+        <input type="button" onclick="sortByAssign();     " value="所属">
+        <input type="button" onclick="sortByGenus();      " value="節分">
+        <input type="button" onclick="sortByYearGacha();  " value="年度ガチャ黒">
+      </div>
+
+      <div class="card">
+        一括選択/解除
+        <input type="button" onclick="undo(true);" value="復元"> <br>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    All data are from <a href="http://millenniumwaraigis.wikia.com/wiki/Message_Wall:Lzlis">AigisTools release 2</a>
+    <br> Copyright © <a href="https://github.com/aigis1000secretary">aigis1000secretary</a>
+    <br> License is <a href="https://opensource.org/licenses/MIT">MIT</a>
+  </div>
+</body>
+
+</html>

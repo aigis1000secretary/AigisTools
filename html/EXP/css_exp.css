@@ -1,0 +1,183 @@
+@charset "UTF-8";
+body {
+  height: 1500px;
+}
+
+.box {
+  display: inline-block;
+}
+
+.box1 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 180px;
+  height: 48px;
+  margin-bottom: 10px;
+}
+
+.box1singleLine {
+  display: inline-block;
+  vertical-align: middle;
+  width: 180px;
+  height: 48px;
+  line-height: 48px;
+  margin-bottom: 5px;
+}
+
+.box1ex {
+  display: inline-block;
+  vertical-align: middle;
+  width: 180px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+.box2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 48px;
+  line-height: 48px;
+  margin-bottom: 5px;
+}
+
+.box3 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 140px;
+  height: 48px;
+  line-height: 48px;
+  margin-bottom: 5px;
+}
+
+.singleLine {
+  line-height: 48px;
+  margin-bottom: 5px;
+}
+
+.innerBox {
+  display: block;
+  vertical-align: middle;
+}
+
+#toggleLang {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  font: 20px;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 0 #000;
+  padding: 10px 8px;
+  margin-left: 50px;
+  background: linear-gradient(rgb(8, 36, 100), rgb(7, 50, 136));
+  border-radius: 5px;
+  border: solid rgb(201, 201, 201) 2px;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+input#ir {
+  width: 52px;
+}
+
+input#si {
+  width: 52px;
+  background-color: #C0C0C0;
+  color: #000;
+}
+
+input#g {
+  width: 52px;
+  background-color: #ffff00;
+  color: #000;
+}
+
+input#sa {
+  width: 52px;
+  background-color: #4169e1;
+  color: #fff;
+}
+
+input#p {
+  width: 52px;
+  background-color: #ffffff;
+  color: #000;
+}
+
+input#b {
+  width: 52px;
+  background-color: #000000;
+  color: #fff;
+}
+
+input#decoratedButton {
+  background-color: #fff;
+  color: #000;
+  border-style: none;
+}
+
+.short {
+  font-size: 14px;
+  letter-spacing: -0.07em;
+}
+
+label, input[type="checkbox"] {
+  cursor: pointer;
+}
+
+small {
+  margin-left: 6px;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+label#acc {
+  background: green;
+  color: #fff;
+  padding: 10px;
+  display: block;
+  margin: 0;
+  border: 1px solid #fff;
+}
+
+input[type="checkbox"].on-off {
+  display: none;
+}
+
+.accContent {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input[type="checkbox"].on-off+.accContent {
+  height: 0;
+  overflow: hidden;
+}
+
+input[type="checkbox"].on-off:checked+.c1 {
+  height: 300px;
+}
+
+input[type="checkbox"].on-off:checked+.c2 {
+  height: 240px;
+}
+
+input[type="checkbox"].on-off:checked+.c3 {
+  height: 430px;
+}
+
+input[type="checkbox"].on-off:checked+.c4 {
+  height: 220px;
+}
