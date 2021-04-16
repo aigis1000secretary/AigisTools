@@ -1,0 +1,16 @@
+{
+  "name": "localproxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anyproxy": "^4.1.3",
+    "jimp": "^0.16.1"
+  }
+}
