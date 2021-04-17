@@ -1,8 +1,7 @@
-
-*.lnk
-*.csv
 .vscode
+
 Thumbs.db
+
 node_modules
 
 Resources
@@ -13,6 +12,4 @@ AigisTools/Data/Cache/
 AigisTools/out/
 AigisTools/working/
 
-AigisLoader/debug.js
-
-temp/
+AigisLoader/raw/
