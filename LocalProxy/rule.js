@@ -1,11 +1,21 @@
 // file: sample.js
 const fs = require('fs');
 
+let xmlpath = "./AigisTools/";
 let filepath = "./AigisTools/";
-let filepathA = "./AigisTools/";
-let filepathR = "./AigisTools/";
-let cachepath = "./AigisTools/Data/Cache/net/";
-// 
+// let cachepath = "./AigisTools/Data/Cache/net/";
+
+const COLOR = {
+    reset: '\x1b[0m', bright: '\x1b[1m', dim: '\x1b[2m',
+    underscore: '\x1b[4m', blink: '\x1b[5m', reverse: '\x1b[7m', hidden: '\x1b[8m',
+
+    fgBlack: '\x1b[30m', fgRed: '\x1b[31m', fgGreen: '\x1b[32m', fgYellow: '\x1b[33m',
+    fgBlue: '\x1b[34m', fgMagenta: '\x1b[35m', fgCyan: '\x1b[36m', fgWhite: '\x1b[37m',
+
+    bgBlack: '\x1b[40m', bgRed: '\x1b[41m', bgGreen: '\x1b[42m', bgYellow: '\x1b[43m',
+    bgBlue: '\x1b[44m', bgMagenta: '\x1b[45m', bgCyan: '\x1b[46m', bgWhite: '\x1b[47m',
+};
+
 module.exports = {
     summary: 'AigisTools auxiliary proxy',
 
@@ -14,27 +24,30 @@ module.exports = {
         if (responseDetail.response.body.length == 0) return null;
 
         let url = requestDetail.url;
+        // console.log(url);
 
-        if (/[0-9a-f]{40}\/[0-9a-z]{32}/i.test(url)) {
-            // list all resource
-            let [, part1, part2] = url.match(/([0-9a-f]{40})\/([0-9a-z]{32})/i);
+        // // get cache for Aigis tools
+        // if (/[0-9a-f]{40}\/[0-9a-z]{32}/i.test(url)) {
+        //     // list all resource
+        //     let [, part1, part2] = url.match(/([0-9a-f]{40})\/([0-9a-z]{32})/i);
 
-            if (!fs.existsSync(`${cachepath}${part1}`)) {
-                fs.mkdirSync(`${cachepath}${part1}`, { recursive: true });
-            }
+        //     if (!fs.existsSync(`${cachepath}${part1}`)) {
+        //         fs.mkdirSync(`${cachepath}${part1}`, { recursive: true });
+        //     }
 
-            // fs.writeFileSync("list.txt", `${url}\n`, { encoding: 'utf8', flag :'a' });
+        //     // fs.writeFileSync("list.txt", `${url}\n`, { encoding: 'utf8', flag :'a' });
 
-            // keep Cache 
-            (() => { fs.writeFileSync(`${cachepath}${part1}/${part2}`, responseDetail.response.body, { encoding: "binary" }); }).call();
-            console.log(url);
-            fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
-        }
+        //     // keep Cache 
+        //     (() => { fs.writeFileSync(`${cachepath}${part1}/${part2}`, responseDetail.response.body, { encoding: "binary" }); }).call();
+        //     console.log(url);
+        //     // fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
+        // }
 
+        // filelist url
         if (url.indexOf('/1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 || url.indexOf('/2iofz514jeks1y44k7al2ostm43xj085') != -1) {
             // get AigisR/Aigis file list
-            console.log(url);
-            fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
+            console.log(`${COLOR.fgRed}${url}${COLOR.reset}`);
+            // fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
 
             // update filepath
             // get Thursday date
@@ -42,65 +55,48 @@ module.exports = {
             while (new Date(updateTime).getDay() != 4) { updateTime -= 86400000; }
 
             // get XML folder name
-            // aigis_2021_00_00R
+            // folderName = aigis_2021_00_00
             let updateDate = new Date(updateTime);
             let folderName = "aigis_" +
                 updateDate.getFullYear().toString() + "_" +
                 (updateDate.getMonth() + 1).toString().padStart(2, "0") + "_" +
                 updateDate.getDate().toString().padStart(2, "0");
 
+
             // get filepath
-            filepathA = "./AigisTools/Data/XML/" + folderName + "/"
-            filepathR = "./AigisTools/Data/XML/" + folderName + "R/"
-            if (url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') == -1) {
-                filepath = filepathA;
-            } else {
-                filepath = filepathR;
-                folderName = folderName + "R";
-            }
+            let filename = url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') == -1 ? "Desktop AQ.txt" : "Desktop R.txt";
+            xmlpath = `./AigisTools/Data/XML`;
+            filepath = `./AigisTools/Data/XML/${folderName}`;
 
             // check dir
+            if (!fs.existsSync(xmlpath)) { fs.mkdirSync(xmlpath, { recursive: true }); }
             if (!fs.existsSync(filepath)) { fs.mkdirSync(filepath, { recursive: true }); }
-            if (!fs.existsSync(filepathA)) { fs.mkdirSync(filepathA, { recursive: true }); }
-            if (!fs.existsSync(filepathR)) { fs.mkdirSync(filepathR, { recursive: true }); }
 
-            // xml.txt
-            fs.writeFile("./AigisTools/xml.txt", folderName, (err) => { if (err) console.log(err); else console.log('xml.txt   has been saved!'); });
-            fs.writeFile(filepath + "xml.txt", folderName, (err) => { if (err) console.log(err); else console.log('xml.txt   backup has been saved!'); });
-
-            // files.txt
-            fs.writeFile("./AigisTools/files.txt", url, (err) => { if (err) console.log(err); else console.log('files.txt has been saved!'); });
-            fs.writeFile(filepath + "files.txt", url, (err) => { if (err) console.log(err); else console.log('files.txt backup has been saved!'); });
-
+            // Desktop X.txt
+            fs.writeFile(`${xmlpath}/${filename}`, url, (err) => { if (err) console.log(err); else console.log(`${filename} has been saved!`); });
+            fs.writeFile(`${filepath}/${filename}`, url, (err) => { if (err) console.log(err); else console.log(`${filename} backup has been saved!`); });
         }
-        if (url.indexOf('/GRs733a4') != -1 || url.indexOf('/QxZpjdfV') != -1) {
-            // units information / missions information
-            console.log(url);
-            fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
 
-            if (/(\S{8})$/.test(url)) {
-                let filename = /(\S{8})$/.exec(url)[0];
-                fs.writeFile(filepathA + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
-                fs.writeFile(filepathR + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
+        // get xml
+        else if (/\/(\S{8})$/.test(url)) {
+            console.log(`${COLOR.fgRed}${url}${COLOR.reset}`);
+
+            let xmlTarget = [
+                'GRs733a4', // units information
+                'QxZpjdfV', // missions information
+                // 'oS5aZ5ll', // army information
+            ]
+            // let  = 
+            let [, xmlName] = url.match(/\/(\S{8})$/);
+
+            if (xmlTarget.includes(xmlName)) {
+                // fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
+
+                let body = responseDetail.response.body.toString("base64");
+                fs.writeFile(`${xmlpath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+                fs.writeFile(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
             }
         }
-        // if (url.indexOf('/oS5aZ5ll') != -1) {
-        //     // army information
-        //     console.log(url);
-
-        //     if (/(\S{8})$/.test(url)) {
-        //         let filename = /(\S{8})$/.exec(url)[0];
-        //         fs.writeFile(filepath + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
-        //     }
-        // }
-        // if (/\/[\S]{8}$/.test(url)) {
-        //     console.log(url);
-
-        //     if (/(\S{8})$/.test(url)) {
-        //         let filename = /(\S{8})$/.exec(url)[0];
-        //         fs.writeFile(filepath + filename, responseDetail.response.body.toString("base64"), (err) => { if (err) console.log(err); else console.log(filename + ' has been saved!'); });
-        //     }
-        // }
 
         return null;
     },
