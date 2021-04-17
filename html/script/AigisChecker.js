@@ -93,12 +93,12 @@ let bodyOnload = function () {
         if (!chara) { ++i; continue; }
 
         let skipList = [1];
-        if (skipList.indexOf(chara.id) != -1 ||             // skip who not a unit
+        if (skipList.indexOf(chara.id) != -1 ||             // skip who not a normal unit
             chara.rare <= 1 ||                              // skip low rare
             chara.sortGroupID == 10 ||                      // skip seirei
-            chara.sortGroupID == 11 ||                      // skip token
-            chara.sortGroupID == 12 ||                      // skip Non-R18 chara
-            chara.img == "c80ae4db8b6b09123493ceea8b63ccc2" // skip no img
+            chara.isToken ||                                // skip token
+            [4, 7].includes(chara.assign)                   // skip Non-R18 chara
+            // chara.img == "c80ae4db8b6b09123493ceea8b63ccc2" // skip no img
         ) {
             // skip
             charaData.splice(i, 1);
@@ -215,19 +215,16 @@ let setHr = function (type) {
             bText = bData.year + "年";
 
         } else if (type == "rare") {
-            let textList = ["", "", "シルバー", "ゴールド", "プラチナ", "ブラック"];
-            aText = aData.rare == 3.5 ? "サファイア" : textList[parseInt(aData.rare)];
-            bText = bData.rare == 3.5 ? "サファイア" : textList[parseInt(bData.rare)];
+            let textList = [, , "シルバー", "ゴールド", "プラチナ", "ブラック", , "サファイア", , , "プラチナ英傑", "ブラック英傑"];
+            aText = textList[parseInt(aData.rare)];
+            bText = textList[parseInt(bData.rare)];
 
-            if (aData.rare * 10 % 10 == 1) aText += "英傑";
-            if (bData.rare * 10 % 10 == 1) bText += "英傑";
+            textList = [, "近接", "遠隔", "両用"];
+            if (aData.rare < 10) aText += " " + textList[aData.placeType];
+            if (bData.rare < 10) bText += " " + textList[bData.placeType];
 
-            textList = ["", "近接", "遠隔", "両用"];
-            aText += " " + textList[aData.placeType];
-            bText += " " + textList[bData.placeType];
-
-            if (aData.rare * 10 % 10 == 2) aText = "王子";
-            if (bData.rare * 10 % 10 == 2) bText = "王子";
+            if (aData.sortGroupID == 25 && aData.id != 418) aText = "王子";
+            if (bData.sortGroupID == 25 && bData.id != 418) bText = "王子";
 
         } else if (type == "classID") {
             let textList = ["", "近接", "遠隔", "両用"];
@@ -241,8 +238,8 @@ let setHr = function (type) {
 
         } else if (type == "isEvent") {
             let textList = ["ガチャ", "イベント", "小説"];
-            aText = textList[(aData.rare == 3.5) ? 2 : aData.isEvent];
-            bText = textList[(bData.rare == 3.5) ? 2 : bData.isEvent];
+            aText = textList[(aData.rare == 7) ? 2 : aData.isEvent];
+            bText = textList[(bData.rare == 7) ? 2 : bData.isEvent];
         } else if (type == "assign") {
             let textList = [];
             textList[-5] = "流星ワールドアクター（流星WA）";
@@ -408,11 +405,17 @@ let sortByRare = function (ascending) {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
+        let iA, iB;
+        iA = aData.rare; iA = iA == 7 ? 3.5 : iA;
+        iB = bData.rare; iB = iB == 7 ? 3.5 : iB;
         // sort by rare
-        if (aData.rare != bData.rare) return (!!ascending == (aData.rare < bData.rare)) ? -1 : 1;
+        if (iA != iB) return (!!ascending == (iA < iB)) ? -1 : 1;
 
+        iA = aData.sortGroupID; iA = aData.id == 418 ? 20 : iA;
+        iB = bData.sortGroupID; iB = bData.id == 418 ? 20 : iB;
         // sort by group
-        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+        if (iA != iB) return (iA < iB) ? -1 : 1;
+
         // sort by class
         if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
@@ -429,8 +432,11 @@ let sortByClass = function (ascending) {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
+        let iA, iB;
+        iA = aData.sortGroupID; iA = aData.id == 418 ? 20 : iA;
+        iB = bData.sortGroupID; iB = bData.id == 418 ? 20 : iB;
         // sort by group
-        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+        if (iA != iB) return (iA < iB) ? -1 : 1;
 
         // sort by class
         if (aData.classID != bData.classID) return (!!ascending == (aData.classID < bData.classID)) ? -1 : 1;
@@ -456,8 +462,13 @@ let sortByKind = function () {
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
+
+        let iA, iB;
+        iA = aData.sortGroupID; iA = aData.id == 418 ? 20 : iA;
+        iB = bData.sortGroupID; iB = bData.id == 418 ? 20 : iB;
         // sort by group
-        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+        if (iA != iB) return (iA < iB) ? -1 : 1;
+
         // sort by class
         if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
@@ -474,9 +485,9 @@ let sortByEvent = function () {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
-        // sort down rare 3.5
-        if (aData.rare == 3.5) return 1;
-        if (bData.rare == 3.5) return -1;
+        // sort down rare 7
+        if (aData.rare == 7) return 1;
+        if (bData.rare == 7) return -1;
 
         // sort by isEvent
         if (aData.isEvent != bData.isEvent) return (aData.isEvent > bData.isEvent) ? -1 : 1;

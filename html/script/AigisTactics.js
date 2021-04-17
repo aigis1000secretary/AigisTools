@@ -50,7 +50,10 @@ let iconboxInit = function () {
         if (!chara) { ++i; continue; }
 
         let skipList = [1];
-        if (skipList.indexOf(chara.id) != -1) {  // skip who not a unit
+        if (skipList.indexOf(chara.id) != -1 ||             // skip who not a normal unit
+            chara.name.indexOf("ダミー") != -1 ||
+            (chara.name == "刻聖霊ボンボリ" && chara.id != 290)
+        ) {
             // skip
             charaData.splice(i, 1);
             continue;
@@ -61,19 +64,49 @@ let iconboxInit = function () {
     // sort database
     charaData.sort(function compare(aData, bData) {
         // sort
-        if ((aData.sortGroupID < 20) != (bData.sortGroupID < 20)) {
-            // npc unit
-            if (aData.sortGroupID < 20) return 1;
-            if (bData.sortGroupID < 20) return -1;
-        } else {
-            if (aData.sortGroupID < 20 && bData.sortGroupID < 20) {
-                // npc unit
-                if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
-            } else {
-                // normal unit, sort by rare
-                if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
-            }
-        }
+        let iA, iB;
+
+        // iA = aData.placeType; iA = (iA == 0 || aData.isToken) ? 4 : iA;
+        // iB = bData.placeType; iB = (iB == 0 || bData.isToken) ? 4 : iB;
+        // if (iA != iB) return (iA < iB) ? -1 : 1;
+
+        iA = (aData.isToken || aData.placeType == 0) ? 1 : 0;
+        iB = (bData.isToken || bData.placeType == 0) ? 1 : 0;
+        if (iA != iB) return (iA < iB) ? -1 : 1;
+
+        // sort by rare
+        iA = aData.rare;
+        iB = bData.rare;
+        if (iA == 7) iA = 3.5;
+        if (iB == 7) iB = 3.5;
+        if (iA >= 10) iA = iA - 6;
+        if (iB >= 10) iB = iB - 6;
+        if (aData.sortGroupID == 10) iA = -1;
+        if (aData.sortGroupID == 10) iB = -1;
+        if (aData.isToken) iA = -2;
+        if (aData.isToken) iB = -2;
+
+        if (iA != iB) return (iA > iB) ? -1 : 1;
+
+
+
+        // if ((aData.sortGroupID < 25) != (bData.sortGroupID < 25)) {
+        //     // npc unit
+        //     if (aData.sortGroupID < 20) return 1;
+        //     if (bData.sortGroupID < 20) return -1;
+        // } else {
+        //     if (aData.sortGroupID < 20 && bData.sortGroupID < 20) {
+        //         // npc unit
+        //         if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
+        //     } else {
+        //         // normal unit, sort by rare
+        //         let iA, iB;
+        //         iA = aData.rare; iA = iA == 7 ? 3.5 : iA;
+        //         iB = bData.rare; iB = iB == 7 ? 3.5 : iB;
+        //         // sort by rare
+        //         if (iA != iB) return (iA > iB) ? -1 : 1;
+        //     }
+        // }
 
         // sort by class
         if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
@@ -121,13 +154,17 @@ let iconboxInit = function () {
         let aText = "";
         let bText = "";
 
-        let textList = ["アイアン", "ブロンズ", "シルバー", "ゴールド", "プラチナ", "ブラック"];
-        aText = aData.rare == 3.5 ? "サファイア" : textList[parseInt(aData.rare)];
-        bText = bData.rare == 3.5 ? "サファイア" : textList[parseInt(bData.rare)];
+        let textList = ["アイアン", "ブロンズ", "シルバー", "ゴールド", "プラチナ", "ブラック", , "サファイア", , , "プラチナ", "ブラック"];
+        aText = textList[parseInt(aData.rare)];
+        bText = textList[parseInt(bData.rare)];
 
-        textList = { 10: "聖霊", 11: "トークン/NPC", 12: "その他" };
-        if (aData.sortGroupID < 20) { aText = textList[parseInt(aData.sortGroupID)]; }
-        if (bData.sortGroupID < 20) { bText = textList[parseInt(bData.sortGroupID)]; }
+        if (aData.sortGroupID == 10) { aText = "聖霊"; }
+        if (bData.sortGroupID == 10) { bText = "聖霊"; }
+        if (aData.isToken) { aText = "トークン/NPC"; }
+        if (bData.isToken) { bText = "トークン/NPC"; }
+        // textList = { 10: "聖霊", 11: "トークン/NPC", 12: "その他" };
+        // if (aData.sortGroupID < 20) { aText = textList[parseInt(aData.sortGroupID)]; }
+        // if (bData.sortGroupID < 20) { bText = textList[parseInt(bData.sortGroupID)]; }
 
         // set hr or not
         let hr = document.createElement("div");
@@ -318,8 +355,9 @@ let mapimgInit = function (id) {
     lastFocus = MapImg;
 
     // set bg map image
-    let md5 = mapHashList["Map" + quest.map + ".png"];
-    MapImg.style.backgroundImage = `url(./maps/${md5})`;
+    // let md5 = mapHashList["Map" + quest.map + ".png"];
+    // MapImg.style.backgroundImage = `url(./maps/${md5})`;
+    MapImg.style.backgroundImage = `url(./maps/Map${quest.map})`;
 
     // get location data
     for (let location of mapDataList[quest.map][quest.location]) {
