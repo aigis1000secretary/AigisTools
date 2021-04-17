@@ -1,3 +1,6 @@
+// TODO:
+// weather png
+
 // require
 const fs = require("fs");
 const path = require("path");
@@ -7,13 +10,20 @@ const Jimp = require('jimp');
 
 // switch
 const dlRaw = process.env.NODE_DLRAW == "false" ? false : true;
-const dlImg = process.env.NODE_DLIMG == "false" ? false : true;;
+const dlImg = process.env.NODE_DLIMG == "false" ? false : true;
 
 // vars
-const aigisToolPath = `./AigisTools`;
-const resourcesPath = `${aigisToolPath}/out/files`;
-const rawListPath = `${resourcesPath}/files.txt`;
+const aigisToolPath = `../AigisTools`;
+const xmlPath = `${aigisToolPath}/out`;
+const resourcesPath = `${xmlPath}/files`;
+const rawListPath = `${xmlPath}/filelists/Files.txt`;
+const addedListPath = `${xmlPath}/Added.txt`;
+const changesListPath = `${xmlPath}/Changes.txt`;
 
+// outputPath
+const iconsOutputPath = `../html/icons`;
+const mapsOutputPath = `../html/maps`;
+const scriptOutputPath = `../html/script/`;
 
 // method
 const urlEncode = function (str_utf8, codePage) {
@@ -24,15 +34,21 @@ const urlEncode = function (str_utf8, codePage) {
 }
 const md5f = function (str) { return require('crypto').createHash('md5').update(str).digest('hex'); }
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
-console.json = async function (str) { return console.log(JSON.stringify(str, null, 4)); }
-String.prototype.in = function (...args) { return args.find((arg) => arg == this); }
-String.prototype.inArray = function (args) { return args.find((arg) => arg == this); }
-Number.prototype.in = function (...args) { return args.find((arg) => arg == this); }
+const COLOR = {
+    reset: '\x1b[0m', bright: '\x1b[1m', dim: '\x1b[2m',
+    underscore: '\x1b[4m', blink: '\x1b[5m', reverse: '\x1b[7m', hidden: '\x1b[8m',
 
+    fgBlack: '\x1b[30m', fgRed: '\x1b[31m', fgGreen: '\x1b[32m', fgYellow: '\x1b[33m',
+    fgBlue: '\x1b[34m', fgMagenta: '\x1b[35m', fgCyan: '\x1b[36m', fgWhite: '\x1b[37m',
+
+    bgBlack: '\x1b[40m', bgRed: '\x1b[41m', bgGreen: '\x1b[42m', bgYellow: '\x1b[43m',
+    bgBlue: '\x1b[44m', bgMagenta: '\x1b[45m', bgCyan: '\x1b[46m', bgWhite: '\x1b[47m',
+};
 
 // get local file list
 const getFileList = function (dirPath, filter) {
     if (!filter) { filter = () => true; }
+    if (!fs.existsSync(dirPath)) return [];
 
     let result = [];
     let apiResult = fs.readdirSync(dirPath);
@@ -46,133 +62,244 @@ const getFileList = function (dirPath, filter) {
     }
     return result;
 };
-
-// aigistool raw to json
-const rawDataToJson = function (rawFile) {
-    let rawString = fs.readFileSync(rawFile).toString().trim();
-    let data = [];
-    let raw = rawString.replace(/コストｰ/g, "コスト-").split("\n");
-    let keys = raw.shift().match(/[^\s]+/g);
-
-    for (let i in raw) {
-        let row = raw[i].replace(/\\"/g, "@");
-        let values = row.match(/"[^"]*"|[^\s]+/g);
-
-        let obj = {};
-        for (let j in keys) {
-            if (!values[j]) { continue; }
-            values[j] = values[j].trim().replace(/^nil$/, "null").replace(/@/g, "\\\"");
-
-            obj[keys[j]] = JSON.parse(values[j]);
-        }
-        data.push(obj);
-    }
-    return data;
-};
-// object array to csv file
-const arrayDataToCsv = function (array, csvPath) {
-    let str = Object.keys(array[0]).join(",");
-
-    for (let obj of array) {
-        let values = Object.values(obj);
-        values.forEach(val => {
-            if (val && val.toString().indexOf(",") != -1) { val = `"${val}"`; }
-        });
-        str += "\n" + values.join(",");
-    }
-
-    fs.writeFileSync(csvPath, str);
-    console.log(`fs.writeFileSync( ${csvPath} )`);
-}
-const getIconMd5 = function (filepath) {
+const getIconImage = function (filepath) {
     if (!filepath) { return undefined; }
+    // console.log(`getIconMd5(${filepath})`)
 
-    // get file md5
-    let pngBinary = fs.readFileSync(filepath);
-    let md5 = md5f(pngBinary.toString());
+    // get file id/type
+    // C:\LineBot\AigisTools3.4\out\files\ico_01.aar\002_ico_00_unit_01.atx\frames\002_001.png
+    let [, type, id] = filepath.match(/ico_(\d+)\.[\s\S]+\/(\d+)_001.png/);
+    // console.log(`getIconImage(${filepath})`)
 
     // copy file
-    let outputDir = "./html/icons/";
-    let outputPath = outputDir + md5;
-    if (!fs.existsSync(outputPath))
+    let outputPath = `${iconsOutputPath}/${id}_${type}`;
+    if (!fs.existsSync(outputPath)) {
         fs.createReadStream(filepath).pipe(fs.createWriteStream(outputPath));
+    }
 
-    return md5;
+    return `${id}_${type}`;
 }
 
 
+let rawList = [];
+let addedList = [];
+let changesList = [];
 
-const downloadRawData = async function () {
+const downloadRawData = async () => {
+    console.log(`downloadRawData start...`);
 
     // get_file_list.lua
     console.log("do get_file_list.lua");
-    child_process.execSync(`cd ${aigisToolPath} & do get_file_list.lua`).toString().trim();
+    child_process.execSync(`do filelist`, { cwd: aigisToolPath }).toString().trim();
 
     // get filelist
-    let rawFileReg = /[^,]+$/;
-    let rawList = [];
-    for (let fullpath of fs.readFileSync(rawListPath).toString().split("\n")) {
-        if (rawFileReg.exec(fullpath) != null) {
-            let filename = rawFileReg.exec(fullpath).toString();
-            rawList.push(filename);
+    {
+        if (true) {
+            let filelist = fs.readFileSync(rawListPath).toString().split("\n");
+            let listReg = /\S{40},\S{32},\S,\S{12},(\S+)/;
+
+            for (let line of filelist) {
+                if (!listReg.test(line)) { continue; }  // not match regex
+                let match = line.match(listReg);
+                rawList.push(match[1]);
+            }
+        }
+        if (fs.existsSync(addedListPath)) {
+            let filelist = fs.readFileSync(addedListPath).toString().split("\n");
+            let listReg = /^(\S+)\s+\S+/;
+
+            for (let line of filelist) {
+                if (!listReg.test(line)) { continue; }  // not match regex
+                let match = line.match(listReg);
+                addedList.push(match[1]);
+            }
+        }
+        if (fs.existsSync(changesListPath)) {
+            let filelist = fs.readFileSync(changesListPath).toString().split("\n");
+            let listReg = /^(\S+)\s+\S+/;
+
+            for (let line of filelist) {
+                if (!listReg.test(line)) { continue; }  // not match regex
+                let match = line.match(listReg);
+                changesList.push(match[1]);
+            }
         }
     }
-    // filter
-    rawList = rawList.filter((filename) => {
-        if (/^$/i.test(filename)) { return false; }
-        if (/^Emc/i.test(filename)) { return false; }
 
+    rawList = rawList.filter((filename) => {
+        if (/^Emc/i.test(filename)) { return false; }
 
         // mission data
         if (/MissionConfig\.atb/i.test(filename)) { return dlRaw; }
         if (/MissionQuestList\.atb/i.test(filename)) { return dlRaw; }
+        if (/EventNameText\.atb/i.test(filename)) { return dlRaw; }
         // cards data
         if (/PlayerUnitTable\.aar/i.test(filename)) { return dlRaw; }
         if (/NameText\.atb/i.test(filename)) { return dlRaw; }
         if (/Ability(List|Text)\.atb/i.test(filename)) { return dlRaw; }
         if (/Skill(List|Text|TypeList|InfluenceConfig)\.atb/i.test(filename)) { return dlRaw; }
 
-
-        // map img
-        // skip exist
-        if (/Map\d+/i.test(filename)) return (!fs.existsSync(resourcesPath + "/" + filename) && dlImg);
-        if (/BattleEffect\.aar/i.test(filename)) return (!fs.existsSync(resourcesPath + "/" + filename) && dlImg);
-        // larg size data
+        // // map img
+        // // skip exist
+        if (/Map\d+/i.test(filename)) { return dlImg; }
+        // if (/BattleEffect\.aar/i.test(filename)) return (!fs.existsSync(resourcesPath + "/" + filename) && dlImg);
+        // // larg size data
         if (/QuestNameText\d*\.atb/i.test(filename)) { return dlImg; }
-        // skip icon after 2021/03/11 update
-        // if (/ico_\d+/i.test(filename)) { return dlImg; }
-
+        if (/ico_\d+/i.test(filename)) { return dlImg; }
 
         return false;
     });
 
-    // download
-    rawList.sort();
-    for (let rawFile of rawList) {
-        console.log(`get ${rawFile}`);
-        child_process.execSync(`cd ${aigisToolPath} & get ${rawFile}`).toString().trim();
+    // get filelist change logs
+    {
+        let changelog = [].concat(addedList, changesList);
+
+        // download
+        rawList.sort();
+        for (let filename of rawList) {
+
+            // if (changelog.length <= 0) {
+            //     // no change log (clear run)
+            //     // download all resource
+            // } else {
+            //     if (changelog.indexOf(filename) == -1) {
+            //         // not in change log, old file
+            //         if (!fs.existsSync(`${resourcesPath}/${filename}`)) {
+            //             // not exist file, download 
+            //         } else {
+            //             // skip exist file
+            //         }
+            //     } else {
+            //         // new file
+            //         // download
+            //     }
+            // }
+
+            // skip exist file
+            if (changelog.length > 0 && fs.existsSync(`${resourcesPath}/${filename}`) && changelog.indexOf(filename) == -1) {
+                continue;
+            }
+
+            console.log(`do file ${filename}`);
+            try {
+                child_process.execSync(`do file ${filename}`, { cwd: aigisToolPath });
+            } catch (e) {
+                // child_process.execSync(`start get ${filename}`, { cwd: aigisToolPath });
+                console.error(e.toString())
+            }
+        }
     }
 
-    console.log(`do parse_cards.lua`);
-    child_process.execSync(`cd ${aigisToolPath} & do parse_cards.lua > out\\files\\cards.txt`).toString().trim();
+    // get cards
+    console.log(`do xml GRs733a4`);
+    child_process.execSync(`do xml GRs733a4 raw`, { cwd: aigisToolPath }).toString().trim();
+    // get quests
+    console.log(`do xml QxZpjdfV`);
+    child_process.execSync(`do xml QxZpjdfV raw`, { cwd: aigisToolPath }).toString().trim();
 
-    console.log(`do get_xmlfile_missions.lua`);
-    child_process.execSync(`cd ${aigisToolPath} & do get_xmlfile_missions.lua> out\\files\\quest.txt`).toString().trim();
-
-    console.log("downloadRawData done\n");
+    console.log(`downloadRawData done...\n`);
 }
 
+const xmlToJson = (filepath) => {
+    console.log(`xmlToJson(${filepath})`)
+    // get xml
+    let raw = fs.readFileSync(filepath).toString();
+    raw = raw.match(/<DA>(.+)<\/DA>/)[1];
+
+    let result = [];
+
+    // get keys
+    let keyList = raw.match(/<[^>]+T=[^>]+>/gi);
+    for (let keyStr of keyList) {
+        // console.log(keyStr);
+        // <CardID T="I">
+        [, key, type] = keyStr.match(/<(\S+) T=\"(\S)\">/);
+        // console.log(key, type);
+        // [, "CardID", "I"]
+
+        // get value array
+        let valueStr = raw.substring(
+            raw.indexOf(keyStr) + keyStr.length + 3,
+            raw.indexOf(`<\/V></${key}>`)
+        );
+        let valueList = valueStr.split("<\/V><V>");
+        // console.log(valueList)
+
+        // set data to result
+        for (let i = 0; i < valueList.length; ++i) {
+            // build new item
+            if (!result[i]) { result[i] = {}; }
+
+            // set value type
+            let value;
+            if (type == "S") { value = valueList[i]; }
+            if (type == "I") { value = parseInt(valueList[i]); }
+            if (type == "F") { value = parseFloat(valueList[i]); }
+
+            result[i][key] = value;
+        }
+    }
+    return result;
+}
+// aigistool raw to json
+const rawToJson = function (filepath) {
+    // console.log(`rawToJson(${filepath})`)
+    let raw = fs.readFileSync(filepath).toString().trim().split("\n");
+    let result = [];
+
+    // get keys
+    let keyList = raw.shift().trim().split(/\s+/);
+    for (let i = 0; i < raw.length; ++i) {
+        // build new item
+        if (!result[i]) { result[i] = {}; }
+
+        // let valueList = ` ${raw[i]} `.match(/(\s"\S+"\s|\S+)/g)
+        let valueList = [];
+        let tmp = raw[i].trim().replace(/nil/g, "null");
+        while (/[\S\s]+/.test(tmp)) {
+            // if (/^"/.test(tmp)) {
+            if (tmp.startsWith('"')) {
+                let j = 1;
+                while (j != -1) {
+                    j = tmp.indexOf('"', j);
+                    if (tmp[j - 1] == '\\') { j++; }
+                    else { j++; break; }
+                }
+
+                valueList.push(tmp.substring(0, j));
+                tmp = tmp.substring(j).trim();
+            } else {
+                let j = tmp.indexOf(` `);
+                if (j == -1) j = tmp.length;
+                valueList.push(tmp.substring(0, j));
+                tmp = tmp.substring(j).trim();
+            }
+        }
+
+        for (let j in keyList) {
+            let key = keyList[j];
+            let value = valueList[j];
+
+            value = JSON.parse(value);
+            // try { value = JSON.parse(value); }
+            // catch (e) {
+            //     console.log(`rawToJson(${filepath})`)
+            //     console.log("\nJSON.parse(value)")
+            //     console.log(`${value}`)
+            //     console.log(valueList)
+            // }
+
+            result[i][key] = value;
+        }
+    }
+
+    return result;
+};
+
+
+
 const aigisCardsList = async function () {
-
-    // load old data
-    let cardDataList = eval(`(${/\[[\s\S]+\]/.exec(fs.readFileSync("./html/script/rawCardsList.js").toString()).toString()})`);
-
-    // // output csv file
-    // arrayDataToCsv(cardsListData, "./AigisLoader/cards.csv");
-    // arrayDataToCsv(classListData, "./AigisLoader/class.csv");
-
-    // result
-    let resultArray = [];
+    console.log(`aigisCardsList start...`);
 
     // get icon png list
     let icons = [].concat(
@@ -180,557 +307,6 @@ const aigisCardsList = async function () {
         getFileList(resourcesPath + "/ico_01.aar"),
         getFileList(resourcesPath + "/ico_02.aar"),
         getFileList(resourcesPath + "/ico_03.aar"))
-
-    let maxCid = 0;
-    for (let card of cardsListData) {
-        let id = card.CardID;
-        maxCid = Math.max(id, maxCid);
-
-        // pick old data
-        let old = cardDataList.find(ele => ele.id - id == 0) || { name: null, img: null, imgaw: null, imgaw2A: null, imgaw2B: null };
-
-        // set json data
-        let name = card._name || old.name;
-        let rare = card.Rare;
-        let classID = card.InitClassID;
-        let _class = classListData.find(ele => ele.ClassID == classID);
-        let sortGroupID = _class ? _class.SortGroupID : 0;
-        // 10: 聖霊, 20: 近接, 25: 王子, 30: 遠隔, 40: 兩用
-        let placeType = _class ? _class.PlaceAttribute : 0;  // PlaceAttribute
-        // 0: 不可放置, 1: 近接, 2: 遠隔, 3: 兩用
-        let kind = card.Kind;
-        // 0: 男性, 1: 女性, 2: 無性(?), 3: 換金, 2: 經驗
-        let isEvent = (card._TradePoint <= 15) ? 1 : 0; // _TradePoint
-        let assign = card.Assign;
-        // 2: 帝國, 3-4: 遠國, 5: 砂漠, 6-7: 異鄉, 8: 東國
-        let genus = card.Genus;
-        // 101: 新春, 102: 情人, 103: 學園, 104: 花嫁, 105: 夏季, 106: 萬聖, 107: 聖夜, 108: Q, 109: 溫泉
-        // let race = card._TypeRace;
-        // // 101: 人類, 201: 獸人, 301: 龍人, 401: 森人, 402: 闇人, 403: 半森人, 501: 礦人, 601: 吸血鬼
-        // // 701: 惡魔, 702: 半惡魔, 801: 天使, 901: 妖怪, 1001: 仙人, 1101: 歐克, 1201: 黏土人, 1301: 哥布林, 9901: 聖靈
-        // let identity = card.Identity;
-        // // 1: アンデッド
-        let year = 0;
-
-        if (!name) name = `CardID_${id}`;
-
-        // Hero rare data format
-        switch (rare) {
-            case 11: { rare = 5.1; } break;
-            case 10: { rare = 4.1; } break;
-            case 7: { rare = 3.5; } break;
-        }
-
-        // Collaboration data format
-        switch (id) {
-            // ランス10-決戦-
-            case 581: { assign = -1; } break;
-
-            // 真・恋姫†夢想-革命
-            case 648: case 649: case 650: case 651: case 652:   // 2018/07
-            case 848: case 849: case 850: case 851: case 852:   // 2019/08
-                { assign = -2; } break;
-
-            //  封緘のグラセスタ
-            case 719:
-            case 720: { assign = -3; } break;
-
-            //  ガールズ・ブック・メイカー（GBM）
-            case 815: case 816: case 817: case 818: case 819:   // 2019/06
-            case 1015: case 1016: case 1017: case 1018: // 2020/06
-                { assign = -4; } break;
-
-            //  流星ワールドアクター
-            case 955: case 956: { assign = -5; } break;
-
-            case 497: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の近衛兵）"; } break;
-            case 498: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の前衛戦術家）"; } break;
-            case 499: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の弓兵）"; } break;
-            case 501: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の公子）"; } break;
-            case 684: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の槌使い）"; } break;
-            case 685: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の盗賊）"; } break;
-            case 686: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の回復術士）"; assign = 6; } break;
-            case 687: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の騎士）"; } break;
-            case 688: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の妖精）"; } break;
-            case 689: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の祝福者）"; assign = 6; } break;
-
-            case 694: { assign = 7; } break;
-            case 697: { assign = 7; } break;
-        }
-
-        // 王子
-        if (name.indexOf("王子") != -1 && sortGroupID == 25) {
-            rare = 5.2;
-        }
-
-        // set year
-        if (id > 1125) year = 2021;
-        else if (id > 942) year = 2020;
-        else if (id > 726) year = 2019;
-        else if (id > 572) year = 2018;
-        else if (id > 437) year = 2017;
-        else if (id > 323) year = 2016;
-        else if (id > 201) year = 2015;
-        else if (id > 85) year = 2014;
-        else year = 2013;
-
-        // token flag
-        let sellPrice = card.SellPrice;
-        if (sellPrice == 0) { sortGroupID = 11; }
-        // Non-R18 Collaboration flag
-        if (assign == 4 || assign == 7) { sortGroupID = 12; };
-
-        // get image md5&get giles
-        let img, imgaw, imgaw2A, imgaw2B;
-        let iconName = "/" + id.toString().padStart(3, "0") + "_001.png";
-        img = getIconMd5(icons.find(file => (/ico_00\.aar/.test(file) && file.indexOf(iconName) != -1)));
-        imgaw = getIconMd5(icons.find(file => (/ico_01\.aar/.test(file) && file.indexOf(iconName) != -1)));
-        imgaw2A = getIconMd5(icons.find(file => (/ico_02\.aar/.test(file) && file.indexOf(iconName) != -1)));
-        imgaw2B = getIconMd5(icons.find(file => (/ico_03\.aar/.test(file) && file.indexOf(iconName) != -1)));
-
-        // no any img
-        // if (!img && !imgaw && !imgaw2A && !imgaw2B) { continue; }
-        if (!img && !imgaw && !imgaw2A && !imgaw2B) { img = "c80ae4db8b6b09123493ceea8b63ccc2"; }
-
-        let obj = {
-            id,
-            name, rare, classID,
-            sortGroupID, placeType,
-            kind, isEvent, assign, genus, // identity,
-            year,
-            img, imgaw, imgaw2A, imgaw2B
-        };
-        // resultJson.push(obj);
-        resultArray[id] = obj;
-    }
-    resultArray = resultArray.filter((r) => (r));   // del empty item
-
-    // ready to write to file
-    let cardsJs = [`var maxCid = ${maxCid.toString()};\nvar charaData = [`];
-    let cardsDataString = [];
-    for (let result of resultArray) {
-        cardsDataString.push("\t" + JSON.stringify(result, null, 1).replace(/\s*\n\s*/g, "\t"));
-    };
-    cardsJs.push(cardsDataString.join(",\n"));
-    cardsJs.push("]");
-
-    // write to file
-    fs.writeFileSync("./html/script/rawCardsList.js", cardsJs.join("\n"));
-    console.log("fs.writeFileSync( ./html/script/rawCardsList.js )");
-
-    console.log("aigisCardsList done\n");
-}
-
-let missionList = {};
-const aigisMissionList = async function () {
-    // get mission<=>title raw
-    let rawList = resourceList.filter((file) => /MissionConfig\.atb\S+\.txt$/i.test(file));
-
-    // set mission<=>title 
-    for (let raw of rawList) {
-        let rawJson = rawDataToJson(raw);
-
-        for (let data of rawJson) {
-            let missionID = data.MissionID;
-            let missionTitle = data.Name;
-
-            missionList[missionID] = missionTitle
-        }
-    }
-
-    // manual set mission name
-    {
-        missionList[100001] = "第一章　王都脱出";
-        missionList[100002] = "第二章　王城奪還";
-        missionList[100003] = "第三章　熱砂の砂漠";
-        missionList[100004] = "第四章　東の国";
-        missionList[100005] = "第五章　魔法都市";
-        missionList[100006] = "第六章　密林の戦い";
-        missionList[100007] = "第七章　魔の都";
-        missionList[100008] = "第八章　魔神の体内";
-        missionList[100009] = "第九章　鋼の都";
-        missionList[100010] = "第十章　海底";
-        missionList[200232] = "ゴールドラッシュ23";
-        missionList[310001] = "魔女を救え！";
-        missionList[310002] = "魔女の娘";
-        missionList[310003] = "聖戦士の挑戦";
-        missionList[310004] = "魔術の秘法";
-        missionList[310005] = "鬼招きの巫女";
-        missionList[310006] = "暗黒騎士団の脅威";
-        missionList[310007] = "モンクの修行場";
-        missionList[310008] = "囚われの魔法剣士";
-        missionList[310009] = "獣人の誇り";
-        missionList[310010] = "堕天使の封印";
-        missionList[310011] = "古代の機甲兵";
-        missionList[310012] = "闇の忍者軍団";
-        missionList[310013] = "鬼を宿す剣士";
-        missionList[310014] = "影の狙撃手";
-        missionList[310015] = "魔人の宿命";
-        missionList[310016] = "暗黒舞踏会";
-        missionList[310017] = "アンナと雪の美女";
-        missionList[310018] = "戦乙女の契約";
-        missionList[310019] = "山賊王への道";
-        missionList[310020] = "竜騎士の誓い";
-        missionList[310021] = "錬金術士と賢者の石";
-        missionList[310022] = "聖鎚闘士の挑戦";
-        missionList[310023] = "砲科学校の訓練生";
-        missionList[310024] = "死霊の船と提督の決意";
-        missionList[310025] = "帝国の天馬騎士";
-        missionList[310026] = "暗黒騎士団と狙われた癒し手";
-        missionList[310027] = "白の帝国と偽りの都市";
-        missionList[310028] = "暗黒騎士団と聖夜の贈り物";
-        missionList[310029] = "呪術師と妖魔の女王";
-        missionList[310030] = "私掠船長と魔の海域";
-        missionList[310031] = "ヴァンパイアと聖なる復讐者";
-        missionList[310032] = "妖魔の女王と戦術の天才";
-        missionList[310033] = "魔界蟻と囚われた男達";
-        missionList[310034] = "天使たちの陰謀";
-        missionList[310035] = "魔蝿の森と呪われた番人";
-        missionList[310036] = "失われた竜の島";
-        missionList[310037] = "帝国神官の帰還";
-        missionList[310038] = "闇の組織と狙われた王子";
-        missionList[310039] = "オーク格闘家の王子軍入門";
-        missionList[310040] = "王子軍の夏祭り";
-        missionList[310041] = "カリオペと恐怖の夜";
-        missionList[310042] = "夢現のダークプリースト";
-        missionList[310043] = "魔王軍の胎動";
-        missionList[310044] = "彷徨える守護の盾";
-        missionList[310045] = "渚に咲きし水着騎兵";
-        missionList[310046] = "カボチャの国の魔法使い";
-        missionList[310047] = "星に祈りし聖夜の癒し手";
-        missionList[310048] = "学園騎兵科の新入生";
-        missionList[310049] = "白き獣人と闇の組織";
-        missionList[310050] = "砂浜を駆ける魔術師";
-        missionList[310051] = "密林のハロウィンパーティー";
-        missionList[310052] = "デーモンサンタのおもちゃ工場";
-        missionList[310053] = "迷子の悪魔召喚士";
-        missionList[310054] = "捧げし信仰、奪われた意思";
-        missionList[310055] = "夏祭り探検隊　幻の食材を追え！";
-    }
-
-    // ready to write to file
-    let keys = Object.keys(missionList);
-    keys.sort(function compare(a, b) {
-        if (!!missionList[a] && !!missionList[b] &&
-            missionList[a] != missionList[b]) return (missionList[a].localeCompare(missionList[b]) > 0) ? -1 : 1;
-        if (a != b) return (a < b ? -1 : 1);
-        return 0;
-    });
-    let jsString = [];
-    for (let key of keys) { jsString.push(`\t"${key}": "${missionList[key]}"`); }
-
-    // write to file
-    fs.writeFileSync("./html/script/rawMissionList.js", `let missionList = {\n${jsString.join(",\n")}\n}`);
-    console.log("fs.writeFileSync( ./html/script/rawMissionList.js )");
-
-    console.log("aigisMissionList done\n");
-}
-
-const aigisQuestList = async function () {
-    // console.json(questListData);
-    let questList = [];
-    questList = eval(fs.readFileSync("./html/script/rawQuestList.js").toString().replace(/^let questList = /, ""));
-
-    // format quest list
-    for (let i = 0; i < questList.length; ++i) {
-        let id = "mID/qID";
-        let questID = "QuestID";
-        let questName = "QuestTitle";
-        let missionID = "mID";
-        let missionTitle = "mTitle";
-        let map = "map";
-        let location = "location";
-        let life = "life";
-        let startUP = "startUP";
-        let unitLimit = "unitLimit";
-
-        let quest = {
-            id, map,
-            missionTitle, questName,
-            missionID, questID,
-            location,
-            life, startUP, unitLimit
-        };
-        questList[i] = Object.assign(quest, questList[i]);
-    }
-
-    // set quest data
-    for (let questRaw of questListData) {
-        let id = "mID/qID";
-        let questID = questRaw.QuestID;
-        let questName = questRaw.QuestTitle;
-        let missionID = "mID";
-        let missionTitle = "mTitle";
-        let map = questRaw.MapNo.toString().padStart(4, "0");;
-        let location = questRaw.LocationNo.toString().padStart(2, "0");;
-        let life = questRaw.defHP;
-        let startUP = questRaw.defAP;
-        let unitLimit = questRaw.Capacity;
-
-        // daily EX
-        if ([203, 213, 223, 233, 243].includes(questID)) continue;
-        if ([204, 214, 224, 234, 244].includes(questID)) continue;
-
-        // build quest data
-        let quest = {
-            id, map,
-            missionTitle, questName,
-            missionID, questID,
-            location,
-            life, startUP, unitLimit
-        };
-        let q = questList.find((q) => (q.questID == questID));
-        if (q) {
-            q = questList.indexOf(q);
-            questList[q] = quest;
-        } else {
-            // } else {
-            questList.push(quest);
-        }
-    }
-
-    let rawList;
-    // get mission id
-    rawList = resourceList.filter((file) => { return (/MissionQuestList\.atb\S+\.txt$/i.test(file)); });
-    for (let raw of rawList) {
-        let rawJson = rawDataToJson(raw);
-
-        for (let data of rawJson) {
-            let missionID = data.MissionID;
-            let questID = data.QuestID;
-            let questName = data.QuestName;
-
-            let quest = questList.find((q) => (q.questID == questID));
-            if (!!quest) {
-                quest.missionID = missionID;
-                quest.missionTitle = missionList[missionID];
-                if (!!questName) quest.questName = questName;
-            }
-        }
-    }
-
-    // get mission id from DailyReproduceMissionConfig.atb
-    // DailyReproduceMissionConfig.atb
-    rawList = resourceList.filter((file) => /DailyReproduceMissionConfig\.atb\S+\.txt$/i.test(file));
-    for (let raw of rawList) {
-        let rawJson = rawDataToJson(raw);
-
-        for (let data of rawJson) {
-            let missionID = data.MissionID;
-            let qIDList = data.QuestID.replace(/\"/g, "").split(',');
-            // let titleID = data.TitleID; //?
-
-            for (let questID of qIDList) {
-                let quest = questList.find((q) => (q.questID == questID));
-                if (!!quest) {
-                    quest.missionID = missionID;
-                    quest.missionTitle = missionList[missionID];
-                }
-            }
-        }
-    }
-
-    // get quest name
-    // QuestNameText000000.atb/ALTB_gdtx.txt
-    rawList = resourceList.filter((file) => /QuestNameText\d+\S+\.txt$/i.test(file));
-    // set quest<=>name
-    for (let raw of rawList) {
-        let rawJson = rawDataToJson(raw);
-        let missionID = parseInt(raw.replace(/^(.+QuestNameText)(\d+)(\.atb.+)$/, (m, p1, p2, p3) => (p2)))
-
-        for (let i in rawJson) {
-            let data = rawJson[i];
-            let questName = data.Message;
-
-            let quest = questList.find((q) => (q.missionID == missionID && q.questName == i));
-            if (!!quest) {
-                quest.questName = questName;
-            }
-        }
-    }
-
-    // fix data
-    for (let quest of questList) {
-        quest.id = `${quest.missionID}/${quest.questID}`;
-        if (quest.missionID == 110001) { quest.map = `110001_${quest.map}` };
-    }
-
-
-    // sort quest
-    questList.sort(function compare(a, b) {
-        if (!!a.missionTitle && !!b.missionTitle &&
-            a.missionTitle != b.missionTitle) return (a.missionTitle.localeCompare(b.missionTitle) > 0) ? -1 : 1;
-        if (parseInt(a.questID) != parseInt(b.questID)) return (parseInt(a.questID) < parseInt(b.questID)) ? -1 : 1;
-        return 0;
-    })
-
-    // ready to write to file
-    let jsString = [];
-    for (let quest of questList) { jsString.push("\t" + JSON.stringify(quest, null, 1).replace(/\s*\n\s*/g, "\t")); };
-
-    // write to file
-    fs.writeFileSync("./html/script/rawQuestList.js", `let questList = [\n${jsString.join(',\n')}\n]`);
-    console.log("fs.writeFileSync( ./html/script/rawQuestList.js )");
-
-    console.log("aigisQuestList done\n");
-}
-
-const aigisMapHash = async function () {
-
-    let rawList = resourceList.filter((file) => (/Map[\d_]+\.png$/i.test(file)));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+768_001\.png$/i.test(file))));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+769_001\.png$/i.test(file))));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+782_001\.png$/i.test(file))));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+783_001\.png$/i.test(file))));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+777_001\.png$/i.test(file))));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+780_001\.png$/i.test(file))));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+787_001\.png$/i.test(file))));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+785_001\.png$/i.test(file))));
-    rawList.push(resourceList.find((file) => (/BattleEffect[\S]+793_001\.png$/i.test(file))));
-
-    // map png
-    let mapHashList = eval(`(${fs.readFileSync("./html/script/rawMapHashList.js").toString().replace("let mapHashList = ", "")})`);
-    for (let sourcePath of rawList) {
-
-        let fileName = path.win32.basename(sourcePath);
-        let pngBinary = fs.readFileSync(sourcePath);
-        let pngMd5 = md5f(pngBinary.toString());
-        // check data
-        if (mapHashList[fileName] && mapHashList[fileName] != pngMd5) {
-            if (!["1af385e955caf0a4cd51da219e051725", "bc0b659e8611a7f0f28977af403c9e91"].includes(pngMd5)) {
-                mapHashList[fileName] = pngMd5;
-                // } else {
-                // console.log(` file ${fileName} md5 changed... Need data check!! ${pngMd5}`);
-            }
-        } else {
-            mapHashList[fileName] = pngMd5;
-        }
-
-        let outputDir = /^map/i.test(fileName) ? "./html/maps/" : "./html/weather/";
-        let outputPath = outputDir + pngMd5;
-
-        if (!fs.existsSync(outputPath)) {
-            if (/^map/i.test(fileName)) {
-                await new Promise(function (resolve, reject) {
-                    Jimp.read(sourcePath)
-                        .then(img => {
-                            console.log(` getting ${fileName} md5...`);
-                            return img.quality(70) // set JPEG quality
-                                .write(outputPath + ".jpg"); // save
-                        }).then(async () => {
-                            console.log("Jimp.quality(70).write()");
-                            await sleep(100);
-                            let log = child_process.execSync(`cd ${outputDir}&ren ${pngMd5}.jpg ${pngMd5}`).toString().trim();
-                            if (log != "") console.log(log);
-                        }).then(() => {
-                            console.log("");
-                            resolve();
-                        }).catch(err => {
-                            console.error(sourcePath);
-                            console.error(err);
-                            reject();
-                        });
-                });
-            } else {
-                console.log(` getting ${fileName} md5...`);
-                fs.createReadStream(sourcePath).pipe(fs.createWriteStream(outputPath));
-            }
-        }
-    }
-
-    // ready to write to file
-    let jsString = JSON.stringify(mapHashList, null, "\t")
-        .replace(/[\{\}\,]/g, "")
-        .replace(/[\n\t]+/g, "\n")
-        .replace(/^\n+|\n+$/g, "")
-        .split("\n");
-
-    // console.log(`<${jsString}>`)
-    // sort quest
-    jsString.sort();
-
-    fs.writeFileSync("./html/script/rawMapHashList.js", `let mapHashList = {\n\t${jsString.join(",\n\t")}\n}`);
-    console.log("fs.writeFileSync( ./html/script/rawMapHashList.js )");
-
-    console.log("aigisMapHash done\n");
-}
-
-const aigisMapData = async function () {
-
-    // map position
-    // let mapHashList = eval(`(${fs.readFileSync("./html/script/rawMapHashList.js").toString().replace(/^let mapHashList = /, "")})`);
-    let mapDataList = eval(`(${fs.readFileSync("./html/script/rawMapDataList.js").toString().replace(/^let mapDataList = /, "")})`);
-
-    let rawList = resourceList.filter((file) => /Map\d\S+\.aar\S+Location\d+\S+\.txt$/i.test(file));
-    rawList.sort();
-    for (let raw of rawList) {
-        let rawJson = rawDataToJson(raw);
-
-        // read position data
-        let locationList = [];
-        for (let data of rawJson) {
-            locationList.push({
-                ObjectID: data.ObjectID,
-                X: data.X,
-                Y: data.Y,
-                _Command: data._Command
-            });
-        }
-
-        locationList.sort((a, b) => {
-            if (parseInt(a.ObjectID) != parseInt(b.ObjectID)) return (parseInt(a.ObjectID) < parseInt(b.ObjectID)) ? -1 : 1;
-            if (parseInt(a.X) != parseInt(b.X)) return (parseInt(a.X) < parseInt(b.X)) ? -1 : 1;
-            if (parseInt(a.Y) != parseInt(b.Y)) return (parseInt(a.Y) < parseInt(b.Y)) ? -1 : 1;
-            return 0;
-        });
-        // locationList = quest.locationList.filter((item) => item === quest.locationList.find(((pos) =>
-        //     pos.ObjectID == item.ObjectID &&
-        //     pos.X == item.X &&
-        //     pos.Y == item.Y
-        // )));
-
-        // push data
-        let mapNo = raw.replace(/^(.+Map)(\d\S+)(\.aar.+)$/, (m, p1, p2, p3) => (p2));
-        let locationNo = raw.replace(/^(.+Location)(\d+)(\.atb.+)$/, (m, p1, p2, p3) => (p2));
-        if (!mapDataList[mapNo]) { mapDataList[mapNo] = {}; };
-        // check data
-        if (mapDataList[mapNo][locationNo] && JSON.stringify(mapDataList[mapNo][locationNo]) != JSON.stringify(locationList)) {
-            let sourcePath = raw.replace(/(\.aar.+)$/, ".png");
-            if (fs.existsSync(sourcePath)) {
-                let pngBinary = fs.readFileSync(sourcePath);
-                let pngMd5 = md5f(pngBinary.toString());
-                if (!["1af385e955caf0a4cd51da219e051725", "bc0b659e8611a7f0f28977af403c9e91"].includes(pngMd5)) {
-                    mapDataList[mapNo][locationNo] = locationList;
-                    // } else {
-                    // console.log(` map Map${mapNo} location List changed... Need data check!!`);
-                }
-            }
-        } else {
-            mapDataList[mapNo][locationNo] = locationList;
-        }
-    }
-
-    let jsString = JSON.stringify(mapDataList, null, '\t')
-        .replace(/\n\t\t\t\t/g, "")
-        .replace(/\n\t\t\t\{/g, "{")
-        .replace(/\n\t\t\t\}/g, "}")
-        .replace(/\n\t\t\]/g, "]")
-        .replace(/\{\n\t\t"/g, "{\t\"")
-        .replace(/\n\t\t"/g, "\n\t\t\t\t\"")
-        .replace(/\n\t\}/g, "}")
-    // let jsString = JSON.stringify(mapDataList)
-    fs.writeFileSync("./html/script/rawMapDataList.js", "let mapDataList = " + jsString);
-    console.log("fs.writeFileSync( ./html/script/rawMapDataList.js )");
-
-    console.log("aigisMapData done\n");
-}
-
-const aigisCharacter = async function () {
-
-    // arrayDataToCsv(skillListData, "./AigisLoader/skillList.csv");
-    // arrayDataToCsv(skillTextData, "./AigisLoader/skillText.csv");
-    // arrayDataToCsv(skillTypeData, "./AigisLoader/skillType.csv");
-    // arrayDataToCsv(skillInflData, "./AigisLoader/skillInfl.csv");
 
     let textFormat = function (str) {
 
@@ -843,10 +419,10 @@ const aigisCharacter = async function () {
 
             .replace(/魔耐/g, "魔法耐性")    //
             .replace(reg3, (match, ps, p2, p3, p4, p5, p6, pe) =>
-                `${ps}${[p2, p4, p6].filter((p) => p.inArray(regSort)).sort(regSortf).join("と").replace(/力/g, "")}${pe}`
+                `${ps}${[p2, p4, p6].filter((p) => regSort.includes(p)).sort(regSortf).join("と").replace(/力/g, "")}${pe}`
             )
             .replace(reg2, (match, ps, p2, p3, p4, pe) =>
-                `${ps}${[p2, p4].filter((p) => p.inArray(regSort)).sort(regSortf).join("と").replace(/力/g, "")}${pe}`
+                `${ps}${[p2, p4].filter((p) => regSort.includes(p)).sort(regSortf).join("と").replace(/力/g, "")}${pe}`
             )
 
             .replace(/神魔法[\s]回復の雨/g, "神魔法・回復の雨")
@@ -862,23 +438,27 @@ const aigisCharacter = async function () {
 
         while (true) {
             // get skill obj
-            let skill = skillListData[skillID];
-            if (!skill) return `SkillID_${skillID}`;
+            let skill = skillListRaw[skillID] || { ID_Text: 0 };
+            let text = skillTextRaw[skill.ID_Text];
+            if (!skill || !text) return { name: [skill ? skill.SkillName : `SkillID_${skillID}`], text: [text ? text.Data_Text : `Data_Text_${skill.ID_Text}`], nextSkill: 0 };
+            text = text.Data_Text.replace(/[\s]+\n[\s]+/g, "\n");
+            // "Data_Text": "出撃している全員の\n攻撃力と防御力が\n<HERO_POW>％上昇\n出撃中は常に発動"
+
             // get skill base data
             let name = skill.SkillName;
-            let text = skillTextData[skill.ID_Text].Data_Text.replace(/[\s]+\n[\s]+/g, "\n");
             text = text.replace("(現在[NUM_TARGET]体)", "");
             text = text.replace("[NUM_TARGET]", "X");
             text = text.replace(/\[/g, "<").replace(/\]/g, ">");
             text = text.replace("<TIME>", skill.ContTimeMax);
+            text = text.replace(/コストｰ/g, "コスト-");
             let nextSkill = 0;
             let POW = skill.PowerMax;
 
             // get skill influence
-            let type = skillTypeData.find(ele => ele.SkillTypeID == skill.SkillType);
+            let type = skillTypeRaw.find(ele => ele.SkillTypeID == skill.SkillType);
             let infl = [];
-            for (let i = skillInflData.findIndex(ele => ele.Data_ID == type.ID_Influence); i < skillInflData.length; ++i) {
-                let infl0 = skillInflData[i];
+            for (let i = skillInfluenceRaw.findIndex(ele => ele.Data_ID == type.ID_Influence); i < skillInfluenceRaw.length; ++i) {
+                let infl0 = skillInfluenceRaw[i];
                 if (infl0.Data_ID != 0 && infl0.Data_ID != type.ID_Influence) { break; }
                 infl.push(infl0);
             }
@@ -891,9 +471,9 @@ const aigisCharacter = async function () {
             infl = infl.filter(ele => {
                 let iExpression = ele._ExpressionActivate;
                 if (skillID == 1346 && ele.Data_InfluenceType == 83) { return false; }
-                if (skillID == 663 && !ele.Data_InfluenceType.in(2, 89)) { return false; }
-                if (ele.Data_InfluenceType == 6 && skillID.in(326, 673, 1307, 1456, 1457)) { return false; }
-                if (skillID.in(1027, 1028, 1029) && ele.Data_InfluenceType == 2) { return false; }
+                if (skillID == 663 && ![2, 89].includes(ele.Data_InfluenceType)) { return false; }
+                if (ele.Data_InfluenceType == 6 && [326, 673, 1307, 1456, 1457].includes(skillID)) { return false; }
+                if ([1027, 1028, 1029].includes(skillID) && ele.Data_InfluenceType == 2) { return false; }
                 if (iExpression == "") { return true; }
 
                 iExpression = iExpression
@@ -941,11 +521,11 @@ const aigisCharacter = async function () {
                     if (!!pow_string && m3 != 0) {
                         // pow_string = pow_string.replace("POW", m3);
                         pow_string = pow_string.replace("POW", Math.max(m3, m4));
-                        if (iType.in(3, 5)) {
+                        if ([3, 5].includes(iType)) {
                             pow_string = `(${pow_string}) - 1`;
                         }
                     }
-                    if (!pow_string && iType.in(12, 13)) {
+                    if (!pow_string && [12, 13].includes(iType)) {
                         pow_string = a1 + 1;
                     }
                     desc = eval(pow_string);    // POW
@@ -1023,7 +603,7 @@ const aigisCharacter = async function () {
 
             if (nextSkill == 0) { break; }
             if (nextSkill == card.ClassLV1SkillID) { break; }
-            // if (skillListData[nextSkill].SkillName == skillListData[card.ClassLV1SkillID].SkillName) { break; }
+            // if (skillListRaw[nextSkill].SkillName == skillListRaw[card.ClassLV1SkillID].SkillName) { break; }
             skillID = nextSkill;
         }
 
@@ -1034,508 +614,649 @@ const aigisCharacter = async function () {
         let abilityData = { name: "", text: "" };
         if (abilityID == 0) { return abilityData; }
 
-        let ability = abilityListData[abilityID];
-        if (!ability) return `AbilityID_${abilityID}`;
+        let al = abilityListRaw[abilityID] || { AbilityTextID: 0 };
+        let at = abilityTextRaw.find(e => e.AbilityTextID == al.AbilityTextID)
+        if (!al || !at) return { name: `AbilityID_${abilityID}`, text: "" };
 
-        abilityData.name = ability.AbilityName;
-        abilityData.text = textFormat(abilityTextData[ability.AbilityTextID].AbilityText.replace("%d", ability.AbilityPower));
+        abilityData.name = al.AbilityName;
+        abilityData.text = textFormat(at.AbilityText.replace("%d", al.AbilityPower));
 
         return abilityData;
     };
 
+
     // result
-    let resultArray = [];
+    let rawCardsList = [];
+    let charaDatabase = [];
 
-    for (let card of cardsListData) {
+    for (i in _GRs733a4) {
 
-        // skip npc
-        if (!card.SellPrice ||
-            /ダミー/.test(card._name) ||
-            card.img == "c80ae4db8b6b09123493ceea8b63ccc2"
-        ) { continue; }
-        // if (/ダミー|^魔物$/.test(card._name) ||
-        //     /NPC/.test(card.ClassName)
-        // ) { continue; }
+        let card = _GRs733a4[i];
+        let _class = classListRaw.find(e => e.ClassID == card.InitClassID);
+        if (!_class) { console.error(`${COLOR.fgRed}Cant found ClassID == ${card.InitClassID}${COLOR.reset}`) }
 
-
-        // _name
-        let _name = card._name;
-        if (card.Rare == 10 && ! /聖霊/.test(card._name)) { _name = card._name + "【白金英傑】"; }
-        if (card.Rare == 11 && ! /聖霊/.test(card._name)) { _name = card._name + "【黒英傑】"; }
-        let _subName = nameTextData.find((e) => e.Message == card._name); _subName = _subName ? _subName.RealName : "";
-
-
-        // skill/AB
-        let ability, ability_aw;
-        let skill = "", skill_aw = "";
-        let _ability, _ability_aw;
-        let _skill, _skill_aw;
-        let _class = classListData.find(ele => ele.ClassID == card.InitClassID);
-        let className = _class ? _class.Name.trim().replace(/^(ちび|下級)?(中級)?/, "") : `ClassID_${card.InitClassID}`;
-        if (/聖霊|技強化ユニット/.test(className) && !/戦の聖霊/.test(className)) { className = "聖霊"; }
-        if (/大邪仙/.test(className)) { className = "邪仙"; }                       // ちび金光聖菩
-        if (/屍道士/.test(className)) { className = "キョンシー"; }                 //ちびスーシェン
-        if (/デモンマスター/.test(className)) { className = "デモンサモナー"; }      // ちびラピス
-        if (/料理長/.test(className)) { className = "料理人"; }                     // ちびオーガスタ
-
-        if (card.CardID.in(1, 309, 552, 554, 563, 604, 644, 690, 741, 771, 775, 782, 929, 950)) {
-            if (card.CardID == 1) { _name = "王子【通常】"; }
-            className = "王子";
-
-            let data = getAbilityData(0);
-            // if (card.CardID == 1) { data = { name: "戦意高揚【通常】", text: "出撃している全員の攻撃と防御が12％上昇、出撃中は常に発動" } }
-            if (card.CardID == 309) { data = { name: "戦意高揚", text: "配置中味方全体のユニットの攻撃と防御が20％上昇" } }
-            if (card.CardID == 552) { data = { name: "戦意高揚", text: "配置中味方全体のユニットの攻撃と防御が20％上昇" } }
-            if (card.CardID == 554) { data = { name: "戦意高揚【小】", text: "配置中味方全体のユニットの攻撃と防御が10％上昇" } }
-            if (card.CardID == 563) { data = { name: "戦意高揚【砂漠】", text: "配置中味方全体のユニットの攻撃と防御が20％上昇、出撃メンバーにいるだけで、砂漠の国出身の味方ユニットの攻撃力+10％" } }
-            if (card.CardID == 604) { data = { name: "戦意高揚【獣】", text: "配置中味方全体のユニットの攻撃と防御+20％、出撃メンバーにいるだけで、獣人属性ユニットの味方ユニットの攻撃力+10％" } }
-            if (card.CardID == 644) { data = { name: "戦意高揚【巨像】", text: "配置中味方全体のユニットの攻撃と防御+20％、スキル発動時に天使系、人間系の敵の動きを止める" } }
-            if (card.CardID == 690) { data = { name: "戦意高揚【風護】", text: "配置中味方全体のユニットの攻撃と防御+18％、5％の確率で味方へのダメージを無効化する" } }
-            if (card.CardID == 741) { data = { name: "戦意高揚【ちび】", text: "配置中味方全体のユニットの攻撃と防御が10％上昇、出撃メンバーにいるだけで、ちび属性ユニットの攻撃力+15％" } }
-            if (card.CardID == 771) { data = { name: "戦意高揚【英魂】", text: "配置中味方全体の攻撃防御+20％、ソルジャー系、ヘビーアーマー系、ワルキューレ系、アーチャー系、ヒーラー系クラスは更に+5％" } }
-            // if (card.CardID == 775) { data = { name: "", text: "" } }
-            if (card.CardID == 782) { data = { name: "戦意高揚【ダーク】", text: "配置中味方全体の攻撃防御+20％、出撃メンバーにいるだけで、デーモン、アンデッド、ゴブリン、オーク属性ユニットのＨＰ+10％" } }
-            if (card.CardID == 929) { data = { name: "英雄の鼓舞", text: "配置中全味方の攻撃防御+20％、出撃メンバーにいるだけで、全味方ユニットのＨＰ+20％、非スキル中はブロック数0で攻撃しない" } }
-            if (card.CardID == 950) { data = { name: "戦意高揚【四神】", text: "配置中味方全体の攻撃防御+20％ＨＰを徐々に回復(0.5秒毎に15回復)" } }
-            data.text = textFormat(data.text);
-
-            _ability = getAbilityData(0);
-            _ability_aw = data;
-
-            _skill = getSkillData(card, 0);
-            _skill_aw = getSkillData(card, card.EvoSkillID);
-
-        } else {
-
-            _ability = getAbilityData(card.Ability_Default);
-            _ability_aw = getAbilityData(card.Ability);
-
-            _skill = getSkillData(card, card.ClassLV1SkillID || card.ClassLV0SkillID);
-            _skill_aw = getSkillData(card, card.EvoSkillID);
-
-            // if (/^ちび|^ねんどろいど/.test(card._name)) {
-            //     _ability_aw = getAbilityData(0);
-            //     _skill_aw = getSkillData(card, 0);
-            // }
-
-            // if (/刻聖霊/.test(card._name)) {
-            //     // _ability = getAbilityData(card.Ability_Default || card.Ability);
-            //     _ability_aw = getAbilityData(0);
-
-            //     // _skill = getSkillData(card, card.ClassLV1SkillID || card.EvoSkillID);
-            //     _skill_aw = getSkillData(card, 0);
-            // }
-            if (/刻聖霊/.test(card._name)) {
-                _ability = getAbilityData(0);
-                _skill = getSkillData(card, 0);
-            }
-            if (_class && _class.JobChange == 0) {
-                _ability_aw = getAbilityData(0);
-                _skill_aw = getSkillData(card, 0);
-            }
-            if (card._AppearAbilityLevel == 55 || card.CardID == 80) {
-                _skill_aw = getSkillData(card, 0);
-            }
-            if (card.Rare > 9) {
-                _ability = getAbilityData(0);
-            }
-        }
-        // for (let data of _skill) { skill += `▹${data.name}\n${data.text}\n`; };
-        // for (let data of _skill_aw) { skill_aw += `▸${data.name}\n${data.text}\n`; };
-        if (_skill.name) for (let i in _skill.name) { skill += `▹${_skill.name[i]}\n${_skill.text[i]}\n`; };
-        if (_skill_aw.name) for (let i in _skill_aw.name) { skill_aw += `▸${_skill_aw.name[i]}\n${_skill_aw.text[i]}\n`; };
-        skill = skill.trim();
-        skill_aw = skill_aw.trim();
-        ability = !!_ability.name ? `▹${_ability.name}\n${_ability.text}` : "";
-        ability_aw = !!_ability_aw.name ? `▸${_ability_aw.name}\n${_ability_aw.text}` : "";
-
-
-        let rarity = {
-            0: "アイアン", 1: "ブロンズ", 2: "シルバー",
-            3: "ゴールド", 4: "プラチナ", 5: "ブラック", 7: "サファイア",
-            10: "プラチナ", 11: "ブラック"  // 英傑
-        }[card.Rare];
-
-
-        let urlName;
+        // rawCardsList.js
         {
-            let url = _name;
-            // if (card.CardID == 660)) { url = url.replace(/\s/g, ""); }
-            if (/聖霊/.test(url) && card.InitClassID < 50) { url = "特殊型"; }
-            if (card.CardID.in(1, 309, 552, 554, 563, 604, 644, 690, 741, 771, 775, 782, 929, 950)) { urlName = "%b2%a6%bb%d2"; }
-            else if (card.CardID == 4) { urlName = "%bb%b3%c2%b1%20%bc%ea%b2%bcA"; }
-            else if (card.CardID == 67) { urlName = "%bb%b3%c2%b1%20%bc%ea%b2%bcB"; }
-            else if (card.CardID == 435) { urlName = "%bc%f2%c6%dd%c6%b8%bb%d2%a4%ce%cc%bc%b5%b4%bf%cf%c9%b1"; }
-            else if (card.CardID == 547) { urlName = "%cd%c5%b8%d1%c2%c4%c9%b1"; }
-            else if (card.CardID == 661) { urlName = "%c0%e9%ce%be%a4%ab%a4%d6%a4%ad%c9%b1%b9%c8%b2%b4%c3%b0"; }
-            else if (card.CardID == 730) { urlName = "%c7%af%b2%ec%a4%ce%c3%e5%b0%e1%bb%cf%20%b5%b4%bf%cf%c9%b1"; }
-            else { urlName = urlEncode(url, "EUC-JP"); }
-        }
+            let id = card.CardID;   // id = i + 1
+            let name = nameListRaw[i].Message;
+            let rare = card.Rare;
+            let classID = card.InitClassID;
+            let sortGroupID = _class.SortGroupID;
+            // 10: 聖霊, 20: 近接, 25: 王子, 30: 遠隔, 40: 兩用
+            let placeType = _class ? _class.PlaceAttribute : 0;  // PlaceAttribute
+            // 0: 不可放置, 1: 近接, 2: 遠隔, 3: 兩用
+            let kind = card.Kind;
+            // 0: 男性, 1: 女性, 2: 無性(?), 3: 換金, 2: 經驗
+            let assign = card.Assign;
+            // 2: 帝國, 3-4: 遠國, 5: 砂漠, 6-7: 異鄉, 8: 東國
+            let genus = card.Genus;
+            // 101: 新春, 102: 情人, 103: 學園, 104: 花嫁, 105: 夏季, 106: 萬聖, 107: 聖夜, 108: Q, 109: 溫泉
 
+            let year = 0
+            let isEvent = (card._TradePoint <= 15) ? 1 : 0; // _TradePoint
+            let isToken = (card.SellPrice == 0 || nameListRaw[i].Message.includes("ダミー")) ? 1 : 0;
 
-        let obj = {
-            name: _name,
-            subName: _subName,
-            ability, ability_aw,
-            skill, skill_aw,
-            urlName,
-            rarity,
-            class: className
-        }
+            // Collaboration data format
+            switch (id) {
+                // ランス10-決戦-
+                case 581: { assign = -1; } break;
 
+                // 真・恋姫†夢想-革命
+                case 648: case 649: case 650: case 651: case 652:   // 2018/07
+                case 848: case 849: case 850: case 851: case 852:   // 2019/08
+                    { assign = -2; } break;
 
-        if (!resultArray.find(ele => ele.name == obj.name)) {
-            resultArray.push(obj);
-        }
-    }
+                //  封緘のグラセスタ
+                case 719:
+                case 720: { assign = -3; } break;
 
+                //  ガールズ・ブック・メイカー（GBM）
+                case 815: case 816: case 817: case 818: case 819:   // 2019/06
+                case 1015: case 1016: case 1017: case 1018: // 2020/06
+                    { assign = -4; } break;
 
-    // sort
-    resultArray.sort((A, B) => {
-        // return (A.rarity == B.rarity) ? A.name.localeCompare(B.name) : A.rarity.localeCompare(B.rarity);
-        return (A.rarity == B.rarity) ? A.name.localeCompare(B.name) : A.rarity.toString().localeCompare(B.rarity.toString());
-    });
+                //  流星ワールドアクター
+                case 955: case 956: { assign = -5; } break;
 
+                // case 497: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の近衛兵）"; } break;
+                // case 498: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の前衛戦術家）"; } break;
+                // case 499: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の弓兵）"; } break;
+                // case 501: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の公子）"; } break;
+                // case 684: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の槌使い）"; } break;
+                // case 685: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の盗賊）"; } break;
+                // case 686: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の回復術士）"; assign = 6; } break;
+                // case 687: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の騎士）"; } break;
+                // case 688: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の妖精）"; } break;
+                // case 689: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（異郷の祝福者）"; assign = 6; } break;
+                case 686: case 689: { assign = 6; } break;
 
-    // object to json
-    fs.writeFileSync("./AigisLoader/CharaDatabase.json", JSON.stringify(resultArray, null, "\t").replace(/\": /g, "\":\t"));
-    console.log("fs.writeFileSync( ./AigisLoader/CharaDatabase.json )");
-
-    console.log("aigisCharacter done\n");
-}
-const CharaDBFormat = async function () {
-
-    // arrayDataToCsv(skillListData, "./AigisLoader/skillList.csv");
-    // arrayDataToCsv(skillTextData, "./AigisLoader/skillText.csv");
-    // arrayDataToCsv(skillTypeData, "./AigisLoader/skillType.csv");
-    // arrayDataToCsv(skillInflData, "./AigisLoader/skillInfl.csv");
-
-    let textFormat = function (str) {
-
-        let enterRegA1 = new RegExp(`(${[
-            "\\)", "】", "」", "〉",
-            "を", "は", "の", "に", "と", "な", "た", "む", "め", "へ",
-            "しか", "から",
-            "スキル", "クラス",
-            "ランダム", "ミッション",
-
-            "後", "無", "体", "発", "秒", "倒", "防", "再", "属", "攻", "耐", "可", "終", "内",
-            "騎士", "最大", "時間", "対象", "魔法", "物理", "射程", "距離", "鈍足", "配置", "味方",
-            "引き", "必ず", "だけ", "待ち", "短い",
-            "与える", "受ける", "対する", "対して",
-            "発射する",
-
-            "ユニッ?ト?", "トーク?ン?", "アビリ?テ?ィ?", "ブロッ?ク?数?", "出撃?",
-            "[^る]が", "[い劣]る", "[同破]時", "一[度定]", "[連継]続", "[範周]囲", "以[上下]", "[初次]回",
-            "[およ再及]+び", "[連続確率可能間撃力連射自動倍以下]+で", "[使用体]+まで",
-            "[\\d\\.]+で",
-            "[\\n]効果"
-        ].join("|")})(\\n)`, 'g');
-        let enterRegA2 = new RegExp(`(\\n)(${[
-            "\\(", "【", "「", "〈", "\\+",
-            "を", "は", "の", "が", "に", "て", "で", "と", "し", "ず", "げ", "へ", "な", "き", "る",
-            "した", "まで", "から", "され", "させ", "する", "キル",
-            "アップ",
-            "アイテム", "ユニット",
-            "トークンを",
-
-            "倍", "毎", "力", "分", "用", "体", "系", "後", "率",
-            "短縮", "距離", "以外", "以下", "剣に", "中は", "受け", "低下", "可能", "能力", "入手", "確率", "発生", "速度", "属性", "無視",
-            "範囲が",
-            "発射して",
-
-            "時間?",
-            "た[時場]", "出[来身]",
-            "回復[量\\+]", "[所持味方の]*数",
-            "[\\d\\.]+倍", "[\\d\\.]+％上昇", "[\\d\\.]+％減少",
-            "減少", "上昇[\\n]", "軽減[\\n]"
-
-        ].join("|")})`, 'g');
-
-        let enterRegB1 = new RegExp(`(${[
-            "が", "き", "け", "げ", "し", "じ", "ず", "す", "せ", "び", "り", "る",
-            "ない", "され",
-            "だけで", "アップ",
-
-            "中", "倍", "分", "加", "化", "射", "後", "撃", "時", "減", "系",    // "力",
-            "付与", "発動", "場合", "召喚", "減少", "使役", "回復", "入手", "上昇", "麻痺", "無視", "短縮", "可能", "回避", "無限", "停止", "行う", "替え", "持ち",
-            "応じて", "人まで",
-
-            "配置中の?み?",
-            "扱[いう]",
-            "[\\d\\.]+％?"
-
-        ].join("|")})(\\n|、)`, 'g');
-        let enterRegB2 = new RegExp(`(\\n|、)(${[
-            "ＨＰ", "防御", "魔", // "攻撃",
-            "および", "さらに", "クラス",
-            "アビリティ",
-
-            "次", "全",
-            "付属", "効果", "終了", "味方", "自動", "撤退", "出撃", "優先",
-
-            "ご?く?まれに", "ス?キ?ル?発動時",
-            "[低中高]確率", "トークン[所持]*数",
-            "攻撃[^\\n]",
-            "[\\d\\.]+"
-
-        ].join("|")})`, 'g');
-
-        let regSort = ["最大ＨＰ", "ＨＰ", "攻撃力", "攻撃", "防御力", "防御", "魔法耐性", "射程"];
-        let regSortf = ((a, b) => regSort.indexOf(a) == regSort.indexOf(b) ? 0 : regSort.indexOf(a) > regSort.indexOf(b) ? 1 : -1);
-        let r1 = "([^視][秒のがでに、]|^)";
-        let r2 = `(${regSort.join("|")})`;
-        let r3 = "([と\/\n(及び)、]*)";
-        let r4 = "([\\+がの\\dを無])";
-        let reg3 = new RegExp(`${r1}${r2}${r3}${r2}${r3}${r2}${r4}`, 'g');
-        let reg2 = new RegExp(`${r1}${r2}${r3}${r2}${r4}`, 'g');
-
-        return str
-            .replace(/０/g, "0").replace(/１/g, "1").replace(/２/g, "2").replace(/３/g, "3").replace(/４/g, "4")
-            .replace(/５/g, "5").replace(/６/g, "6").replace(/７/g, "7").replace(/８/g, "8").replace(/９/g, "9")
-            .replace(/HP/g, "ＨＰ")
-            .replace(/（/g, "(").replace(/）/g, ")").replace(/＋/g, "+").replace(/－/g, "-").replace(/\:/g, "：")
-            .replace(/%c\[[\S]{6}\]/g, "")  // %c[ff0000]
-            .replace(/%/g, "％")
-            .replace(/。/g, "、")
-
-            .replace(/[\s・]*、[\s・]*/g, "、") // .replace(/\s*(・|。|、)\s*/g, "、")  
-            .replace(/[\s・]*\n[\s・]*/g, "\n")
-            .replace(/[\s]*\/[\s]*/g, "\/")
-            .replace(/倍　/g, "倍\n")
-            .replace(/　/g, "@")
-            .replace(/[\n ]+/g, "\n")
-
-            .replace(enterRegA1, (m, p1, p2) => `${p1}`)
-            .replace(enterRegA2, (m, p1, p2) => `${p2}`)
-            .replace("無視\n攻撃", "無視攻撃")
-            .replace("(と|の)(攻撃)(\n)(対象)", (m, p1, p2, p3, p4) => `${p1}${p2}${p4}`)
-
-            .replace(enterRegB1, (match, p1, p2) => `${p1}＃`)
-            .replace(enterRegB2, (match, p1, p2) => `＃${p2}`)
-
-            .replace(/＃/g, "、")
-            .replace(/、$/g, "")
-            .replace(/\n/g, "")
-            .replace(/(、?)(以下[^、]*発動)(、)/g, (match, p1, p2, p3) => `、${p2}：`)
-
-            .replace(/魔耐/g, "魔法耐性")    //
-            .replace(reg3, (match, ps, p2, p3, p4, p5, p6, pe) =>
-                `${ps}${[p2, p4, p6].filter((p) => p.inArray(regSort)).sort(regSortf).join("と").replace(/力/g, "")}${pe}`
-            )
-            .replace(reg2, (match, ps, p2, p3, p4, pe) =>
-                `${ps}${[p2, p4].filter((p) => p.inArray(regSort)).sort(regSortf).join("と").replace(/力/g, "")}${pe}`
-            )
-
-            .replace(/神魔法[\s]回復の雨/g, "神魔法・回復の雨")
-            .replace(/(「.*)(\s)(.*」)/g, (match, p1, p2, p3) => `${p1}${p3}`)
-            .replace(/@/g, "　");
-    }
-
-    let getSkillData = function (card, skillID) {
-
-    }
-
-    // result
-    let charaDatabase = eval(fs.readFileSync("./AigisLoader/CharaDatabase.json").toString());
-    let resultArray = [];
-    for (let card of charaDatabase) {
-        // card = {
-        //     name: "鷹翼の鳥人戦士",
-        //     subName: "鷹翼の鳥人戦士",
-        //     ability: "▹ベテランの指南\n合成継承時にクラスを問わず、同クラスボーナスがEXPに加算される",
-        //     ability_aw: "",
-        //     skill: "▹回復Ⅰ\n15秒自身のＨＰが徐々に回復、スキル発動時にＨＰが最大値の50％回復",
-        //     skill_aw: "",
-        //     urlName: "%c2%eb%cd%e3%a4%ce%c4%bb%bf%cd%c0%ef%bb%ce",
-        //     rarity: "ブロンズ",
-        //     class: "スカイウォリアー"
-        // };
-
-        let obj = {};
-        obj.name = card.name || "";
-        obj.subName = card.subName || "NEW";
-        obj.ability = card.ability || "";
-        obj.ability_aw = card.ability_aw || "";
-        obj.skill = card.skill || "";
-        obj.skill_aw = card.skill_aw || "";
-
-        obj.urlName = card.urlName ||
-            urlEncode(card.name, "EUC-JP");
-
-        obj.rarity = card.rarity ||
-            "アイアン ブロンズ シルバー ゴールド プラチナ ブラック サファイア";
-
-        obj.class = card.class ||
-            "";
-
-        // 先駆け一番#40秒攻撃力1.5倍@防御力が0.8倍に低下するが出撃コストが徐々に増加
-        // ▹先駆け一番\n40秒攻撃力1.5倍、防御力が0.8倍に低下するが出撃コストが徐々に増加
-        let dataSplit = (key, str) => {
-            str = str.replace(/\\n/g, "#");
-            let dataList = str.match(/([^#]+)(#)?/ig);
-            let dataResult = [];
-            // console.json(dataList)
-
-            if (dataList.length % 2 == 1) return str;
-
-            for (let i = 0; i < dataList.length; i += 2) {
-                let _name = dataList[i].replace("#", "");
-                let text = dataList[i + 1].replace("#", "");
-
-                _name = _name.replace(/[▹▸]+/g, "");
-                text = textFormat(text.replace(/@/g, "\n"));
-
-                // console.log(_name, text)
-                dataResult.push(`${key}${_name}\n${text}`);
+                case 694: case 697: { assign = 7; } break;
             }
-            return dataResult.join("\n");
-        };
 
-        if (obj.ability) obj.ability = dataSplit("▹", obj.ability)
-        if (obj.skill) obj.skill = dataSplit("▹", obj.skill)
+            // set year
+            if (id > 1125) year = 2021;
+            else if (id > 942) year = 2020;
+            else if (id > 726) year = 2019;
+            else if (id > 572) year = 2018;
+            else if (id > 437) year = 2017;
+            else if (id > 323) year = 2016;
+            else if (id > 201) year = 2015;
+            else if (id > 85) year = 2014;
+            else year = 2013;
 
-        if (obj.ability_aw) obj.ability_aw = dataSplit("▸", obj.ability_aw)
-        if (obj.skill_aw) obj.skill_aw = dataSplit("▸", obj.skill_aw)
+            // get image md5&get giles
+            let img, imgaw, imgaw2A, imgaw2B;
+            let iconName = "/" + id.toString().padStart(3, "0") + "_001.png";
+            img = getIconImage(icons.find(file => (/ico_00\.aar/.test(file) && file.indexOf(iconName) != -1)));
+            imgaw = getIconImage(icons.find(file => (/ico_01\.aar/.test(file) && file.indexOf(iconName) != -1)));
+            imgaw2A = getIconImage(icons.find(file => (/ico_02\.aar/.test(file) && file.indexOf(iconName) != -1)));
+            imgaw2B = getIconImage(icons.find(file => (/ico_03\.aar/.test(file) && file.indexOf(iconName) != -1)));
 
-        resultArray.push(obj);
+            // no any img
+            // if (!img && !imgaw && !imgaw2A && !imgaw2B) { continue; }
+            if (!img && !imgaw && !imgaw2A && !imgaw2B) { img = "c80ae4db8b6b09123493ceea8b63ccc2"; }
+
+            let obj = {
+                id,
+                name, rare, classID,
+                sortGroupID, placeType,
+                kind, assign, genus, // identity,
+                year, isEvent, isToken,
+                img, imgaw, imgaw2A, imgaw2B
+            };
+            rawCardsList[id] = obj;
+        }
+
+        // // CharaDatabase.json
+        {
+            // data
+            let kind = card.Kind;
+            // 0: 男性, 1: 女性, 2: 無性(?), 3: 換金, 2: 經驗
+            let isToken = (card.SellPrice == 0 || nameListRaw[i].Message.includes("ダミー")) ? 1 : 0;
+
+
+            // db data
+            let name = nameListRaw[i].Message;
+            let subName = nameListRaw[i].RealName;
+            if (i == 0) {
+                name = "王子【通常】";
+                subName = "王子";
+            }
+            if (card.Rare > 7 && kind != 2) {
+                name += (card.Rare == 10) ? "【白金英傑】" : "【黒英傑】";
+            }
+
+
+            let urlName;
+            {
+                let url = name;
+                // if (card.CardID == 660)) { url = url.replace(/\s/g, ""); }
+                if (/聖霊/.test(url) && card.InitClassID < 50) { url = "特殊型"; }
+                if ([1, 309, 552, 554, 563, 604, 644, 690, 741, 771, 775, 782, 929, 950].includes(card.CardID)) { urlName = "%b2%a6%bb%d2"; }
+                else if (card.CardID == 4) { urlName = "%bb%b3%c2%b1%20%bc%ea%b2%bcA"; }
+                else if (card.CardID == 67) { urlName = "%bb%b3%c2%b1%20%bc%ea%b2%bcB"; }
+                else if (card.CardID == 435) { urlName = "%bc%f2%c6%dd%c6%b8%bb%d2%a4%ce%cc%bc%b5%b4%bf%cf%c9%b1"; }
+                else if (card.CardID == 547) { urlName = "%cd%c5%b8%d1%c2%c4%c9%b1"; }
+                else if (card.CardID == 661) { urlName = "%c0%e9%ce%be%a4%ab%a4%d6%a4%ad%c9%b1%b9%c8%b2%b4%c3%b0"; }
+                else if (card.CardID == 730) { urlName = "%c7%af%b2%ec%a4%ce%c3%e5%b0%e1%bb%cf%20%b5%b4%bf%cf%c9%b1"; }
+                else { urlName = urlEncode(url, "EUC-JP"); }
+            }
+
+
+            let rarity = {
+                0: "アイアン", 1: "ブロンズ", 2: "シルバー",
+                3: "ゴールド", 4: "プラチナ", 5: "ブラック", 7: "サファイア",
+                10: "プラチナ", 11: "ブラック"  // 英傑
+            }[card.Rare];
+
+
+            let awclass = false;
+            let className = _class.Name;
+            if (kind == 2) { className = "聖霊" }
+            if (name.indexOf("王子") != -1) { className = "王子"; awclass = true; }
+            if (className.indexOf("ちび") != -1) {
+                _class = classListRaw.find(e => e.Name == className.replace("ちび", ""));
+                while (true) {
+                    let tmp = classListRaw.find(e => e.JobChange == _class.ClassID && e.ClassID != 700);
+                    if (tmp) { _class = tmp; awclass = true; }
+                    else break;
+                }
+                className = _class.Name;
+            }
+            if (/^[下中]級/.test(className)) { className = className.replace(/^[下中]級/, ""); }
+
+
+            // skill/AB
+            let ability, ability_aw, skill = "", skill_aw = "";
+            let _ability, _ability_aw, _skill, _skill_aw;
+            let abID = card.Ability_Default;
+            let awID = card.Ability || abID;
+            let skID = card.ClassLV1SkillID || card.ClassLV0SkillID;
+            let swID = card.EvoSkillID || skID;
+
+            if (card.Rare <= 1) { awID = 0; swID = 0; }
+            if (card.Rare <= 2) { swID = 0; }
+            if (card.Rare >= 10) { abID = 0; }
+            if (awclass) { abID = 0; skID = 0; }
+            else if (name.startsWith("ちび")) { awID = 0; swID = 0; }
+            if (awID == abID) { awID = 0; }
+            if (swID == skID) { swID = 0; }
+            if (name == "刻聖霊ボンボリ") { skID = 0; }
+
+            _ability = getAbilityData(abID);
+            _ability_aw = getAbilityData(awID);
+            _skill = getSkillData(card, skID);
+            _skill_aw = getSkillData(card, swID);
+
+            if (_skill.name) for (let i in _skill.name) { skill += `▹${_skill.name[i]}\n${_skill.text[i]}\n`; };
+            if (_skill_aw.name) for (let i in _skill_aw.name) { skill_aw += `▸${_skill_aw.name[i]}\n${_skill_aw.text[i]}\n`; };
+            skill = skill.trim();
+            skill_aw = skill_aw.trim();
+
+            ability = !!_ability.name ? `▹${_ability.name}\n${_ability.text}` : "";
+            ability_aw = !!_ability_aw.name ? `▸${_ability_aw.name}\n${_ability_aw.text}` : "";
+
+
+            // skip data
+            if (isToken) continue;
+            if (name == "刻聖霊ボンボリ" && i != 289) continue;
+
+            let obj = {
+                name,
+                subName,
+                ability, ability_aw,
+                skill, skill_aw,
+                urlName,
+                rarity,
+                class: className
+            }
+
+            charaDatabase.push(obj);
+        }
+
+    }
+    rawCardsList = rawCardsList.filter((r) => (r));   // del empty item
+
+    // ready to write to file
+    let cardsDataString = [];
+    for (let result of rawCardsList) {
+        cardsDataString.push("\t" + JSON.stringify(result, null, 1).replace(/\s*\n\s*/g, "\t"));
+    };
+    // write to file
+    fs.writeFileSync(`${scriptOutputPath}/rawCardsList.js`, `var maxCid = ${_GRs733a4.length};\nvar charaData = [\n${cardsDataString.join(",\n")}\n]`);
+    console.log("fs.writeFileSync( rawCardsList.js )");
+
+    // write to file
+    fs.writeFileSync("CharaDatabase.json", JSON.stringify(charaDatabase, '\t', 1));
+    console.log("fs.writeFileSync( CharaDatabase.json )");
+
+    console.log(`aigisCardsList done...\n`);
+}
+
+const aigisQuestsList = async () => {
+    console.log(`aigisQuestsList start...`);
+
+    /*  class mission {
+            "MissionID": 0,
+            "Name": "",
+            "QuestID": []
+        }
+    
+        class quest {
+            "QuestID": 0,
+            "Name": "",
+            "map",
+            "location", "life", "startUP", "unitLimit";
+        }*/
+
+    // missionLists
+    let missionList = [];
+    let questList = [];
+    let mapLocationList = {};
+
+    // *MissionConfig.atb
+    // read raw mission config
+    // get object > mission { MissionID, Name, QuestID }
+    {
+        // download mission name Text
+        let missionNameText = [];
+        {
+            let filepath = resourceList.find(p => p.includes("EventNameText") && p.endsWith("ALTB_entx.txt"));
+            missionNameText = rawToJson(filepath);
+            console.log(`get EventNameText data`);
+        }
+
+        let missionCfgPath = [];
+        missionCfgPath = resourceList.filter(p => p.includes("MissionConfig"));
+
+        for (let filepath of missionCfgPath) {
+            let missionCfgArray = rawToJson(filepath);
+
+            for (let missionCfg of missionCfgArray) {
+
+                let _name = missionCfg.Name || "NULL";
+                let missionID = missionCfg.MissionID;
+
+                let questID = missionCfg.QuestID || false;
+                questID = questID ? questID.split(',') : [];
+                for (let i in questID) { questID[i] = parseInt(questID[i]); }
+
+                // fill mission title
+                let titleID = missionCfg.TitleID;
+                if (titleID != undefined && _name == "NULL") { _name = missionNameText[titleID].Data_Text }
+                if (missionID < 110000) {
+                    _name = [
+                        "第一章　王都脱出", "第二章　王城奪還", "第三章　熱砂の砂漠", "第四章　東の国", "第五章　魔法都市",
+                        "第六章　密林の戦い", "第七章　魔の都", "第八章　魔神の体内", "第九章　鋼の都", "第十章　海底"
+                    ][missionID - 100001];
+                }
+
+
+                // search mission in db
+                let mission = missionList.find(q => q.missionID == missionID)
+                // buind new mission
+                if (!mission) {
+                    mission = { name: _name, missionID, questID, titleID };
+                    missionList.push(mission);
+                } else {
+                    mission.questID.concat(questID);
+                }
+            }
+        }
+    }; console.log(`get MissionConfig data`);
+
+    // *MissionQuestList.atb
+    // read raw mission quest list
+    // fill mission.QuestID
+    {
+        let missionQListPath = [];
+        missionQListPath = resourceList.filter(p => p.includes("MissionQuestList"));
+
+        for (let filepath of missionQListPath) {
+            let missionQListArray = rawToJson(filepath);
+
+            for (let missionQList of missionQListArray) {
+
+                let missionID = missionQList.MissionID;
+                let questID = missionQList.QuestID;
+
+                // search mission in db
+                let mission = missionList.find(q => q.missionID == missionID)
+                if (mission) {
+                    mission.questID.push(questID);
+                } else {
+                    // let listName = path.parse(filepath).dir;
+                    // console.log(`${listName}`);
+                    // console.log(`${COLOR.fgRed}cant found missionID = ${missionID}${COLOR.reset}`);
+                }
+            }
+            // let listName = path.parse(filepath).dir;
+            // listName = path.parse(listName).name;
+            // fs.writeFileSync(`raw/MissionQuestList/${listName}.json`, JSON.stringify(questList, null, 2));
+        }
+    }; console.log(`get MissionQuestList data`);
+    // mission list done...
+
+
+    // QxZpjdfV.xml
+    // read raw quest list
+    {
+        for (let questRaw of _QxZpjdfV) {
+            // get data from raw
+            let questID = questRaw.QuestID;
+            let map = questRaw.MapNo.toString().padStart(4, "0");
+            let location = questRaw.LocationNo.toString().padStart(2, "0");;
+            let life = questRaw.defHP;
+            let startUP = questRaw.defAP;
+            let unitLimit = questRaw.Capacity;
+
+            // get data from db
+            let mission = missionList.find(m => m.questID.indexOf(questID) != -1);
+            let missionID = missionTitle = "NULL";
+            if (mission) {
+                missionID = mission.missionID;
+                missionTitle = mission.name;
+
+                if (missionID == 110001) {
+                    map = `110001_${map}`;
+                }
+            }
+            // get quest name text
+            let questName = "NULL";
+            if (missionID != "NULL") {
+                let filepath = resourceList.find(p => p.includes(`QuestNameText${missionID}.atb`));
+                let questNameText = rawToJson(filepath);
+
+                let questNameID = questRaw.QuestTitle;
+                questName = questNameText[questNameID].Message;
+            }
+
+            // buind new quest
+            if (missionID != "NULL") {
+                quest = {
+                    id: `${missionID}/${questID}`,
+                    map, missionTitle, questName,
+                    missionID, questID,
+                    location,
+                    life, startUP, unitLimit
+                }
+                questList.push(quest);
+            }
+        }
+    }; console.log(`get QuestNameText data`);
+
+    // get old quest list
+    if (fs.existsSync(`QuestList.json`)) {
+        let oldQuest = fs.readFileSync(`QuestList.json`).toString();
+        oldQuest = oldQuest.substring(oldQuest.indexOf('['));
+        oldQuest = eval(oldQuest);
+        for (let quest of oldQuest) {
+            let q = (questList.find(q => q.id == quest.id));
+            if (!q) {
+                questList.push(quest);
+                // console.log(quest.id)
+            }
+        }
+    }
+    // quest list done...
+
+
+    // download map data/image
+    {
+        let oldLocationList = {};
+        if (fs.existsSync(`MapLocationList.json`)) {
+            oldLocationList = fs.readFileSync(`MapLocationList.json`).toString();
+            oldLocationList = oldLocationList.substring(oldLocationList.indexOf('{'));
+            oldLocationList = eval(`(${oldLocationList})`);
+        }
+
+        for (let quest of questList) {
+            // quest config
+            let map = quest.map;
+            let location = quest.location;
+
+            // resource path
+            let fileName = `Map${map}`;
+            let outputPath = `${mapsOutputPath}/${fileName}`;
+
+            // online file name/path
+            let mapName = `Map${map}.aar`;
+            let raws = getFileList(`${resourcesPath}/${mapName}`)
+            // pick map data path
+            let pngPath = raws.find(p => p.endsWith(".png"));
+
+            // online file exist
+            if (pngPath && (!fs.existsSync(outputPath) || changesList.indexOf(mapName) != -1)) {
+                // online path + no local resource
+                // online path + in change log
+
+                // convert new map png to jpg
+                await new Promise((resolve, reject) => {
+                    Jimp.read(pngPath)
+                        .then(img => {
+                            console.log(` getting ${fileName} map image...`);
+                            return img.quality(70) // set JPEG quality
+                                .write(outputPath + ".jpg"); // save
+                        }).then(async () => {
+                            console.log(" Jimp.quality(70).write()");
+
+                            await sleep(100);
+                            // del old local resource if exist
+                            if (fs.existsSync(outputPath)) { fs.unlinkSync(outputPath); }
+                            // rename
+                            let log = child_process.execSync(`ren ${fileName}.jpg ${fileName}`, { cwd: mapsOutputPath }).toString().trim();
+                            if (log != "") console.log(log);
+
+                            console.log("");
+                            resolve();
+                        }).catch(err => {
+                            console.log(pngPath);
+                            console.error(err);
+                            reject();
+                        });
+                });
+            } else if (!pngPath && !fs.existsSync(outputPath)) {
+                // WARNING
+                console.log(`${COLOR.fgRed}cant found ${fileName} in local & this version Aigis${COLOR.reset}`);
+            }
+
+            let localPath = raws.find(p => p.indexOf(`Location${location}.atb`) != -1);
+            if (localPath) {
+                let localRaw = rawToJson(localPath);
+
+                if (!mapLocationList[map]) { mapLocationList[map] = {}; }
+                // if (!mapLocationList[map][location]) { mapLocationList[map][location] = []; }
+                mapLocationList[map][location] = localRaw;
+            } else if (fs.existsSync(`MapLocationList.json`)) {
+                // console.log(`${COLOR.fgRed}cant found Location${location} data${COLOR.reset}`)
+                if (!mapLocationList[map]) { mapLocationList[map] = {}; }
+                mapLocationList[map][location] = oldLocationList[map][location];
+            }
+        }
     }
 
-    // sort
-    // resultArray.sort((A, B) => {
-    //     // return (A.rarity == B.rarity) ? A.name.localeCompare(B.name) : A.rarity.localeCompare(B.rarity);
-    //     return (A.rarity == B.rarity) ? A.name.localeCompare(B.name) : A.rarity.toString().localeCompare(B.rarity.toString());
-    // });
-    // get last list
-    let cardDataList = eval(`(${/\[[\s\S]+\]/.exec(fs.readFileSync("./html/script/rawCardsList.js").toString()).toString()})`);
-    fs.writeFileSync("./temp.js", JSON.stringify(cardDataList, null, 2));
-    resultArray.sort((A, B) => {
-        // data from db
-        let nA = A.name.replace(/【\S+英傑】/, "");
-        let nB = B.name.replace(/【\S+英傑】/, "");
-        if (nA == "王子【通常】") nA = "主人公";
-        if (nB == "王子【通常】") nB = "主人公";
+    // map location data sort
+    {
+        // sort by key (MapNo)
+        const sortMethod = (raw) => {
+            let data = {};
+            for (let key of Object.keys(raw).sort()) {
+                data[`a${key}`] = sortMethod2(raw[key]);
+            }
+            return data;
+        }
+        // sort by key (LocationNo)
+        const sortMethod2 = (raw) => {
+            let data = {};
+            let keys = Object.keys(raw).sort((a, b) => {
+                let iA = parseInt(a);
+                let iB = parseInt(b);
+                return iA == iB ? 0 : (iA < iB ? -1 : 1);
+            })
+            for (let key of keys) {
+                data[`a${key}`] = sortMethod3(raw[key]);
+            }
+            return data;
+        }
+        // sort by value
+        const sortMethod3 = (raw) => {
+            let data = raw.sort((a, b) => {
+                let iA = a.ObjectID, iB = b.ObjectID;
+                let jA = a.X, jB = b.X;
+                let kA = a.Y, kB = b.Y;
 
-        let rA = A.rarity;
-        let rB = B.rarity;
-        let rarity = {
-            0: "アイアン", 1: "ブロンズ", 2: "シルバー",
-            3: "ゴールド", 4: "プラチナ", 5: "ブラック", 3.5: "サファイア",
-            4.1: "プラチナ", 5.1: "ブラック", 5.2: "ブラック"  // 英傑
-        };
+                let r = iA == iB ? 0 : (iA < iB ? -1 : 1);
+                if (r == 0) r = jA == jB ? 0 : (jA < jB ? -1 : 1);
+                if (r == 0) r = kA == kB ? 0 : (kA < kB ? -1 : 1);
 
-        // console.log(nA, nB)
-        // console.log(rA, rB)
-        let iA = (cardDataList.find(obj => obj.name.replace(/（\S+の\S+）/, "") == nA && rarity[obj.rare] == rA)).id;
-        // console.log(iA)
-        let iB = (cardDataList.find(obj => obj.name.replace(/（\S+の\S+）/, "") == nB && rarity[obj.rare] == rB)).id;
-        // console.log(iB)
-        return iA > iB ? 1 : -1;
-    });
+                return r;
+            });
+
+            return data;
+        }
+
+        mapLocationList = sortMethod(mapLocationList);
+    }
 
 
-    // object to json
-    fs.writeFileSync("./AigisLoader/CharaDatabase.json", JSON.stringify(resultArray, null, "\t").replace(/\": /g, "\":\t"));
-    console.log("fs.writeFileSync( ./AigisLoader/CharaDatabase.json )");
 
-    console.log("aigisCharacter done\n");
+    let jsString = [];
+    questList.sort((a, b) => { let iA = a.questID, iB = b.questID; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
+    // questList.sort((a, b) => { let iA = a.missionTitle, iB = b.missionTitle; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
+    questList.sort((a, b) => { let iA = a.missionTitle, iB = b.missionTitle; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
+    for (let q of questList) { jsString.push(`\t${JSON.stringify(q, null, '\t').replace(/\n/g, "")}`); }
+    jsString = jsString.join(',\n');
+    fs.writeFileSync(`QuestList.json`, `[\n${jsString}\n]`);
+    fs.writeFileSync(`${scriptOutputPath}/rawQuestList.js`, `let questList = [\n${jsString}\n]`);
+
+
+
+    missionList.sort((a, b) => { let iA = a.missionID, iB = b.missionID; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
+    missionList.sort((a, b) => { let iA = a.name, iB = b.name; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
+    jsString = JSON.stringify(missionList, null, '\t')
+        .replace(/\n\t{3}/g, ` `)
+        .replace(/\n\t{2}\]/g, ` ]`)
+    fs.writeFileSync(`MissionList.json`, jsString);
+
+    jsString = {};
+    for (let m of missionList) { jsString[m.missionID] = m.name; }
+    fs.writeFileSync(`${scriptOutputPath}/rawMissionList.js`, `let missionList = ${JSON.stringify(jsString, null, '\t')}`);
+
+
+
+    jsString = JSON.stringify(mapLocationList, null, '\t')
+        .replace(/\n\t\t\t\t/g, ` `)
+        .replace(/\n\t\t\t\{/g, `{`)
+        .replace(/\n\t\t\t\}/g, `}`)
+        .replace(/\n\t\t\]/g, `]`)
+        .replace(/\{\n\t\t"/g, `{\t"`)
+        .replace(/\n\t\t"/g, `\n\t\t\t\t"`)
+        .replace(/\n\t\}/g, `}`)
+        .replace(/\"a/g, `"`)
+    fs.writeFileSync(`MapLocationList.json`, jsString);
+    fs.writeFileSync(`${scriptOutputPath}/rawMapDataList.js`, `let mapDataList = ${jsString}`);
+
+
+    console.log(`aigisQuestsList done...\n`);
 }
 
 
+
+
+
+
+const readRawData = () => {
+    console.log(`readRawData start...`);
+    resourceList = getFileList(resourcesPath);
+
+    _GRs733a4 = xmlToJson(`${xmlPath}/GRs733a4.xml`)
+    _QxZpjdfV = xmlToJson(`${xmlPath}/QxZpjdfV.xml`)
+
+    let filepath
+    filepath = resourceList.find(p => p.includes("NameText.atb") && p.includes("ALTB_gdtx.txt"));
+    nameListRaw = rawToJson(filepath)
+
+    filepath = resourceList.find(p => p.includes("ClassData.atb"));
+    classListRaw = rawToJson(filepath)
+
+    filepath = resourceList.find(p => p.includes("AbilityList.atb"));
+    abilityListRaw = rawToJson(filepath)
+    filepath = resourceList.find(p => p.includes("AbilityText.atb"));
+    abilityTextRaw = rawToJson(filepath)
+
+    filepath = resourceList.find(p => p.includes("SkillList.atb"));
+    skillListRaw = rawToJson(filepath)
+    filepath = resourceList.find(p => p.includes("SkillText.atb"));
+    skillTextRaw = rawToJson(filepath)
+    filepath = resourceList.find(p => p.includes("SkillTypeList.atb"));
+    skillTypeRaw = rawToJson(filepath)
+    filepath = resourceList.find(p => p.includes("SkillInfluenceConfig.atb"));
+    skillInfluenceRaw = rawToJson(filepath)
+
+    console.log(`readRawData done...\n`);
+}
 
 let resourceList;
 
-let cardsListData;
-let classListData;
+let _GRs733a4;
+let _QxZpjdfV;
 
-let questListData;
+let nameListRaw;
+let classListRaw;
+let abilityListRaw;
+let abilityTextRaw;
+let skillListRaw;
+let skillTextRaw;
+let skillTypeRaw;
+let skillInfluenceRaw;
 
-let skillListData;
-let skillTextData;
-let skillTypeData;
-let skillInflData;
-let abilityListData;
-let abilityTextData;
-let nameTextData;
+const main = async () => {
 
-const main = async function () {
     if (!fs.existsSync(resourcesPath)) {
         console.log("!fs.existsSync(resources)");
-        // return;
         fs.mkdirSync(resourcesPath);
     }
+    console.log(`resourcesPath: ${resourcesPath}\n`);
 
-    console.log(`resourcesPath: ${resourcesPath}`);
-
+    // // download data
     await downloadRawData();
-    resourceList = getFileList(resourcesPath);
+    readRawData();
 
-
-    let cardListTxt = resourcesPath + "/cards.txt";
-    let classListTxt = resourcesPath + "/PlayerUnitTable.aar/002_ClassData.atb/ALTB_cldt.txt";
-    cardsListData = rawDataToJson(cardListTxt);
-    classListData = rawDataToJson(classListTxt);
+    // cards list
     await aigisCardsList();
 
+    // quest list
+    await aigisQuestsList();
 
-    let questListTxt = resourcesPath + "/quest.txt";
-    questListData = eval(fs.readFileSync(questListTxt).toString());
-    await aigisMissionList();
-    await aigisQuestList();
-    await aigisMapHash();
-    await aigisMapData();
-
-    /*
-        // let abilityCfgsTxt = resources + "/AbilityConfig.atb/ALTB_acfg.txt";
-        let skillListTxt = resourcesPath + "/SkillList.atb/ALTB_skil.txt";
-        let skillTextTxt = resourcesPath + "/SkillText.atb/ALTB_sytx.txt";
-        let skillTypeTxt = resourcesPath + "/SkillTypeList.atb/ALTB_skty.txt";
-        let skillInflTxt = resourcesPath + "/SkillInfluenceConfig.atb/ALTB_sytx.txt";
-        let abilityListTxt = resourcesPath + "/AbilityList.atb/ALTB_aylt.txt";
-        let abilityTextTxt = resourcesPath + "/AbilityText.atb/ALTB_aytx.txt";
-        let nameTextTxt = resourcesPath + "/NameText.atb/ALTB_gdtx.txt";
-        skillListData = rawDataToJson(skillListTxt);
-        skillTextData = rawDataToJson(skillTextTxt);
-        skillTypeData = rawDataToJson(skillTypeTxt);
-        skillInflData = rawDataToJson(skillInflTxt);
-        abilityListData = rawDataToJson(abilityListTxt);
-        abilityTextData = rawDataToJson(abilityTextTxt);
-        nameTextData = rawDataToJson(nameTextTxt);
-        await aigisCharacter();
-    */
-
-    await CharaDBFormat();
-
-
+    fs.writeFileSync(`raw/_GRs733a4.json`, JSON.stringify(_GRs733a4, null, 2));
+    fs.writeFileSync(`raw/_QxZpjdfV.json`, JSON.stringify(_QxZpjdfV, null, 2));
+    fs.writeFileSync(`raw/nameList.json`, JSON.stringify(nameListRaw, null, 2));
+    fs.writeFileSync(`raw/classList.json`, JSON.stringify(classListRaw, null, 2));
+    fs.writeFileSync(`raw/abilityList.json`, JSON.stringify(abilityListRaw, null, 2));
+    fs.writeFileSync(`raw/abilityText.json`, JSON.stringify(abilityTextRaw, null, 2));
+    fs.writeFileSync(`raw/skillList.json`, JSON.stringify(skillListRaw, null, 2));
+    fs.writeFileSync(`raw/skillText.json`, JSON.stringify(skillTextRaw, null, 2));
+    fs.writeFileSync(`raw/skillType.json`, JSON.stringify(skillTypeRaw, null, 2));
+    fs.writeFileSync(`raw/skillInfluence.json`, JSON.stringify(skillInfluenceRaw, null, 2));
 };
 main();
-
-// CharaDBFormat();
-
-// https://www.peko-step.com/zhtw/tool/alphachannel.html
-// getIconMd5("./AigisLoader/000_001.png");
-
-
-
-
-
-
-
-
-
-
-
-
-// const debug = async function () {
-//     let questList = eval(fs.readFileSync("./html/script/rawQuestList.js").toString().replace(/^let questList = /, ""));
-//     // let mapHashList = JSON.parse(fs.readFileSync("./html/script/rawMapHashList.js").toString().replace(/^let mapHashList = /, ""));
-//     let mapHashList = eval(`(${fs.readFileSync("./html/script/rawMapHashList.js").toString().replace(/^let mapHashList = /, "")})`);
-
-//     for (let quest of questList) {
-//         let mapName = `Map${quest.map}.png`;
-//         // console.log(mapHashList[mapName]);
-//         if (mapHashList[mapName] == "1af385e955caf0a4cd51da219e051725") {
-//             console.log(`${quest.missionTitle}\t${quest.questName}\t${mapName}`);
-//         }
-//     }
-// }; debug();
