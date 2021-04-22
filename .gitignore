@@ -1,15 +1,11 @@
 .vscode
+node_modules
 
 Thumbs.db
 
-node_modules
+AigisTools
+AigisImageLoader
 
 Resources
-
 LocalProxy/AigisTools/
-
-AigisTools/Data/Cache/
-AigisTools/out/
-AigisTools/working/
-
 AigisLoader/raw/

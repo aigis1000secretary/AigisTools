@@ -12,4 +12,6 @@ npm install
 npm update
 cd ..
 
+md AigisTools
+
 pause
