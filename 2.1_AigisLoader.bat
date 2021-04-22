@@ -1,5 +1,6 @@
 @echo off
 
 echo Now get raw data...
-node .\AigisLoader\index.js
+cd .\AigisLoader
+node index.js
 pause

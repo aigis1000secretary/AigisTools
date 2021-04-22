@@ -64,7 +64,7 @@ module.exports = {
 
 
             // get filepath
-            let filename = url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') == -1 ? "Desktop AQ.txt" : "Desktop R.txt";
+            let filename = url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') == -1 ? "Desktop A.txt" : "Desktop R.txt";
             xmlpath = `./AigisTools/Data/XML`;
             filepath = `./AigisTools/Data/XML/${folderName}`;
 
