@@ -8,4 +8,5 @@ let mapHashList = {
 	"785_001.png": "bf4dbc238f80be288187b3f967f783bc",
 	"787_001.png": "c8322f49cce882318acd6ad392306977",
 	"793_001.png": "3431254f95edf8be8ec823268d2b6132",
+	"275_001.png": "BattleEffect_275_StageHotWave1",
 }
