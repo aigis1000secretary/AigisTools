@@ -1,4 +1,4 @@
-var maxCid = 1196;
+var maxCid = 1203;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1195,5 +1195,12 @@ var charaData = [
 	{	"id": 1193,	"name": "疾風かまいたちヤタケ",	"rare": 5,	"classID": 126730,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1193_00"	},
 	{	"id": 1194,	"name": "ぬりかべシラヌイ",	"rare": 4,	"classID": 128500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1194_00",	"imgaw": "1194_01"	},
 	{	"id": 1195,	"name": "ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1195_00"	},
-	{	"id": 1196,	"name": "ぬりかべ分身",	"rare": 5,	"classID": 128630,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1196_00"	}
+	{	"id": 1196,	"name": "ぬりかべ分身",	"rare": 5,	"classID": 128630,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1196_00"	},
+	{	"id": 1197,	"name": "万刃を担う者アルヴァ",	"rare": 11,	"classID": 128700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1197_00",	"imgaw": "1197_01"	},
+	{	"id": 1198,	"name": "万刃を担う者アルヴァ",	"rare": 10,	"classID": 128700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1198_00",	"imgaw": "1198_01"	},
+	{	"id": 1199,	"name": "銀腕を掲げし者トラム",	"rare": 11,	"classID": 127400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1199_00",	"imgaw": "1199_01"	},
+	{	"id": 1200,	"name": "ウェパル人形",	"rare": 5,	"classID": 50,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1200_00"	},
+	{	"id": 1201,	"name": "等身大ケラウノス人形",	"rare": 5,	"classID": 51,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1201_00"	},
+	{	"id": 1202,	"name": "銀腕を掲げし者トラム",	"rare": 11,	"classID": 127400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1203,	"name": "ターゲットマーカー",	"rare": 5,	"classID": 121820,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1203_00"	}
 ]
