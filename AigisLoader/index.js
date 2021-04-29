@@ -182,7 +182,7 @@ const downloadRawData = async () => {
 
             console.log(`do file ${filename}`);
             try {
-                child_process.execSync(`do file ${filename}`, { cwd: aigisToolPath });
+                child_process.execSync(`do file ${filename}`, { cwd: aigisToolPath, env: { "LZ4_ASYNC": "1" } });
             } catch (e) {
                 // child_process.execSync(`start get ${filename}`, { cwd: aigisToolPath });
                 console.error(e.toString())
