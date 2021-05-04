@@ -17,7 +17,6 @@ const aigisToolPath = `../AigisTools`;
 const xmlPath = `${aigisToolPath}/out`;
 const resourcesPath = `${xmlPath}/files`;
 const rawListPath = `${xmlPath}/filelists/Desktop R Files.txt`;
-const addedListPath = `${xmlPath}/Desktop R Added.txt`;
 const changesListPath = `${xmlPath}/Desktop R Changes.txt`;
 
 // outputPath
@@ -89,8 +88,8 @@ const downloadRawData = async () => {
     console.log(`downloadRawData start...`);
 
     // get_file_list.lua
-    console.log("do get_file_list.lua");
-    child_process.execSync(`do filelist`, { cwd: aigisToolPath }).toString().trim();
+    console.log("get get_file_list.lua");
+    child_process.execSync(`get filelist`, { cwd: aigisToolPath }).toString().trim();
 
     // get filelist
     {
@@ -104,24 +103,31 @@ const downloadRawData = async () => {
                 rawList.push(match[1]);
             }
         }
-        if (fs.existsSync(addedListPath)) {
-            let filelist = fs.readFileSync(addedListPath).toString().split("\n");
-            let listReg = /^(\S+)\s+\S+/;
-
-            for (let line of filelist) {
-                if (!listReg.test(line)) { continue; }  // not match regex
-                let match = line.match(listReg);
-                addedList.push(match[1]);
-            }
-        }
         if (fs.existsSync(changesListPath)) {
-            let filelist = fs.readFileSync(changesListPath).toString().split("\n");
-            let listReg = /^(\S+)\s+\S+/;
+            let changelist = fs.readFileSync(changesListPath).toString();
 
-            for (let line of filelist) {
-                if (!listReg.test(line)) { continue; }  // not match regex
-                let match = line.match(listReg);
-                changesList.push(match[1]);
+            let i = [
+                changelist.indexOf('Added:\n'),
+                changelist.indexOf('Removed:\n'),
+                changelist.indexOf('Changed:\n'),
+                changelist.length
+            ].sort((a, b) => a - b)
+
+            for (let j = 0; j < 3; ++j) {
+                let filelist = changelist.substring(i[j], i[j + 1]).split("\n");
+                let changetype = filelist.shift();
+                let listReg = /^(\S+)\s+\S+/;
+
+                for (let line of filelist) {
+                    if (!listReg.test(line)) { continue; }  // not match regex
+                    let match = line.match(listReg);
+
+                    if (changetype == "Added:") {
+                        addedList.push(match[1]);
+                    } else if (changetype == "Changed:") {
+                        changesList.push(match[1]);
+                    }
+                }
             }
         }
     }
@@ -180,9 +186,9 @@ const downloadRawData = async () => {
                 continue;
             }
 
-            console.log(`do file ${filename}`);
+            console.log(`get file ${filename}`);
             try {
-                child_process.execSync(`do file ${filename}`, { cwd: aigisToolPath, env: { "LZ4_ASYNC": "1" } });
+                child_process.execSync(`get file ${filename}`, { cwd: aigisToolPath, env: { "LZ4_ASYNC": "1" } });
             } catch (e) {
                 // child_process.execSync(`start get ${filename}`, { cwd: aigisToolPath });
                 console.error(e.toString())
@@ -192,10 +198,10 @@ const downloadRawData = async () => {
 
     // get cards
     console.log(`do xml GRs733a4`);
-    child_process.execSync(`do xml GRs733a4 raw`, { cwd: aigisToolPath }).toString().trim();
+    child_process.execSync(`get xml GRs733a4 raw`, { cwd: aigisToolPath }).toString().trim();
     // get quests
     console.log(`do xml QxZpjdfV`);
-    child_process.execSync(`do xml QxZpjdfV raw`, { cwd: aigisToolPath }).toString().trim();
+    child_process.execSync(`get xml QxZpjdfV raw`, { cwd: aigisToolPath }).toString().trim();
 
     console.log(`downloadRawData done...\n`);
 }
