@@ -10943,5 +10943,27 @@
   "urlName": "%c5%f9%bf%c8%c2%e7%a5%b1%a5%e9%a5%a6%a5%ce%a5%b9%bf%cd%b7%c1",
   "rarity": "ブラック",
   "class": "職強化の模型"
+ },
+ {
+  "name": "ちび鬼刃姫",
+  "subName": "ちび鬼刃姫",
+  "ability": "▹状態異常無効\n毒、状態異常を完全に無効化することができる",
+  "ability_aw": "",
+  "skill": "▹狂鬼\n25秒攻撃力が1.8倍、攻撃後の待ち時間短縮",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%b5%b4%bf%cf%c9%b1",
+  "rarity": "ゴールド",
+  "class": "鬼"
+ },
+ {
+  "name": "ちびリンネ",
+  "subName": "ちびリンネ",
+  "ability": "",
+  "ability_aw": "",
+  "skill": "▹刻詠の業\n60秒射程1.6倍、範囲内の味方が物理攻撃を50％の確率で回避",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%a5%ea%a5%f3%a5%cd",
+  "rarity": "ゴールド",
+  "class": "風水使い"
  }
 ]
