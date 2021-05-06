@@ -79,12 +79,14 @@ let iconboxInit = function () {
         iB = bData.rare;
         if (iA == 7) iA = 3.5;
         if (iB == 7) iB = 3.5;
-        if (iA >= 10) iA = iA - 6;
-        if (iB >= 10) iB = iB - 6;
+        if (iA >= 10) iA = iA - 5.9;
+        if (iB >= 10) iB = iB - 5.9;
         if (aData.sortGroupID == 10) iA = -1;
         if (aData.sortGroupID == 10) iB = -1;
         if (aData.isToken) iA = -2;
         if (aData.isToken) iB = -2;
+        if (aData.sortGroupID == 25 && aData.id != 418) iA = 5.2;
+        if (bData.sortGroupID == 25 && bData.id != 418) iB = 5.2;
 
         if (iA != iB) return (iA > iB) ? -1 : 1;
 

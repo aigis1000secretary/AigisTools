@@ -153,6 +153,8 @@ const downloadRawData = async () => {
         if (/QuestNameText\d*\.atb/i.test(filename)) { return dlImg; }
         if (/ico_\d+/i.test(filename)) { return dlImg; }
 
+        if (/BattleTalkEvent\d+/i.test(filename)) { return dlImg; }
+        
         return false;
     });
 
