@@ -153,8 +153,8 @@ const downloadRawData = async () => {
         if (/QuestNameText\d*\.atb/i.test(filename)) { return dlImg; }
         if (/ico_\d+/i.test(filename)) { return dlImg; }
 
-        if (/BattleTalkEvent\d+/i.test(filename)) { return dlImg; }
-        
+        // if (/BattleTalkEvent\d+/i.test(filename)) { return dlImg; }
+
         return false;
     });
 
@@ -183,13 +183,18 @@ const downloadRawData = async () => {
             //     }
             // }
 
-            // skip exist file
-            if (changelog.length > 0 && fs.existsSync(`${resourcesPath}/${filename}`) && changelog.indexOf(filename) == -1) {
-                continue;
+            // skip exist file (no change map)
+            if (/Map\d+/i.test(filename) || /QuestNameText\d*\.atb/i.test(filename)) {
+                if (changelog.length > 0 && fs.existsSync(`${resourcesPath}/${filename}`) && changelog.indexOf(filename) == -1) {
+                    continue;
+                }
             }
 
             console.log(`get file ${filename}`);
             try {
+                if (fs.existsSync(`${resourcesPath}/${filename}`)) {
+                    child_process.execSync(`rmdir /S /Q ${filename}`, { cwd: resourcesPath });
+                }
                 child_process.execSync(`get file ${filename}`, { cwd: aigisToolPath, env: { "LZ4_ASYNC": "1" } });
             } catch (e) {
                 // child_process.execSync(`start get ${filename}`, { cwd: aigisToolPath });
@@ -724,6 +729,14 @@ const aigisCardsList = async function () {
             // if (!img && !imgaw && !imgaw2A && !imgaw2B) { continue; }
             if (!img && !imgaw && !imgaw2A && !imgaw2B) { img = "c80ae4db8b6b09123493ceea8b63ccc2"; }
 
+            // 
+            if ([363, 406, 468, 666, 1047, 1048, 1078, 1112, 1136, 1202].includes(id)) {
+                img = `${id.toString().padStart(3, "0")}_00`
+            }
+            if ([1078].includes(id)) {
+                imgaw = `${id.toString().padStart(3, "0")}_01`
+            }
+
             let obj = {
                 id,
                 name, rare, classID,
@@ -1080,7 +1093,8 @@ const aigisQuestsList = async () => {
                         }).catch(err => {
                             console.log(pngPath);
                             console.error(err);
-                            reject();
+                            // reject();
+                            resolve();
                         });
                 });
             } else if (!pngPath && !fs.existsSync(outputPath)) {
