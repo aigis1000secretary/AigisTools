@@ -47,7 +47,6 @@ module.exports = {
         if (url.indexOf('/1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 || url.indexOf('/2iofz514jeks1y44k7al2ostm43xj085') != -1) {
             // get AigisR/Aigis file list
             console.log(`${COLOR.fgRed}${url}${COLOR.reset}`);
-            // fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
 
             // update filepath
             // get Thursday date
@@ -62,9 +61,11 @@ module.exports = {
                 (updateDate.getMonth() + 1).toString().padStart(2, "0") + "_" +
                 updateDate.getDate().toString().padStart(2, "0");
 
+            // get 2 version url
+            let urlR = url.replace('/2iofz514jeks1y44k7al2ostm43xj085', '/1fp32igvpoxnb521p9dqypak5cal0xv0');
+            let urlA = url.replace('/1fp32igvpoxnb521p9dqypak5cal0xv0', '/2iofz514jeks1y44k7al2ostm43xj085');
 
             // get filepath
-            let filename = url.indexOf('1fp32igvpoxnb521p9dqypak5cal0xv0') == -1 ? "Desktop A.txt" : "Desktop R.txt";
             xmlpath = `./AigisTools/Data/XML`;
             filepath = `./AigisTools/Data/XML/${folderName}`;
 
@@ -72,9 +73,12 @@ module.exports = {
             if (!fs.existsSync(xmlpath)) { fs.mkdirSync(xmlpath, { recursive: true }); }
             if (!fs.existsSync(filepath)) { fs.mkdirSync(filepath, { recursive: true }); }
 
-            // Desktop X.txt
-            fs.writeFile(`${xmlpath}/${filename}`, url, (err) => { if (err) console.log(err); else console.log(`${filename} has been saved!`); });
-            fs.writeFile(`${filepath}/${filename}`, url, (err) => { if (err) console.log(err); else console.log(`${filename} backup has been saved!`); });
+            // Desktop A.txt
+            fs.writeFile(`${xmlpath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt has been saved!`); });
+            fs.writeFile(`${filepath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt backup has been saved!`); });
+            // Desktop R.txt
+            fs.writeFile(`${xmlpath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt has been saved!`); });
+            fs.writeFile(`${filepath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt backup has been saved!`); });
         }
 
         // get xml
@@ -86,12 +90,9 @@ module.exports = {
                 'QxZpjdfV', // missions information
                 // 'oS5aZ5ll', // army information
             ]
-            // let  = 
             let [, xmlName] = url.match(/\/(\S{8})$/);
 
             if (xmlTarget.includes(xmlName)) {
-                // fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
-
                 let body = responseDetail.response.body.toString("base64");
                 fs.writeFile(`${xmlpath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
                 fs.writeFile(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });

@@ -22,7 +22,7 @@ const changesListPath = `${xmlPath}/Desktop R Changes.txt`;
 // outputPath
 const iconsOutputPath = `../html/icons`;
 const mapsOutputPath = `../html/maps`;
-const scriptOutputPath = `../html/script/`;
+const scriptOutputPath = `../html/script`;
 
 // method
 const urlEncode = function (str_utf8, codePage) {
@@ -33,6 +33,12 @@ const urlEncode = function (str_utf8, codePage) {
 }
 const md5f = function (str) { return require('crypto').createHash('md5').update(str).digest('hex'); }
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
+const cmdRmdirSync = (path) => {
+    if (!fs.existsSync(path)) { return true; }
+    let cmd = `rmdir ${path.replace(/\//g, "\\")} /S /Q`;
+    let r = child_process.execSync(cmd).toString();
+    return r;
+}
 const COLOR = {
     reset: '\x1b[0m', bright: '\x1b[1m', dim: '\x1b[2m',
     underscore: '\x1b[4m', blink: '\x1b[5m', reverse: '\x1b[7m', hidden: '\x1b[8m',
@@ -83,13 +89,14 @@ const getIconImage = function (filepath) {
 let rawList = [];
 let addedList = [];
 let changesList = [];
+const inChangelog = (fname) => { return changesList.length == 0 || addedList.includes(fname) || changesList.includes(fname); }
 
 const downloadRawData = async () => {
     console.log(`downloadRawData start...`);
 
     // get_file_list.lua
-    console.log("get get_file_list.lua");
-    child_process.execSync(`get filelist`, { cwd: aigisToolPath }).toString().trim();
+    console.log("do get_file_list.lua");
+    child_process.execSync(`do filelist`, { cwd: aigisToolPath }).toString().trim();
 
     // get filelist
     {
@@ -104,7 +111,7 @@ const downloadRawData = async () => {
             }
         }
         if (fs.existsSync(changesListPath)) {
-            let changelist = fs.readFileSync(changesListPath).toString();
+            let changelist = fs.readFileSync(changesListPath).toString().replace(/\r/g, "");
 
             let i = [
                 changelist.indexOf('Added:\n'),
@@ -132,6 +139,7 @@ const downloadRawData = async () => {
         }
     }
 
+    // check file of Interest
     rawList = rawList.filter((filename) => {
         if (/^Emc/i.test(filename)) { return false; }
 
@@ -145,12 +153,9 @@ const downloadRawData = async () => {
         if (/Ability(List|Text)\.atb/i.test(filename)) { return dlRaw; }
         if (/Skill(List|Text|TypeList|InfluenceConfig)\.atb/i.test(filename)) { return dlRaw; }
 
-        // // map img
-        // // skip exist
-        if (/Map\d+/i.test(filename)) { return dlImg; }
-        // if (/BattleEffect\.aar/i.test(filename)) return (!fs.existsSync(resourcesPath + "/" + filename) && dlImg);
-        // // larg size data
+        //
         if (/QuestNameText\d*\.atb/i.test(filename)) { return dlImg; }
+        if (/Map\d+/i.test(filename)) { return dlImg; }
         if (/ico_\d+/i.test(filename)) { return dlImg; }
 
         // if (/BattleTalkEvent\d+/i.test(filename)) { return dlImg; }
@@ -158,57 +163,41 @@ const downloadRawData = async () => {
         return false;
     });
 
-    // get filelist change logs
-    {
-        let changelog = [].concat(addedList, changesList);
+    // del old version file
+    rawList = rawList.filter((filename) => {
+        if (inChangelog(filename)) {
+            // data change, delete old version & download
+            console.log(`rmdir ${resourcesPath}/${filename}`)
+            cmdRmdirSync(`${resourcesPath}/${filename}`);
+            return true;
+        } else if (!fs.existsSync(`${resourcesPath}/${filename}`)) {
+            // data no change but no old version, download
+            return true;
+        }
+        // no old version + data change
+        // old version exist + nochange
+        // skip
+        return false;
+    });
 
-        // download
-        rawList.sort();
-        for (let filename of rawList) {
-
-            // if (changelog.length <= 0) {
-            //     // no change log (clear run)
-            //     // download all resource
-            // } else {
-            //     if (changelog.indexOf(filename) == -1) {
-            //         // not in change log, old file
-            //         if (!fs.existsSync(`${resourcesPath}/${filename}`)) {
-            //             // not exist file, download 
-            //         } else {
-            //             // skip exist file
-            //         }
-            //     } else {
-            //         // new file
-            //         // download
-            //     }
-            // }
-
-            // skip exist file (no change map)
-            if (/Map\d+/i.test(filename) || /QuestNameText\d*\.atb/i.test(filename)) {
-                if (changelog.length > 0 && fs.existsSync(`${resourcesPath}/${filename}`) && changelog.indexOf(filename) == -1) {
-                    continue;
-                }
-            }
-
-            console.log(`get file ${filename}`);
-            try {
-                if (fs.existsSync(`${resourcesPath}/${filename}`)) {
-                    child_process.execSync(`rmdir /S /Q ${filename}`, { cwd: resourcesPath });
-                }
-                child_process.execSync(`get file ${filename}`, { cwd: aigisToolPath, env: { "LZ4_ASYNC": "1" } });
-            } catch (e) {
-                // child_process.execSync(`start get ${filename}`, { cwd: aigisToolPath });
-                console.error(e.toString())
-            }
+    // call lua download
+    rawList.sort();
+    for (let filename of rawList) {
+        console.log(`get file ${filename}`);
+        try {
+            child_process.execSync(`do file ${filename}`, { cwd: aigisToolPath });
+        } catch (e) {
+            // child_process.execSync(`start do file ${filename}`, { cwd: aigisToolPath });
+            console.error(e.toString())
         }
     }
 
     // get cards
     console.log(`do xml GRs733a4`);
-    child_process.execSync(`get xml GRs733a4 raw`, { cwd: aigisToolPath }).toString().trim();
+    child_process.execSync(`do xml GRs733a4 raw`, { cwd: aigisToolPath }).toString().trim();
     // get quests
     console.log(`do xml QxZpjdfV`);
-    child_process.execSync(`get xml QxZpjdfV raw`, { cwd: aigisToolPath }).toString().trim();
+    child_process.execSync(`do xml QxZpjdfV raw`, { cwd: aigisToolPath }).toString().trim();
 
     console.log(`downloadRawData done...\n`);
 }
@@ -730,7 +719,7 @@ const aigisCardsList = async function () {
             if (!img && !imgaw && !imgaw2A && !imgaw2B) { img = "c80ae4db8b6b09123493ceea8b63ccc2"; }
 
             // 
-            if ([363, 406, 468, 666, 1047, 1048, 1078, 1112, 1136, 1202].includes(id)) {
+            if ([363, 406, 468, 666, 1047, 1048, 1049, 1078, 1112, 1136, 1202].includes(id)) {
                 img = `${id.toString().padStart(3, "0")}_00`
             }
             if ([1078].includes(id)) {
@@ -1195,6 +1184,7 @@ const aigisQuestsList = async () => {
         .replace(/\n\t\t"/g, `\n\t\t\t\t"`)
         .replace(/\n\t\}/g, `}`)
         .replace(/\"a/g, `"`)
+        .replace(/InTheSea/ig, "InTheSea")
     fs.writeFileSync(`MapLocationList.json`, jsString);
     fs.writeFileSync(`${scriptOutputPath}/rawMapDataList.js`, `let mapDataList = ${jsString}`);
 
