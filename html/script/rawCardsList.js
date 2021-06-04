@@ -1,4 +1,4 @@
-var maxCid = 1220;
+var maxCid = 1223;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1219,5 +1219,8 @@ var charaData = [
 	{	"id": 1217,	"name": "白き花嫁ナナリー",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1217_00",	"imgaw": "1217_01",	"imgaw2A": "1217_02",	"imgaw2B": "1217_03"	},
 	{	"id": 1218,	"name": "竜姫婚姻譚メリュジアナ",	"rare": 4,	"classID": 710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1218_00",	"imgaw": "1218_01"	},
 	{	"id": 1219,	"name": "星天の花嫁シルセス",	"rare": 5,	"classID": 2400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1219_00"	},
-	{	"id": 1220,	"name": "駆け出し魔術師ミェール",	"rare": 3,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1220_00",	"imgaw": "1220_01"	}
+	{	"id": 1220,	"name": "駆け出し魔術師ミェール",	"rare": 3,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1220_00",	"imgaw": "1220_01"	},
+	{	"id": 1221,	"name": "ちびエルミラ",	"rare": 3,	"classID": 24400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1221_00"	},
+	{	"id": 1222,	"name": "ちびウェンディ",	"rare": 3,	"classID": 21800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1222_00"	},
+	{	"id": 1223,	"name": "ゴブリン博士の飛行傀儡",	"rare": 4,	"classID": 40300,	"sortGroupID": 20,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
