@@ -903,7 +903,7 @@ const aigisQuestsList = async () => {
         }
 
         let missionCfgPath = [];
-        missionCfgPath = resourceList.filter(p => p.includes("MissionConfig"));
+        missionCfgPath = resourceList.filter(p => p.includes("MissionConfig") && !p.startsWith("Emc"));
 
         for (let filepath of missionCfgPath) {
             let missionCfgArray = rawToJson(filepath);
@@ -1027,10 +1027,10 @@ const aigisQuestsList = async () => {
         oldQuest = oldQuest.substring(oldQuest.indexOf('['));
         oldQuest = eval(oldQuest);
         for (let quest of oldQuest) {
-            let q = (questList.find(q => q.id == quest.id));
+            let q = (questList.find(q => q.questID == quest.questID));
             if (!q) {
                 questList.push(quest);
-                // console.log(quest.id)
+                // console.log(quest.questID)
             }
         }
     }
