@@ -1,4 +1,4 @@
-var maxCid = 1223;
+var maxCid = 1239;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -265,7 +265,7 @@ var charaData = [
 	{	"id": 263,	"name": "魔獣オルトロス",	"rare": 5,	"classID": 3100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2015,	"isEvent": 1,	"isToken": 1,	"img": "263_00"	},
 	{	"id": 264,	"name": "爆砲の新兵カノン",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"isEvent": 1,	"isToken": 0,	"img": "264_00",	"imgaw": "264_01",	"imgaw2B": "264_03"	},
 	{	"id": 265,	"name": "剣士レイブン",	"rare": 4,	"classID": 3000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"isEvent": 0,	"isToken": 0,	"img": "265_00",	"imgaw": "265_01",	"imgaw2A": "265_02"	},
-	{	"id": 266,	"name": "闇司祭ベルディナート",	"rare": 4,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"isEvent": 1,	"isToken": 0,	"img": "266_00",	"imgaw": "266_01"	},
+	{	"id": 266,	"name": "闇司祭ベルディナート",	"rare": 4,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"isEvent": 1,	"isToken": 0,	"img": "266_00",	"imgaw": "266_01",	"imgaw2B": "266_03"	},
 	{	"id": 267,	"name": "竜巫女ルビナス",	"rare": 4,	"classID": 10500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"isEvent": 0,	"isToken": 0,	"img": "267_00",	"imgaw": "267_01",	"imgaw2B": "267_03"	},
 	{	"id": 268,	"name": "提督リーンベル",	"rare": 4,	"classID": 1900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2015,	"isEvent": 1,	"isToken": 0,	"img": "268_00",	"imgaw": "268_01"	},
 	{	"id": 269,	"name": "スケルトンランサー",	"rare": 5,	"classID": 2320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2015,	"isEvent": 1,	"isToken": 1,	"img": "269_00"	},
@@ -557,7 +557,7 @@ var charaData = [
 	{	"id": 555,	"name": "蛇霊の呪術師オロチヒメ",	"rare": 5,	"classID": 12300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "555_00",	"imgaw": "555_01",	"imgaw2A": "555_02",	"imgaw2B": "555_03"	},
 	{	"id": 556,	"name": "聖夜の魔剣シャルロット",	"rare": 4,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "556_00",	"imgaw": "556_01"	},
 	{	"id": 557,	"name": "聖鈴の大盾ベルニス",	"rare": 4,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "557_00",	"imgaw": "557_01",	"imgaw2B": "557_03"	},
-	{	"id": 558,	"name": "闇司祭プシュケ",	"rare": 4,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "558_00",	"imgaw": "558_01"	},
+	{	"id": 558,	"name": "闇司祭プシュケ",	"rare": 4,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "558_00",	"imgaw": "558_01",	"imgaw2A": "558_02"	},
 	{	"id": 559,	"name": "ちびセーラ",	"rare": 3,	"classID": 22800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "559_00"	},
 	{	"id": 560,	"name": "ちびソーマ",	"rare": 3,	"classID": 30000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "560_00"	},
 	{	"id": 561,	"name": "守護の聖樹",	"rare": 5,	"classID": 13800,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "561_00"	},
@@ -1218,9 +1218,25 @@ var charaData = [
 	{	"id": 1216,	"name": "アイリス",	"rare": 4,	"classID": 128800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1217,	"name": "白き花嫁ナナリー",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1217_00",	"imgaw": "1217_01",	"imgaw2A": "1217_02",	"imgaw2B": "1217_03"	},
 	{	"id": 1218,	"name": "竜姫婚姻譚メリュジアナ",	"rare": 4,	"classID": 710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1218_00",	"imgaw": "1218_01"	},
-	{	"id": 1219,	"name": "星天の花嫁シルセス",	"rare": 5,	"classID": 2400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1219_00"	},
+	{	"id": 1219,	"name": "星天の花嫁シルセス",	"rare": 5,	"classID": 2400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1219_00",	"imgaw": "1219_01"	},
 	{	"id": 1220,	"name": "駆け出し魔術師ミェール",	"rare": 3,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1220_00",	"imgaw": "1220_01"	},
 	{	"id": 1221,	"name": "ちびエルミラ",	"rare": 3,	"classID": 24400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1221_00"	},
 	{	"id": 1222,	"name": "ちびウェンディ",	"rare": 3,	"classID": 21800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1222_00"	},
-	{	"id": 1223,	"name": "ゴブリン博士の飛行傀儡",	"rare": 4,	"classID": 40300,	"sortGroupID": 20,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1223,	"name": "ゴブリン博士の飛行傀儡",	"rare": 4,	"classID": 40300,	"sortGroupID": 20,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1224,	"name": "帝国聖霊リヒト",	"rare": 5,	"classID": 52,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1224_00"	},
+	{	"id": 1225,	"name": "魔神副団長マレブランケ",	"rare": 5,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1225_00",	"imgaw": "1225_01",	"imgaw2A": "1225_02",	"imgaw2B": "1225_03"	},
+	{	"id": 1226,	"name": "冥界の魔術師ヘカティエ",	"rare": 5,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1226_00",	"imgaw": "1226_01"	},
+	{	"id": 1227,	"name": "帝国幻術士マルティナ",	"rare": 4,	"classID": 19500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1227_00",	"imgaw": "1227_01"	},
+	{	"id": 1228,	"name": "帝国料理人ユッタ",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1228_00",	"imgaw": "1228_01"	},
+	{	"id": 1229,	"name": "帝国重装砲兵シュペット",	"rare": 3,	"classID": 4400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1229_00",	"imgaw": "1229_01"	},
+	{	"id": 1230,	"name": "魔法陣トークン",	"rare": 5,	"classID": 19400,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1230_00"	},
+	{	"id": 1231,	"name": "帝国治癒士長アウローラ(幻影)",	"rare": 5,	"classID": 19610,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1231_00"	},
+	{	"id": 1232,	"name": "帝国治癒士長アウローラ(幻影)",	"rare": 5,	"classID": 19620,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1232_00"	},
+	{	"id": 1233,	"name": "帝国剣士ジークリンデ(幻影)",	"rare": 5,	"classID": 128900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1233_00"	},
+	{	"id": 1234,	"name": "帝国剣士ジークリンデ(幻影)",	"rare": 5,	"classID": 128930,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1234_00"	},
+	{	"id": 1235,	"name": "白の皇帝(幻影)",	"rare": 5,	"classID": 129000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1235_00"	},
+	{	"id": 1236,	"name": "帝国プラチナアーマー",	"rare": 4,	"classID": 53,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1236_00"	},
+	{	"id": 1237,	"name": "技強化帝国聖霊トレネ",	"rare": 5,	"classID": 54,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1237_00"	},
+	{	"id": 1238,	"name": "絆の帝国聖霊トレネ",	"rare": 5,	"classID": 55,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1238_00"	},
+	{	"id": 1239,	"name": "プレイスエンチャント3",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
