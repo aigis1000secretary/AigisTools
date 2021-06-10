@@ -33,11 +33,17 @@ const urlEncode = function (str_utf8, codePage) {
 }
 const md5f = function (str) { return require('crypto').createHash('md5').update(str).digest('hex'); }
 global.sleep = async function (ms) { return new Promise((resolve) => { setTimeout(resolve, ms); }); }
-const cmdRmdirSync = (path) => {
+const cmdRmdirSync = async (path) => {
     if (!fs.existsSync(path)) { return true; }
     let cmd = `rmdir ${path.replace(/\//g, "\\")} /S /Q`;
-    let r = child_process.execSync(cmd).toString();
-    return r;
+    try {
+        let r = child_process.execSync(cmd).toString();
+        return r;
+    } catch (e) {
+        await sleep(500)
+        let r = child_process.execSync(cmd).toString();
+        return r;
+    }
 }
 const COLOR = {
     reset: '\x1b[0m', bright: '\x1b[1m', dim: '\x1b[2m',
@@ -164,11 +170,11 @@ const downloadRawData = async () => {
     });
 
     // del old version file
-    rawList = rawList.filter((filename) => {
+    rawList = rawList.filter(async (filename) => {
         if (inChangelog(filename)) {
             // data change, delete old version & download
             console.log(`rmdir ${resourcesPath}/${filename}`)
-            cmdRmdirSync(`${resourcesPath}/${filename}`);
+            await cmdRmdirSync(`${resourcesPath}/${filename}`);
             return true;
         } else if (!fs.existsSync(`${resourcesPath}/${filename}`)) {
             // data no change but no old version, download
