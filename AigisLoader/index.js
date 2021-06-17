@@ -144,6 +144,7 @@ const downloadRawData = async () => {
             }
         }
     }
+    console.log(`Filelist: [${addedList.length}, ${changesList.length}]`);
 
     // check file of Interest
     rawList = rawList.filter((filename) => {
@@ -170,11 +171,11 @@ const downloadRawData = async () => {
     });
 
     // del old version file
-    rawList = rawList.filter(async (filename) => {
+    rawList = rawList.filter((filename) => {
         if (inChangelog(filename)) {
             // data change, delete old version & download
             console.log(`rmdir ${resourcesPath}/${filename}`)
-            await cmdRmdirSync(`${resourcesPath}/${filename}`);
+            cmdRmdirSync(`${resourcesPath}/${filename}`);
             return true;
         } else if (!fs.existsSync(`${resourcesPath}/${filename}`)) {
             // data no change but no old version, download
