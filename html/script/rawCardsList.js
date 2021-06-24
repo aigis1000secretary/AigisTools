@@ -1,4 +1,4 @@
-var maxCid = 1241;
+var maxCid = 1248;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -579,7 +579,7 @@ var charaData = [
 	{	"id": 577,	"name": "ちびカヨウ",	"rare": 3,	"classID": 22000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "577_00"	},
 	{	"id": 578,	"name": "プロトゴーレム",	"rare": 5,	"classID": 3810,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 1,	"img": "578_00"	},
 	{	"id": 579,	"name": "屍骸道士ランファ",	"rare": 4,	"classID": 5500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "579_00",	"imgaw": "579_01",	"imgaw2B": "579_03"	},
-	{	"id": 580,	"name": "守護騎士シェルト",	"rare": 4,	"classID": 6700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "580_00",	"imgaw": "580_01"	},
+	{	"id": 580,	"name": "守護騎士シェルト",	"rare": 4,	"classID": 6700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "580_00",	"imgaw": "580_01",	"imgaw2B": "580_03"	},
 	{	"id": 581,	"name": "ゼス王国の少女シィル",	"rare": 4,	"classID": 13900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "581_00"	},
 	{	"id": 582,	"name": "絢爛の吸血鬼エマ",	"rare": 5,	"classID": 2900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "582_00",	"imgaw": "582_01",	"imgaw2A": "582_02",	"imgaw2B": "582_03"	},
 	{	"id": 583,	"name": "鏡花水月",	"rare": 5,	"classID": 7100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 1,	"img": "583_00"	},
@@ -782,7 +782,7 @@ var charaData = [
 	{	"id": 780,	"name": "リッチ",	"rare": 3,	"classID": 40200,	"sortGroupID": 20,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "780_00"	},
 	{	"id": 781,	"name": "フライデーモン",	"rare": 3,	"classID": 40300,	"sortGroupID": 20,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "781_00"	},
 	{	"id": 782,	"name": "王子【ダーク】",	"rare": 5,	"classID": 100100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 0,	"img": "782_00"	},
-	{	"id": 783,	"name": "王宮守護騎士アデライド",	"rare": 5,	"classID": 6700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 0,	"isToken": 0,	"img": "783_00",	"imgaw": "783_01"	},
+	{	"id": 783,	"name": "王宮守護騎士アデライド",	"rare": 5,	"classID": 6700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 0,	"isToken": 0,	"img": "783_00",	"imgaw": "783_01",	"imgaw2A": "783_02",	"imgaw2B": "783_03"	},
 	{	"id": 784,	"name": "堕天系お掃除当番クロエ",	"rare": 4,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2019,	"isEvent": 0,	"isToken": 0,	"img": "784_00",	"imgaw": "784_01"	},
 	{	"id": 785,	"name": "時空魔法の優等生トワ",	"rare": 5,	"classID": 11700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2019,	"isEvent": 0,	"isToken": 0,	"img": "785_00",	"imgaw": "785_01"	},
 	{	"id": 786,	"name": "騎兵科新入生ミーシャ",	"rare": 3,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2019,	"isEvent": 1,	"isToken": 0,	"img": "786_00",	"imgaw": "786_01"	},
@@ -1240,5 +1240,12 @@ var charaData = [
 	{	"id": 1238,	"name": "絆の帝国聖霊トレネ",	"rare": 5,	"classID": 55,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1238_00"	},
 	{	"id": 1239,	"name": "プレイスエンチャント3",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1240,	"name": "帝国式魔導砲台",	"rare": 1,	"classID": 40900,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1241,	"name": "砦の城門",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1241,	"name": "砦の城門",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1242,	"name": "砦の城門_中",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1243,	"name": "砦の城門_上",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1244,	"name": "砦の城門_極",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1245,	"name": "砦の城門_神",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1246,	"name": "王子【バハムト】",	"rare": 5,	"classID": 9970,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1246_00"	},
+	{	"id": 1247,	"name": "潜航騎士ヴィアベル",	"rare": 5,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1247_00",	"imgaw": "1247_01"	},
+	{	"id": 1248,	"name": "新人潜水騎士キュステ",	"rare": 2,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1248_00"	}
 ]
