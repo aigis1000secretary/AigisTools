@@ -1,4 +1,4 @@
-var maxCid = 1260;
+var maxCid = 1261;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1251,7 +1251,7 @@ var charaData = [
 	{	"id": 1249,	"name": "水着の筆頭侍女セーラ",	"rare": 5,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1249_00",	"imgaw": "1249_01"	},
 	{	"id": 1250,	"name": "灼熱の夏英雄アナトリア",	"rare": 5,	"classID": 5300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1250_00",	"imgaw": "1250_01"	},
 	{	"id": 1251,	"name": "海遊総督アレイダ",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1251_00",	"imgaw": "1251_01"	},
-	{	"id": 1252,	"name": "冥霊たちの夏メルアビス",	"rare": 5,	"classID": 11600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1252_00"	},
+	{	"id": 1252,	"name": "冥霊たちの夏メルアビス",	"rare": 5,	"classID": 11600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1252_00",	"imgaw": "1252_01"	},
 	{	"id": 1253,	"name": "八咫の夏陽ツキコ",	"rare": 5,	"classID": 14200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1253_00",	"imgaw": "1253_01"	},
 	{	"id": 1254,	"name": "夏の輝きマーガレット",	"rare": 4,	"classID": 2600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1254_00",	"imgaw": "1254_01"	},
 	{	"id": 1255,	"name": "清爽騎士アリーセ",	"rare": 4,	"classID": 4800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1255_00",	"imgaw": "1255_01"	},
@@ -1259,5 +1259,6 @@ var charaData = [
 	{	"id": 1257,	"name": "満喫海遊びクリスタ",	"rare": 4,	"classID": 1800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1257_00",	"imgaw": "1257_01"	},
 	{	"id": 1258,	"name": "ちびスー",	"rare": 3,	"classID": 30500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1258_00"	},
 	{	"id": 1259,	"name": "ちびリュクス",	"rare": 3,	"classID": 27000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1259_00"	},
-	{	"id": 1260,	"name": "冥霊たちの夏メルアビス",	"rare": 5,	"classID": 11600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1260,	"name": "冥霊たちの夏メルアビス",	"rare": 5,	"classID": 11600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1261,	"name": "癒しの涼波イーリス",	"rare": 4,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1261_00",	"imgaw": "1261_01"	}
 ]
