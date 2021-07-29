@@ -1,4 +1,4 @@
-var maxCid = 1263;
+var maxCid = 1272;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1262,5 +1262,14 @@ var charaData = [
 	{	"id": 1260,	"name": "冥霊たちの夏メルアビス",	"rare": 5,	"classID": 11600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1261,	"name": "癒しの涼波イーリス",	"rare": 4,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1261_00",	"imgaw": "1261_01"	},
 	{	"id": 1262,	"name": "翠玉の深海兵フィーヌ",	"rare": 4,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1262_00",	"imgaw": "1262_01"	},
-	{	"id": 1263,	"name": "スフィンクス人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1263_00"	}
+	{	"id": 1263,	"name": "スフィンクス人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1263_00"	},
+	{	"id": 1264,	"name": "王宮薬草師ローズ",	"rare": 4,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1264_00"	},
+	{	"id": 1265,	"name": "マンドラゴラ",	"rare": 5,	"classID": 130000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1266,	"name": "異端審問官ドゥマルデ",	"rare": 5,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1266_00",	"imgaw": "1266_01"	},
+	{	"id": 1267,	"name": "ダミー5",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1268,	"name": "影刃の工作員シネイド",	"rare": 5,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1268_00",	"imgaw": "1268_01"	},
+	{	"id": 1269,	"name": "輝光聖霊セレモ",	"rare": 5,	"classID": 56,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1269_00"	},
+	{	"id": 1270,	"name": "幻影迷彩",	"rare": 5,	"classID": 130100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1270_00"	},
+	{	"id": 1271,	"name": "記憶の王子",	"rare": 1,	"classID": 41000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1272,	"name": "記憶のリッチ",	"rare": 1,	"classID": 41100,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
