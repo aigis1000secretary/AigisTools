@@ -36,14 +36,15 @@ global.sleep = async function (ms) { return new Promise((resolve) => { setTimeou
 const cmdRmdirSync = async (path) => {
     if (!fs.existsSync(path)) { return true; }
     let cmd = `rmdir ${path.replace(/\//g, "\\")} /S /Q`;
-    try {
-        let r = child_process.execSync(cmd).toString();
-        return r;
-    } catch (e) {
-        await sleep(500)
-        let r = child_process.execSync(cmd).toString();
-        return r;
+    for (let i = 0; i < 3; ++i) {
+        try {
+            let r = child_process.execSync(cmd).toString();
+            return r;
+        } catch (e) {
+            console.log(e);
+        }
     }
+    return false;
 }
 const COLOR = {
     reset: '\x1b[0m', bright: '\x1b[1m', dim: '\x1b[2m',

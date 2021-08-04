@@ -12,6 +12,7 @@ let _atob = function (base32Str) {
 let _btoa = function (base2Str) {
     let base32Str = "";
     while (base2Str.length > 0) {
+        if (base2Str.length < 5) { base2Str = base2Str.padEnd(5, "0"); }
         let temp = base2Str.substr(0, 5);
         base2Str = base2Str.substr(5);
         base32Str += parseInt(temp, 2).toString(32);
@@ -317,6 +318,8 @@ let doStatistics = function () {
 
     let globalIconCount = 0;
     let globalTrueCount = 0;
+    let collabIconCount = 0;
+    let collabTrueCount = 0;
 
     let iconCount = 0;
     let trueCount = 0;
@@ -336,8 +339,16 @@ let doStatistics = function () {
 
             // keep loop in icon
             if (!icon || icon.tagName != "IMG") break;
-            globalIconCount++;
-            globalTrueCount += icon.alt == "true" ? 1 : 0;
+
+            let cData = charaData.find((c) => icon.id == c.id);
+            if ([3, 4, 6, 7].includes(cData.assign) || cData.assign < 0) {
+                collabIconCount++;
+                collabTrueCount += icon.alt == "true" ? 1 : 0;
+            } else {
+                globalIconCount++;
+                globalTrueCount += icon.alt == "true" ? 1 : 0;
+            }
+
 
             // if (icon.hidden) continue;
             iconCount++;
@@ -354,7 +365,8 @@ let doStatistics = function () {
         iconCount = 0;
         trueCount = 0;
     }
-    return `所有率: ${Math.floor(100 * globalTrueCount / globalIconCount)} % （${globalTrueCount}/${globalIconCount}）`;
+    return `所有率: ${Math.floor(100 * globalTrueCount / globalIconCount)} % （${globalTrueCount}/${globalIconCount}）` +
+        `\nコラボ: ${Math.floor(100 * collabTrueCount / collabIconCount)} % （${collabTrueCount}/${collabIconCount}）`;
 }
 // selector
 let selectGroup = function (checkbox) {

@@ -88,7 +88,9 @@ module.exports = {
             let xmlTarget = [
                 'GRs733a4', // units information
                 'QxZpjdfV', // missions information
-                // 'oS5aZ5ll', // army information
+            ]
+            let xmlSubTarget = [
+                'oS5aZ5ll', // army information
             ]
             let [, xmlName] = url.match(/\/(\S{8})$/);
 
@@ -96,7 +98,14 @@ module.exports = {
                 let body = responseDetail.response.body.toString("base64");
                 fs.writeFile(`${xmlpath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
                 fs.writeFile(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
+            } else if (xmlSubTarget.includes(xmlName)) {
+                let body = responseDetail.response.body.toString("base64");
+                fs.writeFile(`${xmlpath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
             }
+        }
+
+        else {
+            console.log(url);
         }
 
         return null;
