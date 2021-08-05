@@ -1,4 +1,4 @@
-var maxCid = 1272;
+var maxCid = 1280;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1271,5 +1271,13 @@ var charaData = [
 	{	"id": 1269,	"name": "輝光聖霊セレモ",	"rare": 5,	"classID": 56,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1269_00"	},
 	{	"id": 1270,	"name": "幻影迷彩",	"rare": 5,	"classID": 130100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1270_00"	},
 	{	"id": 1271,	"name": "記憶の王子",	"rare": 1,	"classID": 41000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1272,	"name": "記憶のリッチ",	"rare": 1,	"classID": 41100,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1272,	"name": "記憶のリッチ",	"rare": 1,	"classID": 41100,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1273,	"name": "向日葵の幻リュティエ",	"rare": 4,	"classID": 19500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1273_00",	"imgaw": "1273_01"	},
+	{	"id": 1274,	"name": "百獣の覇者レオーネ(幻影)",	"rare": 5,	"classID": 130210,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1274_00"	},
+	{	"id": 1275,	"name": "百獣の覇者レオーネ(幻影)",	"rare": 5,	"classID": 130220,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1275_00"	},
+	{	"id": 1276,	"name": "百獣の魔術師リエーフ(幻影)",	"rare": 5,	"classID": 19810,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1276_00"	},
+	{	"id": 1277,	"name": "百獣の魔術師リエーフ(幻影)",	"rare": 5,	"classID": 19820,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1277_00"	},
+	{	"id": 1278,	"name": "白狼の朋ツァーユ(幻影)",	"rare": 5,	"classID": 19930,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1278_00"	},
+	{	"id": 1279,	"name": "ちびコハル",	"rare": 3,	"classID": 33500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1279_00"	},
+	{	"id": 1280,	"name": "ちびエクス",	"rare": 3,	"classID": 22200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1280_00"	}
 ]
