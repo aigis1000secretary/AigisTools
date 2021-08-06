@@ -3,14 +3,14 @@ var sumEXP;
 var limitLevel = new Array();
 
 var expTable = new Array();
-var scan = getCSVFile();
 
-function getCSVFile() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("get", "./EXP/nextEXP.js", true);
-    xhr.send(null);
-    return xhr;
-}
+// var scan = getCSVFile();
+// function getCSVFile() {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open("get", "./EXP/nextEXP.js", true);
+//     xhr.send(null);
+//     return xhr;
+// }
 
 function changeSelectRarity() {
     checkEXPTable();
@@ -800,7 +800,7 @@ function refreshRemainingEXP() {
         try {
             let v = eval(e.value);
             e.value = (!!v) ? parseInt(v) : 0;
-        } catch(err) {
+        } catch (err) {
             e.value = 0;
         }
     }
