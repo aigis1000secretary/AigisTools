@@ -28,6 +28,8 @@ function changeSelectRarity() {
     }
 
     setMaxLimit(currentRarity, currentLevel);
+    switchSariette()
+
     run();
 }
 
@@ -755,40 +757,45 @@ function startCountDownFree04() {
 
 function switchSariette() {
     if (document.form.checkSariette.checked) {
-        document.getElementById("expWArmor").innerHTML = "8800";
-        document.getElementById("expBArmor").innerHTML = "44000";
-        document.getElementById("expAmour").innerHTML = "4400";
-        document.getElementById("expAlegria").innerHTML = "19800";
-        document.getElementById("expLiebe").innerHTML = "20900";
-        document.getElementById("expFreude").innerHTML = "20900";
-        document.getElementById("expFarah").innerHTML = "22000";
-        document.getElementById("expEmperor01").innerHTML = "17600";
-        document.getElementById("expEmperor17").innerHTML = "20416";
-        document.getElementById("expEmperor20").innerHTML = "20944";
-        document.getElementById("expB01").innerHTML = "258.5";
-        document.getElementById("expB02").innerHTML = "291.5";
-        document.getElementById("expB03").innerHTML = "258.5";
-        document.getElementById("expB04").innerHTML = "291.5";
-        document.getElementById("expB05").innerHTML = "242";
-        document.getElementById("expB06").innerHTML = "275";
+        document.getElementById("expWArmor").innerHTML = 8800;
+        document.getElementById("expBArmor").innerHTML = 44000;
+        document.getElementById("expAmour").innerHTML = 4400;
+        document.getElementById("expAlegria").innerHTML = 19800;
+        document.getElementById("expLiebe").innerHTML = 20900;
+        document.getElementById("expFreude").innerHTML = 20900;
+        document.getElementById("expFarah").innerHTML = 22000;
+        document.getElementById("expEmperor01").innerHTML = 17600;
+        document.getElementById("expEmperor17").innerHTML = 20416;
+        document.getElementById("expEmperor20").innerHTML = 20944;
+        document.getElementById("expB01").innerHTML = 258.5;
+        document.getElementById("expB02").innerHTML = 291.5;
+        document.getElementById("expB03").innerHTML = 258.5;
+        document.getElementById("expB04").innerHTML = 291.5;
+        document.getElementById("expB05").innerHTML = 242;
+        document.getElementById("expB06").innerHTML = 275;
     } else {
-        document.getElementById("expWArmor").innerHTML = "8000";
-        document.getElementById("expBArmor").innerHTML = "40000";
-        document.getElementById("expAmour").innerHTML = "4000";
-        document.getElementById("expAlegria").innerHTML = "18000";
-        document.getElementById("expLiebe").innerHTML = "19000";
-        document.getElementById("expFreude").innerHTML = "19000";
-        document.getElementById("expFarah").innerHTML = "20000";
-        document.getElementById("expEmperor01").innerHTML = "16000";
-        document.getElementById("expEmperor17").innerHTML = "18560";
-        document.getElementById("expEmperor20").innerHTML = "19040";
-        document.getElementById("expB01").innerHTML = "235";
-        document.getElementById("expB02").innerHTML = "265";
-        document.getElementById("expB03").innerHTML = "235";
-        document.getElementById("expB04").innerHTML = "265";
-        document.getElementById("expB05").innerHTML = "220";
-        document.getElementById("expB06").innerHTML = "250";
+        document.getElementById("expWArmor").innerHTML = 8000;
+        document.getElementById("expBArmor").innerHTML = 40000;
+        document.getElementById("expAmour").innerHTML = 4000;
+        document.getElementById("expAlegria").innerHTML = 18000;
+        document.getElementById("expLiebe").innerHTML = 19000;
+        document.getElementById("expFreude").innerHTML = 19000;
+        document.getElementById("expFarah").innerHTML = 20000;
+        document.getElementById("expEmperor01").innerHTML = 16000;
+        document.getElementById("expEmperor17").innerHTML = 18560;
+        document.getElementById("expEmperor20").innerHTML = 19040;
+        document.getElementById("expB01").innerHTML = 235;
+        document.getElementById("expB02").innerHTML = 265;
+        document.getElementById("expB03").innerHTML = 235;
+        document.getElementById("expB04").innerHTML = 265;
+        document.getElementById("expB05").innerHTML = 220;
+        document.getElementById("expB06").innerHTML = 250;
     }
+    if (document.form.selectRarity.selectedIndex != 2) { document.getElementById("expAmour").innerHTML = 0 }
+    if (document.form.selectRarity.selectedIndex != 3) { document.getElementById("expAlegria").innerHTML = 0 }
+    if (document.form.selectRarity.selectedIndex != 4) { document.getElementById("expLiebe").innerHTML = 0 }
+    if (document.form.selectRarity.selectedIndex != 5) { document.getElementById("expFreude").innerHTML = 0 }
+    if (document.form.selectRarity.selectedIndex != 6) { document.getElementById("expFarah").innerHTML = 0 }
 
 
     refreshRemainingEXP();
@@ -812,14 +819,17 @@ function refreshRemainingEXP() {
     var sumAdditionalEXP = 0;
     sumAdditionalEXP = sumAdditionalEXP + 8000 * parseInt(document.form.inputWArmor.value);
     sumAdditionalEXP = sumAdditionalEXP + 40000 * parseInt(document.form.inputBArmor.value);
-    sumAdditionalEXP = sumAdditionalEXP + 4000 * parseInt(document.form.inputAmour.value);
-    sumAdditionalEXP = sumAdditionalEXP + 18000 * parseInt(document.form.inputAlegria.value);
-    sumAdditionalEXP = sumAdditionalEXP + 19000 * parseInt(document.form.inputLiebe.value);
-    sumAdditionalEXP = sumAdditionalEXP + 19000 * parseInt(document.form.inputFreude.value);
-    sumAdditionalEXP = sumAdditionalEXP + 20000 * parseInt(document.form.inputFarah.value);
+
+    sumAdditionalEXP = sumAdditionalEXP + 4000 * parseInt(document.form.inputAmour.value) * (document.form.selectRarity.selectedIndex == 2 ? 1 : 0);
+    sumAdditionalEXP = sumAdditionalEXP + 18000 * parseInt(document.form.inputAlegria.value) * (document.form.selectRarity.selectedIndex == 3 ? 1 : 0);
+    sumAdditionalEXP = sumAdditionalEXP + 19000 * parseInt(document.form.inputLiebe.value) * (document.form.selectRarity.selectedIndex == 4 ? 1 : 0);
+    sumAdditionalEXP = sumAdditionalEXP + 19000 * parseInt(document.form.inputFreude.value) * (document.form.selectRarity.selectedIndex == 5 ? 1 : 0);
+    sumAdditionalEXP = sumAdditionalEXP + 20000 * parseInt(document.form.inputFarah.value) * (document.form.selectRarity.selectedIndex == 6 ? 1 : 0);
+
     sumAdditionalEXP = sumAdditionalEXP + 16000 * parseInt(document.form.inputEmperor01.value);
     sumAdditionalEXP = sumAdditionalEXP + 18560 * parseInt(document.form.inputEmperor17.value);
     sumAdditionalEXP = sumAdditionalEXP + 19040 * parseInt(document.form.inputEmperor20.value);
+
     sumAdditionalEXP = sumAdditionalEXP + 235 * parseInt(document.form.inputB01.value);
     sumAdditionalEXP = sumAdditionalEXP + 265 * parseInt(document.form.inputB02.value);
     sumAdditionalEXP = sumAdditionalEXP + 235 * parseInt(document.form.inputB03.value);
