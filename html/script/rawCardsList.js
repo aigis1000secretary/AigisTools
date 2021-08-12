@@ -1,4 +1,4 @@
-var maxCid = 1280;
+var maxCid = 1285;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1263,8 +1263,8 @@ var charaData = [
 	{	"id": 1261,	"name": "癒しの涼波イーリス",	"rare": 4,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1261_00",	"imgaw": "1261_01"	},
 	{	"id": 1262,	"name": "翠玉の深海兵フィーヌ",	"rare": 4,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1262_00",	"imgaw": "1262_01"	},
 	{	"id": 1263,	"name": "スフィンクス人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1263_00"	},
-	{	"id": 1264,	"name": "王宮薬草師ローズ",	"rare": 4,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1264_00"	},
-	{	"id": 1265,	"name": "マンドラゴラ",	"rare": 5,	"classID": 130000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1264,	"name": "王宮薬草師ローズ",	"rare": 4,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1264_00",	"imgaw": "1264_01"	},
+	{	"id": 1265,	"name": "マンドラゴラ",	"rare": 5,	"classID": 130000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1265_00"	},
 	{	"id": 1266,	"name": "異端審問官ドゥマルデ",	"rare": 5,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1266_00",	"imgaw": "1266_01"	},
 	{	"id": 1267,	"name": "ダミー5",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1268,	"name": "影刃の工作員シネイド",	"rare": 5,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1268_00",	"imgaw": "1268_01"	},
@@ -1279,5 +1279,10 @@ var charaData = [
 	{	"id": 1277,	"name": "百獣の魔術師リエーフ(幻影)",	"rare": 5,	"classID": 19820,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1277_00"	},
 	{	"id": 1278,	"name": "白狼の朋ツァーユ(幻影)",	"rare": 5,	"classID": 19930,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1278_00"	},
 	{	"id": 1279,	"name": "ちびコハル",	"rare": 3,	"classID": 33500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1279_00"	},
-	{	"id": 1280,	"name": "ちびエクス",	"rare": 3,	"classID": 22200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1280_00"	}
+	{	"id": 1280,	"name": "ちびエクス",	"rare": 3,	"classID": 22200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1280_00"	},
+	{	"id": 1281,	"name": "雷雲の浴衣レミィ",	"rare": 5,	"classID": 5900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1281_00",	"imgaw": "1281_01"	},
+	{	"id": 1282,	"name": "風雲の浴衣クーコ",	"rare": 5,	"classID": 6200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1282_00",	"imgaw": "1282_01"	},
+	{	"id": 1283,	"name": "お祭り夕涼みココロ",	"rare": 4,	"classID": 11700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1283_00",	"imgaw": "1283_01"	},
+	{	"id": 1284,	"name": "晩夏の狩人ベラ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1284_00",	"imgaw": "1284_01"	},
+	{	"id": 1285,	"name": "お神輿",	"rare": 5,	"classID": 130300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1285_00"	}
 ]
