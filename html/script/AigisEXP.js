@@ -23,12 +23,14 @@ let bodyOnload = () => {
                 input.value = input.min;
                 calc();
             }, false);
+
         } else if (btn.value == "－") {
             btn.addEventListener("click", function (e) {
                 let input = this.nextElementSibling;
                 input.value = Math.max(input.min, parseInt(input.value) - 1);
                 calc();
             }, false);
+
         } else if (btn.value == "＋") {
             btn.addEventListener("click", function (e) {
                 let input = this.previousElementSibling;
@@ -41,20 +43,14 @@ let bodyOnload = () => {
                 input.value = input.max;
                 calc();
             }, false);
+
         } else if (btn.type == "number") {
             btn.addEventListener("change", function (e) {
                 calc();
             }, false);
+
         }
-
-        // icon.addEventListener("click", function (e) {
-        //     this.alt = this.alt == "true" ? "false" : "true";
-        //     // set url data
-        //     setUrlParams(getIconFlags());
-        // }, false);
-
     }
-
 }
 
 // data api
@@ -91,17 +87,14 @@ let changeSelectRarity = () => {
     setExpLimit();
 
     calc();
-    // necessaryEXP
 }
 let changeSelectCurrentLevel = () => {
     setExpLimit();
 
     calc();
-    // necessaryEXP
 }
 let changeSelectTargetLevel = () => {
     calc();
-    // necessaryEXP
 }
 let setLevelRange = (l, t, r = 0) => {
     setRarity(r);
@@ -125,10 +118,10 @@ let switchSariette = () => {
     document.getElementById("expEmperor01").querySelector(".box2").innerHTML = Math.floor(16000 * r);
     document.getElementById("expEmperor17").querySelector(".box2").innerHTML = Math.floor(18560 * r);
     document.getElementById("expEmperor20").querySelector(".box2").innerHTML = Math.floor(19040 * r);
-    document.getElementById("expB01").querySelector(".box2").innerHTML = Math.floor(235 * r);
-    document.getElementById("expB02").querySelector(".box2").innerHTML = Math.floor(265 * r);
-    document.getElementById("expB03").querySelector(".box2").innerHTML = Math.floor(235 * r);
-    document.getElementById("expB04").querySelector(".box2").innerHTML = Math.floor(265 * r);
+    document.getElementById("expB01").querySelector(".box2").innerHTML = (235 * r).toFixed(1);
+    document.getElementById("expB02").querySelector(".box2").innerHTML = (265 * r).toFixed(1);
+    document.getElementById("expB03").querySelector(".box2").innerHTML = (220 * r).toFixed(1);
+    document.getElementById("expB04").querySelector(".box2").innerHTML = (250 * r).toFixed(1);
 
     calc();
     // necessaryEXP
