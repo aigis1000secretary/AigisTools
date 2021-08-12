@@ -1,12 +1,14 @@
-
+﻿
 let maxLevel = [40, 50, 55, 99, 99, 99, 99];
 let plane1Config = [
     ["expAmour", 2],
-    ["expAlegria", 3],
     ["expPreseil", 3],
+    ["expAlegria", 3],
     ["expLiebe", 4],
     ["expFreude", 5],
-    ["expFarah", 6]
+    ["expFarah", 6],
+    ["expPresent", -1],
+    ["expPlacer", -1]
 ];
 
 // body onload method
@@ -123,6 +125,8 @@ let switchSariette = () => {
     document.getElementById("expLiebe").querySelector(".box2").innerHTML = Math.floor(19000 * r);
     document.getElementById("expFreude").querySelector(".box2").innerHTML = Math.floor(19000 * r);
     document.getElementById("expFarah").querySelector(".box2").innerHTML = Math.floor(20000 * r);
+    document.getElementById("expPresent").querySelector(".box2").innerHTML = Math.floor(18000 * r);
+    document.getElementById("expPlacer").querySelector(".box2").innerHTML = Math.floor(18000 * r);
     document.getElementById("expEmperor01").querySelector(".box2").innerHTML = Math.floor(16000 * r);
     document.getElementById("expEmperor17").querySelector(".box2").innerHTML = Math.floor(18560 * r);
     document.getElementById("expEmperor20").querySelector(".box2").innerHTML = Math.floor(19040 * r);
@@ -189,7 +193,7 @@ let calc = () => {
     let sumAdditionalEXP = 0;
     let expNameList = [
         "expWArmor", "expBArmor",
-        "expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah",
+        "expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer",
         "expEmperor01", "expEmperor17", "expEmperor20",
         "expB01", "expB02", "expB03", "expB04",
     ];
