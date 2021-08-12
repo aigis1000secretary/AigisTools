@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>千年戦争アイギス　経験値計算機＋</title>
+  <!-- jq -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- jQuery MouseWheel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+  <!-- data -->
+  <script src="./EXP/nextEXP.js"></script>
+
+  <!-- script -->
+  <script src="./script/AigisEXP.js"></script>
+
+  <!-- css -->
+  <link href='./style/Primary.css' rel='stylesheet' type='text/css' />
+  <link href='./style/AigisEXP.css' rel='stylesheet' type='text/css' />
+
+</head>
+
+<body onload="bodyOnload();" style="min-width: 650px;">
+
+
+  <div class="header">
+    <h1>千年戦争アイギス　経験値計算機＋</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="leftcolumn" style="font-size: 14px;">
+
+      <div class="card">
+        <!-- card box -->
+        <div class="box" style="background-color:#fff0d2;padding: 10px;margin: 0px;">
+          <!-- set box -->
+          <div style="width: 70%;float: left;">
+
+            <div class="box setlv">
+              <select id="selectRarity" onchange="changeSelectRarity();" style="width:360px;">
+                <option value="0">アイロン / Iron</option>
+                <option value="1">ブロンズ / Bronze</option>
+                <option value="2">シルバー / Silver</option>
+                <option value="3">ゴールド / Gold</option>
+                <option value="4">サファイア / Sapphire</option>
+                <option value="5">プラチナ / Platinum</option>
+                <option value="6">ブラック / Black</option>
+              </select>
+            </div>
+
+            <div class="box setlv">
+              <input type="button" value="1→40" onclick="setLevelRange(1, 40, 0);" id="ir">
+              <input type="button" value="1→50" onclick="setLevelRange(1, 50, 1);" id="ir">
+              <input type="button" value="1→30" onclick="setLevelRange(1, 30, 2);" id="si">
+              <input type="button" value="1→50" onclick="setLevelRange(1, 50, 2);" id="si">
+              <input type="button" value="1→55" onclick="setLevelRange(1, 55, 2);" id="si">
+              <input type="button" value="1→60" onclick="setLevelRange(1, 60, 3);" id="g">
+              <input type="button" value="1→80" onclick="setLevelRange(1, 80, 3);" id="g">
+              <input type="button" value="1→99" onclick="setLevelRange(1, 99, 3);" id="g">
+              <br>
+              <input type="button" value="1→65" onclick="setLevelRange(1, 65, 4);" id="sa">
+              <input type="button" value="1→85" onclick="setLevelRange(1, 85, 4);" id="sa">
+              <input type="button" value="1→99" onclick="setLevelRange(1, 99, 4);" id="sa">
+              <input type="button" value="1→70" onclick="setLevelRange(1, 70, 5);" id="p">
+              <input type="button" value="1→90" onclick="setLevelRange(1, 90, 5);" id="p">
+              <input type="button" value="1→99" onclick="setLevelRange(1, 99, 5);" id="p">
+              <input type="button" value="1→80" onclick="setLevelRange(1, 80, 6);" id="b">
+              <input type="button" value="1→99" onclick="setLevelRange(1, 99, 6);" id="b">
+            </div>
+
+            <div class="box setlv">
+              現在レベル：
+              <select id="selectCurrentLevel" onchange="changeSelectCurrentLevel();">
+                <option>1</option>
+              </select>
+            </div>
+
+            <div class="box setnext">
+              次のレベルまで：
+              <input type="button" value="MIN">
+              <input type="button" value="－">
+              <input type="number" id="inputNext" value="0">
+              <input type="button" value="＋">
+              <input type="button" value="MAX">
+            </div>
+
+            <div class="box setlv">
+              目標レベル：
+              <select id="selectTargetLevel" onchange="changeSelectTargetLevel();">
+                <option>1</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- show box -->
+          <div style="width: 30%;float: right;">
+            <div class="box" style="background-color:rgba(255, 255, 255, 0.70);padding: 5px;margin-top: 20px;">
+              必要経験値：
+              <div id="necessaryEXP" style="font-size:20px;font-weight:bold">-</div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- Training box -->
+        <div class="box" style="background-color:#417cb4;color: #ffffff;padding: 10px;margin: 10px 0px 0px 0px;">
+          <!-- eat box -->
+          <div style="width: 65%;float: left;">
+
+            <!-- title -->
+            <div class="box">
+              <div style="font-size:18px;font-weight:bold;">
+                育成計画
+              </div>
+              <label for="checkSariette" style="user-select: none;">
+                <input type="checkbox" id="checkSariette" onchange="switchSariette();">
+                育成の聖霊サリエット
+              </label>
+            </div>
+
+            <!-- normal -->
+            <div class="box training" style="height: 21px;">
+              <div class="box1">　</div>
+              <div class="box2">経験値</div>
+              <div class="box3">個数</div>
+            </div>
+
+            <div class="box training" id="expWArmor">
+              <div class="box1">白鎧×8</div>
+              <div class="box2">8000</div>
+              <div class="box3">
+                <input type="button" value="－">
+                <input type="number" value="0" max="99">
+                <input type="button" value="＋">
+              </div>
+            </div>
+
+            <div class="box training" id="expBArmor">
+              <div class="box1">黒鎧×8</div>
+              <div class="box2">40000</div>
+              <div class="box3">
+                <input type="button" value="－">
+                <input type="number" value="0" max="99">
+                <input type="button" value="＋">
+              </div>
+            </div>
+
+            <!-- plane1 -->
+            <div class="box boxswitch" style="background-color:#22b14c;">
+              <label for="Panel1">
+                <b>小祝福の聖霊</b>
+              </label>
+            </div>
+            <input type="checkbox" id="Panel1" class="on-off">
+            <div class="accContent">
+
+              <div class="box training" id="expAmour">
+                <div class="box1">アムール 小祝福の聖霊(銀)</div>
+                <div class="box2">4000</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training" id="expPreseil">
+                <div class="box1">プレジール 小祝福の聖霊(金)</div>
+                <div class="box2">1750</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training" id="expAlegria">
+                <div class="box1">アレグリア 小祝福の聖霊(金)</div>
+                <div class="box2">18000</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training" id="expLiebe">
+                <div class="box1">リーベ 小祝福の聖霊(蒼)</div>
+                <div class="box2">19000</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training" id="expFreude">
+                <div class="box1">フロイデ 小祝福の聖霊(白)</div>
+                <div class="box2">19000</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training" id="expFarah">
+                <div class="box1">ファラハ 小祝福の聖霊(黒)</div>
+                <div class="box2">19000</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- plane2 -->
+            <div class="box boxswitch" style="background-color:#C0C0C0;color: #000000;">
+              <label for="Panel2">
+                <b>白の皇帝</b>
+              </label>
+            </div>
+            <input type="checkbox" id="Panel2" class="on-off">
+            <div class="accContent">
+
+              <div class="box training show" id="expEmperor01">
+                <div class="box1">白の皇帝(Lv1)×8</div>
+                <div class="box2">16000</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expEmperor17">
+                <div class="box1">白の皇帝(Lv17)×8</div>
+                <div class="box2">18560</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expEmperor20">
+                <div class="box1">白の皇帝(Lv20)×8</div>
+                <div class="box2">19040</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- plane3 -->
+            <div class="box boxswitch" style="background-color:#a65315;">
+              <label for="Panel3">
+                <b>ストミ餌</b>
+              </label>
+            </div>
+            <input type="checkbox" id="Panel3" class="on-off">
+            <div class="accContent">
+
+              <div class="box training showh42" id="expB01">
+                <div class="box1">ブロンズ(Lv34)
+                  <div style="font-size: 6px;">＊ダークエルフの女王 /＊オークの勇士</div>
+                </div>
+                <div class="box2">235</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training showh42" id="expB02">
+                <div class="box1">ﾌﾞﾛﾝｽﾞ(Lv34) + ベテランの指南
+                  <div style="font-size: 6px;">＊ダークエルフの女王 /＊オークの勇士</div>
+                </div>
+                <div class="box2">265</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training showh42" id="expB03">
+                <div class="box1">ブロンズ(Lv31)
+                  <div style="font-size: 6px;">＊転送の魔法陣</div>
+                </div>
+                <div class="box2">220</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training showh42" id="expB04">
+                <div class="box1">ﾌﾞﾛﾝｽﾞ(Lv31) + ベテランの指南
+                  <div style="font-size: 6px;">＊転送の魔法陣</div>
+                </div>
+                <div class="box2">250</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- plane4 -->
+            <div class="box boxswitch" style="background-color:#000000;">
+              <label for="Panel4">
+                <b>自由欄</b>
+              </label>
+            </div>
+            <input type="checkbox" id="Panel4" class="on-off" checked=true>
+            <div class="accContent">
+
+              <div class="box training show" id="expFree01">
+                <div class="box1">【自由欄1】</div>
+                <div class="box2"> <input type="number" value="0"> </div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expFree02">
+                <div class="box1">【自由欄2】</div>
+                <div class="box2"> <input type="number" value="0"> </div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expFree03">
+                <div class="box1">【自由欄3】</div>
+                <div class="box2"> <input type="number" value="0"> </div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expFree04">
+                <div class="box1">【自由欄4】</div>
+                <div class="box2"> <input type="number" value="0"> </div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- show box -->
+          <div style="width: 35%;float: right;">
+            <div class="box" style="background-color:#244664;padding: 5px;margin-top: 20px;">
+              目標レベルまで：
+              <div id="remainingEXP" style="font-size:20px;font-weight:bold">-</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="rightcolumn">
+
+      <div class="card">
+        <a itemprop="url" href="https://twitter.com/Aigis1000/" target="_blank">▼千年戦争アイギスtwitter公式アカウント</a><br>
+        <a itemprop="url" href="http://aigis1000.jp/" target="_blank">▼千年戦争アイギスA公式サイト</a><br>
+        <a itemprop="url" href="https://www.youtube.com/channel/UCl8iPEgu_N6iEYGYoWXc3gA"
+          target="_blank">▼YouTube「千年戦争アイギス」公式チャンネル</a><br>
+      </div>
+
+      <div class="card">
+        <a itemprop="url"
+          href="https://aigis1000secretary.github.io/AigisTools/html/AigisTactics.html">▼千年戦争アイギス　作戦図＋</a><br>
+        <a itemprop="url"
+          href="https://aigis1000secretary.github.io/AigisTools/html/AigisChecker.html">▼千年戦争アイギス　ユニット所持チェッカー＋</a><br>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    All data are from <a href="http://millenniumwaraigis.wikia.com/wiki/Message_Wall:Lzlis">AigisTools release 2</a>
+    <br> Copyright © <a href="https://github.com/aigis1000secretary">aigis1000secretary</a>
+    <br> License is <a href="https://opensource.org/licenses/MIT">MIT</a>
+  </div>
+</body>
+
+</html>

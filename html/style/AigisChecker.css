@@ -1,0 +1,33 @@
+/* button */
+
+.card input[type="button"] {
+    cursor: pointer;
+    height: 26px;
+    color: #fff;
+    background-color: #3898ec;
+    border: 2px #3898ec solid;
+    border-radius: 7px;
+    margin: 1px 0px 1px 0px;
+    padding: 1px 6px 1px 6px;
+}
+
+.card input[type="button"]:hover {
+    color: #3898ec;
+    background-color: #fff;
+}
+
+.card input[type="file"] {
+    cursor: pointer;
+    height: 26px;
+    color: #fff;
+    background-color: #3898ec;
+    border: 2px #3898ec solid;
+    border-radius: 7px;
+    margin: 1px 0px 1px 0px;
+    padding: 1px 6px 1px 6px;
+}
+
+.card input[type="file"]:hover {
+    color: #3898ec;
+    background-color: #fff;
+}

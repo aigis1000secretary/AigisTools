@@ -1,0 +1,157 @@
+.card .box {
+    margin-bottom: 5px;
+    overflow: auto;
+}
+
+/* training box */
+
+/* .training {
+    height: 26px;
+} */
+
+.training .box1 {
+    width: 55%;
+    float: left;
+}
+
+.training .box2 {
+    width: 15%;
+    float: left;
+}
+
+.training .box3 {
+    width: 30%;
+    float: left;
+}
+
+.training input[type="number"] {
+    width: 52px;
+}
+
+.boxswitch {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.boxswitch label {
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding: 1px 0 0 7px;
+    user-select: none;
+}
+
+input[type="checkbox"].on-off {
+    display: none;
+}
+
+.accContent .box {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+input[type="checkbox"].on-off+.accContent .box {
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+input[type="checkbox"].on-off:checked+.accContent .show {
+    height: 26px;
+    margin-bottom: 5px;
+}
+
+input[type="checkbox"].on-off:checked+.accContent .showh42 {
+    height: 42px;
+    margin-bottom: 5px;
+}
+
+/* set card level box */
+
+.setlv select {
+    width: 265px;
+    height: 30px;
+}
+
+.setlv input[type="button"] {
+    width: 51px;
+    font-size: 12px;
+    margin-bottom: 2px;
+    border-style: revert;
+}
+
+.setlv input[type="button"]#ir {
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+.setlv input[type="button"]#si {
+    background-color: #C0C0C0;
+    color: #000;
+}
+
+.setlv input[type="button"]#g {
+    background-color: #ffff00;
+    color: #000;
+}
+
+.setlv input[type="button"]#sa {
+    background-color: #4169e1;
+    color: #fff;
+}
+
+.setlv input[type="button"]#p {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.setlv input[type="button"]#b {
+    background-color: #000000;
+    color: #fff;
+}
+
+/* set next exp box */
+
+.setnext input {
+    height: 30px;
+}
+
+.setnext input[type="number"] {
+    width: 60px;
+}
+
+/* input */
+
+input {
+    border-style: none;
+}
+
+input[type="button"] {
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media screen and (max-width: 940px) {
+    .row>.leftcolumn, .row>.rightcolumn {
+        width: 680px;
+        float: left;
+        padding: 0px;
+    }
+    .header {
+        width: 680px;
+    }
+    .footer {
+        width: 680px;
+    }
+}
