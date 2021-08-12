@@ -51,6 +51,14 @@ let bodyOnload = () => {
 
         }
     }
+
+    // free exp
+    for (let name of ["expFree01", "expFree02", "expFree03", "expFree04"]) {
+        let div = document.getElementById(name).querySelector(".box1");
+        div.addEventListener("click", function (e) {
+            div.innerHTML = prompt(`【自由欄${name[name.length - 1]}】`, div.innerHTML) || `【自由欄${name[name.length - 1]}】`;
+        }, false);
+    }
 }
 
 // data api
@@ -198,7 +206,14 @@ let calc = () => {
             parseInt(div.querySelector(".box2").innerHTML) *
             div.querySelector('.box3 input[type="number"]').value;
     }
-    // "expFree01", "expFree02", "expFree03", "expFree04"
+
+    expNameList = ["expFree01", "expFree02", "expFree03", "expFree04"];
+    for (let name of expNameList) {
+        let div = document.getElementById(name);
+
+        sumAdditionalEXP += parseInt(div.querySelector(".box2 input").value) *
+            div.querySelector('.box3 input[type="number"]').value;
+    }
 
     if (sumEXP >= 0) {
         document.getElementById("remainingEXP").innerHTML = sumEXP - sumAdditionalEXP;
