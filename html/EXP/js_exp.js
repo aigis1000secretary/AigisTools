@@ -2,8 +2,6 @@ var currentRarity, currentLevel, currentNext, currentTargetLevel;
 var sumEXP;
 var limitLevel = new Array();
 
-var expTable = new Array();
-
 // var scan = getCSVFile();
 // function getCSVFile() {
 //     var xhr = new XMLHttpRequest();
@@ -13,8 +11,6 @@ var expTable = new Array();
 // }
 
 function changeSelectRarity() {
-    checkEXPTable();
-
     document.form.selectCurrentLevel.selectedIndex = 0;
     document.form.selectTargetLevel.selectedIndex = 0;
 
@@ -34,7 +30,6 @@ function changeSelectRarity() {
 }
 
 function changeSelectCurrentLevel() {
-    checkEXPTable();
     getRarity();
     getLevel();
     if (document.form.selectTargetLevel.selectedIndex < document.form.selectCurrentLevel.selectedIndex) {
@@ -46,20 +41,17 @@ function changeSelectCurrentLevel() {
 }
 
 function setMaxLimit(r, l) {
-    checkEXPTable();
     document.form.inputNext.value = expTable[l][r + 1];
     document.form.inputNext.min = 1;
     document.form.inputNext.max = expTable[l][r + 1];
 }
 
 function setCurrentMaxLimit() {
-    checkEXPTable();
     document.form.inputNext.value = expTable[getLevel()][getRarity() + 1];
     run();
 }
 
 function setNext(v) {
-    checkEXPTable();
     if (v > expTable[getLevel()][getRarity() + 1]) {
         document.form.inputNext.value = expTable[getLevel()][getRarity() + 1];
     } else {
@@ -74,7 +66,6 @@ function setLevelRange(l, t, r = 0) {
         changeSelectRarity();
     }
 
-    checkEXPTable();
     getRarity();
     document.form.selectCurrentLevel.selectedIndex = l - 1;
     changeSelectCurrentLevel(l - 1);
@@ -107,15 +98,6 @@ function getTarget() {
     return currentTargetLevel;
 }
 
-function checkEXPTable() {
-    if (expTable.length <= 1) {
-        var tempArray = scan.responseText.split("\n");
-        for (var i = 0; i < tempArray.length; i++) {
-            expTable[i] = tempArray[i].split(",");
-        }
-    }
-}
-
 var tmrExecte;
 var blnExecute;
 var intTmrInterval = 75;
@@ -135,7 +117,6 @@ function countDown() {
 }
 
 function startCountUp() {
-    checkEXPTable();
     getLevel();
 
     clearInterval(tmrExecte);
@@ -147,7 +128,6 @@ function startCountUp() {
 }
 
 function startCountDown() {
-    checkEXPTable();
     getLevel();
 
     clearInterval(tmrExecte);
@@ -164,8 +144,6 @@ function stop() {
 }
 
 function run() {
-    checkEXPTable();
-
     getRarity();
     getLevel();
     sumEXP = getNext();
@@ -855,11 +833,6 @@ function refreshRemainingEXP() {
 }
 
 function init() {
-    var tempArray = scan.responseText.split("\r\n");
-    for (var i = 0; i < tempArray.length; i++) {
-        expTable[i] = tempArray[i].split(",");
-    }
-
     limitLevel = [30, 40, 55, 99, 99, 99, 99];
 
     document.form.selectRarity.selectedIndex = 0;

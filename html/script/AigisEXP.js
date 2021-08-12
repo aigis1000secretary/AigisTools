@@ -1,5 +1,4 @@
 
-let expTable = new Array();
 let maxLevel = [40, 50, 55, 99, 99, 99, 99];
 let plane1Config = [
     ["expAmour", 2],
@@ -12,12 +11,6 @@ let plane1Config = [
 
 // body onload method
 let bodyOnload = () => {
-    // set exp table
-    let tempArray = scan.responseText.split("\n");
-    for (var i = 0; i < tempArray.length; i++) {
-        expTable[i] = tempArray[i].split(",");
-    }
-
     // init card box
     setMaxLevel();
     setExpLimit();
@@ -182,7 +175,7 @@ let calc = () => {
     let currentTargetLevel = getTargetLevel();
 
     for (i = currentLevel + 1; i <= currentTargetLevel - 1; i++) {
-        sumEXP += parseInt(expTable[i][currentRarity + 1]);
+        sumEXP += expTable[i][currentRarity + 1];
     }
     if (currentLevel < currentTargetLevel) {
         document.getElementById("necessaryEXP").innerHTML = sumEXP;
