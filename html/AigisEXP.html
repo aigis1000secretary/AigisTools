@@ -14,6 +14,7 @@
 
   <!-- script -->
   <script src="./script/AigisEXP.js"></script>
+  <script src="./script/html2canvas.js"></script>
 
   <!-- css -->
   <link href='./style/Primary.css' rel='stylesheet' type='text/css' />
@@ -32,7 +33,7 @@
 
     <div class="leftcolumn" style="font-size: 14px;">
 
-      <div class="card">
+      <div class="card" id="expcalc">
         <!-- card box -->
         <div class="box" style="background-color:#fff0d2;padding: 10px;margin: 0px;">
           <!-- set box -->
@@ -113,9 +114,7 @@
 
             <!-- title -->
             <div class="box">
-              <div style="font-size:18px;font-weight:bold;">
-                育成計画
-              </div>
+              <div id="boxtitle" style="font-size:18px;font-weight:bold;">育成計画</div>
               <label for="checkSariette" style="user-select: none;">
                 <input type="checkbox" id="checkSariette" onchange="switchSariette();">
                 育成の聖霊サリエット
@@ -429,6 +428,12 @@
       <div class="card">
         <a itemprop="url" href="./AigisTactics.html">▼千年戦争アイギス　作戦図＋</a><br>
         <a itemprop="url" href="./AigisChecker.html">▼千年戦争アイギス　ユニット所持チェッカー＋</a><br>
+      </div>
+
+
+      <div class="card datasave">
+        データ保存
+        <input type="button" onclick="openImage();" value="画像生成">
       </div>
 
     </div>

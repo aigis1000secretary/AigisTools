@@ -1,4 +1,4 @@
-﻿
+
 let maxLevel = [40, 50, 55, 99, 99, 99, 99];
 let plane1Config = [
     ["expAmour", 2],
@@ -18,7 +18,7 @@ let bodyOnload = () => {
     setExpLimit();
 
     // set button event
-    for (let btn of document.getElementsByTagName("input")) {
+    for (let btn of document.querySelector(".leftcolumn").getElementsByTagName("input")) {
         if (btn.value == "MIN") {
             btn.addEventListener("click", function (e) {
                 let input = this.nextElementSibling.nextElementSibling;
@@ -61,6 +61,12 @@ let bodyOnload = () => {
             div.innerHTML = prompt(`【自由欄${name[name.length - 1]}】`, div.innerHTML) || `【自由欄${name[name.length - 1]}】`;
         }, false);
     }
+
+    // box title
+    let div = document.getElementById("boxtitle");
+    div.addEventListener("click", function (e) {
+        div.innerHTML = prompt(`名前入力`, div.innerHTML) || `育成計画`;
+    }, false);
 }
 
 // data api
@@ -139,6 +145,15 @@ let switchSariette = () => {
     // necessaryEXP
 }
 
+// html result to image
+let openImage = function () {
+    $(window).scrollTop(0);
+    html2canvas(document.getElementById("expcalc")).then(function (canvas) {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        window.open().document.write(`<img src="${image.src}" />`);
+    });
+}
 
 
 
