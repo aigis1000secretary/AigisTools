@@ -11,16 +11,19 @@
 
 .training .box1 {
     width: 55%;
+    height: 100%;
     float: left;
 }
 
 .training .box2 {
     width: 15%;
+    height: 100%;
     float: left;
 }
 
 .training .box3 {
     width: 30%;
+    height: 100%;
     float: left;
 }
 
@@ -47,11 +50,11 @@ input[type="checkbox"].on-off {
 }
 
 .accContent .box {
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -63,13 +66,13 @@ input[type="checkbox"].on-off+.accContent .box {
     overflow: hidden;
 }
 
-input[type="checkbox"].on-off:checked+.accContent .show {
+input[type="checkbox"].on-off+.accContent .keep, input[type="checkbox"].on-off:checked+.accContent .show, input[type="checkbox"].on-off:checked+.accContent .showh43 {
     height: 26px;
     margin-bottom: 5px;
 }
 
-input[type="checkbox"].on-off:checked+.accContent .showh42 {
-    height: 42px;
+input[type="checkbox"].on-off:checked+.accContent .showh43:hover {
+    height: 43px;
     margin-bottom: 5px;
 }
 
@@ -137,7 +140,7 @@ input[type="button"] {
     cursor: pointer;
 }
 
-input[type="number"]::-webkit-outer-spin-button:not(.plane5), input[type="number"]::-webkit-inner-spin-button:not(.plane5) {
+input[type="number"]:not(.plane5)::-webkit-outer-spin-button, input[type="number"]:not(.plane5)::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }

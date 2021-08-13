@@ -47,10 +47,8 @@ let bodyOnload = () => {
             }, false);
 
         } else if (btn.type == "number") {
-            btn.addEventListener("change", function (e) {
-                calc();
-            }, false);
-
+            btn.addEventListener("change", calc, false);
+            btn.addEventListener("mouseover", (e) => { btn.select(); }, false);
         }
     }
 
@@ -98,7 +96,9 @@ let getTargetLevel = () => {
     return document.getElementById("selectTargetLevel").selectedIndex + 1;
 }
 let getNext = () => {
-    return parseInt(document.getElementById("inputNext").value);
+    let div = document.getElementById("inputNext");
+    if (div.value == "") { div.value = div.max; }
+    return parseInt(div.value || 0);
 }
 
 // button event
@@ -196,14 +196,14 @@ let calc = () => {
     let expNameList = [
         "expC01", "expC02", "expC03", "expC04"
     ];
-    let customizeConfig = [
-        [0, 40, 10],     // 0
-        [0, 70, 30],     // 1
+    let customizeConfig = [ // rare
+        [0, 40, 10],        // 0
+        [0, 70, 30],        // 1
         [150, 300, 50],     // 2
         [250, 750, 80],     // 3
         [250, 750, 90],     // 4
-        [500, 1500, 100],     // 5
-        [1000, 2000, 300],     // 6
+        [500, 1500, 100],   // 5
+        [1000, 2000, 300],  // 6
     ];
     for (let name of expNameList) {
         let div = document.getElementById(name);
@@ -221,6 +221,8 @@ let calc = () => {
         if ([0, 1].includes(rare)) {
             sex = div.querySelector(".sex").selectedIndex = 1;
             cc = div.querySelector(".cc").selectedIndex = 0;
+        } else if (rare == 2 && cc == 2) {
+            cc = div.querySelector(".cc").selectedIndex = 1;
         }
         if (lv > maxLevel[rare]) {
             rare = div.querySelector('.box1 input[type="number"]').value = maxLevel[rare];
@@ -268,17 +270,31 @@ let calc = () => {
             check[1] != currentRarity)  // not for this rare
         { continue; }
 
-        sumAdditionalEXP +=
-            parseInt(div.querySelector(".box2").innerHTML) *
+        let addExp = parseInt(div.querySelector(".box2").innerHTML) *
             div.querySelector('.box3 input[type="number"]').value;
+        if (addExp) {
+            sumAdditionalEXP += addExp;
+            // set UI classname
+            div.classList.add("keep");
+        } else {
+            div.classList.remove("keep");
+        }
     }
 
     expNameList = ["expFree01", "expFree02", "expFree03", "expFree04"];
     for (let name of expNameList) {
         let div = document.getElementById(name);
 
-        sumAdditionalEXP += parseInt(div.querySelector(".box2 input").value) *
+        let addExp =
+            parseInt(div.querySelector(".box2 input").value || 0) *
             div.querySelector('.box3 input[type="number"]').value;
+        if (addExp) {
+            sumAdditionalEXP += addExp;
+            // set UI classname
+            div.classList.add("keep");
+        } else {
+            div.classList.remove("keep");
+        }
     }
 
     if (sumEXP >= 0) {
