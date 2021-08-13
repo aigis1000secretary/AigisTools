@@ -137,9 +137,16 @@ input[type="button"] {
     cursor: pointer;
 }
 
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button:not(.plane5), input[type="number"]::-webkit-inner-spin-button:not(.plane5) {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.plane5 {
+    color: #FFFFFF;
+    background: #316ca4;
+    border-style: none;
+    vertical-align: middle
 }
 
 /* data save */

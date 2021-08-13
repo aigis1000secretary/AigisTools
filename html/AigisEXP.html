@@ -35,12 +35,12 @@
 
       <div class="card" id="expcalc">
         <!-- card box -->
-        <div class="box" style="background-color:#fff0d2;padding: 10px;margin: 0px;">
+        <div class="box" style="background-color: #fff0d2;padding: 10px;margin: 0px;">
           <!-- set box -->
           <div style="width: 70%;float: left;">
 
             <div class="box setlv">
-              <select id="selectRarity" onchange="changeSelectRarity();" style="width:360px;">
+              <select id="selectRarity" onchange="changeSelectRarity();" style="width: 360px;">
                 <option value="0">アイロン / Iron</option>
                 <option value="1">ブロンズ / Bronze</option>
                 <option value="2">シルバー / Silver</option>
@@ -98,7 +98,7 @@
 
           <!-- show box -->
           <div style="width: 30%;float: right;">
-            <div class="box" style="background-color:rgba(255, 255, 255, 0.70);padding: 5px;margin-top: 20px;">
+            <div class="box" style="background-color: rgba(255, 255, 255, 0.70);padding: 5px;margin-top: 20px;">
               必要経験値：
               <div id="necessaryEXP" style="font-size:20px;font-weight:bold;">-</div>
             </div>
@@ -108,13 +108,13 @@
 
 
         <!-- Training box -->
-        <div class="box" style="background-color:#417cb4;color: #ffffff;padding: 10px;margin: 10px 0px 0px 0px;">
+        <div class="box" style="background-color: #417cb4;color: #ffffff;padding: 10px;margin: 10px 0px 0px 0px;">
           <!-- eat box -->
           <div style="width: 65%;float: left;">
 
             <!-- title -->
             <div class="box">
-              <div id="boxtitle" style="font-size:18px;font-weight:bold;">育成計画</div>
+              <div id="boxtitle" style="font-size: 18px;font-weight: bold;">育成計画</div>
               <label for="checkSariette" style="user-select: none;">
                 <input type="checkbox" id="checkSariette" onchange="switchSariette();">
                 育成の聖霊サリエット
@@ -149,7 +149,7 @@
             </div>
 
             <!-- plane1 -->
-            <div class="box boxswitch" style="background-color:#22b14c;">
+            <div class="box boxswitch" style="background-color: #22b14c;">
               <label for="Panel1">
                 <b>小祝福の聖霊</b>
               </label>
@@ -249,7 +249,7 @@
 
 
             <!-- plane2 -->
-            <div class="box boxswitch" style="background-color:#C0C0C0;color: #000000;">
+            <div class="box boxswitch" style="background-color: #C0C0C0;color: #000000;">
               <label for="Panel2">
                 <b>白の皇帝</b>
               </label>
@@ -291,7 +291,7 @@
 
 
             <!-- plane3 -->
-            <div class="box boxswitch" style="background-color:#a65315;">
+            <div class="box boxswitch" style="background-color: #a65315;">
               <label for="Panel3">
                 <b>ストミ餌</b>
               </label>
@@ -351,12 +351,12 @@
 
 
             <!-- plane4 -->
-            <div class="box boxswitch" style="background-color:#000000;">
+            <div class="box boxswitch" style="background-color: #000000;">
               <label for="Panel4">
                 <b>自由欄</b>
               </label>
             </div>
-            <input type="checkbox" id="Panel4" class="on-off" checked=true>
+            <input type="checkbox" id="Panel4" class="on-off" checked="true">
             <div class="accContent">
 
               <div class="box training show" id="expFree01">
@@ -400,13 +400,167 @@
               </div>
 
             </div>
+
+
+            <!-- plane5 -->
+            <div class="box boxswitch" style="background-color: #000000;">
+              <label for="Panel5">
+                <b>カスタマイズ</b>
+              </label>
+            </div>
+            <input type="checkbox" id="Panel5" class="on-off">
+            <div class="accContent">
+
+              <div class="box training show" id="expC01">
+                <div class="box1">
+
+                  <select class="plane5 rare" style="width: 35px;" onchange="calc();">
+                    <option value="0">鉄</option>
+                    <option value="1" selected>銅</option>
+                    <option value="2">銀</option>
+                    <option value="3">金</option>
+                    <option value="4">藍</option>
+                    <option value="5">白</option>
+                    <option value="6">黒</option>
+                  </select>
+                  <select class="plane5 sex" style="width: 35px;" onchange="calc();">
+                    <option value="0">女性</option>
+                    <option value="1" selected>男性</option>
+                  </select>
+                  Lv
+                  <input class="plane5 lv" type="number" value="22" min="1" max="99" style="width: 40px;"
+                    onchange="calc();">
+                  <select class="plane5 cc" style="width: 35px;" onchange="calc();">
+                    <option value="0">未CCユニット</option>
+                    <option value="1">CC済/CCのない</option>
+                    <option value="2">覚醒後のユニット</option>
+                  </select>
+                  <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="calc();">
+
+                </div>
+                <div class="box2">0</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expC02">
+                <div class="box1">
+
+                  <select class="plane5 rare" style="width: 35px;" onchange="calc();">
+                    <option value="0">鉄</option>
+                    <option value="1">銅</option>
+                    <option value="2">銀</option>
+                    <option value="3">金</option>
+                    <option value="4">藍</option>
+                    <option value="5">白</option>
+                    <option value="6">黒</option>
+                  </select>
+                  <select class="plane5 sex" style="width: 35px;" onchange="calc();">
+                    <option value="0">女性</option>
+                    <option value="1">男性</option>
+                  </select>
+                  Lv
+                  <input class="plane5 lv" type="number" value="1" min="1" max="99" style="width: 40px;"
+                    onchange="calc();">
+                  <select class="plane5 cc" style="width: 35px;" onchange="calc();">
+                    <option value="0">未CCユニット</option>
+                    <option value="1">CC済/CCのない</option>
+                    <option value="2">覚醒後のユニット</option>
+                  </select>
+                  <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="calc();">
+
+                </div>
+                <div class="box2">0</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expC03">
+                <div class="box1">
+
+                  <select class="plane5 rare" style="width: 35px;" onchange="calc();">
+                    <option value="0">鉄</option>
+                    <option value="1">銅</option>
+                    <option value="2">銀</option>
+                    <option value="3">金</option>
+                    <option value="4">藍</option>
+                    <option value="5">白</option>
+                    <option value="6">黒</option>
+                  </select>
+                  <select class="plane5 sex" style="width: 35px;" onchange="calc();">
+                    <option value="0">女性</option>
+                    <option value="1">男性</option>
+                  </select>
+                  Lv
+                  <input class="plane5 lv" type="number" value="1" min="1" max="99" style="width: 40px;"
+                    onchange="calc();">
+                  <select class="plane5 cc" style="width: 35px;" onchange="calc();">
+                    <option value="0">未CCユニット</option>
+                    <option value="1">CC済/CCのない</option>
+                    <option value="2">覚醒後のユニット</option>
+                  </select>
+                  <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="calc();">
+
+                </div>
+                <div class="box2">0</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expC04">
+                <div class="box1">
+
+                  <select class="plane5 rare" style="width: 35px;" onchange="calc();">
+                    <option value="0">鉄</option>
+                    <option value="1">銅</option>
+                    <option value="2">銀</option>
+                    <option value="3">金</option>
+                    <option value="4">藍</option>
+                    <option value="5">白</option>
+                    <option value="6">黒</option>
+                  </select>
+                  <select class="plane5 sex" style="width: 35px;" onchange="calc();">
+                    <option value="0">女性</option>
+                    <option value="1">男性</option>
+                  </select>
+                  Lv
+                  <input class="plane5 lv" type="number" value="1" min="1" max="99" style="width: 40px;"
+                    onchange="calc();">
+                  <select class="plane5 cc" style="width: 35px;" onchange="calc();">
+                    <option value="0">未CCユニット</option>
+                    <option value="1">CC済/CCのない</option>
+                    <option value="2">覚醒後のユニット</option>
+                  </select>
+                  <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="calc();">
+
+                </div>
+                <div class="box2">0</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+            </div>
+
+
           </div>
 
           <!-- show box -->
           <div style="width: 35%;float: right;">
-            <div class="box" style="background-color:#244664;padding: 5px;margin-top: 20px;">
+            <div class="box" style="background-color: #244664;padding: 5px;margin-top: 20px;">
               目標レベルまで：
-              <div id="remainingEXP" style="font-size:20px;font-weight:bold;">-</div>
+              <div id="remainingEXP" style="font-size: 20px;font-weight: bold;">-</div>
             </div>
           </div>
 

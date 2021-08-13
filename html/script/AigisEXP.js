@@ -57,6 +57,7 @@ let bodyOnload = () => {
     // free exp
     for (let name of ["expFree01", "expFree02", "expFree03", "expFree04"]) {
         let div = document.getElementById(name).querySelector(".box1");
+        div.style.cursor = "pointer";
         div.addEventListener("click", function (e) {
             div.innerHTML = prompt(`【自由欄${name[name.length - 1]}】`, div.innerHTML) || `【自由欄${name[name.length - 1]}】`;
         }, false);
@@ -64,9 +65,12 @@ let bodyOnload = () => {
 
     // box title
     let div = document.getElementById("boxtitle");
+    div.style.cursor = "pointer";
     div.addEventListener("click", function (e) {
         div.innerHTML = prompt(`名前入力`, div.innerHTML) || `育成計画`;
     }, false);
+
+    calc();
 }
 
 // data api
@@ -136,10 +140,10 @@ let switchSariette = () => {
     document.getElementById("expEmperor01").querySelector(".box2").innerHTML = Math.floor(16000 * r);
     document.getElementById("expEmperor17").querySelector(".box2").innerHTML = Math.floor(18560 * r);
     document.getElementById("expEmperor20").querySelector(".box2").innerHTML = Math.floor(19040 * r);
-    document.getElementById("expB01").querySelector(".box2").innerHTML = (235 * r).toFixed(1);
-    document.getElementById("expB02").querySelector(".box2").innerHTML = (265 * r).toFixed(1);
-    document.getElementById("expB03").querySelector(".box2").innerHTML = (220 * r).toFixed(1);
-    document.getElementById("expB04").querySelector(".box2").innerHTML = (250 * r).toFixed(1);
+    document.getElementById("expB01").querySelector(".box2").innerHTML = (235 * r).toFixed(1).replace(/\.0$/, "");
+    document.getElementById("expB02").querySelector(".box2").innerHTML = (265 * r).toFixed(1).replace(/\.0$/, "");
+    document.getElementById("expB03").querySelector(".box2").innerHTML = (220 * r).toFixed(1).replace(/\.0$/, "");
+    document.getElementById("expB04").querySelector(".box2").innerHTML = (250 * r).toFixed(1).replace(/\.0$/, "");
 
     calc();
     // necessaryEXP
@@ -188,6 +192,48 @@ let setExpLimit = () => {
 }
 
 let calc = () => {
+    // EXP customize options
+    let expNameList = [
+        "expC01", "expC02", "expC03", "expC04"
+    ];
+    let customizeConfig = [
+        [0, 40, 10],     // 0
+        [0, 70, 30],     // 1
+        [150, 300, 50],     // 2
+        [250, 750, 80],     // 3
+        [250, 750, 90],     // 4
+        [500, 1500, 100],     // 5
+        [1000, 2000, 300],     // 6
+    ];
+    for (let name of expNameList) {
+        let div = document.getElementById(name);
+        // setting
+        let rare = div.querySelector(".rare").selectedIndex;  // 0~6
+        let sex = div.querySelector(".sex").selectedIndex;    // 0~1 女:男
+        let cc = div.querySelector(".cc").selectedIndex;    // 0~2
+        let lv = parseInt(div.querySelector('.lv').value); // 0~99
+        let cbonus = div.querySelector(".cbonus").checked ? 1 : 0;
+        // variable
+        let ccexp = [0, 1].includes(rare) ? 5 : [7, 20, 50][cc];
+        let r = document.getElementById("checkSariette").checked ? 1.1 : 1.0
+
+        // check selected
+        if ([0, 1].includes(rare)) {
+            sex = div.querySelector(".sex").selectedIndex = 1;
+            cc = div.querySelector(".cc").selectedIndex = 0;
+        }
+        if (lv > maxLevel[rare]) {
+            rare = div.querySelector('.box1 input[type="number"]').value = maxLevel[rare];
+        }
+
+        let exp = customizeConfig[rare][sex]
+        exp += cbonus * customizeConfig[rare][2];
+        exp += (lv - 1) * ccexp;
+        exp = (exp * r).toFixed(1).replace(/\.0$/, "");;
+
+        div.querySelector(".box2").innerHTML = exp;
+    }
+
     // necessaryEXP
     let sumEXP = getNext();
     let currentRarity = getRarity();
@@ -206,11 +252,12 @@ let calc = () => {
 
     // remainingEXP
     let sumAdditionalEXP = 0;
-    let expNameList = [
+    expNameList = [
         "expWArmor", "expBArmor",
         "expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer",
         "expEmperor01", "expEmperor17", "expEmperor20",
         "expB01", "expB02", "expB03", "expB04",
+        "expC01", "expC02", "expC03", "expC04"
     ];
     for (let name of expNameList) {
         let div = document.getElementById(name);
