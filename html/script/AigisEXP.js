@@ -65,6 +65,11 @@ let bodyOnload = () => {
             }, false);
         }
     }
+    if (!isMobile()) {
+        for (let btn of document.querySelectorAll(".plane5:not(input)")) {
+            btn.addEventListener("mouseover", (e) => { btn.focus(); }, false);
+        }
+    }
 
     // free exp event
     for (let name of ["expFree01", "expFree02", "expFree03", "expFree04"]) {
