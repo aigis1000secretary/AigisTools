@@ -177,6 +177,7 @@ let switchSariette = () => {
 // html result to image
 let openImage = function () {
     $(window).scrollTop(0);
+    document.getElementById("remainingEXP").parentElement.parentElement.style.paddingTop = `0px`;
     html2canvas(document.getElementById("expcalc")).then(function (canvas) {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
