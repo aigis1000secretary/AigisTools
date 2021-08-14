@@ -211,6 +211,7 @@ let setMaxLevel = () => {
             document.getElementById(cfg[0]).classList.add("show");
         } else {
             document.getElementById(cfg[0]).classList.remove("show");
+            document.getElementById(cfg[0]).classList.remove("keep");
         }
     }
 }
