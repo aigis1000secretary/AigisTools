@@ -10,6 +10,16 @@ let plane1Config = [
     ["expPresent", -1],
     ["expPlacer", -1]
 ];
+let customizeConfig = [ // rare
+    [0, 40, 10],        // 0
+    [0, 70, 30],        // 1
+    [150, 300, 50],     // 2
+    [250, 750, 80],     // 3
+    [250, 750, 90],     // 4
+    [500, 1500, 100],   // 5
+    [1000, 2000, 300],  // 6
+];
+
 
 // body onload method
 let bodyOnload = () => {
@@ -47,29 +57,44 @@ let bodyOnload = () => {
             }, false);
 
         } else if (btn.type == "number") {
+            if (!isMobile()) { btn.addEventListener("mouseover", (e) => { btn.select(); }, false); }
             btn.addEventListener("change", calc, false);
-            btn.addEventListener("mouseover", (e) => { btn.select(); }, false);
+            btn.addEventListener("keydown", (e) => {
+                if (btn.max != "" && e.keyCode == 36) { btn.value = btn.max; calc(); }    // end
+                if (btn.min != "" && e.keyCode == 35) { btn.value = btn.min; calc(); }    // home
+            }, false);
         }
     }
 
-    // free exp
+    // free exp event
     for (let name of ["expFree01", "expFree02", "expFree03", "expFree04"]) {
         let div = document.getElementById(name).querySelector(".box1");
         div.style.cursor = "pointer";
         div.addEventListener("click", function (e) {
-            div.innerHTML = prompt(`【自由欄${name[name.length - 1]}】`, div.innerHTML) || `【自由欄${name[name.length - 1]}】`;
+            this.innerHTML = prompt(`【自由欄${name[name.length - 1]}】`, this.innerHTML) || `【自由欄${name[name.length - 1]}】`;
         }, false);
     }
 
-    // box title
-    let div = document.getElementById("boxtitle");
-    div.style.cursor = "pointer";
-    div.addEventListener("click", function (e) {
-        div.innerHTML = prompt(`名前入力`, div.innerHTML) || `育成計画`;
-    }, false);
+
+    {   // box title event
+        let div = document.getElementById("boxtitle");
+        div.style.cursor = "pointer";
+        div.addEventListener("click", function (e) {
+            this.innerHTML = prompt(`名前入力`, this.innerHTML) || `育成計画`;
+        }, false);
+    }
+
+    // scroll event
+    if (!isMobile()) {
+        $(window).scroll(() => {
+            let div = document.getElementById("remainingEXP").parentElement.parentElement;
+            div.style.paddingTop = `${Math.max(0, $(this).scrollTop() - 370)}px`;
+        });
+    }
 
     calc();
 }
+
 
 // data api
 let setRarity = (r) => {
@@ -101,6 +126,7 @@ let getNext = () => {
     return parseInt(div.value || 0);
 }
 
+
 // button event
 let changeSelectRarity = () => {
     setMaxLevel();
@@ -122,7 +148,6 @@ let setLevelRange = (l, t, r = 0) => {
     setTargetLevel(t);
 
     calc();
-    // necessaryEXP
 }
 let switchSariette = () => {
     let r = document.getElementById("checkSariette").checked ? 1.1 : 1.0
@@ -136,7 +161,7 @@ let switchSariette = () => {
     document.getElementById("expFreude").querySelector(".box2").innerHTML = Math.floor(19000 * r);
     document.getElementById("expFarah").querySelector(".box2").innerHTML = Math.floor(20000 * r);
     document.getElementById("expPresent").querySelector(".box2").innerHTML = Math.floor(18000 * r);
-    document.getElementById("expPlacer").querySelector(".box2").innerHTML = Math.floor(18000 * r);
+    document.getElementById("expPlacer").querySelector(".box2").innerHTML = Math.floor(10000 * r);
     document.getElementById("expEmperor01").querySelector(".box2").innerHTML = Math.floor(16000 * r);
     document.getElementById("expEmperor17").querySelector(".box2").innerHTML = Math.floor(18560 * r);
     document.getElementById("expEmperor20").querySelector(".box2").innerHTML = Math.floor(19040 * r);
@@ -196,15 +221,6 @@ let calc = () => {
     let expNameList = [
         "expC01", "expC02", "expC03", "expC04"
     ];
-    let customizeConfig = [ // rare
-        [0, 40, 10],        // 0
-        [0, 70, 30],        // 1
-        [150, 300, 50],     // 2
-        [250, 750, 80],     // 3
-        [250, 750, 90],     // 4
-        [500, 1500, 100],   // 5
-        [1000, 2000, 300],  // 6
-    ];
     for (let name of expNameList) {
         let div = document.getElementById(name);
         // setting
@@ -225,10 +241,10 @@ let calc = () => {
             cc = div.querySelector(".cc").selectedIndex = 1;
         }
         if (lv > maxLevel[rare]) {
-            rare = div.querySelector('.box1 input[type="number"]').value = maxLevel[rare];
+            lv = div.querySelector('.lv').value = maxLevel[rare];
         }
 
-        let exp = customizeConfig[rare][sex]
+        let exp = customizeConfig[rare][sex];
         exp += cbonus * customizeConfig[rare][2];
         exp += (lv - 1) * ccexp;
         exp = (exp * r).toFixed(1).replace(/\.0$/, "");;
@@ -272,6 +288,7 @@ let calc = () => {
 
         let addExp = parseInt(div.querySelector(".box2").innerHTML) *
             div.querySelector('.box3 input[type="number"]').value;
+
         if (addExp) {
             sumAdditionalEXP += addExp;
             // set UI classname
@@ -288,7 +305,8 @@ let calc = () => {
         let addExp =
             parseInt(div.querySelector(".box2 input").value || 0) *
             div.querySelector('.box3 input[type="number"]').value;
-        if (addExp) {
+
+        if (addExp || parseInt(div.querySelector(".box2 input").value || 0)) {
             sumAdditionalEXP += addExp;
             // set UI classname
             div.classList.add("keep");
@@ -302,4 +320,11 @@ let calc = () => {
     } else {
         document.getElementById("remainingEXP").innerHTML = "-";
     }
+}
+
+let isMobile = () => {
+    let u = navigator.userAgent;
+    let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    return isAndroid || isiOS;
 }
