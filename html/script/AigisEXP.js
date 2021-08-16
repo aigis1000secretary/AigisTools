@@ -11,6 +11,7 @@ let plane1Config = [
     ["expPlacer", -1]
 ];
 let customizeConfig = [ // rare
+    // female, male, class bonus
     [0, 40, 10],        // 0
     [0, 70, 30],        // 1
     [150, 300, 50],     // 2
@@ -97,6 +98,9 @@ let bodyOnload = () => {
         });
     }
 
+    // update UI
+    switchSariette();
+    // calc
     calc();
 }
 
@@ -174,9 +178,6 @@ let switchSariette = () => {
     document.getElementById("expB02").querySelector(".box2").innerHTML = (265 * r).toFixed(1).replace(/\.0$/, "");
     document.getElementById("expB03").querySelector(".box2").innerHTML = (220 * r).toFixed(1).replace(/\.0$/, "");
     document.getElementById("expB04").querySelector(".box2").innerHTML = (250 * r).toFixed(1).replace(/\.0$/, "");
-
-    calc();
-    // necessaryEXP
 }
 
 // html result to image
@@ -226,7 +227,8 @@ let setExpLimit = () => {
 let calc = () => {
     // EXP customize options
     let expNameList = [
-        "expC01", "expC02", "expC03", "expC04"
+        "expC01", "expC02", "expC03", "expC04",
+        "expS01"    // 鬼刃忍タチバナ base 750 exp
     ];
     for (let name of expNameList) {
         let div = document.getElementById(name);
@@ -252,6 +254,7 @@ let calc = () => {
         }
 
         let exp = customizeConfig[rare][sex];
+        if (name == "expS01") { exp = 750; }
         exp += cbonus * customizeConfig[rare][2];
         exp += (lv - 1) * ccexp;
         exp = (exp * r).toFixed(1).replace(/\.0$/, "");;
@@ -282,7 +285,7 @@ let calc = () => {
         "expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer",
         "expEmperor01", "expEmperor17", "expEmperor20",
         "expB01", "expB02", "expB03", "expB04",
-        "expC01", "expC02", "expC03", "expC04"
+        "expC01", "expC02", "expC03", "expC04", "expS01"
     ];
     for (let name of expNameList) {
         let div = document.getElementById(name);

@@ -116,7 +116,7 @@
             <div class="box">
               <div id="boxtitle" style="font-size: 18px;font-weight: bold;">育成計画</div>
               <label for="checkSariette" style="user-select: none;">
-                <input type="checkbox" id="checkSariette" onchange="switchSariette();">
+                <input type="checkbox" id="checkSariette" onchange="switchSariette(); calc();">
                 育成の聖霊サリエット
               </label>
             </div>
@@ -530,6 +530,41 @@
                   </select>
                   <select class="plane5 sex" style="width: 35px;" onchange="calc();">
                     <option value="0">女性</option>
+                    <option value="1">男性</option>
+                  </select>
+                  Lv
+                  <input class="plane5 lv" type="number" value="1" min="1" max="99" style="width: 40px;"
+                    onchange="calc();">
+                  <select class="plane5 cc" style="width: 35px;" onchange="calc();">
+                    <option value="0">未CCユニット</option>
+                    <option value="1">CC済/CCのない</option>
+                    <option value="2">覚醒後のユニット</option>
+                  </select>
+                  <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="calc();">
+
+                </div>
+                <div class="box2">0</div>
+                <div class="box3">
+                  <input type="button" value="－">
+                  <input type="number" value="0" min="0" max="99">
+                  <input type="button" value="＋">
+                </div>
+              </div>
+
+              <div class="box training show" id="expS01">
+                <div class="box1">
+                  鬼刃忍タチバナ
+                  <select class="plane5 rare" style="display: none;">
+                    <option value="0">鉄</option>
+                    <option value="1">銅</option>
+                    <option value="2">銀</option>
+                    <option value="3">金</option>
+                    <option value="4">藍</option>
+                    <option value="5">白</option>
+                    <option value="6" selected>黒</option>
+                  </select>
+                  <select class="plane5 sex" style="display: none;">
+                    <option value="0" selected>女性</option>
                     <option value="1">男性</option>
                   </select>
                   Lv
