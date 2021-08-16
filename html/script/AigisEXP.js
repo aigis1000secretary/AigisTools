@@ -66,7 +66,7 @@ let bodyOnload = () => {
         }
     }
     if (!isMobile()) {
-        for (let btn of document.querySelectorAll(".plane5:not(input)")) {
+        for (let btn of document.querySelectorAll("select")) {
             btn.addEventListener("mouseover", (e) => { btn.focus(); }, false);
         }
     }
@@ -128,7 +128,7 @@ let getTargetLevel = () => {
 let getNext = () => {
     let div = document.getElementById("inputNext");
     if (div.value == "") { div.value = div.max; }
-    return parseInt(div.value || 0);
+    return div.value * 1;
 }
 
 
@@ -234,7 +234,7 @@ let calc = () => {
         let rare = div.querySelector(".rare").selectedIndex;  // 0~6
         let sex = div.querySelector(".sex").selectedIndex;    // 0~1 女:男
         let cc = div.querySelector(".cc").selectedIndex;    // 0~2
-        let lv = parseInt(div.querySelector('.lv').value); // 0~99
+        let lv = div.querySelector('.lv').value * 1; // 0~99
         let cbonus = div.querySelector(".cbonus").checked ? 1 : 0;
         // variable
         let ccexp = [0, 1].includes(rare) ? 5 : [7, 20, 50][cc];
@@ -293,8 +293,10 @@ let calc = () => {
             check[1] != currentRarity)  // not for this rare
         { continue; }
 
-        let addExp = parseInt(div.querySelector(".box2").innerHTML) *
-            div.querySelector('.box3 input[type="number"]').value;
+        let addExp =
+            (div.querySelector(".box2").innerHTML * 1) *
+            (div.querySelector('.box3 input[type="number"]').value * 1);
+        addExp = Math.floor(addExp);
 
         if (addExp) {
             sumAdditionalEXP += addExp;
@@ -310,10 +312,11 @@ let calc = () => {
         let div = document.getElementById(name);
 
         let addExp =
-            parseInt(div.querySelector(".box2 input").value || 0) *
-            div.querySelector('.box3 input[type="number"]').value;
+            (div.querySelector(".box2 input").value * 1) *
+            (div.querySelector('.box3 input[type="number"]').value * 1);
+        addExp = Math.floor(addExp);
 
-        if (addExp || parseInt(div.querySelector(".box2 input").value || 0)) {
+        if (addExp || (div.querySelector(".box2 input").value * 1) > 0) {
             sumAdditionalEXP += addExp;
             // set UI classname
             div.classList.add("keep");
