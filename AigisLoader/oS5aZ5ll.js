@@ -89,6 +89,7 @@ const main = async () => {
             .replaceAll(`"A1"`, `"CardID"`)
             .replaceAll(`"A2"`, `"ClassID"`)
             .replaceAll(`"A4"`, `"EXP"`)
+            .replaceAll(`"A6"`, `"SkillLv"`)
     );
 
     // get card list str

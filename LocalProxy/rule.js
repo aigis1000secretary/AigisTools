@@ -1,9 +1,10 @@
 // file: sample.js
 const fs = require('fs');
 
-let xmlpath = "./AigisTools/";
-let filepath = "./AigisTools/";
+let xmlspath = "./AigisTools/Data/XML";
+let filepath = "./AigisTools/Data/XML";
 // let cachepath = "./AigisTools/Data/Cache/net/";
+let filelist = false;
 
 const COLOR = {
     reset: '\x1b[0m', bright: '\x1b[1m', dim: '\x1b[2m',
@@ -25,23 +26,6 @@ module.exports = {
 
         let url = requestDetail.url;
         // console.log(url);
-
-        // // get cache for Aigis tools
-        // if (/[0-9a-f]{40}\/[0-9a-z]{32}/i.test(url)) {
-        //     // list all resource
-        //     let [, part1, part2] = url.match(/([0-9a-f]{40})\/([0-9a-z]{32})/i);
-
-        //     if (!fs.existsSync(`${cachepath}${part1}`)) {
-        //         fs.mkdirSync(`${cachepath}${part1}`, { recursive: true });
-        //     }
-
-        //     // fs.writeFileSync("list.txt", `${url}\n`, { encoding: 'utf8', flag :'a' });
-
-        //     // keep Cache 
-        //     (() => { fs.writeFileSync(`${cachepath}${part1}/${part2}`, responseDetail.response.body, { encoding: "binary" }); }).call();
-        //     console.log(url);
-        //     // fs.writeFileSync('list.har', `${url}\n`, { flag: 'a' })
-        // }
 
         // filelist url
         if (url.indexOf('/1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 || url.indexOf('/2iofz514jeks1y44k7al2ostm43xj085') != -1) {
@@ -66,24 +50,26 @@ module.exports = {
             let urlA = url.replace('/1fp32igvpoxnb521p9dqypak5cal0xv0', '/2iofz514jeks1y44k7al2ostm43xj085');
 
             // get filepath
-            xmlpath = `./AigisTools/Data/XML`;
+            xmlspath = `./AigisTools/Data/XML`;
             filepath = `./AigisTools/Data/XML/${folderName}`;
 
             // check dir
-            if (!fs.existsSync(xmlpath)) { fs.mkdirSync(xmlpath, { recursive: true }); }
+            if (!fs.existsSync(xmlspath)) { fs.mkdirSync(xmlspath, { recursive: true }); }
             if (!fs.existsSync(filepath)) { fs.mkdirSync(filepath, { recursive: true }); }
 
             // Desktop A.txt
-            fs.writeFile(`${xmlpath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt has been saved!`); });
+            fs.writeFile(`${xmlspath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt has been saved!`); });
             fs.writeFile(`${filepath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt backup has been saved!`); });
             // Desktop R.txt
-            fs.writeFile(`${xmlpath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt has been saved!`); });
+            fs.writeFile(`${xmlspath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt has been saved!`); });
             fs.writeFile(`${filepath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt backup has been saved!`); });
+
+            filelist = true;
         }
 
         // get xml
         else if (/\/(\S{8})$/.test(url)) {
-            console.log(`${COLOR.fgRed}${url}${COLOR.reset}`);
+            console.log(`${COLOR.fgYellow}${url}${COLOR.reset}`);
 
             let xmlTarget = [
                 'GRs733a4', // units information
@@ -96,11 +82,19 @@ module.exports = {
 
             if (xmlTarget.includes(xmlName)) {
                 let body = responseDetail.response.body.toString("base64");
-                fs.writeFile(`${xmlpath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+                fs.writeFile(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
                 fs.writeFile(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
+
+                if (!filelist) {
+                    console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
+                }
             } else if (xmlSubTarget.includes(xmlName)) {
                 let body = responseDetail.response.body.toString("base64");
-                fs.writeFile(`${xmlpath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+                fs.writeFile(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+
+                if (!filelist) {
+                    console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
+                }
             }
         }
 
@@ -118,5 +112,7 @@ module.exports = {
             "drc1bk94f7rq8.cloudfront.net:443"
         ];
         return (hostlist.indexOf(requestDetail.host) != -1);
+        // console.log(requestDetail.host)
+        // return true;
     }
 };
