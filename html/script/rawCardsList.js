@@ -1,4 +1,4 @@
-var maxCid = 1285;
+var maxCid = 1299;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -882,7 +882,7 @@ var charaData = [
 	{	"id": 880,	"name": "セツナ（分身）",	"rare": 5,	"classID": 121410,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "880_00"	},
 	{	"id": 881,	"name": "セツナ（分身）",	"rare": 5,	"classID": 121420,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "881_00"	},
 	{	"id": 882,	"name": "プレイスエンチャント1",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 883,	"name": "天穿の槍士フィロ",	"rare": 4,	"classID": 121500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 0,	"isToken": 0,	"img": "883_00",	"imgaw": "883_01"	},
+	{	"id": 883,	"name": "天穿の槍士フィロ",	"rare": 4,	"classID": 121500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 0,	"isToken": 0,	"img": "883_00",	"imgaw": "883_01",	"imgaw2A": "883_02"	},
 	{	"id": 884,	"name": "ちびキュウビ",	"rare": 3,	"classID": 22000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2019,	"isEvent": 1,	"isToken": 0,	"img": "884_00"	},
 	{	"id": 885,	"name": "ちびポーラ",	"rare": 3,	"classID": 30800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2019,	"isEvent": 1,	"isToken": 0,	"img": "885_00"	},
 	{	"id": 886,	"name": "秋祭の大魔女デスピア",	"rare": 5,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2019,	"isEvent": 0,	"isToken": 0,	"img": "886_00",	"imgaw": "886_01"	},
@@ -1067,8 +1067,8 @@ var charaData = [
 	{	"id": 1065,	"name": "潜水騎士マルスィ",	"rare": 3,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1065_00",	"imgaw": "1065_01"	},
 	{	"id": 1066,	"name": "白泉",	"rare": 5,	"classID": 47,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1066_00"	},
 	{	"id": 1067,	"name": "封妖の弓士レンゲ",	"rare": 4,	"classID": 6000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1067_00",	"imgaw": "1067_01"	},
-	{	"id": 1068,	"name": "風花の槍士トモエ",	"rare": 5,	"classID": 121500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1068_00",	"imgaw": "1068_01"	},
-	{	"id": 1069,	"name": "符術士アキラ",	"rare": 5,	"classID": 16700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1069_00",	"imgaw": "1069_01"	},
+	{	"id": 1068,	"name": "風花の槍士トモエ",	"rare": 5,	"classID": 121500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1068_00",	"imgaw": "1068_01",	"imgaw2A": "1068_02",	"imgaw2B": "1068_03"	},
+	{	"id": 1069,	"name": "符術士アキラ",	"rare": 5,	"classID": 16700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1069_00",	"imgaw": "1069_01",	"imgaw2A": "1069_02",	"imgaw2B": "1069_03"	},
 	{	"id": 1070,	"name": "ちびディーナ",	"rare": 3,	"classID": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1070_00"	},
 	{	"id": 1071,	"name": "ちびミネルバ",	"rare": 3,	"classID": 30400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1071_00"	},
 	{	"id": 1072,	"name": "山岳霊符",	"rare": 5,	"classID": 18200,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1072_00"	},
@@ -1284,5 +1284,19 @@ var charaData = [
 	{	"id": 1282,	"name": "風雲の浴衣クーコ",	"rare": 5,	"classID": 6200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1282_00",	"imgaw": "1282_01"	},
 	{	"id": 1283,	"name": "お祭り夕涼みココロ",	"rare": 4,	"classID": 11700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1283_00",	"imgaw": "1283_01"	},
 	{	"id": 1284,	"name": "晩夏の狩人ベラ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1284_00",	"imgaw": "1284_01"	},
-	{	"id": 1285,	"name": "お神輿",	"rare": 5,	"classID": 130300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1285_00"	}
+	{	"id": 1285,	"name": "お神輿",	"rare": 5,	"classID": 130300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1285_00"	},
+	{	"id": 1286,	"name": "ノイシュヴァンシュタイン城",	"rare": 5,	"classID": 41200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1286_00"	},
+	{	"id": 1287,	"name": "千早城",	"rare": 5,	"classID": 41300,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1287_00"	},
+	{	"id": 1288,	"name": "マチュ・ピチュ",	"rare": 5,	"classID": 41400,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1288_00"	},
+	{	"id": 1289,	"name": "殿",	"rare": 5,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1290,	"name": "前田利家人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1290_00"	},
+	{	"id": 1291,	"name": "呪刀付喪神ユキザクラ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1291_00",	"imgaw": "1291_01"	},
+	{	"id": 1292,	"name": "名刀付喪神フジムラサキ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1292_00",	"imgaw": "1292_01"	},
+	{	"id": 1293,	"name": "斬刀付喪神カザキリ",	"rare": 4,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1293_00"	},
+	{	"id": 1294,	"name": "柳川城",	"rare": 5,	"classID": 41500,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1294_00"	},
+	{	"id": 1295,	"name": "大宰府",	"rare": 5,	"classID": 41600,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1295_00"	},
+	{	"id": 1296,	"name": "殿",	"rare": 5,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1297,	"name": "大山嶺霊符",	"rare": 5,	"classID": 18270,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1297_00"	},
+	{	"id": 1298,	"name": "陽光霊符",	"rare": 5,	"classID": 18370,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1298_00"	},
+	{	"id": 1299,	"name": "清泉霊符",	"rare": 5,	"classID": 18470,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1299_00"	}
 ]
