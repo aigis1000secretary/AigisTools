@@ -98,9 +98,9 @@ module.exports = {
             }
         }
 
-        else {
-            console.log(url);
-        }
+        // else {
+        //     console.log(url);
+        // }
 
         return null;
     },
