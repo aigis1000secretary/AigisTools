@@ -1,4 +1,4 @@
-var maxCid = 1304;
+var maxCid = 1309;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1292,7 +1292,7 @@ var charaData = [
 	{	"id": 1290,	"name": "前田利家人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1290_00"	},
 	{	"id": 1291,	"name": "呪刀付喪神ユキザクラ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1291_00",	"imgaw": "1291_01"	},
 	{	"id": 1292,	"name": "名刀付喪神フジムラサキ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1292_00",	"imgaw": "1292_01"	},
-	{	"id": 1293,	"name": "斬刀付喪神カザキリ",	"rare": 4,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1293_00"	},
+	{	"id": 1293,	"name": "斬刀付喪神カザキリ",	"rare": 4,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1293_00",	"imgaw": "1293_01"	},
 	{	"id": 1294,	"name": "柳川城",	"rare": 5,	"classID": 41500,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1294_00"	},
 	{	"id": 1295,	"name": "大宰府",	"rare": 5,	"classID": 41600,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1295_00"	},
 	{	"id": 1296,	"name": "殿",	"rare": 5,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
@@ -1303,5 +1303,10 @@ var charaData = [
 	{	"id": 1301,	"name": "閻魔庁",	"rare": 5,	"classID": 41700,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1302,	"name": "閻魔庁",	"rare": 5,	"classID": 41700,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1302_00"	},
 	{	"id": 1303,	"name": "ちびクーコ",	"rare": 3,	"classID": 26200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1303_00"	},
-	{	"id": 1304,	"name": "ちびレミィ",	"rare": 3,	"classID": 25900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1304_00"	}
+	{	"id": 1304,	"name": "ちびレミィ",	"rare": 3,	"classID": 25900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1304_00"	},
+	{	"id": 1305,	"name": "可憐海賊カリナ",	"rare": 3,	"classID": 10400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1305_00",	"imgaw": "1305_01"	},
+	{	"id": 1306,	"name": "純真の槍騎兵ピューロ",	"rare": 3,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1306_00",	"imgaw": "1306_01"	},
+	{	"id": 1307,	"name": "黒翼の射手フーザント",	"rare": 3,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1307_00",	"imgaw": "1307_01"	},
+	{	"id": 1308,	"name": "淡紅の深海兵リトヴァ",	"rare": 3,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1308_00",	"imgaw": "1308_01"	},
+	{	"id": 1309,	"name": "知識の求道者アナベラ",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1309_00"	}
 ]
