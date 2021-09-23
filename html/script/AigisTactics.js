@@ -362,7 +362,12 @@ let mapimgInit = function (id) {
     MapImg.style.backgroundImage = `url(./maps/Map${quest.map})`;
 
     // get location data
-    for (let location of mapDataList[quest.map][quest.location]) {
+    let locationList = mapDataList[quest.map][quest.location];
+    if (mapDataList[quest.map][`Entry${quest.entry}`]) {
+        locationList = locationList.concat(mapDataList[quest.map][`Entry${quest.entry}`]);
+    }
+    // set location data to map
+    for (let location of locationList) {
 
         // location
         let div = document.createElement("div");

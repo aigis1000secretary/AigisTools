@@ -984,6 +984,7 @@ const aigisQuestsList = async () => {
             let questID = questRaw.QuestID;
             let map = questRaw.MapNo.toString().padStart(4, "0");
             let location = questRaw.LocationNo.toString().padStart(2, "0");;
+            let entry = questRaw.EntryNo.toString().padStart(2, "0");;
             let life = questRaw.defHP;
             let startUP = questRaw.defAP;
             let unitLimit = questRaw.Capacity;
@@ -1012,10 +1013,10 @@ const aigisQuestsList = async () => {
             // buind new quest
             if (missionID != "NULL") {
                 quest = {
-                    id: `${missionID}/${questID}`,
-                    map, missionTitle, questName,
+                    id: `${missionID}/${questID}`, map,
+                    missionTitle, questName,
                     missionID, questID,
-                    location,
+                    location, entry,
                     life, startUP, unitLimit
                 }
                 questList.push(quest);
@@ -1031,7 +1032,20 @@ const aigisQuestsList = async () => {
         for (let quest of oldQuest) {
             let q = (questList.find(q => q.questID == quest.questID));
             if (!q) {
-                questList.push(quest);
+                let oldQuest = {
+                    id: quest.id,
+                    map: quest.map,
+                    missionTitle: quest.missionTitle,
+                    questName: quest.questName,
+                    missionID: quest.missionID,
+                    questID: quest.questID,
+                    location: quest.location,
+                    entry: quest.entry || null,
+                    life: quest.life,
+                    startUP: quest.startUP,
+                    unitLimit: quest.unitLimit,
+                }
+                questList.push(oldQuest);
                 // console.log(quest.questID)
             }
         }
@@ -1052,6 +1066,7 @@ const aigisQuestsList = async () => {
             // quest config
             let map = quest.map;
             let location = quest.location;
+            let entry = quest.entry;
 
             // resource path
             let fileName = `Map${map}`;
@@ -1111,6 +1126,30 @@ const aigisQuestsList = async () => {
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 mapLocationList[map][location] = oldLocationList[map][location];
             }
+
+            let entryPath = raws.find(p => p.indexOf(`Entry${entry}.atb`) != -1);
+            if (entryPath) {
+                let entryRaw = rawToJson(entryPath);
+                let entryLocation = [];
+                for (let entry of entryRaw) {
+                    if (!entry.EntryCommand ||
+                        entry.EntryCommand.indexOf('CreateMapPlaceObject') == -1) continue;
+
+                    let cmds = entry.EntryCommand.match(/CreateMapPlaceObject\(\s*\S+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\);?/g);
+                    for (let cmd of cmds) {
+                        let [, plcName, ObjectID, X, Y] = cmd.match(/CreateMapPlaceObject\(\s*(\S+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\);?/);
+                        entryLocation.push({ ObjectID, X, Y, _Command: 0 });
+                    }
+                }
+
+                if (!mapLocationList[map]) { mapLocationList[map] = {}; }
+                if (entryLocation.length > 0) mapLocationList[map][`Entry${entry}`] = entryLocation;
+
+            } else if (entry && fs.existsSync(`MapLocationList.json`)) {
+                // console.log(`${COLOR.fgRed}cant found Location${location} data${COLOR.reset}`)
+                if (!mapLocationList[map]) { mapLocationList[map] = {}; }
+                mapLocationList[map][`Entry${entry}`] = oldLocationList[map][`Entry${entry}`];
+            }
         }
     }
 
@@ -1161,8 +1200,9 @@ const aigisQuestsList = async () => {
 
     let jsString = [];
     questList.sort((a, b) => { let iA = a.questID, iB = b.questID; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
-    // questList.sort((a, b) => { let iA = a.missionTitle, iB = b.missionTitle; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
     questList.sort((a, b) => { let iA = a.missionTitle, iB = b.missionTitle; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
+    // questList.sort((a, b) => { let iA = a.location, iB = b.location; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
+    // questList.sort((a, b) => { let iA = a.map, iB = b.map; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
     for (let q of questList) { jsString.push(`\t${JSON.stringify(q, null, '\t').replace(/\n/g, "")}`); }
     jsString = jsString.join(',\n');
     fs.writeFileSync(`QuestList.json`, `[\n${jsString}\n]`);
