@@ -1153,6 +1153,34 @@ const aigisQuestsList = async () => {
         }
     }
 
+    // check map image usefull
+    {
+        let dataList = Object.keys(mapLocationList);
+        let imgList = fs.readdirSync(mapsOutputPath);
+        let md5List = [];
+        // get md5
+        for (let fname of imgList) {
+            // get md5
+            let id = fname.substring(3);
+            let md5 = md5f(fs.readFileSync(`${mapsOutputPath}/${fname}`));
+            md5List[id] = md5;
+        }
+        for (let fname of imgList) {
+            let id = fname.substring(3);
+            if (dataList.includes(id)) continue;
+            // console.log(`${fname} location data is not exist`);
+
+            let md5 = md5f(fs.readFileSync(`${mapsOutputPath}/${fname}`));
+            let backup = [];
+            md5List.forEach((_md5, _id) => { if (_md5 == md5 && _id.toString() != id) backup.push(_id); });
+            if (backup.length == 0) continue;
+            console.log(`${fname} location data is not exist, image same with Map${backup[0]} & other ${backup.length - 1} files`);
+            
+            fs.unlinkSync(`${mapsOutputPath}/${fname}`)
+        }
+        // console.log(md5List)
+    }
+
     // map location data sort
     {
         // sort by key (MapNo)
@@ -1302,8 +1330,8 @@ const main = async () => {
     await downloadRawData();
     readRawData();
 
-    // cards list
-    await aigisCardsList();
+    // // cards list
+    // await aigisCardsList();
 
     // quest list
     await aigisQuestsList();
