@@ -12,13 +12,13 @@ let plane1Config = [
 ];
 let customizeConfig = [ // rare
     // female, male, class bonus
-    [0, 40, 10],        // 0
-    [0, 70, 30],        // 1
-    [150, 300, 50],     // 2
-    [250, 750, 80],     // 3
-    [250, 750, 90],     // 4
-    [500, 1500, 100],   // 5
-    [1000, 2000, 300],  // 6
+    [0, 40, 10],        // 0    アイアン
+    [0, 70, 30],        // 1    ブロンズ
+    [150, 300, 50],     // 2    シルバー
+    [250, 750, 80],     // 3    ゴールド
+    [250, 750, 90],     // 4    サファイア
+    [500, 1500, 100],   // 5    プラチナ
+    [1000, 2000, 300],  // 6    ブラック
 ];
 
 
@@ -228,7 +228,7 @@ let calc = () => {
     // EXP customize options
     let expNameList = [
         "expC01", "expC02", "expC03", "expC04",
-        "expS01"    // 鬼刃忍タチバナ base 750 exp
+        "expS01", "expS02"    // 強襲ミッションドロップ base 750 exp
     ];
     for (let name of expNameList) {
         let div = document.getElementById(name);
@@ -255,6 +255,7 @@ let calc = () => {
 
         let exp = customizeConfig[rare][sex];
         if (name == "expS01") { exp = 750; }
+        if (name == "expS02") { exp = 2000; }
         exp += cbonus * customizeConfig[rare][2];
         exp += (lv - 1) * ccexp;
         exp = (exp * r).toFixed(1).replace(/\.0$/, "");;
@@ -285,7 +286,7 @@ let calc = () => {
         "expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer",
         "expEmperor01", "expEmperor17", "expEmperor20",
         "expB01", "expB02", "expB03", "expB04",
-        "expC01", "expC02", "expC03", "expC04", "expS01"
+        "expC01", "expC02", "expC03", "expC04", "expS01", "expS02"
     ];
     for (let name of expNameList) {
         let div = document.getElementById(name);
