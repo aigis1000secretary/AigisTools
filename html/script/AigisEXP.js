@@ -1,5 +1,9 @@
 
-let maxLevel = [40, 50, 55, 99, 99, 99, 99];
+let maxLevel = [
+    [40, 50, 50, 50, 50, 50, 50],
+    [40, 50, 55, 60, 65, 70, 80],
+    [40, 50, 55, 99, 99, 99, 99]
+];
 let plane1Config = [
     ["expAmour", 2],
     ["expPreseil", 3],
@@ -61,8 +65,8 @@ let bodyOnload = () => {
             if (!isMobile()) { btn.addEventListener("mouseover", (e) => { btn.select(); }, false); }
             btn.addEventListener("change", calc, false);
             btn.addEventListener("keydown", (e) => {
-                if (btn.max != "" && e.keyCode == 36) { btn.value = btn.max; calc(); }    // end
-                if (btn.min != "" && e.keyCode == 35) { btn.value = btn.min; calc(); }    // home
+                if (btn.max != "" && e.key == 'End') { btn.value = btn.max; calc(); }    // end  e.keyCode == 36
+                if (btn.min != "" && e.key == 'Home') { btn.value = btn.min; calc(); }   // home e.keyCode == 35
             }, false);
         }
     }
@@ -161,6 +165,7 @@ let setLevelRange = (l, t, r = 0) => {
 let switchSariette = () => {
     let r = document.getElementById("checkSariette").checked ? 1.1 : 1.0
 
+    document.getElementById("expWArmor1").querySelector(".box2").innerHTML = Math.floor(1000 * r);
     document.getElementById("expWArmor").querySelector(".box2").innerHTML = Math.floor(8000 * r);
     document.getElementById("expBArmor").querySelector(".box2").innerHTML = Math.floor(40000 * r);
     document.getElementById("expAmour").querySelector(".box2").innerHTML = Math.floor(4000 * r);
@@ -198,9 +203,9 @@ let openImage = function () {
 // UI method
 let setMaxLevel = () => {
     let r = getRarity();
-    document.getElementById("selectCurrentLevel").options.length = maxLevel[r];
-    document.getElementById("selectTargetLevel").options.length = maxLevel[r];
-    for (i = 0; i < maxLevel[r]; i++) {
+    document.getElementById("selectCurrentLevel").options.length = maxLevel[2][r];
+    document.getElementById("selectTargetLevel").options.length = maxLevel[2][r];
+    for (i = 0; i < maxLevel[2][r]; i++) {
         document.getElementById("selectCurrentLevel").options[i].text = (i + 1);
         document.getElementById("selectTargetLevel").options[i].text = (i + 1);
     }
@@ -244,13 +249,15 @@ let calc = () => {
 
         // check selected
         if ([0, 1].includes(rare)) {
-            sex = div.querySelector(".sex").selectedIndex = 1;
-            cc = div.querySelector(".cc").selectedIndex = 0;
+            // 鉄銅
+            sex = div.querySelector(".sex").selectedIndex = 1;  // 男
+            cc = div.querySelector(".cc").selectedIndex = 0;    // no cc
         } else if (rare == 2 && cc == 2) {
-            cc = div.querySelector(".cc").selectedIndex = 1;
+            // 銀
+            cc = div.querySelector(".cc").selectedIndex = 1;    // no aw
         }
-        if (lv > maxLevel[rare]) {
-            lv = div.querySelector('.lv').value = maxLevel[rare];
+        if (lv > maxLevel[cc][rare]) {
+            lv = div.querySelector('.lv').value = maxLevel[cc][rare];
         }
 
         let exp = customizeConfig[rare][sex];
@@ -282,7 +289,7 @@ let calc = () => {
     // remainingEXP
     let sumAdditionalEXP = 0;
     expNameList = [
-        "expWArmor", "expBArmor",
+        "expWArmor1", "expWArmor", "expBArmor",
         "expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer",
         "expEmperor01", "expEmperor17", "expEmperor20",
         "expB01", "expB02", "expB03", "expB04",

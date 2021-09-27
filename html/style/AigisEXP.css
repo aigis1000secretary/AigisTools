@@ -93,24 +93,6 @@ input[type="checkbox"].on-off+.accContent .showh3:hover {
     height: 87px;
 }
 
-.training .rare {
-    width: 35px;
-}
-
-.training .sec {
-    width: 35px;
-}
-
-.training .lv {
-    width: 40px;
-}
-
-.training .cc {
-    width: 35px;
-}
-
-/* ; float: right; */
-
 /* set card level box */
 
 .setlv select {
@@ -180,6 +162,24 @@ input[type="number"]:not(.plane5)::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+/* plane 1 */
+
+#expAmour   .box1 { cursor: url("../icons/460_00"), auto; }
+#expPreseil .box1 { cursor: url("../icons/660_00"), auto; }
+#expAlegria .box1 { cursor: url("../icons/383_00"), auto; }
+#expLiebe   .box1 { cursor: url("../icons/321_00"), auto; }
+#expFreude  .box1 { cursor: url("../icons/384_00"), auto; }
+#expFarah   .box1 { cursor: url("../icons/433_00"), auto; }
+#expPresent .box1 { cursor: url("../icons/800_00"), auto; }
+#expPlacer  .box1 { cursor: url("../icons/570_00"), auto; }
+
+/* plane 5 */
+
+.training .rare { width: 35px; }
+.training .sec  { width: 35px; }
+.training .lv   { width: 40px; }
+.training .cc   { width: 35px; }
 
 .plane5 {
     color: #FFFFFF;
