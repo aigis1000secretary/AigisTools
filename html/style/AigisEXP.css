@@ -107,35 +107,12 @@ input[type="checkbox"].on-off+.accContent .showh3:hover {
     border-style: revert;
 }
 
-.setlv input[type="button"]#ir {
-    background-color: #FFFFFF;
-    color: #000;
-}
-
-.setlv input[type="button"]#si {
-    background-color: #C0C0C0;
-    color: #000;
-}
-
-.setlv input[type="button"]#g {
-    background-color: #ffff00;
-    color: #000;
-}
-
-.setlv input[type="button"]#sa {
-    background-color: #4169e1;
-    color: #fff;
-}
-
-.setlv input[type="button"]#p {
-    background-color: #ffffff;
-    color: #000;
-}
-
-.setlv input[type="button"]#b {
-    background-color: #000000;
-    color: #fff;
-}
+.setlv .ir { background-color: #FFFFFF; color: #000; }
+.setlv .si { background-color: #C0C0C0; color: #000; }
+.setlv .go { background-color: #ffff00; color: #000; }
+.setlv .sa { background-color: #4169e1; color: #fff; }
+.setlv .pl { background-color: #ffffff; color: #000; }
+.setlv .bl { background-color: #000000; color: #fff; }
 
 /* set next exp box */
 
@@ -157,31 +134,33 @@ input[type="button"] {
     cursor: pointer;
 }
 
-input[type="number"]:not(.plane5)::-webkit-outer-spin-button,
-input[type="number"]:not(.plane5)::-webkit-inner-spin-button {
+/* hide input defult arror */
+
+input[type="number"]:not(.box1 input)::-webkit-outer-spin-button,
+input[type="number"]:not(.box1 input)::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 /* plane 1 */
 
-#expAmour   .box1 { cursor: url("../icons/460_00"), auto; }
-#expPreseil .box1 { cursor: url("../icons/660_00"), auto; }
-#expAlegria .box1 { cursor: url("../icons/383_00"), auto; }
-#expLiebe   .box1 { cursor: url("../icons/321_00"), auto; }
-#expFreude  .box1 { cursor: url("../icons/384_00"), auto; }
-#expFarah   .box1 { cursor: url("../icons/433_00"), auto; }
-#expPresent .box1 { cursor: url("../icons/800_00"), auto; }
-#expPlacer  .box1 { cursor: url("../icons/570_00"), auto; }
+#expAmour   .box1 .boxnote { cursor: url("../icons/460_00"), auto; }
+#expPreseil .box1 .boxnote { cursor: url("../icons/660_00"), auto; }
+#expAlegria .box1 .boxnote { cursor: url("../icons/383_00"), auto; }
+#expLiebe   .box1 .boxnote { cursor: url("../icons/321_00"), auto; }
+#expFreude  .box1 .boxnote { cursor: url("../icons/384_00"), auto; }
+#expFarah   .box1 .boxnote { cursor: url("../icons/433_00"), auto; }
+#expPresent .box1 .boxnote { cursor: url("../icons/800_00"), auto; }
+#expPlacer  .box1 .boxnote { cursor: url("../icons/570_00"), auto; }
 
 /* plane 5 */
 
-.training .rare { width: 35px; }
-.training .sec  { width: 35px; }
-.training .lv   { width: 40px; }
-.training .cc   { width: 35px; }
-
-.plane5 {
+.box1 .rare { width: 35px; }
+.box1 .sec  { width: 35px; }
+.box1 .lv   { width: 40px; }
+.box1 .cc   { width: 35px; }
+.box1 input,
+.box1 select {
     color: #FFFFFF;
     background: #316ca4;
     border-style: none;

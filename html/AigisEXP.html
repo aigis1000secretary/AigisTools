@@ -52,23 +52,23 @@
             </div>
 
             <div class="box setlv">
-              <input type="button" value="1→40" onclick="setLevelRange(1, 40, 0);" id="ir">
-              <input type="button" value="1→50" onclick="setLevelRange(1, 50, 1);" id="ir">
-              <input type="button" value="1→30" onclick="setLevelRange(1, 30, 2);" id="si">
-              <input type="button" value="1→50" onclick="setLevelRange(1, 50, 2);" id="si">
-              <input type="button" value="1→55" onclick="setLevelRange(1, 55, 2);" id="si">
-              <input type="button" value="1→60" onclick="setLevelRange(1, 60, 3);" id="g">
-              <input type="button" value="1→80" onclick="setLevelRange(1, 80, 3);" id="g">
-              <input type="button" value="1→99" onclick="setLevelRange(1, 99, 3);" id="g">
+              <input class="ir" type="button" value="1→40" onclick="setLevelRange(1, 40, 0);">
+              <input class="ir" type="button" value="1→50" onclick="setLevelRange(1, 50, 1);">
+              <input class="si" type="button" value="1→30" onclick="setLevelRange(1, 30, 2);">
+              <input class="si" type="button" value="1→50" onclick="setLevelRange(1, 50, 2);">
+              <input class="si" type="button" value="1→55" onclick="setLevelRange(1, 55, 2);">
+              <input class="go" type="button" value="1→60" onclick="setLevelRange(1, 60, 3);">
+              <input class="go" type="button" value="1→80" onclick="setLevelRange(1, 80, 3);">
+              <input class="go" type="button" value="1→99" onclick="setLevelRange(1, 99, 3);">
               <br>
-              <input type="button" value="1→65" onclick="setLevelRange(1, 65, 4);" id="sa">
-              <input type="button" value="1→85" onclick="setLevelRange(1, 85, 4);" id="sa">
-              <input type="button" value="1→99" onclick="setLevelRange(1, 99, 4);" id="sa">
-              <input type="button" value="1→70" onclick="setLevelRange(1, 70, 5);" id="p">
-              <input type="button" value="1→90" onclick="setLevelRange(1, 90, 5);" id="p">
-              <input type="button" value="1→99" onclick="setLevelRange(1, 99, 5);" id="p">
-              <input type="button" value="1→80" onclick="setLevelRange(1, 80, 6);" id="b">
-              <input type="button" value="1→99" onclick="setLevelRange(1, 99, 6);" id="b">
+              <input class="sa" type="button" value="1→65" onclick="setLevelRange(1, 65, 4);">
+              <input class="sa" type="button" value="1→85" onclick="setLevelRange(1, 85, 4);">
+              <input class="sa" type="button" value="1→99" onclick="setLevelRange(1, 99, 4);">
+              <input class="pl" type="button" value="1→70" onclick="setLevelRange(1, 70, 5);">
+              <input class="pl" type="button" value="1→90" onclick="setLevelRange(1, 90, 5);">
+              <input class="pl" type="button" value="1→99" onclick="setLevelRange(1, 99, 5);">
+              <input class="bl" type="button" value="1→80" onclick="setLevelRange(1, 80, 6);">
+              <input class="bl" type="button" value="1→99" onclick="setLevelRange(1, 99, 6);">
             </div>
 
             <div class="box setlv">
@@ -424,7 +424,7 @@
               <div class="box training show" id="expC01">
                 <div class="box1">
 
-                  <select class="plane5 rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
+                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
                     <option value="0">鉄</option>
                     <option value="1" selected>銅</option>
                     <option value="2">銀</option>
@@ -433,20 +433,20 @@
                     <option value="5">白</option>
                     <option value="6">黒</option>
                   </select>
-                  <select class="plane5 sex" onchange="updateUI();">
+                  <select class="sex" onchange="updateUI();">
                     <option value="0">女性</option>
                     <option value="1" selected>男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="plane5 lv" type="number" value="22" min="1" max="99" onchange="updateUI();">
-                    <select class="plane5 cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="22" min="1" max="99" onchange="updateUI();">
+                    <select class="cc" onchange="updateUI();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
                   </div>
 
                 </div>
@@ -461,7 +461,7 @@
               <div class="box training show" id="expC02">
                 <div class="box1">
 
-                  <select class="plane5 rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
+                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
                     <option value="0">鉄</option>
                     <option value="1">銅</option>
                     <option value="2">銀</option>
@@ -470,20 +470,20 @@
                     <option value="5">白</option>
                     <option value="6">黒</option>
                   </select>
-                  <select class="plane5 sex" onchange="updateUI();">
+                  <select class="sex" onchange="updateUI();">
                     <option value="0">女性</option>
                     <option value="1">男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="plane5 lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
-                    <select class="plane5 cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
+                    <select class="cc" onchange="updateUI();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
                   </div>
 
                 </div>
@@ -498,7 +498,7 @@
               <div class="box training show" id="expC03">
                 <div class="box1">
 
-                  <select class="plane5 rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
+                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
                     <option value="0">鉄</option>
                     <option value="1">銅</option>
                     <option value="2">銀</option>
@@ -507,20 +507,20 @@
                     <option value="5">白</option>
                     <option value="6">黒</option>
                   </select>
-                  <select class="plane5 sex" onchange="updateUI();">
+                  <select class="sex" onchange="updateUI();">
                     <option value="0">女性</option>
                     <option value="1">男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="plane5 lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
-                    <select class="plane5 cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
+                    <select class="cc" onchange="updateUI();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
                   </div>
 
                 </div>
@@ -535,7 +535,7 @@
               <div class="box training show" id="expC04">
                 <div class="box1">
 
-                  <select class="plane5 rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
+                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
                     <option value="0">鉄</option>
                     <option value="1">銅</option>
                     <option value="2">銀</option>
@@ -544,20 +544,20 @@
                     <option value="5">白</option>
                     <option value="6">黒</option>
                   </select>
-                  <select class="plane5 sex" onchange="updateUI();">
+                  <select class="sex" onchange="updateUI();">
                     <option value="0">女性</option>
                     <option value="1">男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="plane5 lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
-                    <select class="plane5 cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
+                    <select class="cc" onchange="updateUI();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="plane5 cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
                   </div>
 
                 </div>
@@ -572,7 +572,7 @@
               <div class="box training showh3" id="expS01">
                 <div class="box1">
                   強襲ドロップ
-                  <select class="plane5 rare" style="display: none;">
+                  <select class="rare" style="display: none;">
                     <option value="0">鉄</option>
                     <option value="1">銅</option>
                     <option value="2">銀</option>
@@ -581,20 +581,20 @@
                     <option value="5">白</option>
                     <option value="6" selected>黒</option>
                   </select>
-                  <select class="plane5 sex" style="display: none;">
+                  <select class="sex" style="display: none;">
                     <option value="0" selected>女性</option>
                     <option value="1">男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="plane5 lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
-                    <select class="plane5 cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
+                    <select class="cc" onchange="updateUI();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="plane5 cbonus" type="checkbox" title="同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="同クラス加算" onchange="updateUI();">
                   </div>
                   <div style="float: right; margin: 3px 7px 0px 0px;">
                     翠花の領主メアリ<br>
@@ -614,7 +614,7 @@
               <div class="box training show" id="expS02">
                 <div class="box1">
                   ｱｲﾄﾞﾙ/戦場アンナ
-                  <select class="plane5 rare" style="display: none;">
+                  <select class="rare" style="display: none;">
                     <option value="0">鉄</option>
                     <option value="1">銅</option>
                     <option value="2">銀</option>
@@ -623,20 +623,20 @@
                     <option value="5">白</option>
                     <option value="6" selected>黒</option>
                   </select>
-                  <select class="plane5 sex" style="display: none;">
+                  <select class="sex" style="display: none;">
                     <option value="0" selected>女性</option>
                     <option value="1">男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="plane5 lv" type="number" value="1" min="1" max="30" onchange="updateUI();">
-                    <select class="plane5 cc" disabled onchange="updateUI();" style="color: #316ca4;">
+                    <input class="lv" type="number" value="1" min="1" max="30" onchange="updateUI();">
+                    <select class="cc" disabled onchange="updateUI();" style="color: #316ca4;">
                       <option value="0">未CCユニット</option>
                       <option value="1" selected>CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="plane5 cbonus" type="checkbox" title="同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="同クラス加算" onchange="updateUI();">
                   </div>
 
                 </div>
