@@ -85,8 +85,8 @@ let bodyOnload = () => {
         }, false);
     }
 
-
-    {   // box title event
+    // box title event
+    {
         let div = document.getElementById("boxtitle");
         div.style.cursor = "pointer";
         div.addEventListener("click", function (e) {
@@ -103,26 +103,25 @@ let bodyOnload = () => {
     }
 
     // update UI
-    switchSariette();
     // calc
-    calc();
+    updateUI(true);
 }
 
 
-// data api
+// input data api
 let setRarity = (r) => {
     document.getElementById("selectRarity").selectedIndex = r;
     // update UI
     setMaxLevel()
     setExpLimit()
 }
-let setLevel = (l) => {
-    document.getElementById("selectCurrentLevel").selectedIndex = l - 1;
+let setLevel = (lv) => {
+    document.getElementById("selectCurrentLevel").selectedIndex = lv - 1;
     // update UI
     setExpLimit()
 }
-let setTargetLevel = (t) => {
-    document.getElementById("selectTargetLevel").selectedIndex = t - 1;
+let setTargetLevel = (lv) => {
+    document.getElementById("selectTargetLevel").selectedIndex = lv - 1;
 }
 let getRarity = () => {
     return document.getElementById("selectRarity").selectedIndex;
@@ -139,8 +138,7 @@ let getNext = () => {
     return div.value * 1;
 }
 
-
-// button event
+// input button event
 let changeSelectRarity = () => {
     setMaxLevel();
     setExpLimit();
@@ -155,34 +153,12 @@ let changeSelectCurrentLevel = () => {
 let changeSelectTargetLevel = () => {
     calc();
 }
-let setLevelRange = (l, t, r = 0) => {
+let setLevelRange = (lv, tLv, r = 0) => {
     setRarity(r);
-    setLevel(l);
-    setTargetLevel(t);
+    setLevel(lv);
+    setTargetLevel(tLv);
 
     calc();
-}
-let switchSariette = () => {
-    let r = document.getElementById("checkSariette").checked ? 1.1 : 1.0
-
-    document.getElementById("expWArmor1").querySelector(".box2").innerHTML = Math.floor(1000 * r);
-    document.getElementById("expWArmor").querySelector(".box2").innerHTML = Math.floor(8000 * r);
-    document.getElementById("expBArmor").querySelector(".box2").innerHTML = Math.floor(40000 * r);
-    document.getElementById("expAmour").querySelector(".box2").innerHTML = Math.floor(4000 * r);
-    document.getElementById("expPreseil").querySelector(".box2").innerHTML = Math.floor(1750 * r);
-    document.getElementById("expAlegria").querySelector(".box2").innerHTML = Math.floor(18000 * r);
-    document.getElementById("expLiebe").querySelector(".box2").innerHTML = Math.floor(19000 * r);
-    document.getElementById("expFreude").querySelector(".box2").innerHTML = Math.floor(19000 * r);
-    document.getElementById("expFarah").querySelector(".box2").innerHTML = Math.floor(20000 * r);
-    document.getElementById("expPresent").querySelector(".box2").innerHTML = Math.floor(18000 * r);
-    document.getElementById("expPlacer").querySelector(".box2").innerHTML = Math.floor(10000 * r);
-    document.getElementById("expEmperor01").querySelector(".box2").innerHTML = Math.floor(16000 * r);
-    document.getElementById("expEmperor17").querySelector(".box2").innerHTML = Math.floor(18560 * r);
-    document.getElementById("expEmperor20").querySelector(".box2").innerHTML = Math.floor(19040 * r);
-    document.getElementById("expB01").querySelector(".box2").innerHTML = (235 * r).toFixed(1).replace(/\.0$/, "");
-    document.getElementById("expB02").querySelector(".box2").innerHTML = (265 * r).toFixed(1).replace(/\.0$/, "");
-    document.getElementById("expB03").querySelector(".box2").innerHTML = (220 * r).toFixed(1).replace(/\.0$/, "");
-    document.getElementById("expB04").querySelector(".box2").innerHTML = (250 * r).toFixed(1).replace(/\.0$/, "");
 }
 
 // html result to image
@@ -196,11 +172,8 @@ let openImage = function () {
     });
 }
 
-
-
-
-
 // UI method
+// input zone
 let setMaxLevel = () => {
     let r = getRarity();
     document.getElementById("selectCurrentLevel").options.length = maxLevel[2][r];
@@ -228,8 +201,31 @@ let setExpLimit = () => {
     document.getElementById("inputNext").min = 1;
     document.getElementById("inputNext").max = expTable[l][r + 1];
 }
+// plane zone
+let updateUI = (checkSariette = false) => {
+    if (checkSariette) {
+        let r = document.getElementById("checkSariette").checked ? 1.1 : 1.0
 
-let calc = () => {
+        document.getElementById("expWArmor1").querySelector(".box2").innerHTML = Math.floor(1000 * r);
+        document.getElementById("expWArmor").querySelector(".box2").innerHTML = Math.floor(8000 * r);
+        document.getElementById("expBArmor").querySelector(".box2").innerHTML = Math.floor(40000 * r);
+        document.getElementById("expAmour").querySelector(".box2").innerHTML = Math.floor(4000 * r);
+        document.getElementById("expPreseil").querySelector(".box2").innerHTML = Math.floor(1750 * r);
+        document.getElementById("expAlegria").querySelector(".box2").innerHTML = Math.floor(18000 * r);
+        document.getElementById("expLiebe").querySelector(".box2").innerHTML = Math.floor(19000 * r);
+        document.getElementById("expFreude").querySelector(".box2").innerHTML = Math.floor(19000 * r);
+        document.getElementById("expFarah").querySelector(".box2").innerHTML = Math.floor(20000 * r);
+        document.getElementById("expPresent").querySelector(".box2").innerHTML = Math.floor(18000 * r);
+        document.getElementById("expPlacer").querySelector(".box2").innerHTML = Math.floor(10000 * r);
+        document.getElementById("expEmperor01").querySelector(".box2").innerHTML = Math.floor(16000 * r);
+        document.getElementById("expEmperor17").querySelector(".box2").innerHTML = Math.floor(18560 * r);
+        document.getElementById("expEmperor20").querySelector(".box2").innerHTML = Math.floor(19040 * r);
+        document.getElementById("expB01").querySelector(".box2").innerHTML = (235 * r).toFixed(1).replace(/\.0$/, "");
+        document.getElementById("expB02").querySelector(".box2").innerHTML = (265 * r).toFixed(1).replace(/\.0$/, "");
+        document.getElementById("expB03").querySelector(".box2").innerHTML = (220 * r).toFixed(1).replace(/\.0$/, "");
+        document.getElementById("expB04").querySelector(".box2").innerHTML = (250 * r).toFixed(1).replace(/\.0$/, "");
+    }
+
     // EXP customize options
     let expNameList = [
         "expC01", "expC02", "expC03", "expC04",
@@ -270,6 +266,9 @@ let calc = () => {
         div.querySelector(".box2").innerHTML = exp;
     }
 
+    calc();
+}
+let calc = () => {
     // necessaryEXP
     let sumEXP = getNext();
     let currentRarity = getRarity();
