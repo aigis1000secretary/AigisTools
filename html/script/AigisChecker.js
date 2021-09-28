@@ -255,6 +255,7 @@ let setHr = function (type) {
             bText = textList[(bData.rare == 7) ? 2 : bData.isEvent];
         } else if (type == "assign") {
             let textList = [];
+            textList[-6] = "なないろリンカネーション（ななリン）";
             textList[-5] = "流星ワールドアクター（流星WA）";
             textList[-4] = "ガールズ・ブック・メイカー（GBM）";
             textList[-3] = "封緘のグラセスタ（封緘）";
@@ -600,13 +601,6 @@ let sortByYearGacha = function () {
 
         // sort by year
         if (aData.year != bData.year) return (aData.year < bData.year) ? -1 : 1;
-
-        // sort by rare
-        if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
-        // sort by group
-        if (aData.sortGroupID != bData.sortGroupID) return (aData.sortGroupID < bData.sortGroupID) ? -1 : 1;
-        // sort by class
-        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
         if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 

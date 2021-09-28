@@ -701,6 +701,12 @@ const aigisCardsList = async function () {
                 case 686: case 689: { assign = 6; } break;
 
                 case 694: case 697: { assign = 7; } break;
+
+                //  なないろリンカネーション
+                case 1206: case 1207: case 1208: case 1209:
+                case 1210: case 1211: case 1212:
+                case 1214: case 1215: case 1216:
+                    { assign = -6; } break;
             }
 
             // set year
@@ -1330,8 +1336,8 @@ const main = async () => {
     await downloadRawData();
     readRawData();
 
-    // // cards list
-    // await aigisCardsList();
+    // cards list
+    await aigisCardsList();
 
     // quest list
     await aigisQuestsList();
