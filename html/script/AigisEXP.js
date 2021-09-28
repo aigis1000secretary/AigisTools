@@ -102,6 +102,8 @@ let bodyOnload = () => {
         });
     }
 
+    loadData();
+
     // update UI
     // calc
     updateUI(true);
@@ -305,7 +307,7 @@ let calc = () => {
 
         let addExp =
             (div.querySelector(".box2").innerHTML * 1) *
-            (div.querySelector('.box3 input[type="number"]').value * 1);
+            (div.querySelector('.count').value * 1);
         addExp = Math.floor(addExp);
 
         if (addExp) {
@@ -322,11 +324,11 @@ let calc = () => {
         let div = document.getElementById(name);
 
         let addExp =
-            (div.querySelector(".box2 input").value * 1) *
-            (div.querySelector('.box3 input[type="number"]').value * 1);
+            (div.querySelector(".freeExp").value * 1) *
+            (div.querySelector('.count').value * 1);
         addExp = Math.floor(addExp);
 
-        if (addExp || (div.querySelector(".box2 input").value * 1) > 0) {
+        if (addExp || (div.querySelector(".freeExp").value * 1) > 0) {
             sumAdditionalEXP += addExp;
             // set UI classname
             div.classList.add("keep");
@@ -337,10 +339,92 @@ let calc = () => {
 
     if (sumEXP >= 0) {
         document.getElementById("remainingEXP").innerHTML = sumEXP - sumAdditionalEXP;
+        saveData();
     } else {
         document.getElementById("remainingEXP").innerHTML = "-";
+        clearData();
     }
 }
+
+// let keymap = [
+//     ['.ra', ' .rare'], ['.se', ' .sex'], ['.cc', ' .cc'], ['.cb', ' .cbonus'], ['.lv', ' .lv'], ['.fe', ' .freeExp'], ['.co', ' .count'],
+//     ['sR', '#selectRarity'], ['sC', '#selectCurrentLevel'], ['iN', '#inputNext'], ['sT', '#selectTargetLevel'], ['cS', '#checkSariette'],
+//     ['P1', '#Panel1'], ['P2', '#Panel2'], ['P3', '#Panel3'], ['P4', '#Panel4'], ['P5', '#Panel5'],
+//     ['eW1', '#expWArmor1'], ['eW8', '#expWArmor'], ['eB1', '#expBArmor'],
+//     ['eAm', '#expAmour'], ['ePr', '#expPreseil'], ['eAl', '#expAlegria'], ['eLi', '#expLiebe'], ['eFr', '#expFreude'], ['eFa', '#expFarah'], ['ePr', '#expPresent'], ['ePl', '#expPlacer'],
+//     ['eE1', '#expEmperor01'], ['eE7', '#expEmperor17'], ['eE2', '#expEmperor20'],
+//     ['eB1', '#expB01'], ['eB2', '#expB02'], ['eB3', '#expB03'], ['eB4', '#expB04'],
+//     ['eF1', '#expFree01'], ['eF2', '#expFree02'], ['eF3', '#expFree03'], ['eF4', '#expFree04'],
+//     ['eC1', '#expC01'], ['eC2', '#expC02'], ['eC3', '#expC03'], ['eC4', '#expC04'], ['eS1', '#expS01'], ['eS2', '#expS02']
+// ];
+let saveData = () => {
+    let data = {};
+
+    // get inputs
+    let selectors = ["#boxtitle", "#expFree01 .box1", "#expFree02 .box1", "#expFree03 .box1", "#expFree04 .box1",
+        '#selectRarity', '#selectCurrentLevel', '#inputNext', '#selectTargetLevel',
+        '#checkSariette', '#Panel1', '#Panel2', '#Panel3', '#Panel4', '#Panel5'];
+    for (let div of document.querySelectorAll('.training')) {
+        if (!div.id) { continue; }
+        selectors.push(`#${div.id} .rare`);
+        selectors.push(`#${div.id} .sex`);
+        selectors.push(`#${div.id} .cc`);
+        selectors.push(`#${div.id} .cbonus`);
+        selectors.push(`#${div.id} .lv`);
+        selectors.push(`#${div.id} .freeExp`);
+        selectors.push(`#${div.id} .count`);
+    }
+
+    for (let key of selectors) {
+        let div = document.querySelector(key);
+        if (!div) { continue; }
+
+        // let key = selectors;
+        // for (let [a, b] of keymap) {
+        //     key = key.replace(b, a);
+        // }
+
+        let value;
+        if (div.tagName == 'DIV') { value = div.innerHTML; }
+        else if (div.tagName == 'SELECT') { value = div.selectedIndex; }
+        else if (div.type == 'checkbox') { value = div.checked; }
+        else if (div.type == 'number') { value = div.value * 1; }
+
+        // document.cookie = `${key}=${value}`;
+        data[key] = value;
+    }
+
+    localStorage.setItem('AigisToolsEXP', JSON.stringify(data));
+}
+let loadData = () => {
+    let obj = {};
+    try { obj = JSON.parse(localStorage.getItem('AigisToolsEXP')) } catch { }
+    if (!obj) { return; }
+
+    // set data to UI
+    document.getElementById("checkSariette").checked = obj["#checkSariette"];
+    document.getElementById("inputNext").checked = obj["#inputNext"];
+    setRarity(obj["#selectRarity"]);
+    setLevel(obj["#selectCurrentLevel"] + 1);
+    setTargetLevel(obj["#selectTargetLevel"] + 1);
+
+    let keys = ["#checkSariette", "#selectRarity", "#selectCurrentLevel", "#inputNext", "#selectTargetLevel"];
+    for (let key of Object.keys(obj)) {
+        if (keys.includes(key)) { continue; };
+        let value = obj[key];
+
+        let div = document.querySelector(key);
+        if (!div) { continue; }
+        else if (div.tagName == 'DIV') { div.innerHTML = value; }
+        else if (div.tagName == 'SELECT') { div.selectedIndex = value; }
+        else if (div.type == 'checkbox') { div.checked = value; }
+        else if (div.type == 'number') { div.value = value; }
+    }
+}
+let clearData = () => {
+    localStorage.removeItem('AigisToolsEXP');
+}
+
 
 let isMobile = () => {
     let u = navigator.userAgent;

@@ -32,8 +32,8 @@
     float: left;
 }
 
-.training .box2 input[type="number"],
-.training .box3 input[type="number"] {
+.training .freeExp,
+.training .count {
     width: 52px;
 }
 
