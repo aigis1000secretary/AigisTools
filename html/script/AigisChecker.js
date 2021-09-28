@@ -26,10 +26,13 @@ let getUrlParams = function () {
     let params = url.searchParams;
 
     // get url data
-    let urlData = params.get("data");
+    let urlData32 = params.get("data");
+    let urlData64 = params.get("data64");
+    urlData32 = urlData32 ? _atob(urlData32) : "";
+    urlData64 = urlData64 ? LZString.decompressFromEncodedURIComponent(urlData64) : "";
 
     // return flag list
-    return urlData ? _atob(urlData) : "";
+    return urlData64 || urlData32;
 }
 let setUrlParams = function (flagList) {
     // URL obj
@@ -37,10 +40,19 @@ let setUrlParams = function (flagList) {
     let params = url.searchParams;
 
     // make url data from flag list
-    let urlData = _btoa(flagList);
+    let paramsName = "data64";
+    let urlData = LZString.compressToEncodedURIComponent(flagList);
+    if (LZString.decompressFromEncodedURIComponent(urlData) == flagList) {    // chekc base64 data
+        params.delete("data");  // del base32 data
+    } else {
+        // alert('check != flagList');
+        params.delete("data64");  // del base64 data
+        paramsName = "data";    // change base32 mode
+        urlData = _btoa(flagList);  // base 32 data
+    }
 
     // set data to url
-    if (!/^0+$/.test(urlData)) { params.set("data", urlData); } else { params.delete("data"); }
+    if (!/^0+$/.test(flagList)) { params.set(paramsName, urlData); } else { params.delete(paramsName); }
     params.set("sortBy", sortMode);
     history.pushState(null, null, url);
 
