@@ -142,7 +142,7 @@ input[type="number"]:not(.box1 input)::-webkit-inner-spin-button {
     margin: 0;
 }
 
-/* plane 1 */
+/* Panel 1 */
 
 #expAmour   .box1 .boxnote { cursor: url("../icons/460_00"), auto; }
 #expPreseil .box1 .boxnote { cursor: url("../icons/660_00"), auto; }
@@ -153,7 +153,7 @@ input[type="number"]:not(.box1 input)::-webkit-inner-spin-button {
 #expPresent .box1 .boxnote { cursor: url("../icons/800_00"), auto; }
 #expPlacer  .box1 .boxnote { cursor: url("../icons/570_00"), auto; }
 
-/* plane 5 */
+/* Panel 5 */
 
 .box1 .rare { width: 35px; }
 .box1 .sec  { width: 35px; }

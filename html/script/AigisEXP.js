@@ -4,16 +4,21 @@ let maxLevel = [
     [40, 50, 55, 60, 65, 70, 80],
     [40, 50, 55, 99, 99, 99, 99]
 ];
-let plane1Config = [
-    ["expAmour", 2],
-    ["expPreseil", 3],
-    ["expAlegria", 3],
-    ["expLiebe", 4],
-    ["expFreude", 5],
-    ["expFarah", 6],
-    ["expPresent", -1],
-    ["expPlacer", -1]
-];
+let panel0 = ["expWArmor1", "expWArmor", "expBArmor"];
+let panel1 = [];    // ["expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer"];
+let panel2 = [];    // ["expEmperor01", "expEmperor17", "expEmperor20"];
+let panel3 = [];    // ["expB01", "expB02", "expB03", "expB04"];
+let panel4 = [];    // ["expFree01", "expFree02", "expFree03", "expFree04"];
+let panel5 = [];    // ["expC01", "expC02", "expC03", "expC04", "expS01", "expS02"];
+
+let panel1Config = {
+    "expAmour": 2,
+    "expPreseil": 3,
+    "expAlegria": 3,
+    "expLiebe": 4,
+    "expFreude": 5,
+    "expFarah": 6
+};
 let customizeConfig = [ // rare
     // female, male, class bonus
     [0, 40, 10],        // 0    アイアン
@@ -32,36 +37,44 @@ let bodyOnload = () => {
     setMaxLevel();
     setExpLimit();
 
+    // get id list
+    document.querySelectorAll("#Panel1+.accContent .training").forEach((e) => { panel1.push(e.id) })
+    document.querySelectorAll("#Panel2+.accContent .training").forEach((e) => { panel2.push(e.id) })
+    document.querySelectorAll("#Panel3+.accContent .training").forEach((e) => { panel3.push(e.id) })
+    document.querySelectorAll("#Panel4+.accContent .training").forEach((e) => { panel4.push(e.id) })
+    document.querySelectorAll("#Panel5+.accContent .training").forEach((e) => { panel5.push(e.id) })
+
     // set button event
     for (let btn of document.querySelector(".leftcolumn").getElementsByTagName("input")) {
         if (btn.value == "MIN") {
-            btn.addEventListener("click", function (e) {
+            btn.addEventListener("click", (e) => {
                 let input = this.nextElementSibling.nextElementSibling;
                 input.value = input.min;
                 calc();
             }, false);
 
         } else if (btn.value == "－") {
-            btn.addEventListener("click", function (e) {
+            btn.addEventListener("click", (e) => {
                 let input = this.nextElementSibling;
                 input.value = Math.max(input.min, parseInt(input.value) - 1);
                 calc();
             }, false);
 
         } else if (btn.value == "＋") {
-            btn.addEventListener("click", function (e) {
+            btn.addEventListener("click", (e) => {
                 let input = this.previousElementSibling;
                 input.value = Math.min(input.max, parseInt(input.value) + 1);
                 calc();
             }, false);
         } else if (btn.value == "MAX") {
-            btn.addEventListener("click", function (e) {
+            btn.addEventListener("click", (e) => {
                 let input = this.previousElementSibling.previousElementSibling;
                 input.value = input.max;
                 calc();
             }, false);
 
         } else if (btn.type == "number") {
+            // auto focus
             if (!isMobile()) { btn.addEventListener("mouseover", (e) => { btn.select(); }, false); }
             btn.addEventListener("change", calc, false);
             btn.addEventListener("keydown", (e) => {
@@ -77,11 +90,12 @@ let bodyOnload = () => {
     }
 
     // free exp event
-    for (let name of ["expFree01", "expFree02", "expFree03", "expFree04"]) {
+    for (let name of panel4) {
         let div = document.getElementById(name).querySelector(".box1");
         div.style.cursor = "pointer";
-        div.addEventListener("click", function (e) {
-            this.innerHTML = prompt(`【自由欄${name[name.length - 1]}】`, this.innerHTML) || `【自由欄${name[name.length - 1]}】`;
+        div.addEventListener("click", (e) => {
+            this.innerHTML = prompt(`【自由欄${name.substr(-1)}】`, this.innerHTML) || `【自由欄${name.substr(-1)}】`;
+            saveData();
         }, false);
     }
 
@@ -89,8 +103,9 @@ let bodyOnload = () => {
     {
         let div = document.getElementById("boxtitle");
         div.style.cursor = "pointer";
-        div.addEventListener("click", function (e) {
+        div.addEventListener("click", (e) => {
             this.innerHTML = prompt(`名前入力`, this.innerHTML) || `育成計画`;
+            saveData();
         }, false);
     }
 
@@ -106,72 +121,45 @@ let bodyOnload = () => {
 
     // update UI
     // calc
-    updateUI(true);
-}
-
-
-// input data api
-let setRarity = (r) => {
-    document.getElementById("selectRarity").selectedIndex = r;
-    // update UI
-    setMaxLevel()
-    setExpLimit()
-}
-let setLevel = (lv) => {
-    document.getElementById("selectCurrentLevel").selectedIndex = lv - 1;
-    // update UI
-    setExpLimit()
-}
-let setTargetLevel = (lv) => {
-    document.getElementById("selectTargetLevel").selectedIndex = lv - 1;
-}
-let getRarity = () => {
-    return document.getElementById("selectRarity").selectedIndex;
-}
-let getLevel = () => {
-    return document.getElementById("selectCurrentLevel").selectedIndex + 1;
-}
-let getTargetLevel = () => {
-    return document.getElementById("selectTargetLevel").selectedIndex + 1;
-}
-let getNext = () => {
-    let div = document.getElementById("inputNext");
-    if (div.value == "") { div.value = div.max; }
-    return div.value * 1;
-}
-
-// input button event
-let changeSelectRarity = () => {
-    setMaxLevel();
-    setExpLimit();
-
-    calc();
-}
-let changeSelectCurrentLevel = () => {
-    setExpLimit();
-
-    calc();
-}
-let changeSelectTargetLevel = () => {
-    calc();
-}
-let setLevelRange = (lv, tLv, r = 0) => {
-    setRarity(r);
-    setLevel(lv);
-    setTargetLevel(tLv);
-
+    updateUI();
     calc();
 }
 
 // html result to image
-let openImage = function () {
+let openImage = () => {
     $(window).scrollTop(0);
     document.getElementById("remainingEXP").parentElement.parentElement.style.paddingTop = `0px`;
-    html2canvas(document.getElementById("expcalc")).then(function (canvas) {
+    html2canvas(document.getElementById("expcalc")).then((canvas) => {
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
         window.open().document.write(`<img src="${image.src}" />`);
     });
+}
+// UI API
+// input button event
+let changeSelectRarity = () => { setMaxLevel(); setExpLimit(); updateUI(); calc(); }
+let changeSelectCurrentLevel = () => { setExpLimit(); calc(); }
+let changeSelectTargetLevel = () => { calc(); }
+// quick button event
+let setLevelRange = (lv, tLv, r = 0) => {
+    document.getElementById("selectRarity").selectedIndex = r; setMaxLevel();
+    document.getElementById("selectCurrentLevel").selectedIndex = lv - 1; setExpLimit();
+    document.getElementById("selectTargetLevel").selectedIndex = tLv - 1;
+    updateUI();
+
+    calc();
+}
+// panels
+let changePanels = () => { updateUI(); calc(); }
+
+// input data 
+let getRarity = () => { return document.getElementById("selectRarity").selectedIndex; }
+let getLevel = () => { return document.getElementById("selectCurrentLevel").selectedIndex + 1; }
+let getTargetLevel = () => { return document.getElementById("selectTargetLevel").selectedIndex + 1; }
+let getNext = () => {
+    let div = document.getElementById("inputNext");
+    if (div.value == "") { div.value = div.max; }
+    return div.value * 1;
 }
 
 // UI method
@@ -184,17 +172,6 @@ let setMaxLevel = () => {
         document.getElementById("selectCurrentLevel").options[i].text = (i + 1);
         document.getElementById("selectTargetLevel").options[i].text = (i + 1);
     }
-    // set Plane1 Visable
-    for (let cfg of plane1Config) {
-        if (r == 0 ||   // for debug
-            cfg[1] == -1 || // for all rare
-            cfg[1] == r) {  // for defined rare
-            document.getElementById(cfg[0]).classList.add("show");
-        } else {
-            document.getElementById(cfg[0]).classList.remove("show");
-            document.getElementById(cfg[0]).classList.remove("keep");
-        }
-    }
 }
 let setExpLimit = () => {
     let r = getRarity();
@@ -203,47 +180,53 @@ let setExpLimit = () => {
     document.getElementById("inputNext").min = 1;
     document.getElementById("inputNext").max = expTable[l][r + 1];
 }
-// plane zone
-let updateUI = (checkSariette = false) => {
-    if (checkSariette) {
-        let r = document.getElementById("checkSariette").checked ? 1.1 : 1.0
+// Panel zone
+let updateUI = () => {
+    let r = document.getElementById('checkSariette').checked ? 1.1 : 1.0;
 
-        document.getElementById("expWArmor1").querySelector(".box2").innerHTML = Math.floor(1000 * r);
-        document.getElementById("expWArmor").querySelector(".box2").innerHTML = Math.floor(8000 * r);
-        document.getElementById("expBArmor").querySelector(".box2").innerHTML = Math.floor(40000 * r);
-        document.getElementById("expAmour").querySelector(".box2").innerHTML = Math.floor(4000 * r);
-        document.getElementById("expPreseil").querySelector(".box2").innerHTML = Math.floor(1750 * r);
-        document.getElementById("expAlegria").querySelector(".box2").innerHTML = Math.floor(18000 * r);
-        document.getElementById("expLiebe").querySelector(".box2").innerHTML = Math.floor(19000 * r);
-        document.getElementById("expFreude").querySelector(".box2").innerHTML = Math.floor(19000 * r);
-        document.getElementById("expFarah").querySelector(".box2").innerHTML = Math.floor(20000 * r);
-        document.getElementById("expPresent").querySelector(".box2").innerHTML = Math.floor(18000 * r);
-        document.getElementById("expPlacer").querySelector(".box2").innerHTML = Math.floor(10000 * r);
-        document.getElementById("expEmperor01").querySelector(".box2").innerHTML = Math.floor(16000 * r);
-        document.getElementById("expEmperor17").querySelector(".box2").innerHTML = Math.floor(18560 * r);
-        document.getElementById("expEmperor20").querySelector(".box2").innerHTML = Math.floor(19040 * r);
-        document.getElementById("expB01").querySelector(".box2").innerHTML = (235 * r).toFixed(1).replace(/\.0$/, "");
-        document.getElementById("expB02").querySelector(".box2").innerHTML = (265 * r).toFixed(1).replace(/\.0$/, "");
-        document.getElementById("expB03").querySelector(".box2").innerHTML = (220 * r).toFixed(1).replace(/\.0$/, "");
-        document.getElementById("expB04").querySelector(".box2").innerHTML = (250 * r).toFixed(1).replace(/\.0$/, "");
+    // Plane0, Plane2
+    for (let key of [].concat(panel0, panel2)) {
+        let box2 = document.querySelector(`#${key} .box2`);
+        box2.innerHTML = Math.floor(box2.title * r);
+    }
+    // Plane1
+    for (let key of panel1) {
+        let box2 = document.querySelector(`#${key} .box2`);
+        box2.innerHTML = Math.floor(box2.title * r);
+
+        // set Plane1 Visable
+        let rare = getRarity();
+        let check = panel1Config[key];
+        if (check && rare != check) {   // requirement defined && same to rare
+            box2.innerHTML = 0;
+        }
+        if (rare == 0 ||    // for debug
+            !check ||       // for all rare
+            rare == check) {// for defined rares
+            document.getElementById(key).classList.add("show");
+        } else {
+            // document.getElementById(key).classList.add("show");  // for debug
+            document.getElementById(key).classList.remove("show");
+            document.getElementById(key).classList.remove("keep");
+        }
+    }
+    // Plane3
+    for (let key of panel3) {
+        let box2 = document.querySelector(`#${key} .box2`);
+        box2.innerHTML = (box2.title * r).toFixed(1).replace(/\.0$/, "");
     }
 
+    // Plane5
     // EXP customize options
-    let expNameList = [
-        "expC01", "expC02", "expC03", "expC04",
-        "expS01", "expS02"    // 強襲ミッションドロップ base 750 exp
-    ];
-    for (let name of expNameList) {
-        let div = document.getElementById(name);
+    for (let key of panel5) {
+        let div = document.getElementById(key);
+        let box2 = document.querySelector(`#${key} .box2`);
         // setting
-        let rare = div.querySelector(".rare").selectedIndex;  // 0~6
-        let sex = div.querySelector(".sex").selectedIndex;    // 0~1 女:男
-        let cc = div.querySelector(".cc").selectedIndex;    // 0~2
-        let lv = div.querySelector('.lv').value * 1; // 0~99
+        let rare = div.querySelector(".rare").selectedIndex;    // 0~6
+        let sex = div.querySelector(".sex").selectedIndex;      // 0~1 女:男
+        let cc = div.querySelector(".cc").selectedIndex;        // 0~2
+        let lv = div.querySelector('.lv').value * 1;            // 0~99
         let cbonus = div.querySelector(".cbonus").checked ? 1 : 0;
-        // variable
-        let ccexp = [0, 1].includes(rare) ? 5 : [7, 20, 50][cc];
-        let r = document.getElementById("checkSariette").checked ? 1.1 : 1.0
 
         // check selected
         if ([0, 1].includes(rare)) {
@@ -258,17 +241,17 @@ let updateUI = (checkSariette = false) => {
             lv = div.querySelector('.lv').value = maxLevel[cc][rare];
         }
 
+        // variable
+        let ccexp = [0, 1].includes(rare) ? 5 : [7, 20, 50][cc];
         let exp = customizeConfig[rare][sex];
-        if (name == "expS01") { exp = 750; }
-        if (name == "expS02") { exp = 2000; }
+        if (box2.title) { exp = box2.title * 1; }
+
         exp += cbonus * customizeConfig[rare][2];
         exp += (lv - 1) * ccexp;
-        exp = (exp * r).toFixed(1).replace(/\.0$/, "");;
+        exp = (exp * r).toFixed(1).replace(/\.0$/, "");
 
-        div.querySelector(".box2").innerHTML = exp;
+        box2.innerHTML = exp;
     }
-
-    calc();
 }
 let calc = () => {
     // necessaryEXP
@@ -289,28 +272,14 @@ let calc = () => {
 
     // remainingEXP
     let sumAdditionalEXP = 0;
-    expNameList = [
-        "expWArmor1", "expWArmor", "expBArmor",
-        "expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer",
-        "expEmperor01", "expEmperor17", "expEmperor20",
-        "expB01", "expB02", "expB03", "expB04",
-        "expC01", "expC02", "expC03", "expC04", "expS01", "expS02"
-    ];
-    for (let name of expNameList) {
-        let div = document.getElementById(name);
+    for (let div of document.querySelectorAll('.training[id]')) {
+        let freeExp = div.querySelector(".freeExp");
+        let addExp = freeExp ?
+            freeExp.value :
+            div.querySelector(".box2").innerHTML;
+        addExp = Math.floor(addExp * 1 * (div.querySelector('.count').value * 1));
 
-        let check = plane1Config.find(e => e[0] == name);
-        if (check != null &&    // config defined
-            check[1] != -1 &&   // not for all rare
-            check[1] != currentRarity)  // not for this rare
-        { continue; }
-
-        let addExp =
-            (div.querySelector(".box2").innerHTML * 1) *
-            (div.querySelector('.count').value * 1);
-        addExp = Math.floor(addExp);
-
-        if (addExp) {
+        if (addExp || (freeExp && freeExp.value > 0)) {
             sumAdditionalEXP += addExp;
             // set UI classname
             div.classList.add("keep");
@@ -319,23 +288,6 @@ let calc = () => {
         }
     }
 
-    expNameList = ["expFree01", "expFree02", "expFree03", "expFree04"];
-    for (let name of expNameList) {
-        let div = document.getElementById(name);
-
-        let addExp =
-            (div.querySelector(".freeExp").value * 1) *
-            (div.querySelector('.count').value * 1);
-        addExp = Math.floor(addExp);
-
-        if (addExp || (div.querySelector(".freeExp").value * 1) > 0) {
-            sumAdditionalEXP += addExp;
-            // set UI classname
-            div.classList.add("keep");
-        } else {
-            div.classList.remove("keep");
-        }
-    }
 
     if (sumEXP >= 0) {
         document.getElementById("remainingEXP").innerHTML = sumEXP - sumAdditionalEXP;
@@ -344,6 +296,8 @@ let calc = () => {
         document.getElementById("remainingEXP").innerHTML = "-";
         clearData();
     }
+    // document.getElementById("addEXP").innerHTML = sumAdditionalEXP;
+    // saveData();
 }
 
 // let keymap = [
@@ -361,11 +315,10 @@ let saveData = () => {
     let data = {};
 
     // get inputs
-    let selectors = ["#boxtitle", "#expFree01 .box1", "#expFree02 .box1", "#expFree03 .box1", "#expFree04 .box1",
-        '#selectRarity', '#selectCurrentLevel', '#inputNext', '#selectTargetLevel',
+    let selectors = ["#boxtitle", '#selectRarity', '#selectCurrentLevel', '#inputNext', '#selectTargetLevel',
         '#checkSariette', '#Panel1', '#Panel2', '#Panel3', '#Panel4', '#Panel5'];
-    for (let div of document.querySelectorAll('.training')) {
-        if (!div.id) { continue; }
+    for (let key of panel4) { selectors.push(`#${key} .box1`) }
+    for (let div of document.querySelectorAll('.training[id]')) {
         selectors.push(`#${div.id} .rare`);
         selectors.push(`#${div.id} .sex`);
         selectors.push(`#${div.id} .cc`);
@@ -403,10 +356,10 @@ let loadData = () => {
 
     // set data to UI
     document.getElementById("checkSariette").checked = obj["#checkSariette"];
+    document.getElementById("selectRarity").selectedIndex = obj["#selectRarity"]; setMaxLevel();
+    document.getElementById("selectCurrentLevel").selectedIndex = obj["#selectCurrentLevel"]; setExpLimit();
+    document.getElementById("selectTargetLevel").selectedIndex = obj["#selectTargetLevel"];
     document.getElementById("inputNext").checked = obj["#inputNext"];
-    setRarity(obj["#selectRarity"]);
-    setLevel(obj["#selectCurrentLevel"] + 1);
-    setTargetLevel(obj["#selectTargetLevel"] + 1);
 
     let keys = ["#checkSariette", "#selectRarity", "#selectCurrentLevel", "#inputNext", "#selectTargetLevel"];
     for (let key of Object.keys(obj)) {

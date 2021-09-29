@@ -116,7 +116,7 @@
             <div class="box">
               <div id="boxtitle" style="font-size: 18px; font-weight: bold;">育成計画</div>
               <label for="checkSariette" style="user-select: none;">
-                <input type="checkbox" id="checkSariette" onchange="updateUI(true);">
+                <input type="checkbox" id="checkSariette" onchange="changePanels();">
                 育成の聖霊サリエット
               </label>
             </div>
@@ -130,7 +130,7 @@
 
             <div class="box training" id="expWArmor1">
               <div class="box1">白鎧</div>
-              <div class="box2">1000</div>
+              <div class="box2" title="1000">1000</div>
               <div class="box3">
                 <input type="button" value="－">
                 <input class="count" type="number" value="0" min="0" max="99">
@@ -140,7 +140,7 @@
 
             <div class="box training" id="expWArmor">
               <div class="box1">白鎧×8</div>
-              <div class="box2">8000</div>
+              <div class="box2" title="8000">8000</div>
               <div class="box3">
                 <input type="button" value="－">
                 <input class="count" type="number" value="0" min="0" max="99">
@@ -150,7 +150,7 @@
 
             <div class="box training" id="expBArmor">
               <div class="box1">黒鎧×8</div>
-              <div class="box2">40000</div>
+              <div class="box2" title="40000">40000</div>
               <div class="box3">
                 <input type="button" value="－">
                 <input class="count" type="number" value="0" min="0" max="99">
@@ -158,7 +158,7 @@
               </div>
             </div>
 
-            <!-- plane1 -->
+            <!-- Panel1 -->
             <div class="box boxswitch" style="background-color: #22b14c;">
               <label for="Panel1">
                 <b>小祝福の聖霊</b>
@@ -170,7 +170,7 @@
               <div class="box training" id="expAmour">
                 <div class="box1">アムール<div class="boxnote">小祝福の聖霊(銀)</div>
                 </div>
-                <div class="box2">4000</div>
+                <div class="box2" title="4000">4000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -181,7 +181,7 @@
               <div class="box training" id="expPreseil">
                 <div class="box1">プレジール<div class="boxnote">小祝福の聖霊(金)</div>
                 </div>
-                <div class="box2">1750</div>
+                <div class="box2" title="1750">1750</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -192,7 +192,7 @@
               <div class="box training" id="expAlegria">
                 <div class="box1">アレグリア<div class="boxnote">小祝福の聖霊(金)</div>
                 </div>
-                <div class="box2">18000</div>
+                <div class="box2" title="18000">18000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -203,7 +203,7 @@
               <div class="box training" id="expLiebe">
                 <div class="box1">リーベ<div class="boxnote">小祝福の聖霊(蒼)</div>
                 </div>
-                <div class="box2">19000</div>
+                <div class="box2" title="19000">19000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -214,7 +214,7 @@
               <div class="box training" id="expFreude">
                 <div class="box1">フロイデ<div class="boxnote">小祝福の聖霊(白)</div>
                 </div>
-                <div class="box2">19000</div>
+                <div class="box2" title="19000">19000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -225,7 +225,7 @@
               <div class="box training" id="expFarah">
                 <div class="box1">ファラハ<div class="boxnote">小祝福の聖霊(黒)</div>
                 </div>
-                <div class="box2">20000</div>
+                <div class="box2" title="20000">20000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -236,7 +236,7 @@
               <div class="box training" id="expPresent">
                 <div class="box1">プレーゼ<div class="boxnote">小祝福の聖霊</div>
                 </div>
-                <div class="box2">18000</div>
+                <div class="box2" title="18000">18000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -247,7 +247,7 @@
               <div class="box training" id="expPlacer">
                 <div class="box1">プラセル<div class="boxnote">小祝福の聖霊</div>
                 </div>
-                <div class="box2">10000</div>
+                <div class="box2" title="10000">10000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -258,7 +258,7 @@
             </div>
 
 
-            <!-- plane2 -->
+            <!-- Panel2 -->
             <div class="box boxswitch" style="background-color: #C0C0C0; color: #000000;">
               <label for="Panel2">
                 <b>白の皇帝</b>
@@ -269,7 +269,7 @@
 
               <div class="box training show" id="expEmperor01">
                 <div class="box1">白の皇帝(Lv1)×8</div>
-                <div class="box2">16000</div>
+                <div class="box2" title="16000">16000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -279,7 +279,7 @@
 
               <div class="box training show" id="expEmperor17">
                 <div class="box1">白の皇帝(Lv17)×8</div>
-                <div class="box2">18560</div>
+                <div class="box2" title="18560">18560</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -289,7 +289,7 @@
 
               <div class="box training show" id="expEmperor20">
                 <div class="box1">白の皇帝(Lv20)×8</div>
-                <div class="box2">19040</div>
+                <div class="box2" title="19040">19040</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -300,7 +300,7 @@
             </div>
 
 
-            <!-- plane3 -->
+            <!-- Panel3 -->
             <div class="box boxswitch" style="background-color: #a65315;">
               <label for="Panel3">
                 <b>ストミ餌</b>
@@ -313,7 +313,7 @@
                 <div class="box1">ブロンズ(Lv34)<br>
                   <div style="float: right; margin: 3px 7px 0px 0px;">＊ダークエルフの女王 /＊オークの勇士</div>
                 </div>
-                <div class="box2">235</div>
+                <div class="box2" title="235">235</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -325,7 +325,7 @@
                 <div class="box1">ﾌﾞﾛﾝｽﾞ(Lv34) + ベテランの指南<br>
                   <div style="float: right; margin: 3px 7px 0px 0px;">＊ダークエルフの女王 /＊オークの勇士</div>
                 </div>
-                <div class="box2">265</div>
+                <div class="box2" title="265">265</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -337,7 +337,7 @@
                 <div class="box1">ブロンズ(Lv31)<br>
                   <div style="float: right; margin: 3px 7px 0px 0px;">＊転送の魔法陣</div>
                 </div>
-                <div class="box2">220</div>
+                <div class="box2" title="220">220</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -349,7 +349,7 @@
                 <div class="box1">ﾌﾞﾛﾝｽﾞ(Lv31) + ベテランの指南<br>
                   <div style="float: right; margin: 3px 7px 0px 0px;">＊転送の魔法陣</div>
                 </div>
-                <div class="box2">250</div>
+                <div class="box2" title="250">250</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -360,7 +360,7 @@
             </div>
 
 
-            <!-- plane4 -->
+            <!-- Panel4 -->
             <div class="box boxswitch" style="background-color: #000000;">
               <label for="Panel4">
                 <b>自由欄</b>
@@ -416,7 +416,7 @@
             </div>
 
 
-            <!-- plane5 -->
+            <!-- Panel5 -->
             <div class="box boxswitch" style="background-color: #000000;">
               <label for="Panel5">
                 <b>カスタマイズ</b>
@@ -428,7 +428,7 @@
               <div class="box training show" id="expC01">
                 <div class="box1">
 
-                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
+                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; changePanels();">
                     <option value="0">鉄</option>
                     <option value="1" selected>銅</option>
                     <option value="2">銀</option>
@@ -437,20 +437,20 @@
                     <option value="5">白</option>
                     <option value="6">黒</option>
                   </select>
-                  <select class="sex" onchange="updateUI();">
+                  <select class="sex" onchange="changePanels();">
                     <option value="0">女性</option>
                     <option value="1" selected>男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="lv" type="number" value="22" min="1" max="99" onchange="updateUI();">
-                    <select class="cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="22" min="1" max="99" onchange="changePanels();">
+                    <select class="cc" onchange="changePanels();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="changePanels();">
                   </div>
 
                 </div>
@@ -465,7 +465,7 @@
               <div class="box training show" id="expC02">
                 <div class="box1">
 
-                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
+                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; changePanels();">
                     <option value="0">鉄</option>
                     <option value="1">銅</option>
                     <option value="2">銀</option>
@@ -474,20 +474,20 @@
                     <option value="5">白</option>
                     <option value="6">黒</option>
                   </select>
-                  <select class="sex" onchange="updateUI();">
+                  <select class="sex" onchange="changePanels();">
                     <option value="0">女性</option>
                     <option value="1">男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
-                    <select class="cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="1" min="1" max="99" onchange="changePanels();">
+                    <select class="cc" onchange="changePanels();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="changePanels();">
                   </div>
 
                 </div>
@@ -502,7 +502,7 @@
               <div class="box training show" id="expC03">
                 <div class="box1">
 
-                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
+                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; changePanels();">
                     <option value="0">鉄</option>
                     <option value="1">銅</option>
                     <option value="2">銀</option>
@@ -511,20 +511,20 @@
                     <option value="5">白</option>
                     <option value="6">黒</option>
                   </select>
-                  <select class="sex" onchange="updateUI();">
+                  <select class="sex" onchange="changePanels();">
                     <option value="0">女性</option>
                     <option value="1">男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
-                    <select class="cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="1" min="1" max="99" onchange="changePanels();">
+                    <select class="cc" onchange="changePanels();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="changePanels();">
                   </div>
 
                 </div>
@@ -539,7 +539,7 @@
               <div class="box training show" id="expC04">
                 <div class="box1">
 
-                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; updateUI();">
+                  <select class="rare" onchange="this.nextElementSibling.selectedIndex = 0; changePanels();">
                     <option value="0">鉄</option>
                     <option value="1">銅</option>
                     <option value="2">銀</option>
@@ -548,20 +548,20 @@
                     <option value="5">白</option>
                     <option value="6">黒</option>
                   </select>
-                  <select class="sex" onchange="updateUI();">
+                  <select class="sex" onchange="changePanels();">
                     <option value="0">女性</option>
                     <option value="1">男性</option>
                   </select>
 
                   <div class="boxnote">
                     Lv
-                    <input class="lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
-                    <select class="cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="1" min="1" max="99" onchange="changePanels();">
+                    <select class="cc" onchange="changePanels();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="ベテランの指南/同クラス加算" onchange="changePanels();">
                   </div>
 
                 </div>
@@ -592,13 +592,13 @@
 
                   <div class="boxnote">
                     Lv
-                    <input class="lv" type="number" value="1" min="1" max="99" onchange="updateUI();">
-                    <select class="cc" onchange="updateUI();">
+                    <input class="lv" type="number" value="1" min="1" max="99" onchange="changePanels();">
+                    <select class="cc" onchange="changePanels();">
                       <option value="0">未CCユニット</option>
                       <option value="1">CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="cbonus" type="checkbox" title="同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="同クラス加算" onchange="changePanels();">
                   </div>
                   <div style="float: right; margin: 3px 7px 0px 0px;">
                     翠花の領主メアリ<br>
@@ -607,7 +607,7 @@
                   </div>
 
                 </div>
-                <div class="box2">0</div>
+                <div class="box2" title="750">750</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -634,17 +634,17 @@
 
                   <div class="boxnote">
                     Lv
-                    <input class="lv" type="number" value="1" min="1" max="30" onchange="updateUI();">
-                    <select class="cc" disabled onchange="updateUI();" style="color: #316ca4;">
+                    <input class="lv" type="number" value="1" min="1" max="30" onchange="changePanels();">
+                    <select class="cc" disabled onchange="changePanels();" style="color: #316ca4;">
                       <option value="0">未CCユニット</option>
                       <option value="1" selected>CC済/CCのない</option>
                       <option value="2">覚醒後のユニット</option>
                     </select>
-                    <input class="cbonus" type="checkbox" title="同クラス加算" onchange="updateUI();">
+                    <input class="cbonus" type="checkbox" title="同クラス加算" onchange="changePanels();">
                   </div>
 
                 </div>
-                <div class="box2">2000</div>
+                <div class="box2" title="2000">2000</div>
                 <div class="box3">
                   <input type="button" value="－">
                   <input class="count" type="number" value="0" min="0" max="99">
@@ -659,10 +659,17 @@
 
           <!-- show box -->
           <div style="width: 30%; float: right;">
+
+            <!-- <div class="box" style="background-color: #244664; padding: 5px; margin-top: 20px;">
+              総合経験値：
+              <div id="addEXP" style="font-size: 20px; font-weight: bold;">-</div>
+            </div> -->
+
             <div class="box" style="background-color: #244664; padding: 5px; margin-top: 20px;">
               目標レベルまで：
               <div id="remainingEXP" style="font-size: 20px; font-weight: bold;">-</div>
             </div>
+
           </div>
 
         </div>
