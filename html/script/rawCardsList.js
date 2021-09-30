@@ -1,4 +1,4 @@
-var maxCid = 1315;
+var maxCid = 1328;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -409,7 +409,7 @@ var charaData = [
 	{	"id": 407,	"name": "魔界魔術師ネヴィン",	"rare": 1,	"classID": 10101,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "407_00"	},
 	{	"id": 408,	"name": "闇エルフの女王ドロテア",	"rare": 5,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 0,	"isToken": 0,	"img": "408_00",	"imgaw": "408_01"	},
 	{	"id": 409,	"name": "南瓜魔導鎧兵エーリカ",	"rare": 4,	"classID": 2400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "409_00",	"imgaw": "409_01",	"imgaw2A": "409_02"	},
-	{	"id": 410,	"name": "火霊使いロレッタ",	"rare": 4,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 0,	"isToken": 0,	"img": "410_00",	"imgaw": "410_01"	},
+	{	"id": 410,	"name": "火霊使いロレッタ",	"rare": 4,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 0,	"isToken": 0,	"img": "410_00",	"imgaw": "410_01",	"imgaw2B": "410_03"	},
 	{	"id": 411,	"name": "ファイアエレメンタル",	"rare": 5,	"classID": 4600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 1,	"img": "411_00"	},
 	{	"id": 412,	"name": "帝国神官戦士ルチア",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "412_00",	"imgaw": "412_01",	"imgaw2A": "412_02"	},
 	{	"id": 413,	"name": "鬼娘イツキ",	"rare": 4,	"classID": 4700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2016,	"isEvent": 0,	"isToken": 0,	"img": "413_00",	"imgaw": "413_01",	"imgaw2A": "413_02"	},
@@ -452,7 +452,7 @@ var charaData = [
 	{	"id": 450,	"name": "猫又コハル",	"rare": 5,	"classID": 13500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "450_00",	"imgaw": "450_01",	"imgaw2A": "450_02",	"imgaw2B": "450_03"	},
 	{	"id": 451,	"name": "星天の魔導鎧シルセス",	"rare": 5,	"classID": 2400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "451_00",	"imgaw": "451_01",	"imgaw2A": "451_02",	"imgaw2B": "451_03"	},
 	{	"id": 452,	"name": "狂獣ウリデム",	"rare": 7,	"classID": 1300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "452_00",	"imgaw": "452_01"	},
-	{	"id": 453,	"name": "土霊使いシャオメイ",	"rare": 4,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "453_00",	"imgaw": "453_01"	},
+	{	"id": 453,	"name": "土霊使いシャオメイ",	"rare": 4,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "453_00",	"imgaw": "453_01",	"imgaw2A": "453_02"	},
 	{	"id": 454,	"name": "神殿書記官レーヴ",	"rare": 4,	"classID": 10800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "454_00",	"imgaw": "454_01",	"imgaw2A": "454_02"	},
 	{	"id": 455,	"name": "アースエレメンタル",	"rare": 5,	"classID": 5400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "455_00"	},
 	{	"id": 456,	"name": "やくも",	"rare": 5,	"classID": 33,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "456_00"	},
@@ -1171,7 +1171,7 @@ var charaData = [
 	{	"id": 1169,	"name": "神聖騎士",	"rare": 5,	"classID": 127900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1169_00"	},
 	{	"id": 1170,	"name": "東国武装女中サクラ",	"rare": 4,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1170_00",	"imgaw": "1170_01"	},
 	{	"id": 1171,	"name": "新米兵士アビー",	"rare": 3,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1171_00",	"imgaw": "1171_01"	},
-	{	"id": 1172,	"name": "混沌霊使いニーヴ",	"rare": 5,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1172_00",	"imgaw": "1172_01"	},
+	{	"id": 1172,	"name": "混沌霊使いニーヴ",	"rare": 5,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1172_00",	"imgaw": "1172_01",	"imgaw2A": "1172_02",	"imgaw2B": "1172_03"	},
 	{	"id": 1173,	"name": "カオスエレメンタル",	"rare": 5,	"classID": 128000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1173_00"	},
 	{	"id": 1174,	"name": "上級カオスエレメンタル",	"rare": 5,	"classID": 128030,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1174_00"	},
 	{	"id": 1175,	"name": "孤独な迷宮守ニミュエ",	"rare": 5,	"classID": 128100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1175_00",	"imgaw": "1175_01"	},
@@ -1314,5 +1314,18 @@ var charaData = [
 	{	"id": 1312,	"name": "戦巫女コウメ",	"rare": 4,	"classID": 130500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1312_00",	"imgaw": "1312_01"	},
 	{	"id": 1313,	"name": "鷹目の偵察兵ミリアム",	"rare": 4,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1313_00",	"imgaw": "1313_01"	},
 	{	"id": 1314,	"name": "鋼の重装砲兵ヴァネッサ",	"rare": 5,	"classID": 4400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1314_00",	"imgaw": "1314_01"	},
-	{	"id": 1315,	"name": "ちびフーロン",	"rare": 3,	"classID": 25500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1315_00"	}
+	{	"id": 1315,	"name": "ちびフーロン",	"rare": 3,	"classID": 25500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1315_00"	},
+	{	"id": 1316,	"name": "上級アースエレメンタル",	"rare": 5,	"classID": 5470,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1316_00"	},
+	{	"id": 1317,	"name": "上級エアーエレメンタル",	"rare": 5,	"classID": 5680,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1317_00"	},
+	{	"id": 1318,	"name": "上級ダークエレメンタル",	"rare": 5,	"classID": 5770,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1318_00"	},
+	{	"id": 1319,	"name": "上級サンダーエレメンタル",	"rare": 5,	"classID": 9280,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1319_00"	},
+	{	"id": 1320,	"name": "上級ライトエレメンタル",	"rare": 5,	"classID": 123080,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1320_00"	},
+	{	"id": 1321,	"name": "上級カオスエレメンタル",	"rare": 5,	"classID": 128080,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1321_00"	},
+	{	"id": 1322,	"name": "上級アイスエレメンタル",	"rare": 5,	"classID": 8180,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1322_00"	},
+	{	"id": 1323,	"name": "上級ライトエレメンタル",	"rare": 5,	"classID": 123070,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1323_00"	},
+	{	"id": 1324,	"name": "上級カオスエレメンタル",	"rare": 5,	"classID": 128070,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1324_00"	},
+	{	"id": 1325,	"name": "夜行さん現当主ヨユキ",	"rare": 5,	"classID": 150300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1325_00",	"imgaw": "1325_01"	},
+	{	"id": 1326,	"name": "上級ファイアエレメンタル",	"rare": 5,	"classID": 4680,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1326_00"	},
+	{	"id": 1327,	"name": "上級アイスエレメンタル",	"rare": 5,	"classID": 8170,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1327_00"	},
+	{	"id": 1328,	"name": "上級ウォーターエレメンタル",	"rare": 5,	"classID": 6370,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1328_00"	}
 ]
