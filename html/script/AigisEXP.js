@@ -48,27 +48,27 @@ let bodyOnload = () => {
     for (let btn of document.querySelector(".leftcolumn").getElementsByTagName("input")) {
         if (btn.value == "MIN") {
             btn.addEventListener("click", (e) => {
-                let input = this.nextElementSibling.nextElementSibling;
+                let input = btn.nextElementSibling.nextElementSibling;
                 input.value = input.min;
                 calc();
             }, false);
 
         } else if (btn.value == "－") {
             btn.addEventListener("click", (e) => {
-                let input = this.nextElementSibling;
+                let input = btn.nextElementSibling;
                 input.value = Math.max(input.min, parseInt(input.value) - 1);
                 calc();
             }, false);
 
         } else if (btn.value == "＋") {
             btn.addEventListener("click", (e) => {
-                let input = this.previousElementSibling;
+                let input = btn.previousElementSibling;
                 input.value = Math.min(input.max, parseInt(input.value) + 1);
                 calc();
             }, false);
         } else if (btn.value == "MAX") {
             btn.addEventListener("click", (e) => {
-                let input = this.previousElementSibling.previousElementSibling;
+                let input = btn.previousElementSibling.previousElementSibling;
                 input.value = input.max;
                 calc();
             }, false);
