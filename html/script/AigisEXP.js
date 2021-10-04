@@ -150,7 +150,11 @@ let setLevelRange = (lv, tLv, r = 0) => {
     calc();
 }
 // panels
-let changePanels = () => { updateUI(); calc(); }
+let changePanels = (div) => {
+    if (div) { div.nextElementSibling.selectedIndex = 0; }
+    updateUI();
+    calc();
+}
 
 // input data 
 let getRarity = () => { return document.getElementById("selectRarity").selectedIndex; }
@@ -240,6 +244,7 @@ let updateUI = () => {
         if (lv > maxLevel[cc][rare]) {
             lv = div.querySelector('.lv').value = maxLevel[cc][rare];
         }
+        div.querySelector('.lv').max = maxLevel[cc][rare];
 
         // variable
         let ccexp = [0, 1].includes(rare) ? 5 : [7, 20, 50][cc];
