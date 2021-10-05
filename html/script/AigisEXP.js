@@ -113,7 +113,14 @@ let bodyOnload = () => {
     if (!isMobile()) {
         $(window).scroll(() => {
             let div = document.getElementById("remainingEXP").parentElement.parentElement;
+            // get unchanged data
+            let offsetH0 = document.querySelector('#expcalc').offsetHeight;
+            let padTop0 = div.style.paddingTop;
+            // move remainingEXP
             div.style.paddingTop = `${Math.max(0, $(this).scrollTop() - 370)}px`;
+            if (offsetH0 != document.querySelector('#expcalc').offsetHeight) {
+                div.style.paddingTop = padTop0;
+            }
         });
     }
 
@@ -196,6 +203,8 @@ let quickBtn_click = (e) => {
     let data = loadExpData(key);
     // set exp data
     setExpData(data);
+    updateUI();
+    calc();
 }
 let quickBtn_save = () => {
     let time = Date.now()
@@ -211,7 +220,7 @@ let quickBtn_delete = () => {
     let confirmString = btn ? `${btn.value}のデータを削除をしますか？` : "現在のデータを削除をしますか？"
     let isExecuted = confirm(confirmString);
     if (!isExecuted) { return; }
-    
+
     // reset data or del data
     if (!btn) {
         resetExpData();
@@ -377,7 +386,22 @@ let calc = () => {
     } else {
         document.getElementById("remainingEXP").innerHTML = "-";
     }
-    // document.getElementById("addEXP").innerHTML = sumAdditionalEXP;
+
+    if (sumAdditionalEXP > 0) {
+        document.getElementById("addEXP").innerHTML = sumAdditionalEXP;
+    } else {
+        document.getElementById("addEXP").innerHTML = "-";
+    }
+
+    if (sumEXP >= 0) {
+        let rare = document.getElementById("selectRarity");
+        rare = rare.options[rare.selectedIndex].label;
+
+        document.getElementById("inputInformation").innerHTML =
+            `${rare}<br>レベル：${currentLevel}(${getNext()})→${currentTargetLevel}`;
+    } else {
+        document.getElementById("inputInformation").innerHTML = "-";
+    }
 }
 
 // let keymap = [
