@@ -170,10 +170,12 @@ let setLevelRange = (lv, tLv, r = 0) => {
 }
 // custom quick button api
 let quickBtn_add = (time, data) => {
-    let btnbox = document.querySelector('.setlv .custom').parentElement;
+    let btnbox = document.querySelector('#quickBtnBox');
+    let rare = ['ir', 'br', 'si', 'go', 'sa', 'pl', 'bl'][data["#selectRarity"]]
 
     let btn = document.createElement('input');
     btn.className = 'custom';
+    btn.classList.add(rare);
     btn.type = 'button';
     btn.value = data['#boxtitle'];                  // btn text
     btn.title = new Date(time).toLocaleString();    // time in date string
@@ -186,7 +188,7 @@ let quickBtn_add = (time, data) => {
 let quickBtn_click = (e) => {
     let btn = e.target;
     let selected = btn.classList.contains('selected');
-    for (let div of document.querySelectorAll('.setlv .selected')) {
+    for (let div of document.querySelectorAll('#quickBtnBox .selected')) {
         div.classList.remove('selected');
     }
     if (selected) {
@@ -207,6 +209,26 @@ let quickBtn_click = (e) => {
     calc();
 }
 let quickBtn_save = () => {
+    let btn = document.querySelector('#quickBtnBox .selected');
+
+    if (btn) {
+        // selected data
+        let isExecuted = confirm(`${btn.value}のデータを上書きしますか？`);
+        if (isExecuted) {
+            // overwrite
+            let time = parseInt(btn.alt);
+            let key = `AigisToolsEXP${time}`;
+            let data = getExpData();
+            // save
+            saveExpData(key, data);
+            // update btn value
+            btn.value = data['#boxtitle'];
+            return;
+        }
+    }
+
+    // no overwrite or not selected
+    // add new savedata
     let time = Date.now()
     let key = `AigisToolsEXP${time}`;
     let data = getExpData();
@@ -216,8 +238,8 @@ let quickBtn_save = () => {
     quickBtn_add(time, data);
 }
 let quickBtn_delete = () => {
-    let btn = document.querySelector('.setlv .selected');
-    let confirmString = btn ? `${btn.value}のデータを削除をしますか？` : "現在のデータを削除をしますか？"
+    let btn = document.querySelector('#quickBtnBox .selected');
+    let confirmString = btn ? `${btn.value}のデータを削除しますか？` : "現在のデータを削除しますか？"
     let isExecuted = confirm(confirmString);
     if (!isExecuted) { return; }
 
@@ -387,11 +409,12 @@ let calc = () => {
         document.getElementById("remainingEXP").innerHTML = "-";
     }
 
+    /*
     if (sumAdditionalEXP > 0) {
         document.getElementById("addEXP").innerHTML = sumAdditionalEXP;
     } else {
         document.getElementById("addEXP").innerHTML = "-";
-    }
+    }//*/
 
     if (sumEXP >= 0) {
         let rare = document.getElementById("selectRarity");

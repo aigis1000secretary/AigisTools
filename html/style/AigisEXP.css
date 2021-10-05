@@ -104,25 +104,27 @@ input[type="checkbox"].on-off+.accContent .showh3:hover {
     height: 30px;
 }
 
-.setlv input[type="button"] {
+#quickBtnBox input {
     font-size: 12px;
     margin-bottom: 2px;
     margin-right: 5px;
 }
-.setlv input[type="button"]:not(.selected) {
-    border-style: revert;
+#quickBtnBox input:not(.custom) {
+    width: 51px;
 }
 
-.setlv .ir { background-color: #71757e; color: #fff; width: 51px; }
-.setlv .br { background-color: #a65315; color: #fff; width: 51px; }
-.setlv .si { background-color: #C0C0C0; color: #000; width: 51px; }
-.setlv .go { background-color: #ffff00; color: #000; width: 51px; }
-.setlv .sa { background-color: #4169e1; color: #fff; width: 51px; }
-.setlv .pl { background-color: #ffffff; color: #000; width: 51px; }
-.setlv .bl { background-color: #000000; color: #fff; width: 51px; }
+#quickBtnBox .custom { background-color: #ffffff; color: #000; }
 
-.setlv .custom { background-color: #ffffff; color: #000; }
-.setlv .selected { border-style: inset; }
+#quickBtnBox .ir { background-color: #71757e; color: #000; }
+#quickBtnBox .br { background-color: #ba6e40; color: #000; }
+#quickBtnBox .si { background-color: #c0c0c0; color: #000; }
+#quickBtnBox .go { background-color: #ffff00; color: #000; }
+#quickBtnBox .sa { background-color: #4169e1; color: #fff; }
+#quickBtnBox .pl { background-color: #ffffff; color: #000; }
+#quickBtnBox .bl { background-color: #000000; color: #fff; }
+
+#quickBtnBox input:not(.selected) { border-style: revert; }
+#quickBtnBox .selected { border-style: inset; border-color: red; }
 
 /* set next exp box */
 
