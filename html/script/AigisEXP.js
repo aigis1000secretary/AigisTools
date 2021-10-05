@@ -94,8 +94,8 @@ let bodyOnload = () => {
         let div = document.getElementById(name).querySelector(".box1");
         div.style.cursor = "pointer";
         div.addEventListener("click", (e) => {
-            this.innerHTML = prompt(`【自由欄${name.substr(-1)}】`, this.innerHTML) || `【自由欄${name.substr(-1)}】`;
-            saveData();
+            div.innerHTML = prompt(div.title, div.innerHTML) || div.title;
+            // saveData();
         }, false);
     }
 
@@ -104,8 +104,8 @@ let bodyOnload = () => {
         let div = document.getElementById("boxtitle");
         div.style.cursor = "pointer";
         div.addEventListener("click", (e) => {
-            this.innerHTML = prompt(`名前入力`, this.innerHTML) || `育成計画`;
-            saveData();
+            div.innerHTML = prompt(`名前入力`, div.innerHTML) || div.title;
+            // saveData();
         }, false);
     }
 
@@ -117,7 +117,19 @@ let bodyOnload = () => {
         });
     }
 
-    loadData();
+    // custom quick button
+    {
+        // check old data
+        checkExpData();
+
+        // get now data
+        let keys = listExpData();
+        for (let key of keys) {
+            let time = parseInt(key.substring(13)) || 0;
+            let data = loadExpData(key);
+            quickBtn_add(time, data)
+        }
+    }
 
     // update UI
     // calc
@@ -148,6 +160,70 @@ let setLevelRange = (lv, tLv, r = 0) => {
     updateUI();
 
     calc();
+}
+// custom quick button api
+let quickBtn_add = (time, data) => {
+    let btnbox = document.querySelector('.setlv .custom').parentElement;
+
+    let btn = document.createElement('input');
+    btn.className = 'custom';
+    btn.type = 'button';
+    btn.value = data['#boxtitle'];                  // btn text
+    btn.title = new Date(time).toLocaleString();    // time in date string
+    btn.alt = time;                                 // time in number
+    btn.addEventListener("click", quickBtn_click, false);
+
+    btnbox.appendChild(btn);
+}
+// custom quick button event
+let quickBtn_click = (e) => {
+    let btn = e.target;
+    let selected = btn.classList.contains('selected');
+    for (let div of document.querySelectorAll('.setlv .selected')) {
+        div.classList.remove('selected');
+    }
+    if (selected) {
+        // action: disable selected (true to false)
+        // resetExpData();
+        return;
+    }
+
+    // action: enable selected (false to true)
+    btn.classList.add('selected');
+    // get key name
+    let time = parseInt(btn.alt);
+    let key = `AigisToolsEXP${time}`;
+    let data = loadExpData(key);
+    // set exp data
+    setExpData(data);
+}
+let quickBtn_save = () => {
+    let time = Date.now()
+    let key = `AigisToolsEXP${time}`;
+    let data = getExpData();
+    // save
+    saveExpData(key, data);
+    // add custom button
+    quickBtn_add(time, data);
+}
+let quickBtn_delete = () => {
+    let btn = document.querySelector('.setlv .selected');
+    let confirmString = btn ? `${btn.value}のデータを削除をしますか？` : "現在のデータを削除をしますか？"
+    let isExecuted = confirm(confirmString);
+    if (!isExecuted) { return; }
+    
+    // reset data or del data
+    if (!btn) {
+        resetExpData();
+        return;
+    }
+
+    // get key name
+    let time = parseInt(btn.alt);
+    let key = `AigisToolsEXP${time}`;
+    // delete exp data & button
+    deleteExpData(key);
+    btn.remove();
 }
 // panels
 let changePanels = (div) => {
@@ -243,6 +319,8 @@ let updateUI = () => {
         }
         if (lv > maxLevel[cc][rare]) {
             lv = div.querySelector('.lv').value = maxLevel[cc][rare];
+        } else if (lv <= 0) {
+            lv = div.querySelector('.lv').value = 1;
         }
         div.querySelector('.lv').max = maxLevel[cc][rare];
 
@@ -296,13 +374,10 @@ let calc = () => {
 
     if (sumEXP >= 0) {
         document.getElementById("remainingEXP").innerHTML = sumEXP - sumAdditionalEXP;
-        saveData();
     } else {
         document.getElementById("remainingEXP").innerHTML = "-";
-        clearData();
     }
     // document.getElementById("addEXP").innerHTML = sumAdditionalEXP;
-    // saveData();
 }
 
 // let keymap = [
@@ -316,8 +391,8 @@ let calc = () => {
 //     ['eF1', '#expFree01'], ['eF2', '#expFree02'], ['eF3', '#expFree03'], ['eF4', '#expFree04'],
 //     ['eC1', '#expC01'], ['eC2', '#expC02'], ['eC3', '#expC03'], ['eC4', '#expC04'], ['eS1', '#expS01'], ['eS2', '#expS02']
 // ];
-let saveData = () => {
-    let data = {};
+let getExpData = () => {
+    let obj = {};
 
     // get inputs
     let selectors = ["#boxtitle", '#selectRarity', '#selectCurrentLevel', '#inputNext', '#selectTargetLevel',
@@ -349,27 +424,25 @@ let saveData = () => {
         else if (div.type == 'number') { value = div.value * 1; }
 
         // document.cookie = `${key}=${value}`;
-        data[key] = value;
+        obj[key] = value;
     }
-
-    localStorage.setItem('AigisToolsEXP', JSON.stringify(data));
+    return obj;
 }
-let loadData = () => {
-    let obj = {};
-    try { obj = JSON.parse(localStorage.getItem('AigisToolsEXP')) } catch { }
-    if (!obj) { return; }
+let setExpData = (data) => {
+    if (!data) { return; }
 
     // set data to UI
-    document.getElementById("checkSariette").checked = obj["#checkSariette"];
-    document.getElementById("selectRarity").selectedIndex = obj["#selectRarity"]; setMaxLevel();
-    document.getElementById("selectCurrentLevel").selectedIndex = obj["#selectCurrentLevel"]; setExpLimit();
-    document.getElementById("selectTargetLevel").selectedIndex = obj["#selectTargetLevel"];
-    document.getElementById("inputNext").checked = obj["#inputNext"];
+    document.getElementById("checkSariette").checked = data["#checkSariette"] || false;
+    document.getElementById("selectRarity").selectedIndex = data["#selectRarity"] || 0; setMaxLevel();
+    document.getElementById("selectCurrentLevel").selectedIndex = data["#selectCurrentLevel"] || 0; setExpLimit();
+    document.getElementById("selectTargetLevel").selectedIndex = data["#selectTargetLevel"] || 0;
+    document.getElementById("inputNext").value = data["#inputNext"] || 0;
 
     let keys = ["#checkSariette", "#selectRarity", "#selectCurrentLevel", "#inputNext", "#selectTargetLevel"];
-    for (let key of Object.keys(obj)) {
+    for (let key of Object.keys(data)) {
         if (keys.includes(key)) { continue; };
-        let value = obj[key];
+        let value = data[key];
+        if (typeof (value) == 'undefined') { continue; }
 
         let div = document.querySelector(key);
         if (!div) { continue; }
@@ -379,8 +452,78 @@ let loadData = () => {
         else if (div.type == 'number') { div.value = value; }
     }
 }
-let clearData = () => {
-    localStorage.removeItem('AigisToolsEXP');
+let resetExpData = () => {
+    // reset input
+    document.getElementById("checkSariette").checked = false;
+    setLevelRange(1, 1, 0);
+
+    // reset box title
+    {
+        let div = document.querySelector("#boxtitle");
+        div.innerHTML = div.title;
+        for (let key of panel4) {
+            div = document.querySelector(`#${key} .box1`);
+            div.innerHTML = div.title;
+        }
+    }
+
+    // reset Panel
+    let selectors = ['#Panel1', '#Panel2', '#Panel3', '#Panel4', '#Panel5'];
+    for (let div of document.querySelectorAll('.training[id]')) {
+        selectors.push(`#${div.id} .rare`);
+        selectors.push(`#${div.id} .sex`);
+        selectors.push(`#${div.id} .cc`);
+        selectors.push(`#${div.id} .cbonus`);
+        selectors.push(`#${div.id} .lv`);
+        selectors.push(`#${div.id} .freeExp`);
+        selectors.push(`#${div.id} .count`);
+    }
+    for (let key of selectors) {
+        let div = document.querySelector(key);
+        if (!div) { continue; }
+
+        if (div.tagName == 'SELECT') { div.selectedIndex = 0; }
+        else if (div.type == 'checkbox') { div.checked = false; }
+        else if (div.type == 'number') { div.value = div.min || 0; }
+    }
+
+    updateUI()
+    calc();
+}
+
+let saveExpData = (key, data) => {
+    localStorage.setItem(key, JSON.stringify(data));
+}
+let loadExpData = (key) => {
+    let data = {};
+    try { data = JSON.parse(localStorage.getItem(key)) } catch { }
+    return data;
+}
+let deleteExpData = (key) => {
+    localStorage.removeItem(key);
+}
+let listExpData = () => {
+    let keys = Object.keys(localStorage).filter((key) => key.startsWith('AigisToolsEXP')).sort();
+    return keys;
+}
+let clearExpData = (key) => {
+    let keys = Object.keys(localStorage).filter((key) => key.startsWith('AigisToolsEXP'));
+    for (let key of keys) {
+        localStorage.removeItem(key);
+    }
+}
+let checkExpData = () => {
+    let keys = listExpData();
+    for (let _key of keys) {
+        let time = parseInt(_key.substring(13)) || 0;
+        let key = `AigisToolsEXP${time}`;
+        if (_key != key) {
+            let data = loadExpData(_key);
+            saveExpData(key, data);
+            deleteExpData(_key);
+        }
+    }
+    return;
 }
 
 

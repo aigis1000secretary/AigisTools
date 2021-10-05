@@ -51,9 +51,9 @@
               </select>
             </div>
 
-            <div class="box setlv">
+            <div class="box setlv" style="width: 448px; font-size: 0;">
               <input class="ir" type="button" value="1→40" onclick="setLevelRange(1, 40, 0);">
-              <input class="ir" type="button" value="1→50" onclick="setLevelRange(1, 50, 1);">
+              <input class="br" type="button" value="1→50" onclick="setLevelRange(1, 50, 1);">
               <input class="si" type="button" value="1→30" onclick="setLevelRange(1, 30, 2);">
               <input class="si" type="button" value="1→50" onclick="setLevelRange(1, 50, 2);">
               <input class="si" type="button" value="1→55" onclick="setLevelRange(1, 55, 2);">
@@ -69,6 +69,9 @@
               <input class="pl" type="button" value="1→99" onclick="setLevelRange(1, 99, 5);">
               <input class="bl" type="button" value="1→80" onclick="setLevelRange(1, 80, 6);">
               <input class="bl" type="button" value="1→99" onclick="setLevelRange(1, 99, 6);">
+              <br>
+              <input class="custom" type="button" value="保存" onclick="quickBtn_save();">
+              <input class="custom" type="button" value="削除" onclick="quickBtn_delete();" style="float: right;">
             </div>
 
             <div class="box setlv">
@@ -114,7 +117,7 @@
 
             <!-- title -->
             <div class="box">
-              <div id="boxtitle" style="font-size: 18px; font-weight: bold;">育成計画</div>
+              <div id="boxtitle" title="育成計画" style="font-size: 18px; font-weight: bold;">育成計画</div>
               <label for="checkSariette" style="user-select: none;">
                 <input type="checkbox" id="checkSariette" onchange="changePanels();">
                 育成の聖霊サリエット
@@ -370,7 +373,7 @@
             <div class="accContent">
 
               <div class="box training show" id="expFree01">
-                <div class="box1">【自由欄1】</div>
+                <div class="box1" title="【自由欄1】">【自由欄1】</div>
                 <div class="box2"> <input class="freeExp" type="number" value="0" min="0"
                     title="サリエット有りの人は1.1倍の値を入力してください。"> </div>
                 <div class="box3">
@@ -381,7 +384,7 @@
               </div>
 
               <div class="box training show" id="expFree02">
-                <div class="box1">【自由欄2】</div>
+                <div class="box1" title="【自由欄2】">【自由欄2】</div>
                 <div class="box2"> <input class="freeExp" type="number" value="0" min="0"
                     title="サリエット有りの人は1.1倍の値を入力してください。"> </div>
                 <div class="box3">
@@ -392,7 +395,7 @@
               </div>
 
               <div class="box training show" id="expFree03">
-                <div class="box1">【自由欄3】</div>
+                <div class="box1" title="【自由欄3】">【自由欄3】</div>
                 <div class="box2"> <input class="freeExp" type="number" value="0" min="0"
                     title="サリエット有りの人は1.1倍の値を入力してください。"> </div>
                 <div class="box3">
@@ -403,7 +406,7 @@
               </div>
 
               <div class="box training show" id="expFree04">
-                <div class="box1">【自由欄4】</div>
+                <div class="box1" title="【自由欄4】">【自由欄4】</div>
                 <div class="box2"> <input class="freeExp" type="number" value="0" min="0"
                     title="サリエット有りの人は1.1倍の値を入力してください。"> </div>
                 <div class="box3">
