@@ -501,7 +501,7 @@ let setExpData = (data) => {
 }
 let resetExpData = () => {
     // reset input
-    document.getElementById("checkSariette").checked = false;
+    // document.getElementById("checkSariette").checked = false;
     setLevelRange(1, 1, 0);
 
     // reset box title
@@ -527,7 +527,7 @@ let resetExpData = () => {
     }
     for (let key of selectors) {
         let div = document.querySelector(key);
-        if (!div) { continue; }
+        if (!div || div.disabled) { continue; }
 
         if (div.tagName == 'SELECT') { div.selectedIndex = 0; }
         else if (div.type == 'checkbox') { div.checked = false; }
