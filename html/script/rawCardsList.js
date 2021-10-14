@@ -1,4 +1,4 @@
-var maxCid = 1331;
+var maxCid = 1336;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1330,5 +1330,10 @@ var charaData = [
 	{	"id": 1328,	"name": "上級ウォーターエレメンタル",	"rare": 5,	"classID": 6370,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1328_00"	},
 	{	"id": 1329,	"name": "山姫アヅミ",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1329_00",	"imgaw": "1329_01"	},
 	{	"id": 1330,	"name": "ちびグレース",	"rare": 3,	"classID": 22400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1330_00"	},
-	{	"id": 1331,	"name": "ちびソシエ",	"rare": 3,	"classID": 33100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1331_00"	}
+	{	"id": 1331,	"name": "ちびソシエ",	"rare": 3,	"classID": 33100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1331_00"	},
+	{	"id": 1332,	"name": "天使の悪戯セフィーレ",	"rare": 4,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1332_00"	},
+	{	"id": 1333,	"name": "仮装盗賊セブン",	"rare": 4,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1333_00",	"imgaw": "1333_01"	},
+	{	"id": 1334,	"name": "悪戯な白翼パリオス",	"rare": 5,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1334_00",	"imgaw": "1334_01"	},
+	{	"id": 1335,	"name": "籠城を手伝う村人",	"rare": 1,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1336,	"name": "バリケード",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1336_00"	}
 ]
