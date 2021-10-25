@@ -1,5 +1,6 @@
 // file: sample.js
 const fs = require('fs');
+const child_process = require('child_process');
 
 let xmlspath = "./AigisTools/Data/XML";
 let filepath = "./AigisTools/Data/XML";
@@ -56,6 +57,13 @@ module.exports = {
             // check dir
             if (!fs.existsSync(xmlspath)) { fs.mkdirSync(xmlspath, { recursive: true }); }
             if (!fs.existsSync(filepath)) { fs.mkdirSync(filepath, { recursive: true }); }
+            else {
+                console.log(`${COLOR.fgRed}${COLOR.bright}found ${filepath} folder, plz delete old version first!!${COLOR.reset}`);
+                return null;
+                // for debug
+                fs.renameSync(filepath, filepath + "_");
+                fs.mkdirSync(filepath, { recursive: true });
+            }
 
             // Desktop A.txt
             fs.writeFile(`${xmlspath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt has been saved!`); });
@@ -65,6 +73,7 @@ module.exports = {
             fs.writeFile(`${filepath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt backup has been saved!`); });
 
             filelist = true;
+            return null;
         }
 
         // get xml
@@ -79,23 +88,34 @@ module.exports = {
                 'oS5aZ5ll', // army information
             ]
             let [, xmlName] = url.match(/\/(\S{8})$/);
-
-            if (xmlTarget.includes(xmlName)) {
-                let body = responseDetail.response.body.toString("base64");
-                fs.writeFile(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
-                fs.writeFile(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
-
-                if (!filelist) {
-                    console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
-                }
-            } else if (xmlSubTarget.includes(xmlName)) {
-                let body = responseDetail.response.body.toString("base64");
-                fs.writeFile(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
-
-                if (!filelist) {
-                    console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
-                }
+            // skip if not target
+            if (!xmlTarget.includes(xmlName) && !xmlSubTarget.includes(xmlName)) { return null; }
+            // wait for filelist path
+            if (!filelist) {
+                console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
+                return null;
             }
+
+            // get xml data file           
+            let body = responseDetail.response.body.toString("base64");
+            fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+            if (xmlTarget.includes(xmlName)) {
+                fs.writeFileSync(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
+            }
+
+            // xcopy
+            // check download all done?
+            let dlflag = true;
+            for (let key of xmlTarget) {
+                if (!fs.existsSync(`${filepath}/${key}`)) { dlflag = false; }
+            }
+            // call next step script
+            if (dlflag) {
+                console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
+                child_process.exec(`cd ..\\AigisLoader&start node .\\index.js`);
+            }
+
+            return null;
         }
 
         // else {

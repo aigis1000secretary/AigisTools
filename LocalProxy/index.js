@@ -11,7 +11,11 @@ const options = {
 };
 const proxyServer = new AnyProxy.ProxyServer(options);
 
-proxyServer.on('ready', () => { console.log("AnyProxy ready"); });
+proxyServer.on('ready', () => {
+    console.log("AnyProxy ready");
+    console.log("Set proxy 127.0.0.1:8000");
+    console.log("Login Aigis or AigisR");
+});
 // proxyServer.on('error', (e) => { /* */ });
 proxyServer.start();
 
