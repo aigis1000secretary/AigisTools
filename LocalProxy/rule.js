@@ -90,15 +90,18 @@ module.exports = {
             let [, xmlName] = url.match(/\/(\S{8})$/);
             // skip if not target
             if (!xmlTarget.includes(xmlName) && !xmlSubTarget.includes(xmlName)) { return null; }
+
+            // get xml data file
+            let body = responseDetail.response.body.toString("base64");
+            fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+
             // wait for filelist path
             if (!filelist) {
                 console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
                 return null;
             }
 
-            // get xml data file           
-            let body = responseDetail.response.body.toString("base64");
-            fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+            // get xml data file
             if (xmlTarget.includes(xmlName)) {
                 fs.writeFileSync(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
             }
