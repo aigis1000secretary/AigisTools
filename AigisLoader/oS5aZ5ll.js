@@ -88,8 +88,11 @@ const main = async () => {
         JSON.stringify(_oS5aZ5ll, null, 2)
             .replaceAll(`"A1"`, `"CardID"`)
             .replaceAll(`"A2"`, `"ClassID"`)
+            .replaceAll(`"A3"`, `"CCAW"`)
             .replaceAll(`"A4"`, `"EXP"`)
+            .replaceAll(`"A5"`, `"Love"`)
             .replaceAll(`"A6"`, `"SkillLv"`)
+            .replaceAll(`"AA"`, `"CostDec"`)
     );
 
     // get card list str
