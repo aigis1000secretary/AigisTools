@@ -419,9 +419,11 @@ let calc = () => {
     if (sumEXP >= 0) {
         let rare = document.getElementById("selectRarity");
         rare = rare.options[rare.selectedIndex].label;
+        let targetNext = expTable[currentTargetLevel][document.getElementById("selectRarity").selectedIndex + 1];
+        targetNext = targetNext > 0 ? `(${targetNext})` : '';
 
         document.getElementById("inputInformation").innerHTML =
-            `${rare}<br>レベル：${currentLevel}(${getNext()})→${currentTargetLevel}`;
+            `${rare}<br>レベル：${currentLevel}(${getNext()})→${currentTargetLevel}${targetNext}`;
     } else {
         document.getElementById("inputInformation").innerHTML = "-";
     }
