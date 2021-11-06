@@ -18,6 +18,50 @@ const COLOR = {
     bgBlue: '\x1b[44m', bgMagenta: '\x1b[45m', bgCyan: '\x1b[46m', bgWhite: '\x1b[47m',
 };
 
+let towerLevelKey = {
+    'fwzbngzy0orswf3': 1,  // 154880
+    'boncacfko8fdjq3': 2,  // 124400
+    'o946xfoj2xswyq1': 3,  // 161920
+    '4vhksdry7mkpncu': 4,  // 142800
+    'oe68v0rgojvejx0': 5,  // 154000
+    'x7gcg020lpw08zp': 6,  // 125580
+    's4uoanvbbg1665w': 7,  // 159620
+    '0jiecxcvcv87cmo': 8,  // 108680
+    'sd3yzlviuw1ai5j': 9,  // 97660
+    's2epsi7y9w1hxg0': 10, // 159620
+    'l1k7y62j15ynzxr': 11, // 147200
+    'p29v4lzqs9xx09f': 12, // 151360
+    '6hlyv5h3cj8um4n': 13, // 140800
+    '65dlsuc75uqzsl8': 14, // 128040
+    'j8y0aba064x8hvl': 15, // 141680
+    'ymlhqcfa13tqxcs': 16, // 150480
+    'ezaa68x9ottxpsh': 17, // 117200
+    'xq0v212ix42cwu4': 18, // 141680
+    'h0kpffvr38ou3z7': 19, // 129360
+    'j53g2mydf6jhviw': 20, // 141680
+    'qnaowe38mbui577': 21, // 112860
+    'pcd7hjzyrglefbi': 22, // 163760
+    'wrdu8d49auwp096': 23, // 71060
+    'vjptkjmfhjwflpq': 24, // 146280
+    'afqyaff5f5yxqdr': 25, // 146740
+    'wue9bocr092xnzk': 26, // 161920
+    'cvy19eany62bee6': 27, // 169920
+    'gbftdy0mgpvou5a': 28, // 107160
+    'nlas453x47j78a3': 29, // 128520
+    '754zzog7jouyvuq': 30, // 101600
+    '238rlcw1qrf8kc9': 31, // 133980
+    'aghof5nfmp3stlq': 32, // 64020
+    'dchlfr07ms67810': 33, // 146080
+    'syzqbc4oz963yh4': 34, // 156200
+    '2fdrle6cc9u7lga': 35, // 94000
+    '7flh6d72yf2p0p0': 36, // 147200
+    '4n96ht4n78mkldg': 37, // 157780
+    'mwtaokaeqt63n5w': 38, // 157440
+    'opxkd3qz264jlxf': 39, // 157920
+    '7oa6yqrz7fgvgnc': 40  // 159840
+}
+
+
 module.exports = {
     summary: 'AigisTools auxiliary proxy',
 
@@ -86,10 +130,37 @@ module.exports = {
             ]
             let xmlSubTarget = [
                 'oS5aZ5ll', // army information
+                'aE7DRVtp', // tower information
             ]
             let [, xmlName] = url.match(/\/(\S{8})$/);
             // skip if not target
             if (!xmlTarget.includes(xmlName) && !xmlSubTarget.includes(xmlName)) { return null; }
+
+
+            if (xmlName == 'aE7DRVtp') {
+                if (fs.existsSync(`${xmlspath}/${xmlName}`)) { fs.unlinkSync(`${xmlspath}/${xmlName}`); }
+
+                let body = responseDetail.response.body.toString("base64");
+                fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+
+                let cmd = `copy ${xmlspath.replace(/\//g, '\\')}\\aE7DRVtp .${xmlspath.replace(/\//g, '\\')}\\aE7DRVtp /Y`;
+                child_process.execSync(cmd).toString();
+                child_process.execSync(`do xml aE7DRVtp raw`, { cwd: `../AigisTools` }).toString().trim();
+
+                let xml = fs.readFileSync(`..\\AigisTools\\out\\aE7DRVtp.xml`).toString();
+                let regKey = /ExchangeKey<\/V><\/KEY><VALUE T=\"S\"><V>(\S{15})<\/V>/;
+                let regScore = /<Score T=\"I\"><V>(\d+)<\/V>/;
+
+                if (regKey.test(xml) && regScore.test(xml)) {
+                    let [, key] = xml.match(regKey);
+                    let [, score] = xml.match(regScore);
+                    let lv = towerLevelKey[key] || key;
+
+                    console.log(lv.toString().padStart(2, ' '), score);
+                }
+
+                return null;
+            }
 
             // get xml data file
             let body = responseDetail.response.body.toString("base64");
@@ -115,7 +186,7 @@ module.exports = {
             // call next step script
             if (dlflag) {
                 console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
-                child_process.exec(`cd ..\\AigisLoader&start node .\\index.js`);
+                child_process.exec(`cd ..&start 2.1_AigisLoader.bat`);
             }
 
             return null;
