@@ -1,4 +1,4 @@
-var maxCid = 1353;
+var maxCid = 1355;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1347,10 +1347,12 @@ var charaData = [
 	{	"id": 1345,	"name": "帝国魔術師イルマ",	"rare": 4,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1345_00",	"imgaw": "1345_01"	},
 	{	"id": 1346,	"name": "帝国重装騎士エルデ",	"rare": 4,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1346_00",	"imgaw": "1346_01"	},
 	{	"id": 1347,	"name": "帝国鬼娘サザンカ",	"rare": 4,	"classID": 4700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1347_00",	"imgaw": "1347_01"	},
-	{	"id": 1348,	"name": "インペリアルキャノン",	"rare": 5,	"classID": 150400,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1348_00"	},
-	{	"id": 1349,	"name": "インペリアルキャノンΩ",	"rare": 5,	"classID": 150420,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1349_00"	},
-	{	"id": 1350,	"name": "インペリアルキャノンΩ",	"rare": 5,	"classID": 150470,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1350_00"	},
-	{	"id": 1351,	"name": "インペリアルキャノンΩ",	"rare": 5,	"classID": 150480,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1351_00"	},
+	{	"id": 1348,	"name": "インペリアルキャノン",	"rare": 5,	"classID": 150400,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1348_00"	},
+	{	"id": 1349,	"name": "インペリアルキャノンΩ",	"rare": 5,	"classID": 150420,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1349_00"	},
+	{	"id": 1350,	"name": "インペリアルキャノンΩ",	"rare": 5,	"classID": 150470,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1350_00"	},
+	{	"id": 1351,	"name": "インペリアルキャノンΩ",	"rare": 5,	"classID": 150480,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1351_00"	},
 	{	"id": 1352,	"name": "ちびデューオ",	"rare": 3,	"classID": 30400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1352_00"	},
-	{	"id": 1353,	"name": "ちびエスタ",	"rare": 3,	"classID": 21100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1353_00"	}
+	{	"id": 1353,	"name": "ちびエスタ",	"rare": 3,	"classID": 21100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1353_00"	},
+	{	"id": 1354,	"name": "聖樹の魔剣士マリレーヌ",	"rare": 4,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1354_00",	"imgaw": "1354_01"	},
+	{	"id": 1355,	"name": "魔神の共鳴者レライエ",	"rare": 4,	"classID": 15700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1355_00",	"imgaw": "1355_01"	}
 ]
