@@ -642,6 +642,7 @@ const aigisCardsList = async function () {
     for (i in _GRs733a4) {
 
         let card = _GRs733a4[i];
+        if (!nameListRaw[i]) { console.log(`${COLOR.fgRed}Cant found CardID == ${i + 1}${COLOR.reset}`); continue; }
         let _class = classListRaw.find(e => e.ClassID == card.InitClassID);
         if (!_class) { console.error(`${COLOR.fgRed}Cant found ClassID == ${card.InitClassID}${COLOR.reset}`) }
 
@@ -1151,7 +1152,7 @@ const aigisQuestsList = async () => {
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 if (entryLocation.length > 0) mapLocationList[map][`Entry${entry}`] = entryLocation;
 
-            } else if (entry && fs.existsSync(`MapLocationList.json`)) {
+            } else if (entry && fs.existsSync(`MapLocationList.json`) && oldLocationList[map][`Entry${entry}`]) {
                 // console.log(`${COLOR.fgRed}cant found Location${location} data${COLOR.reset}`)
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 mapLocationList[map][`Entry${entry}`] = oldLocationList[map][`Entry${entry}`];
@@ -1181,7 +1182,7 @@ const aigisQuestsList = async () => {
             md5List.forEach((_md5, _id) => { if (_md5 == md5 && _id.toString() != id) backup.push(_id); });
             if (backup.length == 0) continue;
             console.log(`${fname} location data is not exist, image same with Map${backup[0]} & other ${backup.length - 1} files`);
-            
+
             fs.unlinkSync(`${mapsOutputPath}/${fname}`)
         }
         // console.log(md5List)
