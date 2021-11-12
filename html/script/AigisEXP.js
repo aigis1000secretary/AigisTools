@@ -354,14 +354,16 @@ let updateUI = () => {
             lv = div.querySelector('.lv').value = 1;
         }
         div.querySelector('.lv').max = maxLevel[cc][rare];
+        if (div.querySelector('.lv').title) { div.querySelector('.lv').max = div.querySelector('.lv').title; }
 
         // variable
         let ccexp = [0, 1].includes(rare) ? 5 : [7, 20, 50][cc];
         let exp = customizeConfig[rare][sex];
-        if (box2.title) { exp = box2.title * 1; }
+        if (div.title) { exp = div.title * 1; }
 
         exp += cbonus * customizeConfig[rare][2];
         exp += (lv - 1) * ccexp;
+        box2.title = exp;
         exp = (exp * r).toFixed(1).replace(/\.0$/, "");
 
         box2.innerHTML = exp;
@@ -386,12 +388,20 @@ let calc = () => {
 
     // remainingEXP
     let sumAdditionalEXP = 0;
+    let r = document.getElementById('checkSariette').checked ? 1.1 : 1.0;
     for (let div of document.querySelectorAll('.training[id]')) {
         let freeExp = div.querySelector(".freeExp");
-        let addExp = freeExp ?
-            freeExp.value :
-            div.querySelector(".box2").innerHTML;
-        addExp = Math.floor(addExp * 1 * (div.querySelector('.count').value * 1));
+        let count = div.querySelector('.count').value * 1;
+        let addExp = 0;
+        if (freeExp) {
+            addExp = freeExp.value * 1;
+            addExp = Math.floor(addExp * count);
+            addExp = Math.floor(addExp * r);
+        } else {
+            addExp = div.querySelector(".box2").title * 1;
+            addExp = Math.floor(addExp * count);
+            addExp = Math.floor(addExp * r);
+        }
 
         if (addExp || (freeExp && freeExp.value > 0)) {
             sumAdditionalEXP += addExp;
