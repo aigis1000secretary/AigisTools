@@ -78,8 +78,8 @@ let bodyOnload = () => {
             if (!isMobile()) { btn.addEventListener("mouseover", (e) => { btn.select(); }, false); }
             btn.addEventListener("change", calc, false);
             btn.addEventListener("keydown", (e) => {
-                if (btn.max != "" && e.key == 'End') { btn.value = btn.max; calc(); }    // end  e.keyCode == 36
-                if (btn.min != "" && e.key == 'Home') { btn.value = btn.min; calc(); }   // home e.keyCode == 35
+                if (btn.max != "" && e.key == 'End') { btn.value = btn.max; changePanels(); }    // end  e.keyCode == 36
+                if (btn.min != "" && e.key == 'Home') { btn.value = btn.min; changePanels(); }   // home e.keyCode == 35
             }, false);
         }
     }
