@@ -396,10 +396,12 @@ let calc = () => {
         if (freeExp) {
             addExp = freeExp.value * 1;
             addExp = Math.floor(addExp * count);
-            addExp = Math.floor(addExp * r);
         } else {
             addExp = div.querySelector(".box2").title * 1;
             addExp = Math.floor(addExp * count);
+        }
+        let panel = div.parentElement.previousElementSibling;
+        if (!panel || panel.id != 'Panel4') {
             addExp = Math.floor(addExp * r);
         }
 
