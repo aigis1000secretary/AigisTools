@@ -173,6 +173,11 @@ let init = function () {
 
     for (let i in charaData) {
         if (charaData[i] == null) continue;
+        if ([1377, 1378, 1379,
+            1380, 1381, 1382,
+            1383, 1384, 1385,
+            1386, 1387, 1388
+        ].includes(charaData[i].id)) continue;
 
         // build dom element
         let icon = document.createElement("img");
@@ -227,6 +232,9 @@ let setHr = function (type) {
             aText = aData.year + "年";
             bText = bData.year + "年";
 
+            if (aData.sortGroupID == 25 && aData.id != 418) aText = "王子";
+            if (bData.sortGroupID == 25 && bData.id != 418) bText = "王子";
+
         } else if (type == "rare") {
             let textList = [, , "シルバー", "ゴールド", "プラチナ", "ブラック", , "サファイア", , , "プラチナ英傑", "ブラック英傑"];
             aText = textList[parseInt(aData.rare)];
@@ -243,6 +251,9 @@ let setHr = function (type) {
             let textList = ["", "近接", "遠隔", "両用"];
             aText = textList[aData.placeType];
             bText = textList[bData.placeType];
+
+            if (aData.sortGroupID == 25 && aData.id != 418) aText = "王子";
+            if (bData.sortGroupID == 25 && bData.id != 418) bText = "王子";
 
         } else if (type == "kind") {
             let textList = ["男性", "女性"];
@@ -354,14 +365,16 @@ let doStatistics = function () {
             if (!icon || icon.tagName != "IMG") break;
 
             let cData = charaData.find((c) => icon.id == c.id);
-            if ([3, 4, 6, 7].includes(cData.assign) || cData.assign < 0) {
-                collabIconCount++;
-                collabTrueCount += icon.alt == "true" ? 1 : 0;
-            } else {
-                globalIconCount++;
-                globalTrueCount += icon.alt == "true" ? 1 : 0;
-            }
 
+            if (cData.sortGroupID != 25 || cData.id == 418) {
+                if ([3, 4, 6, 7].includes(cData.assign) || cData.assign < 0) {
+                    collabIconCount++;
+                    collabTrueCount += icon.alt == "true" ? 1 : 0;
+                } else {
+                    globalIconCount++;
+                    globalTrueCount += icon.alt == "true" ? 1 : 0;
+                }
+            }
 
             // if (icon.hidden) continue;
             iconCount++;
@@ -416,8 +429,12 @@ let sortByDate = function (ascending) {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
+        let iA, iB;
+        iA = (aData.sortGroupID == 25 && aData.id != 418) ? aData.id - 5000 : aData.id;
+        iB = (bData.sortGroupID == 25 && bData.id != 418) ? bData.id - 5000 : bData.id;
+
         // sort by id
-        if (aData.id != bData.id) return (!!ascending == (aData.id < bData.id)) ? -1 : 1;
+        if (iA != iB) return (!!ascending == (iA < iB)) ? -1 : 1;
 
         return 0;
     })

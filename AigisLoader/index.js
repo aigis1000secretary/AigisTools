@@ -758,7 +758,12 @@ const aigisCardsList = async function () {
             let kind = card.Kind;
             // 0: 男性, 1: 女性, 2: 無性(?), 3: 換金, 2: 經驗
             let isToken = (card.SellPrice == 0 || nameListRaw[i].Message.includes("ダミー")) ? 1 : 0;
-
+          
+            if ([1377, 1378, 1379,
+                1380, 1381, 1382,
+                1383, 1384, 1385,
+                1386, 1387, 1388
+            ].includes(card.CardID)) continue;
 
             // db data
             let name = nameListRaw[i].Message;
