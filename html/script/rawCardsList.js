@@ -1,4 +1,4 @@
-var maxCid = 1365;
+var maxCid = 1388;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1364,5 +1364,28 @@ var charaData = [
 	{	"id": 1362,	"name": "英雄の剣（人）",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1363,	"name": "英雄の盾（人）",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1364,	"name": "叡智の杖",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1365,	"name": "プレイスエンチャント4",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1365,	"name": "プレイスエンチャント4",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1366,	"name": "魔導を宿す者ラーワル",	"rare": 11,	"classID": 130900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1366_00",	"imgaw": "1366_01"	},
+	{	"id": 1367,	"name": "魔導を宿す者ラーワル",	"rare": 11,	"classID": 131000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1367_00",	"imgaw": "1367_01"	},
+	{	"id": 1368,	"name": "魔導を宿す者ラーワル",	"rare": 11,	"classID": 131100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1368_00",	"imgaw": "1368_01"	},
+	{	"id": 1369,	"name": "魔導を宿す者ラーワル",	"rare": 10,	"classID": 130900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1369_00",	"imgaw": "1369_01"	},
+	{	"id": 1370,	"name": "魔導を宿す者ラーワル",	"rare": 10,	"classID": 131000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1370_00",	"imgaw": "1370_01"	},
+	{	"id": 1371,	"name": "魔導を宿す者ラーワル",	"rare": 10,	"classID": 131100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1371_00",	"imgaw": "1371_01"	},
+	{	"id": 1372,	"name": "獅子女の覇者ホルテウス",	"rare": 11,	"classID": 150500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1372_00",	"imgaw": "1372_01"	},
+	{	"id": 1373,	"name": "獅子女の覇者ホルテウス",	"rare": 10,	"classID": 150500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1373_00",	"imgaw": "1373_01"	},
+	{	"id": 1374,	"name": "スフィンクス",	"rare": 5,	"classID": 131300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1374_00"	},
+	{	"id": 1375,	"name": "世界樹の聖霊ラタトスク",	"rare": 5,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1375_00"	},
+	{	"id": 1376,	"name": "世界樹の苗",	"rare": 5,	"classID": 130000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1377,	"name": "王子【神器装備】",	"rare": 5,	"classID": 9920,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1377_00"	},
+	{	"id": 1378,	"name": "王子【神器装備】",	"rare": 5,	"classID": 9920,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1378_00"	},
+	{	"id": 1379,	"name": "王子【神器装備】",	"rare": 5,	"classID": 9920,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1379_00"	},
+	{	"id": 1380,	"name": "王子【ケラウノス】",	"rare": 5,	"classID": 9930,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1380_00"	},
+	{	"id": 1381,	"name": "王子【ケラウノス】",	"rare": 5,	"classID": 9930,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1381_00"	},
+	{	"id": 1382,	"name": "王子【ケラウノス】",	"rare": 5,	"classID": 9930,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1382_00"	},
+	{	"id": 1383,	"name": "王子【英雄王】",	"rare": 5,	"classID": 122000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1383_00"	},
+	{	"id": 1384,	"name": "王子【英雄王】",	"rare": 5,	"classID": 122000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1384_00"	},
+	{	"id": 1385,	"name": "王子【英雄王】",	"rare": 5,	"classID": 122000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1385_00"	},
+	{	"id": 1386,	"name": "王子【神槍】",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1386_00"	},
+	{	"id": 1387,	"name": "王子【神槍】",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1387_00"	},
+	{	"id": 1388,	"name": "王子【神槍】",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1388_00"	}
 ]

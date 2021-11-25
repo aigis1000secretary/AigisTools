@@ -1005,6 +1005,8 @@ const aigisQuestsList = async () => {
 
                 if (missionID == 110001) {
                     map = `110001_${map}`;
+                } else if (missionID == 110002) {
+                    map = `110002_${map}`;
                 }
             }
             // get quest name text
