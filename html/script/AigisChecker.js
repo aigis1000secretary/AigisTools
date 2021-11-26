@@ -161,6 +161,10 @@ let bodyOnload = function () {
             sortByYearGacha();
             break;
 
+        case "ticket":
+            sortByTicket();
+            break;
+
         default:
             sortByRare(false);
             break;
@@ -261,9 +265,10 @@ let setHr = function (type) {
             bText = textList[bData.kind];
 
         } else if (type == "isEvent") {
-            let textList = ["ガチャ", "イベント", "小説"];
+            let textList = ["ガチャ", "イベント", "コード"];
             aText = textList[(aData.rare == 7) ? 2 : aData.isEvent];
             bText = textList[(bData.rare == 7) ? 2 : bData.isEvent];
+
         } else if (type == "assign") {
             let textList = [];
             textList[-6] = "なないろリンカネーション（ななリン）";
@@ -301,23 +306,44 @@ let setHr = function (type) {
             if (bData.genus == 0) hidden = true;
 
         } else if (type == "yearGacha") {
-            let aBool, bBool;
-            aBool = (aData.isEvent == 0 && 5.0 <= aData.rare && aData.rare < 5.2) ? 1 : 0;
-            bBool = (bData.isEvent == 0 && 5.0 <= bData.rare && bData.rare < 5.2) ? 1 : 0;
-            if (aBool) aText += "ガチャ ブラック "
-            if (bBool) bText += "ガチャ ブラック "
+            let iA, iB;
+            iA = (aData.isEvent == 0 && aData.rare == 5) ? 1 : 0;
+            iB = (bData.isEvent == 0 && bData.rare == 5) ? 1 : 0;
+            if (iA) aText += "ガチャ ブラック "
+            if (iB) bText += "ガチャ ブラック "
 
             let al = [0, 5, 8];
-            aBool = (al.find(i => i == aData.assign) != undefined) && aData.genus == 0 && aData.rare * 10 % 10 == 0;
-            bBool = (al.find(i => i == bData.assign) != undefined) && bData.genus == 0 && bData.rare * 10 % 10 == 0;
-            if (!aBool) aText = "限定" + aText;
-            if (!bBool) bText = "限定" + bText;
+            iA = ((al.includes(aData.assign)) && aData.genus == 0) ? 1 : 0;
+            iB = ((al.includes(bData.assign)) && bData.genus == 0) ? 1 : 0;
+            if (!iA && aText) aText = "限定" + aText;
+            if (!iB && bText) bText = "限定" + bText;
 
-            aText = aData.year + "年 " + aText;
-            bText = bData.year + "年 " + bText;
+            if (aText) aText = aData.year + "年 " + aText;
+            if (bText) bText = bData.year + "年 " + bText;
 
-            if (!bBool) hidden = true;
+            if (!iB) hidden = true;
 
+        } else if (type == "ticket") {
+            let textList = ['ブラック交換チケット',
+                '4周年ブラックチケット', '5周年ブラックチケット', '6周年ブラックチケット',
+                '7周年ブラックチケット', '8周年ブラックチケット',
+                '他', 'hidden']
+
+            let iA = aData.id <= 362 ? 0 : (aData.id <= 523 ? 1 : (aData.id <= 662 ? 2 : (aData.id <= 866 ? 3 : (aData.id <= 1046 ? 4 : (aData.id <= 1292 ? 5 : 6)))));
+            let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : 6)))));
+            // hidden icon
+            if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8].includes(aData.assign)) ||
+                (aData.genus != 0) || (aData.sortGroupID == 25 && aData.id != 418)) {
+                iA = 7;
+                hidden = true;
+            } if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8].includes(bData.assign)) ||
+                (bData.genus != 0) || (bData.sortGroupID == 25 && bData.id != 418)) {
+                iB = 7;
+                hidden = true;
+            }
+
+            aText = textList[iA];
+            bText = textList[iB];
         }
 
         // set hr or not
@@ -430,9 +456,12 @@ let sortByDate = function (ascending) {
 
     charaData.sort(function compare(aData, bData) {
         let iA, iB;
-        iA = (aData.sortGroupID == 25 && aData.id != 418) ? aData.id - 5000 : aData.id;
-        iB = (bData.sortGroupID == 25 && bData.id != 418) ? bData.id - 5000 : bData.id;
+        iA = (aData.sortGroupID == 25 && aData.id != 418) ? 0 : 1;
+        iB = (bData.sortGroupID == 25 && bData.id != 418) ? 0 : 1;
+        if (iA != iB) return (iA < iB) ? -1 : 1;
 
+        iA = aData.id;
+        iB = bData.id;
         // sort by id
         if (iA != iB) return (!!ascending == (iA < iB)) ? -1 : 1;
 
@@ -555,9 +584,10 @@ let sortByAssign = function () {
 
     charaData.sort(function compare(aData, bData) {
         // sort by assign
-        if (aData.assign == 0) return 1;
-        if (bData.assign == 0) return -1;
-        if (aData.assign != bData.assign) return (aData.assign < bData.assign) ? -1 : 1;
+        let iA, iB;
+        iA = (aData.assign == 0) ? 5000 : aData.assign;
+        iB = (bData.assign == 0) ? 5000 : bData.assign;
+        if (iA != iB) return iA < iB ? -1 : 1;
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
@@ -580,9 +610,10 @@ let sortByGenus = function () {
 
     charaData.sort(function compare(aData, bData) {
         // sort by genus
-        if (aData.genus == 0) return 1;
-        if (bData.genus == 0) return -1;
-        if (aData.genus != bData.genus) return (aData.genus < bData.genus) ? -1 : 1;
+        let iA, iB;
+        iA = (aData.genus == 0) ? 5000 : aData.genus;
+        iB = (bData.genus == 0) ? 5000 : bData.genus;
+        if (iA != iB) return iA < iB ? -1 : 1;
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
@@ -605,16 +636,16 @@ let sortByYearGacha = function () {
 
     charaData.sort(function compare(aData, bData) {
         // sort rare
-        let aBool, bBool;
-        aBool = (aData.isEvent == 0 && 5.0 <= aData.rare && aData.rare < 5.2) ? 1 : 0;
-        bBool = (bData.isEvent == 0 && 5.0 <= bData.rare && bData.rare < 5.2) ? 1 : 0;
-        if (aBool != bBool) return aBool ? -1 : 1;
+        let iA, iB;
+        iA = (aData.isEvent == 0 && aData.rare == 5) ? 1 : 0;
+        iB = (bData.isEvent == 0 && bData.rare == 5) ? 1 : 0;
+        if (iA != iB) return iA > iB ? -1 : 1;
 
         // sort 限定
         let al = [0, 5, 8];
-        aBool = (al.find(i => i == aData.assign) != undefined) && aData.genus == 0 && aData.rare * 10 % 10 == 0;
-        bBool = (al.find(i => i == bData.assign) != undefined) && bData.genus == 0 && bData.rare * 10 % 10 == 0;
-        if (aBool != bBool) return aBool ? -1 : 1;
+        iA = ((al.includes(aData.assign)) && aData.genus == 0) ? 1 : 0;
+        iB = ((al.includes(bData.assign)) && bData.genus == 0) ? 1 : 0;
+        if (iA != iB) return iA > iB ? -1 : 1;
 
         // sort by year
         if (aData.year != bData.year) return (aData.year < bData.year) ? -1 : 1;
@@ -626,6 +657,33 @@ let sortByYearGacha = function () {
 
     init();
     setHr("yearGacha");
+}
+let sortByTicket = function () {
+    sortMode = "ticket";
+    $("#iconbox").empty();
+
+    charaData.sort(function compare(aData, bData) {
+        let iA = aData.id <= 362 ? 0 : (aData.id <= 523 ? 1 : (aData.id <= 662 ? 2 : (aData.id <= 866 ? 3 : (aData.id <= 1046 ? 4 : (aData.id <= 1292 ? 5 : 6)))));
+        let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : 6)))));
+        // hidden icon
+        if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8].includes(aData.assign)) ||
+            (aData.genus != 0) || (aData.sortGroupID == 25 && aData.id != 418)) {
+            iA = 7;
+        }
+        if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8].includes(bData.assign)) ||
+            (bData.genus != 0) || (bData.sortGroupID == 25 && bData.id != 418)) {
+            iB = 7;
+        }
+        // sort by year group
+        if (iA != iB) return (iA < iB) ? -1 : 1;
+
+        // sort by class
+        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
+        return 0;
+    });
+
+    init();
+    setHr("ticket");
 }
 
 // undo method
