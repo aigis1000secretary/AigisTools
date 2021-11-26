@@ -2,8 +2,8 @@
 const fs = require('fs');
 const child_process = require('child_process');
 
-let xmlspath = "./AigisTools/Data/XML";
-let filepath = "./AigisTools/Data/XML";
+let xmlspath = "../AigisTools/Data/XML";
+let filepath = "../AigisTools/Data/XML";
 // let cachepath = "./AigisTools/Data/Cache/net/";
 let filelist = false;
 
@@ -94,12 +94,19 @@ module.exports = {
             let urlR = url.replace('/2iofz514jeks1y44k7al2ostm43xj085', '/1fp32igvpoxnb521p9dqypak5cal0xv0');
             let urlA = url.replace('/1fp32igvpoxnb521p9dqypak5cal0xv0', '/2iofz514jeks1y44k7al2ostm43xj085');
 
-            // get filepath
-            xmlspath = `./AigisTools/Data/XML`;
-            filepath = `./AigisTools/Data/XML/${folderName}`;
 
+            // get filepath
+            xmlspath = `../AigisTools/Data/XML`;
             // check dir
             if (!fs.existsSync(xmlspath)) { fs.mkdirSync(xmlspath, { recursive: true }); }
+            // Desktop A/R.txt
+            fs.writeFile(`${xmlspath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt has been saved!`); });
+            fs.writeFile(`${xmlspath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt has been saved!`); });
+
+
+            // get filepath
+            filepath = `../AigisTools/Data/XML/${folderName}`;
+            // check dir
             if (!fs.existsSync(filepath)) { fs.mkdirSync(filepath, { recursive: true }); }
             else {
                 console.log(`${COLOR.fgRed}${COLOR.bright}found ${filepath} folder, plz delete old version first!!${COLOR.reset}`);
@@ -108,13 +115,10 @@ module.exports = {
                 fs.renameSync(filepath, filepath + "_");
                 fs.mkdirSync(filepath, { recursive: true });
             }
-
-            // Desktop A.txt
-            fs.writeFile(`${xmlspath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt has been saved!`); });
+            // Desktop A/R.txt
             fs.writeFile(`${filepath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt backup has been saved!`); });
-            // Desktop R.txt
-            fs.writeFile(`${xmlspath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt has been saved!`); });
             fs.writeFile(`${filepath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt backup has been saved!`); });
+
 
             filelist = true;
             return null;
@@ -136,17 +140,19 @@ module.exports = {
             // skip if not target
             if (!xmlTarget.includes(xmlName) && !xmlSubTarget.includes(xmlName)) { return null; }
 
-
+            // tower information
             if (xmlName == 'aE7DRVtp') {
+                // del old xml
                 if (fs.existsSync(`${xmlspath}/${xmlName}`)) { fs.unlinkSync(`${xmlspath}/${xmlName}`); }
 
+                // get xml data file
                 let body = responseDetail.response.body.toString("base64");
                 fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
 
-                let cmd = `copy ${xmlspath.replace(/\//g, '\\')}\\aE7DRVtp .${xmlspath.replace(/\//g, '\\')}\\aE7DRVtp /Y`;
-                child_process.execSync(cmd).toString();
+                // do xml raw
                 child_process.execSync(`do xml aE7DRVtp raw`, { cwd: `../AigisTools` }).toString().trim();
 
+                // read xml raw
                 let xml = fs.readFileSync(`..\\AigisTools\\out\\aE7DRVtp.xml`).toString();
                 let regKey = /ExchangeKey<\/V><\/KEY><VALUE T=\"S\"><V>(\S{15})<\/V>/;
                 let regScore = /<Score T=\"I\"><V>(\d+)<\/V>/;
@@ -162,20 +168,24 @@ module.exports = {
                 return null;
             }
 
+
             // get xml data file
             let body = responseDetail.response.body.toString("base64");
+            // save file data
             fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
 
-            // wait for filelist path
+
             if (!filelist) {
+                // wait file list
                 console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
                 return null;
+
+            } else if (xmlTarget.includes(xmlName)) {
+                // save file data backup
+                fs.writeFileSync(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
+
             }
 
-            // get xml data file
-            if (xmlTarget.includes(xmlName)) {
-                fs.writeFileSync(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
-            }
 
             // xcopy
             // check download all done?
@@ -185,7 +195,7 @@ module.exports = {
             }
             // call next step script
             if (dlflag) {
-                console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
+                // console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
                 child_process.exec(`cd ..&start 2.1_AigisLoader.bat`);
             }
 
