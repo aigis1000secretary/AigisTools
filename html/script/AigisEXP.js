@@ -388,6 +388,7 @@ let calc = () => {
 
     // remainingEXP
     let sumAdditionalEXP = 0;
+    let addExpList = [];
     let r = document.getElementById('checkSariette').checked ? 1.1 : 1.0;
     for (let div of document.querySelectorAll('.training[id]')) {
         let freeExp = div.querySelector(".freeExp");
@@ -405,9 +406,13 @@ let calc = () => {
             addExp = Math.floor(addExp * r);
         }
 
-        if (addExp || (freeExp && freeExp.value > 0)) {
+        if (addExp) {
             sumAdditionalEXP += addExp;
-            // set UI classname
+            addExpList.push(addExp);
+        }
+
+        // set UI classname
+        if (addExp || (freeExp && freeExp.value > 0)) {
             div.classList.add("keep");
         } else {
             div.classList.remove("keep");
@@ -421,12 +426,12 @@ let calc = () => {
         document.getElementById("remainingEXP").innerHTML = "-";
     }
 
-    /*
-    if (sumAdditionalEXP > 0) {
-        document.getElementById("addEXP").innerHTML = sumAdditionalEXP;
+    let addExpDiv = document.getElementById("addEXP")
+    if (sumAdditionalEXP > 0 && addExpDiv) {
+        addExpDiv.innerHTML = addExpList.join('<br>');
     } else {
-        document.getElementById("addEXP").innerHTML = "-";
-    }//*/
+        addExpDiv.innerHTML = "-";
+    }
 
     if (sumEXP >= 0) {
         let rare = document.getElementById("selectRarity");
