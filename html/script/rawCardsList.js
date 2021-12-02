@@ -1,4 +1,4 @@
-var maxCid = 1388;
+var maxCid = 1393;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1375,7 +1375,7 @@ var charaData = [
 	{	"id": 1373,	"name": "獅子女の覇者ホルテウス",	"rare": 10,	"classID": 150500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1373_00",	"imgaw": "1373_01"	},
 	{	"id": 1374,	"name": "スフィンクス",	"rare": 5,	"classID": 131300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1374_00"	},
 	{	"id": 1375,	"name": "世界樹の聖霊ラタトスク",	"rare": 5,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1375_00"	},
-	{	"id": 1376,	"name": "世界樹の苗",	"rare": 5,	"classID": 130000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1376,	"name": "世界樹の苗",	"rare": 5,	"classID": 131200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1377,	"name": "王子【神器装備】",	"rare": 5,	"classID": 9920,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1377_00"	},
 	{	"id": 1378,	"name": "王子【神器装備】",	"rare": 5,	"classID": 9920,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1378_00"	},
 	{	"id": 1379,	"name": "王子【神器装備】",	"rare": 5,	"classID": 9920,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1379_00"	},
@@ -1387,5 +1387,10 @@ var charaData = [
 	{	"id": 1385,	"name": "王子【英雄王】",	"rare": 5,	"classID": 122000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1385_00"	},
 	{	"id": 1386,	"name": "王子【神槍】",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1386_00"	},
 	{	"id": 1387,	"name": "王子【神槍】",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1387_00"	},
-	{	"id": 1388,	"name": "王子【神槍】",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1388_00"	}
+	{	"id": 1388,	"name": "王子【神槍】",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1388_00"	},
+	{	"id": 1389,	"name": "ちびメトゥス",	"rare": 3,	"classID": 31600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1389_00"	},
+	{	"id": 1390,	"name": "ちびエステル",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1390_00"	},
+	{	"id": 1391,	"name": "飛空戦艦を指揮するレオナ",	"rare": 4,	"classID": 10920,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1392,	"name": "鷲獅騎兵を指揮するクゥイル",	"rare": 4,	"classID": 7030,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1393,	"name": "部隊を指揮するメカゴブリン女王",	"rare": 4,	"classID": 19100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
