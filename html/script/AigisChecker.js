@@ -236,8 +236,8 @@ let setHr = function (type) {
             aText = aData.year + "年";
             bText = bData.year + "年";
 
-            if (aData.sortGroupID == 25 && aData.id != 418) aText = "王子";
-            if (bData.sortGroupID == 25 && bData.id != 418) bText = "王子";
+            if (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) aText = "王子";
+            if (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) bText = "王子";
 
         } else if (type == "rare") {
             let textList = [, , "シルバー", "ゴールド", "プラチナ", "ブラック", , "サファイア", , , "プラチナ英傑", "ブラック英傑"];
@@ -248,16 +248,16 @@ let setHr = function (type) {
             if (aData.rare < 10) aText += " " + textList[aData.placeType];
             if (bData.rare < 10) bText += " " + textList[bData.placeType];
 
-            if (aData.sortGroupID == 25 && aData.id != 418) aText = "王子";
-            if (bData.sortGroupID == 25 && bData.id != 418) bText = "王子";
+            if (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) aText = "王子";
+            if (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) bText = "王子";
 
         } else if (type == "classID") {
             let textList = ["", "近接", "遠隔", "両用"];
             aText = textList[aData.placeType];
             bText = textList[bData.placeType];
 
-            if (aData.sortGroupID == 25 && aData.id != 418) aText = "王子";
-            if (bData.sortGroupID == 25 && bData.id != 418) bText = "王子";
+            if (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) aText = "王子";
+            if (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) bText = "王子";
 
         } else if (type == "kind") {
             let textList = ["男性", "女性"];
@@ -333,11 +333,11 @@ let setHr = function (type) {
             let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : 6)))));
             // hidden icon
             if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8].includes(aData.assign)) ||
-                (aData.genus != 0) || (aData.sortGroupID == 25 && aData.id != 418)) {
+                (aData.genus != 0) || (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396)) {
                 iA = 7;
                 hidden = true;
             } if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8].includes(bData.assign)) ||
-                (bData.genus != 0) || (bData.sortGroupID == 25 && bData.id != 418)) {
+                (bData.genus != 0) || (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396)) {
                 iB = 7;
                 hidden = true;
             }
@@ -392,7 +392,7 @@ let doStatistics = function () {
 
             let cData = charaData.find((c) => icon.id == c.id);
 
-            if (cData.sortGroupID != 25 || cData.id == 418) {
+            if (cData.sortGroupID != 25 || cData.id == 418 || cData.id == 1396) {
                 if ([3, 4, 6, 7].includes(cData.assign) || cData.assign < 0) {
                     collabIconCount++;
                     collabTrueCount += icon.alt == "true" ? 1 : 0;
@@ -456,8 +456,8 @@ let sortByDate = function (ascending) {
 
     charaData.sort(function compare(aData, bData) {
         let iA, iB;
-        iA = (aData.sortGroupID == 25 && aData.id != 418) ? 0 : 1;
-        iB = (bData.sortGroupID == 25 && bData.id != 418) ? 0 : 1;
+        iA = (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? 0 : 1;
+        iB = (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? 0 : 1;
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
         iA = aData.id;
@@ -482,8 +482,8 @@ let sortByRare = function (ascending) {
         // sort by rare
         if (iA != iB) return (!!ascending == (iA < iB)) ? -1 : 1;
 
-        iA = aData.sortGroupID; iA = aData.id == 418 ? 20 : iA;
-        iB = bData.sortGroupID; iB = bData.id == 418 ? 20 : iB;
+        iA = aData.sortGroupID; iA = (aData.id == 418 && aData.id != 1396) ? 20 : iA;
+        iB = bData.sortGroupID; iB = (bData.id == 418 && bData.id != 1396) ? 20 : iB;
         // sort by group
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
@@ -504,8 +504,8 @@ let sortByClass = function (ascending) {
 
     charaData.sort(function compare(aData, bData) {
         let iA, iB;
-        iA = aData.sortGroupID; iA = aData.id == 418 ? 20 : iA;
-        iB = bData.sortGroupID; iB = bData.id == 418 ? 20 : iB;
+        iA = aData.sortGroupID; iA = (aData.id == 418 && aData.id != 1396) ? 20 : iA;
+        iB = bData.sortGroupID; iB = (bData.id == 418 && bData.id != 1396) ? 20 : iB;
         // sort by group
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
@@ -535,8 +535,8 @@ let sortByKind = function () {
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
 
         let iA, iB;
-        iA = aData.sortGroupID; iA = aData.id == 418 ? 20 : iA;
-        iB = bData.sortGroupID; iB = bData.id == 418 ? 20 : iB;
+        iA = aData.sortGroupID; iA = (aData.id == 418 && aData.id != 1396) ? 20 : iA;
+        iB = bData.sortGroupID; iB = (bData.id == 418 && bData.id != 1396) ? 20 : iB;
         // sort by group
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
@@ -667,11 +667,11 @@ let sortByTicket = function () {
         let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : 6)))));
         // hidden icon
         if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8].includes(aData.assign)) ||
-            (aData.genus != 0) || (aData.sortGroupID == 25 && aData.id != 418)) {
+            (aData.genus != 0) || (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396)) {
             iA = 7;
         }
         if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8].includes(bData.assign)) ||
-            (bData.genus != 0) || (bData.sortGroupID == 25 && bData.id != 418)) {
+            (bData.genus != 0) || (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396)) {
             iB = 7;
         }
         // sort by year group
