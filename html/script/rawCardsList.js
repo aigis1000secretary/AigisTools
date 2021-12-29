@@ -1,4 +1,4 @@
-var maxCid = 1402;
+var maxCid = 1412;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1396,10 +1396,20 @@ var charaData = [
 	{	"id": 1394,	"name": "魔性の獣学者フェリシア",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1394_00",	"imgaw": "1394_01"	},
 	{	"id": 1395,	"name": "水辺の神官戦士ルチア",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1395_00",	"imgaw": "1395_01"	},
 	{	"id": 1396,	"name": "怒りの鮫戦士スカー",	"rare": 5,	"classID": 131400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1396_00"	},
-	{	"id": 1397,	"name": "聖夜の天才戦術家ヘレナ",	"rare": 4,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1397_00"	},
+	{	"id": 1397,	"name": "聖夜の天才戦術家ヘレナ",	"rare": 4,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1397_00",	"imgaw": "1397_01"	},
 	{	"id": 1398,	"name": "祝福の贈り人テュト",	"rare": 5,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1398_00",	"imgaw": "1398_01"	},
 	{	"id": 1399,	"name": "聖なる技巧兵ドリー",	"rare": 4,	"classID": 7200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1399_00",	"imgaw": "1399_01"	},
 	{	"id": 1400,	"name": "メリーメリーバリスタ",	"rare": 5,	"classID": 14120,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1400_00"	},
 	{	"id": 1401,	"name": "王子【10周年記念】",	"rare": 5,	"classID": 9980,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1401_00"	},
-	{	"id": 1402,	"name": "メリーメリーバリスタ",	"rare": 5,	"classID": 14180,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1402_00"	}
+	{	"id": 1402,	"name": "メリーメリーバリスタ",	"rare": 5,	"classID": 14180,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1402_00"	},
+	{	"id": 1403,	"name": "薔薇の自動人形アルタ",	"rare": 5,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1403_00",	"imgaw": "1403_01"	},
+	{	"id": 1404,	"name": "影炎の戦巫女タツミ",	"rare": 5,	"classID": 130500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1404_00",	"imgaw": "1404_01"	},
+	{	"id": 1405,	"name": "大悪魔の初詣ラピス",	"rare": 5,	"classID": 13300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1405_00",	"imgaw": "1405_01"	},
+	{	"id": 1406,	"name": "智将の筆始めマツリ",	"rare": 5,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 101,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1406_00",	"imgaw": "1406_01"	},
+	{	"id": 1407,	"name": "謹賀祝仙女 太公望",	"rare": 4,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1407_00",	"imgaw": "1407_01"	},
+	{	"id": 1408,	"name": "時と技の聖霊ヘリオ",	"rare": 5,	"classID": 57,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1408_00"	},
+	{	"id": 1409,	"name": "王子【ドゥン】",	"rare": 5,	"classID": 131500,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1409_00"	},
+	{	"id": 1410,	"name": "魔王ガリウス人形",	"rare": 5,	"classID": 58,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1410_00"	},
+	{	"id": 1411,	"name": "等身大デシウス人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1411_00"	},
+	{	"id": 1412,	"name": "おとし玉",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1412_00"	}
 ]
