@@ -711,7 +711,8 @@ const aigisCardsList = async function () {
             }
 
             // set year
-            if (id > 1125) year = 2021;
+            if (id > 1404) year = 2022;
+            else if (id > 1125) year = 2021;
             else if (id > 942) year = 2020;
             else if (id > 726) year = 2019;
             else if (id > 572) year = 2018;
@@ -758,7 +759,7 @@ const aigisCardsList = async function () {
             let kind = card.Kind;
             // 0: 男性, 1: 女性, 2: 無性(?), 3: 換金, 2: 經驗
             let isToken = (card.SellPrice == 0 || nameListRaw[i].Message.includes("ダミー")) ? 1 : 0;
-          
+
             if ([1377, 1378, 1379,
                 1380, 1381, 1382,
                 1383, 1384, 1385,
