@@ -1,4 +1,4 @@
-var maxCid = 1414;
+var maxCid = 1417;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1413,5 +1413,8 @@ var charaData = [
 	{	"id": 1411,	"name": "等身大デシウス人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1411_00"	},
 	{	"id": 1412,	"name": "おとし玉",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1412_00"	},
 	{	"id": 1413,	"name": "ちびロヴィニア",	"rare": 3,	"classID": 32100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1413_00"	},
-	{	"id": 1414,	"name": "ちびトトノ",	"rare": 3,	"classID": 32800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1414_00"	}
+	{	"id": 1414,	"name": "ちびトトノ",	"rare": 3,	"classID": 32800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1414_00"	},
+	{	"id": 1415,	"name": "翠玉の温泉兵フィーヌ",	"rare": 4,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1415_00"	},
+	{	"id": 1416,	"name": "湯けむりくノ一チヨメ",	"rare": 5,	"classID": 1000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 109,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1416_00",	"imgaw": "1416_01"	},
+	{	"id": 1417,	"name": "砲術娘の温泉旅行カノン",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1417_00",	"imgaw": "1417_01"	}
 ]
