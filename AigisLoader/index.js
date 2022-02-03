@@ -497,6 +497,7 @@ const aigisCardsList = async function () {
 
                     .replace(/IsClassType\([^\)]+\)/g, false)  // 特定職業條件
                     .replace(/GetUnitInBattleMatchCount\([\S\s]+\) [>=]{2} \d{1}/g, true)  // 滿足特定條件的人數
+                    .replace(/CheckUnitInBattleSomeMatch\(.+\(\).+\)/g, true)  // 滿足特定條件的人數
                     .replace(/GetEntryUnitCount\(\)/g, 6)  // 下場人數
                     .replace(/GetSysVer\(\) [<=>]+ \d+/g, false);
                 return eval(iExpression);
@@ -1023,6 +1024,7 @@ const aigisQuestsList = async () => {
                 let questNameText = rawToJson(filepath);
 
                 let questNameID = questRaw.QuestTitle;
+                // console.log(`get file QuestNameText${missionID}.atb`, questNameID, questNameText[questNameID])
                 questName = questNameText[questNameID].Message;
             }
 

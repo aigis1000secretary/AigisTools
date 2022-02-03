@@ -1,4 +1,4 @@
-var maxCid = 1419;
+var maxCid = 1424;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1418,5 +1418,10 @@ var charaData = [
 	{	"id": 1416,	"name": "湯けむりくノ一チヨメ",	"rare": 5,	"classID": 1000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 109,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1416_00",	"imgaw": "1416_01"	},
 	{	"id": 1417,	"name": "砲術娘の温泉旅行カノン",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1417_00",	"imgaw": "1417_01"	},
 	{	"id": 1418,	"name": "放浪の聖騎兵フリア",	"rare": 5,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1418_00",	"imgaw": "1418_01"	},
-	{	"id": 1419,	"name": "深慮の海巫女ムイル",	"rare": 3,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1419_00",	"imgaw": "1419_01"	}
+	{	"id": 1419,	"name": "深慮の海巫女ムイル",	"rare": 3,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1419_00",	"imgaw": "1419_01"	},
+	{	"id": 1420,	"name": "恋慕の剣姫スクハ",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1420_00",	"imgaw": "1420_01"	},
+	{	"id": 1421,	"name": "思慕の剣豪ヒバリ",	"rare": 5,	"classID": 800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 102,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1421_00",	"imgaw": "1421_01"	},
+	{	"id": 1422,	"name": "恋心の射手ポミエ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1422_00"	},
+	{	"id": 1423,	"name": "ちびディーネ",	"rare": 3,	"classID": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1423_00"	},
+	{	"id": 1424,	"name": "ちびドルチェ",	"rare": 3,	"classID": 33100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1424_00"	}
 ]
