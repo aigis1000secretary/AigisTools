@@ -1,4 +1,4 @@
-var maxCid = 1424;
+var maxCid = 1429;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1421,7 +1421,12 @@ var charaData = [
 	{	"id": 1419,	"name": "深慮の海巫女ムイル",	"rare": 3,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1419_00",	"imgaw": "1419_01"	},
 	{	"id": 1420,	"name": "恋慕の剣姫スクハ",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1420_00",	"imgaw": "1420_01"	},
 	{	"id": 1421,	"name": "思慕の剣豪ヒバリ",	"rare": 5,	"classID": 800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 102,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1421_00",	"imgaw": "1421_01"	},
-	{	"id": 1422,	"name": "恋心の射手ポミエ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1422_00"	},
+	{	"id": 1422,	"name": "恋心の射手ポミエ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1422_00",	"imgaw": "1422_01"	},
 	{	"id": 1423,	"name": "ちびディーネ",	"rare": 3,	"classID": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1423_00"	},
-	{	"id": 1424,	"name": "ちびドルチェ",	"rare": 3,	"classID": 33100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1424_00"	}
+	{	"id": 1424,	"name": "ちびドルチェ",	"rare": 3,	"classID": 33100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1424_00"	},
+	{	"id": 1425,	"name": "焔の竜砲騎兵ジゼル",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1425_00",	"imgaw": "1425_01"	},
+	{	"id": 1426,	"name": "木兎翼の戦士ポタル",	"rare": 4,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1426_00",	"imgaw": "1426_01"	},
+	{	"id": 1427,	"name": "熱砂の騎士アスラハ",	"rare": 5,	"classID": 6700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1427_00",	"imgaw": "1427_01"	},
+	{	"id": 1428,	"name": "氷竜魔術士カラザ",	"rare": 4,	"classID": 150600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1428_00",	"imgaw": "1428_01"	},
+	{	"id": 1429,	"name": "ちびヘカティエ",	"rare": 3,	"classID": 39300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1429_00"	}
 ]
