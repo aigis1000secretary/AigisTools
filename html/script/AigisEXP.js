@@ -526,7 +526,7 @@ let setExpData = (data) => {
 let resetExpData = () => {
     // reset input
     // document.getElementById("checkSariette").checked = false;
-    setLevelRange(1, 1, 0);
+    // setLevelRange(1, 1, 0);
 
     // reset box title
     {
