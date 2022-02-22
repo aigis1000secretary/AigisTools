@@ -387,13 +387,13 @@ let calc = () => {
     }
 
     // remainingEXP
-    let sumAdditionalEXP = 0;
-    let addExpList = [];
+    let sumAdditionalEXP = 0, addExpList = [];
     let r = document.getElementById('checkSariette').checked ? 1.1 : 1.0;
     for (let div of document.querySelectorAll('.training[id]')) {
         let freeExp = div.querySelector(".freeExp");
         let count = div.querySelector('.count').value * 1;
         let addExp = 0;
+
         if (freeExp) {
             addExp = freeExp.value * 1;
             addExp = Math.floor(addExp * count);
@@ -401,6 +401,11 @@ let calc = () => {
             addExp = div.querySelector(".box2").title * 1;
             addExp = Math.floor(addExp * count);
         }
+
+        if (panel1Config[div.id] && panel1Config[div.id] != currentRarity) {
+            addExp = 0;
+        }
+
         let panel = div.parentElement.previousElementSibling;
         if (!panel || panel.id != 'Panel4') {
             addExp = Math.floor(addExp * r);
