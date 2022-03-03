@@ -1,4 +1,4 @@
-var maxCid = 1431;
+var maxCid = 1440;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1430,5 +1430,14 @@ var charaData = [
 	{	"id": 1428,	"name": "氷竜魔術士カラザ",	"rare": 4,	"classID": 150600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1428_00",	"imgaw": "1428_01"	},
 	{	"id": 1429,	"name": "ちびヘカティエ",	"rare": 3,	"classID": 39300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1429_00"	},
 	{	"id": 1430,	"name": "天眼の偵察者レナータ",	"rare": 5,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1430_00",	"imgaw": "1430_01"	},
-	{	"id": 1431,	"name": "ヘカトンケイル人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1431_00"	}
+	{	"id": 1431,	"name": "ヘカトンケイル人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1431_00"	},
+	{	"id": 1432,	"name": "帝都の大泥棒レーネ",	"rare": 4,	"classID": 12200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1432_00",	"imgaw": "1432_01"	},
+	{	"id": 1433,	"name": "白の竜巫女ラウラ",	"rare": 5,	"classID": 10500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1433_00",	"imgaw": "1433_01"	},
+	{	"id": 1434,	"name": "帝国建機工兵マルレーン",	"rare": 5,	"classID": 15500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1434_00",	"imgaw": "1434_01"	},
+	{	"id": 1435,	"name": "帝国戦巫女カオル",	"rare": 4,	"classID": 130500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1435_00",	"imgaw": "1435_01"	},
+	{	"id": 1436,	"name": "闇炎の魔将イルムガルト",	"rare": 4,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1436_00",	"imgaw": "1436_01"	},
+	{	"id": 1437,	"name": "炸裂バリケード",	"rare": 5,	"classID": 131700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1437_00"	},
+	{	"id": 1438,	"name": "炸裂重バリケード",	"rare": 5,	"classID": 131720,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1438_00"	},
+	{	"id": 1439,	"name": "ちびリオン",	"rare": 3,	"classID": 22600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1439_00"	},
+	{	"id": 1440,	"name": "ちびリキュノス",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1440_00"	}
 ]
