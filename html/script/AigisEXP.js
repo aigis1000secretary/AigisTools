@@ -6,7 +6,7 @@ let maxLevel = [
 ];
 let panel0 = ["expWArmor1", "expWArmor", "expBArmor"];
 let panel1 = [];    // ["expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer"];
-let panel2 = [];    // ["expEmperor01", "expEmperor17", "expEmperor20", "expEmperor26"];
+let panel2 = [];    // ["expEmperor01", "expEmperor17", "expEmperor20", "expEmperor26", "expEmperor51"];
 let panel3 = [];    // ["expB01", "expB02", "expB03", "expB04"];
 let panel4 = [];    // ["expFree01", "expFree02", "expFree03", "expFree04"];
 let panel5 = [];    // ["expC01", "expC02", "expC03", "expC04", "expS01", "expS02"];
@@ -457,7 +457,7 @@ let calc = () => {
 //     ['P1', '#Panel1'], ['P2', '#Panel2'], ['P3', '#Panel3'], ['P4', '#Panel4'], ['P5', '#Panel5'],
 //     ['eW1', '#expWArmor1'], ['eW8', '#expWArmor'], ['eB1', '#expBArmor'],
 //     ['eAm', '#expAmour'], ['ePr', '#expPreseil'], ['eAl', '#expAlegria'], ['eLi', '#expLiebe'], ['eFr', '#expFreude'], ['eFa', '#expFarah'], ['ePr', '#expPresent'], ['ePl', '#expPlacer'],
-//     ['eE1', '#expEmperor01'], ['eE2', '#expEmperor17'], ['eE3', '#expEmperor20'], ['eE4', '#expEmperor26'],
+//     ['eE1', '#expEmperor01'], ['eE2', '#expEmperor17'], ['eE3', '#expEmperor20'], ['eE4', '#expEmperor26'], ['eE5', '#expEmperor51'],
 //     ['eB1', '#expB01'], ['eB2', '#expB02'], ['eB3', '#expB03'], ['eB4', '#expB04'],
 //     ['eF1', '#expFree01'], ['eF2', '#expFree02'], ['eF3', '#expFree03'], ['eF4', '#expFree04'],
 //     ['eC1', '#expC01'], ['eC2', '#expC02'], ['eC3', '#expC03'], ['eC4', '#expC04'], ['eS1', '#expS01'], ['eS2', '#expS02']
