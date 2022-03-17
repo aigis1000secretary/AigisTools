@@ -1,4 +1,4 @@
-var maxCid = 1440;
+var maxCid = 1444;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1439,5 +1439,9 @@ var charaData = [
 	{	"id": 1437,	"name": "炸裂バリケード",	"rare": 5,	"classID": 131700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1437_00"	},
 	{	"id": 1438,	"name": "炸裂重バリケード",	"rare": 5,	"classID": 131720,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1438_00"	},
 	{	"id": 1439,	"name": "ちびリオン",	"rare": 3,	"classID": 22600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1439_00"	},
-	{	"id": 1440,	"name": "ちびリキュノス",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1440_00"	}
+	{	"id": 1440,	"name": "ちびリキュノス",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1440_00"	},
+	{	"id": 1441,	"name": "暗黒学園騎士コーネリア",	"rare": 5,	"classID": 1200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1441_00",	"imgaw": "1441_01"	},
+	{	"id": 1442,	"name": "戦術科教師ケイティ",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1442_00",	"imgaw": "1442_01"	},
+	{	"id": 1443,	"name": "山賊食堂モーティマ",	"rare": 4,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1443_00",	"imgaw": "1443_01"	},
+	{	"id": 1444,	"name": "鋼鉄の弓術部員クレア",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1444_00"	}
 ]
