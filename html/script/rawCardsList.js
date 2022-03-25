@@ -1,4 +1,4 @@
-var maxCid = 1444;
+var maxCid = 1447;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1159,11 +1159,11 @@ var charaData = [
 	{	"id": 1157,	"name": "おきつね様分身",	"rare": 5,	"classID": 16480,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1157_00"	},
 	{	"id": 1158,	"name": "幽境道士フーロン",	"rare": 5,	"classID": 5500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1158_00",	"imgaw": "1158_01",	"imgaw2A": "1158_02",	"imgaw2B": "1158_03"	},
 	{	"id": 1159,	"name": "魔界料理人キホル",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1159_00",	"imgaw": "1159_01"	},
-	{	"id": 1160,	"name": "白狼の朋ツァーユ",	"rare": 5,	"classID": 12900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1160_00",	"imgaw": "1160_01"	},
+	{	"id": 1160,	"name": "白狼の朋ツァーユ",	"rare": 5,	"classID": 12900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1160_00",	"imgaw": "1160_01",	"imgaw2A": "1160_02",	"imgaw2B": "1160_03"	},
 	{	"id": 1161,	"name": "ちびルフレ",	"rare": 3,	"classID": 33430,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1161_00"	},
 	{	"id": 1162,	"name": "ちび上級ライトエレメンタル",	"rare": 5,	"classID": 123025,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1162_00"	},
 	{	"id": 1163,	"name": "仙術人形",	"rare": 5,	"classID": 19200,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1163_00"	},
-	{	"id": 1164,	"name": "鬼刃忍タチバナ",	"rare": 5,	"classID": 121300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1164_00",	"imgaw": "1164_01"	},
+	{	"id": 1164,	"name": "鬼刃忍タチバナ",	"rare": 5,	"classID": 121300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1164_00",	"imgaw": "1164_01",	"imgaw2A": "1164_02",	"imgaw2B": "1164_03"	},
 	{	"id": 1165,	"name": "蒸気武者ユカリ",	"rare": 4,	"classID": 125700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1165_00",	"imgaw": "1165_01"	},
 	{	"id": 1166,	"name": "ちびアーシェラ",	"rare": 3,	"classID": 30000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1166_00"	},
 	{	"id": 1167,	"name": "ちびミヤビ",	"rare": 3,	"classID": 31400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1167_00"	},
@@ -1443,5 +1443,8 @@ var charaData = [
 	{	"id": 1441,	"name": "暗黒学園騎士コーネリア",	"rare": 5,	"classID": 1200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1441_00",	"imgaw": "1441_01"	},
 	{	"id": 1442,	"name": "戦術科教師ケイティ",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1442_00",	"imgaw": "1442_01"	},
 	{	"id": 1443,	"name": "山賊食堂モーティマ",	"rare": 4,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1443_00",	"imgaw": "1443_01"	},
-	{	"id": 1444,	"name": "鋼鉄の弓術部員クレア",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1444_00"	}
+	{	"id": 1444,	"name": "鋼鉄の弓術部員クレア",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1444_00"	},
+	{	"id": 1445,	"name": "王子【焔竜】",	"rare": 5,	"classID": 131800,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1445_00"	},
+	{	"id": 1446,	"name": "セツナ（分身）",	"rare": 5,	"classID": 121470,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1446_00"	},
+	{	"id": 1447,	"name": "セツナ（分身）",	"rare": 5,	"classID": 121480,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1447_00"	}
 ]
