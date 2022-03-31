@@ -1165,10 +1165,18 @@ const aigisQuestsList = async () => {
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 if (entryLocation.length > 0) mapLocationList[map][`Entry${entry}`] = entryLocation;
 
-            } else if (entry && fs.existsSync(`MapLocationList.json`) && oldLocationList[map][`Entry${entry}`]) {
+            } else if (entry && fs.existsSync(`MapLocationList.json`)
+                && oldLocationList[map] && oldLocationList[map][`Entry${entry}`]) {
                 // console.log(`${COLOR.fgRed}cant found Location${location} data${COLOR.reset}`)
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 mapLocationList[map][`Entry${entry}`] = oldLocationList[map][`Entry${entry}`];
+            }
+            
+            // debug
+            // no new & old data
+            if ((!entryPath && !oldLocationList[map]) || map == 4078 ){
+                console.log(`${COLOR.fgRed}cant found Map4078 Location${location} data${COLOR.reset}`)
+                console.log('', quest);
             }
         }
     }
@@ -1350,14 +1358,15 @@ const main = async () => {
     await downloadRawData();
     readRawData();
 
+    fs.writeFileSync(`raw/_GRs733a4.json`, JSON.stringify(_GRs733a4, null, 2));
+    fs.writeFileSync(`raw/_QxZpjdfV.json`, JSON.stringify(_QxZpjdfV, null, 2));
+
     // cards list
     await aigisCardsList();
 
     // quest list
     await aigisQuestsList();
 
-    fs.writeFileSync(`raw/_GRs733a4.json`, JSON.stringify(_GRs733a4, null, 2));
-    fs.writeFileSync(`raw/_QxZpjdfV.json`, JSON.stringify(_QxZpjdfV, null, 2));
     fs.writeFileSync(`raw/nameList.json`, JSON.stringify(nameListRaw, null, 2));
     fs.writeFileSync(`raw/classList.json`, JSON.stringify(classListRaw, null, 2));
     fs.writeFileSync(`raw/abilityList.json`, JSON.stringify(abilityListRaw, null, 2));
