@@ -14,7 +14,7 @@
 } */
 
 .training .box1 {
-    width: 55%;
+    width: 60%;
     height: 100%;
     float: left;
     padding-right: 7px;
@@ -31,7 +31,7 @@
 }
 
 .training .box3 {
-    width: 30%;
+    width: 25%;
     height: 100%;
     float: left;
 }

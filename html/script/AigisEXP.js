@@ -4,7 +4,7 @@ let maxLevel = [
     [40, 50, 55, 60, 65, 70, 80],
     [40, 50, 55, 99, 99, 99, 99]
 ];
-let panel0 = ["expWArmor1", "expWArmor", "expBArmor"];
+let panel0 = [];    // ["expSeirei", "expGladys", "expWArmor", "expBArmor"];
 let panel1 = [];    // ["expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer"];
 let panel2 = [];    // ["expEmperor01", "expEmperor17", "expEmperor20", "expEmperor26", "expEmperor51"];
 let panel3 = [];    // ["expB01", "expB02", "expB03", "expB04"];
@@ -12,6 +12,7 @@ let panel4 = [];    // ["expFree01", "expFree02", "expFree03", "expFree04"];
 let panel5 = [];    // ["expC01", "expC02", "expC03", "expC04", "expS01", "expS02"];
 
 let panel1Config = {
+    // Panel1
     "expAmour": 2,
     "expPreseil": 3,
     "expAlegria": 3,
@@ -19,15 +20,15 @@ let panel1Config = {
     "expFreude": 5,
     "expFarah": 6
 };
-let customizeConfig = [ // rare
+let customizeConfig = [ // rare => lv1 exp
     // female, male, class bonus
     [0, 40, 10],        // 0    アイアン
     [0, 70, 30],        // 1    ブロンズ
     [150, 300, 50],     // 2    シルバー
-    [250, 750, 80],     // 3    ゴールド
-    [250, 750, 90],     // 4    サファイア
-    [500, 1500, 100],   // 5    プラチナ
-    [1000, 2000, 300],  // 6    ブラック
+    [250, 3000, 80],     // 3    ゴールド
+    [250, 3000, 90],     // 4    サファイア
+    [1000, 9000, 100],   // 5    プラチナ
+    [5000, 13000, 300],  // 6    ブラック
 ];
 
 
@@ -38,6 +39,7 @@ let bodyOnload = () => {
     setExpLimit();
 
     // get id list
+    document.querySelectorAll("#Panel0+.accContent .training").forEach((e) => { panel0.push(e.id) })
     document.querySelectorAll("#Panel1+.accContent .training").forEach((e) => { panel1.push(e.id) })
     document.querySelectorAll("#Panel2+.accContent .training").forEach((e) => { panel2.push(e.id) })
     document.querySelectorAll("#Panel3+.accContent .training").forEach((e) => { panel3.push(e.id) })
@@ -295,17 +297,12 @@ let setExpLimit = () => {
 let updateUI = () => {
     let r = document.getElementById('checkSariette').checked ? 1.1 : 1.0;
 
-    // Plane0, Plane2
-    for (let key of [].concat(panel0, panel2)) {
-        let box2 = document.querySelector(`#${key} .box2`);
-        box2.innerHTML = Math.floor(box2.title * r);
-    }
-    // Plane1
-    for (let key of panel1) {
+    // Panel0, Panel1
+    for (let key of [].concat(panel0, panel1)) {
         let box2 = document.querySelector(`#${key} .box2`);
         box2.innerHTML = Math.floor(box2.title * r);
 
-        // set Plane1 Visable
+        // set Panel1 Visable
         let rare = getRarity();
         let check = panel1Config[key];
         if (check && rare != check) {   // requirement defined && same to rare
@@ -321,13 +318,18 @@ let updateUI = () => {
             document.getElementById(key).classList.remove("keep");
         }
     }
-    // Plane3
+    // Panel2
+    for (let key of panel2) {
+        let box2 = document.querySelector(`#${key} .box2`);
+        box2.innerHTML = Math.floor(box2.title * r);
+    }
+    // Panel3
     for (let key of panel3) {
         let box2 = document.querySelector(`#${key} .box2`);
         box2.innerHTML = (box2.title * r).toFixed(1).replace(/\.0$/, "");
     }
 
-    // Plane5
+    // Panel5
     // EXP customize options
     for (let key of panel5) {
         let div = document.getElementById(key);
@@ -357,16 +359,16 @@ let updateUI = () => {
         if (div.querySelector('.lv').title) { div.querySelector('.lv').max = div.querySelector('.lv').title; }
 
         // variable
-        let ccexp = [0, 1].includes(rare) ? 5 : [7, 20, 50][cc];
-        let exp = customizeConfig[rare][sex];
-        if (div.title) { exp = div.title * 1; }
-
+        // base exp
+        let exp = div.title ? div.title * 1 : customizeConfig[rare][sex];
+        // class exp
         exp += cbonus * customizeConfig[rare][2];
-        exp += (lv - 1) * ccexp;
+        // lv exp
+        let lvexp = [0, 1].includes(rare) ? 5 : [56, 160, 400][cc];
+        exp += (lv - 1) * lvexp;
+        // result
         box2.title = exp;
-        exp = (exp * r).toFixed(1).replace(/\.0$/, "");
-
-        box2.innerHTML = exp;
+        box2.innerHTML = (exp * r).toFixed(1).replace(/\.0$/, "");
     }
 }
 let calc = () => {
@@ -455,7 +457,7 @@ let calc = () => {
 //     ['.ra', ' .rare'], ['.se', ' .sex'], ['.cc', ' .cc'], ['.cb', ' .cbonus'], ['.lv', ' .lv'], ['.fe', ' .freeExp'], ['.co', ' .count'],
 //     ['sR', '#selectRarity'], ['sC', '#selectCurrentLevel'], ['iN', '#inputNext'], ['sT', '#selectTargetLevel'], ['cS', '#checkSariette'],
 //     ['P1', '#Panel1'], ['P2', '#Panel2'], ['P3', '#Panel3'], ['P4', '#Panel4'], ['P5', '#Panel5'],
-//     ['eW1', '#expWArmor1'], ['eW8', '#expWArmor'], ['eB1', '#expBArmor'],
+//     ['eSe', '#expSeirei'], ['eGl', '#expGladys'], ['eWa', '#expWArmor'], ['eBa', '#expBArmor'],
 //     ['eAm', '#expAmour'], ['ePr', '#expPreseil'], ['eAl', '#expAlegria'], ['eLi', '#expLiebe'], ['eFr', '#expFreude'], ['eFa', '#expFarah'], ['ePr', '#expPresent'], ['ePl', '#expPlacer'],
 //     ['eE1', '#expEmperor01'], ['eE2', '#expEmperor17'], ['eE3', '#expEmperor20'], ['eE4', '#expEmperor26'], ['eE5', '#expEmperor51'],
 //     ['eB1', '#expB01'], ['eB2', '#expB02'], ['eB3', '#expB03'], ['eB4', '#expB04'],
@@ -467,9 +469,9 @@ let getExpData = () => {
 
     // get inputs
     let selectors = ["#boxtitle", '#selectRarity', '#selectCurrentLevel', '#inputNext', '#selectTargetLevel',
-        '#checkSariette', '#Panel1', '#Panel2', '#Panel3', '#Panel4', '#Panel5'];
-    for (let key of panel4) { selectors.push(`#${key} .box1`) }
-    for (let div of document.querySelectorAll('.training[id]')) {
+        '#checkSariette', '#Panel0', '#Panel1', '#Panel2', '#Panel3', '#Panel4', '#Panel5'];
+    for (let key of panel4) { selectors.push(`#${key} .box1`) } // item name
+    for (let div of document.querySelectorAll('.training[id]')) { // item data
         selectors.push(`#${div.id} .rare`);
         selectors.push(`#${div.id} .sex`);
         selectors.push(`#${div.id} .cc`);
@@ -539,7 +541,7 @@ let resetExpData = () => {
     }
 
     // reset Panel
-    let selectors = ['#Panel1', '#Panel2', '#Panel3', '#Panel4', '#Panel5'];
+    let selectors = ['#Panel0', '#Panel1', '#Panel2', '#Panel3', '#Panel4', '#Panel5'];
     for (let div of document.querySelectorAll('.training[id]')) {
         selectors.push(`#${div.id} .rare`);
         selectors.push(`#${div.id} .sex`);
