@@ -1171,11 +1171,11 @@ const aigisQuestsList = async () => {
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 mapLocationList[map][`Entry${entry}`] = oldLocationList[map][`Entry${entry}`];
             }
-            
+
             // debug
             // no new & old data
-            if ((!entryPath && !oldLocationList[map]) || map == 4078 ){
-                console.log(`${COLOR.fgRed}cant found Map4078 Location${location} data${COLOR.reset}`)
+            if (!entryPath && !oldLocationList[map]) {
+                console.log(`${COLOR.fgRed}cant found Map${map} Location${location} data${COLOR.reset}`)
                 console.log('', quest);
             }
         }
