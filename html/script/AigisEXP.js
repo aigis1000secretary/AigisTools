@@ -46,72 +46,97 @@ let bodyOnload = () => {
     document.querySelectorAll("#Panel4+.accContent .training").forEach((e) => { panel4.push(e.id) })
     document.querySelectorAll("#Panel5+.accContent .training").forEach((e) => { panel5.push(e.id) })
 
+    // add box3 & input btn
+    for (let box2 of document.querySelectorAll('.accContent .box2')) {
+        let box = box2.parentElement;
+        let btn, box3;
+        box3 = document.createElement('div');
+        box3.className = 'box3';
+
+        btn = document.createElement('input');
+        btn.type = 'button'; btn.value = "－";
+        btn.style.marginRight = "4px";
+        box3.appendChild(btn);
+
+        btn = document.createElement('input');
+        btn.type = 'number'; btn.className = 'count';
+        btn.value = 0; btn.min = 0; btn.max = 99;
+        btn.style.marginRight = "4px";
+        box3.appendChild(btn);
+
+        btn = document.createElement('input');
+        btn.type = 'button'; btn.value = "＋";
+        box3.appendChild(btn);
+
+        box.appendChild(box3);
+    }
+
     // set button event
     for (let btn of document.querySelector(".leftcolumn").getElementsByTagName("input")) {
         if (btn.value == "MIN") {
             btn.addEventListener("click", (e) => {
-                let input = btn.nextElementSibling.nextElementSibling;
+                let input = e.target.parentElement.querySelector('[type=number]');
                 input.value = input.min;
                 calc();
             }, false);
 
         } else if (btn.value == "－") {
             btn.addEventListener("click", (e) => {
-                let input = btn.nextElementSibling;
+                let input = e.target.parentElement.querySelector('[type=number]');
                 input.value = Math.max(input.min, parseInt(input.value) - 1);
                 calc();
             }, false);
 
         } else if (btn.value == "＋") {
             btn.addEventListener("click", (e) => {
-                let input = btn.previousElementSibling;
+                let input = e.target.parentElement.querySelector('[type=number]');
                 input.value = Math.min(input.max, parseInt(input.value) + 1);
                 calc();
             }, false);
         } else if (btn.value == "MAX") {
             btn.addEventListener("click", (e) => {
-                let input = btn.previousElementSibling.previousElementSibling;
+                let input = e.target.parentElement.querySelector('[type=number]');
                 input.value = input.max;
                 calc();
             }, false);
 
         } else if (btn.type == "number") {
             // auto focus
-            if (!isMobile()) { btn.addEventListener("mouseover", (e) => { btn.select(); }, false); }
+            if (!isMobile()) { btn.addEventListener("mouseover", (e) => { e.target.select(); }, false); }
+            // calc after change
             btn.addEventListener("change", calc, false);
+            // keyboard event
             btn.addEventListener("keydown", (e) => {
-                if (btn.max != "" && e.key == 'End') { btn.value = btn.max; changePanels(); }    // end  e.keyCode == 36
-                if (btn.min != "" && e.key == 'Home') { btn.value = btn.min; changePanels(); }   // home e.keyCode == 35
+                if (e.target.max != "" && e.key == 'End') { e.target.value = e.target.max; changePanels(); }    // end  e.keyCode == 36
+                if (e.target.min != "" && e.key == 'Home') { e.target.value = e.target.min; changePanels(); }   // home e.keyCode == 35
             }, false);
         }
     }
+    // set event auto focus by mouse
     if (!isMobile()) {
         for (let btn of document.querySelectorAll("select")) {
-            btn.addEventListener("mouseover", (e) => { btn.focus(); }, false);
+            btn.addEventListener("mouseover", (e) => { e.target.focus(); }, false);
         }
     }
 
-    // free exp event
+    // free exp name tag event
     for (let name of panel4) {
         let div = document.getElementById(name).querySelector(".box1");
-        div.style.cursor = "pointer";
         div.addEventListener("click", (e) => {
-            div.innerHTML = prompt(div.title, div.innerHTML) || div.title;
+            e.target.innerHTML = prompt(e.target.title, e.target.innerHTML) || e.target.title;
             // saveData();
         }, false);
     }
-
     // box title event
     {
         let div = document.getElementById("boxtitle");
-        div.style.cursor = "pointer";
         div.addEventListener("click", (e) => {
-            div.innerHTML = prompt(`名前入力`, div.innerHTML) || div.title;
+            e.target.innerHTML = prompt(`名前入力`, e.target.innerHTML) || e.target.title;
             // saveData();
         }, false);
     }
 
-    // scroll event
+    // float result box scroll event
     if (!isMobile()) {
         $(window).scroll(() => {
             let div = document.getElementById("remainingEXP").parentElement.parentElement;
@@ -293,7 +318,7 @@ let setExpLimit = () => {
     document.getElementById("inputNext").min = 1;
     document.getElementById("inputNext").max = expTable[l][r + 1];
 }
-// Panel zone
+// Panel zone update exp column
 let updateUI = () => {
     let r = document.getElementById('checkSariette').checked ? 1.1 : 1.0;
 
@@ -308,6 +333,8 @@ let updateUI = () => {
         if (check && rare != check) {   // requirement defined && same to rare
             box2.innerHTML = 0;
         }
+
+        // show or keep
         if (rare == 0 ||    // for debug
             !check ||       // for all rare
             rare == check) {// for defined rares

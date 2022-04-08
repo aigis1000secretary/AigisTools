@@ -9,6 +9,8 @@
 
 /* training box */
 
+#boxtitle { cursor: pointer; }
+
 /* .training {
     height: 26px;
 } */
@@ -164,6 +166,9 @@ input[type="number"]:not(.box1 input)::-webkit-inner-spin-button {
 #expFarah   .box1 .boxnote { cursor: url("../icons/433_00"), auto; }
 #expPresent .box1 .boxnote { cursor: url("../icons/800_00"), auto; }
 #expPlacer  .box1 .boxnote { cursor: url("../icons/570_00"), auto; }
+
+/* Panel 4 */
+#Panel4+.accContent .box1 { cursor: pointer; }
 
 /* Panel 5 */
 
