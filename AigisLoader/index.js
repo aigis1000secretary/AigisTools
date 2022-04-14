@@ -454,11 +454,20 @@ const aigisCardsList = async function () {
             text = text.Data_Text.replace(/[\s]+\n[\s]+/g, "\n");
             // "Data_Text": "出撃している全員の\n攻撃力と防御力が\n<HERO_POW>％上昇\n出撃中は常に発動"
 
+            let debug = false;
+            // debug ||= ([1064, 1194, 1309, 1394, 1459].includes(card.CardID));
+            // debug ||= ([292].includes(card.CardID));
+            // debug ||= (skill.SkillName.includes("エターナルブレイク"));
+            // debug ||= (skill.SkillName.includes("ダークキュア"));
+            // debug ||= (skill.SkillName.includes("熱砂の大攻勢"));
+            // debug ||= (skill.SkillName.includes("山賊兎の底力"));
+            if (debug) { console.log(``); }
+
             // get skill base data
             let name = skill.SkillName;
             text = text.replace("(現在[NUM_TARGET]体)", "");
             text = text.replace("[NUM_TARGET]", "X");
-            text = text.replace(/\[/g, "<").replace(/\]/g, ">");
+            // text = text.replace(/\[/g, "<").replace(/\]/g, ">");
             text = text.replace("<TIME>", skill.ContTimeMax);
             text = text.replace(/コストｰ/g, "コスト-");
             let nextSkill = 0;
@@ -502,11 +511,13 @@ const aigisCardsList = async function () {
                     .replace(/GetSysVer\(\) [<=>]+ \d+/g, false);
                 return eval(iExpression);
             });
+            infl.sort((a, b) => {
+                let iA = a.ExtendProperty.startsWith("Tag"), iB = b.ExtendProperty.startsWith("Tag");
+                return iA == iB ? 0 : (iA > iB ? -1 : 1);
+            });
 
-            // // debug msg
-            // if (name.includes("閃いた")) {
-            //     console.log(`${name}\t text:\n${text}`);
-            // }
+            // debug msg
+            if (debug) { console.log(`${name}\t text:\n${text}`); }
 
             for (let influence of infl) {
                 let iType = influence.Data_InfluenceType;
@@ -543,52 +554,72 @@ const aigisCardsList = async function () {
                     if (desc == 1.0 && a1 != 0) { desc = a1; }
                 }
 
-                if (iType == 6 && card.InitClassID == 12500) { desc = Math.round(desc / 0.115) / 10; }
+                // extend tag
+                let extend;
+                if (influence.ExtendProperty.startsWith("Tag")) {
+                    [, extend] = influence.ExtendProperty.match(/\S+=(\S+)/);
+                }
 
-                // // debug msg
-                // if (name.includes("閃いた")) {
-                //     console.log(`${name}\t iType: ${iType}\t desc001: ${desc}`);
-                // }
-                // if (skillID == 617) {
-                //     console.log(`${name}\t iType: ${iType}\t desc: ${desc}`);
-                // }
+                if (iType == 6) {
+                    if (card.InitClassID == 12500) { desc = Math.round(desc / 0.115) / 10; }
+                    if (!extend && text.includes("<RNG>")) { extend = "<RNG>"; }
+                }
+
+                // debug msg
+                if (debug) { console.log(`${name}\t iType: ${iType}\t desc: ${desc}    Exten: ${influence.ExtendProperty}, ${extend}`); }
+
+                // replace Text function
+                let replaceText = (text, target, desc) => {
+                    if (debug) { console.log(`    ${target}`) }
+                    if (typeof (target) == 'string') {
+                        if (text.includes(target)) {
+                            text = text.replace(target, desc);
+                        } else {
+                            text = text.replace(target.replace(/\[/g, "<").replace(/\]/g, ">"), desc);
+                        }
+                    } else {
+                        text = text.replace(target, desc);
+                    }
+                    return text;
+                }
 
                 // iType == 187 即死
                 let desc100 = Math.round(desc * 100);
-                if (iType == 2) { text = text.replace(/<ATK>|<POW_R>|<PATK>/, desc); }         // ATK
-                if (iType == 3) { text = text.replace(/<ATK>|<POW_I>/, desc100); }   // ALL ATK
-                if (iType == 4) { text = text.replace(/<DEF>|<POW_R>/, desc); }         // DEF
-                if (iType == 5) { text = text.replace(/<DEF>|<POW_I>/, desc100); }   // ALL DEF
-                if (iType == 6) { text = text.includes("<RNG>") ? text.replace(/<RNG>/, desc) : text = text.replace(/<POW_R>/, desc) }	// RNG
-                if (iType == 7) { text = text.replace(/<NUM_SHOT>/, desc); }
-                if (iType == 8) { text = text.replace(/<AREA>|<POW_R>/, desc); }
-                if (iType == 9) { text = text.replace(/<AVOID>|<POW_I>/, desc100); }
-                if (iType == 10) { text = text.replace(/<AVOID>/, desc100); }
-                if (iType == 11) { text = text.replace(/<POW_R>/, desc); }              // HP
-                if (iType == 12) { text = text.replace(/<NUM_BLOCK>/, desc); }
-                if (iType == 13) { text = text.replace(/<NUM_ATK>/, desc); }
-                if (iType == 19) { text = text.replace(/<MDEF>|<POW_R>/, desc); }
-                if (iType == 22) { text = text.replace(/<NUM_TRG>/, desc); }
-                if (iType == 31) { text = text.replace(/<POW_I>/, desc100); }        // HEAL
-                if (iType == 32) { text = text.replace(/<POW_I>/, desc100); }        // ADD COST
-                if (iType == 33) { text = text.replace(/<POW_I>/, desc100); }        // PH DEF%
-                if (iType == 34) { text = text.replace(/<MDEF>/, desc100); }         // MDEF
-                if (iType == 35) { text = text.replace(/<POW_I>/, desc100); }        // ATK+HP
-                if (iType == 37) { text = text.replace(/<POW_I>/, desc100); }        // ATK DEBUFF
-                if (iType == 54) { text = text.replace(/<POW_I>/, desc100); }        // LUK DEF
-                if (iType == 83) { text = text.replace(/<POW_R>/, desc); }
-                if (iType == 83) { text = text.replace(/<POW_I>/, desc100); }        // MAX HP
-                if (iType == 85) { text = text.replace(/<POW_R>/, desc); }
-                if (iType == 89) { text = text.replace(/<ATK>|<POW_R>/, desc); }
-                if (iType == 90) { text = text.replace(/<DEF>|<POW_R>/, desc); }
-                if (iType == 103) { text = text.replace(/<POW_I>/, desc100); }   // ATK DEBUFF
-                if (iType == 105) { text = text.replace(/<POW_I>/, desc100); }   // UNKNOWN
-                if (iType == 108) { text = text.replace(/<POW_I>/, desc100); }   // HP CUT
-                if (iType == 137) { text = text.replace(/<POW_R>/, desc); }         // AB BUFF
-                if (iType == 141) { text = text.replace(/<ATK>|<POW_R>/, desc); }
-                if (iType == 142) { text = text.replace(/<DEF>|<POW_R>/, desc); }
-                if (iType == 178) { text = text.replace(/<POW_I>/, desc100); }
-                if (iType == 200) { text = text.replace(/<RNG>/, desc); }
+                if (iType == 2) { text = replaceText(text, extend || /<ATK>|<POW_R>|<PATK>|\[ATK\]/, desc); }         // ATK
+                if (iType == 4) { text = replaceText(text, extend || /<DEF>|<POW_R>|<PDEF>|\[DEF\]/, desc); }                                          // DEF
+                if (iType == 3) { text = replaceText(text, extend || /<ATK>|<POW_I>|\[ATK\]/, desc100); }                                    // ALL ATK
+                if (iType == 5) { text = replaceText(text, extend || /<DEF>|<POW_I>|\[DEF\]/, desc100); }                                    // ALL DEF
+                if (iType == 6) { text = replaceText(text, extend || /<RNG>|<POW_R>/, desc); }                                    // ALL DEF
+                if (iType == 7) { text = replaceText(text, extend || /<NUM_SHOT>/, desc); }
+                if (iType == 8) { text = replaceText(text, extend || /<AREA>|<POW_R>/, desc); }
+                if (iType == 9) { text = replaceText(text, extend || /<AVOID>|<POW_I>/, desc100); }
+                if (iType == 10) { text = replaceText(text, extend || /<AVOID>/, desc100); }
+                if (iType == 11) { text = replaceText(text, extend || /<POW_R>/, desc); }                                               // HP
+                if (iType == 12) { text = replaceText(text, extend || /<NUM_BLOCK>/, desc); }
+                if (iType == 13) { text = replaceText(text, extend || /<NUM_ATK>/, desc); }
+                if (iType == 19) { text = replaceText(text, extend || /<MDEF>|<POW_R>/, desc); }
+                if (iType == 22) { text = replaceText(text, extend || /<NUM_TRG>/, desc); }
+                if (iType == 31) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                         // HEAL
+                if (iType == 32) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                         // ADD COST
+                if (iType == 33) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                         // PH DEF%
+                if (iType == 34) { text = replaceText(text, extend || /<MDEF>/, desc100); }                                          // MDEF
+                if (iType == 35) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                         // ATK+HP
+                if (iType == 37) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                         // ATK DEBUFF
+                if (iType == 54) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                         // LUK DEF
+                if (iType == 83) { text = replaceText(text, extend || /<POW_R>/, desc); }
+                if (iType == 83) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                         // MAX HP
+                if (iType == 85) { text = replaceText(text, extend || /<POW_R>/, desc); }
+                if (iType == 89) { text = replaceText(text, extend || /<ATK>|<POW_R>|\[ATK\]/, desc); }
+                if (iType == 90) { text = replaceText(text, extend || /<DEF>|<POW_R>|\[DEF\]/, desc); }
+                if (iType == 103) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                    // ATK DEBUFF
+                if (iType == 105) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                    // UNKNOWN
+                if (iType == 108) { text = replaceText(text, extend || /<POW_I>/, desc100); }                                    // HP CUT
+                if (iType == 137) { text = replaceText(text, extend || /<POW_R>/, desc); }                                          // AB BUFF
+                if (iType == 141) { text = replaceText(text, extend || /<ATK>|<POW_R>|\[ATK\]/, desc); }
+                if (iType == 142) { text = replaceText(text, extend || /<DEF>|<POW_R>|\[DEF\]/, desc); }
+                if (iType == 178) { text = replaceText(text, extend || /<POW_I>/, desc100); }
+                if (iType == 200) { text = replaceText(text, extend || /<RNG>/, desc); }
+                if (iType == 226) { text = replaceText(text, extend || /<POW_R>/, desc); }
 
                 // if (iType == 121) { change skill text }
 
