@@ -299,6 +299,7 @@ let setHr = function (type) {
             textList[107] = "聖夜";
             textList[108] = "ちび";
             textList[109] = "温泉";
+            textList[110] = "エッグハント";
 
             aText = textList[aData.genus];
             bText = textList[bData.genus];

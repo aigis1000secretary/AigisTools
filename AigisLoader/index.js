@@ -693,7 +693,8 @@ const aigisCardsList = async function () {
             let assign = card.Assign;
             // 2: 帝國, 3-4: 遠國, 5: 砂漠, 6-7: 異鄉, 8: 東國
             let genus = card.Genus;
-            // 101: 新春, 102: 情人, 103: 學園, 104: 花嫁, 105: 夏季, 106: 萬聖, 107: 聖夜, 108: Q, 109: 溫泉
+            // 101: 新春, 102: 情人, 103: 學園, 104: 花嫁, 105: 夏季
+            // 106: 萬聖, 107: 聖夜, 108: Q, 109: 溫泉, 110: エッグハント
 
             let year = 0
             let isEvent = (card._TradePoint <= 15) ? 1 : 0; // _TradePoint
