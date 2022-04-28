@@ -1,4 +1,4 @@
-var maxCid = 1466;
+var maxCid = 1489;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1458,12 +1458,35 @@ var charaData = [
 	{	"id": 1456,	"name": "ちび竜吉公主",	"rare": 3,	"classID": 27300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1456_00"	},
 	{	"id": 1457,	"name": "混沌うさぎの祝祭ニーヴ",	"rare": 5,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 110,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1457_00",	"imgaw": "1457_01"	},
 	{	"id": 1458,	"name": "黒兎の魔剣士タラニア",	"rare": 4,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 110,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1458_00",	"imgaw": "1458_01"	},
-	{	"id": 1459,	"name": "卵祭りの山賊娘リーフ",	"rare": 4,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 110,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1459_00"	},
+	{	"id": 1459,	"name": "卵祭りの山賊娘リーフ",	"rare": 4,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 110,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1459_00",	"imgaw": "1459_01"	},
 	{	"id": 1460,	"name": "タマゴの飾り",	"rare": 4,	"classID": 131900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1461,	"name": "お守りエッグ",	"rare": 5,	"classID": 150800,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1461_00"	},
 	{	"id": 1462,	"name": "お守りエッグ",	"rare": 5,	"classID": 150800,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1462_00"	},
 	{	"id": 1463,	"name": "お守りエッグ",	"rare": 5,	"classID": 150800,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1463_00"	},
 	{	"id": 1464,	"name": "お守りエッグ",	"rare": 5,	"classID": 150800,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1464_00"	},
 	{	"id": 1465,	"name": "狂獣の爪",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1466,	"name": "怒竜の加護鱗",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1466,	"name": "怒竜の加護鱗",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1467,	"name": "世界を超える者エフトラ",	"rare": 11,	"classID": 150900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1467_00",	"imgaw": "1467_01"	},
+	{	"id": 1468,	"name": "世界を超える者エフトラ",	"rare": 10,	"classID": 150900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1468_00",	"imgaw": "1468_01"	},
+	{	"id": 1469,	"name": "生命を謳う者イムラウ",	"rare": 11,	"classID": 151000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1469_00",	"imgaw": "1469_01"	},
+	{	"id": 1470,	"name": "生命を謳う者イムラウ",	"rare": 10,	"classID": 151000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1470_00",	"imgaw": "1470_01"	},
+	{	"id": 1471,	"name": "バリアトークン",	"rare": 5,	"classID": 151100,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1471_00"	},
+	{	"id": 1472,	"name": "【スライム娘】リン",	"rare": 5,	"classID": 41800,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1473,	"name": "【ペガサス娘】スズ",	"rare": 5,	"classID": 41900,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1474,	"name": "【カッパードラゴン娘】セレン",	"rare": 5,	"classID": 42000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1475,	"name": "【クラーケン娘】オキュー",	"rare": 5,	"classID": 42100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1476,	"name": "触手トークン",	"rare": 5,	"classID": 42200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1476_00"	},
+	{	"id": 1477,	"name": "大坂城",	"rare": 5,	"classID": 42300,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1478,	"name": "名古屋城",	"rare": 5,	"classID": 42400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1479,	"name": "彦根城",	"rare": 5,	"classID": 42500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1480,	"name": "王子【砂漠】",	"rare": 5,	"classID": 9950,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1480_00"	},
+	{	"id": 1481,	"name": "王子【砂漠】",	"rare": 5,	"classID": 9950,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1481_00"	},
+	{	"id": 1482,	"name": "王子【砂漠】",	"rare": 5,	"classID": 9950,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1482_00"	},
+	{	"id": 1483,	"name": "王子【獣装】",	"rare": 5,	"classID": 9700,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1483_00"	},
+	{	"id": 1484,	"name": "王子【獣装】",	"rare": 5,	"classID": 9700,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1484_00"	},
+	{	"id": 1485,	"name": "王子【獣装】",	"rare": 5,	"classID": 9700,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1485_00"	},
+	{	"id": 1486,	"name": "王子【巨像】",	"rare": 5,	"classID": 9600,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1486_00"	},
+	{	"id": 1487,	"name": "王子【巨像】",	"rare": 5,	"classID": 9600,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1487_00"	},
+	{	"id": 1488,	"name": "王子【巨像】",	"rare": 5,	"classID": 9600,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1488_00"	},
+	{	"id": 1489,	"name": "バリアトークン",	"rare": 5,	"classID": 151100,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1489_00"	}
 ]
