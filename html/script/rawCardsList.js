@@ -1,4 +1,4 @@
-var maxCid = 1508;
+var maxCid = 1511;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1507,5 +1507,8 @@ var charaData = [
 	{	"id": 1505,	"name": "堕天使シェミア",	"rare": 5,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1505_00"	},
 	{	"id": 1506,	"name": "渦潮の亜神メシナ",	"rare": 5,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1506_00",	"imgaw": "1506_01"	},
 	{	"id": 1507,	"name": "メシナの渦巻",	"rare": 5,	"classID": 151200,	"sortGroupID": 30,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1507_00"	},
-	{	"id": 1508,	"name": "メシナの渦潮",	"rare": 5,	"classID": 151230,	"sortGroupID": 30,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1508_00"	}
+	{	"id": 1508,	"name": "メシナの渦潮",	"rare": 5,	"classID": 151230,	"sortGroupID": 30,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1508_00"	},
+	{	"id": 1509,	"name": "ちびジュウベエ",	"rare": 3,	"classID": 20800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1509_00"	},
+	{	"id": 1510,	"name": "ちびハツネ",	"rare": 3,	"classID": 21000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1510_00"	},
+	{	"id": 1511,	"name": "銀月の亜神アラン",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1511_00",	"imgaw": "1511_01"	}
 ]
