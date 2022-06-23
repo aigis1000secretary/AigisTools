@@ -1,4 +1,4 @@
-var maxCid = 1517;
+var maxCid = 1520;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -987,7 +987,7 @@ var charaData = [
 	{	"id": 985,	"name": "ちびフーリ",	"rare": 3,	"classID": 30500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 108,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "985_00"	},
 	{	"id": 986,	"name": "ちびティニー",	"rare": 3,	"classID": 26000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "986_00"	},
 	{	"id": 987,	"name": "姫装山賊モーティマ",	"rare": 3,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "987_00"	},
-	{	"id": 988,	"name": "亡国の女皇ハリナ",	"rare": 5,	"classID": 125800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "988_00",	"imgaw": "988_01"	},
+	{	"id": 988,	"name": "亡国の女皇ハリナ",	"rare": 5,	"classID": 125800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "988_00",	"imgaw": "988_01",	"imgaw2A": "988_02",	"imgaw2B": "988_03"	},
 	{	"id": 989,	"name": "帝国工兵カトリーナ",	"rare": 4,	"classID": 7200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "989_00",	"imgaw": "989_01"	},
 	{	"id": 990,	"name": "バトルドローン",	"rare": 5,	"classID": 16200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "990_00"	},
 	{	"id": 991,	"name": "迷子の悪魔召喚士アイラ",	"rare": 4,	"classID": 13300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "991_00",	"imgaw": "991_01"	},
@@ -1398,7 +1398,7 @@ var charaData = [
 	{	"id": 1396,	"name": "怒りの鮫戦士スカー",	"rare": 5,	"classID": 131400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1396_00"	},
 	{	"id": 1397,	"name": "聖夜の天才戦術家ヘレナ",	"rare": 4,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1397_00",	"imgaw": "1397_01"	},
 	{	"id": 1398,	"name": "祝福の贈り人テュト",	"rare": 5,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1398_00",	"imgaw": "1398_01"	},
-	{	"id": 1399,	"name": "聖なる技巧兵ドリー",	"rare": 4,	"classID": 7200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1399_00",	"imgaw": "1399_01"	},
+	{	"id": 1399,	"name": "聖なる技工兵ドリー",	"rare": 4,	"classID": 7200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1399_00",	"imgaw": "1399_01"	},
 	{	"id": 1400,	"name": "メリーメリーバリスタ",	"rare": 5,	"classID": 14120,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1400_00"	},
 	{	"id": 1401,	"name": "王子【10周年記念】",	"rare": 5,	"classID": 9980,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1401_00"	},
 	{	"id": 1402,	"name": "メリーメリーバリスタ",	"rare": 5,	"classID": 14180,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1402_00"	},
@@ -1514,7 +1514,10 @@ var charaData = [
 	{	"id": 1512,	"name": "幽境新婦フーロン",	"rare": 5,	"classID": 5500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1512_00",	"imgaw": "1512_01"	},
 	{	"id": 1513,	"name": "婚礼の大盾ベルニス",	"rare": 4,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1513_00",	"imgaw": "1513_01"	},
 	{	"id": 1514,	"name": "ひだまりの花嫁ユーティ",	"rare": 4,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1514_00",	"imgaw": "1514_01"	},
-	{	"id": 1515,	"name": "白無垢の狛犬コマ",	"rare": 5,	"classID": 19000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 104,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1515_00"	},
-	{	"id": 1516,	"name": "斎主の獅子",	"rare": 5,	"classID": 127500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1517,	"name": "斎主の大獅子",	"rare": 5,	"classID": 127530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1515,	"name": "白無垢の狛犬コマ",	"rare": 5,	"classID": 19000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 104,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1515_00",	"imgaw": "1515_01"	},
+	{	"id": 1516,	"name": "斎主の獅子",	"rare": 5,	"classID": 127500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1516_00"	},
+	{	"id": 1517,	"name": "斎主の大獅子",	"rare": 5,	"classID": 127530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1517_00"	},
+	{	"id": 1518,	"name": "常夜の料理人アシュリン",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1518_00",	"imgaw": "1518_01"	},
+	{	"id": 1519,	"name": "光剣の神聖騎士デシレア",	"rare": 4,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1519_00"	},
+	{	"id": 1520,	"name": "神聖騎士(ボウガン)",	"rare": 5,	"classID": 152000,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
