@@ -1,4 +1,4 @@
-var maxCid = 1521;
+var maxCid = 1537;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1518,7 +1518,23 @@ var charaData = [
 	{	"id": 1516,	"name": "斎主の獅子",	"rare": 5,	"classID": 127500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1516_00"	},
 	{	"id": 1517,	"name": "斎主の大獅子",	"rare": 5,	"classID": 127530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1517_00"	},
 	{	"id": 1518,	"name": "常夜の料理人アシュリン",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1518_00",	"imgaw": "1518_01"	},
-	{	"id": 1519,	"name": "光剣の神聖騎士デシレア",	"rare": 4,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1519_00"	},
-	{	"id": 1520,	"name": "神聖騎士(ボウガン)",	"rare": 5,	"classID": 152000,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1521,	"name": "紫風の竜砲騎兵イーファ",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1521_00",	"imgaw": "1521_01"	}
+	{	"id": 1519,	"name": "光剣の神聖騎士デシレア",	"rare": 4,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1519_00",	"imgaw": "1519_01"	},
+	{	"id": 1520,	"name": "神聖騎士(ボウガン)",	"rare": 5,	"classID": 152000,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1520_00"	},
+	{	"id": 1521,	"name": "紫風の竜砲騎兵イーファ",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1521_00",	"imgaw": "1521_01"	},
+	{	"id": 1522,	"name": "王子【水着装備】",	"rare": 5,	"classID": 132300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1522_00"	},
+	{	"id": 1523,	"name": "真夏の覇者レオーネ",	"rare": 5,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1523_00"	},
+	{	"id": 1524,	"name": "潮風の守護者アルティア",	"rare": 5,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1524_00",	"imgaw": "1524_01"	},
+	{	"id": 1525,	"name": "女皇の夏季休暇ハリナ",	"rare": 5,	"classID": 125800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1525_00",	"imgaw": "1525_01"	},
+	{	"id": 1526,	"name": "夏の月下冥神へカティエ",	"rare": 5,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1526_00",	"imgaw": "1526_01"	},
+	{	"id": 1527,	"name": "夏の賢仙 清源妙道真君",	"rare": 5,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1527_00",	"imgaw": "1527_01"	},
+	{	"id": 1528,	"name": "通天教主（夏）",	"rare": 5,	"classID": 132400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1528_00"	},
+	{	"id": 1529,	"name": "夏陽海仙 竜吉公主",	"rare": 4,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1529_00",	"imgaw": "1529_01"	},
+	{	"id": 1530,	"name": "水遁遊戯ハツネ",	"rare": 4,	"classID": 1000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1530_00",	"imgaw": "1530_01"	},
+	{	"id": 1531,	"name": "浜辺の武術女官マリカ",	"rare": 4,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1531_00",	"imgaw": "1531_01"	},
+	{	"id": 1532,	"name": "砂浜の工作兵パトリシア",	"rare": 4,	"classID": 15500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1532_00",	"imgaw": "1532_01"	},
+	{	"id": 1533,	"name": "砂のお城",	"rare": 5,	"classID": 132200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1533_00"	},
+	{	"id": 1534,	"name": "砂のお城(愛)",	"rare": 5,	"classID": 132220,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1534_00"	},
+	{	"id": 1535,	"name": "ちびアデライド",	"rare": 3,	"classID": 26700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1535_00"	},
+	{	"id": 1536,	"name": "ちびスイレン",	"rare": 3,	"classID": 22500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1536_00",	"imgaw": "1536_01",	"imgaw2A": "1536_02",	"imgaw2B": "1536_03"	},
+	{	"id": 1537,	"name": "通天教主（真夏）",	"rare": 5,	"classID": 132430,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1537_00"	}
 ]
