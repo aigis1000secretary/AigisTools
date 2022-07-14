@@ -1527,7 +1527,7 @@ var charaData = [
 	{	"id": 1525,	"name": "女皇の夏季休暇ハリナ",	"rare": 5,	"classID": 125800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1525_00",	"imgaw": "1525_01"	},
 	{	"id": 1526,	"name": "夏の月下冥神へカティエ",	"rare": 5,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1526_00",	"imgaw": "1526_01"	},
 	{	"id": 1527,	"name": "夏の賢仙 清源妙道真君",	"rare": 5,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1527_00",	"imgaw": "1527_01"	},
-	{	"id": 1528,	"name": "通天教主（夏）",	"rare": 5,	"classID": 132400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1528_00"	},
+	{	"id": 1528,	"name": "通天教主（夏）",	"rare": 5,	"classID": 132400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1528_00"	},
 	{	"id": 1529,	"name": "夏陽海仙 竜吉公主",	"rare": 4,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1529_00",	"imgaw": "1529_01"	},
 	{	"id": 1530,	"name": "水遁遊戯ハツネ",	"rare": 4,	"classID": 1000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1530_00",	"imgaw": "1530_01"	},
 	{	"id": 1531,	"name": "浜辺の武術女官マリカ",	"rare": 4,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1531_00",	"imgaw": "1531_01"	},
@@ -1536,5 +1536,5 @@ var charaData = [
 	{	"id": 1534,	"name": "砂のお城(愛)",	"rare": 5,	"classID": 132220,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1534_00"	},
 	{	"id": 1535,	"name": "ちびアデライド",	"rare": 3,	"classID": 26700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1535_00"	},
 	{	"id": 1536,	"name": "ちびスイレン",	"rare": 3,	"classID": 22500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1536_00",	"imgaw": "1536_01",	"imgaw2A": "1536_02",	"imgaw2B": "1536_03"	},
-	{	"id": 1537,	"name": "通天教主（真夏）",	"rare": 5,	"classID": 132430,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1537_00"	}
+	{	"id": 1537,	"name": "通天教主（真夏）",	"rare": 5,	"classID": 132430,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1537_00"	}
 ]
