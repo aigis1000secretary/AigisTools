@@ -1049,6 +1049,8 @@ const aigisQuestsList = async () => {
                     map = `110002_${map}`;
                 } else if (missionID == 910001) {
                     map = `910001_${map}`;
+                } else if (missionID == 910002) {
+                    map = `910002_${map}`;
                 }
             }
             // get quest name text
@@ -1163,6 +1165,7 @@ const aigisQuestsList = async () => {
                 });
             } else if (!pngPath && !fs.existsSync(outputPath)) {
                 // WARNING
+                console.log(quest)
                 console.log(`${COLOR.fgRed}cant found ${fileName} in local & this version Aigis${COLOR.reset}`);
             }
 
