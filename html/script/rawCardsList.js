@@ -1,4 +1,4 @@
-var maxCid = 1545;
+var maxCid = 1547;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1544,5 +1544,7 @@ var charaData = [
 	{	"id": 1542,	"name": "祭夜のぬりかべシラヌイ",	"rare": 4,	"classID": 128500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1542_00",	"imgaw": "1542_01"	},
 	{	"id": 1543,	"name": "浴衣ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1543_00"	},
 	{	"id": 1544,	"name": "浴衣ぬりかべ分身",	"rare": 5,	"classID": 128630,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1544_00"	},
-	{	"id": 1545,	"name": "破魔の風鈴",	"rare": 5,	"classID": 152100,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1545_00"	}
+	{	"id": 1545,	"name": "破魔の風鈴",	"rare": 5,	"classID": 152100,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1545_00"	},
+	{	"id": 1546,	"name": "ちびディアナ",	"rare": 3,	"classID": 24800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1546_00"	},
+	{	"id": 1547,	"name": "ちびローザ",	"rare": 3,	"classID": 32100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1547_00"	}
 ]
