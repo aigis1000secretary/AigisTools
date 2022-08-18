@@ -1062,6 +1062,7 @@ const aigisQuestsList = async () => {
                 let questNameID = questRaw.QuestTitle;
                 // console.log(`get file QuestNameText${missionID}.atb`, questNameID, questNameText[questNameID])
                 questName = questNameText[questNameID].Message;
+                questName = questName.replace(/%c\[\S{6}\]/g, '');
             }
 
             // buind new quest
