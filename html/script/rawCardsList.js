@@ -417,7 +417,7 @@ var charaData = [
 	{	"id": 415,	"name": "技強化大聖霊ムジカ",	"rare": 5,	"classID": 31,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "415_00"	},
 	{	"id": 416,	"name": "育成聖霊サリエット",	"rare": 5,	"classID": 32,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "416_00"	},
 	{	"id": 417,	"name": "炎の竜皇女シャルム",	"rare": 7,	"classID": 710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "417_00",	"imgaw": "417_01"	},
-	{	"id": 418,	"name": "白の皇帝",	"rare": 5,	"classID": 9800,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "418_00"	},
+	{	"id": 418,	"name": "白の皇帝",	"rare": 5,	"classID": 9800,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "418_00",	"imgaw": "418_01"	},
 	{	"id": 419,	"name": "帝国遊撃兵エリック",	"rare": 2,	"classID": 12100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 2,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "419_00"	},
 	{	"id": 420,	"name": "帝国天馬騎士クラーラ",	"rare": 2,	"classID": 1100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "420_00"	},
 	{	"id": 421,	"name": "帝国付与魔術師ヒース",	"rare": 2,	"classID": 12700,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 2,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "421_00"	},
