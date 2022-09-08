@@ -535,14 +535,14 @@ let onChangeSelectMissionType = function (select) {
         } break;
         case "Raid": {
             items = missionIDs.filter(mID => {
-                return 900001 < parseInt(mID) && parseInt(mID) < 1000000
+                return 900001 < parseInt(mID) && parseInt(mID) < 910000
             });
         } break;
 
         case "Daily": { items = ["700001"]; } break;
         case "Harlem": { items = ["600001"]; } break;
 
-        case "Challenge": { items = ["800001", "900001"]; } break;
+        case "Challenge": { items = ["800001", "900001", "910001", "910002"]; } break;
 
         case "Debug": {
             missionSelect.options.add(new Option("＝＝ミッション＝＝", ""));
