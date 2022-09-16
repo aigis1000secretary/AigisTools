@@ -85,10 +85,11 @@ module.exports = {
             // get XML folder name
             // folderName = aigis_2021_00_00
             let updateDate = new Date(updateTime);
-            let folderName = "aigis_" +
-                updateDate.getFullYear().toString() + "_" +
-                (updateDate.getMonth() + 1).toString().padStart(2, "0") + "_" +
-                updateDate.getDate().toString().padStart(2, "0");
+            let year = updateDate.getFullYear().toString();
+            let month = (updateDate.getMonth() + 1).toString().padStart(2, "0");
+            let date = updateDate.getDate().toString().padStart(2, "0");
+            let folderName = `aigis_${year}_${month}_${date}`;
+            let commitName = `update${month}${date}`;
 
             // get 2 version url
             let urlR = url.replace('/2iofz514jeks1y44k7al2ostm43xj085', '/1fp32igvpoxnb521p9dqypak5cal0xv0');
@@ -102,6 +103,12 @@ module.exports = {
             // Desktop A/R.txt
             fs.writeFile(`${xmlspath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt has been saved!`); });
             fs.writeFile(`${xmlspath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt has been saved!`); });
+
+            fs.writeFile(`../4_push.bat`, [
+                `git add -A\ngit commit -m ${commitName}\ngit push\n`,
+                `cd .\\AigisTools\n`,
+                `git add -A\ngit commit -m ${commitName}\ngit push\n`,
+            ].join('\n'), (err) => { if (err) console.log(err); else console.log(`push.bat has been saved!`); });
 
 
             // get filepath
