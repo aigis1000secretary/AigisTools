@@ -1,4 +1,4 @@
-var maxCid = 1581;
+var maxCid = 1582;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1117,7 +1117,7 @@ var charaData = [
 	{	"id": 1115,	"name": "聖なる銀夜ティファ",	"rare": 5,	"classID": 2500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1115_00",	"imgaw": "1115_01"	},
 	{	"id": 1116,	"name": "光と闇の聖夜ヘイオス",	"rare": 5,	"classID": 1200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1116_00",	"imgaw": "1116_01"	},
 	{	"id": 1117,	"name": "聖夜の踊り子ブレリア",	"rare": 4,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1117_00",	"imgaw": "1117_01"	},
-	{	"id": 1118,	"name": "紫鱗の海巫女ハルフゥ",	"rare": 5,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1118_00",	"imgaw": "1118_01"	},
+	{	"id": 1118,	"name": "紫鱗の海巫女ハルフゥ",	"rare": 5,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1118_00",	"imgaw": "1118_01",	"imgaw2A": "1118_02",	"imgaw2B": "1118_03"	},
 	{	"id": 1119,	"name": "狛犬コマ",	"rare": 5,	"classID": 19000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1119_00",	"imgaw": "1119_01"	},
 	{	"id": 1120,	"name": "阿形の獅子",	"rare": 5,	"classID": 127500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1120_00"	},
 	{	"id": 1121,	"name": "阿形の大獅子",	"rare": 5,	"classID": 127530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1121_00"	},
@@ -1418,7 +1418,7 @@ var charaData = [
 	{	"id": 1416,	"name": "湯けむりくノ一チヨメ",	"rare": 5,	"classID": 1000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 109,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1416_00",	"imgaw": "1416_01"	},
 	{	"id": 1417,	"name": "砲術娘の温泉旅行カノン",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1417_00",	"imgaw": "1417_01"	},
 	{	"id": 1418,	"name": "放浪の聖騎兵フリア",	"rare": 5,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1418_00",	"imgaw": "1418_01"	},
-	{	"id": 1419,	"name": "深慮の海巫女ムイル",	"rare": 3,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1419_00",	"imgaw": "1419_01"	},
+	{	"id": 1419,	"name": "深慮の海巫女ムイル",	"rare": 3,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1419_00",	"imgaw": "1419_01",	"imgaw2A": "1419_02"	},
 	{	"id": 1420,	"name": "恋慕の剣姫スクハ",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 102,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1420_00",	"imgaw": "1420_01"	},
 	{	"id": 1421,	"name": "思慕の剣豪ヒバリ",	"rare": 5,	"classID": 800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 102,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1421_00",	"imgaw": "1421_01"	},
 	{	"id": 1422,	"name": "恋心の射手ポミエ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1422_00",	"imgaw": "1422_01"	},
@@ -1580,5 +1580,6 @@ var charaData = [
 	{	"id": 1578,	"name": "座敷トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1578_00"	},
 	{	"id": 1579,	"name": "座敷トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1579_00"	},
 	{	"id": 1580,	"name": "仙刀霊符",	"rare": 5,	"classID": 152570,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1580_00"	},
-	{	"id": 1581,	"name": "大森林霊符",	"rare": 5,	"classID": 152670,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1581_00"	}
+	{	"id": 1581,	"name": "大森林霊符",	"rare": 5,	"classID": 152670,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1581_00"	},
+	{	"id": 1582,	"name": "天性の発明家マギー",	"rare": 4,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1582_00",	"imgaw": "1582_01"	}
 ]
