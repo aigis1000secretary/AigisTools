@@ -1,4 +1,4 @@
-var maxCid = 1590;
+var maxCid = 1592;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1589,5 +1589,7 @@ var charaData = [
 	{	"id": 1587,	"name": "王子【天羽々斬】",	"rare": 5,	"classID": 132800,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1587_00"	},
 	{	"id": 1588,	"name": "ダミー6",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1589,	"name": "酒甕を運ぶトトノ",	"rare": 4,	"classID": 42800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1590,	"name": "酒",	"rare": 5,	"classID": 42900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1590_00"	}
+	{	"id": 1590,	"name": "酒",	"rare": 5,	"classID": 42900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1590_00"	},
+	{	"id": 1591,	"name": "ちびキキョウ",	"rare": 3,	"classID": 30700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1591_00"	},
+	{	"id": 1592,	"name": "ちびミサ",	"rare": 3,	"classID": 20565,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1592_00"	}
 ]
