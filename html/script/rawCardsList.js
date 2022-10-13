@@ -1,4 +1,4 @@
-var maxCid = 1592;
+var maxCid = 1601;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1582,7 +1582,7 @@ var charaData = [
 	{	"id": 1580,	"name": "仙刀霊符",	"rare": 5,	"classID": 152570,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1580_00"	},
 	{	"id": 1581,	"name": "大森林霊符",	"rare": 5,	"classID": 152670,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1581_00"	},
 	{	"id": 1582,	"name": "天性の発明家マギー",	"rare": 4,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1582_00",	"imgaw": "1582_01"	},
-	{	"id": 1583,	"name": "絢爛仮装姫ジュリア",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1583_00"	},
+	{	"id": 1583,	"name": "絢爛仮装姫ジュリア",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1583_00",	"imgaw": "1583_01"	},
 	{	"id": 1584,	"name": "南瓜に潜む狙撃手ソシエ",	"rare": 5,	"classID": 13100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1584_00",	"imgaw": "1584_01"	},
 	{	"id": 1585,	"name": "お菓子の共鳴者レライエ",	"rare": 4,	"classID": 15700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1585_00",	"imgaw": "1585_01"	},
 	{	"id": 1586,	"name": "仮装祭りの爪獣ウル",	"rare": 4,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1586_00",	"imgaw": "1586_01"	},
@@ -1591,5 +1591,14 @@ var charaData = [
 	{	"id": 1589,	"name": "酒甕を運ぶトトノ",	"rare": 4,	"classID": 42800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1590,	"name": "酒",	"rare": 5,	"classID": 42900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1590_00"	},
 	{	"id": 1591,	"name": "ちびキキョウ",	"rare": 3,	"classID": 30700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1591_00"	},
-	{	"id": 1592,	"name": "ちびミサ",	"rare": 3,	"classID": 20565,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1592_00"	}
+	{	"id": 1592,	"name": "ちびミサ",	"rare": 3,	"classID": 20565,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1592_00"	},
+	{	"id": 1593,	"name": "諸葛亮 孔明",	"rare": 5,	"classID": 14300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1593_00",	"imgaw": "1593_01"	},
+	{	"id": 1594,	"name": "関羽 雲長",	"rare": 5,	"classID": 7900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1594_00",	"imgaw": "1594_01"	},
+	{	"id": 1595,	"name": "孫策 伯符",	"rare": 5,	"classID": 133800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1595_00",	"imgaw": "1595_01"	},
+	{	"id": 1596,	"name": "董卓 仲穎",	"rare": 5,	"classID": 152700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1596_00",	"imgaw": "1596_01"	},
+	{	"id": 1597,	"name": "趙雲 子龍",	"rare": 4,	"classID": 7900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1597_00",	"imgaw": "1597_01"	},
+	{	"id": 1598,	"name": "孫権 仲謀",	"rare": 4,	"classID": 7800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1598_00",	"imgaw": "1598_01"	},
+	{	"id": 1599,	"name": "黄蓋 公覆",	"rare": 4,	"classID": 152800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1599_00",	"imgaw": "1599_01"	},
+	{	"id": 1600,	"name": "孫堅 文台",	"rare": 5,	"classID": 7800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1600_00"	},
+	{	"id": 1601,	"name": "孫尚香",	"rare": 4,	"classID": 133900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1601_00",	"imgaw": "1601_01"	}
 ]
