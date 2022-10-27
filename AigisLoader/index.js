@@ -676,7 +676,7 @@ const aigisCardsList = async function () {
         let card = _GRs733a4[i];
         if (!nameListRaw[i]) { console.log(`${COLOR.fgRed}Cant found CardID == ${i + 1}${COLOR.reset}`); continue; }
         let _class = classListRaw.find(e => e.ClassID == card.InitClassID);
-        if (!_class) { console.error(`${COLOR.fgRed}Cant found ClassID == ${card.InitClassID}${COLOR.reset}`) }
+        if (!_class) { console.error(`${COLOR.fgRed}Cant found ClassID == ${card.InitClassID}${COLOR.reset}`); continue; }
 
         // rawCardsList.js
         {
