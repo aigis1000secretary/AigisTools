@@ -1,4 +1,4 @@
-var maxCid = 1601;
+var maxCid = 1604;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1599,6 +1599,8 @@ var charaData = [
 	{	"id": 1597,	"name": "趙雲 子龍",	"rare": 4,	"classID": 7900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1597_00",	"imgaw": "1597_01"	},
 	{	"id": 1598,	"name": "孫権 仲謀",	"rare": 4,	"classID": 7800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1598_00",	"imgaw": "1598_01"	},
 	{	"id": 1599,	"name": "黄蓋 公覆",	"rare": 4,	"classID": 152800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1599_00",	"imgaw": "1599_01"	},
-	{	"id": 1600,	"name": "孫堅 文台",	"rare": 5,	"classID": 7800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1600_00"	},
-	{	"id": 1601,	"name": "孫尚香",	"rare": 4,	"classID": 133900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1601_00",	"imgaw": "1601_01"	}
+	{	"id": 1600,	"name": "孫堅 文台",	"rare": 5,	"classID": 7800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1600_00",	"imgaw": "1600_01"	},
+	{	"id": 1601,	"name": "孫尚香",	"rare": 4,	"classID": 133900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1601_00",	"imgaw": "1601_01"	},
+	{	"id": 1602,	"name": "タマゴの飾り",	"rare": 4,	"classID": 131900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1603,	"name": "古城の探索者クルス",	"rare": 5,	"classID": 10600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1603_00",	"imgaw": "1603_01"	}
 ]
