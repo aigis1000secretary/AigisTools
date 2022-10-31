@@ -1602,5 +1602,6 @@ var charaData = [
 	{	"id": 1600,	"name": "孫堅 文台",	"rare": 5,	"classID": 7800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1600_00",	"imgaw": "1600_01"	},
 	{	"id": 1601,	"name": "孫尚香",	"rare": 4,	"classID": 133900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1601_00",	"imgaw": "1601_01"	},
 	{	"id": 1602,	"name": "タマゴの飾り",	"rare": 4,	"classID": 131900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1603,	"name": "古城の探索者クルス",	"rare": 5,	"classID": 10600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1603_00",	"imgaw": "1603_01"	}
+	{	"id": 1603,	"name": "古城の探索者クルス",	"rare": 5,	"classID": 10600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1603_00",	"imgaw": "1603_01"	},
+	{	"id": 1604,	"name": "山ン本五郎左衛門",	"rare": 11,	"classID": 134000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1604_00",	"imgaw": "1604_01"	}
 ]
