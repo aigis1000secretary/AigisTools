@@ -1,4 +1,4 @@
-var maxCid = 1614;
+var maxCid = 1616;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1608,10 +1608,12 @@ var charaData = [
 	{	"id": 1606,	"name": "オークウォリアー",	"rare": 3,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1607,	"name": "ハイオークウォリアー",	"rare": 3,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1608,	"name": "グレーターデーモン",	"rare": 3,	"classID": 43000,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1609,	"name": "炎天の魔将ヤハール",	"rare": 4,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1609_00"	},
+	{	"id": 1609,	"name": "炎天の魔将ヤハール",	"rare": 4,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1609_00",	"imgaw": "1609_01"	},
 	{	"id": 1610,	"name": "砂漠の傭兵ナシート",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1610_00",	"imgaw": "1610_01"	},
 	{	"id": 1611,	"name": "ちびハルフゥ",	"rare": 3,	"classID": 36500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1611_00"	},
 	{	"id": 1612,	"name": "ちびスキュレ",	"rare": 3,	"classID": 20565,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1612_00"	},
 	{	"id": 1613,	"name": "蓑鳩翼の癒し手イエラ",	"rare": 4,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1613_00",	"imgaw": "1613_01"	},
-	{	"id": 1614,	"name": "ちびジェローム",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1614_00"	}
+	{	"id": 1614,	"name": "ちびジェローム",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1614_00"	},
+	{	"id": 1615,	"name": "神話学士コレット",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1615_00",	"imgaw": "1615_01"	},
+	{	"id": 1616,	"name": "原初の竜姫ロタン",	"rare": 5,	"classID": 710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1616_00",	"imgaw": "1616_01"	}
 ]
