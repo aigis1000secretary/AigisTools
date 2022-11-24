@@ -505,10 +505,11 @@ const aigisCardsList = async function () {
                     .replace(/IsMoreClassChange\(2\)/g, true)   // 覺醒 Y/N?
 
                     .replace(/IsClassType\([^\)]+\)/g, false)  // 特定職業條件
-                    .replace(/GetUnitInBattleMatchCount\([\S\s]+\) [>=]{2} \d{1}/g, true)  // 滿足特定條件的人數
+                    .replace(/GetUnitInBattleMatchCount\([\S\s]+\)\s*[>=]{2}\s*\d{1}/g, true)  // 滿足特定條件的人數
                     .replace(/CheckUnitInBattleSomeMatch\(.+\(\).+\)/g, true)  // 滿足特定條件的人數
                     .replace(/GetEntryUnitCount\(\)/g, 6)  // 下場人數
-                    .replace(/GetSysVer\(\) [<=>]+ \d+/g, false);
+                    .replace(/GetSysVer\(\)\s*[<=>]+\s*\d+/g, false)
+                    .replace(/GetSallyCount\(\)\s*[<=>]+\s*\d+/g, false);
                 return eval(iExpression);
             });
             infl.sort((a, b) => {
@@ -755,6 +756,12 @@ const aigisCardsList = async function () {
             else if (id > 85) year = 2014;
             else year = 2013;
 
+            // check name
+            if (name.includes("王子")) {
+                let match = name.match(/(\S+)強化\d/);
+                if (match) { name = match[1]; }
+            }
+
             // get image md5&get giles
             let img, imgaw, imgaw2A, imgaw2B;
             let iconName = "/" + id.toString().padStart(3, "0") + "_001.png";
@@ -775,15 +782,27 @@ const aigisCardsList = async function () {
                 imgaw = `${id.toString().padStart(3, "0")}_01`
             }
 
-            let obj = {
-                id,
-                name, rare, classID,
-                sortGroupID, placeType,
-                kind, assign, genus, // identity,
-                year, isEvent, isToken,
-                img, imgaw, imgaw2A, imgaw2B
-            };
-            rawCardsList[id] = obj;
+            let _obj;
+            if (name.includes("王子") && (_obj = rawCardsList.find((obj) => obj && obj.name == name))) {
+                rawCardsList[_obj.id] = {
+                    id: _obj.id,
+                    name, rare, classID,
+                    sortGroupID, placeType,
+                    kind, assign, genus, // identity,
+                    year, isEvent, isToken,
+                    img, imgaw, imgaw2A, imgaw2B
+                };
+            } else {
+                let obj = {
+                    id,
+                    name, rare, classID,
+                    sortGroupID, placeType,
+                    kind, assign, genus, // identity,
+                    year, isEvent, isToken,
+                    img, imgaw, imgaw2A, imgaw2B
+                };
+                rawCardsList[id] = obj;
+            }
         }
 
         // // CharaDatabase.json
@@ -805,6 +824,10 @@ const aigisCardsList = async function () {
             if (i == 0) {
                 name = "王子【通常】";
                 subName = "王子";
+            }
+            if (name.includes("王子")) {
+                let match = name.match(/(\S+)強化\d/);
+                if (match) { name = match[1]; }
             }
             if (card.Rare > 7 && kind != 2) {
                 name += (card.Rare == 10) ? "【白金英傑】" : "【黒英傑】";
@@ -885,17 +908,25 @@ const aigisCardsList = async function () {
             if (isToken) continue;
             if (name == "刻聖霊ボンボリ" && i != 289) continue;
 
-            let obj = {
-                name,
-                subName,
-                ability, ability_aw,
-                skill, skill_aw,
-                urlName,
-                rarity,
-                class: className
+            let _obj;
+            if (name.includes("王子") && (_obj = charaDatabase.find((obj) => obj.name == name))) {
+                charaDatabase[charaDatabase.indexOf(_obj)] = {
+                    name, subName,
+                    ability, ability_aw,
+                    skill, skill_aw,
+                    urlName: _obj.urlName,
+                    rarity, class: className
+                };
+            } else {
+                let obj = {
+                    name, subName,
+                    ability, ability_aw,
+                    skill, skill_aw,
+                    urlName,
+                    rarity, class: className
+                };
+                charaDatabase.push(obj);
             }
-
-            charaDatabase.push(obj);
         }
 
     }
@@ -974,6 +1005,14 @@ const aigisQuestsList = async () => {
                         "第六章　密林の戦い", "第七章　魔の都", "第八章　魔神の体内", "第九章　鋼の都", "第十章　海底",
                         "第十一章　ポセイオス"
                     ][missionID - 100001] || "NULL";
+                }
+                // fix wrong mission title
+                if (missionID == 400373) {
+                    if (_name != "妖魔の大行軍") {
+                        _name = "妖魔の大行軍";
+                    } else {
+                        console.log(`${COLOR.fgRed}missionID == 400373${COLOR.reset}`);
+                    }
                 }
 
 
