@@ -275,7 +275,6 @@ let setHr = function (type) {
             textList[-5] = "流星ワールドアクター（流星WA）";
             textList[-4] = "ガールズ・ブック・メイカー（GBM）";
             textList[-3] = "封緘のグラセスタ（封緘）";
-            textList[-2] = "真・恋姫†夢想 - 革命（恋姫）";
             textList[-1] = "ランス10-決戦-";
             textList[0] = "王国";
             textList[2] = "白の帝国";
@@ -283,6 +282,8 @@ let setHr = function (type) {
             textList[5] = "砂漠の国";
             textList[6] = "七つの大罪（異郷）";
             textList[8] = "東の国";
+            textList[9] = "華の国";
+            textList[10] = "真・恋姫†夢想 - 革命（恋姫）";
 
             aText += textList[aData.assign];
             bText += textList[bData.assign];
@@ -313,9 +314,9 @@ let setHr = function (type) {
             if (iA) aText += "ガチャ ブラック "
             if (iB) bText += "ガチャ ブラック "
 
-            let al = [0, 5, 8];
-            iA = ((al.includes(aData.assign)) && aData.genus == 0) ? 1 : 0;
-            iB = ((al.includes(bData.assign)) && bData.genus == 0) ? 1 : 0;
+            let al = [0, 5, 8, 9];
+            iA = ((al.includes(aData.assign)) && (aData.genus == 0 || aData.id == 539)) ? 1 : 0;
+            iB = ((al.includes(bData.assign)) && (bData.genus == 0 || bData.id == 539)) ? 1 : 0;
             if (!iA && aText) aText = "限定" + aText;
             if (!iB && bText) bText = "限定" + bText;
 
@@ -327,19 +328,20 @@ let setHr = function (type) {
         } else if (type == "ticket") {
             let textList = ['ブラック交換チケット',
                 '4周年ブラックチケット', '5周年ブラックチケット', '6周年ブラックチケット',
-                '7周年ブラックチケット', '8周年ブラックチケット',
+                '7周年ブラックチケット', '8周年ブラックチケット', '9周年ブラックチケット',
                 '他', 'hidden']
 
-            let iA = aData.id <= 362 ? 0 : (aData.id <= 523 ? 1 : (aData.id <= 662 ? 2 : (aData.id <= 866 ? 3 : (aData.id <= 1046 ? 4 : (aData.id <= 1292 ? 5 : 6)))));
-            let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : 6)))));
+            let iA = aData.id <= 362 ? 0 : (aData.id <= 523 ? 1 : (aData.id <= 662 ? 2 : (aData.id <= 866 ? 3 : (aData.id <= 1046 ? 4 : (aData.id <= 1292 ? 5 : (aData.id <= 1521 ? 6 : 7))))));
+            let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : (bData.id <= 1521 ? 6 : 7))))));
             // hidden icon
-            if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8].includes(aData.assign)) ||
-                (aData.genus != 0) || (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396)) {
-                iA = 7;
+            if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8, 9].includes(aData.assign)) ||
+                (aData.genus != 0 && aData.id != 539) || (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396)) {
+                iA = 8;
                 hidden = true;
-            } if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8].includes(bData.assign)) ||
-                (bData.genus != 0) || (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396)) {
-                iB = 7;
+            }
+            if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8, 9].includes(bData.assign)) ||
+                (bData.genus != 0 && bData.id != 539) || (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396)) {
+                iB = 8;
                 hidden = true;
             }
 
@@ -643,9 +645,9 @@ let sortByYearGacha = function () {
         if (iA != iB) return iA > iB ? -1 : 1;
 
         // sort 限定
-        let al = [0, 5, 8];
-        iA = ((al.includes(aData.assign)) && aData.genus == 0) ? 1 : 0;
-        iB = ((al.includes(bData.assign)) && bData.genus == 0) ? 1 : 0;
+        let al = [0, 5, 8, 9];
+        iA = ((al.includes(aData.assign)) && (aData.genus == 0 || aData.id == 539)) ? 1 : 0;
+        iB = ((al.includes(bData.assign)) && (bData.genus == 0 || bData.id == 539)) ? 1 : 0;
         if (iA != iB) return iA > iB ? -1 : 1;
 
         // sort by year
@@ -664,16 +666,16 @@ let sortByTicket = function () {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
-        let iA = aData.id <= 362 ? 0 : (aData.id <= 523 ? 1 : (aData.id <= 662 ? 2 : (aData.id <= 866 ? 3 : (aData.id <= 1046 ? 4 : (aData.id <= 1292 ? 5 : 6)))));
-        let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : 6)))));
+        let iA = aData.id <= 362 ? 0 : (aData.id <= 523 ? 1 : (aData.id <= 662 ? 2 : (aData.id <= 866 ? 3 : (aData.id <= 1046 ? 4 : (aData.id <= 1292 ? 5 : (aData.id <= 1521 ? 6 : 7))))));
+        let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : (bData.id <= 1521 ? 6 : 7))))));
         // hidden icon
-        if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8].includes(aData.assign)) ||
-            (aData.genus != 0) || (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396)) {
-            iA = 7;
+        if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8, 9].includes(aData.assign)) ||
+            (aData.genus != 0 && aData.id != 539) || (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396)) {
+            iA = 8;
         }
-        if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8].includes(bData.assign)) ||
-            (bData.genus != 0) || (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396)) {
-            iB = 7;
+        if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8, 9].includes(bData.assign)) ||
+            (bData.genus != 0 && bData.id != 539) || (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396)) {
+            iB = 8;
         }
         // sort by year group
         if (iA != iB) return (iA < iB) ? -1 : 1;

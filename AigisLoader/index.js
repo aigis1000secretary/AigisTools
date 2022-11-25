@@ -697,19 +697,19 @@ const aigisCardsList = async function () {
             // 101: 新春, 102: 情人, 103: 學園, 104: 花嫁, 105: 夏季
             // 106: 萬聖, 107: 聖夜, 108: Q, 109: 溫泉, 110: エッグハント
 
-            let year = 0
+            let year = new Date(card.DateOfImplementation).getFullYear();
             let isEvent = (card._TradePoint <= 15) ? 1 : 0; // _TradePoint
-            let isToken = (card.SellPrice == 0 || nameListRaw[i].Message.includes("ダミー")) ? 1 : 0;
+            let isToken = (card.SellPrice == 0 || nameListRaw[i].Message.includes("ダミー") || nameListRaw[i].RealName.includes("NPC")) ? 1 : 0;
 
             // Collaboration data format
             switch (id) {
                 // ランス10-決戦-
                 case 581: { assign = -1; } break;
 
-                // 真・恋姫†夢想-革命
-                case 648: case 649: case 650: case 651: case 652:   // 2018/07
-                case 848: case 849: case 850: case 851: case 852:   // 2019/08
-                    { assign = -2; } break;
+                // // 真・恋姫†夢想-革命
+                // case 648: case 649: case 650: case 651: case 652:   // 2018/07
+                // case 848: case 849: case 850: case 851: case 852:   // 2019/08
+                //     { assign = -2; } break;
 
                 //  封緘のグラセスタ
                 case 719:
@@ -743,18 +743,6 @@ const aigisCardsList = async function () {
                 case 1214: case 1215: case 1216:
                     { assign = -6; } break;
             }
-
-            // set year
-            if (id > 1404) year = 2022;
-            else if (id > 1125) year = 2021;
-            else if (id > 942) year = 2020;
-            else if (id > 726) year = 2019;
-            else if (id > 572) year = 2018;
-            else if (id > 437) year = 2017;
-            else if (id > 323) year = 2016;
-            else if (id > 201) year = 2015;
-            else if (id > 85) year = 2014;
-            else year = 2013;
 
             // check name
             if (name.includes("王子")) {
