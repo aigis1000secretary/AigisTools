@@ -70,7 +70,7 @@ let getIconFlags = function () {
     // read flag from iconbox
     let l = Math.ceil((maxCid + 1) / 5) * 5;
     let flagArray = new Array(l).fill("0");
-    let iconList = document.getElementById("iconbox").getElementsByClassName("iconbtn");
+    let iconList = document.querySelectorAll('#iconbox .iconbtn');
     for (let i in iconList) {
         let icon = iconList[i];
         let id = icon.id;
@@ -378,7 +378,7 @@ let doStatistics = function () {
     let trueCount = 0;
 
     // set hr statistics text
-    let icon, hrList = document.getElementById("iconbox").getElementsByClassName("hr");
+    let icon, hrList = document.querySelectorAll('#iconbox .hr');
     // get count in same type
     for (let i = 0; i < hrList.length; ++i) {
         // get label text

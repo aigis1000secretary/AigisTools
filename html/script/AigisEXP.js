@@ -72,7 +72,7 @@ let bodyOnload = () => {
     }
 
     // set button event
-    for (let btn of document.querySelector(".leftcolumn").getElementsByTagName("input")) {
+    for (let btn of document.querySelectorAll(".leftcolumn input")) {
         if (btn.value == "MIN") {
             btn.addEventListener("click", (e) => {
                 let input = e.target.parentElement.querySelector('[type=number]');
