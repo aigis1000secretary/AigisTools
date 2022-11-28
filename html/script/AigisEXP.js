@@ -83,15 +83,17 @@ let bodyOnload = () => {
         } else if (btn.value == "－") {
             btn.addEventListener("click", (e) => {
                 let input = e.target.parentElement.querySelector('[type=number]');
+                let count0 = input.value;
                 input.value = Math.max(input.min, parseInt(input.value) - 1);
-                calc();
+                countChange(btn, input.value - count0);
             }, false);
 
         } else if (btn.value == "＋") {
             btn.addEventListener("click", (e) => {
                 let input = e.target.parentElement.querySelector('[type=number]');
+                let count0 = input.value;
                 input.value = Math.min(input.max, parseInt(input.value) + 1);
-                calc();
+                countChange(btn, input.value - count0);
             }, false);
         } else if (btn.value == "MAX") {
             btn.addEventListener("click", (e) => {
@@ -112,6 +114,13 @@ let bodyOnload = () => {
             }, false);
         }
     }
+
+    // set checker event
+    {
+        let div = document.querySelector("#checkSimulation");
+        div.addEventListener("change", changeMode, false);
+    }
+
     // set event auto focus by mouse
     if (!isMobile()) {
         for (let btn of document.querySelectorAll("select")) {
@@ -398,6 +407,42 @@ let updateUI = () => {
         box2.innerHTML = (exp * r).toFixed(1).replace(/\.0$/, "");
     }
 }
+let countChange = (btn, count) => {
+    // let btn = document.querySelector('#expcalc .si');
+    let box2 = btn.parentElement.parentElement.querySelector('.box2');
+    let mode = !!document.querySelector("#checkSimulation").checked;
+
+    if (count != 0 && mode && box2) {
+
+        let sumEXP = getNext();
+        let currentRarity = getRarity();
+        let currentLevel = getLevel();
+
+        let exp = ((parseInt(box2.innerText || box2.querySelector('input').value) || 0) * count);
+        let add = exp > 0 ? 1 : -1;
+        while (exp != 0) {
+            exp -= add;
+            sumEXP += add;
+            if (sumEXP <= 0) {
+                ++currentLevel;
+                sumEXP += expTable[currentLevel][currentRarity + 1];
+            }
+            if (sumEXP > expTable[currentLevel][currentRarity + 1]) {
+                sumEXP -= expTable[currentLevel][currentRarity + 1];
+                --currentLevel;
+            }
+        }
+        if (currentLevel > 0) {
+            document.getElementById("inputNext").value = sumEXP;
+            document.getElementById("selectCurrentLevel").selectedIndex = currentLevel - 1;
+        } else {
+            let box3 = btn.parentElement.querySelector('[type=number]');
+            box3.value -= count;
+        }
+    }
+
+    calc();
+}
 let calc = () => {
     // necessaryEXP
     let sumEXP = getNext();
@@ -479,7 +524,16 @@ let calc = () => {
         document.getElementById("inputInformation").innerHTML = "-";
     }
 }
+let changeMode = () => {
+    let mode = !!document.querySelector("#checkSimulation").checked;
 
+    for (let btn of document.querySelectorAll("#expcalc input[type=button]")) {
+        btn.className = mode ? 'si' : '';
+    }
+    for (let input of document.querySelectorAll("#expcalc input[type=number]")) {
+        input.disabled = mode;
+    }
+}
 // let keymap = [
 //     ['.ra', ' .rare'], ['.se', ' .sex'], ['.cc', ' .cc'], ['.cb', ' .cbonus'], ['.lv', ' .lv'], ['.fe', ' .freeExp'], ['.co', ' .count'],
 //     ['sR', '#selectRarity'], ['sC', '#selectCurrentLevel'], ['iN', '#inputNext'], ['sT', '#selectTargetLevel'], ['cS', '#checkSariette'],

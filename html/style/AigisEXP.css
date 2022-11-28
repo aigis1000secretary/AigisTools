@@ -156,6 +156,10 @@ input[type="number"]:not(.box1 input)::-webkit-inner-spin-button {
     margin: 0;
 }
 
+/* exp simulation mode */
+#expcalc .si { background-color: #c0c0c0; color: #000; }
+#expcalc input[type="number"][disabled] { background-color: gainsboro; }
+
 /* Panel 1 */
 
 #expAmour   .box1 .boxnote { cursor: url("../icons/460_00"), auto; }
