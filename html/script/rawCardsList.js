@@ -1,4 +1,4 @@
-var maxCid = 1643;
+var maxCid = 1648;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -495,11 +495,11 @@ var charaData = [
 	{	"id": 494,	"name": "魔獣ケルベロス",	"rare": 5,	"classID": 3170,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "494_00"	},
 	{	"id": 495,	"name": "魔獣ケルベロス",	"rare": 5,	"classID": 3180,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "495_00"	},
 	{	"id": 496,	"name": "神和ぎの踊り子ミヤビ",	"rare": 5,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "496_00",	"imgaw": "496_01",	"imgaw2A": "496_02",	"imgaw2B": "496_03"	},
-	{	"id": 497,	"name": "黒衣の騎士ダリューン（遠国の近衛兵）",	"rare": 5,	"classID": 3200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 3,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "497_00"	},
-	{	"id": 498,	"name": "未来の宮廷画家ナルサス（遠国の前衛戦術家）",	"rare": 5,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 3,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "498_00"	},
-	{	"id": 499,	"name": "神の射手ファランギース（遠国の弓兵）",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 3,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "499_00"	},
+	{	"id": 497,	"name": "黒衣の騎士ダリューン",	"rare": 5,	"classID": 3200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 3,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "497_00"	},
+	{	"id": 498,	"name": "未来の宮廷画家ナルサス",	"rare": 5,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 3,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "498_00"	},
+	{	"id": 499,	"name": "神の射手ファランギース",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 3,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "499_00"	},
 	{	"id": 500,	"name": "芸術家の逸品",	"rare": 5,	"classID": 13700,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "500_00"	},
-	{	"id": 501,	"name": "王太子アルスラーン（遠国の公子）",	"rare": 4,	"classID": 6400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 3,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "501_00"	},
+	{	"id": 501,	"name": "王太子アルスラーン",	"rare": 4,	"classID": 6400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 3,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "501_00"	},
 	{	"id": 502,	"name": "水霊使いセノーテ",	"rare": 4,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "502_00",	"imgaw": "502_01"	},
 	{	"id": 503,	"name": "ウォーターエレメンタル",	"rare": 5,	"classID": 6300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "503_00"	},
 	{	"id": 504,	"name": "上級ウォーターエレメンタル",	"rare": 5,	"classID": 6320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "504_00"	},
@@ -682,12 +682,12 @@ var charaData = [
 	{	"id": 681,	"name": "仮装海賊ヴェロッテ",	"rare": 3,	"classID": 10400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "681_00",	"imgaw": "681_01"	},
 	{	"id": 682,	"name": "南瓜祭の花嫁カルマ",	"rare": 5,	"classID": 520,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "682_00",	"imgaw": "682_01",	"imgaw2A": "682_02",	"imgaw2B": "682_03"	},
 	{	"id": 683,	"name": "パンプキンナイト",	"rare": 5,	"classID": 8300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 1,	"img": "683_00"	},
-	{	"id": 684,	"name": "ディアンヌ（異郷の槌使い）",	"rare": 4,	"classID": 8400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "684_00",	"imgaw": "684_01"	},
-	{	"id": 685,	"name": "バン（異郷の盗賊）",	"rare": 4,	"classID": 8500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "685_00",	"imgaw": "685_01"	},
-	{	"id": 686,	"name": "エリザベス（異郷の回復術士）",	"rare": 5,	"classID": 14500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "686_00",	"imgaw": "686_01"	},
-	{	"id": 687,	"name": "メリオダス（異郷の騎士）",	"rare": 5,	"classID": 8600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "687_00",	"imgaw": "687_01"	},
-	{	"id": 688,	"name": "キング（異郷の妖精）",	"rare": 5,	"classID": 8700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "688_00",	"imgaw": "688_01"	},
-	{	"id": 689,	"name": "祝福のエリザベス（異郷の祝福者）",	"rare": 4,	"classID": 59,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "689_00"	},
+	{	"id": 684,	"name": "ディアンヌ",	"rare": 4,	"classID": 8400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "684_00",	"imgaw": "684_01"	},
+	{	"id": 685,	"name": "バン",	"rare": 4,	"classID": 8500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "685_00",	"imgaw": "685_01"	},
+	{	"id": 686,	"name": "エリザベス",	"rare": 5,	"classID": 14500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "686_00",	"imgaw": "686_01"	},
+	{	"id": 687,	"name": "メリオダス",	"rare": 5,	"classID": 8600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "687_00",	"imgaw": "687_01"	},
+	{	"id": 688,	"name": "キング",	"rare": 5,	"classID": 8700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "688_00",	"imgaw": "688_01"	},
+	{	"id": 689,	"name": "祝福のエリザベス",	"rare": 4,	"classID": 59,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"assign": 6,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "689_00"	},
 	{	"id": 690,	"name": "王子【風護】",	"rare": 5,	"classID": 134400,	"sortGroupID": 25,	"placeType": 3,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1625_00"	},
 	{	"id": 691,	"name": "お菓子魔術師キャンディ",	"rare": 4,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "691_00",	"imgaw": "691_01",	"imgaw2A": "691_02"	},
 	{	"id": 692,	"name": "異郷の槌使い",	"rare": 4,	"classID": 8410,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 7,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "692_00"	},
@@ -1612,5 +1612,10 @@ var charaData = [
 	{	"id": 1640,	"name": "夜風闇刃かまいたちトキ",	"rare": 5,	"classID": 126680,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1640_00"	},
 	{	"id": 1641,	"name": "風刃かまいたちユキ",	"rare": 5,	"classID": 126770,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1641_00"	},
 	{	"id": 1642,	"name": "夜風闇刃かまいたちユキ",	"rare": 5,	"classID": 126780,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1642_00"	},
-	{	"id": 1643,	"name": "変わり身の幻",	"rare": 5,	"classID": 134300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1643_00"	}
+	{	"id": 1643,	"name": "変わり身の幻",	"rare": 5,	"classID": 134300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1643_00"	},
+	{	"id": 1644,	"name": "暁光を導く者イルドナ",	"rare": 11,	"classID": 134500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1644_00",	"imgaw": "1644_01"	},
+	{	"id": 1645,	"name": "暁光を導く者イルドナ",	"rare": 10,	"classID": 134500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1645_00",	"imgaw": "1645_01"	},
+	{	"id": 1646,	"name": "フリズスキャールヴ",	"rare": 3,	"classID": 134600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1646_00"	},
+	{	"id": 1647,	"name": "ちびハルモニア",	"rare": 3,	"classID": 145300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1647_00"	},
+	{	"id": 1648,	"name": "ちびエリス",	"rare": 3,	"classID": 34800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1648_00"	}
 ]
