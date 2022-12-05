@@ -458,15 +458,16 @@ let sortByDate = function (ascending) {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
-        let iA, iB;
-        iA = (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? 0 : 1;
-        iB = (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? 0 : 1;
-        if (iA != iB) return (iA < iB) ? -1 : 1;
-
-        iA = aData.id;
-        iB = bData.id;
-        // sort by id
+        let iA, iB, shift = (ascending ? -9999 : 9999);
+        iA = aData.year;
+        iB = bData.year;
+        iA += (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? shift : 0;
+        iB += (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? shift : 0;
+        // sort by year
         if (iA != iB) return (!!ascending == (iA < iB)) ? -1 : 1;
+
+        // sort by id
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
 
         return 0;
     })
@@ -479,17 +480,16 @@ let sortByRare = function (ascending) {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
-        let iA, iB;
-        iA = aData.rare; iA = iA == 7 ? 3.5 : iA;
-        iB = bData.rare; iB = iB == 7 ? 3.5 : iB;
+        let iA, iB, shift = (ascending ? -9999 : 9999);
+        iA = aData.rare; iA = (iA == 7 ? 3.5 : iA);
+        iB = bData.rare; iB = (iB == 7 ? 3.5 : iB);
+        iA += (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? shift : 0;
+        iB += (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? shift : 0;
         // sort by rare
         if (iA != iB) return (!!ascending == (iA < iB)) ? -1 : 1;
 
-        iA = aData.sortGroupID; iA = (aData.id == 418 && aData.id != 1396) ? 20 : iA;
-        iB = bData.sortGroupID; iB = (bData.id == 418 && bData.id != 1396) ? 20 : iB;
         // sort by group
-        if (iA != iB) return (iA < iB) ? -1 : 1;
-
+        if (aData.placeType != bData.placeType) return (aData.placeType < bData.placeType) ? -1 : 1;
         // sort by class
         if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
@@ -507,8 +507,10 @@ let sortByClass = function (ascending) {
 
     charaData.sort(function compare(aData, bData) {
         let iA, iB;
-        iA = aData.sortGroupID; iA = (aData.id == 418 && aData.id != 1396) ? 20 : iA;
-        iB = bData.sortGroupID; iB = (bData.id == 418 && bData.id != 1396) ? 20 : iB;
+        iA = aData.placeType;
+        iB = bData.placeType;
+        iA += (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? -9999 : 0;
+        iB += (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? -9999 : 0;
         // sort by group
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
@@ -531,18 +533,18 @@ let sortByKind = function () {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
+        let iA, iB;
+        iA = aData.kind;
+        iB = bData.kind;
+        iA += (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? -9999 : 0;
+        iB += (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? -9999 : 0;
         // sort by kind
-        if (aData.kind != bData.kind) return (aData.kind < bData.kind) ? -1 : 1;
+        if (iA != iB) return (iA < iB) ? -1 : 1;
 
         // sort by rare
         if (aData.rare != bData.rare) return (aData.rare > bData.rare) ? -1 : 1;
-
-        let iA, iB;
-        iA = aData.sortGroupID; iA = (aData.id == 418 && aData.id != 1396) ? 20 : iA;
-        iB = bData.sortGroupID; iB = (bData.id == 418 && bData.id != 1396) ? 20 : iB;
         // sort by group
-        if (iA != iB) return (iA < iB) ? -1 : 1;
-
+        if (aData.placeType != bData.placeType) return (aData.placeType < bData.placeType) ? -1 : 1;
         // sort by class
         if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
         // sort by id
