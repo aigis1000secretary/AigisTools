@@ -1,4 +1,4 @@
-var maxCid = 1648;
+var maxCid = 1655;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1617,5 +1617,12 @@ var charaData = [
 	{	"id": 1645,	"name": "暁光を導く者イルドナ",	"rare": 10,	"classID": 134500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1645_00",	"imgaw": "1645_01"	},
 	{	"id": 1646,	"name": "フリズスキャールヴ",	"rare": 3,	"classID": 134600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1646_00"	},
 	{	"id": 1647,	"name": "ちびハルモニア",	"rare": 3,	"classID": 145300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1647_00"	},
-	{	"id": 1648,	"name": "ちびエリス",	"rare": 3,	"classID": 34800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1648_00"	}
+	{	"id": 1648,	"name": "ちびエリス",	"rare": 3,	"classID": 34800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1648_00"	},
+	{	"id": 1649,	"name": "聖樹の薬草師ローズ",	"rare": 4,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1649_00"	},
+	{	"id": 1650,	"name": "ちびジェリウス",	"rare": 3,	"classID": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1650_00"	},
+	{	"id": 1651,	"name": "聖夜の魔将ハルモニア",	"rare": 5,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1651_00",	"imgaw": "1651_01"	},
+	{	"id": 1652,	"name": "聖闇の贈り主グレーテル",	"rare": 4,	"classID": 4000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1652_00",	"imgaw": "1652_01"	},
+	{	"id": 1653,	"name": "聖夜のメカドラゴン",	"rare": 5,	"classID": 152900,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 107,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1653_00"	},
+	{	"id": 1654,	"name": "刻聖霊ボンボリ",	"rare": 4,	"classID": 15,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1654_00"	},
+	{	"id": 1655,	"name": "きらめく聖樹",	"rare": 5,	"classID": 134700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1655_00"	}
 ]
