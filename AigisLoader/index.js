@@ -770,11 +770,14 @@ const aigisCardsList = async function () {
                 imgaw = `${id.toString().padStart(3, "0")}_01`
             }
 
-            let _obj;
-            if (name.includes("王子") && (_obj = rawCardsList.find((obj) => obj && obj.name == name))) {
+            let _obj = rawCardsList.find((obj) => obj &&
+                obj.name == name &&
+                obj.rare == rare &&
+                obj.isToken == isToken);
+            if (_obj) {
                 rawCardsList[_obj.id] = {
                     id: _obj.id,
-                    name, rare, classID,
+                    name, rare, classID: _obj.classID,
                     sortGroupID, placeType,
                     kind, assign, genus, // identity,
                     year, isEvent, isToken,
@@ -894,17 +897,17 @@ const aigisCardsList = async function () {
 
             // skip data
             if (isToken) continue;
-            if (name == "刻聖霊ボンボリ" && i != 289) continue;
+            // if (name == "刻聖霊ボンボリ" && i != 289) continue;
 
-            let _obj;
-            if (name.includes("王子") && (_obj = charaDatabase.find((obj) => obj.name == name))) {
-                charaDatabase[charaDatabase.indexOf(_obj)] = {
-                    name, subName,
-                    ability, ability_aw,
-                    skill, skill_aw,
-                    urlName: _obj.urlName,
-                    rarity, class: className
-                };
+            let _obj = charaDatabase.find((obj) => obj.name == name);
+            if (_obj) {
+                let id = charaDatabase.indexOf(_obj);
+                let obj = _obj;
+                obj.ability ||= ability;
+                obj.ability_aw ||= ability_aw;
+                obj.skill ||= skill;
+                obj.skill_aw ||= skill_aw;
+                charaDatabase[id] = obj;
             } else {
                 let obj = {
                     name, subName,
@@ -993,14 +996,6 @@ const aigisQuestsList = async () => {
                         "第六章　密林の戦い", "第七章　魔の都", "第八章　魔神の体内", "第九章　鋼の都", "第十章　海底",
                         "第十一章　ポセイオス"
                     ][missionID - 100001] || "NULL";
-                }
-                // fix wrong mission title
-                if (missionID == 400373) {
-                    if (_name != "妖魔の大行軍") {
-                        _name = "妖魔の大行軍";
-                    } else {
-                        console.log(`${COLOR.fgRed}missionID == 400373${COLOR.reset}`);
-                    }
                 }
 
 
@@ -1161,7 +1156,7 @@ const aigisQuestsList = async () => {
             let pngPath = raws.find(p => p.endsWith(".png"));
 
             // online file exist
-            if (pngPath && (!fs.existsSync(outputPath) || changesList.indexOf(mapName) != -1)) {
+            if (pngPath && (!fs.existsSync(outputPath) || changesList.indexOf(mapName) != -1) && dlImg) {
                 // online path + no local resource
                 // online path + in change log
 
