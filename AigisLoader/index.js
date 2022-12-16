@@ -972,24 +972,21 @@ const aigisQuestsList = async () => {
             console.log(`get EventNameText data`);
         }
 
-        let missionCfgPath = [];
-        missionCfgPath = resourceList.filter(p => p.includes("MissionConfig") && !p.startsWith("Emc"));
-
+        let missionCfgPath = resourceList.filter(p => p.includes("MissionConfig") && !p.startsWith("Emc"));
         for (let filepath of missionCfgPath) {
             let missionCfgArray = rawToJson(filepath);
 
             for (let missionCfg of missionCfgArray) {
 
-                let _name = missionCfg.Name || "NULL";
+                let titleID = missionCfg.TitleID;
+                let _name = missionCfg.Name || ((titleID != undefined) ? missionNameText[titleID].Data_Text : null) || "NULL";
                 let missionID = missionCfg.MissionID;
 
-                let questID = missionCfg.QuestID || false;
+                let questID = missionCfg.QuestID || missionCfg.QuestIdList || false;
                 questID = questID ? questID.split(',') : [];
                 for (let i in questID) { questID[i] = parseInt(questID[i]); }
 
                 // fill mission title
-                let titleID = missionCfg.TitleID;
-                if (titleID != undefined && _name == "NULL") { _name = missionNameText[titleID].Data_Text }
                 if (missionID < 110000) {
                     _name = [
                         "第一章　王都脱出", "第二章　王城奪還", "第三章　熱砂の砂漠", "第四章　東の国", "第五章　魔法都市",
@@ -998,14 +995,14 @@ const aigisQuestsList = async () => {
                     ][missionID - 100001] || "NULL";
                 }
 
-
                 // search mission in db
                 let mission = missionList.find(q => q.missionID == missionID)
-                // buind new mission
                 if (!mission) {
-                    mission = { name: _name, missionID, questID, titleID };
+                    // buind new mission
+                    mission = { name: _name, missionID, questID };
                     missionList.push(mission);
                 } else {
+                    questID = questID.filter(qID => !mission.questID.includes(qID));
                     mission.questID.concat(questID);
                 }
             }
@@ -1016,9 +1013,7 @@ const aigisQuestsList = async () => {
     // read raw mission quest list
     // fill mission.QuestID
     {
-        let missionQListPath = [];
-        missionQListPath = resourceList.filter(p => p.includes("MissionQuestList"));
-
+        let missionQListPath = resourceList.filter(p => p.includes("MissionQuestList"));
         for (let filepath of missionQListPath) {
             let missionQListArray = rawToJson(filepath);
 
@@ -1032,11 +1027,11 @@ const aigisQuestsList = async () => {
                 if (mission) {
                     mission.questID.push(questID);
                 } else {
-                    // let listName = path.parse(filepath).dir;
-                    // console.log(`${listName}`);
+                    // console.log(filepath);
                     // console.log(`${COLOR.fgRed}cant found missionID = ${missionID}${COLOR.reset}`);
                 }
             }
+            // // backup file
             // let listName = path.parse(filepath).dir;
             // listName = path.parse(listName).name;
             // fs.writeFileSync(`raw/MissionQuestList/${listName}.json`, JSON.stringify(questList, null, 2));
@@ -1059,22 +1054,19 @@ const aigisQuestsList = async () => {
             let unitLimit = questRaw.Capacity;
 
             // get data from db
-            let mission = missionList.find(m => m.questID.indexOf(questID) != -1);
             let missionID = missionTitle = "NULL";
-            if (mission) {
+
+            for (let mission of missionList.filter(m => m.questID.includes(questID))) {
                 missionID = mission.missionID;
                 missionTitle = mission.name;
 
-                if (missionID == 110001) {
-                    map = `110001_${map}`;
-                } else if (missionID == 110002) {
-                    map = `110002_${map}`;
-                } else if (missionID == 910001) {
-                    map = `910001_${map}`;
-                } else if (missionID == 910002) {
-                    map = `910002_${map}`;
+                let mapRegex = new RegExp(`Map${missionID}_${map}\.aar.*\.png$`, 'i');
+                if (resourceList.find(p => mapRegex.test(p))) {
+                    map = `${missionID}_${map}`;
+                    break;
                 }
             }
+
             // get quest name text
             let questName = "NULL";
             if (missionID != "NULL") {
@@ -1089,7 +1081,7 @@ const aigisQuestsList = async () => {
 
             // buind new quest
             if (missionID != "NULL") {
-                quest = {
+                let quest = {
                     id: `${missionID}/${questID}`, map,
                     missionTitle, questName,
                     missionID, questID,
@@ -1103,12 +1095,11 @@ const aigisQuestsList = async () => {
 
     // get old quest list
     if (fs.existsSync(`QuestList.json`)) {
-        let oldQuest = fs.readFileSync(`QuestList.json`).toString();
-        oldQuest = oldQuest.substring(oldQuest.indexOf('['));
-        oldQuest = eval(oldQuest);
-        for (let quest of oldQuest) {
-            let q = (questList.find(q => q.questID == quest.questID));
-            if (!q) {
+        let oldQuestList = fs.readFileSync(`QuestList.json`).toString();
+        oldQuestList = oldQuestList.substring(oldQuestList.indexOf('['));
+        oldQuestList = eval(oldQuestList);
+        for (let quest of oldQuestList) {
+            if (!questList.find(q => q.questID == quest.questID)) {
                 let oldQuest = {
                     id: quest.id,
                     map: quest.map,
