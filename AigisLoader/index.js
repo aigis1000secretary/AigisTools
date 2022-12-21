@@ -1025,7 +1025,9 @@ const aigisQuestsList = async () => {
                 // search mission in db
                 let mission = missionList.find(q => q.missionID == missionID)
                 if (mission) {
-                    mission.questID.push(questID);
+                    if (!mission.questID.includes(questID)) {
+                        mission.questID.push(questID);
+                    }
                 } else {
                     // console.log(filepath);
                     // console.log(`${COLOR.fgRed}cant found missionID = ${missionID}${COLOR.reset}`);

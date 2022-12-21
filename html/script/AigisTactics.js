@@ -1,6 +1,7 @@
 
 let MapImg;
 let MapID;
+// let debulQuestList = [];
 let bodyOnload = function () {
     questList.sort((a, b) => { return a.id.localeCompare(b.id); })
     // console.log("bodyOnload");
@@ -10,16 +11,21 @@ let bodyOnload = function () {
     select.options.add(new Option("ストーリーミッション", "Story"));
     select.options.add(new Option("英傑の塔", "Tower"));
     select.options.add(new Option("曜日ミッション", "Daily"));
+    select.options.add(new Option("", ""));
 
     select.options.add(new Option("緊急ミッション", "Emergency"));
     select.options.add(new Option("デイリー復刻", "DailyReproduce"));
+    select.options.add(new Option("イベントヒストリー", "History"));
+    select.options.add(new Option("", ""));
 
     select.options.add(new Option("復刻ミッション", "Reproduce"));
     select.options.add(new Option("ゴールドラッシュ", "Goldrush"));
     select.options.add(new Option("大討伐", "Subjugation"));
+    select.options.add(new Option("", ""));
 
     select.options.add(new Option("魔神降臨", "Devil"));
     select.options.add(new Option("神獣降臨", "Raid"));
+    select.options.add(new Option("", ""));
 
     select.options.add(new Option("交流クエスト", "Harlem"));
     select.options.add(new Option("戦術指南/チャレンジクエスト", "Challenge"));
@@ -503,6 +509,11 @@ let onChangeSelectMissionType = function (select) {
                 return 310000 <= parseInt(mID) && parseInt(mID) < 320000
             });
         } break;
+        case "History": {
+            items = missionIDs.filter(mID => {
+                return 920000 <= parseInt(mID) && parseInt(mID) < 930000
+            });
+        } break;
         case "Special": {
             items = missionIDs.filter(mID => {
                 return 320000 <= parseInt(mID) && parseInt(mID) < 400000 ||
@@ -558,10 +569,9 @@ let onChangeSelectMissionType = function (select) {
     for (let i in items) {
         let item = items[i];    // mid
         let itemCount = questList.filter(quest => { return quest.missionID == item; }).length;
-        // missionSelect.options.add(new Option(`${missionList[item]} ${itemCount == 0 ? "" : `(${itemCount})`}`, item));
-        if (itemCount != 0) {
-            missionSelect.options.add(new Option(`${missionList[item]} (${itemCount})`, item));
-        }
+        if (itemCount == 0) { continue; }
+
+        missionSelect.options.add(new Option(`${missionList[item]} (${itemCount})`, item));
     }
 }
 let onChangeSelectMission = function (select) {
@@ -598,6 +608,10 @@ let onChangeSelectMission = function (select) {
     for (let i in items) {
         let item = items[i];
         questSelect.options.add(new Option(item.questName, item.id));
+        // if (!debulQuestList.includes(item.id)) {
+        //     debulQuestList.push(item.id);
+        //     console.log(`${debulQuestList.length}/${questList.length}`);
+        // }
     }
 }
 let onChangeSelectQuest = function (select) {
