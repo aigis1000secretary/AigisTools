@@ -1,4 +1,4 @@
-var maxCid = 1665;
+var maxCid = 1677;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1536,5 +1536,17 @@ var charaData = [
 	{	"id": 1662,	"name": "神聖騎士(氷杖)覚醒",	"rare": 5,	"classID": 153010,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1662_00"	},
 	{	"id": 1663,	"name": "神聖騎士(炎杖)覚醒",	"rare": 5,	"classID": 153100,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1663_00"	},
 	{	"id": 1664,	"name": "ブラックホール",	"rare": 5,	"classID": 134900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1664_00"	},
-	{	"id": 1665,	"name": "超☆ブラックホール",	"rare": 5,	"classID": 134920,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1665_00"	}
+	{	"id": 1665,	"name": "超☆ブラックホール",	"rare": 5,	"classID": 134920,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1665_00"	},
+	{	"id": 1666,	"name": "魔王ガリウス人形(最終形態)",	"rare": 5,	"classID": 58,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1666_00"	},
+	{	"id": 1667,	"name": "おとし玉(兎)",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1667_00"	},
+	{	"id": 1668,	"name": "嵐雨の亜神アスバール",	"rare": 5,	"classID": 153300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1668_00",	"imgaw": "1668_01"	},
+	{	"id": 1669,	"name": "火と鉄の亜神ウルカノ",	"rare": 5,	"classID": 5200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1669_00",	"imgaw": "1669_01"	},
+	{	"id": 1670,	"name": "大吉妖狐カヨウ",	"rare": 5,	"classID": 2000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 101,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1670_00",	"imgaw": "1670_01"	},
+	{	"id": 1671,	"name": "海神の曙光メシナ",	"rare": 5,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1671_00",	"imgaw": "1671_01"	},
+	{	"id": 1672,	"name": "雪踏みの初詣エフトラ",	"rare": 10,	"classID": 150900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1672_00",	"imgaw": "1672_01"	},
+	{	"id": 1673,	"name": "ちびヨシノ",	"rare": 3,	"classID": 20500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1673_00"	},
+	{	"id": 1674,	"name": "ちびメリュジアナ",	"rare": 3,	"classID": 20710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1674_00"	},
+	{	"id": 1675,	"name": "メシナの渦潮(お正月)",	"rare": 5,	"classID": 153200,	"sortGroupID": 30,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1675_00"	},
+	{	"id": 1676,	"name": "王子【正月】",	"rare": 5,	"classID": 135000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 101,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1676_00"	},
+	{	"id": 1677,	"name": "王子【玉兎】",	"rare": 5,	"classID": 153400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1677_00"	}
 ]
