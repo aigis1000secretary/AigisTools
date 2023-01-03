@@ -1285,7 +1285,7 @@ const aigisQuestsList = async () => {
         }
         // sort by value
         const sortMethod3 = (raw) => {
-            let data = raw.sort((a, b) => {
+            let data = raw ? raw.sort((a, b) => {
                 let iA = a.ObjectID, iB = b.ObjectID;
                 let jA = a.X, jB = b.X;
                 let kA = a.Y, kB = b.Y;
@@ -1295,7 +1295,7 @@ const aigisQuestsList = async () => {
                 if (r == 0) r = kA == kB ? 0 : (kA < kB ? -1 : 1);
 
                 return r;
-            });
+            }) : raw;
 
             return data;
         }
