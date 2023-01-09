@@ -51,6 +51,7 @@ let bodyOnload = function () {
 let iconboxInit = function () {
     // skip data
     let i = 0;
+    let list = document.querySelector('#searchList');
     while (i < charaData.length) {
         chara = charaData[i];
         if (!chara) { ++i; continue; }
@@ -65,6 +66,11 @@ let iconboxInit = function () {
             continue;
         }
         ++i;
+
+        // search bar list
+        let option = document.createElement('option');
+        option.value = chara.name;
+        list.appendChild(option);
     }
 
     // sort database

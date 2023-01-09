@@ -101,6 +101,7 @@ let setIconFlags = function (flagList) {
 let bodyOnload = function () {
     // skip data
     let i = 0;
+    let list = document.querySelector('#searchList');
     while (i < charaData.length) {
         chara = charaData[i];
         if (!chara) { ++i; continue; }
@@ -118,6 +119,11 @@ let bodyOnload = function () {
             continue;
         }
         ++i;
+
+        // search bar list
+        let option = document.createElement('option');
+        option.value = chara.name;
+        list.appendChild(option);
     }
 
     // URL obj
@@ -698,6 +704,22 @@ let undo = function () {
     if (!flagList) return;
     setUrlParams(flagList);
     setIconFlags(flagList);
+}
+
+// search card
+let searchCard = function () {
+    for (let ele of document.querySelectorAll('.mask')) {
+        ele.classList.remove('mask');
+    }
+
+    const searchBar = document.querySelector('#searchCard');
+    const value = searchBar.value;
+
+    const ele = document.querySelector(`img[title='${value}']`);
+    if (ele) {
+        ele.classList.add('mask');
+        window.scrollTo({ behavior: "smooth", top: ele.offsetTop - 120 });
+    }
 }
 
 // html result to image

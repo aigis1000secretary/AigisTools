@@ -133,8 +133,20 @@ body {
     opacity: 1.0;
 }
 
-#iconbox .iconbtn[alt="false"] {
+#iconbox .iconbtn[alt="false"]:not(.mask) {
     opacity: 0.4;
+}
+
+#iconbox .mask[alt="false"] {
+    animation-duration: 0.4s;
+    animation-name: mask;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes mask {
+      0% { opacity: 0.7; }
+    100% { opacity: 0.5; }
 }
 
 #iconbox .iconbtn:active {
@@ -168,20 +180,11 @@ body {
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
 }
-
 @keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    60% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+      0% { opacity: 1.0; }
+     60% { opacity: 1.0; }
+     90% { opacity: 0.0; }
+    100% { opacity: 0.0; }
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
