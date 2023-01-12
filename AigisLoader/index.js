@@ -853,7 +853,7 @@ const aigisCardsList = async function () {
             if (kind == 2) { className = "聖霊" }
             if (name.indexOf("王子") != -1) { className = "王子"; awclass = true; }
             if (className.indexOf("ちび") != -1) {
-                _class = classListRaw.find(e => e.Name == className.replace("ちび", ""));
+                _class = classListRaw.find(e => e.Name == className.replace("ちび", "")) || _class;
                 while (true) {
                     let tmp = classListRaw.find(e => e.JobChange == _class.ClassID && e.ClassID != 700);
                     if (tmp) { _class = tmp; awclass = true; }
