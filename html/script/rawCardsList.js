@@ -1,4 +1,4 @@
-var maxCid = 1681;
+var maxCid = 1684;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1054,7 +1054,7 @@ var charaData = [
 	{	"id": 1083,	"name": "パンプキンデウス",	"rare": 5,	"classID": 127000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 106,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1083_00"	},
 	{	"id": 1084,	"name": "鷹翼の鳥人戦士",	"rare": 1,	"classID": 18701,	"sortGroupID": 40,	"placeType": 3,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1084_00"	},
 	{	"id": 1085,	"name": "隼翼の鳥人弓士",	"rare": 1,	"classID": 18801,	"sortGroupID": 40,	"placeType": 3,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1085_00"	},
-	{	"id": 1086,	"name": "鷲翼の戦士ライノー",	"rare": 4,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1086_00",	"imgaw": "1086_01"	},
+	{	"id": 1086,	"name": "鷲翼の戦士ライノー",	"rare": 4,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1086_00",	"imgaw": "1086_01",	"imgaw2B": "1086_03"	},
 	{	"id": 1087,	"name": "巡り咲く者アンブローズ",	"rare": 11,	"classID": 18500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1087_00",	"imgaw": "1087_01"	},
 	{	"id": 1088,	"name": "巡り咲く者アンブローズ",	"rare": 10,	"classID": 18500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1088_00",	"imgaw": "1088_01"	},
 	{	"id": 1089,	"name": "万機の祖たる者アージェ",	"rare": 11,	"classID": 127100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1089_00",	"imgaw": "1089_01"	},
@@ -1077,7 +1077,7 @@ var charaData = [
 	{	"id": 1106,	"name": "帝国発明家ヘンドリカ",	"rare": 4,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1106_00",	"imgaw": "1106_01"	},
 	{	"id": 1107,	"name": "帝国斥候カーナ",	"rare": 4,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1107_00",	"imgaw": "1107_01",	"imgaw2A": "1107_02"	},
 	{	"id": 1108,	"name": "帝国飛行士ケイトリッジ",	"rare": 3,	"classID": 18000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1108_00",	"imgaw": "1108_01"	},
-	{	"id": 1109,	"name": "白翼の戦士パリオス",	"rare": 5,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1109_00",	"imgaw": "1109_01"	},
+	{	"id": 1109,	"name": "白翼の戦士パリオス",	"rare": 5,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1109_00",	"imgaw": "1109_01",	"imgaw2A": "1109_02",	"imgaw2B": "1109_03"	},
 	{	"id": 1110,	"name": "銀腕を掲げし者トラム",	"rare": 10,	"classID": 127400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1110_00",	"imgaw": "1110_01"	},
 	{	"id": 1111,	"name": "グングニル王子",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1111_00"	},
 	{	"id": 1112,	"name": "銀腕を掲げし者トラム",	"rare": 10,	"classID": 127400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1112_00"	},
@@ -1552,5 +1552,7 @@ var charaData = [
 	{	"id": 1678,	"name": "旅情の剣士アカネ",	"rare": 4,	"classID": 800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 109,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1678_00",	"imgaw": "1678_01"	},
 	{	"id": 1679,	"name": "湯けむりの隠者フィオレ",	"rare": 5,	"classID": 11800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1679_00",	"imgaw": "1679_01"	},
 	{	"id": 1680,	"name": "魔剣士の湯治シエナ",	"rare": 4,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1680_00",	"imgaw": "1680_01"	},
-	{	"id": 1681,	"name": "ちびグレーターデーモン",	"rare": 3,	"classID": 50000,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1681_00"	}
+	{	"id": 1681,	"name": "ちびグレーターデーモン",	"rare": 3,	"classID": 50000,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1681_00"	},
+	{	"id": 1682,	"name": "Makaidol エス★エフ",	"rare": 5,	"classID": 135100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1682_00",	"imgaw": "1682_01"	},
+	{	"id": 1683,	"name": "召喚系アイドル リノ",	"rare": 4,	"classID": 153500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
