@@ -1,4 +1,4 @@
-var maxCid = 1684;
+var maxCid = 1688;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1518,7 +1518,7 @@ var charaData = [
 	{	"id": 1642,	"name": "夜風闇刃かまいたちユキ",	"rare": 5,	"classID": 126780,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1642_00"	},
 	{	"id": 1644,	"name": "暁光を導く者イルドナ",	"rare": 11,	"classID": 134500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1644_00",	"imgaw": "1644_01"	},
 	{	"id": 1645,	"name": "暁光を導く者イルドナ",	"rare": 10,	"classID": 134500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1645_00",	"imgaw": "1645_01"	},
-	{	"id": 1646,	"name": "フリズスキャールヴ",	"rare": 3,	"classID": 134600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1646_00"	},
+	{	"id": 1646,	"name": "フリズスキャールヴ",	"rare": 3,	"classID": 134600,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1646_00"	},
 	{	"id": 1647,	"name": "ちびハルモニア",	"rare": 3,	"classID": 145300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1647_00"	},
 	{	"id": 1648,	"name": "ちびエリス",	"rare": 3,	"classID": 34800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1648_00"	},
 	{	"id": 1649,	"name": "聖樹の薬草師ローズ",	"rare": 4,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1649_00",	"imgaw": "1649_01"	},
@@ -1554,5 +1554,9 @@ var charaData = [
 	{	"id": 1680,	"name": "魔剣士の湯治シエナ",	"rare": 4,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1680_00",	"imgaw": "1680_01"	},
 	{	"id": 1681,	"name": "ちびグレーターデーモン",	"rare": 3,	"classID": 50000,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1681_00"	},
 	{	"id": 1682,	"name": "Makaidol エス★エフ",	"rare": 5,	"classID": 135100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1682_00",	"imgaw": "1682_01"	},
-	{	"id": 1683,	"name": "召喚系アイドル リノ",	"rare": 4,	"classID": 153500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1683,	"name": "召喚系アイドル リノ",	"rare": 4,	"classID": 153500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1685,	"name": "鷹翼の癒し手カーニア",	"rare": 5,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1685_00",	"imgaw": "1685_01"	},
+	{	"id": 1686,	"name": "宝船",	"rare": 3,	"classID": 135200,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1686_00"	},
+	{	"id": 1687,	"name": "ちびヘイオス",	"rare": 3,	"classID": 21200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1687_00"	},
+	{	"id": 1688,	"name": "ちびユーフェ",	"rare": 3,	"classID": 20520,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1688_00"	}
 ]
