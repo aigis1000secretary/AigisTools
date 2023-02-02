@@ -1,4 +1,4 @@
-var maxCid = 1688;
+var maxCid = 1691;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1558,5 +1558,8 @@ var charaData = [
 	{	"id": 1685,	"name": "鷹翼の癒し手カーニア",	"rare": 5,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1685_00",	"imgaw": "1685_01"	},
 	{	"id": 1686,	"name": "宝船",	"rare": 3,	"classID": 135200,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1686_00"	},
 	{	"id": 1687,	"name": "ちびヘイオス",	"rare": 3,	"classID": 21200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1687_00"	},
-	{	"id": 1688,	"name": "ちびユーフェ",	"rare": 3,	"classID": 20520,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1688_00"	}
+	{	"id": 1688,	"name": "ちびユーフェ",	"rare": 3,	"classID": 20520,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1688_00"	},
+	{	"id": 1689,	"name": "雪女ふゆの",	"rare": 4,	"classID": 153600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1689_00",	"imgaw": "1689_01"	},
+	{	"id": 1690,	"name": "王子【ファンダム】",	"rare": 5,	"classID": 135300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1690_00"	},
+	{	"id": 1691,	"name": "NPCゴールドシービショップ",	"rare": 3,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
