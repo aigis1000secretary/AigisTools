@@ -204,6 +204,8 @@ module.exports = {
             if (dlflag) {
                 // console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
                 child_process.exec(`cd ..&start 2.1_AigisLoader.bat`);
+				process.exit();
+				
             }
 
             return null;
