@@ -580,6 +580,10 @@
           target="_blank">▼YouTube「千年戦争アイギス」公式チャンネル</a><br>
         <a itemprop="url" href="https://seesaawiki.jp/aigis/" target="_blank">▼千年戦争アイギスwiki - Seesaa Wiki</a><br>
         <a itemprop="url" href="https://wikiwiki.jp/aigiszuki/" target="_blank">▼千年戦争アイギス攻略 Wiki* - WIKIWIKI.jp</a><br>
+        <br>
+        <a itemprop="url" href="https://seesaawiki.jp/aigis/d/%c6%c3%bc%ec%b9%e7%c0%ae%c9%bd"
+          target="_blank">▼特殊合成表 - 千年戦争アイギスwiki</a><br>
+
       </div>
 
       <div class="card">
@@ -589,8 +593,18 @@
 
 
       <div class="card datasave">
-        データ保存
-        <input type="button" onclick="openImage();" value="画像生成">
+        <div class="button">
+          <label for="savefiles" style="height: 32px;" onclick="openImage();"> 画像生成 </label>
+        </div>
+
+        <div class="button">
+          <label for="savefiles" style="height: 32px;" onclick="dataSave();"> データ保存（JSON） </label>
+        </div>
+
+        <div class="button" style="margin-bottom: 10px;">
+          <label for="loadfiles" style="height: 32px;"> データ復元 </label>
+          <input id="loadfiles" type="file" style="visibility:hidden;" onchange="dataRestore(event);" accept=".json">
+        </div>
       </div>
 
     </div>

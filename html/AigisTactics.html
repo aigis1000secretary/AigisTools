@@ -183,15 +183,16 @@
       <div class="card">
         <a itemprop="url" href="./AigisChecker.html">▼千年戦争アイギス　ユニット所持チェッカー＋</a><br>
         <a itemprop="url" href="./AigisEXP.html">▼千年戦争アイギス　経験値計算機＋ BETA</a><br>
-        <div class="blink" style="color: red;">NEW !!!</div>
+        <!-- <div class="blink" style="color: red;">NEW !!!</div> -->
       </div>
 
       <!-- share box -->
-      <div class="card">
+      <div class="card datasave">
         作戦図を共有
         <!-- <input type="button" onclick="openImage();" value="画像生成"> -->
         <input type="button" onclick="copyUrl();" value="コピペ">
         <br>
+
         <a target="_blank" id="_twitterBtn">
           <div></div>
         </a>
@@ -202,13 +203,21 @@
           <div></div>
         </a>
         <br>
+
         <div class="_textarea">
           <textarea id="_sharebox" style="min-height: 80px;">ここに共有する内容が表示されます</textarea>
         </div>
-        データ保存： <br>
-        <input type="button" style="height: 32px;" onclick="dataSave();" value="保存（JSON）"> <br>
-        データ復元： <br>
-        <input type="file" style="height: 32px;" onchange="dataRestore(event);" accept=".json">
+        <br>
+
+        <div class="button">
+          <label for="savefiles" style="height: 32px;" onclick="dataSave();"> データ保存（JSON） </label>
+        </div>
+
+        <div class="button" style="margin-bottom: 10px;">
+          <label for="loadfiles" style="height: 32px;"> データ復元 </label>
+          <input id="loadfiles" type="file" style="visibility:hidden;" onchange="dataRestore(event);" accept=".json">
+        </div>
+
       </div>
 
       <!-- <div class="card"> </div> -->

@@ -340,7 +340,6 @@ let dataSave = function () {
 }
 let dataRestore = function (event) {
     let fileList = event.target.files;
-
     if (fileList.length == 1 && !!fileList[0]) {
         var reader = new FileReader();
 

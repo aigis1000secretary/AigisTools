@@ -191,6 +191,21 @@ let openImage = () => {
         window.open().document.write(`<img src="${image.src}" />`);
     });
 }
+// html result to file
+let saveFile = function (name, data) {
+    // download file
+    function fake_click(obj) {
+        var ev = document.createEvent("MouseEvents");
+        ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        obj.dispatchEvent(ev);
+    }
+    let urlObject = window.URL || window.webkitURL || window;
+    let downloadData = new Blob([data]);
+    let save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+    save_link.href = urlObject.createObjectURL(downloadData);
+    save_link.download = name;
+    fake_click(save_link);
+}
 // UI API
 // input button event
 let changeSelectRarity = () => { setMaxLevel(); setExpLimit(); updateUI(); calc(); }
@@ -681,6 +696,63 @@ let checkExpData = () => {
     return;
 }
 
+let dataSave = function () {
+    let information = {};
+
+    let customs = document.querySelectorAll('#quickBtnBox .custom');
+    for (let btn of customs) {
+        let time = parseInt(btn.alt);
+        if (!time) { continue; }
+
+        let key = `AigisToolsEXP${time}`;
+        let data = loadExpData(key);
+        console.log(key)
+        console.log(data)
+        information[key] = data;
+    }
+
+    let data = JSON.stringify(information, null, "\t");
+    saveFile('AigisEXP.json', data);
+}
+
+let dataRestore = function (event) {
+    // delete all old data
+    let keys = listExpData();
+    for (let _key of keys) {
+        deleteExpData(_key);
+    }
+    // delete all old btn
+    let customs = document.querySelectorAll('#quickBtnBox .custom');
+    for (let btn of customs) {
+        let time = parseInt(btn.alt);
+        if (!time) { continue; }
+        btn.remove();
+    }
+
+    // read file
+    let fileList = event.target.files;
+    if (fileList.length == 1 && !!fileList[0]) {
+        var reader = new FileReader();
+
+        reader.readAsText(fileList[0], 'UTF-8');
+        reader.onload = function (e) {
+            let information = JSON.parse(this.result);
+            let keys = Object.keys(information);
+            for (let key of keys) {
+                let data = information[key];
+                saveExpData(key, data);
+
+                let time = parseInt(key.substring(13)) || 0;
+                quickBtn_add(time, data)
+            }
+
+
+        };
+    }
+
+    // clear file
+    event.target.value = "";
+}
 
 let isMobile = () => {
     let u = navigator.userAgent;
