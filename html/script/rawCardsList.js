@@ -1,4 +1,4 @@
-var maxCid = 1702;
+var maxCid = 1713;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1562,7 +1562,7 @@ var charaData = [
 	{	"id": 1689,	"name": "雪女ふゆの",	"rare": 4,	"classID": 153600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1689_00",	"imgaw": "1689_01"	},
 	{	"id": 1690,	"name": "王子【ファンダム】",	"rare": 5,	"classID": 135300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1690_00"	},
 	{	"id": 1691,	"name": "NPCゴールドシービショップ",	"rare": 3,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1692,	"name": "秘めたる想いローリエ",	"rare": 4,	"classID": 11800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1692_00"	},
+	{	"id": 1692,	"name": "秘めたる想いローリエ",	"rare": 4,	"classID": 11800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1692_00",	"imgaw": "1692_01"	},
 	{	"id": 1693,	"name": "世界樹の恋路ラタトスク",	"rare": 5,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1693_00",	"imgaw": "1693_01"	},
 	{	"id": 1694,	"name": "恋の索敵作戦ミリアム",	"rare": 4,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1694_00",	"imgaw": "1694_01"	},
 	{	"id": 1695,	"name": "ちび一般兵A",	"rare": 3,	"classID": 20101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1695_00"	},
@@ -1570,5 +1570,16 @@ var charaData = [
 	{	"id": 1697,	"name": "世界樹のカカオ苗",	"rare": 5,	"classID": 153700,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1697_00"	},
 	{	"id": 1700,	"name": "統帥の弓",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1701,	"name": "統帥の本",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1702,	"name": "統帥の翼",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1702,	"name": "統帥の翼",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1703,	"name": "帝国軍旗",	"rare": 3,	"classID": 135400,	"sortGroupID": 20,	"placeType": 3,	"kind": 100,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1703_00"	},
+	{	"id": 1704,	"name": "帝国砲術士ハイデマリー",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1704_00",	"imgaw": "1704_01"	},
+	{	"id": 1705,	"name": "冥神近衛騎士ティルト",	"rare": 5,	"classID": 135500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1705_00",	"imgaw": "1705_01"	},
+	{	"id": 1706,	"name": "帝国黒竜魔術士トリシャ",	"rare": 5,	"classID": 150600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1706_00",	"imgaw": "1706_01"	},
+	{	"id": 1707,	"name": "帝国竜砲騎兵デリア",	"rare": 4,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1707_00",	"imgaw": "1707_01"	},
+	{	"id": 1708,	"name": "帝国掘削兵ヘーレ",	"rare": 4,	"classID": 135600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1708_00",	"imgaw": "1708_01"	},
+	{	"id": 1709,	"name": "帝国諜報兵シュテフィ",	"rare": 3,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1709_00",	"imgaw": "1709_01"	},
+	{	"id": 1710,	"name": "王宮侍女ソーマ",	"rare": 4,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1710_00",	"imgaw": "1710_01"	},
+	{	"id": 1711,	"name": "ちびトモエ",	"rare": 3,	"classID": 141500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1711_00"	},
+	{	"id": 1712,	"name": "ちびフーコ",	"rare": 3,	"classID": 26200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1712_00"	},
+	{	"id": 1713,	"name": "掘削兵トークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1713_00"	}
 ]
