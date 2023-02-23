@@ -81,6 +81,7 @@ module.exports = {
             // get Thursday date
             let updateTime = Date.now();
             while (new Date(updateTime).getDay() != 4) { updateTime -= 86400000; }
+            // while (![3, 4].includes(new Date(updateTime).getDay())) { updateTime -= 86400000; }
 
             // get XML folder name
             // folderName = aigis_2021_00_00
@@ -204,8 +205,8 @@ module.exports = {
             if (dlflag) {
                 // console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
                 child_process.exec(`cd ..&start 2.1_AigisLoader.bat`);
-				process.exit();
-				
+                process.exit();
+
             }
 
             return null;

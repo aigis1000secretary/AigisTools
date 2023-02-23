@@ -15,7 +15,9 @@ let bodyOnload = function () {
 
     select.options.add(new Option("緊急ミッション", "Emergency"));
     select.options.add(new Option("デイリー復刻", "DailyReproduce"));
-    select.options.add(new Option("イベントヒストリー", "History"));
+    select.options.add(new Option("イベントヒストリー 一年目", "History1"));
+    select.options.add(new Option("イベントヒストリー 二年目", "History2"));
+    select.options.add(new Option("イベントヒストリー 三年目", "History3"));
     select.options.add(new Option("", ""));
 
     select.options.add(new Option("復刻ミッション", "Reproduce"));
@@ -514,11 +516,23 @@ let onChangeSelectMissionType = function (select) {
                 return 310000 <= parseInt(mID) && parseInt(mID) < 320000
             });
         } break;
-        case "History": {
+
+        case "History1": {
             items = missionIDs.filter(mID => {
-                return 920000 <= parseInt(mID) && parseInt(mID) < 930000
+                return 920000 <= parseInt(mID) && parseInt(mID) < 920030
             });
         } break;
+        case "History2": {
+            items = missionIDs.filter(mID => {
+                return 920030 <= parseInt(mID) && parseInt(mID) < 920056
+            });
+        } break;
+        case "History3": {
+            items = missionIDs.filter(mID => {
+                return 920056 <= parseInt(mID) && parseInt(mID) < 920081
+            });
+        } break;
+
         case "Special": {
             items = missionIDs.filter(mID => {
                 return 320000 <= parseInt(mID) && parseInt(mID) < 400000 ||
