@@ -18,7 +18,7 @@ const COLOR = {
     bgBlue: '\x1b[44m', bgMagenta: '\x1b[45m', bgCyan: '\x1b[46m', bgWhite: '\x1b[47m',
 };
 
-let towerLevelKey = {
+const towerLevelKey = {
     'fwzbngzy0orswf3': 1,  // 154880
     'boncacfko8fdjq3': 2,  // 124400
     'o946xfoj2xswyq1': 3,  // 161920
@@ -61,6 +61,73 @@ let towerLevelKey = {
     '7oa6yqrz7fgvgnc': 40  // 159840
 }
 
+const xmlTarget = [
+    'GRs733a4', // units information
+    'QxZpjdfV', // missions information
+]
+const xmlSubTarget = [
+    'oS5aZ5ll', // army information
+    'aE7DRVtp', // tower information
+]
+
+const getXML = (xmlName, raw) => {
+
+    // skip if not target
+    if (!xmlTarget.includes(xmlName) &&
+        !xmlSubTarget.includes(xmlName)) { return null; }
+
+    // get xml data file
+    let body = raw.toString("base64");
+
+    // save file data
+    console.log(`${xmlspath}/${xmlName}`)
+    if (fs.existsSync(`${xmlspath}/${xmlName}`)) { fs.unlinkSync(`${xmlspath}/${xmlName}`); }
+    fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
+
+    if (!filelist) {
+        // wait file list
+        console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
+
+    } else if (xmlTarget.includes(xmlName)) {
+        // save file data backup
+        if (fs.existsSync(`${filepath}/${xmlName}`)) { fs.unlinkSync(`${filepath}/${xmlName}`); }
+        fs.writeFileSync(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
+
+    }
+
+    // /* tower information
+    if (xmlName == 'aE7DRVtp') {
+        // do xml raw
+        child_process.execSync(`do xml aE7DRVtp raw`, { cwd: `../AigisTools` }).toString().trim();
+
+        // read xml raw
+        let xml = fs.readFileSync(`..\\AigisTools\\out\\aE7DRVtp.xml`).toString();
+        let regKey = /ExchangeKey<\/V><\/KEY><VALUE T=\"S\"><V>(\S{15})<\/V>/;
+        let regScore = /<Score T=\"I\"><V>(\d+)<\/V>/;
+
+        if (regKey.test(xml) && regScore.test(xml)) {
+            let [, key] = xml.match(regKey);
+            let [, score] = xml.match(regScore);
+            let lv = towerLevelKey[key] || key;
+
+            console.log(lv.toString().padStart(2, ' '), score);
+        }
+    }//*/
+
+    // xcopy
+    // check download all done?
+    let dlflag = true;
+    for (let key of xmlTarget) {
+        if (!fs.existsSync(`${filepath}/${key}`)) { dlflag = false; }
+    }
+    // call next step script
+    if (dlflag) {
+        // console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
+        child_process.exec(`cd ..&start 2.1_AigisLoader.bat`);
+        setTimeout(() => { process.exit(); }, 1000);
+    }
+}
+
 
 module.exports = {
     summary: 'AigisTools auxiliary proxy',
@@ -73,7 +140,8 @@ module.exports = {
         // console.log(url);
 
         // filelist url
-        if (url.indexOf('/1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 || url.indexOf('/2iofz514jeks1y44k7al2ostm43xj085') != -1) {
+        if (url.indexOf('/1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 ||
+            url.indexOf('/2iofz514jeks1y44k7al2ostm43xj085') != -1) {
             // get AigisR/Aigis file list
             console.log(`${COLOR.fgRed}${url}${COLOR.reset}`);
 
@@ -136,79 +204,8 @@ module.exports = {
         else if (/\/(\S{8})$/.test(url)) {
             console.log(`${COLOR.fgYellow}${url}${COLOR.reset}`);
 
-            let xmlTarget = [
-                'GRs733a4', // units information
-                'QxZpjdfV', // missions information
-            ]
-            let xmlSubTarget = [
-                'oS5aZ5ll', // army information
-                'aE7DRVtp', // tower information
-            ]
             let [, xmlName] = url.match(/\/(\S{8})$/);
-            // skip if not target
-            if (!xmlTarget.includes(xmlName) && !xmlSubTarget.includes(xmlName)) { return null; }
-
-            // tower information
-            if (xmlName == 'aE7DRVtp') {
-                // del old xml
-                if (fs.existsSync(`${xmlspath}/${xmlName}`)) { fs.unlinkSync(`${xmlspath}/${xmlName}`); }
-
-                // get xml data file
-                let body = responseDetail.response.body.toString("base64");
-                fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
-
-                // do xml raw
-                child_process.execSync(`do xml aE7DRVtp raw`, { cwd: `../AigisTools` }).toString().trim();
-
-                // read xml raw
-                let xml = fs.readFileSync(`..\\AigisTools\\out\\aE7DRVtp.xml`).toString();
-                let regKey = /ExchangeKey<\/V><\/KEY><VALUE T=\"S\"><V>(\S{15})<\/V>/;
-                let regScore = /<Score T=\"I\"><V>(\d+)<\/V>/;
-
-                if (regKey.test(xml) && regScore.test(xml)) {
-                    let [, key] = xml.match(regKey);
-                    let [, score] = xml.match(regScore);
-                    let lv = towerLevelKey[key] || key;
-
-                    console.log(lv.toString().padStart(2, ' '), score);
-                }
-
-                return null;
-            }
-
-
-            // get xml data file
-            let body = responseDetail.response.body.toString("base64");
-            // save file data
-            fs.writeFileSync(`${xmlspath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} has been saved!`); });
-
-
-            if (!filelist) {
-                // wait file list
-                console.log(`${COLOR.fgRed}${COLOR.bright}didn't found filelist request, plz delete browser disk cache first!!${COLOR.reset}`);
-                return null;
-
-            } else if (xmlTarget.includes(xmlName)) {
-                // save file data backup
-                fs.writeFileSync(`${filepath}/${xmlName}`, body, (err) => { if (err) console.log(err); else console.log(`${xmlName} backup has been saved!`); });
-
-            }
-
-
-            // xcopy
-            // check download all done?
-            let dlflag = true;
-            for (let key of xmlTarget) {
-                if (!fs.existsSync(`${filepath}/${key}`)) { dlflag = false; }
-            }
-            // call next step script
-            if (dlflag) {
-                // console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
-                child_process.exec(`cd ..&start 2.1_AigisLoader.bat`);
-                process.exit();
-
-            }
-
+            getXML(xmlName, responseDetail.response.body);
             return null;
         }
 
