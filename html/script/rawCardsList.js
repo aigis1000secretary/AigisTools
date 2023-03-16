@@ -1,4 +1,4 @@
-var maxCid = 1719;
+var maxCid = 1721;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1587,5 +1587,7 @@ var charaData = [
 	{	"id": 1716,	"name": "疾風軍師の祝福祭シナト",	"rare": 4,	"classID": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 110,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1716_00",	"imgaw": "1716_01"	},
 	{	"id": 1717,	"name": "ちびヴァレリー",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1717_00"	},
 	{	"id": 1718,	"name": "びっくりエッグ",	"rare": 5,	"classID": 135800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1718_00"	},
-	{	"id": 1719,	"name": "エインヘリヤル人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1719_00"	}
+	{	"id": 1719,	"name": "エインヘリヤル人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1719_00"	},
+	{	"id": 1720,	"name": "武成豪侠フェイロン",	"rare": 4,	"classID": 132500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1720_00",	"imgaw": "1720_01"	},
+	{	"id": 1721,	"name": "盾騎士レジナレア",	"rare": 4,	"classID": 135900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1721_00",	"imgaw": "1721_01"	}
 ]
