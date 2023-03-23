@@ -18,6 +18,7 @@ let bodyOnload = function () {
     select.options.add(new Option("イベントヒストリー 一年目", "History1"));
     select.options.add(new Option("イベントヒストリー 二年目", "History2"));
     select.options.add(new Option("イベントヒストリー 三年目", "History3"));
+    select.options.add(new Option("イベントヒストリー 四年目", "History4"));
     select.options.add(new Option("", ""));
 
     select.options.add(new Option("復刻ミッション", "Reproduce"));
@@ -530,6 +531,11 @@ let onChangeSelectMissionType = function (select) {
         case "History3": {
             items = missionIDs.filter(mID => {
                 return 920056 <= parseInt(mID) && parseInt(mID) < 920081
+            });
+        } break;
+        case "History4": {
+            items = missionIDs.filter(mID => {
+                return 920081 <= parseInt(mID) && parseInt(mID) < 920100
             });
         } break;
 
