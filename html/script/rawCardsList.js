@@ -1,4 +1,4 @@
-var maxCid = 1736;
+var maxCid = 1742;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1592,5 +1592,11 @@ var charaData = [
 	{	"id": 1721,	"name": "盾騎士レジナレア",	"rare": 4,	"classID": 135900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1721_00",	"imgaw": "1721_01"	},
 	{	"id": 1722,	"name": "龍宮の海巫女イヲナミ",	"rare": 4,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1722_00",	"imgaw": "1722_01",	"imgaw2B": "1722_03"	},
 	{	"id": 1723,	"name": "下町料理人マグリカ",	"rare": 2,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1723_00"	},
-	{	"id": 1724,	"name": "酒場の主人アレグロ",	"rare": 1,	"classID": 125501,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1724_00"	}
+	{	"id": 1724,	"name": "酒場の主人アレグロ",	"rare": 1,	"classID": 125501,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1724_00"	},
+	{	"id": 1737,	"name": "女王子",	"rare": 5,	"classID": 136100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1737_00",	"imgaw": "1737_01"	},
+	{	"id": 1738,	"name": "災禍を律す者モルフェサ",	"rare": 11,	"classID": 153900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1738_00",	"imgaw": "1738_01"	},
+	{	"id": 1739,	"name": "獣を統べる者ミルドリス",	"rare": 11,	"classID": 136000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1739_00",	"imgaw": "1739_01"	},
+	{	"id": 1740,	"name": "ヘスペリデスの園",	"rare": 3,	"classID": 153800,	"sortGroupID": 30,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1740_00"	},
+	{	"id": 1741,	"name": "ちびチヨメ",	"rare": 3,	"classID": 21000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1741_00"	},
+	{	"id": 1742,	"name": "ちびラミィ",	"rare": 3,	"classID": 25900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1742_00"	}
 ]
