@@ -777,6 +777,14 @@ const aigisCardsList = async function () {
             }
 
             // check name
+            if (i == 1134) {
+                name = "王子【ナンディ】";
+                subName = "王子ナンディ";
+            }
+            if (i == 1245) {
+                name = "王子【海鎮】";
+                subName = "王子海鎮";
+            }
             if (name.includes("王子")) {
                 let match = name.match(/(\S+)強化\d/);
                 if (match) { name = match[1]; }
@@ -847,6 +855,14 @@ const aigisCardsList = async function () {
             if (i == 0) {
                 name = "王子【通常】";
                 subName = "王子";
+            }
+            if (i == 1134) {
+                name = "王子【ナンディ】";
+                subName = "王子ナンディ";
+            }
+            if (i == 1245) {
+                name = "王子【海鎮】";
+                subName = "王子海鎮";
             }
             if (name.includes("王子")) {
                 let match = name.match(/(\S+)強化\d/);
