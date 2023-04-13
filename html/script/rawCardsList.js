@@ -1,4 +1,4 @@
-var maxCid = 1757;
+var maxCid = 1764;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1599,10 +1599,17 @@ var charaData = [
 	{	"id": 1740,	"name": "ヘスペリデスの園",	"rare": 3,	"classID": 153800,	"sortGroupID": 30,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1740_00"	},
 	{	"id": 1741,	"name": "ちびチヨメ",	"rare": 3,	"classID": 21000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1741_00"	},
 	{	"id": 1742,	"name": "ちびラミィ",	"rare": 3,	"classID": 25900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1742_00"	},
-	{	"id": 1743,	"name": "ダミー(戦)",	"rare": 3,	"classID": 136200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1744,	"name": "ダミー",	"rare": 3,	"classID": 136200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1743,	"name": "ダミー(戦)",	"rare": 3,	"classID": 136200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1744,	"name": "ダミー",	"rare": 3,	"classID": 136300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1745,	"name": "災禍を律す者モルフェサ",	"rare": 10,	"classID": 153900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1745_00",	"imgaw": "1745_01"	},
 	{	"id": 1746,	"name": "獣を統べる者ミルドリス",	"rare": 10,	"classID": 136000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1746_00",	"imgaw": "1746_01"	},
 	{	"id": 1747,	"name": "ちびアラン",	"rare": 3,	"classID": 252100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1747_00"	},
-	{	"id": 1748,	"name": "四神人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1748_00"	}
+	{	"id": 1748,	"name": "四神人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1748_00"	},
+	{	"id": 1758,	"name": "シーラ・ヘルマン",	"rare": 5,	"classID": 154100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1758_00"	},
+	{	"id": 1759,	"name": "魔想志津香",	"rare": 5,	"classID": 154000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1759_00",	"imgaw": "1759_01"	},
+	{	"id": 1760,	"name": "魔人サテラ",	"rare": 5,	"classID": 136500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1760_00",	"imgaw": "1760_01"	},
+	{	"id": 1761,	"name": "見当かなみ",	"rare": 5,	"classID": 136400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1761_00",	"imgaw": "1761_01"	},
+	{	"id": 1762,	"name": "ちびドゥマルデ",	"rare": 3,	"classID": 30200,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1762_00"	},
+	{	"id": 1763,	"name": "ランス",	"rare": 5,	"classID": 43100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1763_00"	},
+	{	"id": 1764,	"name": "シーザー",	"rare": 5,	"classID": 136600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1764_00"	}
 ]
