@@ -1,4 +1,4 @@
-var maxCid = 1764;
+var maxCid = 1767;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1302,8 +1302,8 @@ var charaData = [
 	{	"id": 1372,	"name": "獅子女の覇者ホルテウス",	"rare": 11,	"classID": 150500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1372_00",	"imgaw": "1372_01"	},
 	{	"id": 1373,	"name": "獅子女の覇者ホルテウス",	"rare": 10,	"classID": 150500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1373_00",	"imgaw": "1373_01"	},
 	{	"id": 1374,	"name": "スフィンクス",	"rare": 5,	"classID": 131300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1374_00"	},
-	{	"id": 1375,	"name": "世界樹の聖霊ラタトスク",	"rare": 5,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1375_00",	"imgaw": "1375_01"	},
-	{	"id": 1376,	"name": "世界樹の苗",	"rare": 5,	"classID": 131200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1376_00"	},
+	{	"id": 1375,	"name": "世界樹の聖霊ラタトスク",	"rare": 5,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1375_00",	"imgaw": "1375_01",	"imgaw2A": "1375_02",	"imgaw2B": "1375_03"	},
+	{	"id": 1376,	"name": "世界樹の苗",	"rare": 5,	"classID": 131200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1765_00"	},
 	{	"id": 1386,	"name": "王子【神槍】",	"rare": 5,	"classID": 127300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1388_00"	},
 	{	"id": 1389,	"name": "ちびメトゥス",	"rare": 3,	"classID": 31600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1389_00"	},
 	{	"id": 1390,	"name": "ちびエステル",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1390_00"	},
@@ -1611,5 +1611,7 @@ var charaData = [
 	{	"id": 1761,	"name": "見当かなみ",	"rare": 5,	"classID": 136400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1761_00",	"imgaw": "1761_01"	},
 	{	"id": 1762,	"name": "ちびドゥマルデ",	"rare": 3,	"classID": 30200,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1762_00"	},
 	{	"id": 1763,	"name": "ランス",	"rare": 5,	"classID": 43100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1763_00"	},
-	{	"id": 1764,	"name": "シーザー",	"rare": 5,	"classID": 136600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1764_00"	}
+	{	"id": 1764,	"name": "シーザー",	"rare": 5,	"classID": 136600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1764_00"	},
+	{	"id": 1766,	"name": "きらめく聖樹トークン",	"rare": 5,	"classID": 134700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1766_00"	},
+	{	"id": 1767,	"name": "カカオの木",	"rare": 5,	"classID": 153700,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1767_00"	}
 ]
