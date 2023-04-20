@@ -496,6 +496,7 @@ const aigisCardsList = async function () {
                 if (iExpression == "") { return true; }
 
                 iExpression = iExpression
+                    .replace(/＝/g, `=`)
                     .replace(/IsCardID/g, `${card.CardID} == `)
                     .replace(/IsSkillID/g, `${skillID} == `)
                     .replace(/IsClassID/g, `${card.InitClassID} == `)
@@ -510,7 +511,12 @@ const aigisCardsList = async function () {
                     .replace(/GetEntryUnitCount\(\)/g, 6)  // 下場人數
                     .replace(/GetSysVer\(\)\s*[<=>]+\s*\d+/g, false)
                     .replace(/GetSallyCount\(\)\s*[<=>]+\s*\d+/g, false);
-                return eval(iExpression);
+                try {
+                    return eval(iExpression);
+                } catch (e) {
+                    console.log(skillID, iExpression)
+                    throw e;
+                }
             });
             infl.sort((a, b) => {
                 let iA = a.ExtendProperty.startsWith("Tag"), iB = b.ExtendProperty.startsWith("Tag");
