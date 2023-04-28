@@ -1,4 +1,4 @@
-var maxCid = 1767;
+var maxCid = 1773;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1605,7 +1605,7 @@ var charaData = [
 	{	"id": 1746,	"name": "獣を統べる者ミルドリス",	"rare": 10,	"classID": 136000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1746_00",	"imgaw": "1746_01"	},
 	{	"id": 1747,	"name": "ちびアラン",	"rare": 3,	"classID": 252100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1747_00"	},
 	{	"id": 1748,	"name": "四神人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1748_00"	},
-	{	"id": 1758,	"name": "シーラ・ヘルマン",	"rare": 5,	"classID": 154100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1758_00"	},
+	{	"id": 1758,	"name": "シーラ・ヘルマン",	"rare": 5,	"classID": 154100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1758_00",	"imgaw": "1758_01"	},
 	{	"id": 1759,	"name": "魔想志津香",	"rare": 5,	"classID": 154000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1759_00",	"imgaw": "1759_01"	},
 	{	"id": 1760,	"name": "魔人サテラ",	"rare": 5,	"classID": 136500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1760_00",	"imgaw": "1760_01"	},
 	{	"id": 1761,	"name": "見当かなみ",	"rare": 5,	"classID": 136400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1761_00",	"imgaw": "1761_01"	},
@@ -1613,5 +1613,11 @@ var charaData = [
 	{	"id": 1763,	"name": "ランス",	"rare": 5,	"classID": 43100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1763_00"	},
 	{	"id": 1764,	"name": "シーザー",	"rare": 5,	"classID": 136600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1764_00"	},
 	{	"id": 1766,	"name": "きらめく聖樹トークン",	"rare": 5,	"classID": 134700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1766_00"	},
-	{	"id": 1767,	"name": "カカオの木",	"rare": 5,	"classID": 153700,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1767_00"	}
+	{	"id": 1767,	"name": "カカオの木",	"rare": 5,	"classID": 153700,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1767_00"	},
+	{	"id": 1768,	"name": "戦の聖霊プロエ",	"rare": 5,	"classID": 3900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1768_00",	"imgaw": "1768_01"	},
+	{	"id": 1769,	"name": "砂漠の勇者シャジャル",	"rare": 5,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1769_00",	"imgaw": "1769_01"	},
+	{	"id": 1770,	"name": "白羽の休日ナナリー",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1770_00",	"imgaw": "1770_01"	},
+	{	"id": 1771,	"name": "魔王の玉座",	"rare": 3,	"classID": 154200,	"sortGroupID": 20,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1771_00"	},
+	{	"id": 1772,	"name": "ちび織姫",	"rare": 3,	"classID": 27300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1772_00"	},
+	{	"id": 1773,	"name": "ちびヴィアベル",	"rare": 3,	"classID": 146900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1773_00"	}
 ]
