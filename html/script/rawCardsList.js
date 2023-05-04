@@ -1,4 +1,4 @@
-var maxCid = 1773;
+var maxCid = 1780;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1619,5 +1619,10 @@ var charaData = [
 	{	"id": 1770,	"name": "白羽の休日ナナリー",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1770_00",	"imgaw": "1770_01"	},
 	{	"id": 1771,	"name": "魔王の玉座",	"rare": 3,	"classID": 154200,	"sortGroupID": 20,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1771_00"	},
 	{	"id": 1772,	"name": "ちび織姫",	"rare": 3,	"classID": 27300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1772_00"	},
-	{	"id": 1773,	"name": "ちびヴィアベル",	"rare": 3,	"classID": 146900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1773_00"	}
+	{	"id": 1773,	"name": "ちびヴィアベル",	"rare": 3,	"classID": 146900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1773_00"	},
+	{	"id": 1774,	"name": "薙刀茶道部サクヤ",	"rare": 4,	"classID": 800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 103,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1776,	"name": "留学妖狐キュウビ",	"rare": 5,	"classID": 2000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 103,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1778,	"name": "陽炎の新入生ロヴィニア",	"rare": 5,	"classID": 12100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1778_00",	"imgaw": "1778_01"	},
+	{	"id": 1779,	"name": "蒼紅の女教師レティシア",	"rare": 4,	"classID": 1300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1779_00",	"imgaw": "1779_01"	},
+	{	"id": 1780,	"name": "ナンディ人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1780_00"	}
 ]
