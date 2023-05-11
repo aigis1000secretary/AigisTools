@@ -1,4 +1,4 @@
-var maxCid = 1780;
+var maxCid = 1781;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1624,5 +1624,6 @@ var charaData = [
 	{	"id": 1776,	"name": "留学妖狐キュウビ",	"rare": 5,	"classID": 2000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 103,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1778,	"name": "陽炎の新入生ロヴィニア",	"rare": 5,	"classID": 12100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1778_00",	"imgaw": "1778_01"	},
 	{	"id": 1779,	"name": "蒼紅の女教師レティシア",	"rare": 4,	"classID": 1300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1779_00",	"imgaw": "1779_01"	},
-	{	"id": 1780,	"name": "ナンディ人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1780_00"	}
+	{	"id": 1780,	"name": "ナンディ人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1780_00"	},
+	{	"id": 1781,	"name": "ちびモーティマ",	"rare": 3,	"classID": 20600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1781_00"	}
 ]
