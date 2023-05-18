@@ -1,4 +1,4 @@
-var maxCid = 1781;
+var maxCid = 1785;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1204,7 +1204,7 @@ var charaData = [
 	{	"id": 1244,	"name": "砦の城門_極",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1245,	"name": "砦の城門_神",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1246,	"name": "王子【海鎮】",	"rare": 5,	"classID": 9970,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1754_00"	},
-	{	"id": 1247,	"name": "潜航騎士ヴィアベル",	"rare": 5,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1247_00",	"imgaw": "1247_01"	},
+	{	"id": 1247,	"name": "潜航騎士ヴィアベル",	"rare": 5,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1247_00",	"imgaw": "1247_01",	"imgaw2A": "1247_02",	"imgaw2B": "1247_03"	},
 	{	"id": 1248,	"name": "新人潜水騎士キュステ",	"rare": 2,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1248_00"	},
 	{	"id": 1249,	"name": "水着の筆頭侍女セーラ",	"rare": 5,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1249_00",	"imgaw": "1249_01"	},
 	{	"id": 1250,	"name": "灼熱の夏英雄アナトリア",	"rare": 5,	"classID": 5300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1250_00",	"imgaw": "1250_01"	},
@@ -1625,5 +1625,9 @@ var charaData = [
 	{	"id": 1778,	"name": "陽炎の新入生ロヴィニア",	"rare": 5,	"classID": 12100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1778_00",	"imgaw": "1778_01"	},
 	{	"id": 1779,	"name": "蒼紅の女教師レティシア",	"rare": 4,	"classID": 1300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1779_00",	"imgaw": "1779_01"	},
 	{	"id": 1780,	"name": "ナンディ人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1780_00"	},
-	{	"id": 1781,	"name": "ちびモーティマ",	"rare": 3,	"classID": 20600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1781_00"	}
+	{	"id": 1781,	"name": "ちびモーティマ",	"rare": 3,	"classID": 20600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1781_00"	},
+	{	"id": 1782,	"name": "普賢",	"rare": 4,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1782_00",	"imgaw": "1782_01"	},
+	{	"id": 1783,	"name": "一目連",	"rare": 5,	"classID": 136700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1783_00",	"imgaw": "1783_01"	},
+	{	"id": 1784,	"name": "優しき守護盾イール",	"rare": 4,	"classID": 135900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1784_00",	"imgaw": "1784_01"	},
+	{	"id": 1785,	"name": "一目連",	"rare": 5,	"classID": 136700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
