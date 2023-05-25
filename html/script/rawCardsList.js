@@ -1,4 +1,4 @@
-var maxCid = 1785;
+var maxCid = 1800;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1629,5 +1629,18 @@ var charaData = [
 	{	"id": 1782,	"name": "普賢",	"rare": 4,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1782_00",	"imgaw": "1782_01"	},
 	{	"id": 1783,	"name": "一目連",	"rare": 5,	"classID": 136700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1783_00",	"imgaw": "1783_01"	},
 	{	"id": 1784,	"name": "優しき守護盾イール",	"rare": 4,	"classID": 135900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1784_00",	"imgaw": "1784_01"	},
-	{	"id": 1785,	"name": "一目連",	"rare": 5,	"classID": 136700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1785,	"name": "一目連",	"rare": 5,	"classID": 136700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1786,	"name": "休息の教官ケイティ",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1786_00",	"imgaw": "1786_01"	},
+	{	"id": 1787,	"name": "埴輪戦士",	"rare": 3,	"classID": 136800,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1787_00"	},
+	{	"id": 1788,	"name": "ちびファルネ",	"rare": 3,	"classID": 31100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1788_00"	},
+	{	"id": 1789,	"name": "ちびリシェルテ",	"rare": 3,	"classID": 23000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1789_00"	},
+	{	"id": 1790,	"name": "婚礼つむじ風 金糸雀姉妹",	"rare": 4,	"classID": 126500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 104,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1790_00",	"imgaw": "1790_01"	},
+	{	"id": 1791,	"name": "婚礼つむじ風ハヤセ",	"rare": 5,	"classID": 126600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 104,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1791_00"	},
+	{	"id": 1792,	"name": "疾風婚礼つむじ風ハヤセ",	"rare": 5,	"classID": 126630,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 104,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1793_00"	},
+	{	"id": 1794,	"name": "婚礼つむじ風キシマ",	"rare": 5,	"classID": 126700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 104,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1794_00"	},
+	{	"id": 1795,	"name": "疾風婚礼つむじ風キシマ",	"rare": 5,	"classID": 126730,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 104,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1796_00"	},
+	{	"id": 1797,	"name": "花嫁道の偵察者レナータ",	"rare": 5,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1797_00",	"imgaw": "1797_01"	},
+	{	"id": 1798,	"name": "花嫁土竜ロカ",	"rare": 4,	"classID": 150600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1798_00",	"imgaw": "1798_01"	},
+	{	"id": 1799,	"name": "約束のチャペル",	"rare": 5,	"classID": 154300,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1799_00"	},
+	{	"id": 1800,	"name": "誓いのチャペル",	"rare": 5,	"classID": 154330,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1800_00"	}
 ]
