@@ -821,14 +821,16 @@ const aigisCardsList = async function () {
                 obj.rare == rare &&
                 obj.isToken == isToken);
             if (_obj) {
-                rawCardsList[_obj.id] = {
-                    id: _obj.id,
-                    name, rare, classID: _obj.classID,
-                    sortGroupID, placeType,
-                    kind, assign, genus, // identity,
-                    year, isEvent, isToken,
-                    img, imgaw, imgaw2A, imgaw2B
-                };
+                if (img != "c80ae4db8b6b09123493ceea8b63ccc2") {
+                    rawCardsList[_obj.id] = {
+                        id: _obj.id,
+                        name, rare, classID: _obj.classID,
+                        sortGroupID, placeType,
+                        kind, assign, genus, // identity,
+                        year, isEvent, isToken,
+                        img, imgaw, imgaw2A, imgaw2B
+                    };
+                }
             } else {
                 let obj = {
                     id,
