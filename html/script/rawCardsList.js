@@ -1,4 +1,4 @@
-var maxCid = 1800;
+var maxCid = 1805;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1642,5 +1642,10 @@ var charaData = [
 	{	"id": 1797,	"name": "花嫁道の偵察者レナータ",	"rare": 5,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1797_00",	"imgaw": "1797_01"	},
 	{	"id": 1798,	"name": "花嫁土竜ロカ",	"rare": 4,	"classID": 150600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1798_00",	"imgaw": "1798_01"	},
 	{	"id": 1799,	"name": "約束のチャペル",	"rare": 5,	"classID": 154300,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1799_00"	},
-	{	"id": 1800,	"name": "誓いのチャペル",	"rare": 5,	"classID": 154330,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1800_00"	}
+	{	"id": 1800,	"name": "誓いのチャペル",	"rare": 5,	"classID": 154330,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1800_00"	},
+	{	"id": 1801,	"name": "元始天尊",	"rare": 5,	"classID": 136900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1801_00",	"imgaw": "1801_01"	},
+	{	"id": 1802,	"name": "銀月大祭アラン",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1802_00",	"imgaw": "1802_01"	},
+	{	"id": 1803,	"name": "大海神の娘 乙姫",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1803_00",	"imgaw": "1803_01"	},
+	{	"id": 1804,	"name": "玉手箱",	"rare": 5,	"classID": 137000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1804_00"	},
+	{	"id": 1805,	"name": "バハムト人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1805_00"	}
 ]
