@@ -1,4 +1,4 @@
-var maxCid = 1805;
+var maxCid = 1819;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1526,7 +1526,7 @@ var charaData = [
 	{	"id": 1651,	"name": "聖夜の魔将ハルモニア",	"rare": 5,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1651_00",	"imgaw": "1651_01"	},
 	{	"id": 1652,	"name": "聖闇の贈り主グレーテル",	"rare": 4,	"classID": 4000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1652_00",	"imgaw": "1652_01"	},
 	{	"id": 1653,	"name": "聖夜のメカドラゴン",	"rare": 5,	"classID": 152900,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 107,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1653_00"	},
-	{	"id": 1654,	"name": "物語の技聖霊アカシ",	"rare": 4,	"classID": 15,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1654_00"	},
+	{	"id": 1654,	"name": "物語の技聖霊アカシ",	"rare": 4,	"classID": 62,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1654_00"	},
 	{	"id": 1655,	"name": "きらめく聖樹",	"rare": 5,	"classID": 134700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1655_00"	},
 	{	"id": 1657,	"name": "鬼刃忍シロガネ",	"rare": 4,	"classID": 121300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1657_00",	"imgaw": "1657_01"	},
 	{	"id": 1658,	"name": "魔王城",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1658_00",	"imgaw": "1658_01"	},
@@ -1647,5 +1647,16 @@ var charaData = [
 	{	"id": 1802,	"name": "銀月大祭アラン",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1802_00",	"imgaw": "1802_01"	},
 	{	"id": 1803,	"name": "大海神の娘 乙姫",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1803_00",	"imgaw": "1803_01"	},
 	{	"id": 1804,	"name": "玉手箱",	"rare": 5,	"classID": 137000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1804_00"	},
-	{	"id": 1805,	"name": "バハムト人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1805_00"	}
+	{	"id": 1805,	"name": "バハムト人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1805_00"	},
+	{	"id": 1806,	"name": "ちびユリアン",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1806_00"	},
+	{	"id": 1807,	"name": "闇の墓守リッチ",	"rare": 5,	"classID": 154400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1807_00"	},
+	{	"id": 1808,	"name": "フェニックス娘アテエル",	"rare": 5,	"classID": 154700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1808_00",	"imgaw": "1808_01"	},
+	{	"id": 1809,	"name": "英傑の塔",	"rare": 5,	"classID": 154500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1809_00",	"imgaw": "1809_01"	},
+	{	"id": 1810,	"name": "星を詠む者ソラス(幻影)",	"rare": 5,	"classID": 154600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1810_00"	},
+	{	"id": 1811,	"name": "万刃を担う者アルヴァ(幻影)",	"rare": 5,	"classID": 137100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1811_00"	},
+	{	"id": 1812,	"name": "万機の祖たる者アージェ(幻影)",	"rare": 5,	"classID": 137200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1812_00"	},
+	{	"id": 1813,	"name": "物語の絆聖霊アカシ",	"rare": 4,	"classID": 61,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1813_00"	},
+	{	"id": 1814,	"name": "フェニックス娘トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1814_00"	},
+	{	"id": 1815,	"name": "エーリューズニル",	"rare": 5,	"classID": 43200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1815_00"	},
+	{	"id": 1816,	"name": "立花山城",	"rare": 5,	"classID": 43300,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1816_00"	}
 ]
