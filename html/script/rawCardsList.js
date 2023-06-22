@@ -1,4 +1,4 @@
-var maxCid = 1819;
+var maxCid = 1829;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1139,9 +1139,9 @@ var charaData = [
 	{	"id": 1172,	"name": "混沌霊使いニーヴ",	"rare": 5,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1172_00",	"imgaw": "1172_01",	"imgaw2A": "1172_02",	"imgaw2B": "1172_03"	},
 	{	"id": 1173,	"name": "カオスエレメンタル",	"rare": 5,	"classID": 128000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1173_00"	},
 	{	"id": 1174,	"name": "上級カオスエレメンタル",	"rare": 5,	"classID": 128030,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1324_00"	},
-	{	"id": 1175,	"name": "孤独な迷宮守ニミュエ",	"rare": 5,	"classID": 128100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1175_00",	"imgaw": "1175_01"	},
+	{	"id": 1175,	"name": "孤独な迷宮守ニミュエ",	"rare": 5,	"classID": 128100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1175_00",	"imgaw": "1175_01",	"imgaw2A": "1175_02",	"imgaw2B": "1175_03"	},
 	{	"id": 1176,	"name": "ゴースト",	"rare": 5,	"classID": 128200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1176_00"	},
-	{	"id": 1177,	"name": "ファントム",	"rare": 5,	"classID": 128230,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1177_00"	},
+	{	"id": 1177,	"name": "ファントム",	"rare": 5,	"classID": 128230,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1827_00"	},
 	{	"id": 1178,	"name": "百獣の魔術師リエーフ",	"rare": 5,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1178_00",	"imgaw": "1178_01"	},
 	{	"id": 1179,	"name": "ガオレオン",	"rare": 5,	"classID": 128300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1179_00"	},
 	{	"id": 1180,	"name": "自動人形ルイン",	"rare": 4,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1180_00",	"imgaw": "1180_01"	},
@@ -1658,5 +1658,13 @@ var charaData = [
 	{	"id": 1813,	"name": "物語の絆聖霊アカシ",	"rare": 4,	"classID": 61,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1813_00"	},
 	{	"id": 1814,	"name": "フェニックス娘トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1814_00"	},
 	{	"id": 1815,	"name": "エーリューズニル",	"rare": 5,	"classID": 43200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1815_00"	},
-	{	"id": 1816,	"name": "立花山城",	"rare": 5,	"classID": 43300,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1816_00"	}
+	{	"id": 1816,	"name": "立花山城",	"rare": 5,	"classID": 43300,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1816_00"	},
+	{	"id": 1820,	"name": "ポイズンスライム娘リン",	"rare": 5,	"classID": 43500,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1821,	"name": "サンダーペガサス娘スズ",	"rare": 5,	"classID": 43400,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1822,	"name": "[絢爛]柳川城",	"rare": 5,	"classID": 43600,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1822_00"	},
+	{	"id": 1823,	"name": "[絢爛]立花山城",	"rare": 5,	"classID": 43700,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1823_00"	},
+	{	"id": 1825,	"name": "闇の墓守リッチ",	"rare": 5,	"classID": 154400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1826,	"name": "戦場に集う聖霊たち",	"rare": 5,	"classID": 154800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1826_00"	},
+	{	"id": 1828,	"name": "キューティレイス",	"rare": 5,	"classID": 128280,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1828_00"	},
+	{	"id": 1829,	"name": "NPC_王子の最大HPアップ_TD祭り用",	"rare": 5,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
