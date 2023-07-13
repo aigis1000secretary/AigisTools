@@ -1,4 +1,4 @@
-var maxCid = 1851;
+var maxCid = 1853;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1684,5 +1684,7 @@ var charaData = [
 	{	"id": 1844,	"name": "水辺の道士ナタク（分身）",	"rare": 5,	"classID": 137300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 105,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1846_00"	},
 	{	"id": 1849,	"name": "ニーズヘッグ",	"rare": 5,	"classID": 137700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1849_00"	},
 	{	"id": 1850,	"name": "ジオトークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1850_00"	},
-	{	"id": 1851,	"name": "深閑の魔将パヤモ",	"rare": 5,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1851_00",	"imgaw": "1851_01"	}
+	{	"id": 1851,	"name": "深閑の魔将パヤモ",	"rare": 5,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1851_00",	"imgaw": "1851_01"	},
+	{	"id": 1852,	"name": "ちびヴィンセント",	"rare": 3,	"classID": 30500,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1852_00"	},
+	{	"id": 1853,	"name": "王子【麒麟】",	"rare": 5,	"classID": 137900,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1853_00"	}
 ]
