@@ -1151,6 +1151,12 @@ const aigisQuestsList = async () => {
         }
     }; console.log(`get QuestNameText data`);
 
+    // aigis data bug, HistoryMissionConfig.atb != HistoryMissionQuestList.atb when mID = [920125, 920124]
+    for (let mission of missionList) {
+        if (mission.missionID == 920124) { mission.questID = mission.questID.filter((qID) => ![6727, 6728, 6729, 6730, 6731, 6732].includes(qID)); }
+        if (mission.missionID == 920125) { mission.questID = mission.questID.filter((qID) => ![6714, 6715, 6716, 6717, 6718, 6719, 6720, 6721, 6722, 9059].includes(qID)); }
+    }
+
     // get old quest list
     if (fs.existsSync(`QuestList.json`)) {
         let oldQuestList = fs.readFileSync(`QuestList.json`).toString();

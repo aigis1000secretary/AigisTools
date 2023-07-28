@@ -1,4 +1,4 @@
-var maxCid = 1858;
+var maxCid = 1863;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1691,5 +1691,10 @@ var charaData = [
 	{	"id": 1855,	"name": "流浪の断罪者サティン",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1855_00",	"imgaw": "1855_01"	},
 	{	"id": 1856,	"name": "憧れの休日ベルニス",	"rare": 4,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1856_00",	"imgaw": "1856_01"	},
 	{	"id": 1857,	"name": "夜行わらし【戦支度】",	"rare": 5,	"classID": 155200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1857_00"	},
-	{	"id": 1858,	"name": "夜行わらし【馬廻】",	"rare": 5,	"classID": 155200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1858_00"	}
+	{	"id": 1858,	"name": "夜行わらし【馬廻】",	"rare": 5,	"classID": 155200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1858_00"	},
+	{	"id": 1859,	"name": "食の芸術家デルフィーナ",	"rare": 5,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1859_00",	"imgaw": "1859_01"	},
+	{	"id": 1860,	"name": "野外美食セット",	"rare": 5,	"classID": 155300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1860_00"	},
+	{	"id": 1861,	"name": "メルカバ―",	"rare": 3,	"classID": 138100,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1861_00"	},
+	{	"id": 1862,	"name": "ちびシネイド",	"rare": 3,	"classID": 20400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1862_00"	},
+	{	"id": 1863,	"name": "ちびクゥイル",	"rare": 3,	"classID": 27000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1863_00"	}
 ]

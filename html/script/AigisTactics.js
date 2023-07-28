@@ -22,6 +22,7 @@ let bodyOnload = function () {
     select.options.add(new Option("イベントヒストリー 五年目", "History5"));
     select.options.add(new Option("イベントヒストリー 六年目", "History6"));
     select.options.add(new Option("イベントヒストリー 七年目", "History7"));
+    select.options.add(new Option("イベントヒストリー 八年目", "History8"));
     select.options.add(new Option("", ""));
 
     select.options.add(new Option("復刻ミッション", "Reproduce"));
@@ -556,6 +557,11 @@ let onChangeSelectMissionType = function (select) {
                 return 920136 <= parseInt(mID) && parseInt(mID) < 920153
             });
         } break;
+        case "History8": {
+            items = missionIDs.filter(mID => {
+                return 920153 <= parseInt(mID) && parseInt(mID) < 920169
+            });
+        } break;
 
         case "Special": {
             items = missionIDs.filter(mID => {
@@ -631,7 +637,7 @@ let onChangeSelectMission = function (select) {
     if (value == "700001") {
         items.sort((a, b) => { return a.questName[0].localeCompare(b.questName[0]); })
     }
-    if (value == "200133") {
+    if (value == "300133") {
         // EmergencyMissionQuestList.atb
         let sortList = [4795, 4796, 4798, 4801, 4803, 4806, 4797, 4799, 4800, 4802, 4804, 4805, 4838, 4841, 4840, 4839, 4842, 4843, 4844, 4845, 4846, 4848, 4847, 4850, 4849, 4855, 4852, 4853, 4854, 4851, 4856, 4857, 4858, 4863, 4862, 4866, 4861, 4864, 4860, 4865, 4859, 4871, 4872, 4873, 4868, 4869, 4870, 4867, 4874, 4879, 4876, 4877, 4882, 4875, 4878, 4881, 4880, 4889, 4886, 4883, 4884, 4885, 4888, 4887, 4890, 4895, 4894, 4897, 4892, 4893, 4898, 4891, 4896, 4905, 4902, 4901, 4900, 4903, 4906, 4899, 4904, 4911, 4908, 4913, 4912, 4907, 4910, 4909, 4914, 4921, 4922, 4915, 4920, 4917, 4918, 4919, 4916, 4927, 4926, 4923, 4924, 4925, 4930, 4929, 4928, 4933, 4938, 4934, 4936, 4932, 4937, 4931, 4935, 4939, 4943, 4940, 4944, 4941, 4945, 4942, 4946, 4947, 4954, 4948, 4951, 4949, 4953, 4950, 4952]
         items.sort((a, b) => {
