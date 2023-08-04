@@ -749,16 +749,16 @@ const aigisCardsList = async function () {
                 // case 848: case 849: case 850: case 851: case 852:   // 2019/08
                 //     { assign = -2; } break;
 
-                //  封緘のグラセスタ
+                // 封緘のグラセスタ
                 case 719:
                 case 720: { assign = -3; } break;
 
-                //  ガールズ・ブック・メイカー（GBM）
+                // ガールズ・ブック・メイカー（GBM）
                 case 815: case 816: case 817: case 818: case 819:   // 2019/06
                 case 1015: case 1016: case 1017: case 1018: // 2020/06
                     { assign = -4; } break;
 
-                //  流星ワールドアクター
+                // 流星ワールドアクター
                 case 955: case 956: { assign = -5; } break;
 
                 // case 497: { name = name.replace(/(（[\S]+の[\S]+）)/g, "") + "（遠国の近衛兵）"; } break;
@@ -775,11 +775,17 @@ const aigisCardsList = async function () {
 
                 case 694: case 697: { assign = 7; } break;
 
-                //  なないろリンカネーション
+                // なないろリンカネーション
                 case 1206: case 1207: case 1208: case 1209:
                 case 1210: case 1211: case 1212:
                 case 1214: case 1215: case 1216:
                     { assign = -6; } break;
+
+                // 対魔忍RPG
+                case 1864: case 1865: case 1866: case 1867:
+                case 1868: case 1869: case 1870: case 1871:
+                case 1872: case 1873: case 1864:
+                    { assign = -7; } break;
             }
 
             // check name

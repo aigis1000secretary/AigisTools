@@ -277,6 +277,7 @@ let setHr = function (type) {
 
         } else if (type == "assign") {
             let textList = [];
+            textList[-7] = "対魔忍RPG";
             textList[-6] = "なないろリンカネーション（ななリン）";
             textList[-5] = "流星ワールドアクター（流星WA）";
             textList[-4] = "ガールズ・ブック・メイカー（GBM）";
