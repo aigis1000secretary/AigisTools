@@ -1,4 +1,4 @@
-var maxCid = 1874;
+var maxCid = 1884;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1697,7 +1697,7 @@ var charaData = [
 	{	"id": 1861,	"name": "メルカバ―",	"rare": 3,	"classID": 138100,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1861_00"	},
 	{	"id": 1862,	"name": "ちびシネイド",	"rare": 3,	"classID": 20400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1862_00"	},
 	{	"id": 1863,	"name": "ちびクゥイル",	"rare": 3,	"classID": 27000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1863_00"	},
-	{	"id": 1864,	"name": "鬼崎きらら",	"rare": 5,	"classID": 138200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -7,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1864_00"	},
+	{	"id": 1864,	"name": "鬼崎きらら",	"rare": 5,	"classID": 138200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -7,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1864_00",	"imgaw": "1864_01"	},
 	{	"id": 1865,	"name": "井河アサギ",	"rare": 5,	"classID": 138200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -7,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1865_00",	"imgaw": "1865_01"	},
 	{	"id": 1866,	"name": "水城ゆきかぜ",	"rare": 5,	"classID": 155400,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": -7,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1866_00",	"imgaw": "1866_01"	},
 	{	"id": 1867,	"name": "秋山凜子",	"rare": 5,	"classID": 138200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -7,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1867_00",	"imgaw": "1867_01"	},
@@ -1707,5 +1707,15 @@ var charaData = [
 	{	"id": 1871,	"name": "井河さくら",	"rare": 4,	"classID": 155400,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": -7,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1871_00",	"imgaw": "1871_01"	},
 	{	"id": 1872,	"name": "対魔忍アリシア",	"rare": 4,	"classID": 3200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -7,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1872_00",	"imgaw": "1872_01"	},
 	{	"id": 1873,	"name": "甲河アスカ",	"rare": 4,	"classID": 138500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -7,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1873_00",	"imgaw": "1873_01"	},
-	{	"id": 1874,	"name": "フェリシア",	"rare": 4,	"classID": 138300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1874,	"name": "フェリシア",	"rare": 4,	"classID": 138300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1875,	"name": "ちびゴブリン博士",	"rare": 3,	"classID": 50100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1875_00"	},
+	{	"id": 1876,	"name": "王子【対魔忍】",	"rare": 5,	"classID": 138600,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1876_00"	},
+	{	"id": 1877,	"name": "井河アサギ",	"rare": 5,	"classID": 138200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1877_00",	"imgaw": "1877_01"	},
+	{	"id": 1878,	"name": "鬼崎きらら",	"rare": 5,	"classID": 138200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1878_00"	},
+	{	"id": 1879,	"name": "秋山凜子",	"rare": 5,	"classID": 138200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1879_00"	},
+	{	"id": 1880,	"name": "心願寺紅",	"rare": 4,	"classID": 138300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1880_00"	},
+	{	"id": 1881,	"name": "水城ゆきかぜ",	"rare": 5,	"classID": 155400,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1881_00"	},
+	{	"id": 1882,	"name": "甲河アスカ",	"rare": 4,	"classID": 138500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1882_00"	},
+	{	"id": 1883,	"name": "井河さくら",	"rare": 4,	"classID": 155400,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1883_00"	},
+	{	"id": 1884,	"name": "ふうま時子",	"rare": 4,	"classID": 138400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1884_00"	}
 ]
