@@ -1,4 +1,4 @@
-var maxCid = 1884;
+var maxCid = 1887;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1318,7 +1318,7 @@ var charaData = [
 	{	"id": 1399,	"name": "聖なる技工兵ドリー",	"rare": 4,	"classID": 7200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1399_00",	"imgaw": "1399_01"	},
 	{	"id": 1400,	"name": "メリーメリーバリスタ",	"rare": 5,	"classID": 14120,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1402_00"	},
 	{	"id": 1401,	"name": "王子【10周年記念】",	"rare": 5,	"classID": 9980,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1401_00"	},
-	{	"id": 1403,	"name": "薔薇の自動人形アルタ",	"rare": 5,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1403_00",	"imgaw": "1403_01"	},
+	{	"id": 1403,	"name": "薔薇の自動人形アルタ",	"rare": 5,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1403_00",	"imgaw": "1403_01",	"imgaw2A": "1403_02",	"imgaw2B": "1403_03"	},
 	{	"id": 1404,	"name": "影炎の戦巫女タツミ",	"rare": 5,	"classID": 130500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1404_00",	"imgaw": "1404_01"	},
 	{	"id": 1405,	"name": "大悪魔の初詣ラピス",	"rare": 5,	"classID": 13300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1405_00",	"imgaw": "1405_01"	},
 	{	"id": 1406,	"name": "智将の筆始めマツリ",	"rare": 5,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 101,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1406_00",	"imgaw": "1406_01"	},
@@ -1717,5 +1717,8 @@ var charaData = [
 	{	"id": 1881,	"name": "水城ゆきかぜ",	"rare": 5,	"classID": 155400,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1881_00"	},
 	{	"id": 1882,	"name": "甲河アスカ",	"rare": 4,	"classID": 138500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1882_00"	},
 	{	"id": 1883,	"name": "井河さくら",	"rare": 4,	"classID": 155400,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1883_00"	},
-	{	"id": 1884,	"name": "ふうま時子",	"rare": 4,	"classID": 138400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1884_00"	}
+	{	"id": 1884,	"name": "ふうま時子",	"rare": 4,	"classID": 138400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1884_00"	},
+	{	"id": 1885,	"name": "荒野の旋風トネール",	"rare": 4,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1885_00",	"imgaw": "1885_01"	},
+	{	"id": 1886,	"name": "虚月の断罪者リムリィ",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1886_00",	"imgaw": "1886_01"	},
+	{	"id": 1887,	"name": "就寝前のひとときレオナ",	"rare": 4,	"classID": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1887_00",	"imgaw": "1887_01"	}
 ]
