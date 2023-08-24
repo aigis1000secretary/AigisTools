@@ -1,4 +1,4 @@
-var maxCid = 1887;
+var maxCid = 1891;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1720,5 +1720,9 @@ var charaData = [
 	{	"id": 1884,	"name": "ふうま時子",	"rare": 4,	"classID": 138400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1884_00"	},
 	{	"id": 1885,	"name": "荒野の旋風トネール",	"rare": 4,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1885_00",	"imgaw": "1885_01"	},
 	{	"id": 1886,	"name": "虚月の断罪者リムリィ",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1886_00",	"imgaw": "1886_01"	},
-	{	"id": 1887,	"name": "就寝前のひとときレオナ",	"rare": 4,	"classID": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1887_00",	"imgaw": "1887_01"	}
+	{	"id": 1887,	"name": "就寝前のひとときレオナ",	"rare": 4,	"classID": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1887_00",	"imgaw": "1887_01"	},
+	{	"id": 1888,	"name": "夏の花火師メル",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1888_00",	"imgaw": "1888_01"	},
+	{	"id": 1889,	"name": "花火空の天使長ミルノ",	"rare": 4,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1889_00",	"imgaw": "1889_01"	},
+	{	"id": 1890,	"name": "お祭大好き海賊デューオ",	"rare": 5,	"classID": 10400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1890_00",	"imgaw": "1890_01"	},
+	{	"id": 1891,	"name": "ドゥン人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1891_00"	}
 ]
