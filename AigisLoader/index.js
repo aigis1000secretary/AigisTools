@@ -526,6 +526,28 @@ const aigisCardsList = async function () {
             // debug msg
             if (debug) { console.log(`${name}\t text:\n${text}`); }
 
+            if (['山賊兎の底力', '悲哀のエンドロール', '血のカーテンコール', '終わらないレクイエム',
+                '黒竜の戦斧', 'ラウドリーバラッド', 'ラウドリーバラッド', '天に星、罪に罰'].includes(skill.SkillName)) {
+                infl.sort((a, b) => {
+                    let iTypeA = a.Data_InfluenceType;
+                    let iTypeB = b.Data_InfluenceType;
+
+                    let getIndex = (iType) => {
+                        if ([7, 10, 11, 12, 13, 22, 31, 32, 33, 34, 35, 37, 54, 83, 83, 85, 103, 105, 108, 137, 178, 200, 226].includes(iType)) { return 1; }
+                        if ([8, 9, 19].includes(iType)) { return 2; }
+                        if ([3, 5, 89, 90, 141, 142].includes(iType)) { return 3; }
+                        if ([2, 4].includes(iType)) { return 4; }
+                        if ([6].includes(iType)) { return 5; }
+                        return 0;
+                    }
+                    let iA = getIndex(iTypeA);
+                    let iB = getIndex(iTypeB);
+
+                    if (iA != iB) return (iA < iB) ? -1 : 1;
+                    return 0;
+                })
+            }
+
             for (let influence of infl) {
                 let iType = influence.Data_InfluenceType;
 
@@ -579,86 +601,111 @@ const aigisCardsList = async function () {
                 let replaceText = (iType, text, target, desc) => {
                     if (debug) { console.log('  target', target); }
 
-                    let regex = target;
+                    let regexs = [];
                     // extend
                     if (typeof (target) == 'string') {
-                        target = target.replace('[', '\\[').replace(']', '\\]');
-                        regex = new RegExp((target) + '[倍%％]?');
+                        // normal extend
+                        // [RNG] => \[RNG\][倍%％]?
+                        let temp = target.replace('[', '\\[').replace(']', '\\]');
+                        let regex = new RegExp(temp + '[倍%％]?');
 
-                        if (!regex.test(text)) {
-                            target = target.replace('[', '<').replace(']', '>');
-                            regex = new RegExp((target) + '[倍%％]?');
+                        if (regex.test(text)) {
+                            regexs.push(regex);
+                        } else {
+                            temp = target.replace('[', '<').replace(']', '>');
+                            regex = new RegExp(temp + '[倍%％]?');
+                            regexs.push(regex);
+                        }
+                    } else if (Array.isArray(target)) {
+                        // extend array
+                        for (let tar of target) {
+                            let temp = tar.replace('[', '\\[').replace(']', '\\]');
+                            let regex = new RegExp(temp + '[倍%％]?');
+                            regexs.push(regex);
                         }
                     }
-                    if (debug) { console.log('  regex', regex); }
 
-                    if (!regex.test(text)) { return text; }
+                    if (debug) { console.log('  regex', regexs); }
 
-                    let [found] = text.match(regex);
-                    if (debug) { console.log('  found', found); }
-                    if (debug) { console.log('  desc', desc); }
+                    let index = 256, regex;
 
-                    let desc100 = Math.round(desc * 100);
+                    for (let _regex of regexs) {
+                        if (!_regex.test(text)) { continue; }
 
-                    if (found.endsWith(`倍`)) {
-                        let res = desc;
-                        if (iType == 3) { res = Math.round((desc + 1) * 100) / 100; }
-                        if (iType == 5) { res = Math.round((desc + 1) * 100) / 100; }
+                        let i = text.search(_regex);
+                        if (i > index) { continue; }
 
-                        text = text.replace(found, res + '倍');
+                        index = i;
+                        regex = _regex;
+                    }
+                    if (index != 256) {
+                        let [found] = text.match(regex);
 
-                    } else if (found.endsWith(`%`) || found.endsWith(`％`)) {
-                        let res = desc100;
-                        if (iType == 89) { res = (desc100 - 100); }
+                        if (debug) { console.log('  found', found); }
+                        if (debug) { console.log('  desc', desc); }
 
-                        text = text.replace(found, res + '％');
+                        let desc100 = Math.round(desc * 100);
 
-                    } else {
-                        let res = desc;
-                        if (iType == 32) { res = desc100; }
+                        if (found.endsWith(`倍`)) {
+                            let res = desc;
+                            if (iType == 3) { res = Math.round((desc + 1) * 100) / 100; }
+                            if (iType == 5) { res = Math.round((desc + 1) * 100) / 100; }
 
-                        text = text.replace(found, res);
+                            text = text.replace(found, res + '倍');
+
+                        } else if (found.endsWith(`%`) || found.endsWith(`％`)) {
+                            let res = desc100;
+                            if (iType == 89) { res = (desc100 - 100); }
+
+                            text = text.replace(found, res + '％');
+
+                        } else {
+                            let res = desc;
+                            if (iType == 32) { res = desc100; }
+
+                            text = text.replace(found, res);
+                        }
                     }
 
                     return text;
                 }
 
                 // iType == 187 即死
-                if (iType == 2) { text = replaceText(iType, text, extend || /(<ATK>|<POW_R>|<PATK>|\[ATK\])[倍%％]?/, desc); }      // ATK
-                if (iType == 4) { text = replaceText(iType, text, extend || /(<DEF>|<POW_R>|<PDEF>|\[DEF\])[倍%％]?/, desc); }      // DEF
-                if (iType == 3) { text = replaceText(iType, text, extend || /(<ATK>|<POW_I>|\[ATK\])[倍%％]?/, desc); }             // ALL ATK
-                if (iType == 5) { text = replaceText(iType, text, extend || /(<DEF>|<POW_I>|\[DEF\])[倍%％]?/, desc); }             // ALL DEF
-                if (iType == 6) { text = replaceText(iType, text, extend || /(<RNG>|<POW_R>)[倍%％]?/, desc); }                     // ALL DEF
-                if (iType == 7) { text = replaceText(iType, text, extend || /(<NUM_SHOT>)[倍%％]?/, desc); }
-                if (iType == 8) { text = replaceText(iType, text, extend || /(<AREA>|<POW_R>)[倍%％]?/, desc); }
-                if (iType == 9) { text = replaceText(iType, text, extend || /(<AVOID>|<POW_I>)[倍%％]?/, desc); }
-                if (iType == 10) { text = replaceText(iType, text, extend || /(<AVOID>)[倍%％]?/, desc); }
-                if (iType == 11) { text = replaceText(iType, text, extend || /(<POW_R>)[倍%％]?/, desc); }                          // HP
-                if (iType == 12) { text = replaceText(iType, text, extend || /(<NUM_BLOCK>)[倍%％]?/, desc); }
-                if (iType == 13) { text = replaceText(iType, text, extend || /(<NUM_ATK>)[倍%％]?/, desc); }
-                if (iType == 19) { text = replaceText(iType, text, extend || /(<MDEF>|<POW_R>)[倍%％]?/, desc); }
-                if (iType == 22) { text = replaceText(iType, text, extend || /(<NUM_TRG>)[倍%％]?/, desc); }
-                if (iType == 31) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                          // HEAL
-                if (iType == 32) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                          // ADD COST
-                if (iType == 33) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                          // PH DEF%
-                if (iType == 34) { text = replaceText(iType, text, extend || /(<MDEF>)[倍%％]?/, desc); }                           // MDEF
-                if (iType == 35) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                          // ATK+HP
-                if (iType == 37) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                          // ATK DEBUFF
-                if (iType == 54) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                          // LUK DEF
-                if (iType == 83) { text = replaceText(iType, text, extend || /(<POW_R>)[倍%％]?/, desc); }
-                if (iType == 83) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                          // MAX HP
-                if (iType == 85) { text = replaceText(iType, text, extend || /(<POW_R>)[倍%％]?/, desc); }
-                if (iType == 89) { text = replaceText(iType, text, extend || /(<ATK>|<POW_R>|\[ATK\])[倍%％]?/, desc); }
-                if (iType == 90) { text = replaceText(iType, text, extend || /(<DEF>|<POW_R>|\[DEF\])[倍%％]?/, desc); }
-                if (iType == 103) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                         // ATK DEBUFF
-                if (iType == 105) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                         // UNKNOWN
-                if (iType == 108) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }                         // HP CUT
-                if (iType == 137) { text = replaceText(iType, text, extend || /(<POW_R>)[倍%％]?/, desc); }                         // AB BUFF
-                if (iType == 141) { text = replaceText(iType, text, extend || /(<ATK>|<POW_R>|\[ATK\])[倍%％]?/, desc); }
-                if (iType == 142) { text = replaceText(iType, text, extend || /(<DEF>|<POW_R>|\[DEF\])[倍%％]?/, desc); }
-                if (iType == 178) { text = replaceText(iType, text, extend || /(<POW_I>)[倍%％]?/, desc); }
-                if (iType == 200) { text = replaceText(iType, text, extend || /(<RNG>)[倍%％]?/, desc); }
-                if (iType == 226) { text = replaceText(iType, text, extend || /(<POW_R>)[倍%％]?/, desc); }
+                if (iType == 2) { text = replaceText(iType, text, extend || ['<ATK>', '<POW_R>', '<PATK>', '[ATK]'], desc); }      // ATK
+                if (iType == 4) { text = replaceText(iType, text, extend || ['<DEF>', '<POW_R>', '<PDEF>', '[DEF]'], desc); }      // DEF
+                if (iType == 3) { text = replaceText(iType, text, extend || ['<ATK>', '<POW_I>', '[ATK]'], desc); }             // ALL ATK
+                if (iType == 5) { text = replaceText(iType, text, extend || ['<DEF>', '<POW_I>', '[DEF]'], desc); }             // ALL DEF
+                if (iType == 6) { text = replaceText(iType, text, extend || ['<RNG>', '<POW_R>'], desc); }                     // ALL DEF
+                if (iType == 7) { text = replaceText(iType, text, extend || ['<NUM_SHOT>'], desc); }
+                if (iType == 8) { text = replaceText(iType, text, extend || ['<AREA>', '<POW_R>'], desc); }
+                if (iType == 9) { text = replaceText(iType, text, extend || ['<AVOID>', '<POW_I>'], desc); }
+                if (iType == 10) { text = replaceText(iType, text, extend || ['<AVOID>'], desc); }
+                if (iType == 11) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }                          // HP
+                if (iType == 12) { text = replaceText(iType, text, extend || ['<NUM_BLOCK>'], desc); }
+                if (iType == 13) { text = replaceText(iType, text, extend || ['<NUM_ATK>'], desc); }
+                if (iType == 19) { text = replaceText(iType, text, extend || ['<MDEF>', '<POW_R>'], desc); }
+                if (iType == 22) { text = replaceText(iType, text, extend || ['<NUM_TRG>'], desc); }
+                if (iType == 31) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // HEAL
+                if (iType == 32) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // ADD COST
+                if (iType == 33) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // PH DEF%
+                if (iType == 34) { text = replaceText(iType, text, extend || ['<MDEF>'], desc); }                           // MDEF
+                if (iType == 35) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // ATK+HP
+                if (iType == 37) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // ATK DEBUFF
+                if (iType == 54) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // LUK DEF
+                if (iType == 83) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }
+                if (iType == 83) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // MAX HP
+                if (iType == 85) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }
+                if (iType == 89) { text = replaceText(iType, text, extend || ['<ATK>', '<POW_R>', '[ATK]'], desc); }
+                if (iType == 90) { text = replaceText(iType, text, extend || ['<DEF>', '<POW_R>', '[DEF]'], desc); }
+                if (iType == 103) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                         // ATK DEBUFF
+                if (iType == 105) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                         // UNKNOWN
+                if (iType == 108) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                         // HP CUT
+                if (iType == 137) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }                         // AB BUFF
+                if (iType == 141) { text = replaceText(iType, text, extend || ['<ATK>', '<POW_R>', '[ATK]'], desc); }
+                if (iType == 142) { text = replaceText(iType, text, extend || ['<DEF>', '<POW_R>', '[DEF]'], desc); }
+                if (iType == 178) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }
+                if (iType == 200) { text = replaceText(iType, text, extend || ['<RNG>'], desc); }
+                if (iType == 226) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }
 
                 // if (iType == 121) { change skill text }
 
