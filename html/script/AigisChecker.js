@@ -689,8 +689,8 @@ let sortByTicket = function () {
         // sort by year group
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
-        // sort by class
-        if (aData.classID != bData.classID) return (aData.classID < bData.classID) ? -1 : 1;
+        // sort by id
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
         return 0;
     });
 
