@@ -1,4 +1,4 @@
-var maxCid = 1911;
+var maxCid = 1914;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1725,7 +1725,7 @@ var charaData = [
 	{	"id": 1889,	"name": "花火空の天使長ミルノ",	"rare": 4,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1889_00",	"imgaw": "1889_01"	},
 	{	"id": 1890,	"name": "お祭大好き海賊デューオ",	"rare": 5,	"classID": 10400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1890_00",	"imgaw": "1890_01"	},
 	{	"id": 1891,	"name": "ドゥン人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1891_00"	},
-	{	"id": 1892,	"name": "砂漠の亜神バスティス",	"rare": 5,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1892_00"	},
+	{	"id": 1892,	"name": "砂漠の亜神バスティス",	"rare": 5,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1892_00",	"imgaw": "1892_01"	},
 	{	"id": 1893,	"name": "戦禍を断つ者ヴィディア",	"rare": 11,	"classID": 138800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1893_00",	"imgaw": "1893_01"	},
 	{	"id": 1894,	"name": "戦禍を断つ者ヴィディア",	"rare": 10,	"classID": 138800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1894_00",	"imgaw": "1894_01"	},
 	{	"id": 1895,	"name": "大華の母たる者 徐華",	"rare": 11,	"classID": 138700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1895_00",	"imgaw": "1895_01"	},
@@ -1738,5 +1738,8 @@ var charaData = [
 	{	"id": 1908,	"name": "速射の長銃",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1909,	"name": "制海の銃",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1910,	"name": "猛撃の砲弾",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1911,	"name": "遊撃の羽",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1911,	"name": "遊撃の羽",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1912,	"name": "闇商人ノストラ",	"rare": 4,	"classID": 12800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1912_00",	"imgaw": "1912_01"	},
+	{	"id": 1913,	"name": "癒しの囁き夜話イーリス",	"rare": 4,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1913_00",	"imgaw": "1913_01"	},
+	{	"id": 1914,	"name": "ちびサーベイン",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1914_00"	}
 ]
