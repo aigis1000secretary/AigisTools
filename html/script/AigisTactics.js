@@ -489,11 +489,7 @@ let onChangeSelectMissionType = function (select) {
             });
         } break;
 
-        case "Tower": {
-            items = missionIDs.filter(mID => {
-                return 110000 <= parseInt(mID) && parseInt(mID) < 200000;
-            });
-        } break;
+        case "Tower": { items = missionIDs.filter(mID => { return 110000 <= parseInt(mID) && parseInt(mID) < 200000; }); } break;
 
         case "Goldrush": {
             items = missionIDs.filter(mID => {
@@ -511,101 +507,29 @@ let onChangeSelectMissionType = function (select) {
             });
             items.sort((a, b) => { return b.localeCompare(a); });   // sort by missionID & reverse 
         } break;
-        case "Reproduce": {
-            items = missionIDs.filter(mID => {
-                return 300000 <= parseInt(mID) && parseInt(mID) < 310000 &&
-                    missionList[mID].indexOf("ゴールドラッシュ") == -1;
-            });
-        } break;
-        case "DailyReproduce": {
-            items = missionIDs.filter(mID => {
-                return 310000 <= parseInt(mID) && parseInt(mID) < 320000
-            });
-        } break;
+        case "Reproduce": { items = missionIDs.filter(mID => { return 300000 <= parseInt(mID) && parseInt(mID) < 310000 && missionList[mID].indexOf("ゴールドラッシュ") == -1; }); } break;
+        case "DailyReproduce": { items = missionIDs.filter(mID => { return 310000 <= parseInt(mID) && parseInt(mID) < 320000 }); } break;
 
-        case "History1": {
-            items = missionIDs.filter(mID => {
-                return 920000 <= parseInt(mID) && parseInt(mID) < 920030
-            });
-        } break;
-        case "History2": {
-            items = missionIDs.filter(mID => {
-                return 920030 <= parseInt(mID) && parseInt(mID) < 920056
-            });
-        } break;
-        case "History3": {
-            items = missionIDs.filter(mID => {
-                return 920056 <= parseInt(mID) && parseInt(mID) < 920081
-            });
-        } break;
-        case "History4": {
-            items = missionIDs.filter(mID => {
-                return 920081 <= parseInt(mID) && parseInt(mID) < 920100
-            });
-        } break;
-        case "History5": {
-            items = missionIDs.filter(mID => {
-                return 920100 <= parseInt(mID) && parseInt(mID) < 920119
-            });
-        } break;
-        case "History6": {
-            items = missionIDs.filter(mID => {
-                return 920119 <= parseInt(mID) && parseInt(mID) < 920136
-            });
-        } break;
-        case "History7": {
-            items = missionIDs.filter(mID => {
-                return 920136 <= parseInt(mID) && parseInt(mID) < 920153
-            });
-        } break;
-        case "History8": {
-            items = missionIDs.filter(mID => {
-                return 920153 <= parseInt(mID) && parseInt(mID) < 920169
-            });
-        } break;
-        case "History9": {
-            items = missionIDs.filter(mID => {
-                return 920169 <= parseInt(mID) && parseInt(mID) < 920185
-            });
-        } break;
+        case "History1": { items = missionIDs.filter(mID => { return 920000 <= parseInt(mID) && parseInt(mID) < 920030 }); } break;
+        case "History2": { items = missionIDs.filter(mID => { return 920030 <= parseInt(mID) && parseInt(mID) < 920056 }); } break;
+        case "History3": { items = missionIDs.filter(mID => { return 920056 <= parseInt(mID) && parseInt(mID) < 920081 }); } break;
+        case "History4": { items = missionIDs.filter(mID => { return 920081 <= parseInt(mID) && parseInt(mID) < 920100 }); } break;
+        case "History5": { items = missionIDs.filter(mID => { return 920100 <= parseInt(mID) && parseInt(mID) < 920119 }); } break;
+        case "History6": { items = missionIDs.filter(mID => { return 920119 <= parseInt(mID) && parseInt(mID) < 920136 }); } break;
+        case "History7": { items = missionIDs.filter(mID => { return 920136 <= parseInt(mID) && parseInt(mID) < 920153 }); } break;
+        case "History8": { items = missionIDs.filter(mID => { return 920153 <= parseInt(mID) && parseInt(mID) < 920169 }); } break;
+        case "History9": { items = missionIDs.filter(mID => { return 920169 <= parseInt(mID) && parseInt(mID) < 920185 }); } break;
 
-        case "Special": {
-            items = missionIDs.filter(mID => {
-                return 320000 <= parseInt(mID) && parseInt(mID) < 400000 ||
-                    missionList[mID].indexOf("異世界") != -1;
-            });
-        } break;
+        case "Special": { items = missionIDs.filter(mID => { return (320000 <= parseInt(mID) && parseInt(mID) < 400000) || missionList[mID].indexOf("異世界") != -1; }); } break;
 
         case "Subjugation": {
-            items = missionIDs.filter(mID => {
-                return 400000 <= parseInt(mID) && parseInt(mID) < 500000
-            });
-            // // remove 復刻大討伐
-            // for (let i = 0; i < items.length - 1; ++i) {
-            //     let title_i = missionList[items[i]];   // m-title
-            //     let flag = false;
-
-            //     for (let j = i + 1; j < items.length; ++j) {
-            //         let title_j = missionList[items[j]];   // m-title
-            //         if (title_i == title_j) { flag = true; break; }
-            //     }
-
-            //     if (flag) { items[i] = ""; }
-            // }; items = items.filter(i => i != "");
-            items.sort((a, b) => { return b.localeCompare(a); });   // sort by missionID & reverse 
+            items = missionIDs.filter(mID => { return (400000 <= parseInt(mID) && parseInt(mID) < 500000) || (930000 <= parseInt(mID) && parseInt(mID) < 950000) });
+            // items.sort((a, b) => { return b.localeCompare(a); });   // sort by missionID & reverse 
         } break;
-        case "Devil": {
-            items = missionIDs.filter(mID => {
-                return 500000 <= parseInt(mID) && parseInt(mID) < 600000
-            });
-        } break;
-        case "Raid": {
-            items = missionIDs.filter(mID => {
-                return 900001 < parseInt(mID) && parseInt(mID) < 910000
-            });
-        } break;
+        case "Devil": { items = missionIDs.filter(mID => { return 500000 <= parseInt(mID) && parseInt(mID) < 600000 }); } break;
+        case "Raid": { items = missionIDs.filter(mID => { return 900001 < parseInt(mID) && parseInt(mID) < 910000 }); } break;
 
-        case "Daily": { items = ["700001"]; } break;
+        case "Daily": { items = missionIDs.filter(mID => { return 700101 <= parseInt(mID) && parseInt(mID) < 700106 }); } break;
         case "Harlem": { items = ["600001"]; } break;
 
         case "Challenge": { items = ["800001", "900001", "910001", "910002"]; } break;

@@ -1,4 +1,4 @@
-var maxCid = 1914;
+var maxCid = 1917;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1219,7 +1219,7 @@ var charaData = [
 	{	"id": 1259,	"name": "ちびリュクス",	"rare": 3,	"classID": 27000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1259_00"	},
 	{	"id": 1260,	"name": "冥霊たちの夏メルアビス",	"rare": 5,	"classID": 11600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1261,	"name": "癒しの涼波イーリス",	"rare": 4,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1261_00",	"imgaw": "1261_01"	},
-	{	"id": 1262,	"name": "翠玉の深海兵フィーヌ",	"rare": 4,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1262_00",	"imgaw": "1262_01"	},
+	{	"id": 1262,	"name": "翠玉の深海兵フィーヌ",	"rare": 4,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1262_00",	"imgaw": "1262_01",	"imgaw2B": "1262_03"	},
 	{	"id": 1263,	"name": "スフィンクス人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1263_00"	},
 	{	"id": 1264,	"name": "王宮薬草師ローズ",	"rare": 4,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1264_00",	"imgaw": "1264_01"	},
 	{	"id": 1265,	"name": "マンドラゴラ",	"rare": 5,	"classID": 130000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1265_00"	},
@@ -1458,7 +1458,7 @@ var charaData = [
 	{	"id": 1565,	"name": "スカイヒーラートークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1565_00"	},
 	{	"id": 1566,	"name": "風竜魔術士コラリー",	"rare": 4,	"classID": 150600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1566_00",	"imgaw": "1566_01"	},
 	{	"id": 1567,	"name": "ちびシビラ",	"rare": 3,	"classID": 20530,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1567_00"	},
-	{	"id": 1568,	"name": "朱珠の深海兵長ムルーア",	"rare": 5,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1568_00",	"imgaw": "1568_01"	},
+	{	"id": 1568,	"name": "朱珠の深海兵長ムルーア",	"rare": 5,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1568_00",	"imgaw": "1568_01",	"imgaw2A": "1568_02",	"imgaw2B": "1568_03"	},
 	{	"id": 1569,	"name": "砂漠の勇士ファルア",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1569_00",	"imgaw": "1569_01"	},
 	{	"id": 1570,	"name": "符術士リャオレン",	"rare": 4,	"classID": 16700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1570_00",	"imgaw": "1570_01"	},
 	{	"id": 1571,	"name": "刀剣霊符",	"rare": 5,	"classID": 152500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1571_00"	},
@@ -1741,5 +1741,8 @@ var charaData = [
 	{	"id": 1911,	"name": "遊撃の羽",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1912,	"name": "闇商人ノストラ",	"rare": 4,	"classID": 12800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1912_00",	"imgaw": "1912_01"	},
 	{	"id": 1913,	"name": "癒しの囁き夜話イーリス",	"rare": 4,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1913_00",	"imgaw": "1913_01"	},
-	{	"id": 1914,	"name": "ちびサーベイン",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1914_00"	}
+	{	"id": 1914,	"name": "ちびサーベイン",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1914_00"	},
+	{	"id": 1915,	"name": "柄長翼の癒し手ジタリス",	"rare": 4,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1915_00",	"imgaw": "1915_01"	},
+	{	"id": 1916,	"name": "ニーズヘッグ人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1916_00"	},
+	{	"id": 1917,	"name": "村人",	"rare": 3,	"classID": 155100,	"sortGroupID": 30,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1917_00"	}
 ]
