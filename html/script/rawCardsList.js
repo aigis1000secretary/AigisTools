@@ -1,4 +1,4 @@
-var maxCid = 1917;
+var maxCid = 1932;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1744,5 +1744,20 @@ var charaData = [
 	{	"id": 1914,	"name": "ちびサーベイン",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1914_00"	},
 	{	"id": 1915,	"name": "柄長翼の癒し手ジタリス",	"rare": 4,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1915_00",	"imgaw": "1915_01"	},
 	{	"id": 1916,	"name": "ニーズヘッグ人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1916_00"	},
-	{	"id": 1917,	"name": "村人",	"rare": 3,	"classID": 155100,	"sortGroupID": 30,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1917_00"	}
+	{	"id": 1917,	"name": "村人",	"rare": 1,	"classID": 139000,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1917_00"	},
+	{	"id": 1918,	"name": "創道の血統イルヴィ",	"rare": 4,	"classID": 3000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1918_00",	"imgaw": "1918_01"	},
+	{	"id": 1919,	"name": "死氷の亜神ヘリューズ",	"rare": 5,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1919_00",	"imgaw": "1919_01"	},
+	{	"id": 1920,	"name": "帝国掘削教官ミュレ",	"rare": 5,	"classID": 135600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1920_00",	"imgaw": "1920_01"	},
+	{	"id": 1921,	"name": "帝国飛艦士フォーラ",	"rare": 4,	"classID": 155900,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1921_00",	"imgaw": "1921_01"	},
+	{	"id": 1922,	"name": "帝国銃撃士パラベル",	"rare": 4,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1922_00",	"imgaw": "1922_01"	},
+	{	"id": 1923,	"name": "帝国人間学者ジェニー",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1923_00",	"imgaw": "1923_01"	},
+	{	"id": 1924,	"name": "ちびレギーナ",	"rare": 3,	"classID": 24400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1924_00"	},
+	{	"id": 1925,	"name": "ちびクラマ",	"rare": 3,	"classID": 25000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1925_00"	},
+	{	"id": 1926,	"name": "死氷の人魂",	"rare": 5,	"classID": 138900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1926_00"	},
+	{	"id": 1927,	"name": "死氷の亡霊",	"rare": 5,	"classID": 138920,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1927_00"	},
+	{	"id": 1928,	"name": "村人(農夫)",	"rare": 1,	"classID": 139000,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1928_00"	},
+	{	"id": 1929,	"name": "村人(老人)",	"rare": 1,	"classID": 139000,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1929_00"	},
+	{	"id": 1930,	"name": "村人(少年)",	"rare": 1,	"classID": 139000,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1930_00"	},
+	{	"id": 1931,	"name": "前線拠点",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1932,	"name": "エアセイラートークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1932_00"	}
 ]
