@@ -796,6 +796,10 @@ const aigisCardsList = async function () {
                 // case 848: case 849: case 850: case 851: case 852:   // 2019/08
                 //     { assign = -2; } break;
 
+                // 超TD
+                case 1658: case 1659:
+                    { assign = -2; } break;
+
                 // 封緘のグラセスタ
                 case 719:
                 case 720: { assign = -3; } break;

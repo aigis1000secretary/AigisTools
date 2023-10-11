@@ -171,6 +171,10 @@ let bodyOnload = function () {
             sortByTicket();
             break;
 
+        case "empTicket":
+            sortByEmpTicket();
+            break;
+
         default:
             sortByRare(false);
             break;
@@ -282,6 +286,7 @@ let setHr = function (type) {
             textList[-5] = "流星ワールドアクター（流星WA）";
             textList[-4] = "ガールズ・ブック・メイカー（GBM）";
             textList[-3] = "封緘のグラセスタ（封緘）";
+            textList[-2] = "超TD";
             textList[-1] = "ランス10-決戦-";
             textList[0] = "王国";
             textList[2] = "白の帝国";
@@ -336,21 +341,67 @@ let setHr = function (type) {
             let textList = ['ブラック交換チケット',
                 '4周年ブラックチケット', '5周年ブラックチケット', '6周年ブラックチケット',
                 '7周年ブラックチケット', '8周年ブラックチケット', '9周年ブラックチケット',
+                '9.5周年ブラックチケット',
                 '他', 'hidden']
 
-            let iA = aData.id <= 362 ? 0 : (aData.id <= 523 ? 1 : (aData.id <= 662 ? 2 : (aData.id <= 866 ? 3 : (aData.id <= 1046 ? 4 : (aData.id <= 1292 ? 5 : (aData.id <= 1521 ? 6 : 7))))));
-            let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : (bData.id <= 1521 ? 6 : 7))))));
-            // hidden icon
-            if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8, 9].includes(aData.assign)) ||
-                (aData.genus != 0 && aData.id != 539) || (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396)) {
-                iA = 8;
-                hidden = true;
+            const getI = (data) => {
+                let i = 9;
+                if (data.id <= 362) { i = 0; }
+                else if (data.id <= 523) { i = 1; }
+                else if (data.id <= 662) { i = 2; }
+                else if (data.id <= 866) { i = 3; }
+                else if (data.id <= 1046) { i = 4; }
+                else if (data.id <= 1292) { i = 5; }
+                else if (data.id <= 1521) { i = 6; }
+                else if (data.id <= 1685) { i = 7; }
+                else { i = 8; }
+
+                if (data.rare != 5 || data.isEvent || ![0, 5, 8, 9].includes(data.assign) ||
+                    (data.genus != 0 && data.id != 539) || (data.sortGroupID == 25 && data.id != 418 && data.id != 1396)) {
+                    i = 9;
+                }
+                if (data.id == 1682) { i = 9; }
+
+                return i;
             }
-            if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8, 9].includes(bData.assign)) ||
-                (bData.genus != 0 && bData.id != 539) || (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396)) {
-                iB = 8;
-                hidden = true;
+            let iA = getI(aData);
+            let iB = getI(bData);
+
+            if (iA == 9 || iB == 9) { hidden = true; }
+
+            aText = textList[iA];
+            bText = textList[iB];
+        } else if (type == "empTicket") {
+            let textList = [
+                '帝国大戦記念パック',
+                '帝国大戦 第二陣記念パック',
+                '帝国大戦 第三陣記念パック',
+                '帝国大戦 第四陣記念パック',
+                '帝国大戦 第五陣記念パック',
+                '帝国大戦 第六陣記念パック',
+                'hidden'
+            ]
+
+            const getI = (data) => {
+                let i = 6;
+
+                switch (data.id) {
+                    case 430: case 429: case 427: case 465: case 526: case 527:
+                    case 624: case 711: case 799: case 917: case 988:
+                        { i = 0; } break;
+                    case 1105: { i = 1; } break;
+                    case 1226: { i = 2; } break;
+                    case 1343: case 1344: { i = 3; } break;
+                    case 1433: case 1434: { i = 4; } break;
+                    case 1554: case 1555: { i = 5; } break;
+                }
+
+                return i;
             }
+            let iA = getI(aData);
+            let iB = getI(bData);
+
+            if (iA == 6 || iB == 6) { hidden = true; }
 
             aText = textList[iA];
             bText = textList[iB];
@@ -675,17 +726,30 @@ let sortByTicket = function () {
     $("#iconbox").empty();
 
     charaData.sort(function compare(aData, bData) {
-        let iA = aData.id <= 362 ? 0 : (aData.id <= 523 ? 1 : (aData.id <= 662 ? 2 : (aData.id <= 866 ? 3 : (aData.id <= 1046 ? 4 : (aData.id <= 1292 ? 5 : (aData.id <= 1521 ? 6 : 7))))));
-        let iB = bData.id <= 362 ? 0 : (bData.id <= 523 ? 1 : (bData.id <= 662 ? 2 : (bData.id <= 866 ? 3 : (bData.id <= 1046 ? 4 : (bData.id <= 1292 ? 5 : (bData.id <= 1521 ? 6 : 7))))));
-        // hidden icon
-        if ((aData.rare != 5) || (aData.isEvent) || (![0, 5, 8, 9].includes(aData.assign)) ||
-            (aData.genus != 0 && aData.id != 539) || (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396)) {
-            iA = 8;
+
+        const getI = (data) => {
+            let i = 9;
+            if (data.id <= 362) { i = 0; }
+            else if (data.id <= 523) { i = 1; }
+            else if (data.id <= 662) { i = 2; }
+            else if (data.id <= 866) { i = 3; }
+            else if (data.id <= 1046) { i = 4; }
+            else if (data.id <= 1292) { i = 5; }
+            else if (data.id <= 1521) { i = 6; }
+            else if (data.id <= 1685) { i = 7; }
+            else { i = 8; }
+
+            if (data.rare != 5 || data.isEvent || ![0, 5, 8, 9].includes(data.assign) ||
+                (data.genus != 0 && data.id != 539) || (data.sortGroupID == 25 && data.id != 418 && data.id != 1396)) {
+                i = 9;
+            }
+            if (data.id == 1682) { i = 9; }
+
+            return i;
         }
-        if ((bData.rare != 5) || (bData.isEvent) || (![0, 5, 8, 9].includes(bData.assign)) ||
-            (bData.genus != 0 && bData.id != 539) || (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396)) {
-            iB = 8;
-        }
+        let iA = getI(aData);
+        let iB = getI(bData);
+
         // sort by year group
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
@@ -696,6 +760,42 @@ let sortByTicket = function () {
 
     init();
     setHr("ticket");
+}
+let sortByEmpTicket = function () {
+    sortMode = "empTicket";
+    $("#iconbox").empty();
+
+    charaData.sort(function compare(aData, bData) {
+
+        const getI = (data) => {
+            let i = 6;
+
+            switch (data.id) {
+                case 430: case 429: case 427: case 465: case 526: case 527:
+                case 624: case 711: case 799: case 917: case 988:
+                    { i = 0; } break;
+                case 1105: { i = 1; } break;
+                case 1226: { i = 2; } break;
+                case 1343: case 1344: { i = 3; } break;
+                case 1433: case 1434: { i = 4; } break;
+                case 1554: case 1555: { i = 5; } break;
+            }
+
+            return i;
+        }
+        let iA = getI(aData);
+        let iB = getI(bData);
+
+        // sort by year group
+        if (iA != iB) return (iA < iB) ? -1 : 1;
+
+        // sort by id
+        if (aData.id != bData.id) return (aData.id < bData.id) ? -1 : 1;
+        return 0;
+    });
+
+    init();
+    setHr("empTicket");
 }
 
 // undo method
