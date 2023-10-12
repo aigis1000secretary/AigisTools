@@ -1,4 +1,4 @@
-var maxCid = 1933;
+var maxCid = 1939;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1760,5 +1760,11 @@ var charaData = [
 	{	"id": 1930,	"name": "村人(少年)",	"rare": 1,	"classID": 139000,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1930_00"	},
 	{	"id": 1931,	"name": "前線拠点",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1932,	"name": "エアセイラートークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1932_00"	},
-	{	"id": 1933,	"name": "ダークエルフの野営地",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1933,	"name": "ダークエルフの野営地",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1934,	"name": "菓子祭の緑竜ウィリアス",	"rare": 4,	"classID": 702,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1934_00",	"imgaw": "1934_01"	},
+	{	"id": 1935,	"name": "秋祭の風雲クーコ",	"rare": 5,	"classID": 6200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 106,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1935_00",	"imgaw": "1935_01"	},
+	{	"id": 1936,	"name": "怪祭の雷雲レミィ",	"rare": 5,	"classID": 5900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 106,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1936_00",	"imgaw": "1936_01"	},
+	{	"id": 1937,	"name": "秋の民俗学士コレット",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1937_00",	"imgaw": "1937_01"	},
+	{	"id": 1938,	"name": "晴天鍛錬の休日ダニエラ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1938_00",	"imgaw": "1938_01"	},
+	{	"id": 1939,	"name": "ちびラルフ",	"rare": 3,	"classID": 33100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1939_00"	}
 ]
