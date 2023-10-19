@@ -288,7 +288,8 @@ let setHr = function (type) {
             textList[-3] = "封緘のグラセスタ（封緘）";
             textList[-2] = "超TD";
             textList[-1] = "ランス10-決戦-";
-            textList[0] = "王国";
+            textList[0] = "他";
+            textList[1] = "王国";
             textList[2] = "白の帝国";
             textList[3] = "アルスラーン戦記（遠国）";
             textList[5] = "砂漠の国";
@@ -648,8 +649,8 @@ let sortByAssign = function () {
     charaData.sort(function compare(aData, bData) {
         // sort by assign
         let iA, iB;
-        iA = (aData.assign == 0) ? 5000 : aData.assign;
-        iB = (bData.assign == 0) ? 5000 : bData.assign;
+        iA = (aData.assign == 0) ? 5000 : (aData.assign < 0) ? (aData.assign + 6000) : aData.assign;
+        iB = (bData.assign == 0) ? 5000 : (bData.assign < 0) ? (bData.assign + 6000) : bData.assign;
         if (iA != iB) return iA < iB ? -1 : 1;
 
         // sort by rare
