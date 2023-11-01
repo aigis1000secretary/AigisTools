@@ -1,4 +1,4 @@
-var maxCid = 1954;
+var maxCid = 1969;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1548,7 +1548,7 @@ var charaData = [
 	{	"id": 1674,	"name": "ちびメリュジアナ",	"rare": 3,	"classID": 20710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1674_00"	},
 	{	"id": 1675,	"name": "メシナの渦潮(お正月)",	"rare": 5,	"classID": 153200,	"sortGroupID": 30,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1675_00"	},
 	{	"id": 1676,	"name": "王子【正月】",	"rare": 5,	"classID": 135000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 101,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1676_00"	},
-	{	"id": 1677,	"name": "王子【玉兎】",	"rare": 5,	"classID": 153400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1677_00"	},
+	{	"id": 1677,	"name": "王子【玉兎】",	"rare": 5,	"classID": 153400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1966_00"	},
 	{	"id": 1678,	"name": "旅情の剣士アカネ",	"rare": 4,	"classID": 800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 109,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1678_00",	"imgaw": "1678_01"	},
 	{	"id": 1679,	"name": "湯けむりの隠者フィオレ",	"rare": 5,	"classID": 11800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1679_00",	"imgaw": "1679_01"	},
 	{	"id": 1680,	"name": "魔剣士の湯治シエナ",	"rare": 4,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1680_00",	"imgaw": "1680_01"	},
@@ -1686,7 +1686,7 @@ var charaData = [
 	{	"id": 1850,	"name": "ジオトークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1850_00"	},
 	{	"id": 1851,	"name": "深閑の魔将パヤモ",	"rare": 5,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1851_00",	"imgaw": "1851_01"	},
 	{	"id": 1852,	"name": "ちびヴィンセント",	"rare": 3,	"classID": 30500,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1852_00"	},
-	{	"id": 1853,	"name": "王子【麒麟】",	"rare": 5,	"classID": 137900,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1853_00"	},
+	{	"id": 1853,	"name": "王子【麒麟】",	"rare": 5,	"classID": 137900,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1969_00"	},
 	{	"id": 1854,	"name": "号砲の亜神ハリンヘイム",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1854_00",	"imgaw": "1854_01"	},
 	{	"id": 1855,	"name": "流浪の断罪者サティン",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1855_00",	"imgaw": "1855_01"	},
 	{	"id": 1856,	"name": "憧れの休日ベルニス",	"rare": 4,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1856_00",	"imgaw": "1856_01"	},
@@ -1781,5 +1781,13 @@ var charaData = [
 	{	"id": 1951,	"name": "王国軍旗",	"rare": 3,	"classID": 139200,	"sortGroupID": 20,	"placeType": 3,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1951_00"	},
 	{	"id": 1952,	"name": "ちびランヒルド",	"rare": 3,	"classID": 56000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1952_00"	},
 	{	"id": 1953,	"name": "ちびミルノ",	"rare": 3,	"classID": 21700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1953_00"	},
-	{	"id": 1954,	"name": "王国軍旗トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1954_00"	}
+	{	"id": 1954,	"name": "王国軍旗トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1954_00"	},
+	{	"id": 1955,	"name": "吸血給仕ファニュア",	"rare": 5,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1955_00",	"imgaw": "1955_01"	},
+	{	"id": 1956,	"name": "勝利へ導く者ランシェ",	"rare": 11,	"classID": 139300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1956_00",	"imgaw": "1956_01"	},
+	{	"id": 1957,	"name": "勝利へ導く者ランシェ",	"rare": 10,	"classID": 139300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1957_00",	"imgaw": "1957_01"	},
+	{	"id": 1958,	"name": "大海を征く者イヴリール",	"rare": 11,	"classID": 156300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1958_00",	"imgaw": "1958_01"	},
+	{	"id": 1959,	"name": "大海を征く者イヴリール",	"rare": 10,	"classID": 156300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1959_00",	"imgaw": "1959_01"	},
+	{	"id": 1960,	"name": "デッドマン号",	"rare": 5,	"classID": 156400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1961_00"	},
+	{	"id": 1962,	"name": "剛力の勾玉",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1963,	"name": "迅速の王冠",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
