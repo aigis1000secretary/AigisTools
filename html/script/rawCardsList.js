@@ -1,4 +1,4 @@
-var maxCid = 1969;
+var maxCid = 1973;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1775,7 +1775,7 @@ var charaData = [
 	{	"id": 1945,	"name": "Dev検証用ダミー2_遠距離",	"rare": 5,	"classID": 156000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1946,	"name": "Dev検証用ダミー3_遠近両用",	"rare": 5,	"classID": 156100,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1947,	"name": "プレイスエンチャント5",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1948,	"name": "星神の依代イヨ",	"rare": 5,	"classID": 10700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1948_00"	},
+	{	"id": 1948,	"name": "星神の依代イヨ",	"rare": 5,	"classID": 10700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1948_00",	"imgaw": "1948_01"	},
 	{	"id": 1949,	"name": "神獣玉兎",	"rare": 5,	"classID": 156200,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1949_00"	},
 	{	"id": 1950,	"name": "星神の巫女ヒミコ",	"rare": 5,	"classID": 10700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1950_00",	"imgaw": "1950_01"	},
 	{	"id": 1951,	"name": "王国軍旗",	"rare": 3,	"classID": 139200,	"sortGroupID": 20,	"placeType": 3,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1951_00"	},
@@ -1789,5 +1789,9 @@ var charaData = [
 	{	"id": 1959,	"name": "大海を征く者イヴリール",	"rare": 10,	"classID": 156300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1959_00",	"imgaw": "1959_01"	},
 	{	"id": 1960,	"name": "デッドマン号",	"rare": 5,	"classID": 156400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1961_00"	},
 	{	"id": 1962,	"name": "剛力の勾玉",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1963,	"name": "迅速の王冠",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1963,	"name": "迅速の王冠",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1970,	"name": "魔女のお誘いクロリス",	"rare": 4,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1970_00",	"imgaw": "1970_01"	},
+	{	"id": 1971,	"name": "ちび暗黒騎士",	"rare": 3,	"classID": 21200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1971_00"	},
+	{	"id": 1972,	"name": "武勇の半神アキレア",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1972_00"	},
+	{	"id": 1973,	"name": "王子【正装】",	"rare": 5,	"classID": 139400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1973_00"	}
 ]
