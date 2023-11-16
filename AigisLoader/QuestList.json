@@ -1069,6 +1069,10 @@
 	{	"id": "200412/8071",	"map": "4788",	"missionTitle": "人である者、神に生まれた者",	"questName": "鋼の都の防衛戦",	"missionID": 200412,	"questID": 8071,	"location": "00",	"entry": "00",	"life": 10,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "200412/8072",	"map": "4789",	"missionTitle": "人である者、神に生まれた者",	"questName": "人と神の問い",	"missionID": 200412,	"questID": 8072,	"location": "00",	"entry": "00",	"life": 40,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "200412/8073",	"map": "4790",	"missionTitle": "人である者、神に生まれた者",	"questName": "気弱な魔物？",	"missionID": 200412,	"questID": 8073,	"location": "00",	"entry": "00",	"life": 30,	"startUP": 10,	"unitLimit": 8},
+	{	"id": "200412/8074",	"map": "4791",	"missionTitle": "人である者、神に生まれた者",	"questName": "開拓者の抵抗",	"missionID": 200412,	"questID": 8074,	"location": "00",	"entry": "00",	"life": 20,	"startUP": 10,	"unitLimit": 8},
+	{	"id": "200412/8075",	"map": "4792",	"missionTitle": "人である者、神に生まれた者",	"questName": "大地を揺るがす木馬",	"missionID": 200412,	"questID": 8075,	"location": "00",	"entry": "00",	"life": 10,	"startUP": 10,	"unitLimit": 8},
+	{	"id": "200412/8076",	"map": "4793",	"missionTitle": "人である者、神に生まれた者",	"questName": "争いのない世界",	"missionID": 200412,	"questID": 8076,	"location": "00",	"entry": "00",	"life": 10,	"startUP": 10,	"unitLimit": 8},
+	{	"id": "200412/8077",	"map": "4794",	"missionTitle": "人である者、神に生まれた者",	"questName": "最初の剪定",	"missionID": 200412,	"questID": 8077,	"location": "00",	"entry": "00",	"life": 10,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920174/7570",	"map": "920174_4493",	"missionTitle": "人気闘兵凱旋パレード",	"questName": "王国式復興支援パレード",	"missionID": 920174,	"questID": 7570,	"location": "00",	"entry": "00",	"life": 10,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920174/7571",	"map": "920174_4494",	"missionTitle": "人気闘兵凱旋パレード",	"questName": "帝国の守護者",	"missionID": 920174,	"questID": 7571,	"location": "00",	"entry": "00",	"life": 25,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920174/7572",	"map": "920174_4495",	"missionTitle": "人気闘兵凱旋パレード",	"questName": "東の国の美姫たち",	"missionID": 920174,	"questID": 7572,	"location": "00",	"entry": "00",	"life": 25,	"startUP": 10,	"unitLimit": 8},
@@ -3578,5 +3582,8 @@
 	{	"id": "920108/6445",	"map": "920108_5332",	"missionTitle": "龍穴の風水士",	"questName": "戦場を包む氷晶",	"missionID": 920108,	"questID": 6445,	"location": "00",	"entry": "00",	"life": 20,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920108/6446",	"map": "920108_5333",	"missionTitle": "龍穴の風水士",	"questName": "湖上に揺らぐ焔砂",	"missionID": 920108,	"questID": 6446,	"location": "00",	"entry": "00",	"life": 15,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920108/6447",	"map": "920108_5334",	"missionTitle": "龍穴の風水士",	"questName": "邪仙参謀の策",	"missionID": 920108,	"questID": 6447,	"location": "00",	"entry": "00",	"life": 10,	"startUP": 10,	"unitLimit": 8},
-	{	"id": "920108/6448",	"map": "920108_5335",	"missionTitle": "龍穴の風水士",	"questName": "東国の決戦",	"missionID": 920108,	"questID": 6448,	"location": "00",	"entry": "00",	"life": 15,	"startUP": 15,	"unitLimit": 8}
+	{	"id": "920108/6448",	"map": "920108_5335",	"missionTitle": "龍穴の風水士",	"questName": "東国の決戦",	"missionID": 920108,	"questID": 6448,	"location": "00",	"entry": "00",	"life": 15,	"startUP": 15,	"unitLimit": 8},
+	{	"id": "200413/8078",	"map": "4795",	"missionTitle": "１０周年直前記念・再臨のウェパル",	"questName": "再臨のウェパル　中級",	"missionID": 200413,	"questID": 8078,	"location": "00",	"entry": "00",	"life": 30,	"startUP": 100,	"unitLimit": 10},
+	{	"id": "200413/8079",	"map": "4796",	"missionTitle": "１０周年直前記念・再臨のウェパル",	"questName": "再臨のウェパル　極級",	"missionID": 200413,	"questID": 8079,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
+	{	"id": "200413/8080",	"map": "4797",	"missionTitle": "１０周年直前記念・再臨のウェパル",	"questName": "再臨のウェパル　神級",	"missionID": 200413,	"questID": 8080,	"location": "00",	"entry": "00",	"life": 80,	"startUP": 100,	"unitLimit": 10}
 ]

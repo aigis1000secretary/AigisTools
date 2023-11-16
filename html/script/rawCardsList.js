@@ -1,4 +1,4 @@
-var maxCid = 1973;
+var maxCid = 1980;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1793,5 +1793,11 @@ var charaData = [
 	{	"id": 1970,	"name": "魔女のお誘いクロリス",	"rare": 4,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1970_00",	"imgaw": "1970_01"	},
 	{	"id": 1971,	"name": "ちび暗黒騎士",	"rare": 3,	"classID": 21200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1971_00"	},
 	{	"id": 1972,	"name": "武勇の半神アキレア",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1972_00"	},
-	{	"id": 1973,	"name": "王子【正装】",	"rare": 5,	"classID": 139400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1973_00"	}
+	{	"id": 1973,	"name": "王子【正装】",	"rare": 5,	"classID": 139400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1973_00"	},
+	{	"id": 1974,	"name": "魔神の残滓ウェパル",	"rare": 5,	"classID": 139600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1974_00",	"imgaw": "1974_01"	},
+	{	"id": 1975,	"name": "白の帝国城",	"rare": 5,	"classID": 139800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1975_00",	"imgaw": "1975_01"	},
+	{	"id": 1976,	"name": "ゼリートークン",	"rare": 5,	"classID": 156600,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1976_00"	},
+	{	"id": 1977,	"name": "海の眷属トークン",	"rare": 5,	"classID": 156700,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1977_00"	},
+	{	"id": 1978,	"name": "海の大眷属トークン",	"rare": 5,	"classID": 156800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1978_00"	},
+	{	"id": 1979,	"name": "怒りに燃えるデシウス",	"rare": 4,	"classID": 139700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
