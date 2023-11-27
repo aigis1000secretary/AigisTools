@@ -1,4 +1,4 @@
-var maxCid = 1980;
+var maxCid = 1995;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -187,7 +187,7 @@ var charaData = [
 	{	"id": 185,	"name": "姫山賊イメリア",	"rare": 4,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2014,	"isEvent": 1,	"isToken": 0,	"img": "185_00",	"imgaw": "185_01",	"imgaw2A": "185_02"	},
 	{	"id": 186,	"name": "情熱の踊り子ワルツ",	"rare": 4,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2014,	"isEvent": 1,	"isToken": 0,	"img": "186_00",	"imgaw": "186_01",	"imgaw2B": "186_03"	},
 	{	"id": 187,	"name": "天馬騎士団長エスタ",	"rare": 5,	"classID": 1100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2014,	"isEvent": 0,	"isToken": 0,	"img": "187_00",	"imgaw": "187_01",	"imgaw2A": "187_02",	"imgaw2B": "187_03"	},
-	{	"id": 188,	"name": "政務官アンナ",	"rare": 5,	"classID": 11500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2014,	"isEvent": 1,	"isToken": 0,	"img": "188_00"	},
+	{	"id": 188,	"name": "政務官アンナ",	"rare": 5,	"classID": 11500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2014,	"isEvent": 1,	"isToken": 0,	"img": "188_00",	"imgaw": "188_01"	},
 	{	"id": 189,	"name": "魔物",	"rare": 0,	"classID": 1900,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "916_00"	},
 	{	"id": 190,	"name": "大長老",	"rare": 4,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2014,	"isEvent": 1,	"isToken": 1,	"img": "190_00"	},
 	{	"id": 191,	"name": "月姫カグヤ",	"rare": 7,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2014,	"isEvent": 1,	"isToken": 0,	"img": "191_00",	"imgaw": "191_01",	"imgaw2A": "191_02"	},
@@ -1792,12 +1792,27 @@ var charaData = [
 	{	"id": 1963,	"name": "迅速の王冠",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1970,	"name": "魔女のお誘いクロリス",	"rare": 4,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1970_00",	"imgaw": "1970_01"	},
 	{	"id": 1971,	"name": "ちび暗黒騎士",	"rare": 3,	"classID": 21200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1971_00"	},
-	{	"id": 1972,	"name": "武勇の半神アキレア",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1972_00"	},
+	{	"id": 1972,	"name": "武勇の半神アキレア",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1972_00",	"imgaw": "1972_01"	},
 	{	"id": 1973,	"name": "王子【正装】",	"rare": 5,	"classID": 139400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1973_00"	},
 	{	"id": 1974,	"name": "魔神の残滓ウェパル",	"rare": 5,	"classID": 139600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1974_00",	"imgaw": "1974_01"	},
 	{	"id": 1975,	"name": "白の帝国城",	"rare": 5,	"classID": 139800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1975_00",	"imgaw": "1975_01"	},
 	{	"id": 1976,	"name": "ゼリートークン",	"rare": 5,	"classID": 156600,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1976_00"	},
 	{	"id": 1977,	"name": "海の眷属トークン",	"rare": 5,	"classID": 156700,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1977_00"	},
 	{	"id": 1978,	"name": "海の大眷属トークン",	"rare": 5,	"classID": 156800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1978_00"	},
-	{	"id": 1979,	"name": "怒りに燃えるデシウス",	"rare": 4,	"classID": 139700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1979,	"name": "怒りに燃えるデシウス",	"rare": 4,	"classID": 139700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 1981,	"name": "聖剣姫シビラ",	"rare": 5,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1981_00"	},
+	{	"id": 1982,	"name": "綺譚の半神ペルセナス",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1982_00"	},
+	{	"id": 1983,	"name": "ペルセナストークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1983_00"	},
+	{	"id": 1984,	"name": "祝福聖霊ハッピー【10周年】",	"rare": 5,	"classID": 13,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1984_00"	},
+	{	"id": 1985,	"name": "周年王子",	"rare": 5,	"classID": 140100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1985_00"	},
+	{	"id": 1986,	"name": "時の亜神クロノシア",	"rare": 5,	"classID": 156900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1986_00",	"imgaw": "1986_01"	},
+	{	"id": 1987,	"name": "クロノシアトークン",	"rare": 5,	"classID": 157000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1987_00"	},
+	{	"id": 1988,	"name": "謀略の亜神イコル",	"rare": 5,	"classID": 140200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1988_00",	"imgaw": "1988_01"	},
+	{	"id": 1989,	"name": "最終決戦仕様エフトラ",	"rare": 10,	"classID": 150900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1989_00",	"imgaw": "1989_01"	},
+	{	"id": 1990,	"name": "自律兵器クリーブ",	"rare": 5,	"classID": 157300,	"sortGroupID": 30,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1990_00"	},
+	{	"id": 1991,	"name": "自律兵器カーパト",	"rare": 5,	"classID": 157200,	"sortGroupID": 30,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1991_00"	},
+	{	"id": 1992,	"name": "エフトラ移動用トークン",	"rare": 5,	"classID": 157400,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1992_00"	},
+	{	"id": 1993,	"name": "エインヘリヤル【槍手】",	"rare": 5,	"classID": 140300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1993_00"	},
+	{	"id": 1994,	"name": "エインヘリヤル【鎧兵】",	"rare": 5,	"classID": 140400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1994_00"	},
+	{	"id": 1995,	"name": "重砲撃ポイント",	"rare": 5,	"classID": 6910,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1995_00"	}
 ]
