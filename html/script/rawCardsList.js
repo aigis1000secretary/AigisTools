@@ -1,4 +1,4 @@
-var maxCid = 1995;
+var maxCid = 1999;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1804,7 +1804,7 @@ var charaData = [
 	{	"id": 1982,	"name": "綺譚の半神ペルセナス",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1982_00"	},
 	{	"id": 1983,	"name": "ペルセナストークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1983_00"	},
 	{	"id": 1984,	"name": "祝福聖霊ハッピー【10周年】",	"rare": 5,	"classID": 13,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1984_00"	},
-	{	"id": 1985,	"name": "周年王子",	"rare": 5,	"classID": 140100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1985_00"	},
+	{	"id": 1985,	"name": "王子【宣誓】",	"rare": 5,	"classID": 140100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1985_00"	},
 	{	"id": 1986,	"name": "時の亜神クロノシア",	"rare": 5,	"classID": 156900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1986_00",	"imgaw": "1986_01"	},
 	{	"id": 1987,	"name": "クロノシアトークン",	"rare": 5,	"classID": 157000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1987_00"	},
 	{	"id": 1988,	"name": "謀略の亜神イコル",	"rare": 5,	"classID": 140200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1988_00",	"imgaw": "1988_01"	},
@@ -1814,5 +1814,9 @@ var charaData = [
 	{	"id": 1992,	"name": "エフトラ移動用トークン",	"rare": 5,	"classID": 157400,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1992_00"	},
 	{	"id": 1993,	"name": "エインヘリヤル【槍手】",	"rare": 5,	"classID": 140300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1993_00"	},
 	{	"id": 1994,	"name": "エインヘリヤル【鎧兵】",	"rare": 5,	"classID": 140400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1994_00"	},
-	{	"id": 1995,	"name": "重砲撃ポイント",	"rare": 5,	"classID": 6910,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1995_00"	}
+	{	"id": 1995,	"name": "重砲撃ポイント",	"rare": 5,	"classID": 6910,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1995_00"	},
+	{	"id": 1996,	"name": "アイギス像",	"rare": 3,	"classID": 140500,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1996_00"	},
+	{	"id": 1997,	"name": "ちびアルタ",	"rare": 3,	"classID": 148400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1997_00"	},
+	{	"id": 1998,	"name": "ちびツムジ",	"rare": 3,	"classID": 145400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1998_00"	},
+	{	"id": 1999,	"name": "王子【宣誓】",	"rare": 5,	"classID": 140100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
