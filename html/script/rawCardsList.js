@@ -1,4 +1,4 @@
-var maxCid = 1999;
+var maxCid = 2002;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1800,8 +1800,8 @@ var charaData = [
 	{	"id": 1977,	"name": "海の眷属トークン",	"rare": 5,	"classID": 156700,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1977_00"	},
 	{	"id": 1978,	"name": "海の大眷属トークン",	"rare": 5,	"classID": 156800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1978_00"	},
 	{	"id": 1979,	"name": "怒りに燃えるデシウス",	"rare": 4,	"classID": 139700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 1981,	"name": "聖剣姫シビラ",	"rare": 5,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1981_00"	},
-	{	"id": 1982,	"name": "綺譚の半神ペルセナス",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1982_00"	},
+	{	"id": 1981,	"name": "聖剣姫シビラ",	"rare": 5,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1981_00",	"imgaw": "1981_01"	},
+	{	"id": 1982,	"name": "綺譚の半神ペルセナス",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1982_00",	"imgaw": "1982_01"	},
 	{	"id": 1983,	"name": "ペルセナストークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1983_00"	},
 	{	"id": 1984,	"name": "祝福聖霊ハッピー【10周年】",	"rare": 5,	"classID": 13,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1984_00"	},
 	{	"id": 1985,	"name": "王子【宣誓】",	"rare": 5,	"classID": 140100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1985_00"	},
@@ -1818,5 +1818,8 @@ var charaData = [
 	{	"id": 1996,	"name": "アイギス像",	"rare": 3,	"classID": 140500,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1996_00"	},
 	{	"id": 1997,	"name": "ちびアルタ",	"rare": 3,	"classID": 148400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1997_00"	},
 	{	"id": 1998,	"name": "ちびツムジ",	"rare": 3,	"classID": 145400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1998_00"	},
-	{	"id": 1999,	"name": "王子【宣誓】",	"rare": 5,	"classID": 140100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 1999,	"name": "王子【宣誓】",	"rare": 5,	"classID": 140100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2000,	"name": "武門の風水士クーシン",	"rare": 4,	"classID": 11200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "2000_00",	"imgaw": "2000_01"	},
+	{	"id": 2001,	"name": "ちびアスバール",	"rare": 3,	"classID": 173300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "2001_00"	},
+	{	"id": 2002,	"name": "開拓飛艦士アヴィリコ",	"rare": 4,	"classID": 155900,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "2002_00",	"imgaw": "2002_01"	}
 ]
