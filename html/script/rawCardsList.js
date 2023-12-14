@@ -1,4 +1,4 @@
-var maxCid = 2002;
+var maxCid = 2017;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1821,5 +1821,15 @@ var charaData = [
 	{	"id": 1999,	"name": "王子【宣誓】",	"rare": 5,	"classID": 140100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2000,	"name": "武門の風水士クーシン",	"rare": 4,	"classID": 11200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "2000_00",	"imgaw": "2000_01"	},
 	{	"id": 2001,	"name": "ちびアスバール",	"rare": 3,	"classID": 173300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "2001_00"	},
-	{	"id": 2002,	"name": "開拓飛艦士アヴィリコ",	"rare": 4,	"classID": 155900,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "2002_00",	"imgaw": "2002_01"	}
+	{	"id": 2002,	"name": "開拓飛艦士アヴィリコ",	"rare": 4,	"classID": 155900,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "2002_00",	"imgaw": "2002_01"	},
+	{	"id": 2003,	"name": "粉雪の夢想劇マルティナ",	"rare": 4,	"classID": 19500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 107,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "2003_00"	},
+	{	"id": 2004,	"name": "聖なる雀翼アエロ",	"rare": 3,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "2004_00",	"imgaw": "2004_01"	},
+	{	"id": 2005,	"name": "魔物と聖夜ブランシュ",	"rare": 4,	"classID": 12400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "2005_00",	"imgaw": "2005_01"	},
+	{	"id": 2006,	"name": "聖夜の訪問者クルス",	"rare": 5,	"classID": 10600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "2006_00",	"imgaw": "2006_01"	},
+	{	"id": 2007,	"name": "ちび白の皇帝",	"rare": 3,	"classID": 29800,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "2007_00"	},
+	{	"id": 2008,	"name": "帝国魔神団長メフィスト(幻影)",	"rare": 5,	"classID": 140700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "2013_00"	},
+	{	"id": 2009,	"name": "彷徨の幻獣使いツキコ(幻影)",	"rare": 5,	"classID": 157500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "2014_00"	},
+	{	"id": 2012,	"name": "帝国剣士ヴァイス(幻影)",	"rare": 4,	"classID": 128930,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "2015_00"	},
+	{	"id": 2016,	"name": "聖夜の魔獣オルトロス",	"rare": 5,	"classID": 140600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 107,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "2016_00"	},
+	{	"id": 2017,	"name": "聖夜の魔獣ケルベロス",	"rare": 5,	"classID": 140620,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 107,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "2017_00"	}
 ]
