@@ -1,4 +1,4 @@
-var maxCid = 2046;
+var maxCid = 2055;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1853,8 +1853,17 @@ var charaData = [
 	{	"id": 2037,	"name": "鏡餅",	"rare": 5,	"classID": 66,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "2037_00"	},
 	{	"id": 2038,	"name": "凧",	"rare": 5,	"classID": 67,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "2038_00"	},
 	{	"id": 2042,	"name": "龍脈封印の重石",	"rare": 1,	"classID": 6100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2043,	"name": "温泉鉄甲モモ",	"rare": 4,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2043_00"	},
+	{	"id": 2043,	"name": "温泉鉄甲モモ",	"rare": 4,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2043_00",	"imgaw": "2043_01"	},
 	{	"id": 2044,	"name": "闘志の癒し湯アナトリア",	"rare": 5,	"classID": 5300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2044_00",	"imgaw": "2044_01"	},
 	{	"id": 2045,	"name": "温泉放浪騎ミカ",	"rare": 4,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2045_00",	"imgaw": "2045_01"	},
-	{	"id": 2046,	"name": "ちびマリウス",	"rare": 3,	"classID": 30800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2046_00"	}
+	{	"id": 2046,	"name": "ちびマリウス",	"rare": 3,	"classID": 30800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2046_00"	},
+	{	"id": 2047,	"name": "魔電流の発明家レクテ",	"rare": 4,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2047_00",	"imgaw": "2047_01"	},
+	{	"id": 2048,	"name": "王国の魔女アンジェラ",	"rare": 5,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2048_00",	"imgaw": "2048_01",	"imgaw2A": "2048_02",	"imgaw2B": "2048_03"	},
+	{	"id": 2049,	"name": "冬姫しづり",	"rare": 5,	"classID": 153600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2049_00",	"imgaw": "2049_01"	},
+	{	"id": 2050,	"name": "迷い家",	"rare": 3,	"classID": 157700,	"sortGroupID": 20,	"placeType": 3,	"kind": 100,	"assign": 8,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2050_00"	},
+	{	"id": 2051,	"name": "ちびエスネア",	"rare": 3,	"classID": 145600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2051_00"	},
+	{	"id": 2052,	"name": "ちびエフネ",	"rare": 3,	"classID": 145600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2052_00"	},
+	{	"id": 2053,	"name": "雪の精霊",	"rare": 5,	"classID": 157600,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2053_00"	},
+	{	"id": 2054,	"name": "冬の精霊",	"rare": 5,	"classID": 157630,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2054_00"	},
+	{	"id": 2055,	"name": "飛空戦艦のおもちゃ",	"rare": 5,	"classID": 157800,	"sortGroupID": 30,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2055_00"	}
 ]
