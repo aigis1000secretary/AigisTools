@@ -1,4 +1,4 @@
-var maxCid = 2055;
+var maxCid = 2059;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1865,5 +1865,9 @@ var charaData = [
 	{	"id": 2052,	"name": "ちびエフネ",	"rare": 3,	"classID": 145600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2052_00"	},
 	{	"id": 2053,	"name": "雪の精霊",	"rare": 5,	"classID": 157600,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2053_00"	},
 	{	"id": 2054,	"name": "冬の精霊",	"rare": 5,	"classID": 157630,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2054_00"	},
-	{	"id": 2055,	"name": "飛空戦艦のおもちゃ",	"rare": 5,	"classID": 157800,	"sortGroupID": 30,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2055_00"	}
+	{	"id": 2055,	"name": "飛空戦艦のおもちゃ",	"rare": 5,	"classID": 157800,	"sortGroupID": 30,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2055_00"	},
+	{	"id": 2056,	"name": "恋の親衛隊シャディア",	"rare": 5,	"classID": 8900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2056_00",	"imgaw": "2056_01"	},
+	{	"id": 2057,	"name": "恋の応援団（霊）",	"rare": 5,	"classID": 141200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 102,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2057_00"	},
+	{	"id": 2058,	"name": "恋情の踊り子ワルツ",	"rare": 4,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2058_00"	},
+	{	"id": 2059,	"name": "ハートの射手キャロップ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2059_00",	"imgaw": "2059_01"	}
 ]
