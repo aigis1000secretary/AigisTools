@@ -16311,5 +16311,16 @@
   "urlName": "%a5%cf%a1%bc%a5%c8%a4%ce%bc%cd%bc%ea%a5%ad%a5%e3%a5%ed%a5%c3%a5%d7",
   "rarity": "プラチナ",
   "class": "アーチャー"
+ },
+ {
+  "name": "ちびグレン",
+  "subName": "グレン",
+  "ability": "",
+  "ability_aw": "",
+  "skill": "▹天狗の火焔\n15秒攻撃力1.5倍、敵の移動速度を下げなくなるが、防御力無視の範囲攻撃",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%a5%b0%a5%ec%a5%f3",
+  "rarity": "ゴールド",
+  "class": "天狗"
  }
 ]
