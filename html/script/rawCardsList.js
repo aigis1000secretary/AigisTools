@@ -1,4 +1,4 @@
-var maxCid = 2067;
+var maxCid = 2073;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1132,7 +1132,7 @@ var charaData = [
 	{	"id": 1165,	"name": "蒸気武者ユカリ",	"rare": 4,	"classID": 125700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1165_00",	"imgaw": "1165_01",	"imgaw2B": "1165_03"	},
 	{	"id": 1166,	"name": "ちびアーシェラ",	"rare": 3,	"classID": 30000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1166_00"	},
 	{	"id": 1167,	"name": "ちびミヤビ",	"rare": 3,	"classID": 31400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1167_00"	},
-	{	"id": 1168,	"name": "背教の騎士アレクシア",	"rare": 4,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1168_00",	"imgaw": "1168_01"	},
+	{	"id": 1168,	"name": "背教の騎士アレクシア",	"rare": 4,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1168_00",	"imgaw": "1168_01",	"imgaw2B": "1168_03"	},
 	{	"id": 1169,	"name": "神聖騎士",	"rare": 5,	"classID": 127900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1169_00"	},
 	{	"id": 1170,	"name": "東国武装女中サクラ",	"rare": 4,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1170_00",	"imgaw": "1170_01"	},
 	{	"id": 1171,	"name": "新米兵士アビー",	"rare": 3,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1171_00",	"imgaw": "1171_01"	},
@@ -1413,7 +1413,7 @@ var charaData = [
 	{	"id": 1517,	"name": "斎主の大獅子",	"rare": 5,	"classID": 127530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1517_00"	},
 	{	"id": 1518,	"name": "常夜の料理人アシュリン",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1518_00",	"imgaw": "1518_01"	},
 	{	"id": 1519,	"name": "光剣の神聖騎士デシレア",	"rare": 4,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1519_00",	"imgaw": "1519_01"	},
-	{	"id": 1520,	"name": "神聖騎士(ボウガン)",	"rare": 5,	"classID": 152000,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1520_00"	},
+	{	"id": 1520,	"name": "神聖騎士(ボウガン)",	"rare": 5,	"classID": 152000,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "2069_00"	},
 	{	"id": 1521,	"name": "紫風の竜砲騎兵イーファ",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1521_00",	"imgaw": "1521_01"	},
 	{	"id": 1522,	"name": "王子【水着装備】",	"rare": 5,	"classID": 132300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1522_00"	},
 	{	"id": 1523,	"name": "真夏の覇者レオーネ",	"rare": 5,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1523_00",	"imgaw": "1523_01"	},
@@ -1531,7 +1531,7 @@ var charaData = [
 	{	"id": 1657,	"name": "鬼刃忍シロガネ",	"rare": 4,	"classID": 121300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1657_00",	"imgaw": "1657_01"	},
 	{	"id": 1658,	"name": "魔王城",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -2,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1658_00",	"imgaw": "1658_01"	},
 	{	"id": 1659,	"name": "ブラックドラゴン娘マウロ",	"rare": 5,	"classID": 134800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -2,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1659_00",	"imgaw": "1659_01"	},
-	{	"id": 1660,	"name": "輝天の神聖騎士トゥーリ",	"rare": 5,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1660_00",	"imgaw": "1660_01"	},
+	{	"id": 1660,	"name": "輝天の神聖騎士トゥーリ",	"rare": 5,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1660_00",	"imgaw": "1660_01",	"imgaw2A": "1660_02",	"imgaw2B": "1660_03"	},
 	{	"id": 1661,	"name": "神聖騎士(氷杖)",	"rare": 5,	"classID": 153000,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1661_00"	},
 	{	"id": 1662,	"name": "神聖騎士(氷杖)覚醒",	"rare": 5,	"classID": 153010,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1662_00"	},
 	{	"id": 1663,	"name": "神聖騎士(炎杖)覚醒",	"rare": 5,	"classID": 153100,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1663_00"	},
@@ -1876,5 +1876,10 @@ var charaData = [
 	{	"id": 2064,	"name": "麗しき銀銃シルヴァーナ",	"rare": 4,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2064_00",	"imgaw": "2064_01"	},
 	{	"id": 2065,	"name": "暗天孤星ジンレイ",	"rare": 5,	"classID": 132500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2065_00",	"imgaw": "2065_01"	},
 	{	"id": 2066,	"name": "萌芽の衛者ダルティエ",	"rare": 4,	"classID": 141300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2066_00",	"imgaw": "2066_01"	},
-	{	"id": 2067,	"name": "緋憶の断罪者ルイゼット",	"rare": 5,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2067_00",	"imgaw": "2067_01"	}
+	{	"id": 2067,	"name": "緋憶の断罪者ルイゼット",	"rare": 5,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2067_00",	"imgaw": "2067_01"	},
+	{	"id": 2068,	"name": "砂漠の双刃シェラハウト",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2068_00",	"imgaw": "2068_01"	},
+	{	"id": 2070,	"name": "神聖騎士（氷杖）覚醒",	"rare": 5,	"classID": 153010,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "2070_00"	},
+	{	"id": 2071,	"name": "神聖騎士（炎杖）覚醒",	"rare": 5,	"classID": 153100,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "2071_00"	},
+	{	"id": 2072,	"name": "帝国歌姫ツキコ★トゥーダ",	"rare": 5,	"classID": 135100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2072_00",	"imgaw": "2072_01"	},
+	{	"id": 2073,	"name": "ダミー7",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"imgaw": "2073_01"	}
 ]
