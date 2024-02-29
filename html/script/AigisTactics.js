@@ -2,6 +2,9 @@
 let MapImg;
 let MapID;
 // let debulQuestList = [];
+
+let isOuji = function (data) { return (data.sortGroupID == 25 && data.rare == 5 && data.id != 418 && data.id != 1396); }
+
 let bodyOnload = function () {
     questList.sort((a, b) => { return a.id.localeCompare(b.id); })
     // console.log("bodyOnload");
@@ -102,8 +105,8 @@ let iconboxInit = function () {
         if (iB == 7) iB = 3.5;
         if (iA >= 10) iA = iA - 5.9;
         if (iB >= 10) iB = iB - 5.9;
-        if (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) iA = 5.2;
-        if (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) iB = 5.2;
+        if (isOuji(aData)) iA = 5.2;
+        if (isOuji(bData)) iB = 5.2;
         if (aData.sortGroupID == 10) iA = -1;
         if (aData.sortGroupID == 10) iB = -1;
         if (aData.isToken) iA = -2;

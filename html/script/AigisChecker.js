@@ -97,6 +97,8 @@ let setIconFlags = function (flagList) {
     }
 }
 
+let isOuji = function (data) { return (data.sortGroupID == 25 && data.rare == 5 && data.id != 418 && data.id != 1396); }
+
 // body onload method
 let bodyOnload = function () {
     // skip data
@@ -246,8 +248,8 @@ let setHr = function (type) {
             aText = aData.year + "年";
             bText = bData.year + "年";
 
-            if (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) aText = "王子";
-            if (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) bText = "王子";
+            if (isOuji(aData)) aText = "王子";
+            if (isOuji(bData)) bText = "王子";
 
         } else if (type == "rare") {
             let textList = [, , "シルバー", "ゴールド", "プラチナ", "ブラック", , "サファイア", , , "プラチナ英傑", "ブラック英傑"];
@@ -258,16 +260,16 @@ let setHr = function (type) {
             if (aData.rare < 10) aText += " " + textList[aData.placeType];
             if (bData.rare < 10) bText += " " + textList[bData.placeType];
 
-            if (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) aText = "王子";
-            if (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) bText = "王子";
+            if (isOuji(aData)) aText = "王子";
+            if (isOuji(bData)) bText = "王子";
 
         } else if (type == "classID") {
             let textList = ["", "近接", "遠隔", "両用"];
             aText = textList[aData.placeType];
             bText = textList[bData.placeType];
 
-            if (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) aText = "王子";
-            if (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) bText = "王子";
+            if (isOuji(aData)) aText = "王子";
+            if (isOuji(bData)) bText = "王子";
 
         } else if (type == "kind") {
             let textList = ["男性", "女性"];
@@ -358,7 +360,7 @@ let setHr = function (type) {
                 else { i = 8; }
 
                 if (data.rare != 5 || data.isEvent || ![0, 5, 8, 9].includes(data.assign) ||
-                    (data.genus != 0 && data.id != 539) || (data.sortGroupID == 25 && data.id != 418 && data.id != 1396)) {
+                    (data.genus != 0 && data.id != 539) || isOuji(data)) {
                     i = 9;
                 }
                 if (data.id == 1682) { i = 9; }
@@ -454,7 +456,7 @@ let doStatistics = function () {
 
             let cData = charaData.find((c) => icon.id == c.id);
 
-            if (cData.sortGroupID != 25 || cData.id == 418 || cData.id == 1396) {
+            if (!isOuji(cData)) {
                 if ([3, 4, 6, 7].includes(cData.assign) || cData.assign < 0) {
                     collabIconCount++;
                     collabTrueCount += icon.alt == "true" ? 1 : 0;
@@ -520,8 +522,8 @@ let sortByDate = function (ascending) {
         let iA, iB, shift = (ascending ? -9999 : 9999);
         iA = aData.year;
         iB = bData.year;
-        iA += (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? shift : 0;
-        iB += (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? shift : 0;
+        iA += isOuji(aData) ? shift : 0;
+        iB += isOuji(bData) ? shift : 0;
         // sort by year
         if (iA != iB) return (!!ascending == (iA < iB)) ? -1 : 1;
 
@@ -542,8 +544,8 @@ let sortByRare = function (ascending) {
         let iA, iB, shift = (ascending ? -9999 : 9999);
         iA = aData.rare; iA = (iA == 7 ? 3.5 : iA);
         iB = bData.rare; iB = (iB == 7 ? 3.5 : iB);
-        iA += (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? shift : 0;
-        iB += (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? shift : 0;
+        iA += isOuji(aData) ? shift : 0;
+        iB += isOuji(bData) ? shift : 0;
         // sort by rare
         if (iA != iB) return (!!ascending == (iA < iB)) ? -1 : 1;
 
@@ -568,8 +570,8 @@ let sortByClass = function (ascending) {
         let iA, iB;
         iA = aData.placeType;
         iB = bData.placeType;
-        iA += (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? -9999 : 0;
-        iB += (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? -9999 : 0;
+        iA += isOuji(aData) ? -9999 : 0;
+        iB += isOuji(bData) ? -9999 : 0;
         // sort by group
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
@@ -595,8 +597,8 @@ let sortByKind = function () {
         let iA, iB;
         iA = aData.kind;
         iB = bData.kind;
-        iA += (aData.sortGroupID == 25 && aData.id != 418 && aData.id != 1396) ? -9999 : 0;
-        iB += (bData.sortGroupID == 25 && bData.id != 418 && bData.id != 1396) ? -9999 : 0;
+        iA += isOuji(aData) ? -9999 : 0;
+        iB += isOuji(bData) ? -9999 : 0;
         // sort by kind
         if (iA != iB) return (iA < iB) ? -1 : 1;
 
@@ -741,7 +743,7 @@ let sortByTicket = function () {
             else { i = 8; }
 
             if (data.rare != 5 || data.isEvent || ![0, 5, 8, 9].includes(data.assign) ||
-                (data.genus != 0 && data.id != 539) || (data.sortGroupID == 25 && data.id != 418 && data.id != 1396)) {
+                (data.genus != 0 && data.id != 539) || isOuji(data)) {
                 i = 9;
             }
             if (data.id == 1682) { i = 9; }
