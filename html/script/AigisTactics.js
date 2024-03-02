@@ -27,7 +27,7 @@ let bodyOnload = function () {
     select.options.add(new Option("イベントヒストリー 七年目", "History07"));
     select.options.add(new Option("イベントヒストリー 八年目", "History08"));
     select.options.add(new Option("イベントヒストリー 九年目", "History09"));
-    select.options.add(new Option("イベントヒストリー 十年目", "History10"));
+    // select.options.add(new Option("イベントヒストリー 十年目", "History10"));
     select.options.add(new Option("", ""));
 
     select.options.add(new Option("復刻ミッション", "Reproduce"));
@@ -514,16 +514,16 @@ let onChangeSelectMissionType = function (select) {
         case "Reproduce": { items = missionIDs.filter(mID => { return 300000 <= parseInt(mID) && parseInt(mID) < 310000 && missionList[mID].indexOf("ゴールドラッシュ") == -1; }); } break;
         case "DailyReproduce": { items = missionIDs.filter(mID => { return 310000 <= parseInt(mID) && parseInt(mID) < 320000 }); } break;
 
-        case "History01": { items = missionIDs.filter(mID => { return 920000 <= parseInt(mID) && parseInt(mID) < 920030 }); } break;
-        case "History02": { items = missionIDs.filter(mID => { return 920030 <= parseInt(mID) && parseInt(mID) < 920056 }); } break;
-        case "History03": { items = missionIDs.filter(mID => { return 920056 <= parseInt(mID) && parseInt(mID) < 920081 }); } break;
-        case "History04": { items = missionIDs.filter(mID => { return 920081 <= parseInt(mID) && parseInt(mID) < 920100 }); } break;
-        case "History05": { items = missionIDs.filter(mID => { return 920100 <= parseInt(mID) && parseInt(mID) < 920119 }); } break;
-        case "History06": { items = missionIDs.filter(mID => { return 920119 <= parseInt(mID) && parseInt(mID) < 920136 }); } break;
-        case "History07": { items = missionIDs.filter(mID => { return 920136 <= parseInt(mID) && parseInt(mID) < 920153 }); } break;
-        case "History08": { items = missionIDs.filter(mID => { return 920153 <= parseInt(mID) && parseInt(mID) < 920169 }); } break;
-        case "History09": { items = missionIDs.filter(mID => { return 920169 <= parseInt(mID) && parseInt(mID) < 920185 }); } break;
-        case "History10": { items = missionIDs.filter(mID => { return 920185 <= parseInt(mID) && parseInt(mID) < 920188 }); } break;
+        case "History01": { items = missionIDs.filter(mID => { return (920000 <= parseInt(mID) && parseInt(mID) < 920030) }); } break;
+        case "History02": { items = missionIDs.filter(mID => { return (920030 <= parseInt(mID) && parseInt(mID) < 920056) }); } break;
+        case "History03": { items = missionIDs.filter(mID => { return (920056 <= parseInt(mID) && parseInt(mID) < 920081) }); } break;
+        case "History04": { items = missionIDs.filter(mID => { return (920081 <= parseInt(mID) && parseInt(mID) < 920100) || parseInt(mID) == 920185 }); } break;
+        case "History05": { items = missionIDs.filter(mID => { return (920100 <= parseInt(mID) && parseInt(mID) < 920119) }); } break;
+        case "History06": { items = missionIDs.filter(mID => { return (920119 <= parseInt(mID) && parseInt(mID) < 920136) || parseInt(mID) == 920186 }); } break;
+        case "History07": { items = missionIDs.filter(mID => { return (920136 <= parseInt(mID) && parseInt(mID) < 920153) || parseInt(mID) == 920187 }); } break;
+        case "History08": { items = missionIDs.filter(mID => { return (920153 <= parseInt(mID) && parseInt(mID) < 920169) }); } break;
+        case "History09": { items = missionIDs.filter(mID => { return (920169 <= parseInt(mID) && parseInt(mID) < 920185) }); } break;
+        // case "History10": { items = missionIDs.filter(mID => { return 920188 <= parseInt(mID) && parseInt(mID) < 920188 }); } break;
 
         case "Special": { items = missionIDs.filter(mID => { return (320000 <= parseInt(mID) && parseInt(mID) < 400000) || missionList[mID].indexOf("異世界") != -1; }); } break;
 
