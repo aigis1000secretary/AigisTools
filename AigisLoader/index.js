@@ -1314,7 +1314,7 @@ const aigisQuestsList = async () => {
             } else if (fs.existsSync(`MapLocationList.json`)) {
                 // console.log(`${COLOR.fgRed}cant found Location${location} data${COLOR.reset}`)
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
-                mapLocationList[map][location] = oldLocationList[map][location];
+                if (oldLocationList[map]) { mapLocationList[map][location] = oldLocationList[map][location]; }
             }
 
             let entryPath = raws.find(p => p.indexOf(`Entry${entry}.atb`) != -1);
