@@ -1,4 +1,4 @@
-var maxCid = 2083;
+var maxCid = 2102;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1891,5 +1891,18 @@ var charaData = [
 	{	"id": 2080,	"name": "ソハヤノツルギ",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2081,	"name": "逆戟の勇士カウリオ",	"rare": 4,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2081_00",	"imgaw": "2081_01"	},
 	{	"id": 2082,	"name": "鉄刀付喪神シラハユリ",	"rare": 4,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2082_00",	"imgaw": "2082_01"	},
-	{	"id": 2083,	"name": "ちびヴィクター",	"rare": 3,	"classID": 20400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2083_00"	}
+	{	"id": 2083,	"name": "ちびヴィクター",	"rare": 3,	"classID": 20400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2083_00"	},
+	{	"id": 2084,	"name": "帝国聖盾騎士クリッペ",	"rare": 5,	"classID": 135900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2084_00",	"imgaw": "2084_01"	},
+	{	"id": 2085,	"name": "冥府の巫女オルフィー",	"rare": 5,	"classID": 158300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2085_00",	"imgaw": "2085_01"	},
+	{	"id": 2086,	"name": "帝国猟犬キンドライヒ",	"rare": 4,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2086_00",	"imgaw": "2086_01"	},
+	{	"id": 2087,	"name": "秩序の亜神ラビリス",	"rare": 5,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2087_00",	"imgaw": "2087_01"	},
+	{	"id": 2088,	"name": "冥界巡衛騎士リチュエ",	"rare": 4,	"classID": 135500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2088_00",	"imgaw": "2088_01"	},
+	{	"id": 2089,	"name": "帝国医官ジュディス",	"rare": 4,	"classID": 158200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2089_00",	"imgaw": "2089_01"	},
+	{	"id": 2090,	"name": "秩序の亜神ラビリス(幻影)",	"rare": 5,	"classID": 141600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2090_00"	},
+	{	"id": 2091,	"name": "赤魂",	"rare": 5,	"classID": 141700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2091_00"	},
+	{	"id": 2092,	"name": "緑魂",	"rare": 5,	"classID": 141700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2092_00"	},
+	{	"id": 2093,	"name": "大赤魂",	"rare": 5,	"classID": 141720,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2098_00"	},
+	{	"id": 2094,	"name": "大緑魂",	"rare": 5,	"classID": 141720,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2099_00"	},
+	{	"id": 2095,	"name": "大青魂",	"rare": 5,	"classID": 141720,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2102_00"	},
+	{	"id": 2100,	"name": "青魂",	"rare": 5,	"classID": 141700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2100_00"	}
 ]
