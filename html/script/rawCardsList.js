@@ -1,4 +1,4 @@
-var maxCid = 2123;
+var maxCid = 2131;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1919,5 +1919,12 @@ var charaData = [
 	{	"id": 2120,	"name": "兎祭司教エレオノーラ",	"rare": 5,	"classID": 14800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 110,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2120_00",	"imgaw": "2120_01"	},
 	{	"id": 2121,	"name": "祝兎の拳リーザ",	"rare": 4,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 110,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2121_00",	"imgaw": "2121_01"	},
 	{	"id": 2122,	"name": "帝兎の魔術師イルマ",	"rare": 4,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 110,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2122_00",	"imgaw": "2122_01"	},
-	{	"id": 2123,	"name": "マジックエッグ",	"rare": 5,	"classID": 158500,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2123_00"	}
+	{	"id": 2123,	"name": "マジックエッグ",	"rare": 5,	"classID": 158500,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2123_00"	},
+	{	"id": 2124,	"name": "伏龍の特待生アイシャ",	"rare": 5,	"classID": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 9,	"genus": 103,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2124_00",	"imgaw": "2124_01"	},
+	{	"id": 2125,	"name": "居眠り魔神ベルーフェ",	"rare": 4,	"classID": 3500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2125_00"	},
+	{	"id": 2126,	"name": "学園裏遊戯シロガネ",	"rare": 4,	"classID": 121300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 103,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2126_00",	"imgaw": "2126_01"	},
+	{	"id": 2127,	"name": "図書室の常連グリム",	"rare": 5,	"classID": 15900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2127_00",	"imgaw": "2127_01"	},
+	{	"id": 2128,	"name": "暗黒学ラン騎士【並行世界】",	"rare": 5,	"classID": 142100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 103,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2128_00"	},
+	{	"id": 2129,	"name": "暗黒裏番長デシウス【並行世界】",	"rare": 5,	"classID": 142120,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 103,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2130_00"	},
+	{	"id": 2131,	"name": "ちびゲオルグ",	"rare": 3,	"classID": 24400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2131_00"	}
 ]
