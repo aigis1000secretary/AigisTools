@@ -1,4 +1,4 @@
-var maxCid = 2145;
+var maxCid = 2148;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1931,11 +1931,14 @@ var charaData = [
 	{	"id": 2133,	"name": "光を継ぐ者オーシェン",	"rare": 10,	"classID": 142200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2133_00",	"imgaw": "2133_01"	},
 	{	"id": 2134,	"name": "頂に座す者アルコゥ",	"rare": 11,	"classID": 142400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2134_00",	"imgaw": "2134_01"	},
 	{	"id": 2135,	"name": "頂に座す者アルコゥ",	"rare": 10,	"classID": 142400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2135_00",	"imgaw": "2135_01"	},
-	{	"id": 2136,	"name": "詩歌と叡智の亜神セリド",	"rare": 4,	"classID": 12000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2136_00"	},
+	{	"id": 2136,	"name": "詩歌と叡智の亜神セリド",	"rare": 4,	"classID": 12000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2136_00",	"imgaw": "2136_01"	},
 	{	"id": 2137,	"name": "王国学園",	"rare": 3,	"classID": 142300,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 103,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2137_00"	},
 	{	"id": 2138,	"name": "ちびルイン",	"rare": 3,	"classID": 148400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2138_00"	},
 	{	"id": 2139,	"name": "ちびシンフー",	"rare": 3,	"classID": 34200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 9,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2139_00"	},
 	{	"id": 2140,	"name": "神秘の珊瑚",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2141,	"name": "狂竜の牙",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2142,	"name": "精密な歯車",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2142,	"name": "精密な歯車",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2146,	"name": "魔猪騎兵チャムチャム",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2146_00",	"imgaw": "2146_01"	},
+	{	"id": 2147,	"name": "ちびガオレオン",	"rare": 3,	"classID": 148300,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2147_00"	},
+	{	"id": 2148,	"name": "玉兎人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2148_00"	}
 ]
