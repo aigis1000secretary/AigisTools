@@ -1,4 +1,4 @@
-var maxCid = 2148;
+var maxCid = 2153;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1014,7 +1014,7 @@ var charaData = [
 	{	"id": 1043,	"name": "宵の花鎖スピリア",	"rare": 5,	"classID": 14000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1043_00",	"imgaw": "1043_01"	},
 	{	"id": 1044,	"name": "祭夜の神官戦士フェルミ",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1044_00",	"imgaw": "1044_01"	},
 	{	"id": 1045,	"name": "夜祭の重装砲兵レギーナ",	"rare": 4,	"classID": 4400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1045_00",	"imgaw": "1045_01"	},
-	{	"id": 1046,	"name": "飛行警備隊長クレール",	"rare": 5,	"classID": 18000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1046_00",	"imgaw": "1046_01"	},
+	{	"id": 1046,	"name": "飛行警備隊長クレール",	"rare": 5,	"classID": 18000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1046_00",	"imgaw": "1046_01",	"imgaw2A": "1046_02",	"imgaw2B": "1046_03"	},
 	{	"id": 1047,	"name": "紅蓮の兵士長ノーマ",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1047_00",	"imgaw": "1047_01"	},
 	{	"id": 1048,	"name": "女王子",	"rare": 5,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1048_00"	},
 	{	"id": 1049,	"name": "メカゴブリンクイーンの飛行くぐつ",	"rare": 5,	"classID": 40600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1049_00"	},
@@ -1940,5 +1940,10 @@ var charaData = [
 	{	"id": 2142,	"name": "精密な歯車",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2146,	"name": "魔猪騎兵チャムチャム",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2146_00",	"imgaw": "2146_01"	},
 	{	"id": 2147,	"name": "ちびガオレオン",	"rare": 3,	"classID": 148300,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2147_00"	},
-	{	"id": 2148,	"name": "玉兎人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2148_00"	}
+	{	"id": 2148,	"name": "玉兎人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2148_00"	},
+	{	"id": 2149,	"name": "文明の亜神オラティル",	"rare": 5,	"classID": 158600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2149_00",	"imgaw": "2149_01"	},
+	{	"id": 2150,	"name": "慈悲と焔の亜神プロメ",	"rare": 5,	"classID": 142600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2150_00"	},
+	{	"id": 2151,	"name": "オラティルの大釜",	"rare": 5,	"classID": 142500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2151_00"	},
+	{	"id": 2152,	"name": "オラティルの聖大釜",	"rare": 5,	"classID": 142530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2152_00"	},
+	{	"id": 2153,	"name": "ロケットトルーパートークン分岐B",	"rare": 5,	"classID": 17100,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2153_00"	}
 ]
