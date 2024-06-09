@@ -329,7 +329,7 @@ let setHr = function (type) {
             if (iA) aText += "ガチャ ブラック "
             if (iB) bText += "ガチャ ブラック "
 
-            let al = [0, 5, 8, 9];
+            let al = [0, 1, 5, 8, 9];
             iA = ((al.includes(aData.assign)) && (aData.genus == 0 || aData.id == 539)) ? 1 : 0;
             iB = ((al.includes(bData.assign)) && (bData.genus == 0 || bData.id == 539)) ? 1 : 0;
             if (!iA && aText) aText = "限定" + aText;
@@ -359,7 +359,7 @@ let setHr = function (type) {
                 else if (data.id <= 1685) { i = 7; }
                 else { i = 8; }
 
-                if (data.rare != 5 || data.isEvent || ![0, 5, 8, 9].includes(data.assign) ||
+                if (data.rare != 5 || data.isEvent || ![0, 1, 5, 8, 9].includes(data.assign) ||
                     (data.genus != 0 && data.id != 539) || isOuji(data)) {
                     i = 9;
                 }
@@ -708,7 +708,7 @@ let sortByYearGacha = function () {
         if (iA != iB) return iA > iB ? -1 : 1;
 
         // sort 限定
-        let al = [0, 5, 8, 9];
+        let al = [0, 1, 5, 8, 9];
         iA = ((al.includes(aData.assign)) && (aData.genus == 0 || aData.id == 539)) ? 1 : 0;
         iB = ((al.includes(bData.assign)) && (bData.genus == 0 || bData.id == 539)) ? 1 : 0;
         if (iA != iB) return iA > iB ? -1 : 1;
@@ -742,7 +742,7 @@ let sortByTicket = function () {
             else if (data.id <= 1685) { i = 7; }
             else { i = 8; }
 
-            if (data.rare != 5 || data.isEvent || ![0, 5, 8, 9].includes(data.assign) ||
+            if (data.rare != 5 || data.isEvent || ![0, 1, 5, 8, 9].includes(data.assign) ||
                 (data.genus != 0 && data.id != 539) || isOuji(data)) {
                 i = 9;
             }

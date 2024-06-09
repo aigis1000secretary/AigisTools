@@ -789,7 +789,9 @@ const aigisCardsList = async function () {
             // Collaboration data format
             switch (id) {
                 // ランス10-決戦-
-                case 581: { assign = -1; } break;
+                case 581: case 2155: case 2156: case 2157:
+                case 2158: case 2159: case 2162:
+                    { assign = -1; } break;
 
                 // // 真・恋姫†夢想-革命
                 // case 648: case 649: case 650: case 651: case 652:   // 2018/07
