@@ -1,4 +1,4 @@
-var maxCid = 2162;
+var maxCid = 2166;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1947,12 +1947,16 @@ var charaData = [
 	{	"id": 2152,	"name": "オラティルの聖大釜",	"rare": 5,	"classID": 142530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2152_00"	},
 	{	"id": 2153,	"name": "ロケットトルーパートークン分岐B",	"rare": 5,	"classID": 17100,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2153_00"	},
 	{	"id": 2154,	"name": "剣の亜神 祓剣主神",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2154_00",	"imgaw": "2154_01"	},
-	{	"id": 2155,	"name": "リズナ・ランフビット",	"rare": 5,	"classID": 143000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2155_00"	},
+	{	"id": 2155,	"name": "リズナ・ランフビット",	"rare": 5,	"classID": 143000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2155_00",	"imgaw": "2155_01"	},
 	{	"id": 2156,	"name": "上杉謙信",	"rare": 5,	"classID": 142800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2156_00",	"imgaw": "2156_01"	},
 	{	"id": 2157,	"name": "魔人ホーネット",	"rare": 5,	"classID": 158700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2157_00",	"imgaw": "2157_01"	},
 	{	"id": 2158,	"name": "ウルザ・プラナアイス",	"rare": 5,	"classID": 142700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2158_00",	"imgaw": "2158_01"	},
 	{	"id": 2159,	"name": "フェリス",	"rare": 4,	"classID": 142900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2159_00",	"imgaw": "2159_01"	},
 	{	"id": 2160,	"name": "ちびフェリシア",	"rare": 3,	"classID": 170100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2160_00"	},
 	{	"id": 2161,	"name": "ちびロタン",	"rare": 3,	"classID": 20710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2161_00"	},
-	{	"id": 2162,	"name": "ハニー",	"rare": 1,	"classID": 44200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": -1,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "2162_00"	}
+	{	"id": 2162,	"name": "ハニー",	"rare": 1,	"classID": 44200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": -1,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "2162_00"	},
+	{	"id": 2163,	"name": "太陽の戦士アサル",	"rare": 5,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2163_00",	"imgaw": "2163_01"	},
+	{	"id": 2164,	"name": "払暁の堕天使ニエル",	"rare": 5,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2164_00",	"imgaw": "2164_01"	},
+	{	"id": 2165,	"name": "未来の大魔術師メーリス",	"rare": 5,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2165_00",	"imgaw": "2165_01"	},
+	{	"id": 2166,	"name": "ちびバルバストラフ",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2166_00"	}
 ]
