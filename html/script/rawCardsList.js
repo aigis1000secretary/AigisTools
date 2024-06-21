@@ -1,4 +1,4 @@
-var maxCid = 2166;
+var maxCid = 2171;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1022,7 +1022,7 @@ var charaData = [
 	{	"id": 1051,	"name": "ちびリアナ",	"rare": 3,	"classID": 30200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 108,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1051_00"	},
 	{	"id": 1052,	"name": "趙紅明",	"rare": 4,	"classID": 7600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1052_00",	"imgaw": "1052_01",	"imgaw2B": "1052_03"	},
 	{	"id": 1053,	"name": "翠花の領主メアリ",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1053_00",	"imgaw": "1053_01"	},
-	{	"id": 1054,	"name": "炎の厨師タオパオ",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1054_00",	"imgaw": "1054_01"	},
+	{	"id": 1054,	"name": "炎の厨師タオパオ",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1054_00",	"imgaw": "1054_01",	"imgaw2B": "1054_03"	},
 	{	"id": 1055,	"name": "かまいたち金糸雀姉妹",	"rare": 4,	"classID": 126500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1055_00",	"imgaw": "1055_01",	"imgaw2A": "1055_02"	},
 	{	"id": 1056,	"name": "東の料理番ヤマブキ",	"rare": 3,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1056_00",	"imgaw": "1056_01"	},
 	{	"id": 1057,	"name": "ちびオーガスタ",	"rare": 3,	"classID": 225500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1057_00"	},
@@ -1692,7 +1692,7 @@ var charaData = [
 	{	"id": 1856,	"name": "憧れの休日ベルニス",	"rare": 4,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1856_00",	"imgaw": "1856_01"	},
 	{	"id": 1857,	"name": "夜行わらし【戦支度】",	"rare": 5,	"classID": 155200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1857_00"	},
 	{	"id": 1858,	"name": "夜行わらし【馬廻】",	"rare": 5,	"classID": 155200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1858_00"	},
-	{	"id": 1859,	"name": "食の芸術家デルフィーナ",	"rare": 5,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1859_00",	"imgaw": "1859_01"	},
+	{	"id": 1859,	"name": "食の芸術家デルフィーナ",	"rare": 5,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1859_00",	"imgaw": "1859_01",	"imgaw2A": "1859_02",	"imgaw2B": "1859_03"	},
 	{	"id": 1860,	"name": "野外美食セット",	"rare": 5,	"classID": 155300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1860_00"	},
 	{	"id": 1861,	"name": "メルカバ―",	"rare": 3,	"classID": 138100,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1861_00"	},
 	{	"id": 1862,	"name": "ちびシネイド",	"rare": 3,	"classID": 20400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1862_00"	},
@@ -1958,5 +1958,10 @@ var charaData = [
 	{	"id": 2163,	"name": "太陽の戦士アサル",	"rare": 5,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2163_00",	"imgaw": "2163_01"	},
 	{	"id": 2164,	"name": "払暁の堕天使ニエル",	"rare": 5,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2164_00",	"imgaw": "2164_01"	},
 	{	"id": 2165,	"name": "未来の大魔術師メーリス",	"rare": 5,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2165_00",	"imgaw": "2165_01"	},
-	{	"id": 2166,	"name": "ちびバルバストラフ",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2166_00"	}
+	{	"id": 2166,	"name": "ちびバルバストラフ",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2166_00"	},
+	{	"id": 2167,	"name": "純白の黒翼ラシティ",	"rare": 5,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2167_00",	"imgaw": "2167_01"	},
+	{	"id": 2168,	"name": "盾の花嫁レジナレア",	"rare": 4,	"classID": 135900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2168_00",	"imgaw": "2168_01"	},
+	{	"id": 2169,	"name": "愛欲の魔神ゼパリエッテ",	"rare": 5,	"classID": 3500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2169_00",	"imgaw": "2169_01"	},
+	{	"id": 2170,	"name": "婚礼座敷エンジュ",	"rare": 5,	"classID": 152400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 104,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2170_00",	"imgaw": "2170_01"	},
+	{	"id": 2171,	"name": "炎天の花嫁ヤハール",	"rare": 4,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2171_00",	"imgaw": "2171_01"	}
 ]
