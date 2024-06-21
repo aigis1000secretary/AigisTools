@@ -886,7 +886,7 @@ const aigisCardsList = async function () {
                         name, rare, classID: _obj.classID,
                         sortGroupID, placeType,
                         kind, assign, genus, // identity,
-                        year, isEvent, isToken,
+                        year: _obj.year, isEvent, isToken,
                         img, imgaw, imgaw2A, imgaw2B
                     };
                 }
