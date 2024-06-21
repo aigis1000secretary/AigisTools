@@ -155,6 +155,7 @@ const downloadRawData = async () => {
         if (/MissionConfig\.atb/i.test(filename)) { return dlRaw; }
         if (/MissionQuestList\.atb/i.test(filename)) { return dlRaw; }
         if (/EventNameText\.atb/i.test(filename)) { return dlRaw; }
+        if (/QuestNameText\d*\.atb/i.test(filename)) { return dlRaw; }
         // cards data
         if (/PlayerUnitTable\.aar/i.test(filename)) { return dlRaw; }
         if (/NameText\.atb/i.test(filename)) { return dlRaw; }
@@ -162,7 +163,6 @@ const downloadRawData = async () => {
         if (/Skill(List|Text|TypeList|InfluenceConfig)\.atb/i.test(filename)) { return dlRaw; }
 
         //
-        if (/QuestNameText\d*\.atb/i.test(filename)) { return dlImg; }
         if (/Map\d+/i.test(filename)) { return dlImg; }
         if (/ico_\d+/i.test(filename)) { return dlImg; }
 
@@ -1111,14 +1111,16 @@ const aigisQuestsList = async () => {
                 }
 
                 // search mission in db
-                let mission = missionList.find(q => q.missionID == missionID)
+                let mission = missionList.find(q => q.missionID == missionID || q.name == _name);
                 if (!mission) {
                     // buind new mission
                     mission = { name: _name, missionID, questID };
                     missionList.push(mission);
                 } else {
-                    questID = questID.filter(qID => !mission.questID.includes(qID));
-                    mission.questID.concat(questID);
+                    mission.name = _name;
+                    mission.missionID = missionID;
+                    mission.questID = mission.questID.concat(questID);
+                    mission.questID = mission.questID.filter((e, i) => mission.questID.indexOf(e) === i);
                 }
             }
         }
