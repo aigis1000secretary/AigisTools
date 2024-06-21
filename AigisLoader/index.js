@@ -13,16 +13,18 @@ const dlRaw = process.env.NODE_DLRAW == "false" ? false : true;
 const dlImg = process.env.NODE_DLIMG == "false" ? false : true;
 
 // vars
-const aigisToolPath = `../AigisTools`;
+const workspaceFolder = `.`;
+const aigisLoaderPath = `${workspaceFolder}/AigisLoader`;
+const aigisToolPath = `${workspaceFolder}/AigisTools`;
 const xmlPath = `${aigisToolPath}/out`;
 const resourcesPath = `${xmlPath}/files`;
 const rawListPath = `${xmlPath}/filelists/Desktop R Files.txt`;
 const changesListPath = `${xmlPath}/Desktop R Changes.txt`;
 
 // outputPath
-const iconsOutputPath = `../html/icons`;
-const mapsOutputPath = `../html/maps`;
-const scriptOutputPath = `../html/script`;
+const iconsOutputPath = `${workspaceFolder}/html/icons`;
+const mapsOutputPath = `${workspaceFolder}/html/maps`;
+const scriptOutputPath = `${workspaceFolder}/html/script`;
 
 // method
 const urlEncode = function (str_utf8, codePage) {
@@ -1048,7 +1050,7 @@ const aigisCardsList = async function () {
     console.log("fs.writeFileSync( rawCardsList.js )");
 
     // write to file
-    fs.writeFileSync("CharaDatabase.json", JSON.stringify(charaDatabase, '\t', 1));
+    fs.writeFileSync(`${aigisLoaderPath}/CharaDatabase.json`, JSON.stringify(charaDatabase, '\t', 1));
     console.log("fs.writeFileSync( CharaDatabase.json )");
 
     console.log(`aigisCardsList done...\n`);
@@ -1219,8 +1221,8 @@ const aigisQuestsList = async () => {
     }
 
     // get old quest list
-    if (fs.existsSync(`QuestList.json`)) {
-        let oldQuestList = fs.readFileSync(`QuestList.json`).toString();
+    if (fs.existsSync(`${aigisLoaderPath}/QuestList.json`)) {
+        let oldQuestList = fs.readFileSync(`${aigisLoaderPath}/QuestList.json`).toString();
         oldQuestList = oldQuestList.substring(oldQuestList.indexOf('['));
         oldQuestList = eval(oldQuestList);
         for (let quest of oldQuestList) {
@@ -1249,8 +1251,8 @@ const aigisQuestsList = async () => {
     // download map data/image
     {
         let oldLocationList = {};
-        if (fs.existsSync(`MapLocationList.json`)) {
-            oldLocationList = fs.readFileSync(`MapLocationList.json`).toString();
+        if (fs.existsSync(`${aigisLoaderPath}/MapLocationList.json`)) {
+            oldLocationList = fs.readFileSync(`${aigisLoaderPath}/MapLocationList.json`).toString();
             oldLocationList = oldLocationList.substring(oldLocationList.indexOf('{'));
             oldLocationList = eval(`(${oldLocationList})`);
         }
@@ -1315,7 +1317,7 @@ const aigisQuestsList = async () => {
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 // if (!mapLocationList[map][location]) { mapLocationList[map][location] = []; }
                 mapLocationList[map][location] = localRaw;
-            } else if (fs.existsSync(`MapLocationList.json`)) {
+            } else if (fs.existsSync(`${aigisLoaderPath}/MapLocationList.json`)) {
                 // console.log(`${COLOR.fgRed}cant found Location${location} data${COLOR.reset}`)
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 if (oldLocationList[map]) { mapLocationList[map][location] = oldLocationList[map][location]; }
@@ -1339,7 +1341,7 @@ const aigisQuestsList = async () => {
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
                 if (entryLocation.length > 0) mapLocationList[map][`Entry${entry}`] = entryLocation;
 
-            } else if (entry && fs.existsSync(`MapLocationList.json`)
+            } else if (entry && fs.existsSync(`${aigisLoaderPath}/MapLocationList.json`)
                 && oldLocationList[map] && oldLocationList[map][`Entry${entry}`]) {
                 // console.log(`${COLOR.fgRed}cant found Location${location} data${COLOR.reset}`)
                 if (!mapLocationList[map]) { mapLocationList[map] = {}; }
@@ -1435,7 +1437,7 @@ const aigisQuestsList = async () => {
     // questList.sort((a, b) => { let iA = a.map, iB = b.map; return iA == iB ? 0 : (iA < iB ? -1 : 1); });
     for (let q of questList) { jsString.push(`\t${JSON.stringify(q, null, '\t').replace(/\n/g, "")}`); }
     jsString = jsString.join(',\n');
-    fs.writeFileSync(`QuestList.json`, `[\n${jsString}\n]`);
+    fs.writeFileSync(`${aigisLoaderPath}/QuestList.json`, `[\n${jsString}\n]`);
     fs.writeFileSync(`${scriptOutputPath}/rawQuestList.js`, `let questList = [\n${jsString}\n]`);
 
 
@@ -1445,7 +1447,7 @@ const aigisQuestsList = async () => {
     jsString = JSON.stringify(missionList, null, '\t')
         .replace(/\n\t{3}/g, ` `)
         .replace(/\n\t{2}\]/g, ` ]`)
-    fs.writeFileSync(`MissionList.json`, jsString);
+    fs.writeFileSync(`${aigisLoaderPath}/MissionList.json`, jsString);
 
     jsString = {};
     for (let m of missionList) { jsString[m.missionID] = m.name; }
@@ -1463,7 +1465,7 @@ const aigisQuestsList = async () => {
         .replace(/\n\t\}/g, `}`)
         .replace(/\"a/g, `"`)
         .replace(/InTheSea/ig, "InTheSea")
-    fs.writeFileSync(`MapLocationList.json`, jsString);
+    fs.writeFileSync(`${aigisLoaderPath}/MapLocationList.json`, jsString);
     fs.writeFileSync(`${scriptOutputPath}/rawMapDataList.js`, `let mapDataList = ${jsString}`);
 
 
@@ -1482,26 +1484,26 @@ const readRawData = () => {
     _GRs733a4 = xmlToJson(`${xmlPath}/GRs733a4.xml`)
     _QxZpjdfV = xmlToJson(`${xmlPath}/QxZpjdfV.xml`)
 
-    let filepath
-    filepath = resourceList.find(p => p.includes("NameText.atb") && p.includes("ALTB_gdtx.txt"));
-    nameListRaw = rawToJson(filepath)
+    let filepath;
+    filepath = resourceList.find(p => p.includes("/NameText.atb") && p.includes("ALTB_gdtx.txt"));
+    nameListRaw = rawToJson(filepath);
 
-    filepath = resourceList.find(p => p.includes("ClassData.atb"));
-    classListRaw = rawToJson(filepath)
+    filepath = resourceList.find(p => p.includes("/PlayerUnitTable.aar") && p.includes("ClassData.atb"));
+    classListRaw = rawToJson(filepath);
 
-    filepath = resourceList.find(p => p.includes("AbilityList.atb"));
-    abilityListRaw = rawToJson(filepath)
-    filepath = resourceList.find(p => p.includes("AbilityText.atb"));
-    abilityTextRaw = rawToJson(filepath)
+    filepath = resourceList.find(p => p.includes("/AbilityList.atb"));
+    abilityListRaw = rawToJson(filepath);
+    filepath = resourceList.find(p => p.includes("/AbilityText.atb"));
+    abilityTextRaw = rawToJson(filepath);
 
-    filepath = resourceList.find(p => p.includes("SkillList.atb"));
-    skillListRaw = rawToJson(filepath)
-    filepath = resourceList.find(p => p.includes("SkillText.atb"));
-    skillTextRaw = rawToJson(filepath)
-    filepath = resourceList.find(p => p.includes("SkillTypeList.atb"));
-    skillTypeRaw = rawToJson(filepath)
-    filepath = resourceList.find(p => p.includes("SkillInfluenceConfig.atb"));
-    skillInfluenceRaw = rawToJson(filepath)
+    filepath = resourceList.find(p => p.includes("/SkillList.atb"));
+    skillListRaw = rawToJson(filepath);
+    filepath = resourceList.find(p => p.includes("/SkillText.atb"));
+    skillTextRaw = rawToJson(filepath);
+    filepath = resourceList.find(p => p.includes("/SkillTypeList.atb"));
+    skillTypeRaw = rawToJson(filepath);
+    filepath = resourceList.find(p => p.includes("/SkillInfluenceConfig.atb"));
+    skillInfluenceRaw = rawToJson(filepath);
 
     console.log(`readRawData done...\n`);
 }
@@ -1532,8 +1534,8 @@ const main = async () => {
     await downloadRawData();
     readRawData();
 
-    fs.writeFileSync(`raw/_GRs733a4.json`, JSON.stringify(_GRs733a4, null, 2));
-    fs.writeFileSync(`raw/_QxZpjdfV.json`, JSON.stringify(_QxZpjdfV, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/_GRs733a4.json`, JSON.stringify(_GRs733a4, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/_QxZpjdfV.json`, JSON.stringify(_QxZpjdfV, null, 2));
 
     // cards list
     await aigisCardsList();
@@ -1541,13 +1543,13 @@ const main = async () => {
     // quest list
     await aigisQuestsList();
 
-    fs.writeFileSync(`raw/nameList.json`, JSON.stringify(nameListRaw, null, 2));
-    fs.writeFileSync(`raw/classList.json`, JSON.stringify(classListRaw, null, 2));
-    fs.writeFileSync(`raw/abilityList.json`, JSON.stringify(abilityListRaw, null, 2));
-    fs.writeFileSync(`raw/abilityText.json`, JSON.stringify(abilityTextRaw, null, 2));
-    fs.writeFileSync(`raw/skillList.json`, JSON.stringify(skillListRaw, null, 2));
-    fs.writeFileSync(`raw/skillText.json`, JSON.stringify(skillTextRaw, null, 2));
-    fs.writeFileSync(`raw/skillType.json`, JSON.stringify(skillTypeRaw, null, 2));
-    fs.writeFileSync(`raw/skillInfluence.json`, JSON.stringify(skillInfluenceRaw, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/nameList.json`, JSON.stringify(nameListRaw, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/classList.json`, JSON.stringify(classListRaw, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/abilityList.json`, JSON.stringify(abilityListRaw, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/abilityText.json`, JSON.stringify(abilityTextRaw, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/skillList.json`, JSON.stringify(skillListRaw, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/skillText.json`, JSON.stringify(skillTextRaw, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/skillType.json`, JSON.stringify(skillTypeRaw, null, 2));
+    fs.writeFileSync(`${aigisLoaderPath}/raw/skillInfluence.json`, JSON.stringify(skillInfluenceRaw, null, 2));
 };
 main();

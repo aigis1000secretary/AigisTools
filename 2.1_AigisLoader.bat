@@ -1,8 +1,8 @@
 @echo off
-
 pause
-
 echo Now get raw data...
-cd .\AigisLoader
-node index.js
+set NODE_DLRAW=true
+set NODE_DLIMG=true
+
+node .\AigisLoader\index.js
 pause
