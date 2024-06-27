@@ -1,4 +1,4 @@
-var maxCid = 2171;
+var maxCid = 2178;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1963,5 +1963,12 @@ var charaData = [
 	{	"id": 2168,	"name": "盾の花嫁レジナレア",	"rare": 4,	"classID": 135900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2168_00",	"imgaw": "2168_01"	},
 	{	"id": 2169,	"name": "愛欲の魔神ゼパリエッテ",	"rare": 5,	"classID": 3500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2169_00",	"imgaw": "2169_01"	},
 	{	"id": 2170,	"name": "婚礼座敷エンジュ",	"rare": 5,	"classID": 152400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 104,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2170_00",	"imgaw": "2170_01"	},
-	{	"id": 2171,	"name": "炎天の花嫁ヤハール",	"rare": 4,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2171_00",	"imgaw": "2171_01"	}
+	{	"id": 2171,	"name": "炎天の花嫁ヤハール",	"rare": 4,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2171_00",	"imgaw": "2171_01"	},
+	{	"id": 2172,	"name": "海洋遺跡の民ティマ",	"rare": 4,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2172_00",	"imgaw": "2172_01"	},
+	{	"id": 2173,	"name": "叡智の管理者プリニース",	"rare": 5,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2173_00",	"imgaw": "2173_01"	},
+	{	"id": 2174,	"name": "メテオストライク",	"rare": 3,	"classID": 158800,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2174_00"	},
+	{	"id": 2175,	"name": "ちびテレーゼ",	"rare": 3,	"classID": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2175_00"	},
+	{	"id": 2176,	"name": "ちびテュト",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2176_00"	},
+	{	"id": 2177,	"name": "ターゲットマーカー_メテオフォール",	"rare": 5,	"classID": 121830,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2177_00"	},
+	{	"id": 2178,	"name": "精鋭弓手ソーマ",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2178_00",	"imgaw": "2178_01"	}
 ]
