@@ -1,4 +1,4 @@
-var maxCid = 2178;
+var maxCid = 2190;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1970,5 +1970,16 @@ var charaData = [
 	{	"id": 2175,	"name": "ちびテレーゼ",	"rare": 3,	"classID": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2175_00"	},
 	{	"id": 2176,	"name": "ちびテュト",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2176_00"	},
 	{	"id": 2177,	"name": "ターゲットマーカー_メテオフォール",	"rare": 5,	"classID": 121830,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2177_00"	},
-	{	"id": 2178,	"name": "精鋭弓手ソーマ",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2178_00",	"imgaw": "2178_01"	}
+	{	"id": 2178,	"name": "精鋭弓手ソーマ",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2178_00",	"imgaw": "2178_01"	},
+	{	"id": 2179,	"name": "烈夏の闇騎士コーネリア",	"rare": 5,	"classID": 1200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2179_00",	"imgaw": "2179_01"	},
+	{	"id": 2180,	"name": "夏の支配者エマ",	"rare": 5,	"classID": 2900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2180_00",	"imgaw": "2180_01"	},
+	{	"id": 2181,	"name": "渚の魔導生命体ラーワル",	"rare": 10,	"classID": 130900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2181_00",	"imgaw": "2181_01"	},
+	{	"id": 2182,	"name": "渚の魔導生命体ラーワル",	"rare": 10,	"classID": 131000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2183_00",	"imgaw": "2183_01"	},
+	{	"id": 2184,	"name": "総帥の夏休みアスバール",	"rare": 5,	"classID": 153300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2184_00",	"imgaw": "2184_01"	},
+	{	"id": 2185,	"name": "星を詠む浜辺ソラス",	"rare": 10,	"classID": 15200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2185_00",	"imgaw": "2185_01"	},
+	{	"id": 2186,	"name": "暑い夏の料理人ユッタ",	"rare": 4,	"classID": 125500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2186_00",	"imgaw": "2186_01"	},
+	{	"id": 2187,	"name": "ビーチの冥騎士ティルト",	"rare": 5,	"classID": 135500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2187_00",	"imgaw": "2187_01"	},
+	{	"id": 2188,	"name": "白浜の断罪者リムリィ",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2188_00",	"imgaw": "2188_01"	},
+	{	"id": 2189,	"name": "南国女王トゥアン",	"rare": 10,	"classID": 126000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2189_00",	"imgaw": "2189_01"	},
+	{	"id": 2190,	"name": "ダミー８",	"rare": 5,	"classID": 141100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
