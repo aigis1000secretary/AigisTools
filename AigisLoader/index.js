@@ -442,124 +442,124 @@ const aigisCardsList = async function () {
             .replace(/@/g, "　");
     }
 
-    let getSkillData = function (card, skillID) {
-        let skillData = { name: [], text: [], nextSkill: 0 };
+    let getSkillData = function (card, skillID, skillIDList = [skillID]) {
+        let skillData = { name: [], text: [] };
         if (skillID == 0) { return skillData; }
 
-        let skillIDList = [];
+        // get skill obj
+        let skill = skillListRaw[skillID] || { ID_Text: 0 };    // SkillList.atb
+        let text = skillTextRaw[skill.ID_Text];                 // SkillText.atb
+        if (!skill || !text) {
+            return {
+                name: [skill ? skill.SkillName : `SkillID_${skillID}`],
+                text: [text ? text.Data_Text : `Data_Text_${skill.ID_Text}`],
+            };
+        }
 
-        while (true) {
-            // get skill obj
-            let skill = skillListRaw[skillID] || { ID_Text: 0 };
-            let text = skillTextRaw[skill.ID_Text];
-            if (!skill || !text) return { name: [skill ? skill.SkillName : `SkillID_${skillID}`], text: [text ? text.Data_Text : `Data_Text_${skill.ID_Text}`], nextSkill: 0 };
-            text = text.Data_Text.replace(/[\s]+\n[\s]+/g, "\n");
-            // "Data_Text": "出撃している全員の\n攻撃力と防御力が\n<HERO_POW>％上昇\n出撃中は常に発動"
+        text = text.Data_Text.replace(/[\s]*\n[\s]*/g, "\n");
+        // text = text.Data_Text.replace(/[\n ]+/g, "\n");
 
-            let debug = false;
-            // debug ||= ([1064, 1194, 1309, 1394, 1459].includes(card.CardID));
-            // debug ||= ([292].includes(card.CardID));
-            // debug ||= (skill.SkillName.includes("エターナルブレイク"));
-            // debug ||= (skill.SkillName.includes("ダークキュア"));
-            // debug ||= (skill.SkillName.includes("熱砂の大攻勢"));
-            // debug ||= (skill.SkillName.includes("山賊兎の底力"));
-            if (debug) { console.log(`======`); }
+        // get skill base data
+        let name = skill.SkillName;
+        let nextSkill = 0;
+        let POW = skill.PowerMax;
+        let type = skillTypeRaw.find(ele => ele.SkillTypeID == skill.SkillType);
 
-            // get skill base data
-            let name = skill.SkillName;
-            text = text.replace("(現在[NUM_TARGET]体)", "");
-            text = text.replace("[NUM_TARGET]", "X");
-            // text = text.replace(/\[/g, "<").replace(/\]/g, ">");
-            text = text.replace("<TIME>", skill.ContTimeMax);
-            text = text.replace(/コストｰ/g, "コスト-");
-            let nextSkill = 0;
-            let POW = skill.PowerMax;
+        // text replace
+        text = text.replace("(現在[NUM_TARGET]体)", "").replace("(現在[NUM_SHOT]回)", "");
+        text = text.replace("[NUM_TARGET]", "X").replace("[NUM_SHOT]", "X");
+        text = text.replace("<TIME>", skill.ContTimeMax);
+        text = text.replace("<HERO_POW>", 12);
+        text = text.replace(/コストｰ/g, "コスト-");
+        text = text.replace(/%/g, "％");
 
-            // get skill influence
-            let type = skillTypeRaw.find(ele => ele.SkillTypeID == skill.SkillType);
-            let infl = [];
-            for (let i = skillInfluenceRaw.findIndex(ele => ele.Data_ID == type.ID_Influence); i < skillInfluenceRaw.length; ++i) {
-                let infl0 = skillInfluenceRaw[i];
-                if (infl0.Data_ID != 0 && infl0.Data_ID != type.ID_Influence) { break; }
-                infl.push(infl0);
+        // debug flag
+        let debug = false;
+        // debug ||= ([1064, 1194, 1309, 1394, 1459].includes(card.CardID));
+        // debug ||= ([2852].includes(skillID));
+        // debug ||= (skill.SkillName.includes("悲哀のエンドロール"));
+        // debug ||= (skill.SkillName.includes("血のカーテンコール"));
+        // debug ||= (skill.SkillName.includes("終わらないレクイエム"));
+        debug ||= (skill.SkillName.includes("ラウドリーバラッド"));
+        debug ||= (skill.SkillName.includes("招福のいたずら"));
+        // debug ||= (skill.SkillName.includes("夏・暗黒オーラ"));
+        // debug ||= (skill.SkillName.includes("渇きの夜は終わらず"));
+        // debug ||= (skill.SkillName.includes("ラウドリーバラッド"));
+        if (debug) {
+            console.log(`======`);
+            console.log(`${name}\t skill ID: ${skillID}, card ID: ${card.CardID}`);
+            console.log(text);
+        }
+
+
+        // get skill influence
+        let influenceRaw = [];
+        for (let i = skillInfluenceRaw.findIndex(ele => ele.Data_ID == type.ID_Influence); i < skillInfluenceRaw.length; ++i) {
+            let _infl = skillInfluenceRaw[i];
+            if (_infl.Data_ID != 0 && _infl.Data_ID != type.ID_Influence) { break; }
+            influenceRaw.push(_infl);
+        }
+
+        // for  eval(iExpression);
+        if (skillID == 1659) { var HasAbiInf = () => { return false; }; }
+
+        influenceRaw = influenceRaw.filter(ele => {
+            let iExpression = ele._ExpressionActivate;
+            if (skillID == 1346 && ele.Data_InfluenceType == 83) { return false; }
+            if (skillID == 663 && ![2, 89].includes(ele.Data_InfluenceType)) { return false; }
+            if (ele.Data_InfluenceType == 6 && [326, 673, 1307, 1456, 1457].includes(skillID)) { return false; }
+            if ([1027, 1028, 1029].includes(skillID) && ele.Data_InfluenceType == 2) { return false; }
+            if (iExpression == "") { return true; }
+
+            iExpression = iExpression
+                .replace(/＝/g, `=`)
+                .replace(/IsCardID/g, `${card.CardID} == `)
+                .replace(/IsSkillID/g, `${skillID} == `)
+                .replace(/IsClassID/g, `${card.InitClassID} == `)
+                .replace(/GetClassID\(\)/g, card.InitClassID)
+
+                .replace(/GetClassChange\(\)/g, 2)          // 覺醒值 0~4
+                .replace(/IsMoreClassChange\(2\)/g, true)   // 覺醒 Y/N?
+
+                .replace(/IsClassType\([^\)]+\)/g, false)  // 特定職業條件
+                .replace(/GetUnitInBattleMatchCount\([\S\s]+\)\s*[>=]{2}\s*\d{1}/g, true)  // 滿足特定條件的人數
+                .replace(/CheckUnitInBattleSomeMatch\(.+\(\).+\)/g, true)  // 滿足特定條件的人數
+                .replace(/GetEntryUnitCount\(\)/g, 6)  // 下場人數
+                .replace(/GetSysVer\(\)\s*[<=>]+\s*\d+/g, false)
+                .replace(/GetSallyCount\(\)\s*[<=>]+\s*\d+/g, false);
+
+            try {
+                return eval(iExpression);
+            } catch (e) {
+                console.log(skillID, iExpression)
+                throw e;
             }
+        });
+        influenceRaw.sort((iA, iB) => (iB.ExtendProperty != "") - (iA.ExtendProperty != ""))
+        if ([1536, 2001, 2207, 2226, 2227, 2261, 2574, 2948, 2950].includes(skillID)) {
+            // influenceRaw.reverse();
+            influenceRaw = influenceRaw.splice(influenceRaw.indexOf(influenceRaw.find(e => e.Data_InfluenceType == 11)), 1).concat(influenceRaw);
+        }
+        if (skillID == 2852) {
+            influenceRaw.find(e => e.ExtendProperty != "").ExtendProperty = "";
+            influenceRaw.push(influenceRaw.splice(influenceRaw.indexOf(influenceRaw.find(e => e.Data_InfluenceType == 2)), 1)[0]);
+            influenceRaw.push(influenceRaw.splice(influenceRaw.indexOf(influenceRaw.find(e => e.Data_InfluenceType == 4)), 1)[0]);
+        }
 
-            if (skillID == 1659) {
-                // for  eval(iExpression);
-                var HasAbiInf = () => { return false; };
-            }
 
-            infl = infl.filter(ele => {
-                let iExpression = ele._ExpressionActivate;
-                if (skillID == 1346 && ele.Data_InfluenceType == 83) { return false; }
-                if (skillID == 663 && ![2, 89].includes(ele.Data_InfluenceType)) { return false; }
-                if (ele.Data_InfluenceType == 6 && [326, 673, 1307, 1456, 1457].includes(skillID)) { return false; }
-                if ([1027, 1028, 1029].includes(skillID) && ele.Data_InfluenceType == 2) { return false; }
-                if (iExpression == "") { return true; }
+        // get infl data
+        let inflRaw = [];
+        for (let influence of influenceRaw) {
 
-                iExpression = iExpression
-                    .replace(/＝/g, `=`)
-                    .replace(/IsCardID/g, `${card.CardID} == `)
-                    .replace(/IsSkillID/g, `${skillID} == `)
-                    .replace(/IsClassID/g, `${card.InitClassID} == `)
-                    .replace(/GetClassID\(\)/g, card.InitClassID)
-
-                    .replace(/GetClassChange\(\)/g, 2)          // 覺醒值 0~4
-                    .replace(/IsMoreClassChange\(2\)/g, true)   // 覺醒 Y/N?
-
-                    .replace(/IsClassType\([^\)]+\)/g, false)  // 特定職業條件
-                    .replace(/GetUnitInBattleMatchCount\([\S\s]+\)\s*[>=]{2}\s*\d{1}/g, true)  // 滿足特定條件的人數
-                    .replace(/CheckUnitInBattleSomeMatch\(.+\(\).+\)/g, true)  // 滿足特定條件的人數
-                    .replace(/GetEntryUnitCount\(\)/g, 6)  // 下場人數
-                    .replace(/GetSysVer\(\)\s*[<=>]+\s*\d+/g, false)
-                    .replace(/GetSallyCount\(\)\s*[<=>]+\s*\d+/g, false);
-                try {
-                    return eval(iExpression);
-                } catch (e) {
-                    console.log(skillID, iExpression)
-                    throw e;
-                }
-            });
-            infl.sort((a, b) => {
-                let iA = a.ExtendProperty.startsWith("Tag"), iB = b.ExtendProperty.startsWith("Tag");
-                return iA == iB ? 0 : (iA > iB ? -1 : 1);
-            });
-
-            // debug msg
-            if (debug) { console.log(`${name}\t text:\n${text}`); }
-
-            if (['山賊兎の底力', '悲哀のエンドロール', '血のカーテンコール', '終わらないレクイエム',
-                '黒竜の戦斧', 'ラウドリーバラッド', 'ラウドリーバラッド', '天に星、罪に罰'].includes(skill.SkillName)) {
-                infl.sort((a, b) => {
-                    let iTypeA = a.Data_InfluenceType;
-                    let iTypeB = b.Data_InfluenceType;
-
-                    let getIndex = (iType) => {
-                        if ([7, 10, 11, 12, 13, 22, 31, 32, 33, 34, 35, 37, 54, 83, 83, 85, 103, 105, 108, 137, 178, 200, 226].includes(iType)) { return 1; }
-                        if ([8, 9, 19].includes(iType)) { return 2; }
-                        if ([3, 5, 89, 90, 141, 142].includes(iType)) { return 3; }
-                        if ([2, 4].includes(iType)) { return 4; }
-                        if ([6].includes(iType)) { return 5; }
-                        return 0;
-                    }
-                    let iA = getIndex(iTypeA);
-                    let iB = getIndex(iTypeB);
-
-                    if (iA != iB) return (iA < iB) ? -1 : 1;
-                    return 0;
-                })
-            }
-
-            for (let influence of infl) {
-                let iType = influence.Data_InfluenceType;
-
+            const iType = influence.Data_InfluenceType;
+            let desc = "";
+            {
                 let m1 = influence.Data_MulValue;
                 let m2 = influence.Data_MulValue2;
                 let m3 = influence.Data_MulValue3;
                 let a1 = influence.Data_AddValue;
                 let m4 = influence._HoldRatioUpperLimit;
 
-                let desc = "";
                 if (m1 == 0 && m2 == 0 && m3 == 0) {
                     desc = a1;
                 } else {
@@ -584,158 +584,159 @@ const aigisCardsList = async function () {
                     desc = eval(pow_string);    // POW
                     if (desc == 1.0 && a1 != 0) { desc = a1; }
                 }
-
-                // extend tag
-                let extend;
-                if (influence.ExtendProperty.startsWith("Tag")) {
-                    [, extend] = influence.ExtendProperty.match(/\S+=(\S+)/);
-                }
-
-                if (iType == 6) {
-                    if (card.InitClassID == 12500) { desc = Math.round(desc / 0.115) / 10; }
-                    if (!extend && text.includes("<RNG>")) { extend = "<RNG>"; }
-                }
-
-                // debug msg
-                if (debug) { console.log(`${name}\t iType: ${iType}\t desc: ${desc}    Exten: ${influence.ExtendProperty}, ${extend}`); }
-
-                // replace Text function
-                let replaceText = (iType, text, target, desc) => {
-                    if (debug) { console.log('  target', target); }
-
-                    let regexs = [];
-                    // extend
-                    if (typeof (target) == 'string') {
-                        // normal extend
-                        // [RNG] => \[RNG\][倍%％]?
-                        let temp = target.replace('[', '\\[').replace(']', '\\]');
-                        let regex = new RegExp(temp + '[倍%％]?');
-
-                        if (regex.test(text)) {
-                            regexs.push(regex);
-                        } else {
-                            temp = target.replace('[', '<').replace(']', '>');
-                            regex = new RegExp(temp + '[倍%％]?');
-                            regexs.push(regex);
-                        }
-                    } else if (Array.isArray(target)) {
-                        // extend array
-                        for (let tar of target) {
-                            let temp = tar.replace('[', '\\[').replace(']', '\\]');
-                            let regex = new RegExp(temp + '[倍%％]?');
-                            regexs.push(regex);
-                        }
-                    }
-
-                    if (debug) { console.log('  regex', regexs); }
-
-                    let index = 256, regex;
-
-                    for (let _regex of regexs) {
-                        if (!_regex.test(text)) { continue; }
-
-                        let i = text.search(_regex);
-                        if (i > index) { continue; }
-
-                        index = i;
-                        regex = _regex;
-                    }
-                    if (index != 256) {
-                        let [found] = text.match(regex);
-
-                        if (debug) { console.log('  found', found); }
-                        if (debug) { console.log('  desc', desc); }
-
-                        let desc100 = Math.round(desc * 100);
-
-                        if (found.endsWith(`倍`)) {
-                            let res = desc;
-                            if (iType == 3) { res = Math.round((desc + 1) * 100) / 100; }
-                            if (iType == 5) { res = Math.round((desc + 1) * 100) / 100; }
-
-                            text = text.replace(found, res + '倍');
-
-                        } else if (found.endsWith(`%`) || found.endsWith(`％`)) {
-                            let res = desc100;
-                            if (iType == 89) { res = (desc100 - 100); }
-
-                            text = text.replace(found, res + '％');
-
-                        } else {
-                            let res = desc;
-                            if (iType == 32) { res = desc100; }
-
-                            text = text.replace(found, res);
-                        }
-                    }
-
-                    return text;
-                }
-
-                // iType == 187 即死
-                if (iType == 2) { text = replaceText(iType, text, extend || ['<ATK>', '<POW_R>', '<PATK>', '[ATK]'], desc); }      // ATK
-                if (iType == 4) { text = replaceText(iType, text, extend || ['<DEF>', '<POW_R>', '<PDEF>', '[DEF]'], desc); }      // DEF
-                if (iType == 3) { text = replaceText(iType, text, extend || ['<ATK>', '<POW_I>', '[ATK]'], desc); }             // ALL ATK
-                if (iType == 5) { text = replaceText(iType, text, extend || ['<DEF>', '<POW_I>', '[DEF]'], desc); }             // ALL DEF
-                if (iType == 6) { text = replaceText(iType, text, extend || ['<RNG>', '<POW_R>'], desc); }                     // ALL DEF
-                if (iType == 7) { text = replaceText(iType, text, extend || ['<NUM_SHOT>'], desc); }
-                if (iType == 8) { text = replaceText(iType, text, extend || ['<AREA>', '<POW_R>'], desc); }
-                if (iType == 9) { text = replaceText(iType, text, extend || ['<AVOID>', '<POW_I>'], desc); }
-                if (iType == 10) { text = replaceText(iType, text, extend || ['<AVOID>'], desc); }
-                if (iType == 11) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }                          // HP
-                if (iType == 12) { text = replaceText(iType, text, extend || ['<NUM_BLOCK>'], desc); }
-                if (iType == 13) { text = replaceText(iType, text, extend || ['<NUM_ATK>'], desc); }
-                if (iType == 19) { text = replaceText(iType, text, extend || ['<MDEF>', '<POW_R>'], desc); }
-                if (iType == 22) { text = replaceText(iType, text, extend || ['<NUM_TRG>'], desc); }
-                if (iType == 31) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // HEAL
-                if (iType == 32) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // ADD COST
-                if (iType == 33) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // PH DEF%
-                if (iType == 34) { text = replaceText(iType, text, extend || ['<MDEF>'], desc); }                           // MDEF
-                if (iType == 35) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // ATK+HP
-                if (iType == 37) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // ATK DEBUFF
-                if (iType == 54) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // LUK DEF
-                if (iType == 83) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }
-                if (iType == 83) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                          // MAX HP
-                if (iType == 85) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }
-                if (iType == 89) { text = replaceText(iType, text, extend || ['<ATK>', '<POW_R>', '[ATK]'], desc); }
-                if (iType == 90) { text = replaceText(iType, text, extend || ['<DEF>', '<POW_R>', '[DEF]'], desc); }
-                if (iType == 103) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                         // ATK DEBUFF
-                if (iType == 105) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                         // UNKNOWN
-                if (iType == 108) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }                         // HP CUT
-                if (iType == 137) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }                         // AB BUFF
-                if (iType == 141) { text = replaceText(iType, text, extend || ['<ATK>', '<POW_R>', '[ATK]'], desc); }
-                if (iType == 142) { text = replaceText(iType, text, extend || ['<DEF>', '<POW_R>', '[DEF]'], desc); }
-                if (iType == 178) { text = replaceText(iType, text, extend || ['<POW_I>'], desc); }
-                if (iType == 200) { text = replaceText(iType, text, extend || ['<RNG>'], desc); }
-                if (iType == 226) { text = replaceText(iType, text, extend || ['<POW_R>'], desc); }
-
-                // if (iType == 121) { change skill text }
-
                 if (iType == 49) { nextSkill = a1; }
-
-                text = text.replace("<HERO_POW>", 12);
-
-                // debug log
-                // influence.iType = iType;
-                // influence.desc = desc;
             }
-            // debug log
-            // skillData.infl = infl;
 
-            text = textFormat(text);
-            if (skillIDList.indexOf(skillID) == -1) {
-                if (skillData.text.indexOf(text) == -1) {
-                    skillIDList.push(skillID)
-                    skillData.name.push(name);
-                    skillData.text.push(text);
-                }
-            } else { break; }
+            // extend tag
+            let [, extend] = (influence.ExtendProperty.startsWith("Tag")) ? influence.ExtendProperty.match(/\S+=(\S+)/) : [, null];
+            let ext2 = null;
 
-            if (nextSkill == 0) { break; }
-            if (nextSkill == card.ClassLV1SkillID) { break; }
-            // if (skillListRaw[nextSkill].SkillName == skillListRaw[card.ClassLV1SkillID].SkillName) { break; }
-            skillID = nextSkill;
+            if (iType == 6) {
+                if (card.InitClassID == 12500) { desc = Math.round(desc / 0.115) / 10; }
+                if (!extend && text.includes("<RNG>")) { extend = "<RNG>"; }
+            }
+
+            if (extend) {
+                let _ext2 = extend.replace('[', '<').replace(']', '>');
+                if (_ext2 != extend) { ext2 = _ext2; }
+                extend = [extend];
+            } else {
+                // iType == 187 即死
+                if (iType == 2) { extend = ['<ATK>', '<POW_R>', '<PATK>', '[ATK]']; }   // ATK                                    
+                if (iType == 4) { extend = ['<DEF>', '<POW_R>', '<PDEF>', '[DEF]']; }   // DEF                                    
+                if (iType == 3) { extend = ['<ATK>', '<POW_I>', '[ATK]', '<POW_R>']; }             // ALL ATK                          
+                if (iType == 5) { extend = ['<DEF>', '<POW_I>', '[DEF]', '<POW_R>']; }             // ALL DEF                          
+                if (iType == 6) { extend = ['<RNG>', '<POW_R>']; }                      // ALL DEF                 
+                if (iType == 7) { extend = ['<NUM_SHOT>']; }
+                if (iType == 8) { extend = ['<AREA>', '<POW_R>']; }
+                if (iType == 9) { extend = ['<AVOID>', '<POW_I>']; }
+                if (iType == 10) { extend = ['<AVOID>']; }
+                if (iType == 11) { extend = ['<POW_R>']; }                              // HP         
+                if (iType == 12) { extend = ['<NUM_BLOCK>']; }
+                if (iType == 13) { extend = ['<NUM_ATK>']; }
+                if (iType == 19) { extend = ['<MDEF>', '<POW_R>']; }
+                if (iType == 22) { extend = ['<NUM_TRG>']; }
+                if (iType == 31) { extend = ['<POW_I>']; }                              // HEAL         
+                if (iType == 32) { extend = ['<POW_I>']; }                              // ADD COST         
+                if (iType == 33) { extend = ['<POW_I>']; }                              // PH DEF%         
+                if (iType == 34) { extend = ['<MDEF>']; }                               // MDEF        
+                if (iType == 35) { extend = ['<POW_I>']; }                              // ATK+HP         
+                if (iType == 37) { extend = ['<POW_I>']; }                              // ATK DEBUFF         
+                if (iType == 54) { extend = ['<POW_I>']; }                              // LUK DEF         
+                if (iType == 83) { extend = ['<POW_R>']; }
+                if (iType == 83) { extend = ['<POW_I>', '<POW_R>']; }                   // MAX HP         
+                if (iType == 85) { extend = ['<POW_R>']; }
+                if (iType == 89) { extend = ['<ATK>', '<POW_R>', '[ATK]']; }
+                if (iType == 90) { extend = ['<DEF>', '<POW_R>', '[DEF]']; }
+                if (iType == 103) { extend = ['<POW_I>']; }                             // ATK DEBUFF          
+                if (iType == 105) { extend = ['<POW_I>']; }                             // UNKNOWN          
+                if (iType == 108) { extend = ['<POW_I>']; }                             // HP CUT          
+                if (iType == 137) { extend = ['<POW_R>']; }                             // AB BUFF          
+                if (iType == 141) { extend = ['<ATK>', '<POW_R>', '[ATK]']; }
+                if (iType == 142) { extend = ['<DEF>', '<POW_R>', '[DEF]']; }
+                // if (iType == 173) { extend = ['[NUM_SHOT]']; }
+                if (iType == 178) { extend = ['<POW_I>']; }
+                if (iType == 200) { extend = ['<RNG>']; }
+                if (iType == 226) { extend = ['<POW_R>']; }
+            }
+
+            let infl = { iType, extend: extend || [], ext2, desc };
+            inflRaw.push(infl);
+
+            // debug msg
+            if (debug) { console.log(`${name}\t iType: ${iType}\t desc: ${desc}    Exten: ${influence.ExtendProperty}, [${infl.extend.join(', ')}]`); }
         }
+
+
+        // get var from text
+        let variables = text.match(/((?:\<[A-Z_]+\>|\[[A-Z_]+\])[倍％]?)/ig) || [];
+        for (let varString of variables) {
+
+            let replaced = false;
+            let inflRaw2 = [];
+            for (let infl of inflRaw) {
+                let { iType, extend, ext2, desc } = infl;
+
+                for (let ext of extend) {
+                    if (ext === null) { continue; }
+                    if (!varString.includes(ext)) { continue; }
+
+                    if (desc === null) { continue; }
+                    // get desc
+                    let res = '', desc100 = Math.round(desc * 100);
+                    if (varString.endsWith(`倍`)) {
+                        res = ([3, 5].includes(iType) && !ext.includes('_R')) ? (Math.round((desc + 1) * 100) / 100) : desc;
+                    } else if (varString.endsWith(`％`)) {
+                        res = (iType == 89) ? (desc100 - 100) : desc100;
+                    } else {
+                        res = (iType == 32) ? (res = desc100) : desc;
+                    }
+                    
+                    text = text.replace(ext, res);
+                    if (debug) { console.log(`[${variables.indexOf(varString)}/${variables.length}]`, varString, `iType: ${iType},`, `replace:`, ext, `${res}`); }
+                    replaced = true;
+                    break;
+                }
+
+                if (replaced) {
+                    inflRaw.splice(inflRaw.indexOf(infl), 1);
+                    break;
+                } else {
+                    inflRaw2.push(infl);
+                }
+            }
+
+            if (!replaced) {
+                for (let infl of inflRaw2) {
+                    let { iType, extend, ext2, desc } = infl;
+                    if (ext2 === null) { continue; }
+                    if (!varString.includes(ext2)) { continue; }
+
+                    if (desc === null) { continue; }
+                    // get desc
+                    let res = '', desc100 = Math.round(desc * 100);
+                    if (varString.endsWith(`倍`)) {
+                        res = ([3, 5].includes(iType) && !ext2.includes('_R')) ? (Math.round((desc + 1) * 100) / 100) : desc;
+                    } else if (varString.endsWith(`％`)) {
+                        res = (iType == 89) ? (desc100 - 100) : desc100;
+                    } else {
+                        res = (iType == 32) ? (res = desc100) : desc;
+                    }
+
+                    text = text.replace(ext2, res);
+                    if (debug) { console.log(`[${variables.indexOf(varString)}/${variables.length}]`, varString, `iType: ${iType},`, `replace:`, ext2, `${res}`); }
+                    replaced = true;
+                    inflRaw.splice(inflRaw.indexOf(infl), 1);
+                    continue;
+                }
+            }
+        }
+
+        text = textFormat(text);
+
+        // skillData = { name: [], text: [] };
+        skillData.name.push(name);
+        skillData.text.push(text);
+
+        // if (debug) {
+        //     console.log('debug')
+        // }
+
+        if (nextSkill != 0 && nextSkill != card.ClassLV1SkillID && !skillIDList.includes(nextSkill)) {
+            let nextSkillData = getSkillData(card, nextSkill, skillIDList.concat([nextSkill]));
+            // skillData.name = skillData.name.concat(nextSkillData.name);
+            // skillData.text = skillData.text.concat(nextSkillData.text);
+            for (let i = 0; i < nextSkillData.name.length; ++i) {
+                let iName = nextSkillData.name[i];
+                let iText = nextSkillData.text[i];
+                if (!skillData.name.includes(iName) || !skillData.text.includes(iText)) {
+                    skillData.name.push(iName);
+                    skillData.text.push(iText);
+                }
+            }
+        }
+
+        if (debug) { console.log(``); }
 
         return skillData;
     };
