@@ -1,4 +1,4 @@
-var maxCid = 2191;
+var maxCid = 2192;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1497,7 +1497,7 @@ var charaData = [
 	{	"id": 1612,	"name": "ちびスキュレ",	"rare": 3,	"classID": 20565,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1612_00"	},
 	{	"id": 1613,	"name": "蓑鳩翼の癒し手イエラ",	"rare": 4,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1613_00",	"imgaw": "1613_01"	},
 	{	"id": 1614,	"name": "ちびジェローム",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1614_00"	},
-	{	"id": 1615,	"name": "神話学士コレット",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1615_00",	"imgaw": "1615_01"	},
+	{	"id": 1615,	"name": "神話学士コレット",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1615_00",	"imgaw": "1615_01",	"imgaw2A": "1615_02"	},
 	{	"id": 1616,	"name": "原初の竜姫ロタン",	"rare": 5,	"classID": 710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1616_00",	"imgaw": "1616_01"	},
 	{	"id": 1617,	"name": "山ン本五郎左衛門",	"rare": 10,	"classID": 134000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1617_00",	"imgaw": "1617_01"	},
 	{	"id": 1618,	"name": "永夜の始祖たる者リヴン",	"rare": 11,	"classID": 134200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1618_00",	"imgaw": "1618_01"	},
@@ -1965,7 +1965,7 @@ var charaData = [
 	{	"id": 2170,	"name": "婚礼座敷エンジュ",	"rare": 5,	"classID": 152400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 104,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2170_00",	"imgaw": "2170_01"	},
 	{	"id": 2171,	"name": "炎天の花嫁ヤハール",	"rare": 4,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2171_00",	"imgaw": "2171_01"	},
 	{	"id": 2172,	"name": "海洋遺跡の民ティマ",	"rare": 4,	"classID": 126900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2172_00",	"imgaw": "2172_01"	},
-	{	"id": 2173,	"name": "叡智の管理者プリニース",	"rare": 5,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2173_00",	"imgaw": "2173_01"	},
+	{	"id": 2173,	"name": "叡智の管理者プリニース",	"rare": 5,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2173_00",	"imgaw": "2173_01",	"imgaw2A": "2173_02",	"imgaw2B": "2173_03"	},
 	{	"id": 2174,	"name": "メテオストライク",	"rare": 3,	"classID": 158800,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2174_00"	},
 	{	"id": 2175,	"name": "ちびテレーゼ",	"rare": 3,	"classID": 20200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2175_00"	},
 	{	"id": 2176,	"name": "ちびテュト",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2176_00"	},
@@ -1982,5 +1982,6 @@ var charaData = [
 	{	"id": 2188,	"name": "白浜の断罪者リムリィ",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2188_00",	"imgaw": "2188_01"	},
 	{	"id": 2189,	"name": "南国女王トゥアン",	"rare": 10,	"classID": 126000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2189_00",	"imgaw": "2189_01"	},
 	{	"id": 2190,	"name": "王子【不死】",	"rare": 5,	"classID": 143100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2190_00"	},
-	{	"id": 2191,	"name": "ちびメカゴブリンクイーン",	"rare": 3,	"classID": 50200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2191_00"	}
+	{	"id": 2191,	"name": "ちびメカゴブリンクイーン",	"rare": 3,	"classID": 50200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2191_00"	},
+	{	"id": 2192,	"name": "夏を知った人形ルイン",	"rare": 4,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2192_00",	"imgaw": "2192_01"	}
 ]
