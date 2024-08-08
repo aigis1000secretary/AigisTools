@@ -17345,5 +17345,16 @@
   "urlName": "%bc%ed%bf%cd%cd%e1%b0%e1%a5%f4%a5%a3%a5%af%a5%c8%a5%ea%a5%a2",
   "rarity": "プラチナ",
   "class": "アーチャー"
+ },
+ {
+  "name": "ちびサイラス",
+  "subName": "サイラス",
+  "ability": "",
+  "ability_aw": "",
+  "skill": "▹範囲攻撃Ⅱ\n25秒効果範囲が2倍に広がる",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%a5%b5%a5%a4%a5%e9%a5%b9",
+  "rarity": "ゴールド",
+  "class": "メイジ"
  }
 ]

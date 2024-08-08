@@ -1,4 +1,4 @@
-var maxCid = 2203;
+var maxCid = 2204;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1994,5 +1994,6 @@ var charaData = [
 	{	"id": 2200,	"name": "夏祭り警備隊クレール",	"rare": 5,	"classID": 18000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2200_00",	"imgaw": "2200_01"	},
 	{	"id": 2201,	"name": "祭夜の遊侠フーイェン",	"rare": 4,	"classID": 132500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2201_00",	"imgaw": "2201_01"	},
 	{	"id": 2202,	"name": "幽明の浴衣フーロン",	"rare": 5,	"classID": 5500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2202_00",	"imgaw": "2202_01"	},
-	{	"id": 2203,	"name": "狩人浴衣ヴィクトリア",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2203_00"	}
+	{	"id": 2203,	"name": "狩人浴衣ヴィクトリア",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2203_00"	},
+	{	"id": 2204,	"name": "ちびサイラス",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2204_00"	}
 ]
