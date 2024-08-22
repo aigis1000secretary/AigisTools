@@ -1,4 +1,4 @@
-var maxCid = 2207;
+var maxCid = 2222;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1246,8 +1246,8 @@ var charaData = [
 	{	"id": 1288,	"name": "マチュ・ピチュ",	"rare": 5,	"classID": 41400,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1288_00"	},
 	{	"id": 1289,	"name": "殿",	"rare": 5,	"classID": 40100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1290,	"name": "前田利家人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1290_00"	},
-	{	"id": 1291,	"name": "呪刀付喪神ユキザクラ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1291_00",	"imgaw": "1291_01"	},
-	{	"id": 1292,	"name": "名刀付喪神フジムラサキ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1292_00",	"imgaw": "1292_01"	},
+	{	"id": 1291,	"name": "呪刀付喪神ユキザクラ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1291_00",	"imgaw": "1291_01",	"imgaw2A": "1291_02",	"imgaw2B": "1291_03"	},
+	{	"id": 1292,	"name": "名刀付喪神フジムラサキ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1292_00",	"imgaw": "1292_01",	"imgaw2A": "1292_02",	"imgaw2B": "1292_03"	},
 	{	"id": 1293,	"name": "斬刀付喪神カザキリ",	"rare": 4,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1293_00",	"imgaw": "1293_01"	},
 	{	"id": 1294,	"name": "柳川城",	"rare": 5,	"classID": 41500,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1294_00"	},
 	{	"id": 1295,	"name": "大宰府",	"rare": 5,	"classID": 41600,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1295_00"	},
@@ -1997,6 +1997,16 @@ var charaData = [
 	{	"id": 2203,	"name": "狩人浴衣ヴィクトリア",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2203_00",	"imgaw": "2203_01"	},
 	{	"id": 2204,	"name": "ちびサイラス",	"rare": 3,	"classID": 30100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2204_00"	},
 	{	"id": 2205,	"name": "銭雷の衛者センカ",	"rare": 4,	"classID": 141300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2205_00",	"imgaw": "2205_01"	},
-	{	"id": 2206,	"name": "ダミー8",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2207,	"name": "ダミー9",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2206,	"name": "皆殺しの凶銃デステリカ",	"rare": 5,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2206_00",	"imgaw": "2206_01"	},
+	{	"id": 2207,	"name": "紫編の妖糸クローシェ",	"rare": 4,	"classID": 143500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2207_00",	"imgaw": "2207_01"	},
+	{	"id": 2208,	"name": "戦華の盾騎士サフィール",	"rare": 5,	"classID": 135900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2208_00",	"imgaw": "2208_01"	},
+	{	"id": 2209,	"name": "死線の操者ララネ",	"rare": 5,	"classID": 143500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2209_00",	"imgaw": "2209_01"	},
+	{	"id": 2210,	"name": "嵐雨神祭アスバール",	"rare": 5,	"classID": 153300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2210_00",	"imgaw": "2210_01"	},
+	{	"id": 2211,	"name": "ちびクロノシア",	"rare": 3,	"classID": 176900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2211_00"	},
+	{	"id": 2212,	"name": "糸罠トークン",	"rare": 5,	"classID": 143400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2221_00"	},
+	{	"id": 2213,	"name": "編罠トークン",	"rare": 5,	"classID": 143420,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2222_00"	},
+	{	"id": 2214,	"name": "マリオネットⅠ",	"rare": 5,	"classID": 143300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2218_00"	},
+	{	"id": 2215,	"name": "マリオネットⅡ",	"rare": 5,	"classID": 143320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2219_00"	},
+	{	"id": 2216,	"name": "マリオネットⅢ",	"rare": 5,	"classID": 143380,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2217,	"name": "ちびクロノシアトークン",	"rare": 5,	"classID": 177000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2217_00"	}
 ]
