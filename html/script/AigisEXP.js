@@ -1,8 +1,8 @@
 
 let maxLevel = [
-    [40, 50, 50, 50, 50, 50, 50],
-    [40, 50, 55, 60, 65, 70, 80],
-    [40, 50, 55, 99, 99, 99, 99]
+    [40, 50, 55, 60, 65, 70, 80],   // normal
+    // [40, 50, 55, 80, 85, 90, 99],   // awake 1
+    [40, 50, 55, 99, 99, 99, 99]    // awake 2
 ];
 let panel0 = [];    // ["expSeirei", "expGladys", "expWArmor", "expBArmor"];
 let panel1 = [];    // ["expAmour", "expPreseil", "expAlegria", "expLiebe", "expFreude", "expFarah", "expPresent", "expPlacer"];
@@ -13,22 +13,22 @@ let panel5 = [];    // ["expC01", "expC02", "expC03", "expC04", "expS01", "expS0
 
 let panel1Config = {
     // Panel1
-    "expAmour": 2,
-    "expPreseil": 3,
-    "expAlegria": 3,
-    "expLiebe": 4,
-    "expFreude": 5,
-    "expFarah": 6
+    "expAmour": 2,      // 2    シルバー
+    "expPreseil": 3,    // 3    ゴールド
+    "expAlegria": 3,    // 3    ゴールド
+    "expLiebe": 4,      // 4    サファイア
+    "expFreude": 5,     // 5    プラチナ
+    "expFarah": 6       // 6    ブラック
 };
 let customizeConfig = [ // rare => lv1 exp
     // female, male, class bonus
-    [0, 40, 10],        // 0    アイアン
-    [0, 70, 30],        // 1    ブロンズ
-    [150, 300, 50],     // 2    シルバー
-    [250, 3000, 80],     // 3    ゴールド
-    [250, 3000, 90],     // 4    サファイア
-    [1000, 9000, 100],   // 5    プラチナ
-    [5000, 13000, 300],  // 6    ブラック
+    [0, 40, 10],            // 0    アイアン
+    [0, 70, 30],            // 1    ブロンズ
+    [150, 300, 400],        // 2    シルバー
+    [250, 3000, 640],       // 3    ゴールド
+    [250, 3000, 720],       // 4    サファイア
+    [1000, 9000, 800],      // 5    プラチナ
+    [5000, 13000, 2400],    // 6    ブラック
 ];
 
 
@@ -329,9 +329,9 @@ let getNext = () => {
 // input zone
 let setMaxLevel = () => {
     let r = getRarity();
-    document.getElementById("selectCurrentLevel").options.length = maxLevel[2][r];
-    document.getElementById("selectTargetLevel").options.length = maxLevel[2][r];
-    for (i = 0; i < maxLevel[2][r]; i++) {
+    document.getElementById("selectCurrentLevel").options.length = maxLevel[1][r];
+    document.getElementById("selectTargetLevel").options.length = maxLevel[1][r];
+    for (i = 0; i < maxLevel[1][r]; i++) {
         document.getElementById("selectCurrentLevel").options[i].text = (i + 1);
         document.getElementById("selectTargetLevel").options[i].text = (i + 1);
     }
@@ -389,7 +389,7 @@ let updateUI = () => {
         // setting
         let rare = div.querySelector(".rare").selectedIndex;    // 0~6
         let sex = div.querySelector(".sex").selectedIndex;      // 0~1 女:男
-        let cc = div.querySelector(".cc").selectedIndex;        // 0~2
+        let cc = div.querySelector(".cc").selectedIndex;        // 0~1
         let lv = div.querySelector('.lv').value * 1;            // 0~99
         let cbonus = div.querySelector(".cbonus").checked ? 1 : 0;
 
@@ -397,10 +397,10 @@ let updateUI = () => {
         if ([0, 1].includes(rare)) {
             // 鉄銅
             sex = div.querySelector(".sex").selectedIndex = 1;  // 男
-            cc = div.querySelector(".cc").selectedIndex = 0;    // no cc
-        } else if (rare == 2 && cc == 2) {
+            cc = div.querySelector(".cc").selectedIndex = 0;    // no aw
+        } else if (rare == 2 && cc == 1) {
             // 銀
-            cc = div.querySelector(".cc").selectedIndex = 1;    // no aw
+            cc = div.querySelector(".cc").selectedIndex = 0;    // no aw
         }
         if (lv > maxLevel[cc][rare]) {
             lv = div.querySelector('.lv').value = maxLevel[cc][rare];
@@ -416,7 +416,7 @@ let updateUI = () => {
         // class exp
         exp += cbonus * customizeConfig[rare][2];
         // lv exp
-        let lvexp = [0, 1].includes(rare) ? 5 : [56, 160, 400][cc];
+        let lvexp = [0, 1].includes(rare) ? 5 : [160, 400][cc];
         exp += (lv - 1) * lvexp;
         // result
         box2.title = exp;
