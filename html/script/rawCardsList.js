@@ -1,4 +1,4 @@
-var maxCid = 2232;
+var maxCid = 2238;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2018,5 +2018,11 @@ var charaData = [
 	{	"id": 2229,	"name": "慈愛の衛生兵セレン",	"rare": 4,	"classID": 158200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2229_00",	"imgaw": "2229_01"	},
 	{	"id": 2230,	"name": "戦鯨の亜神ジーラトス",	"rare": 5,	"classID": 143700,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2230_00"	},
 	{	"id": 2231,	"name": "プレイスエンチャント6",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2232,	"name": "プレイスエンチャント7",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2232,	"name": "プレイスエンチャント7",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2233,	"name": "精鋭槍騎兵キャリー",	"rare": 5,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2233_00",	"imgaw": "2233_01"	},
+	{	"id": 2234,	"name": "煌星の亜神 天墜神星",	"rare": 5,	"classID": 10700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2234_00"	},
+	{	"id": 2235,	"name": "光輝弓マーガレット",	"rare": 5,	"classID": 2600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2235_00",	"imgaw": "2235_01"	},
+	{	"id": 2236,	"name": "ちびジョヴァンニ",	"rare": 3,	"classID": 30400,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2236_00"	},
+	{	"id": 2237,	"name": "煌星の亜神 天墜神星ミサイル用トークン",	"rare": 3,	"classID": 159300,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2237_00"	},
+	{	"id": 2238,	"name": "煌星の亜神 天墜神星ミサイル用トークン覚醒",	"rare": 3,	"classID": 159320,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2238_00"	}
 ]
