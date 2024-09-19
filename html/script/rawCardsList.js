@@ -1,4 +1,4 @@
-var maxCid = 2238;
+var maxCid = 2244;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1450,7 +1450,7 @@ var charaData = [
 	{	"id": 1555,	"name": "帝国時術士ロミルダ",	"rare": 5,	"classID": 11700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1555_00",	"imgaw": "1555_01"	},
 	{	"id": 1557,	"name": "白の皇帝",	"rare": 5,	"classID": 9800,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1559,	"name": "鶚翼の癒し手レフカ",	"rare": 4,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1559_00",	"imgaw": "1559_01"	},
-	{	"id": 1560,	"name": "黒翼の精鋭射手ラシティ",	"rare": 5,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1560_00",	"imgaw": "1560_01"	},
+	{	"id": 1560,	"name": "黒翼の精鋭射手ラシティ",	"rare": 5,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1560_00",	"imgaw": "1560_01",	"imgaw2A": "1560_02",	"imgaw2B": "1560_03"	},
 	{	"id": 1561,	"name": "金獣の領主リンクス",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1561_00",	"imgaw": "1561_01"	},
 	{	"id": 1562,	"name": "ビーストメイジ",	"rare": 5,	"classID": 152300,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1562_00"	},
 	{	"id": 1563,	"name": "ちびイザムバード",	"rare": 3,	"classID": 225700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1563_00"	},
@@ -2024,5 +2024,11 @@ var charaData = [
 	{	"id": 2235,	"name": "光輝弓マーガレット",	"rare": 5,	"classID": 2600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2235_00",	"imgaw": "2235_01"	},
 	{	"id": 2236,	"name": "ちびジョヴァンニ",	"rare": 3,	"classID": 30400,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2236_00"	},
 	{	"id": 2237,	"name": "煌星の亜神 天墜神星ミサイル用トークン",	"rare": 3,	"classID": 159300,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2237_00"	},
-	{	"id": 2238,	"name": "煌星の亜神 天墜神星ミサイル用トークン覚醒",	"rare": 3,	"classID": 159320,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2238_00"	}
+	{	"id": 2238,	"name": "煌星の亜神 天墜神星ミサイル用トークン覚醒",	"rare": 3,	"classID": 159320,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2238_00"	},
+	{	"id": 2239,	"name": "擬神憑きイルミナ",	"rare": 4,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2239_00",	"imgaw": "2239_01"	},
+	{	"id": 2240,	"name": "麒麟人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2240_00"	},
+	{	"id": 2241,	"name": "擬神憑きイルミナトークン青",	"rare": 3,	"classID": 159400,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2241_00",	"imgaw": "2241_01"	},
+	{	"id": 2242,	"name": "擬神憑きイルミナトークン青覚醒",	"rare": 3,	"classID": 159420,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2242_00",	"imgaw": "2242_01"	},
+	{	"id": 2243,	"name": "擬神憑きイルミナトークン赤",	"rare": 3,	"classID": 159500,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2243_00",	"imgaw": "2243_01"	},
+	{	"id": 2244,	"name": "擬神憑きイルミナトークン赤覚醒",	"rare": 3,	"classID": 159520,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2244_00",	"imgaw": "2244_01"	}
 ]
