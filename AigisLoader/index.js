@@ -109,14 +109,28 @@ const downloadRawData = async () => {
 
     // get filelist
     {
-        if (true) {
+        {
             let filelist = fs.readFileSync(rawListPath).toString().split("\n");
             let listReg = /\S{40},\S{32},\S,\S{12},(\S+)/;
 
             for (let line of filelist) {
                 if (!listReg.test(line)) { continue; }  // not match regex
-                let match = line.match(listReg);
-                rawList.push(match[1]);
+                let [, filepath] = line.match(listReg);
+                rawList.push(filepath);
+
+                if (["EventNameText.atb",               // mission data
+                    "PlayerUnitTable.aar", "NameText.atb", "AbilityList.atb", "AbilityText.atb",    // cards data
+                    "SkillList.atb", "SkillText.atb", "SkillTypeList.atb", "SkillInfluenceConfig.atb",
+                ].includes(filepath)) { changesList.push(filepath); }
+
+                if (filepath.includes("QuestList.atb")) { changesList.push(filepath); }
+                if (filepath.includes("MissionConfig.atb")) { changesList.push(filepath); }
+                if (filepath.includes("MissionQuestList.atb")) { changesList.push(filepath); }
+
+                // changesList.push("ico_00.aar");
+                // changesList.push("ico_01.aar");
+                // changesList.push("ico_02.aar");
+                // changesList.push("ico_03.aar");
             }
         }
         if (fs.existsSync(changesListPath)) {
@@ -671,7 +685,7 @@ const aigisCardsList = async function () {
                     } else {
                         res = (iType == 32) ? (res = desc100) : desc;
                     }
-                    
+
                     text = text.replace(ext, res);
                     if (debug) { console.log(`[${variables.indexOf(varString)}/${variables.length}]`, varString, `iType: ${iType},`, `replace:`, ext, `${res}`); }
                     replaced = true;
@@ -1197,6 +1211,13 @@ const aigisQuestsList = async () => {
 
                 let questNameID = questRaw.QuestTitle;
                 // console.log(`get file QuestNameText${missionID}.atb`, questNameID, questNameText[questNameID])
+
+                if (!questNameText[questNameID]) {
+                    console.log(questNameID);
+                    console.log(filepath);
+                    console.log("get file");
+                }
+
                 questName = questNameText[questNameID].Message;
                 questName = questName.replace(/%c\[\S{6}\]/g, '');
             }
