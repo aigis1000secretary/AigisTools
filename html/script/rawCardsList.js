@@ -1,4 +1,4 @@
-var maxCid = 2269;
+var maxCid = 2274;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1087,7 +1087,7 @@ var charaData = [
 	{	"id": 1116,	"name": "光と闇の聖夜ヘイオス",	"rare": 5,	"classID": 1200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1116_00",	"imgaw": "1116_01"	},
 	{	"id": 1117,	"name": "聖夜の踊り子ブレリア",	"rare": 4,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1117_00",	"imgaw": "1117_01"	},
 	{	"id": 1118,	"name": "紫鱗の海巫女ハルフゥ",	"rare": 5,	"classID": 16500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1118_00",	"imgaw": "1118_01",	"imgaw2A": "1118_02",	"imgaw2B": "1118_03"	},
-	{	"id": 1119,	"name": "狛犬コマ",	"rare": 5,	"classID": 19000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1119_00",	"imgaw": "1119_01"	},
+	{	"id": 1119,	"name": "狛犬コマ",	"rare": 5,	"classID": 19000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2020,	"isEvent": 0,	"isToken": 0,	"img": "1119_00",	"imgaw": "1119_01",	"imgaw2A": "1119_02",	"imgaw2B": "1119_03"	},
 	{	"id": 1120,	"name": "阿形の獅子",	"rare": 5,	"classID": 127500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1120_00"	},
 	{	"id": 1121,	"name": "阿形の大獅子",	"rare": 5,	"classID": 127530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "1121_00"	},
 	{	"id": 1122,	"name": "魚人戦士オーベッド",	"rare": 2,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 0,	"img": "1122_00"	},
@@ -2046,8 +2046,13 @@ var charaData = [
 	{	"id": 2263,	"name": "神聖騎士団長",	"rare": 5,	"classID": 143900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2264,	"name": "神聖騎士団長トークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2264_00"	},
 	{	"id": 2265,	"name": "倶利伽羅竜王人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2265_00"	},
-	{	"id": 2266,	"name": "ダミー８",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2267,	"name": "ダミー９",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2268,	"name": "ダミー１０",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2269,	"name": "ダミー１１",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2019,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2266,	"name": "神威大獅子",	"rare": 5,	"classID": 127570,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2266_00"	},
+	{	"id": 2267,	"name": "邪祓の大獅子",	"rare": 5,	"classID": 127580,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2267_00"	},
+	{	"id": 2268,	"name": "斎主の大獅子【神威】",	"rare": 5,	"classID": 127570,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2268_00"	},
+	{	"id": 2269,	"name": "斎主の大獅子【邪祓】",	"rare": 5,	"classID": 127580,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2269_00"	},
+	{	"id": 2270,	"name": "アイアンゴーレム娘アイレン",	"rare": 5,	"classID": 144100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2270_00",	"imgaw": "2270_01"	},
+	{	"id": 2271,	"name": "王城",	"rare": 5,	"classID": 144000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2271_00",	"imgaw": "2271_01"	},
+	{	"id": 2272,	"name": "悪戯な黒猫コハル",	"rare": 5,	"classID": 13500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 106,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2272_00",	"imgaw": "2272_01"	},
+	{	"id": 2273,	"name": "化け猫(仮装)",	"rare": 5,	"classID": 144200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2273_00"	},
+	{	"id": 2274,	"name": "化け猫(演奏会)",	"rare": 5,	"classID": 144230,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2274_00"	}
 ]
