@@ -1,4 +1,7 @@
 
+// should true if online
+const iconFilter = true;
+
 // url parameter method
 let _atob = function (base32Str) {
     let base2Str = "";
@@ -97,7 +100,46 @@ let setIconFlags = function (flagList) {
     }
 }
 
-let isOuji = function (data) { return (data.sortGroupID == 25 && data.rare == 5 && data.id != 418 && data.id != 1396); }
+let isOuji = function (data) {
+    return (data.sortGroupID == 25 && data.rare == 5 &&
+        ![418, 1396, 2230].includes(data.id)
+    );
+}
+
+const getYearGachaSort = (data) => {
+
+    if (data.isEvent != 0 || data.rare != 5) { return 0; }
+    if ([2048, 2072, 2178, 2272].includes(data.id)) { return 0; }   // skip ticket
+    if ([539].includes(data.id)) { return 2; }
+
+    if (![0, 1, 5, 8, 9].includes(data.assign) ||
+        data.genus != 0 || [1682].includes(data.id)
+    ) { return 1; }
+
+    return 2;
+}
+
+const getTicketSort = (data) => {
+    let i = 9;
+    if (data.id <= 362) { i = 0; }
+    else if (data.id <= 523) { i = 1; }
+    else if (data.id <= 662) { i = 2; }
+    else if (data.id <= 866) { i = 3; }
+    else if (data.id <= 1046) { i = 4; }
+    else if (data.id <= 1292) { i = 5; }
+    else if (data.id <= 1521) { i = 6; }
+    else if (data.id <= 1685) { i = 7; }
+    else { i = 8; }
+
+    if (data.rare != 5 || data.isEvent || ![0, 1, 5, 8, 9].includes(data.assign) ||
+        (data.genus != 0 && data.id != 539) || isOuji(data)) {
+        i = 9;
+    }
+    if ([1682].includes(data.id)) { i = 9; }    // skip idol gacha
+    if ([2048, 2072, 2178, 2272].includes(data.id)) { i = 9; }    // skip ticket
+
+    return i;
+}
 
 // body onload method
 let bodyOnload = function () {
@@ -231,8 +273,8 @@ let setHr = function (type) {
         let b = iconbox.children[i + 1];
         if (!a || !b || a.tagName != "IMG" || b.tagName != "IMG") continue;
         if (hidden) {
-            a.hidden = true;
-            b.hidden = true;
+            a.hidden = iconFilter;
+            b.hidden = iconFilter;
         }
 
         // get icon data
@@ -320,25 +362,19 @@ let setHr = function (type) {
             aText = textList[aData.genus];
             bText = textList[bData.genus];
 
-            if (bData.genus == 0) hidden = true;
+            if (bData.genus == 0) hidden = iconFilter;
 
         } else if (type == "yearGacha") {
-            let iA, iB;
-            iA = (aData.isEvent == 0 && aData.rare == 5) ? 1 : 0;
-            iB = (bData.isEvent == 0 && bData.rare == 5) ? 1 : 0;
-            if (iA) aText += "ガチャ ブラック "
-            if (iB) bText += "ガチャ ブラック "
+            let iA = getYearGachaSort(aData);
+            let iB = getYearGachaSort(bData);
+            if (iA == 2) aText = aData.year + "年 ガチャ ブラック ";
+            if (iB == 2) bText = bData.year + "年 ガチャ ブラック ";
+            if (iA == 1) aText = aData.year + "年 限定 ガチャ ブラック ";
+            if (iB == 1) bText = bData.year + "年 限定 ガチャ ブラック ";
+            if (iA == 0) aText = "hidden";
+            if (iB == 0) bText = "hidden";
 
-            let al = [0, 1, 5, 8, 9];
-            iA = ((al.includes(aData.assign)) && (aData.genus == 0 || aData.id == 539)) ? 1 : 0;
-            iB = ((al.includes(bData.assign)) && (bData.genus == 0 || bData.id == 539)) ? 1 : 0;
-            if (!iA && aText) aText = "限定" + aText;
-            if (!iB && bText) bText = "限定" + bText;
-
-            if (aText) aText = aData.year + "年 " + aText;
-            if (bText) bText = bData.year + "年 " + bText;
-
-            if (!iB) hidden = true;
+            if (!iB) hidden = iconFilter;
 
         } else if (type == "ticket") {
             let textList = ['ブラック交換チケット',
@@ -347,30 +383,10 @@ let setHr = function (type) {
                 '9.5周年ブラックチケット',
                 '他', 'hidden']
 
-            const getI = (data) => {
-                let i = 9;
-                if (data.id <= 362) { i = 0; }
-                else if (data.id <= 523) { i = 1; }
-                else if (data.id <= 662) { i = 2; }
-                else if (data.id <= 866) { i = 3; }
-                else if (data.id <= 1046) { i = 4; }
-                else if (data.id <= 1292) { i = 5; }
-                else if (data.id <= 1521) { i = 6; }
-                else if (data.id <= 1685) { i = 7; }
-                else { i = 8; }
+            let iA = getTicketSort(aData);
+            let iB = getTicketSort(bData);
 
-                if (data.rare != 5 || data.isEvent || ![0, 1, 5, 8, 9].includes(data.assign) ||
-                    (data.genus != 0 && data.id != 539) || isOuji(data)) {
-                    i = 9;
-                }
-                if (data.id == 1682) { i = 9; }
-
-                return i;
-            }
-            let iA = getI(aData);
-            let iB = getI(bData);
-
-            if (iA == 9 || iB == 9) { hidden = true; }
+            if (iA == 9 || iB == 9) { hidden = iconFilter; }
 
             aText = textList[iA];
             bText = textList[iB];
@@ -404,7 +420,7 @@ let setHr = function (type) {
             let iA = getI(aData);
             let iB = getI(bData);
 
-            if (iA == 6 || iB == 6) { hidden = true; }
+            if (iA == 6 || iB == 6) { hidden = iconFilter; }
 
             aText = textList[iA];
             bText = textList[iB];
@@ -702,15 +718,9 @@ let sortByYearGacha = function () {
 
     charaData.sort(function compare(aData, bData) {
         // sort rare
-        let iA, iB;
-        iA = (aData.isEvent == 0 && aData.rare == 5) ? 1 : 0;
-        iB = (bData.isEvent == 0 && bData.rare == 5) ? 1 : 0;
-        if (iA != iB) return iA > iB ? -1 : 1;
+        let iA = getYearGachaSort(aData);
+        let iB = getYearGachaSort(bData);
 
-        // sort 限定
-        let al = [0, 1, 5, 8, 9];
-        iA = ((al.includes(aData.assign)) && (aData.genus == 0 || aData.id == 539)) ? 1 : 0;
-        iB = ((al.includes(bData.assign)) && (bData.genus == 0 || bData.id == 539)) ? 1 : 0;
         if (iA != iB) return iA > iB ? -1 : 1;
 
         // sort by year
@@ -730,28 +740,8 @@ let sortByTicket = function () {
 
     charaData.sort(function compare(aData, bData) {
 
-        const getI = (data) => {
-            let i = 9;
-            if (data.id <= 362) { i = 0; }
-            else if (data.id <= 523) { i = 1; }
-            else if (data.id <= 662) { i = 2; }
-            else if (data.id <= 866) { i = 3; }
-            else if (data.id <= 1046) { i = 4; }
-            else if (data.id <= 1292) { i = 5; }
-            else if (data.id <= 1521) { i = 6; }
-            else if (data.id <= 1685) { i = 7; }
-            else { i = 8; }
-
-            if (data.rare != 5 || data.isEvent || ![0, 1, 5, 8, 9].includes(data.assign) ||
-                (data.genus != 0 && data.id != 539) || isOuji(data)) {
-                i = 9;
-            }
-            if (data.id == 1682) { i = 9; }
-
-            return i;
-        }
-        let iA = getI(aData);
-        let iB = getI(bData);
+        let iA = getTicketSort(aData);
+        let iB = getTicketSort(bData);
 
         // sort by year group
         if (iA != iB) return (iA < iB) ? -1 : 1;

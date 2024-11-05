@@ -806,8 +806,8 @@ const aigisCardsList = async function () {
             // Collaboration data format
             switch (id) {
                 // ランス10-決戦-
-                case 581: case 2155: case 2156: case 2157:
-                case 2158: case 2159: case 2162:
+                case 581: case 1758: case 1759: case 1760: case 1761:
+                case 2155: case 2156: case 2157: case 2158: case 2159: case 2162:
                     { assign = -1; } break;
 
                 // // 真・恋姫†夢想-革命
@@ -816,7 +816,8 @@ const aigisCardsList = async function () {
                 //     { assign = -2; } break;
 
                 // 超TD
-                case 1658: case 1659:
+                case 1658: case 1659: case 1808: case 1809: case 1975:
+                case 2074: case 2075: case 2270: case 2271:
                     { assign = -2; } break;
 
                 // 封緘のグラセスタ
@@ -859,11 +860,11 @@ const aigisCardsList = async function () {
             }
 
             // check name
-            if (i == 1134) {
+            if (id == 1135) {
                 name = "王子【ナンディ】";
                 subName = "王子ナンディ";
             }
-            if (i == 1245) {
+            if (id == 1246) {
                 name = "王子【海鎮】";
                 subName = "王子海鎮";
             }
@@ -871,6 +872,10 @@ const aigisCardsList = async function () {
                 let match = name.match(/(\S+)強化\d/);
                 if (match) { name = match[1]; }
             }
+            if ([1853, 1967, 1968, 1969].includes(id)) {
+                sortGroupID = 25;
+            }
+
 
             // get image md5&get giles
             let img, imgaw, imgaw2A, imgaw2B;
@@ -918,11 +923,14 @@ const aigisCardsList = async function () {
                 };
                 rawCardsList[id] = obj;
             }
+
+            // if (id)
         }
 
         // // CharaDatabase.json
         {
             // data
+            let id = card.CardID;   // id = i + 1
             let kind = card.Kind;
             // 0: 男性, 1: 女性, 2: 無性(?), 3: 換金, 2: 經驗
             let isToken = (card.SellPrice == 0 || nameListRaw[i].Message.includes("ダミー")) ? 1 : 0;
@@ -936,15 +944,15 @@ const aigisCardsList = async function () {
             // db data
             let name = nameListRaw[i].Message;
             let subName = nameListRaw[i].RealName;
-            if (i == 0) {
+            if (id == 1) {
                 name = "王子【通常】";
                 subName = "王子";
             }
-            if (i == 1134) {
+            if (id == 1135) {
                 name = "王子【ナンディ】";
                 subName = "王子ナンディ";
             }
-            if (i == 1245) {
+            if (id == 1246) {
                 name = "王子【海鎮】";
                 subName = "王子海鎮";
             }

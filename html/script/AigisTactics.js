@@ -3,7 +3,11 @@ let MapImg;
 let MapID;
 // let debulQuestList = [];
 
-let isOuji = function (data) { return (data.sortGroupID == 25 && data.rare == 5 && data.id != 418 && data.id != 1396); }
+let isOuji = function (data) {
+    return (data.sortGroupID == 25 && data.rare == 5 &&
+        ![418, 1396, 2230].includes(data.id)
+    );
+}
 
 let bodyOnload = function () {
     questList.sort((a, b) => { return a.id.localeCompare(b.id); })
