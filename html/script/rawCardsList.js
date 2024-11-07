@@ -1,4 +1,4 @@
-var maxCid = 2281;
+var maxCid = 2282;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2056,9 +2056,10 @@ var charaData = [
 	{	"id": 2273,	"name": "化け猫(仮装)",	"rare": 5,	"classID": 144200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2273_00"	},
 	{	"id": 2274,	"name": "化け猫(演奏会)",	"rare": 5,	"classID": 144230,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2274_00"	},
 	{	"id": 2275,	"name": "亜神の伝書士ヘルメルク",	"rare": 5,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2275_00",	"imgaw": "2275_01"	},
-	{	"id": 2276,	"name": "飛空戦艦管理頭脳パルセ",	"rare": 4,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2276_00"	},
+	{	"id": 2276,	"name": "飛空戦艦管理頭脳パルセ",	"rare": 4,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2276_00",	"imgaw": "2276_01"	},
 	{	"id": 2277,	"name": "トリックオアトリート",	"rare": 3,	"classID": 144300,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 106,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2277_00"	},
 	{	"id": 2278,	"name": "ちびカノン",	"rare": 3,	"classID": 31300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2278_00"	},
 	{	"id": 2279,	"name": "ちびイーファ",	"rare": 3,	"classID": 170700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2279_00"	},
-	{	"id": 2280,	"name": "自由人(幻影)",	"rare": 5,	"classID": 144400,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2281_00"	}
+	{	"id": 2280,	"name": "自由人(幻影)",	"rare": 5,	"classID": 144400,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2281_00"	},
+	{	"id": 2282,	"name": "新任医官ニーカ",	"rare": 4,	"classID": 158200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2282_00",	"imgaw": "2282_01"	}
 ]
