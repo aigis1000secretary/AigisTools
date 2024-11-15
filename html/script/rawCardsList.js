@@ -1,4 +1,4 @@
-var maxCid = 2282;
+var maxCid = 2291;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2061,5 +2061,13 @@ var charaData = [
 	{	"id": 2278,	"name": "ちびカノン",	"rare": 3,	"classID": 31300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2278_00"	},
 	{	"id": 2279,	"name": "ちびイーファ",	"rare": 3,	"classID": 170700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2279_00"	},
 	{	"id": 2280,	"name": "自由人(幻影)",	"rare": 5,	"classID": 144400,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2281_00"	},
-	{	"id": 2282,	"name": "新任医官ニーカ",	"rare": 4,	"classID": 158200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2282_00",	"imgaw": "2282_01"	}
+	{	"id": 2282,	"name": "新任医官ニーカ",	"rare": 4,	"classID": 158200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2282_00",	"imgaw": "2282_01"	},
+	{	"id": 2283,	"name": "雷神の騎士マージ",	"rare": 5,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2283_00",	"imgaw": "2283_01"	},
+	{	"id": 2284,	"name": "魔物使いバスカット",	"rare": 5,	"classID": 12400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2284_00",	"imgaw": "2284_01"	},
+	{	"id": 2285,	"name": "激励の踊り子シャルキー",	"rare": 5,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2285_00",	"imgaw": "2285_01"	},
+	{	"id": 2286,	"name": "武の半神ヘラクレイア",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2286_00",	"imgaw": "2286_01"	},
+	{	"id": 2287,	"name": "ちびダン",	"rare": 3,	"classID": 21400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2287_00"	},
+	{	"id": 2288,	"name": "神聖騎士団長の鎧",	"rare": 5,	"classID": 144500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2288_00"	},
+	{	"id": 2289,	"name": "神聖騎士団長の鎧(覚醒)",	"rare": 5,	"classID": 144530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2291_00"	},
+	{	"id": 2290,	"name": "マージトークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2290_00"	}
 ]
