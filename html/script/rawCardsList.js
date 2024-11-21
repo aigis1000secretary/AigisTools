@@ -1,4 +1,4 @@
-var maxCid = 2291;
+var maxCid = 2307;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1981,7 +1981,7 @@ var charaData = [
 	{	"id": 2187,	"name": "ビーチの冥騎士ティルト",	"rare": 5,	"classID": 135500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2187_00",	"imgaw": "2187_01"	},
 	{	"id": 2188,	"name": "白浜の断罪者リムリィ",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2188_00",	"imgaw": "2188_01"	},
 	{	"id": 2189,	"name": "南国女王トゥアン",	"rare": 10,	"classID": 126000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2189_00",	"imgaw": "2189_01"	},
-	{	"id": 2190,	"name": "王子【不死】",	"rare": 5,	"classID": 143100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2190_00"	},
+	{	"id": 2190,	"name": "王子【不死】",	"rare": 5,	"classID": 143100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2303_00"	},
 	{	"id": 2191,	"name": "ちびメカゴブリンクイーン",	"rare": 3,	"classID": 50200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2191_00"	},
 	{	"id": 2192,	"name": "夏を知った人形ルイン",	"rare": 4,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2192_00",	"imgaw": "2192_01"	},
 	{	"id": 2193,	"name": "常勝の智将ユリクセス",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2193_00",	"imgaw": "2193_01"	},
@@ -2069,5 +2069,18 @@ var charaData = [
 	{	"id": 2287,	"name": "ちびダン",	"rare": 3,	"classID": 21400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2287_00"	},
 	{	"id": 2288,	"name": "神聖騎士団長の鎧",	"rare": 5,	"classID": 144500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2288_00"	},
 	{	"id": 2289,	"name": "神聖騎士団長の鎧(覚醒)",	"rare": 5,	"classID": 144530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2291_00"	},
-	{	"id": 2290,	"name": "マージトークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2290_00"	}
+	{	"id": 2290,	"name": "マージトークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2290_00"	},
+	{	"id": 2292,	"name": "歴史の観測者ホルミース",	"rare": 5,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2292_00"	},
+	{	"id": 2293,	"name": "歴戦の副官アリア",	"rare": 5,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2293_00"	},
+	{	"id": 2294,	"name": "戦場を編む者フィネス",	"rare": 11,	"classID": 159900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2294_00",	"imgaw": "2294_01"	},
+	{	"id": 2295,	"name": "戦場を編む者フィネス",	"rare": 10,	"classID": 159900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2295_00",	"imgaw": "2295_01"	},
+	{	"id": 2296,	"name": "最終決戦仕様エフトラ",	"rare": 11,	"classID": 150900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2296_00",	"imgaw": "2296_01"	},
+	{	"id": 2297,	"name": "自律兵器クリーブ【黒】",	"rare": 5,	"classID": 159800,	"sortGroupID": 30,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2297_00"	},
+	{	"id": 2298,	"name": "自律兵器カーパト【黒】",	"rare": 5,	"classID": 159700,	"sortGroupID": 30,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2298_00"	},
+	{	"id": 2299,	"name": "ドーンブリンガー",	"rare": 5,	"classID": 44300,	"sortGroupID": 20,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2300,	"name": "王子【新ケラウノス】",	"rare": 5,	"classID": 9930,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2304,	"name": "チェインソン男",	"rare": 5,	"classID": 44400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2304_00",	"imgaw": "2304_01",	"imgaw2A": "2304_02",	"imgaw2B": "2304_03"	},
+	{	"id": 2305,	"name": "亜神ヒュープ",	"rare": 5,	"classID": 44500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2306,	"name": "亜神ゼクメト",	"rare": 5,	"classID": 44600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2307,	"name": "不死の祭壇",	"rare": 5,	"classID": 40800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
