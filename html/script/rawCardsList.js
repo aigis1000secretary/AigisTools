@@ -1,4 +1,4 @@
-var maxCid = 2313;
+var maxCid = 2314;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2070,8 +2070,8 @@ var charaData = [
 	{	"id": 2288,	"name": "神聖騎士団長の鎧",	"rare": 5,	"classID": 144500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2288_00"	},
 	{	"id": 2289,	"name": "神聖騎士団長の鎧(覚醒)",	"rare": 5,	"classID": 144530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2291_00"	},
 	{	"id": 2290,	"name": "マージトークン",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2290_00"	},
-	{	"id": 2292,	"name": "歴史の観測者ホルミース",	"rare": 5,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2292_00"	},
-	{	"id": 2293,	"name": "歴戦の副官アリア",	"rare": 5,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2293_00"	},
+	{	"id": 2292,	"name": "歴史の観測者ホルミース",	"rare": 5,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2292_00",	"imgaw": "2292_01"	},
+	{	"id": 2293,	"name": "歴戦の副官アリア",	"rare": 5,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2293_00",	"imgaw": "2293_01"	},
 	{	"id": 2294,	"name": "戦場を編む者フィネス",	"rare": 11,	"classID": 159900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2294_00",	"imgaw": "2294_01"	},
 	{	"id": 2295,	"name": "戦場を編む者フィネス",	"rare": 10,	"classID": 159900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2295_00",	"imgaw": "2295_01"	},
 	{	"id": 2296,	"name": "最終決戦仕様エフトラ",	"rare": 11,	"classID": 150900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2296_00",	"imgaw": "2296_01"	},
@@ -2088,5 +2088,6 @@ var charaData = [
 	{	"id": 2310,	"name": "ちびシノ",	"rare": 3,	"classID": 24300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2310_00"	},
 	{	"id": 2311,	"name": "ドーンブリンガーミサイル用トークン",	"rare": 3,	"classID": 160100,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2311_00"	},
 	{	"id": 2312,	"name": "ドーンブリンガー移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2312_00"	},
-	{	"id": 2313,	"name": "プレイスエンチャント8",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2313,	"name": "プレイスエンチャント8",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2314,	"name": "北部城塞の姫君トレシア",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2314_00",	"imgaw": "2314_01"	}
 ]
