@@ -1,4 +1,4 @@
-var maxCid = 2314;
+var maxCid = 2321;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2089,5 +2089,12 @@ var charaData = [
 	{	"id": 2311,	"name": "ドーンブリンガーミサイル用トークン",	"rare": 3,	"classID": 160100,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2311_00"	},
 	{	"id": 2312,	"name": "ドーンブリンガー移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2312_00"	},
 	{	"id": 2313,	"name": "プレイスエンチャント8",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2314,	"name": "北部城塞の姫君トレシア",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2314_00",	"imgaw": "2314_01"	}
+	{	"id": 2314,	"name": "北部城塞の姫君トレシア",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2314_00",	"imgaw": "2314_01"	},
+	{	"id": 2315,	"name": "聖なる森の乙女メープル",	"rare": 4,	"classID": 11800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2315_00"	},
+	{	"id": 2316,	"name": "大悪魔と雪景色ラピス",	"rare": 5,	"classID": 13300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2316_00",	"imgaw": "2316_01"	},
+	{	"id": 2317,	"name": "白雪の筆頭侍女セーラ",	"rare": 5,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 107,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2317_00",	"imgaw": "2317_01"	},
+	{	"id": 2318,	"name": "雪駆け神官ルチア",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 107,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2318_00",	"imgaw": "2318_01"	},
+	{	"id": 2319,	"name": "ちびデシウス",	"rare": 3,	"classID": 21200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2319_00"	},
+	{	"id": 2320,	"name": "王子【聖夜】",	"rare": 5,	"classID": 144700,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 107,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2320_00"	},
+	{	"id": 2321,	"name": "プレゼントボックス",	"rare": 1,	"classID": 44700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
