@@ -1082,6 +1082,8 @@ const aigisCardsList = async function () {
 const aigisQuestsList = async () => {
     console.log(`aigisQuestsList start...`);
 
+    let failCmd = "";
+
     /*  class mission {
             "MissionID": 0,
             "Name": "",
@@ -1226,6 +1228,12 @@ const aigisQuestsList = async () => {
                     console.log("get file");
                 }
 
+                if (!questNameText[questNameID]) {
+                    let _cmd = `get file QuestNameText${missionID}.atb\n`;
+                    if (!failCmd.includes(_cmd)) failCmd += _cmd;
+                    continue;
+                }
+
                 questName = questNameText[questNameID].Message;
                 questName = questName.replace(/%c\[\S{6}\]/g, '');
             }
@@ -1243,6 +1251,10 @@ const aigisQuestsList = async () => {
             }
         }
     }; console.log(`get QuestNameText data`);
+    if (failCmd != "") {
+        console.log(failCmd);
+        return;
+    }
 
     // aigis data bug, HistoryMissionConfig.atb != HistoryMissionQuestList.atb when mID = [920125, 920124]
     for (let mission of missionList) {
