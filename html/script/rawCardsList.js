@@ -1,4 +1,4 @@
-var maxCid = 2321;
+var maxCid = 2338;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2090,11 +2090,28 @@ var charaData = [
 	{	"id": 2312,	"name": "ドーンブリンガー移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2312_00"	},
 	{	"id": 2313,	"name": "プレイスエンチャント8",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2314,	"name": "北部城塞の姫君トレシア",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2314_00",	"imgaw": "2314_01"	},
-	{	"id": 2315,	"name": "聖なる森の乙女メープル",	"rare": 4,	"classID": 11800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2315_00"	},
+	{	"id": 2315,	"name": "聖なる森の乙女メープル",	"rare": 4,	"classID": 11800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2315_00",	"imgaw": "2315_01"	},
 	{	"id": 2316,	"name": "大悪魔と雪景色ラピス",	"rare": 5,	"classID": 13300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2316_00",	"imgaw": "2316_01"	},
 	{	"id": 2317,	"name": "白雪の筆頭侍女セーラ",	"rare": 5,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 107,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2317_00",	"imgaw": "2317_01"	},
 	{	"id": 2318,	"name": "雪駆け神官ルチア",	"rare": 4,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 107,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2318_00",	"imgaw": "2318_01"	},
 	{	"id": 2319,	"name": "ちびデシウス",	"rare": 3,	"classID": 21200,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2319_00"	},
 	{	"id": 2320,	"name": "王子【聖夜】",	"rare": 5,	"classID": 144700,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 107,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2320_00"	},
-	{	"id": 2321,	"name": "プレゼントボックス",	"rare": 1,	"classID": 44700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2321,	"name": "プレゼントボックス",	"rare": 1,	"classID": 44700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2322,	"name": "太上老君",	"rare": 5,	"classID": 136900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2322_00",	"imgaw": "2322_01"	},
+	{	"id": 2323,	"name": "太上道君",	"rare": 5,	"classID": 136900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2323_00",	"imgaw": "2323_01"	},
+	{	"id": 2324,	"name": "新年撃ち初めイーファ",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2324_00",	"imgaw": "2324_01"	},
+	{	"id": 2325,	"name": "異国の迎春祭 聞忠",	"rare": 5,	"classID": 7600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 101,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2325_00",	"imgaw": "2325_01"	},
+	{	"id": 2326,	"name": "晴れ着の政務官アンナ",	"rare": 5,	"classID": 11500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 101,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2326_00"	},
+	{	"id": 2327,	"name": "破魔の影矢ユージェン",	"rare": 10,	"classID": 15300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2327_00",	"imgaw": "2327_01"	},
+	{	"id": 2328,	"name": "鷲獅の迎春飛行クゥイル",	"rare": 4,	"classID": 7000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2328_00",	"imgaw": "2328_01"	},
+	{	"id": 2329,	"name": "ちびレシア",	"rare": 3,	"classID": 20300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2329_00"	},
+	{	"id": 2330,	"name": "ちびイズナ",	"rare": 3,	"classID": 22000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2330_00"	},
+	{	"id": 2331,	"name": "ケラウノス像",	"rare": 3,	"classID": 140500,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2331_00"	},
+	{	"id": 2332,	"name": "王子【飛行】",	"rare": 5,	"classID": 144800,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2332_00"	},
+	{	"id": 2333,	"name": "上清境の瑞鳥",	"rare": 5,	"classID": 160200,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2333_00"	},
+	{	"id": 2334,	"name": "上清境の瑞鳥覚醒",	"rare": 5,	"classID": 160220,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2334_00"	},
+	{	"id": 2335,	"name": "クラールフ人形",	"rare": 5,	"classID": 64,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2335_00"	},
+	{	"id": 2336,	"name": "ヒュープ人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2336_00"	},
+	{	"id": 2337,	"name": "おとし玉(蛇)",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2337_00"	},
+	{	"id": 2338,	"name": "王子【飛行】移動トークン",	"rare": 5,	"classID": 144900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2338_00"	}
 ]
