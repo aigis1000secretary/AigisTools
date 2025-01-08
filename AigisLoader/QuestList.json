@@ -1132,6 +1132,8 @@
 	{	"id": "600001/3605",	"map": "6032",	"missionTitle": "交流クエスト",	"questName": "狂聖女のご褒美",	"missionID": 600001,	"questID": 3605,	"location": "00",	"entry": "05",	"life": 3,	"startUP": 25,	"unitLimit": 6},
 	{	"id": "600001/3606",	"map": "6021",	"missionTitle": "交流クエスト",	"questName": "竜を従えし貴族令嬢",	"missionID": 600001,	"questID": 3606,	"location": "00",	"entry": "08",	"life": 3,	"startUP": 10,	"unitLimit": 5},
 	{	"id": "600001/3607",	"map": "6007",	"missionTitle": "交流クエスト",	"questName": "静かな封妖の忍",	"missionID": 600001,	"questID": 3607,	"location": "01",	"entry": "14",	"life": 3,	"startUP": 15,	"unitLimit": 5},
+	{	"id": "600001/3608",	"map": "6022",	"missionTitle": "交流クエスト",	"questName": "天を支配せし黒翼の射手",	"missionID": 600001,	"questID": 3608,	"location": "00",	"entry": "07",	"life": 3,	"startUP": 10,	"unitLimit": 5},
+	{	"id": "600001/3609",	"map": "6027",	"missionTitle": "交流クエスト",	"questName": "死を運ぶ断罪の月",	"missionID": 600001,	"questID": 3609,	"location": "00",	"entry": "08",	"life": 3,	"startUP": 15,	"unitLimit": 6},
 	{	"id": "920204/8069",	"map": "920204_4786",	"missionTitle": "人である者、神に生まれた者",	"questName": "天界からの襲撃",	"missionID": 920204,	"questID": 8069,	"location": "00",	"entry": "00",	"life": 20,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920204/8070",	"map": "920204_4787",	"missionTitle": "人である者、神に生まれた者",	"questName": "神と人との間に生まれた者",	"missionID": 920204,	"questID": 8070,	"location": "00",	"entry": "00",	"life": 20,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920204/8071",	"map": "920204_4788",	"missionTitle": "人である者、神に生まれた者",	"questName": "鋼の都の防衛戦",	"missionID": 920204,	"questID": 8071,	"location": "00",	"entry": "00",	"life": 15,	"startUP": 10,	"unitLimit": 8},
