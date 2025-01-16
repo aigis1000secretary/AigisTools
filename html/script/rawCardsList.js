@@ -1,4 +1,4 @@
-var maxCid = 2338;
+var maxCid = 2342;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2113,5 +2113,9 @@ var charaData = [
 	{	"id": 2335,	"name": "クラールフ人形",	"rare": 5,	"classID": 64,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2335_00"	},
 	{	"id": 2336,	"name": "ヒュープ人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2336_00"	},
 	{	"id": 2337,	"name": "おとし玉(蛇)",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2337_00"	},
-	{	"id": 2338,	"name": "王子【飛行】移動トークン",	"rare": 5,	"classID": 144900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2338_00"	}
+	{	"id": 2338,	"name": "王子【飛行】移動トークン",	"rare": 5,	"classID": 144900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2338_00"	},
+	{	"id": 2339,	"name": "万象の湯 元始天尊",	"rare": 5,	"classID": 136900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2339_00",	"imgaw": "2339_01"	},
+	{	"id": 2340,	"name": "温泉砲術士ハイデマリー",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 109,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2340_00",	"imgaw": "2340_01"	},
+	{	"id": 2341,	"name": "姫の湯治メルヴィナ",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2341_00",	"imgaw": "2341_01"	},
+	{	"id": 2342,	"name": "ちびデーモンシェフ",	"rare": 3,	"classID": 50300,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2342_00"	}
 ]
