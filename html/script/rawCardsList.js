@@ -1,4 +1,4 @@
-var maxCid = 2342;
+var maxCid = 2354;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1158,8 +1158,8 @@ var charaData = [
 	{	"id": 1191,	"name": "疾風かまいたちスルガ",	"rare": 5,	"classID": 126630,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1191_00"	},
 	{	"id": 1192,	"name": "かまいたちヤタケ",	"rare": 5,	"classID": 126700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1192_00"	},
 	{	"id": 1193,	"name": "疾風かまいたちヤタケ",	"rare": 5,	"classID": 126730,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1193_00"	},
-	{	"id": 1194,	"name": "ぬりかべシラヌイ",	"rare": 4,	"classID": 128500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1194_00",	"imgaw": "1194_01"	},
-	{	"id": 1195,	"name": "ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "1196_00"	},
+	{	"id": 1194,	"name": "ぬりかべシラヌイ",	"rare": 4,	"classID": 128500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1194_00",	"imgaw": "1194_01",	"imgaw2A": "1194_02"	},
+	{	"id": 1195,	"name": "ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 1,	"img": "2346_00"	},
 	{	"id": 1197,	"name": "万刃を担う者アルヴァ",	"rare": 11,	"classID": 128700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1197_00",	"imgaw": "1197_01"	},
 	{	"id": 1198,	"name": "万刃を担う者アルヴァ",	"rare": 10,	"classID": 128700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 1,	"isToken": 0,	"img": "1198_00",	"imgaw": "1198_01"	},
 	{	"id": 1199,	"name": "銀腕を掲げし者トラム",	"rare": 11,	"classID": 127400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2021,	"isEvent": 0,	"isToken": 0,	"img": "1199_00",	"imgaw": "1199_01"	},
@@ -1436,7 +1436,7 @@ var charaData = [
 	{	"id": 1540,	"name": "癒しの夕涼みリアナ",	"rare": 5,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1540_00",	"imgaw": "1540_01"	},
 	{	"id": 1541,	"name": "不敗の縁日ラトゥール",	"rare": 4,	"classID": 13600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1541_00",	"imgaw": "1541_01"	},
 	{	"id": 1542,	"name": "祭夜のぬりかべシラヌイ",	"rare": 4,	"classID": 128500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 105,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1542_00",	"imgaw": "1542_01"	},
-	{	"id": 1543,	"name": "浴衣ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1544_00"	},
+	{	"id": 1543,	"name": "浴衣ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 105,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "2348_00"	},
 	{	"id": 1545,	"name": "破魔の風鈴",	"rare": 5,	"classID": 152100,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1545_00"	},
 	{	"id": 1546,	"name": "ちびディアナ",	"rare": 3,	"classID": 24800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1546_00"	},
 	{	"id": 1547,	"name": "ちびローザ",	"rare": 3,	"classID": 32100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1547_00"	},
@@ -1872,7 +1872,7 @@ var charaData = [
 	{	"id": 2059,	"name": "ハートの射手キャロップ",	"rare": 4,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2059_00",	"imgaw": "2059_01"	},
 	{	"id": 2060,	"name": "ちびグレン",	"rare": 3,	"classID": 25000,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 8,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2060_00"	},
 	{	"id": 2061,	"name": "ぬりかべカゴメ",	"rare": 5,	"classID": 128500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2061_00",	"imgaw": "2061_01"	},
-	{	"id": 2062,	"name": "カゴメ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2063_00"	},
+	{	"id": 2062,	"name": "カゴメ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2350_00"	},
 	{	"id": 2064,	"name": "麗しき銀銃シルヴァーナ",	"rare": 4,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2064_00",	"imgaw": "2064_01"	},
 	{	"id": 2065,	"name": "暗天孤星ジンレイ",	"rare": 5,	"classID": 132500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2065_00",	"imgaw": "2065_01"	},
 	{	"id": 2066,	"name": "萌芽の衛者ダルティエ",	"rare": 4,	"classID": 141300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2066_00",	"imgaw": "2066_01"	},
@@ -2117,5 +2117,10 @@ var charaData = [
 	{	"id": 2339,	"name": "万象の湯 元始天尊",	"rare": 5,	"classID": 136900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2339_00",	"imgaw": "2339_01"	},
 	{	"id": 2340,	"name": "温泉砲術士ハイデマリー",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 109,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2340_00",	"imgaw": "2340_01"	},
 	{	"id": 2341,	"name": "姫の湯治メルヴィナ",	"rare": 4,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 109,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2341_00",	"imgaw": "2341_01"	},
-	{	"id": 2342,	"name": "ちびデーモンシェフ",	"rare": 3,	"classID": 50300,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2342_00"	}
+	{	"id": 2342,	"name": "ちびデーモンシェフ",	"rare": 3,	"classID": 50300,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2342_00"	},
+	{	"id": 2343,	"name": "鋼の支援工兵アイゼルフ",	"rare": 4,	"classID": 15500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2343_00"	},
+	{	"id": 2344,	"name": "鋼の掘削兵ピーク",	"rare": 4,	"classID": 135600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2344_00",	"imgaw": "2344_01"	},
+	{	"id": 2351,	"name": "メカボックス",	"rare": 5,	"classID": 160300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2352,	"name": "重メカボックス",	"rare": 5,	"classID": 160320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2353,	"name": "重メカボックス",	"rare": 1,	"classID": 44800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
