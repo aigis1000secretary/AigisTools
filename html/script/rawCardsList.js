@@ -1,4 +1,4 @@
-var maxCid = 2354;
+var maxCid = 2359;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -61,7 +61,7 @@ var charaData = [
 	{	"id": 59,	"name": "黒聖霊フローリカ",	"rare": 5,	"classID": 6,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "059_00"	},
 	{	"id": 60,	"name": "技強化聖霊クリスティア",	"rare": 5,	"classID": 7,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "060_00"	},
 	{	"id": 61,	"name": "山賊王コンラッド",	"rare": 3,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 0,	"isToken": 0,	"img": "061_00",	"imgaw": "061_01"	},
-	{	"id": 62,	"name": "用兵家ジェローム",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 0,	"isToken": 0,	"img": "062_00",	"imgaw": "062_01"	},
+	{	"id": 62,	"name": "用兵家ジェローム",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 0,	"isToken": 0,	"img": "062_00",	"imgaw": "062_01",	"imgaw2A": "062_02"	},
 	{	"id": 63,	"name": "賢者バルバストラフ",	"rare": 3,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2013,	"isEvent": 0,	"isToken": 0,	"img": "063_00",	"imgaw": "063_01"	},
 	{	"id": 64,	"name": "一般兵B",	"rare": 0,	"classID": 101,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "064_00"	},
 	{	"id": 65,	"name": "一般兵A【重装】",	"rare": 0,	"classID": 201,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "065_00"	},
@@ -444,7 +444,7 @@ var charaData = [
 	{	"id": 442,	"name": "紅血の皇女シルヴィア",	"rare": 5,	"classID": 510,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "442_00",	"imgaw": "442_01",	"imgaw2A": "442_02",	"imgaw2B": "442_03"	},
 	{	"id": 443,	"name": "降魔の戦姫トコヨ",	"rare": 7,	"classID": 565,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "443_00",	"imgaw": "443_01"	},
 	{	"id": 444,	"name": "霧分身",	"rare": 5,	"classID": 5100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "863_00"	},
-	{	"id": 445,	"name": "鍛冶職人サンディー",	"rare": 4,	"classID": 5200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "445_00",	"imgaw": "445_01"	},
+	{	"id": 445,	"name": "鍛冶職人サンディー",	"rare": 4,	"classID": 5200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "445_00",	"imgaw": "445_01",	"imgaw2A": "445_02"	},
 	{	"id": 446,	"name": "オークの剣士ドゥーラ",	"rare": 4,	"classID": 5300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "446_00",	"imgaw": "446_01",	"imgaw2A": "446_02"	},
 	{	"id": 448,	"name": "魔眼の魔神バロウス",	"rare": 4,	"classID": 3500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 0,	"isToken": 0,	"img": "448_00",	"imgaw": "448_01",	"imgaw2A": "448_02"	},
 	{	"id": 449,	"name": "盗賊セブン",	"rare": 4,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 0,	"img": "449_00",	"imgaw": "449_01",	"imgaw2B": "449_03"	},
@@ -1343,7 +1343,7 @@ var charaData = [
 	{	"id": 1425,	"name": "焔の竜砲騎兵ジゼル",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1425_00",	"imgaw": "1425_01"	},
 	{	"id": 1426,	"name": "木兎翼の戦士ポタル",	"rare": 4,	"classID": 18700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1426_00",	"imgaw": "1426_01"	},
 	{	"id": 1427,	"name": "熱砂の騎士アスラハ",	"rare": 5,	"classID": 6700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1427_00",	"imgaw": "1427_01"	},
-	{	"id": 1428,	"name": "氷竜魔術士カラザ",	"rare": 4,	"classID": 150600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1428_00",	"imgaw": "1428_01"	},
+	{	"id": 1428,	"name": "氷竜魔術士カラザ",	"rare": 4,	"classID": 150600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1428_00",	"imgaw": "1428_01",	"imgaw2A": "1428_02"	},
 	{	"id": 1429,	"name": "ちびヘカティエ",	"rare": 3,	"classID": 39300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1429_00"	},
 	{	"id": 1430,	"name": "天眼の偵察者レナータ",	"rare": 5,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1430_00",	"imgaw": "1430_01",	"imgaw2A": "1430_02",	"imgaw2B": "1430_03"	},
 	{	"id": 1431,	"name": "ヘカトンケイル人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1431_00"	},
@@ -1404,7 +1404,7 @@ var charaData = [
 	{	"id": 1508,	"name": "メシナの渦潮",	"rare": 5,	"classID": 151230,	"sortGroupID": 30,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1508_00"	},
 	{	"id": 1509,	"name": "ちびジュウベエ",	"rare": 3,	"classID": 20800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1509_00"	},
 	{	"id": 1510,	"name": "ちびハツネ",	"rare": 3,	"classID": 21000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1510_00"	},
-	{	"id": 1511,	"name": "銀月の亜神アラン",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1511_00",	"imgaw": "1511_01"	},
+	{	"id": 1511,	"name": "銀月の亜神アラン",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1511_00",	"imgaw": "1511_01",	"imgaw2A": "1511_02",	"imgaw2B": "1511_03"	},
 	{	"id": 1512,	"name": "幽境新婦フーロン",	"rare": 5,	"classID": 5500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 104,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1512_00",	"imgaw": "1512_01"	},
 	{	"id": 1513,	"name": "婚礼の大盾ベルニス",	"rare": 4,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 104,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1513_00",	"imgaw": "1513_01"	},
 	{	"id": 1514,	"name": "ひだまりの花嫁ユーティ",	"rare": 4,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1514_00",	"imgaw": "1514_01"	},
@@ -2122,5 +2122,10 @@ var charaData = [
 	{	"id": 2344,	"name": "鋼の掘削兵ピーク",	"rare": 4,	"classID": 135600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2344_00",	"imgaw": "2344_01"	},
 	{	"id": 2351,	"name": "メカボックス",	"rare": 5,	"classID": 160300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2352,	"name": "重メカボックス",	"rare": 5,	"classID": 160320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2353,	"name": "重メカボックス",	"rare": 1,	"classID": 44800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2353,	"name": "重メカボックス",	"rare": 1,	"classID": 44800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2017,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2355,	"name": "王国医学伝キリエ",	"rare": 5,	"classID": 158200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2355_00",	"imgaw": "2355_01"	},
+	{	"id": 2356,	"name": "要塞",	"rare": 3,	"classID": 160400,	"sortGroupID": 30,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2356_00"	},
+	{	"id": 2357,	"name": "ちびハクノカミ",	"rare": 3,	"classID": 30600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2357_00"	},
+	{	"id": 2358,	"name": "ちびタラニア",	"rare": 3,	"classID": 21600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2358_00"	},
+	{	"id": 2359,	"name": "城門防衛部隊",	"rare": 5,	"classID": 160500,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
