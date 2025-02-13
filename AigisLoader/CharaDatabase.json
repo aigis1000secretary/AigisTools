@@ -18401,5 +18401,16 @@
   "urlName": "%ce%f8%a4%ce%b5%b3%c1%e4%b2%b5%bd%f7%a5%a8%a5%ec%a5%a4%a5%f3",
   "rarity": "プラチナ",
   "class": "ワルキューレ"
+ },
+ {
+  "name": "ちびゴライア",
+  "subName": "ゴライア",
+  "ability": "",
+  "ability_aw": "",
+  "skill": "▹体力強化Ⅲ\n40秒最大ＨＰが1.8倍に上昇",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%a5%b4%a5%e9%a5%a4%a5%a2",
+  "rarity": "ゴールド",
+  "class": "竜兵"
  }
 ]

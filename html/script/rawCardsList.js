@@ -1,4 +1,4 @@
-var maxCid = 2365;
+var maxCid = 2366;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2133,5 +2133,6 @@ var charaData = [
 	{	"id": 2362,	"name": "乙女の守護者アデライド",	"rare": 5,	"classID": 6700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2362_00",	"imgaw": "2362_01"	},
 	{	"id": 2363,	"name": "赤心の智将マツリ",	"rare": 5,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2363_00",	"imgaw": "2363_01"	},
 	{	"id": 2364,	"name": "甘い言葉ノストラ",	"rare": 4,	"classID": 12800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2364_00",	"imgaw": "2364_01"	},
-	{	"id": 2365,	"name": "恋の騎槍乙女エレイン",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2365_00",	"imgaw": "2365_01"	}
+	{	"id": 2365,	"name": "恋の騎槍乙女エレイン",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2365_00",	"imgaw": "2365_01"	},
+	{	"id": 2366,	"name": "ちびゴライア",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2366_00"	}
 ]
