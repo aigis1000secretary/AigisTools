@@ -1,4 +1,4 @@
-var maxCid = 2366;
+var maxCid = 2379;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2129,10 +2129,17 @@ var charaData = [
 	{	"id": 2358,	"name": "ちびタラニア",	"rare": 3,	"classID": 21600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2358_00"	},
 	{	"id": 2359,	"name": "城門防衛部隊",	"rare": 5,	"classID": 160500,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2360,	"name": "思慕の政務官アンナ",	"rare": 5,	"classID": 11500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 102,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2360_00"	},
-	{	"id": 2361,	"name": "恋する花鏡ミア",	"rare": 4,	"classID": 11200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2361_00"	},
+	{	"id": 2361,	"name": "恋する花鏡ミア",	"rare": 4,	"classID": 11200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2361_00",	"imgaw": "2361_01"	},
 	{	"id": 2362,	"name": "乙女の守護者アデライド",	"rare": 5,	"classID": 6700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2362_00",	"imgaw": "2362_01"	},
 	{	"id": 2363,	"name": "赤心の智将マツリ",	"rare": 5,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2363_00",	"imgaw": "2363_01"	},
 	{	"id": 2364,	"name": "甘い言葉ノストラ",	"rare": 4,	"classID": 12800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2364_00",	"imgaw": "2364_01"	},
 	{	"id": 2365,	"name": "恋の騎槍乙女エレイン",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2365_00",	"imgaw": "2365_01"	},
-	{	"id": 2366,	"name": "ちびゴライア",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2366_00"	}
+	{	"id": 2366,	"name": "ちびゴライア",	"rare": 3,	"classID": 20700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2366_00"	},
+	{	"id": 2367,	"name": "歴戦弓兵ダニエラ",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2367_00",	"imgaw": "2367_01"	},
+	{	"id": 2368,	"name": "可憐な山賊娘リーフ",	"rare": 5,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2368_00",	"imgaw": "2368_01"	},
+	{	"id": 2369,	"name": "王国幻術士チェルシー",	"rare": 4,	"classID": 19500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2369_00",	"imgaw": "2369_01"	},
+	{	"id": 2370,	"name": "天馬騎士団長エスタ(幻影)",	"rare": 5,	"classID": 145000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2372_00"	},
+	{	"id": 2373,	"name": "白き射手ナナリー(幻影)",	"rare": 5,	"classID": 160600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2375_00"	},
+	{	"id": 2376,	"name": "鉄腕乙女ディーネ(幻影)",	"rare": 5,	"classID": 145100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2378_00"	},
+	{	"id": 2379,	"name": "ターゲットマーカー_歴戦弓兵ダニエラ",	"rare": 5,	"classID": 145200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2379_00"	}
 ]
