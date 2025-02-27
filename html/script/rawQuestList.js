@@ -2915,6 +2915,7 @@ let questList = [
 	{	"id": "410399/7940",	"map": "4108",	"missionTitle": "第１０回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410399,	"questID": 7940,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
 	{	"id": "410400/8161",	"map": "4109",	"missionTitle": "第１１回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410400,	"questID": 8161,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
 	{	"id": "410462/8326",	"map": "4176",	"missionTitle": "第１２回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410462,	"questID": 8326,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
+	{	"id": "410491/8494",	"map": "9309",	"missionTitle": "第１３回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410491,	"questID": 8494,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
 	{	"id": "410246/6859",	"map": "4101",	"missionTitle": "第３回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410246,	"questID": 6859,	"location": "00",	"entry": null,	"life": 50,	"startUP": 100,	"unitLimit": 10},
 	{	"id": "410263/6971",	"map": "4102",	"missionTitle": "第４回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410263,	"questID": 6971,	"location": "00",	"entry": null,	"life": 50,	"startUP": 100,	"unitLimit": 10},
 	{	"id": "410284/7118",	"map": "4103",	"missionTitle": "第５回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410284,	"questID": 7118,	"location": "00",	"entry": null,	"life": 50,	"startUP": 100,	"unitLimit": 10},

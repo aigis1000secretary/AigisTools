@@ -1,4 +1,4 @@
-var maxCid = 2379;
+var maxCid = 2390;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2141,5 +2141,16 @@ var charaData = [
 	{	"id": 2370,	"name": "天馬騎士団長エスタ(幻影)",	"rare": 5,	"classID": 145000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2372_00"	},
 	{	"id": 2373,	"name": "白き射手ナナリー(幻影)",	"rare": 5,	"classID": 160600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2375_00"	},
 	{	"id": 2376,	"name": "鉄腕乙女ディーネ(幻影)",	"rare": 5,	"classID": 145100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2378_00"	},
-	{	"id": 2379,	"name": "ターゲットマーカー_歴戦弓兵ダニエラ",	"rare": 5,	"classID": 145200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2379_00"	}
+	{	"id": 2379,	"name": "ターゲットマーカー_歴戦弓兵ダニエラ",	"rare": 5,	"classID": 145200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2379_00"	},
+	{	"id": 2380,	"name": "時神大祭クロノシア",	"rare": 5,	"classID": 156900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2380_00",	"imgaw": "2380_01"	},
+	{	"id": 2381,	"name": "先代武王ロウユ",	"rare": 5,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2381_00",	"imgaw": "2381_01"	},
+	{	"id": 2382,	"name": "紅鶴翼の癒し手フェニカ",	"rare": 5,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2382_00",	"imgaw": "2382_01"	},
+	{	"id": 2383,	"name": "藍翼の大天狗ナゴミ",	"rare": 5,	"classID": 5000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2383_00",	"imgaw": "2383_01"	},
+	{	"id": 2384,	"name": "戦斧の巨人ディタノ",	"rare": 4,	"classID": 142600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2384_00",	"imgaw": "2384_01"	},
+	{	"id": 2385,	"name": "ひな壇",	"rare": 3,	"classID": 145500,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2385_00"	},
+	{	"id": 2386,	"name": "ちび祓剣主神",	"rare": 3,	"classID": 252100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2386_00"	},
+	{	"id": 2387,	"name": "ちびリエーフ",	"rare": 3,	"classID": 30300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2387_00"	},
+	{	"id": 2388,	"name": "ちびミカ",	"rare": 3,	"classID": 170700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2388_00"	},
+	{	"id": 2389,	"name": "時神大祭クロノシア用トークン",	"rare": 3,	"classID": 160700,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2389_00"	},
+	{	"id": 2390,	"name": "時神大祭クロノシア用トークン_覚醒",	"rare": 3,	"classID": 160720,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2390_00"	}
 ]
