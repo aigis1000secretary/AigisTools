@@ -1,4 +1,4 @@
-var maxCid = 2390;
+var maxCid = 2399;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2063,7 +2063,7 @@ var charaData = [
 	{	"id": 2280,	"name": "自由人(幻影)",	"rare": 5,	"classID": 144400,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2281_00"	},
 	{	"id": 2282,	"name": "新任医官ニーカ",	"rare": 4,	"classID": 158200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2282_00",	"imgaw": "2282_01"	},
 	{	"id": 2283,	"name": "雷神の騎士マージ",	"rare": 5,	"classID": 127800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2283_00",	"imgaw": "2283_01"	},
-	{	"id": 2284,	"name": "魔物使いバスカット",	"rare": 5,	"classID": 12400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2284_00",	"imgaw": "2284_01"	},
+	{	"id": 2284,	"name": "魔物使いバスカット",	"rare": 5,	"classID": 12400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2284_00",	"imgaw": "2284_01"	},
 	{	"id": 2285,	"name": "激励の踊り子シャルキー",	"rare": 5,	"classID": 11400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2285_00",	"imgaw": "2285_01"	},
 	{	"id": 2286,	"name": "武の半神ヘラクレイア",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2286_00",	"imgaw": "2286_01"	},
 	{	"id": 2287,	"name": "ちびダン",	"rare": 3,	"classID": 21400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2287_00"	},
@@ -2152,5 +2152,14 @@ var charaData = [
 	{	"id": 2387,	"name": "ちびリエーフ",	"rare": 3,	"classID": 30300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2387_00"	},
 	{	"id": 2388,	"name": "ちびミカ",	"rare": 3,	"classID": 170700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2388_00"	},
 	{	"id": 2389,	"name": "時神大祭クロノシア用トークン",	"rare": 3,	"classID": 160700,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2389_00"	},
-	{	"id": 2390,	"name": "時神大祭クロノシア用トークン_覚醒",	"rare": 3,	"classID": 160720,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2390_00"	}
+	{	"id": 2390,	"name": "時神大祭クロノシア用トークン_覚醒",	"rare": 3,	"classID": 160720,	"sortGroupID": 20,	"placeType": 4,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2390_00"	},
+	{	"id": 2391,	"name": "賢仙の授業 清源妙道真君",	"rare": 5,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 103,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2391_00",	"imgaw": "2391_01"	},
+	{	"id": 2392,	"name": "翠花の留学生メアリ",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2392_00",	"imgaw": "2392_01"	},
+	{	"id": 2393,	"name": "学園政務官アンナ",	"rare": 5,	"classID": 11500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2393_00"	},
+	{	"id": 2394,	"name": "早弁傭兵ナシート",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2394_00"	},
+	{	"id": 2395,	"name": "流れの断罪番長サティン",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2395_00",	"imgaw": "2395_01"	},
+	{	"id": 2396,	"name": "大地の発明家ボルカ",	"rare": 5,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2396_00",	"imgaw": "2396_01"	},
+	{	"id": 2397,	"name": "ちび一目連",	"rare": 3,	"classID": 236700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2397_00"	},
+	{	"id": 2398,	"name": "通天教主（学）",	"rare": 5,	"classID": 160800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2398_00"	},
+	{	"id": 2399,	"name": "通天教主（真学）",	"rare": 5,	"classID": 160820,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2399_00"	}
 ]
