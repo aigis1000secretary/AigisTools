@@ -18621,5 +18621,16 @@
   "urlName": "%a4%c1%a4%d3%b0%ec%cc%dc%cf%a2",
   "rarity": "ゴールド",
   "class": "一目の竜"
+ },
+ {
+  "name": "千万ゴールドアーマー",
+  "subName": "千万ゴールドアーマー",
+  "ability": "",
+  "ability_aw": "",
+  "skill": "",
+  "skill_aw": "",
+  "urlName": "%c0%e9%cb%fc%a5%b4%a1%bc%a5%eb%a5%c9%a5%a2%a1%bc%a5%de%a1%bc",
+  "rarity": "ゴールド",
+  "class": "換金ユニット"
  }
 ]

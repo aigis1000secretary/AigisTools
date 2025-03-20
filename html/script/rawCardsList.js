@@ -1,4 +1,4 @@
-var maxCid = 2399;
+var maxCid = 2400;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2161,5 +2161,6 @@ var charaData = [
 	{	"id": 2396,	"name": "大地の発明家ボルカ",	"rare": 5,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2396_00",	"imgaw": "2396_01"	},
 	{	"id": 2397,	"name": "ちび一目連",	"rare": 3,	"classID": 236700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2397_00"	},
 	{	"id": 2398,	"name": "通天教主（学）",	"rare": 5,	"classID": 160800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2398_00"	},
-	{	"id": 2399,	"name": "通天教主（真学）",	"rare": 5,	"classID": 160820,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2399_00"	}
+	{	"id": 2399,	"name": "通天教主（真学）",	"rare": 5,	"classID": 160820,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2399_00"	},
+	{	"id": 2400,	"name": "千万ゴールドアーマー",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2400_00"	}
 ]
