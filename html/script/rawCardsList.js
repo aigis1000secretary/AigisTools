@@ -1,4 +1,4 @@
-var maxCid = 2400;
+var maxCid = 2414;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2156,11 +2156,25 @@ var charaData = [
 	{	"id": 2391,	"name": "賢仙の授業 清源妙道真君",	"rare": 5,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 103,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2391_00",	"imgaw": "2391_01"	},
 	{	"id": 2392,	"name": "翠花の留学生メアリ",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2392_00",	"imgaw": "2392_01"	},
 	{	"id": 2393,	"name": "学園政務官アンナ",	"rare": 5,	"classID": 11500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2393_00"	},
-	{	"id": 2394,	"name": "早弁傭兵ナシート",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2394_00"	},
+	{	"id": 2394,	"name": "早弁傭兵ナシート",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2394_00",	"imgaw": "2394_01"	},
 	{	"id": 2395,	"name": "流れの断罪番長サティン",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2395_00",	"imgaw": "2395_01"	},
 	{	"id": 2396,	"name": "大地の発明家ボルカ",	"rare": 5,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2396_00",	"imgaw": "2396_01"	},
 	{	"id": 2397,	"name": "ちび一目連",	"rare": 3,	"classID": 236700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2397_00"	},
 	{	"id": 2398,	"name": "通天教主（学）",	"rare": 5,	"classID": 160800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2398_00"	},
 	{	"id": 2399,	"name": "通天教主（真学）",	"rare": 5,	"classID": 160820,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 103,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2399_00"	},
-	{	"id": 2400,	"name": "千万ゴールドアーマー",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2400_00"	}
+	{	"id": 2400,	"name": "千万ゴールドアーマー",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2400_00"	},
+	{	"id": 2401,	"name": "封門の番人カルペム",	"rare": 5,	"classID": 141300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2401_00",	"imgaw": "2401_01"	},
+	{	"id": 2402,	"name": "白竜機兵ダグマール",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2402_00",	"imgaw": "2402_01"	},
+	{	"id": 2403,	"name": "帝国選抜飛行士ヴァルデ",	"rare": 5,	"classID": 155900,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2403_00",	"imgaw": "2403_01"	},
+	{	"id": 2404,	"name": "帝国騎兵隊長メーア",	"rare": 5,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2404_00",	"imgaw": "2404_01"	},
+	{	"id": 2405,	"name": "帝国音楽隊トットン",	"rare": 4,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2405_00",	"imgaw": "2405_01"	},
+	{	"id": 2406,	"name": "帝国妖糸兵ツザーネ",	"rare": 4,	"classID": 143500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2406_00",	"imgaw": "2406_01"	},
+	{	"id": 2407,	"name": "帝国魔兵ヴィルデフラウ",	"rare": 4,	"classID": 125600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2407_00",	"imgaw": "2407_01"	},
+	{	"id": 2408,	"name": "カンフー王子",	"rare": 5,	"classID": 145700,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2408_00"	},
+	{	"id": 2409,	"name": "装着型魔導砲台",	"rare": 3,	"classID": 160900,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2409_00"	},
+	{	"id": 2410,	"name": "ちびマレブランケ",	"rare": 3,	"classID": 32500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2410_00"	},
+	{	"id": 2411,	"name": "ちびヒルデ",	"rare": 3,	"classID": 33100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2411_00"	},
+	{	"id": 2412,	"name": "魔導砲台",	"rare": 5,	"classID": 161000,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2412_00"	},
+	{	"id": 2413,	"name": "苛糸トークン",	"rare": 5,	"classID": 145900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2413_00"	},
+	{	"id": 2414,	"name": "苛縛トークン",	"rare": 5,	"classID": 145920,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2414_00"	}
 ]
