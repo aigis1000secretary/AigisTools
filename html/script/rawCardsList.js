@@ -1,4 +1,4 @@
-var maxCid = 2414;
+var maxCid = 2428;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2176,5 +2176,14 @@ var charaData = [
 	{	"id": 2411,	"name": "ちびヒルデ",	"rare": 3,	"classID": 33100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2411_00"	},
 	{	"id": 2412,	"name": "魔導砲台",	"rare": 5,	"classID": 161000,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2412_00"	},
 	{	"id": 2413,	"name": "苛糸トークン",	"rare": 5,	"classID": 145900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2413_00"	},
-	{	"id": 2414,	"name": "苛縛トークン",	"rare": 5,	"classID": 145920,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2414_00"	}
+	{	"id": 2414,	"name": "苛縛トークン",	"rare": 5,	"classID": 145920,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2414_00"	},
+	{	"id": 2415,	"name": "ちびダーク王子",	"rare": 3,	"classID": 237800,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2415_00"	},
+	{	"id": 2416,	"name": "兎祭の癒し鳥ジタリス",	"rare": 4,	"classID": 152200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 110,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2416_00",	"imgaw": "2416_01"	},
+	{	"id": 2417,	"name": "兎耳神官エクス",	"rare": 5,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 110,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2417_00",	"imgaw": "2417_01"	},
+	{	"id": 2418,	"name": "祝兎と向日葵リュティエ",	"rare": 4,	"classID": 19500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 110,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2418_00",	"imgaw": "2418_01"	},
+	{	"id": 2419,	"name": "金獣の領主リンクス(幻影)",	"rare": 5,	"classID": 161200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2424_00"	},
+	{	"id": 2420,	"name": "世界樹の聖霊ラタトスク(幻影)",	"rare": 5,	"classID": 161300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2425_00"	},
+	{	"id": 2423,	"name": "砂漠の亜神バスティス(幻影)",	"rare": 5,	"classID": 161100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2426_00"	},
+	{	"id": 2427,	"name": "兎耳神官エクストークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "2427_00"	},
+	{	"id": 2428,	"name": "兎耳神官エクス覚醒トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "2428_00"	}
 ]
