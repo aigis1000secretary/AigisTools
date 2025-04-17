@@ -1,4 +1,4 @@
-var maxCid = 2428;
+var maxCid = 2430;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2185,5 +2185,7 @@ var charaData = [
 	{	"id": 2420,	"name": "世界樹の聖霊ラタトスク(幻影)",	"rare": 5,	"classID": 161300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2425_00"	},
 	{	"id": 2423,	"name": "砂漠の亜神バスティス(幻影)",	"rare": 5,	"classID": 161100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 5,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2426_00"	},
 	{	"id": 2427,	"name": "兎耳神官エクストークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "2427_00"	},
-	{	"id": 2428,	"name": "兎耳神官エクス覚醒トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "2428_00"	}
+	{	"id": 2428,	"name": "兎耳神官エクス覚醒トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "2428_00"	},
+	{	"id": 2429,	"name": "夜語りの亜神エオリス",	"rare": 5,	"classID": 142600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2429_00",	"imgaw": "2429_01"	},
+	{	"id": 2430,	"name": "原始の術士ムーヨ",	"rare": 4,	"classID": 161400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2430_00",	"imgaw": "2430_01"	}
 ]
