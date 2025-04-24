@@ -1,4 +1,4 @@
-var maxCid = 2430;
+var maxCid = 2440;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2187,5 +2187,15 @@ var charaData = [
 	{	"id": 2427,	"name": "兎耳神官エクストークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "2427_00"	},
 	{	"id": 2428,	"name": "兎耳神官エクス覚醒トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2020,	"isEvent": 1,	"isToken": 1,	"img": "2428_00"	},
 	{	"id": 2429,	"name": "夜語りの亜神エオリス",	"rare": 5,	"classID": 142600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2429_00",	"imgaw": "2429_01"	},
-	{	"id": 2430,	"name": "原始の術士ムーヨ",	"rare": 4,	"classID": 161400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2430_00",	"imgaw": "2430_01"	}
+	{	"id": 2430,	"name": "原始の術士ムーヨ",	"rare": 4,	"classID": 161400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2430_00",	"imgaw": "2430_01"	},
+	{	"id": 2431,	"name": "毒花の妖糸ジュジュカ",	"rare": 4,	"classID": 143500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2431_00",	"imgaw": "2431_01"	},
+	{	"id": 2432,	"name": "ダミー8",	"rare": 5,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 1,	"img": "2432_00",	"imgaw": "2432_01"	},
+	{	"id": 2433,	"name": "戦術教官長ケイティ",	"rare": 5,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2433_00",	"imgaw": "2433_01"	},
+	{	"id": 2434,	"name": "大盾の守護乙女ベルニス",	"rare": 5,	"classID": 200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2434_00",	"imgaw": "2434_01"	},
+	{	"id": 2435,	"name": "王国山賊頭モーティマ",	"rare": 5,	"classID": 600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2435_00",	"imgaw": "2435_01"	},
+	{	"id": 2436,	"name": "ちびアリエル",	"rare": 3,	"classID": 22800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2436_00"	},
+	{	"id": 2437,	"name": "ちびカラザ",	"rare": 3,	"classID": 170600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2437_00"	},
+	{	"id": 2438,	"name": "呪糸トークン",	"rare": 5,	"classID": 146000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2438_00"	},
+	{	"id": 2439,	"name": "呪花トークン",	"rare": 5,	"classID": 146020,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2439_00"	},
+	{	"id": 2440,	"name": "個人防衛魔力障壁",	"rare": 3,	"classID": 161500,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2440_00"	}
 ]
