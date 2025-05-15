@@ -1,4 +1,4 @@
-var maxCid = 2453;
+var maxCid = 2454;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2198,7 +2198,7 @@ var charaData = [
 	{	"id": 2438,	"name": "呪糸トークン",	"rare": 5,	"classID": 146000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2438_00"	},
 	{	"id": 2439,	"name": "呪花トークン",	"rare": 5,	"classID": 146020,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2439_00"	},
 	{	"id": 2440,	"name": "個人防衛魔力障壁",	"rare": 3,	"classID": 161500,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2440_00"	},
-	{	"id": 2441,	"name": "時の監視者フィノーラ",	"rare": 4,	"classID": 11700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2441_00"	},
+	{	"id": 2441,	"name": "時の監視者フィノーラ",	"rare": 4,	"classID": 11700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2441_00",	"imgaw": "2441_01"	},
 	{	"id": 2442,	"name": "鋼を継ぐ者アヴリック",	"rare": 11,	"classID": 161600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2442_00",	"imgaw": "2442_01"	},
 	{	"id": 2443,	"name": "鋼を継ぐ者アヴリック",	"rare": 10,	"classID": 161600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2443_00",	"imgaw": "2443_01"	},
 	{	"id": 2444,	"name": "神野悪五郎",	"rare": 11,	"classID": 146100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2444_00",	"imgaw": "2444_01"	},
@@ -2209,5 +2209,6 @@ var charaData = [
 	{	"id": 2450,	"name": "爆撃騎フィアフラ",	"rare": 5,	"classID": 162000,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2450_00"	},
 	{	"id": 2451,	"name": "鋼を継ぐ者アヴリック【黒】_射程指定トークン",	"rare": 5,	"classID": 161700,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2451_00"	},
 	{	"id": 2452,	"name": "鋼を継ぐ者アヴリック【白】_射程指定トークン",	"rare": 5,	"classID": 161700,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2452_00"	},
-	{	"id": 2453,	"name": "ちびダイオージ",	"rare": 3,	"classID": 241900,	"sortGroupID": 30,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2453_00"	}
+	{	"id": 2453,	"name": "ちびダイオージ",	"rare": 3,	"classID": 241900,	"sortGroupID": 30,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2453_00"	},
+	{	"id": 2454,	"name": "魔種人類学者ステルゥ",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2454_00",	"imgaw": "2454_01"	}
 ]
