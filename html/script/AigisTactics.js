@@ -32,7 +32,8 @@ let bodyOnload = function () {
     select.options.add(new Option("イベントヒストリー 八年目", "History08"));
     select.options.add(new Option("イベントヒストリー 九年目", "History09"));
     select.options.add(new Option("イベントヒストリー 十年目", "History10"));
-    // select.options.add(new Option("イベントヒストリー 十一年目", "History11"));
+    select.options.add(new Option("イベントヒストリー 十一年目", "History11"));
+    // select.options.add(new Option("イベントヒストリー 十二年目", "History12"));
     select.options.add(new Option("", ""));
 
     select.options.add(new Option("復刻ミッション", "Reproduce"));
@@ -529,7 +530,8 @@ let onChangeSelectMissionType = function (select) {
         case "History08": { items = missionIDs.filter(mID => { return (920153 <= parseInt(mID) && parseInt(mID) < 920169) }); } break;
         case "History09": { items = missionIDs.filter(mID => { return (920169 <= parseInt(mID) && parseInt(mID) < 920185) }); } break;
         case "History10": { items = missionIDs.filter(mID => { return (920188 <= parseInt(mID) && parseInt(mID) < 920206) }); } break;
-        // case "History11": { items = missionIDs.filter(mID => { return (920206 <= parseInt(mID) && parseInt(mID) < 920206) }); } break;
+        case "History11": { items = missionIDs.filter(mID => { return (920206 <= parseInt(mID) && parseInt(mID) < 920223) }); } break;
+        // case "History12": { items = missionIDs.filter(mID => { return (920223 <= parseInt(mID) && parseInt(mID) < 920223) }); } break;
 
         case "Special": { items = missionIDs.filter(mID => { return (320000 <= parseInt(mID) && parseInt(mID) < 400000) || missionList[mID].indexOf("異世界") != -1; }); } break;
 
