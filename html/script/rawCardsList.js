@@ -1,4 +1,4 @@
-var maxCid = 2458;
+var maxCid = 2465;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2214,5 +2214,11 @@ var charaData = [
 	{	"id": 2455,	"name": "越境要塞の領主ロヴィサ",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2455_00"	},
 	{	"id": 2456,	"name": "狂風の亜神ズィズィー",	"rare": 5,	"classID": 162100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2456_00",	"imgaw": "2456_01"	},
 	{	"id": 2457,	"name": "災夜の亜神ラシュマシュ",	"rare": 5,	"classID": 146300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2457_00",	"imgaw": "2457_01"	},
-	{	"id": 2458,	"name": "風焔の魔剣士ディシア",	"rare": 5,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2458_00",	"imgaw": "2458_01"	}
+	{	"id": 2458,	"name": "風焔の魔剣士ディシア",	"rare": 5,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2458_00",	"imgaw": "2458_01"	},
+	{	"id": 2459,	"name": "ガレア",	"rare": 5,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2459_00",	"imgaw": "2459_01"	},
+	{	"id": 2460,	"name": "英雄と呼ばれた男",	"rare": 5,	"classID": 146500,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2465_00"	},
+	{	"id": 2461,	"name": "ジャバウォック",	"rare": 3,	"classID": 146400,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2461_00"	},
+	{	"id": 2462,	"name": "ちびシェミア",	"rare": 3,	"classID": 21700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2462_00"	},
+	{	"id": 2463,	"name": "ちびファルア",	"rare": 3,	"classID": 233700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2463_00"	},
+	{	"id": 2464,	"name": "癒しの魔力結晶",	"rare": 5,	"classID": 146600,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2464_00"	}
 ]
