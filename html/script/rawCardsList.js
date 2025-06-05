@@ -1,4 +1,4 @@
-var maxCid = 2465;
+var maxCid = 2472;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2010,7 +2010,7 @@ var charaData = [
 	{	"id": 2216,	"name": "マリオネットⅢ",	"rare": 5,	"classID": 143380,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2217,	"name": "ちびクロノシアトークン",	"rare": 5,	"classID": 177000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2217_00"	},
 	{	"id": 2223,	"name": "大華の礎たる者 伏綺",	"rare": 11,	"classID": 143600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2223_00",	"imgaw": "2223_01"	},
-	{	"id": 2224,	"name": "大華の礎たる者 伏綺",	"rare": 10,	"classID": 143600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2224_00",	"imgaw": "2224_01"	},
+	{	"id": 2224,	"name": "大華の礎たる者 伏綺",	"rare": 10,	"classID": 143600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2224_00",	"imgaw": "2224_01"	},
 	{	"id": 2225,	"name": "ちびイエラ",	"rare": 3,	"classID": 172200,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2225_00"	},
 	{	"id": 2226,	"name": "ちびエメルダ",	"rare": 3,	"classID": 22600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2226_00"	},
 	{	"id": 2227,	"name": "妖精の丘",	"rare": 3,	"classID": 159100,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2227_00"	},
@@ -2211,7 +2211,7 @@ var charaData = [
 	{	"id": 2452,	"name": "鋼を継ぐ者アヴリック【白】_射程指定トークン",	"rare": 5,	"classID": 161700,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2452_00"	},
 	{	"id": 2453,	"name": "ちびダイオージ",	"rare": 3,	"classID": 241900,	"sortGroupID": 30,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2453_00"	},
 	{	"id": 2454,	"name": "魔種人類学者ステルゥ",	"rare": 4,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2454_00",	"imgaw": "2454_01"	},
-	{	"id": 2455,	"name": "越境要塞の領主ロヴィサ",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2455_00"	},
+	{	"id": 2455,	"name": "越境要塞の領主ロヴィサ",	"rare": 5,	"classID": 15400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2455_00",	"imgaw": "2455_01"	},
 	{	"id": 2456,	"name": "狂風の亜神ズィズィー",	"rare": 5,	"classID": 162100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2456_00",	"imgaw": "2456_01"	},
 	{	"id": 2457,	"name": "災夜の亜神ラシュマシュ",	"rare": 5,	"classID": 146300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2457_00",	"imgaw": "2457_01"	},
 	{	"id": 2458,	"name": "風焔の魔剣士ディシア",	"rare": 5,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2458_00",	"imgaw": "2458_01"	},
@@ -2220,5 +2220,11 @@ var charaData = [
 	{	"id": 2461,	"name": "ジャバウォック",	"rare": 3,	"classID": 146400,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2461_00"	},
 	{	"id": 2462,	"name": "ちびシェミア",	"rare": 3,	"classID": 21700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2462_00"	},
 	{	"id": 2463,	"name": "ちびファルア",	"rare": 3,	"classID": 233700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 5,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2463_00"	},
-	{	"id": 2464,	"name": "癒しの魔力結晶",	"rare": 5,	"classID": 146600,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2464_00"	}
+	{	"id": 2464,	"name": "癒しの魔力結晶",	"rare": 5,	"classID": 146600,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2464_00"	},
+	{	"id": 2466,	"name": "蜂殻の蟲使いハニービー",	"rare": 4,	"classID": 162200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2466_00",	"imgaw": "2466_01"	},
+	{	"id": 2467,	"name": "寒冷の支援者ポワワ",	"rare": 4,	"classID": 162400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2467_00",	"imgaw": "2467_01"	},
+	{	"id": 2468,	"name": "キラービー",	"rare": 5,	"classID": 162300,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2468_00"	},
+	{	"id": 2469,	"name": "ヴェスパー",	"rare": 5,	"classID": 162320,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2470_00"	},
+	{	"id": 2471,	"name": "寒冷の支援者ポワワトークン",	"rare": 5,	"classID": 162500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2471_00"	},
+	{	"id": 2472,	"name": "寒冷の支援者ポワワ覚醒トークン",	"rare": 5,	"classID": 162520,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2472_00"	}
 ]
