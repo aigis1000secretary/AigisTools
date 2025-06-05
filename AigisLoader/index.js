@@ -96,8 +96,8 @@ const getIconImage = function (filepath) {
 
 
 let rawList = [];
-let addedList = [];
-let changesList = [];
+const addedList = [];
+const changesList = [];
 const inChangelog = (fname) => { return changesList.length == 0 || addedList.includes(fname) || changesList.includes(fname); }
 
 const downloadRawData = async () => {
@@ -1134,7 +1134,9 @@ const aigisQuestsList = async () => {
                         "第一章　王都脱出", "第二章　王城奪還", "第三章　熱砂の砂漠", "第四章　東の国", "第五章　魔法都市",
                         "第六章　密林の戦い", "第七章　魔の都", "第八章　魔神の体内", "第九章　鋼の都", "第十章　海底",
                         "第十一章　ポセイオス"
-                    ][missionID - 100001] || "NULL";
+                    ][missionID - 100001] || [
+                        "外伝"
+                    ][missionID - 100101] || "NULL";
                 }
 
                 // search mission in db
@@ -1299,7 +1301,9 @@ const aigisQuestsList = async () => {
             oldLocationList = eval(`(${oldLocationList})`);
         }
 
+        let pngToJpgPromise = sleep(100);
         for (let quest of questList) {
+
             // quest config
             let map = quest.map;
             let location = quest.location;
@@ -1316,30 +1320,27 @@ const aigisQuestsList = async () => {
             let pngPath = raws.find(p => p.endsWith(".png"));
 
             // online file exist
-            if (pngPath && (!fs.existsSync(outputPath) || changesList.indexOf(mapName) != -1) && dlImg) {
+            if (pngPath && (!fs.existsSync(outputPath) || changesList.indexOf(mapName) != -1)) {
                 // online path + no local resource
                 // online path + in change log
 
                 // convert new map png to jpg
-                await new Promise((resolve, reject) => {
+                await pngToJpgPromise;
+                pngToJpgPromise = new Promise((resolve, reject) => {
                     Jimp.read(pngPath)
-                        .then(img => {
-                            console.log(` getting ${fileName} map image...`);
-                            return img.quality(70) // set JPEG quality
-                                .write(outputPath + ".jpg"); // save
-                        }).then(async () => {
-                            console.log(" Jimp.quality(70).write()");
-
+                        .then(img => console.log(` getting ${fileName} map image...`) || img)
+                        .then(img => img.quality(70).write(outputPath + ".jpg")) // set JPEG quality, save
+                        .then(async () => {
                             await sleep(100);
                             // del old local resource if exist
                             if (fs.existsSync(outputPath)) { fs.unlinkSync(outputPath); }
                             // rename
                             let log = child_process.execSync(`ren ${fileName}.jpg ${fileName}`, { cwd: mapsOutputPath }).toString().trim();
-                            if (log != "") console.log(log);
+                            console.log(`  Jimp.quality(70).write(${fileName}.jpg)`, log);
 
-                            console.log("");
                             resolve();
-                        }).catch(err => {
+                        })
+                        .catch(err => {
                             console.log(pngPath);
                             console.error(err);
                             // reject();
@@ -1397,6 +1398,8 @@ const aigisQuestsList = async () => {
                 console.log('', quest);
             }
         }
+
+        await pngToJpgPromise;
     }
 
     // check map image usefull
