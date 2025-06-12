@@ -1,4 +1,4 @@
-var maxCid = 2472;
+var maxCid = 2481;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2226,5 +2226,14 @@ var charaData = [
 	{	"id": 2468,	"name": "キラービー",	"rare": 5,	"classID": 162300,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2468_00"	},
 	{	"id": 2469,	"name": "ヴェスパー",	"rare": 5,	"classID": 162320,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2470_00"	},
 	{	"id": 2471,	"name": "寒冷の支援者ポワワトークン",	"rare": 5,	"classID": 162500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2471_00"	},
-	{	"id": 2472,	"name": "寒冷の支援者ポワワ覚醒トークン",	"rare": 5,	"classID": 162520,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2472_00"	}
+	{	"id": 2472,	"name": "寒冷の支援者ポワワ覚醒トークン",	"rare": 5,	"classID": 162520,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2472_00"	},
+	{	"id": 2473,	"name": "迷宮の花嫁ニミュエ",	"rare": 5,	"classID": 128100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 104,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2473_00"	},
+	{	"id": 2474,	"name": "朱珠の深海花嫁ムルーア",	"rare": 5,	"classID": 126800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2474_00",	"imgaw": "2474_01"	},
+	{	"id": 2475,	"name": "火と鉄の誓約ウルカノ",	"rare": 5,	"classID": 5200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 104,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2475_00",	"imgaw": "2475_01"	},
+	{	"id": 2476,	"name": "嫁入り天狗ホムラ",	"rare": 4,	"classID": 5000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 104,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2476_00",	"imgaw": "2476_01"	},
+	{	"id": 2477,	"name": "ちびジーラトス",	"rare": 3,	"classID": 163700,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2477_00"	},
+	{	"id": 2478,	"name": "祝福ゴースト",	"rare": 5,	"classID": 146700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2478_00"	},
+	{	"id": 2479,	"name": "式典ゴースト",	"rare": 5,	"classID": 146730,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2480,	"name": "エスコートゴースト",	"rare": 5,	"classID": 146770,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2481,	"name": "フラッグゴースト",	"rare": 5,	"classID": 146780,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
