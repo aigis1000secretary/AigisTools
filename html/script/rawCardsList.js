@@ -1,4 +1,4 @@
-var maxCid = 2505;
+var maxCid = 2507;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2256,5 +2256,7 @@ var charaData = [
 	{	"id": 2499,	"name": "夏の魔導ドローン",	"rare": 5,	"classID": 146800,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2499_00"	},
 	{	"id": 2501,	"name": "時の海辺クロノシア（分身）",	"rare": 5,	"classID": 162720,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2504,	"name": "刻暑の干渉者",	"rare": 5,	"classID": 162820,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2504_00"	},
-	{	"id": 2505,	"name": "渚の玉手箱",	"rare": 5,	"classID": 147130,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2505_00"	}
+	{	"id": 2505,	"name": "渚の玉手箱",	"rare": 5,	"classID": 147130,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2505_00"	},
+	{	"id": 2506,	"name": "デーモンシェフ",	"rare": 5,	"classID": 44900,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2507,	"name": "オルカレクス",	"rare": 5,	"classID": 45000,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
