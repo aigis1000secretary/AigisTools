@@ -1,4 +1,4 @@
-var maxCid = 2507;
+var maxCid = 2512;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2236,7 +2236,7 @@ var charaData = [
 	{	"id": 2479,	"name": "式典ゴースト",	"rare": 5,	"classID": 146730,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2479_00"	},
 	{	"id": 2480,	"name": "エスコートゴースト",	"rare": 5,	"classID": 146770,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2480_00"	},
 	{	"id": 2481,	"name": "フラッグゴースト",	"rare": 5,	"classID": 146780,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2481_00"	},
-	{	"id": 2482,	"name": "真夏の奇譚ペルセナス",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2482_00"	},
+	{	"id": 2482,	"name": "真夏の奇譚ペルセナス",	"rare": 5,	"classID": 139500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2482_00",	"imgaw": "2482_01"	},
 	{	"id": 2483,	"name": "龍宮城の夏 乙姫",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2483_00",	"imgaw": "2483_01"	},
 	{	"id": 2484,	"name": "時の海辺クロノシア",	"rare": 5,	"classID": 156900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2484_00",	"imgaw": "2484_01"	},
 	{	"id": 2485,	"name": "白日の夢イコル",	"rare": 5,	"classID": 140200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2485_00",	"imgaw": "2485_01"	},
@@ -2249,7 +2249,7 @@ var charaData = [
 	{	"id": 2492,	"name": "ちびラタトスク",	"rare": 3,	"classID": 119700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2492_00"	},
 	{	"id": 2493,	"name": "ちびヤハール",	"rare": 3,	"classID": 145300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2493_00"	},
 	{	"id": 2494,	"name": "夏服の政務官アンナ",	"rare": 5,	"classID": 11500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2494_00"	},
-	{	"id": 2495,	"name": "ペルセナストークンサマー",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2495,	"name": "ペルセナストークンサマー",	"rare": 5,	"classID": 135700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2495_00"	},
 	{	"id": 2496,	"name": "夏の玉手箱",	"rare": 5,	"classID": 147100,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2496_00"	},
 	{	"id": 2497,	"name": "夏時の干渉者",	"rare": 5,	"classID": 162800,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2497_00"	},
 	{	"id": 2498,	"name": "操屍人サマー",	"rare": 5,	"classID": 7400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
@@ -2258,5 +2258,10 @@ var charaData = [
 	{	"id": 2504,	"name": "刻暑の干渉者",	"rare": 5,	"classID": 162820,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2504_00"	},
 	{	"id": 2505,	"name": "渚の玉手箱",	"rare": 5,	"classID": 147130,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2505_00"	},
 	{	"id": 2506,	"name": "デーモンシェフ",	"rare": 5,	"classID": 44900,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2507,	"name": "オルカレクス",	"rare": 5,	"classID": 45000,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2507,	"name": "オルカレクス",	"rare": 5,	"classID": 45000,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2508,	"name": "夏の流星 天墜神星",	"rare": 5,	"classID": 10700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2508_00",	"imgaw": "2508_01"	},
+	{	"id": 2509,	"name": "ちびチェインソン男",	"rare": 3,	"classID": 50400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2509_00"	},
+	{	"id": 2510,	"name": "夏の彗星",	"rare": 5,	"classID": 162900,	"sortGroupID": 20,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2510_00"	},
+	{	"id": 2511,	"name": "夏の大彗星",	"rare": 5,	"classID": 162920,	"sortGroupID": 20,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2511_00"	},
+	{	"id": 2512,	"name": "エキーオーン人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2512_00"	}
 ]
