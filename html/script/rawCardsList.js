@@ -1,4 +1,4 @@
-var maxCid = 2520;
+var maxCid = 2525;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2268,5 +2268,10 @@ var charaData = [
 	{	"id": 2514,	"name": "花咲きの奏者プルーシア",	"rare": 4,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2514_00",	"imgaw": "2514_01"	},
 	{	"id": 2515,	"name": "悪戯娘の夏クラリーチェ",	"rare": 4,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2515_00",	"imgaw": "2515_01"	},
 	{	"id": 2516,	"name": "白狼シュナフタ",	"rare": 5,	"classID": 147200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2516_00"	},
-	{	"id": 2517,	"name": "番の白狼シュナフタ",	"rare": 5,	"classID": 147230,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2517,	"name": "番の白狼シュナフタ",	"rare": 5,	"classID": 147230,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2521,	"name": "歴史を彷徨う者ロイジィ",	"rare": 11,	"classID": 163000,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2521_00",	"imgaw": "2521_01"	},
+	{	"id": 2522,	"name": "歴史を彷徨う者ロイジィ",	"rare": 10,	"classID": 163000,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2523,	"name": "王国ファッションショー",	"rare": 3,	"classID": 147300,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2523_00"	},
+	{	"id": 2524,	"name": "白き熊戦士マータン",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2524_00",	"imgaw": "2524_01"	},
+	{	"id": 2525,	"name": "風雲大華フーコ",	"rare": 4,	"classID": 6200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2525_00"	}
 ]
