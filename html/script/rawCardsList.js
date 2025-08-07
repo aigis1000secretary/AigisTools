@@ -1,4 +1,4 @@
-var maxCid = 2532;
+var maxCid = 2547;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2280,5 +2280,20 @@ var charaData = [
 	{	"id": 2529,	"name": "ちびマギー",	"rare": 3,	"classID": 36600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2529_00"	},
 	{	"id": 2530,	"name": "エスエフの悪戯バルーン・赤",	"rare": 3,	"classID": 163100,	"sortGroupID": 20,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2530_00"	},
 	{	"id": 2531,	"name": "エスエフの悪戯バルーントークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2531_00"	},
-	{	"id": 2532,	"name": "エスエフの悪戯バルーントークン・赤",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2532_00"	}
+	{	"id": 2532,	"name": "エスエフの悪戯バルーントークン・赤",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2532_00"	},
+	{	"id": 2533,	"name": "塔の守護人形ファリエ",	"rare": 5,	"classID": 128400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2533_00"	},
+	{	"id": 2534,	"name": "統帥の塔",	"rare": 5,	"classID": 147600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2534_00",	"imgaw": "2534_01"	},
+	{	"id": 2535,	"name": "リリス娘クロミ",	"rare": 5,	"classID": 163400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2535_00",	"imgaw": "2535_01"	},
+	{	"id": 2536,	"name": "魔蛸娘の異装ニーヴ",	"rare": 5,	"classID": 147400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2536_00",	"imgaw": "2536_01"	},
+	{	"id": 2537,	"name": "円卓城の異装ティルト",	"rare": 5,	"classID": 147500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2537_00",	"imgaw": "2537_01"	},
+	{	"id": 2538,	"name": "剣の駒",	"rare": 5,	"classID": 147700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2538_00"	},
+	{	"id": 2539,	"name": "盾の駒",	"rare": 5,	"classID": 147800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2539_00"	},
+	{	"id": 2540,	"name": "杖の駒",	"rare": 5,	"classID": 163300,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2540_00"	},
+	{	"id": 2541,	"name": "異装ニーヴトークン",	"rare": 5,	"classID": 163200,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2541_00"	},
+	{	"id": 2542,	"name": "異装ニーヴトークン覚醒",	"rare": 5,	"classID": 163220,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2542_00"	},
+	{	"id": 2543,	"name": "異装ティルトトークン",	"rare": 5,	"classID": 162800,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2544,	"name": "統帥の剣",	"rare": 5,	"classID": 147700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2544_00"	},
+	{	"id": 2545,	"name": "統帥の盾",	"rare": 5,	"classID": 147800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2545_00"	},
+	{	"id": 2546,	"name": "統帥の杖",	"rare": 5,	"classID": 163300,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2546_00"	},
+	{	"id": 2547,	"name": "クロミ移動トークン",	"rare": 5,	"classID": 163500,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2547_00"	}
 ]
