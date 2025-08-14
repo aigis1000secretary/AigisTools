@@ -19501,5 +19501,16 @@
   "urlName": "%b1%df%c2%ee%be%eb%a4%ce%b0%db%c1%f5%a5%c6%a5%a3%a5%eb%a5%c8",
   "rarity": "ブラック",
   "class": "冥府の騎士【円卓】"
+ },
+ {
+  "name": "ちびクレイブ",
+  "subName": "ちびクレイブ",
+  "ability": "▹回転斬り\n一定確率で自分の周りの地上の敵全てを同時に攻撃する",
+  "ability_aw": "",
+  "skill": "▹攻撃力強化Ⅱ\n30秒攻撃力1.7倍",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%a5%af%a5%ec%a5%a4%a5%d6",
+  "rarity": "ゴールド",
+  "class": "ソルジャー"
  }
 ]
