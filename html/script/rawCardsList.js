@@ -1,4 +1,4 @@
-var maxCid = 2553;
+var maxCid = 2563;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2299,5 +2299,15 @@ var charaData = [
 	{	"id": 2548,	"name": "ちびクレイブ",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2548_00"	},
 	{	"id": 2549,	"name": "魔界式夏祭チャムチャム",	"rare": 4,	"classID": 300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2549_00",	"imgaw": "2549_01"	},
 	{	"id": 2550,	"name": "祭夜の凶銃デステリカ",	"rare": 5,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2550_00",	"imgaw": "2550_01"	},
-	{	"id": 2551,	"name": "夏夜の紫編クローシェ",	"rare": 4,	"classID": 143500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2551_00",	"imgaw": "2551_01"	}
+	{	"id": 2551,	"name": "夏夜の紫編クローシェ",	"rare": 4,	"classID": 143500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2551_00",	"imgaw": "2551_01"	},
+	{	"id": 2554,	"name": "華の四神 白虎",	"rare": 5,	"classID": 147900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2554_00",	"imgaw": "2554_01"	},
+	{	"id": 2555,	"name": "華の四神 青龍",	"rare": 4,	"classID": 148000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2555_00",	"imgaw": "2555_01"	},
+	{	"id": 2556,	"name": "剣神大祭 祓剣主神",	"rare": 5,	"classID": 132100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2556_00",	"imgaw": "2556_01"	},
+	{	"id": 2557,	"name": "火蜥蜴の召喚士リノ",	"rare": 5,	"classID": 11100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2557_00",	"imgaw": "2557_01"	},
+	{	"id": 2558,	"name": "煌きの近衛騎士アリシア",	"rare": 5,	"classID": 3200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2558_00",	"imgaw": "2558_01"	},
+	{	"id": 2559,	"name": "ちびフリア",	"rare": 3,	"classID": 20300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2559_00"	},
+	{	"id": 2560,	"name": "ちびコラリー",	"rare": 3,	"classID": 170600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2560_00",	"imgaw": "2560_01",	"imgaw2A": "2560_02",	"imgaw2B": "2560_03"	},
+	{	"id": 2561,	"name": "サンダーバード",	"rare": 3,	"classID": 163600,	"sortGroupID": 30,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2561_00"	},
+	{	"id": 2562,	"name": "ちびヴィラヘルム",	"rare": 3,	"classID": 163800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2562_00",	"imgaw2B": "2562_03"	},
+	{	"id": 2563,	"name": "サンダーバード移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2563_00"	}
 ]
