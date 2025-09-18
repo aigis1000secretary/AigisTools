@@ -1,4 +1,4 @@
-var maxCid = 2571;
+var maxCid = 2575;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2317,5 +2317,8 @@ var charaData = [
 	{	"id": 2568,	"name": "楽進 文謙",	"rare": 4,	"classID": 7900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2568_00",	"imgaw": "2568_01"	},
 	{	"id": 2569,	"name": "曹家の旗",	"rare": 3,	"classID": 148100,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 10,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2569_00"	},
 	{	"id": 2570,	"name": "ちびオルカレクス",	"rare": 3,	"classID": 65000,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2570_00"	},
-	{	"id": 2571,	"name": "紫紺の曹旗",	"rare": 5,	"classID": 148200,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2571_00"	}
+	{	"id": 2571,	"name": "紫紺の曹旗",	"rare": 5,	"classID": 148200,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2571_00"	},
+	{	"id": 2572,	"name": "森の繭守ココン",	"rare": 4,	"classID": 162200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2572_00",	"imgaw": "2572_01"	},
+	{	"id": 2573,	"name": "ワームトークン",	"rare": 5,	"classID": 163900,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2573_00"	},
+	{	"id": 2574,	"name": "トモダチトークン",	"rare": 5,	"classID": 163920,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2574_00"	}
 ]
