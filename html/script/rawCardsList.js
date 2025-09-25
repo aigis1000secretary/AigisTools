@@ -1,4 +1,4 @@
-var maxCid = 2575;
+var maxCid = 2576;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2310,7 +2310,7 @@ var charaData = [
 	{	"id": 2561,	"name": "サンダーバード",	"rare": 3,	"classID": 163600,	"sortGroupID": 30,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2561_00"	},
 	{	"id": 2562,	"name": "ちびヴィラヘルム",	"rare": 3,	"classID": 163800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2562_00",	"imgaw2B": "2562_03"	},
 	{	"id": 2563,	"name": "サンダーバード移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2563_00"	},
-	{	"id": 2564,	"name": "荀彧 文若",	"rare": 5,	"classID": 14300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2564_00"	},
+	{	"id": 2564,	"name": "荀彧 文若",	"rare": 5,	"classID": 14300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2564_00",	"imgaw": "2564_01"	},
 	{	"id": 2565,	"name": "曹操 孟徳",	"rare": 5,	"classID": 101000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2565_00",	"imgaw": "2565_01"	},
 	{	"id": 2566,	"name": "夏侯惇 元譲",	"rare": 5,	"classID": 7900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2566_00",	"imgaw": "2566_01"	},
 	{	"id": 2567,	"name": "夏侯淵 妙才",	"rare": 5,	"classID": 152800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 10,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2567_00",	"imgaw": "2567_01"	},
@@ -2320,5 +2320,6 @@ var charaData = [
 	{	"id": 2571,	"name": "紫紺の曹旗",	"rare": 5,	"classID": 148200,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2571_00"	},
 	{	"id": 2572,	"name": "森の繭守ココン",	"rare": 4,	"classID": 162200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2572_00",	"imgaw": "2572_01"	},
 	{	"id": 2573,	"name": "ワームトークン",	"rare": 5,	"classID": 163900,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2573_00"	},
-	{	"id": 2574,	"name": "トモダチトークン",	"rare": 5,	"classID": 163920,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2574_00"	}
+	{	"id": 2574,	"name": "トモダチトークン",	"rare": 5,	"classID": 163920,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2574_00"	},
+	{	"id": 2576,	"name": "琵琶法師ヤサカ",	"rare": 4,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2576_00",	"imgaw": "2576_01"	}
 ]
