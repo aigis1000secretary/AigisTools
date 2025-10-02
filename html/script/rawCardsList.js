@@ -1,4 +1,4 @@
-var maxCid = 2576;
+var maxCid = 2590;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2321,5 +2321,18 @@ var charaData = [
 	{	"id": 2572,	"name": "森の繭守ココン",	"rare": 4,	"classID": 162200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2572_00",	"imgaw": "2572_01"	},
 	{	"id": 2573,	"name": "ワームトークン",	"rare": 5,	"classID": 163900,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2573_00"	},
 	{	"id": 2574,	"name": "トモダチトークン",	"rare": 5,	"classID": 163920,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2574_00"	},
-	{	"id": 2576,	"name": "琵琶法師ヤサカ",	"rare": 4,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2576_00",	"imgaw": "2576_01"	}
+	{	"id": 2576,	"name": "琵琶法師ヤサカ",	"rare": 4,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2576_00",	"imgaw": "2576_01"	},
+	{	"id": 2577,	"name": "桃色の夢スウィーティア",	"rare": 5,	"classID": 148700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2577_00"	},
+	{	"id": 2578,	"name": "旗艦乙女ドーンブリンガー",	"rare": 5,	"classID": 148600,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2578_00",	"imgaw": "2578_01"	},
+	{	"id": 2579,	"name": "ベルゼブブ娘アゼプ",	"rare": 5,	"classID": 164100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2579_00",	"imgaw": "2579_01"	},
+	{	"id": 2580,	"name": "冥府館の異装テュト",	"rare": 5,	"classID": 164000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2580_00",	"imgaw": "2580_01"	},
+	{	"id": 2581,	"name": "九尾娘の異装しづり",	"rare": 5,	"classID": 164300,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2581_00",	"imgaw": "2581_01"	},
+	{	"id": 2582,	"name": "メカベヒモス",	"rare": 3,	"classID": 148500,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2582_00"	},
+	{	"id": 2583,	"name": "ちびプロエ",	"rare": 3,	"classID": 23900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2583_00"	},
+	{	"id": 2584,	"name": "ちびフーイェン",	"rare": 3,	"classID": 232500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2584_00"	},
+	{	"id": 2585,	"name": "旗艦乙女ドーンブリンガーミサイル用トークン",	"rare": 5,	"classID": 160100,	"sortGroupID": 20,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2585_00"	},
+	{	"id": 2586,	"name": "旗艦乙女ドーンブリンガー移動用トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2586_00"	},
+	{	"id": 2587,	"name": "執事トークン",	"rare": 5,	"classID": 164200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2588_00"	},
+	{	"id": 2589,	"name": "メカベヒモス移動用トークン",	"rare": 5,	"classID": 164400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2589_00"	},
+	{	"id": 2590,	"name": "旗艦乙女ドーンブリンガー覚醒ミサイル用トークン",	"rare": 5,	"classID": 148820,	"sortGroupID": 20,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2590_00"	}
 ]
