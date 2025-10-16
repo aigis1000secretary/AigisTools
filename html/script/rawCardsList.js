@@ -1,4 +1,4 @@
-var maxCid = 2590;
+var maxCid = 2597;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2322,7 +2322,7 @@ var charaData = [
 	{	"id": 2573,	"name": "ワームトークン",	"rare": 5,	"classID": 163900,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2573_00"	},
 	{	"id": 2574,	"name": "トモダチトークン",	"rare": 5,	"classID": 163920,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2574_00"	},
 	{	"id": 2576,	"name": "琵琶法師ヤサカ",	"rare": 4,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2576_00",	"imgaw": "2576_01"	},
-	{	"id": 2577,	"name": "桃色の夢スウィーティア",	"rare": 5,	"classID": 148700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2577_00"	},
+	{	"id": 2577,	"name": "桃色の夢スウィーティア",	"rare": 5,	"classID": 148700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2577_00",	"imgaw": "2577_01"	},
 	{	"id": 2578,	"name": "旗艦乙女ドーンブリンガー",	"rare": 5,	"classID": 148600,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2578_00",	"imgaw": "2578_01"	},
 	{	"id": 2579,	"name": "ベルゼブブ娘アゼプ",	"rare": 5,	"classID": 164100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2579_00",	"imgaw": "2579_01"	},
 	{	"id": 2580,	"name": "冥府館の異装テュト",	"rare": 5,	"classID": 164000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2580_00",	"imgaw": "2580_01"	},
@@ -2334,5 +2334,11 @@ var charaData = [
 	{	"id": 2586,	"name": "旗艦乙女ドーンブリンガー移動用トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2586_00"	},
 	{	"id": 2587,	"name": "執事トークン",	"rare": 5,	"classID": 164200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2588_00"	},
 	{	"id": 2589,	"name": "メカベヒモス移動用トークン",	"rare": 5,	"classID": 164400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2589_00"	},
-	{	"id": 2590,	"name": "旗艦乙女ドーンブリンガー覚醒ミサイル用トークン",	"rare": 5,	"classID": 148820,	"sortGroupID": 20,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2590_00"	}
+	{	"id": 2590,	"name": "旗艦乙女ドーンブリンガー覚醒ミサイル用トークン",	"rare": 5,	"classID": 148820,	"sortGroupID": 20,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2590_00"	},
+	{	"id": 2591,	"name": "秋祭の蒸気騎士ベアッカ",	"rare": 4,	"classID": 125700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2591_00",	"imgaw": "2591_01"	},
+	{	"id": 2592,	"name": "幽幻仮装ニコル",	"rare": 5,	"classID": 12000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2592_00",	"imgaw": "2592_01"	},
+	{	"id": 2593,	"name": "南瓜の偵察兵ミリアム",	"rare": 4,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2593_00",	"imgaw": "2593_01"	},
+	{	"id": 2594,	"name": "ちび神聖騎士団長の鎧",	"rare": 3,	"classID": 227900,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2594_00"	},
+	{	"id": 2595,	"name": "南瓜の偵察兵ミリアム移動用トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2595_00"	},
+	{	"id": 2596,	"name": "仮装偵察隊",	"rare": 5,	"classID": 164500,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2597_00"	}
 ]
