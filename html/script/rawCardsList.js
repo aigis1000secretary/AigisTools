@@ -1,4 +1,4 @@
-var maxCid = 2597;
+var maxCid = 2609;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2340,5 +2340,16 @@ var charaData = [
 	{	"id": 2593,	"name": "南瓜の偵察兵ミリアム",	"rare": 4,	"classID": 18900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2593_00",	"imgaw": "2593_01"	},
 	{	"id": 2594,	"name": "ちび神聖騎士団長の鎧",	"rare": 3,	"classID": 227900,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2594_00"	},
 	{	"id": 2595,	"name": "南瓜の偵察兵ミリアム移動用トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2595_00"	},
-	{	"id": 2596,	"name": "仮装偵察隊",	"rare": 5,	"classID": 164500,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2597_00"	}
+	{	"id": 2596,	"name": "仮装偵察隊",	"rare": 5,	"classID": 164500,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2597_00"	},
+	{	"id": 2598,	"name": "伯爵令嬢ベラドンナ",	"rare": 5,	"classID": 500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2598_00",	"imgaw": "2598_01"	},
+	{	"id": 2599,	"name": "帝国妖狸ギョウブ",	"rare": 5,	"classID": 15800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2599_00",	"imgaw": "2599_01"	},
+	{	"id": 2600,	"name": "帝国参謀総長レオナ",	"rare": 5,	"classID": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2600_00",	"imgaw": "2600_01"	},
+	{	"id": 2601,	"name": "帝国大元帥レオラ",	"rare": 5,	"classID": 1500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2601_00",	"imgaw": "2601_01"	},
+	{	"id": 2602,	"name": "帝国補給兵オルドネッタ",	"rare": 4,	"classID": 162400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2602_00",	"imgaw": "2602_01"	},
+	{	"id": 2603,	"name": "白の断罪者カルラ",	"rare": 4,	"classID": 138000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2603_00",	"imgaw": "2603_01"	},
+	{	"id": 2604,	"name": "帝国生贄術士ベネー",	"rare": 4,	"classID": 161400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2604_00",	"imgaw": "2604_01"	},
+	{	"id": 2605,	"name": "ベラートの黄金戦車",	"rare": 3,	"classID": 148900,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2605_00"	},
+	{	"id": 2606,	"name": "帝国補給兵オルドネッタトークン",	"rare": 5,	"classID": 162500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2606_00"	},
+	{	"id": 2607,	"name": "帝国補給兵オルドネッタ覚醒トークン",	"rare": 5,	"classID": 162520,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2607_00"	},
+	{	"id": 2608,	"name": "伯爵領兵",	"rare": 5,	"classID": 149000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 1,	"img": "2608_00"	}
 ]
