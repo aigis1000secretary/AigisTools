@@ -1,4 +1,4 @@
-var maxCid = 2609;
+var maxCid = 2612;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2351,5 +2351,8 @@ var charaData = [
 	{	"id": 2605,	"name": "ベラートの黄金戦車",	"rare": 3,	"classID": 148900,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 2,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2605_00"	},
 	{	"id": 2606,	"name": "帝国補給兵オルドネッタトークン",	"rare": 5,	"classID": 162500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2606_00"	},
 	{	"id": 2607,	"name": "帝国補給兵オルドネッタ覚醒トークン",	"rare": 5,	"classID": 162520,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2607_00"	},
-	{	"id": 2608,	"name": "伯爵領兵",	"rare": 5,	"classID": 149000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 1,	"img": "2608_00"	}
+	{	"id": 2608,	"name": "伯爵領兵",	"rare": 5,	"classID": 149000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 1,	"img": "2608_00"	},
+	{	"id": 2610,	"name": "攻防変換薬",	"rare": 3,	"classID": 164600,	"sortGroupID": 30,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2610_00"	},
+	{	"id": 2611,	"name": "ちびクリッペ",	"rare": 3,	"classID": 235900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2611_00"	},
+	{	"id": 2612,	"name": "ちびグラティア",	"rare": 3,	"classID": 26000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2612_00"	}
 ]
