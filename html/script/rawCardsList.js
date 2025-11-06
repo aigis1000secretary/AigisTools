@@ -1,4 +1,4 @@
-var maxCid = 2612;
+var maxCid = 2618;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -415,7 +415,7 @@ var charaData = [
 	{	"id": 413,	"name": "鬼娘イツキ",	"rare": 4,	"classID": 4700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2016,	"isEvent": 0,	"isToken": 0,	"img": "413_00",	"imgaw": "413_01",	"imgaw2A": "413_02"	},
 	{	"id": 414,	"name": "武器商人エイミー",	"rare": 4,	"classID": 12800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "414_00",	"imgaw": "414_01"	},
 	{	"id": 415,	"name": "技強化大聖霊ムジカ",	"rare": 5,	"classID": 31,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "415_00"	},
-	{	"id": 416,	"name": "育成聖霊サリエット",	"rare": 5,	"classID": 32,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "416_00"	},
+	{	"id": 416,	"name": "育成聖霊サリエット",	"rare": 5,	"classID": 164800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 0,	"isToken": 0,	"img": "416_00",	"imgaw": "416_01"	},
 	{	"id": 417,	"name": "炎の竜皇女シャルム",	"rare": 7,	"classID": 710,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "417_00",	"imgaw": "417_01"	},
 	{	"id": 418,	"name": "白の皇帝",	"rare": 5,	"classID": 9800,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 2,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "418_00",	"imgaw": "418_01"	},
 	{	"id": 419,	"name": "帝国遊撃兵エリック",	"rare": 2,	"classID": 12100,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 2,	"genus": 0,	"year": 2016,	"isEvent": 1,	"isToken": 0,	"img": "419_00"	},
@@ -2354,5 +2354,11 @@ var charaData = [
 	{	"id": 2608,	"name": "伯爵領兵",	"rare": 5,	"classID": 149000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 1,	"img": "2608_00"	},
 	{	"id": 2610,	"name": "攻防変換薬",	"rare": 3,	"classID": 164600,	"sortGroupID": 30,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2610_00"	},
 	{	"id": 2611,	"name": "ちびクリッペ",	"rare": 3,	"classID": 235900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2611_00"	},
-	{	"id": 2612,	"name": "ちびグラティア",	"rare": 3,	"classID": 26000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2612_00"	}
+	{	"id": 2612,	"name": "ちびグラティア",	"rare": 3,	"classID": 26000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2612_00"	},
+	{	"id": 2613,	"name": "銀狼術士クルーナ",	"rare": 4,	"classID": 161400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2613_00",	"imgaw": "2613_01"	},
+	{	"id": 2614,	"name": "王子【授賞式】",	"rare": 5,	"classID": 149200,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2614_00"	},
+	{	"id": 2615,	"name": "王子【双鴉】",	"rare": 5,	"classID": 149100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2615_00"	},
+	{	"id": 2616,	"name": "ちびパリオス",	"rare": 3,	"classID": 118700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2616_00"	},
+	{	"id": 2617,	"name": "赤炉の亜神ヘスティス",	"rare": 5,	"classID": 164700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2617_00",	"imgaw": "2617_01"	},
+	{	"id": 2618,	"name": "サリエット_トークン",	"rare": 5,	"classID": 162500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2618_00"	}
 ]
