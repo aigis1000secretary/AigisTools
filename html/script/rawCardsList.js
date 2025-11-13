@@ -1,4 +1,4 @@
-var maxCid = 2618;
+var maxCid = 2625;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2003,8 +2003,8 @@ var charaData = [
 	{	"id": 2209,	"name": "死線の操者ララネ",	"rare": 5,	"classID": 143500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 0,	"isToken": 0,	"img": "2209_00",	"imgaw": "2209_01"	},
 	{	"id": 2210,	"name": "嵐雨神祭アスバール",	"rare": 5,	"classID": 153300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2210_00",	"imgaw": "2210_01"	},
 	{	"id": 2211,	"name": "ちびクロノシア",	"rare": 3,	"classID": 176900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2024,	"isEvent": 1,	"isToken": 0,	"img": "2211_00"	},
-	{	"id": 2212,	"name": "糸罠トークン",	"rare": 5,	"classID": 143400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2552_00"	},
-	{	"id": 2213,	"name": "編罠トークン",	"rare": 5,	"classID": 143420,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2553_00"	},
+	{	"id": 2212,	"name": "糸罠トークン",	"rare": 5,	"classID": 143400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2623_00"	},
+	{	"id": 2213,	"name": "編罠トークン",	"rare": 5,	"classID": 143420,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2624_00"	},
 	{	"id": 2214,	"name": "マリオネットⅠ",	"rare": 5,	"classID": 143300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2218_00"	},
 	{	"id": 2215,	"name": "マリオネットⅡ",	"rare": 5,	"classID": 143320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "2219_00"	},
 	{	"id": 2216,	"name": "マリオネットⅢ",	"rare": 5,	"classID": 143380,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2024,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
@@ -2360,5 +2360,10 @@ var charaData = [
 	{	"id": 2615,	"name": "王子【双鴉】",	"rare": 5,	"classID": 149100,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2615_00"	},
 	{	"id": 2616,	"name": "ちびパリオス",	"rare": 3,	"classID": 118700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2616_00"	},
 	{	"id": 2617,	"name": "赤炉の亜神ヘスティス",	"rare": 5,	"classID": 164700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2617_00",	"imgaw": "2617_01"	},
-	{	"id": 2618,	"name": "サリエット_トークン",	"rare": 5,	"classID": 162500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2618_00"	}
+	{	"id": 2618,	"name": "サリエット_トークン",	"rare": 5,	"classID": 162500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2618_00"	},
+	{	"id": 2619,	"name": "雪豹執事ネーヴェ",	"rare": 5,	"classID": 143500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2619_00",	"imgaw": "2619_01"	},
+	{	"id": 2620,	"name": "竜騎の公爵エヴェリーナ",	"rare": 5,	"classID": 165000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2620_00",	"imgaw": "2620_01"	},
+	{	"id": 2621,	"name": "剣姫の指南役ロゼルヌ",	"rare": 5,	"classID": 3000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2621_00",	"imgaw": "2621_01"	},
+	{	"id": 2622,	"name": "ちびアンナホープネス",	"rare": 3,	"classID": 178400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2622_00"	},
+	{	"id": 2625,	"name": "ドラゴンロード移動用トークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2625_00"	}
 ]
