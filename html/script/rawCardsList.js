@@ -1,4 +1,4 @@
-var maxCid = 2636;
+var maxCid = 2643;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2269,8 +2269,8 @@ var charaData = [
 	{	"id": 2515,	"name": "悪戯娘の夏クラリーチェ",	"rare": 4,	"classID": 13400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2515_00",	"imgaw": "2515_01"	},
 	{	"id": 2516,	"name": "白狼シュナフタ",	"rare": 5,	"classID": 147200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2516_00"	},
 	{	"id": 2517,	"name": "番の白狼シュナフタ",	"rare": 5,	"classID": 147230,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2517_00"	},
-	{	"id": 2521,	"name": "歴史を彷徨う者ロイジィ",	"rare": 11,	"classID": 163000,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2521_00",	"imgaw": "2521_01"	},
-	{	"id": 2522,	"name": "歴史を彷徨う者ロイジィ",	"rare": 10,	"classID": 163000,	"sortGroupID": 30,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2521,	"name": "歴史を彷徨う者ロイジィ",	"rare": 11,	"classID": 163000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2521_00",	"imgaw": "2521_01"	},
+	{	"id": 2522,	"name": "歴史を彷徨う者ロイジィ",	"rare": 10,	"classID": 163000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2523,	"name": "王国ファッションショー",	"rare": 3,	"classID": 147300,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2523_00"	},
 	{	"id": 2524,	"name": "白き熊戦士マータン",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2524_00",	"imgaw": "2524_01"	},
 	{	"id": 2525,	"name": "風雲大華フーコ",	"rare": 4,	"classID": 6200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2525_00"	},
@@ -2376,5 +2376,12 @@ var charaData = [
 	{	"id": 2633,	"name": "あなたと乾杯イーリス",	"rare": 4,	"classID": 6200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2634,	"name": "魔女の賢狼",	"rare": 5,	"classID": 165300,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2634_00"	},
 	{	"id": 2635,	"name": "魔女の影鴉",	"rare": 5,	"classID": 165400,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2635_00"	},
-	{	"id": 2636,	"name": "極白の侍女武官セーラ【黒】トークン",	"rare": 5,	"classID": 149600,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2636_00"	}
+	{	"id": 2636,	"name": "極白の侍女武官セーラ【黒】トークン",	"rare": 5,	"classID": 149600,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2636_00"	},
+	{	"id": 2637,	"name": "眠りの亜神ヒュープ",	"rare": 5,	"classID": 149800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2637_00"	},
+	{	"id": 2638,	"name": "黒翼を灯す者モリグナン",	"rare": 10,	"classID": 165100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2638_00",	"imgaw": "2638_01"	},
+	{	"id": 2639,	"name": "王子の従竜イルフェイス",	"rare": 3,	"classID": 165500,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2639_00"	},
+	{	"id": 2640,	"name": "ちびヒミコ",	"rare": 3,	"classID": 30700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2640_00"	},
+	{	"id": 2641,	"name": "ちびアルレット",	"rare": 3,	"classID": 36600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2641_00"	},
+	{	"id": 2642,	"name": "王子の従竜イルフェイス移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2642_00"	},
+	{	"id": 2643,	"name": "泡沫の羊",	"rare": 5,	"classID": 149900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2643_00"	}
 ]
