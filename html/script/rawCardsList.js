@@ -1,4 +1,4 @@
-var maxCid = 2643;
+var maxCid = 2644;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2383,5 +2383,6 @@ var charaData = [
 	{	"id": 2640,	"name": "ちびヒミコ",	"rare": 3,	"classID": 30700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2640_00"	},
 	{	"id": 2641,	"name": "ちびアルレット",	"rare": 3,	"classID": 36600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2641_00"	},
 	{	"id": 2642,	"name": "王子の従竜イルフェイス移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2642_00"	},
-	{	"id": 2643,	"name": "泡沫の羊",	"rare": 5,	"classID": 149900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2643_00"	}
+	{	"id": 2643,	"name": "泡沫の羊",	"rare": 5,	"classID": 149900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2643_00"	},
+	{	"id": 2644,	"name": "瀟洒なる銃士ルーシー",	"rare": 4,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2644_00",	"imgaw": "2644_01"	}
 ]
