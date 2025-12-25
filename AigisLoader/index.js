@@ -18,8 +18,8 @@ const aigisLoaderPath = `${workspaceFolder}/AigisLoader`;
 const aigisToolPath = `${workspaceFolder}/AigisTools`;
 const xmlPath = `${aigisToolPath}/out`;
 const resourcesPath = `${xmlPath}/files`;
-const rawListPath = `${xmlPath}/filelists/Desktop R Files.txt`;
-const changesListPath = `${xmlPath}/Desktop R Changes.txt`;
+const rawListPath = `${xmlPath}/filelists/Desktop A Files.txt`;
+const changesListPath = `${xmlPath}/Desktop A Changes.txt`;
 
 // outputPath
 const iconsOutputPath = `${workspaceFolder}/html/icons`;
@@ -104,7 +104,7 @@ const downloadRawData = async () => {
     console.log(`downloadRawData start...`);
 
     // get_file_list.lua
-    console.log("do get_file_list.lua");
+    console.log("do filelist");
     child_process.execSync(`do filelist`, { cwd: aigisToolPath }).toString().trim();
 
     // get filelist
@@ -1219,6 +1219,7 @@ const aigisQuestsList = async () => {
             let questName = "NULL";
             if (missionID != "NULL") {
                 let filepath = resourceList.find(p => p.includes(`QuestNameText${missionID}.atb`));
+                if (!filepath) { console.log(`QuestNameText${missionID}.atb not found`); }
                 let questNameText = rawToJson(filepath);
 
                 let questNameID = questRaw.QuestTitle;
@@ -1320,7 +1321,8 @@ const aigisQuestsList = async () => {
             let pngPath = raws.find(p => p.endsWith(".png"));
 
             // online file exist
-            if (pngPath && (!fs.existsSync(outputPath) || changesList.indexOf(mapName) != -1)) {
+            // if (pngPath && (!fs.existsSync(outputPath) || changesList.indexOf(mapName) != -1)) {
+            if (pngPath && !fs.existsSync(outputPath)) {
                 // online path + no local resource
                 // online path + in change log
 

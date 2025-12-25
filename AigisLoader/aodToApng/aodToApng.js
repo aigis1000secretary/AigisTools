@@ -15,9 +15,9 @@ const dlImg = process.env.NODE_DLIMG == "false" ? false : true;
 const aigisToolPath = `../AigisTools`;
 const xmlPath = `${aigisToolPath}/out`;
 const resourcesPath = `${xmlPath}/files`;
-const rawListPath = `${xmlPath}/filelists/Desktop R Files.txt`;
-const addedListPath = `${xmlPath}/Desktop R Added.txt`;
-const changesListPath = `${xmlPath}/Desktop R Changes.txt`;
+const rawListPath = `${xmlPath}/filelists/Desktop A Files.txt`;
+const addedListPath = `${xmlPath}/Desktop A Added.txt`;
+const changesListPath = `${xmlPath}/Desktop A Changes.txt`;
 
 // outputPath
 const iconsOutputPath = `../html/icons`;
