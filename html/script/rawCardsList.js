@@ -1,4 +1,4 @@
-var maxCid = 2650;
+var maxCid = 2654;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2385,10 +2385,14 @@ var charaData = [
 	{	"id": 2642,	"name": "王子の従竜イルフェイス移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2642_00"	},
 	{	"id": 2643,	"name": "泡沫の羊",	"rare": 5,	"classID": 149900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2643_00"	},
 	{	"id": 2644,	"name": "瀟洒なる銃士ルーシー",	"rare": 4,	"classID": 155500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2644_00",	"imgaw": "2644_01"	},
-	{	"id": 2645,	"name": "聖夜の疾風軍師シナト",	"rare": 4,	"classID": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 107,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2645_00"	},
+	{	"id": 2645,	"name": "聖夜の疾風軍師シナト",	"rare": 4,	"classID": 10900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 107,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2645_00",	"imgaw": "2645_01"	},
 	{	"id": 2646,	"name": "聖夜の賢者プリニース",	"rare": 5,	"classID": 150100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 107,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2646_00",	"imgaw": "2646_01"	},
 	{	"id": 2647,	"name": "純白の聖夜タツミ",	"rare": 5,	"classID": 130500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 107,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2647_00",	"imgaw": "2647_01"	},
 	{	"id": 2648,	"name": "聖夜の回診ジュディス",	"rare": 4,	"classID": 158200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 107,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2648_00",	"imgaw": "2648_01"	},
 	{	"id": 2649,	"name": "聖夜の政務官アンナ",	"rare": 5,	"classID": 11500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 107,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2649_00"	},
-	{	"id": 2650,	"name": "ちびグラシャラボラス",	"rare": 3,	"classID": 50500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2650_00"	}
+	{	"id": 2650,	"name": "ちびグラシャラボラス",	"rare": 3,	"classID": 50500,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2650_00"	},
+	{	"id": 2651,	"name": "華の四神 玄武",	"rare": 4,	"classID": 150000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2651_00",	"imgaw": "2651_01"	},
+	{	"id": 2652,	"name": "華の四神 朱雀",	"rare": 5,	"classID": 165600,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2652_00",	"imgaw": "2652_01"	},
+	{	"id": 2653,	"name": "華の四神朱雀移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2653_00"	},
+	{	"id": 2654,	"name": "申公豹",	"rare": 5,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2654_00",	"imgaw": "2654_01"	}
 ]
