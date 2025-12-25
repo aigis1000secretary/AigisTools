@@ -6,6 +6,8 @@ let xmlspath = "../AigisTools/Data/XML";
 let filepath = "../AigisTools/Data/XML";
 // let cachepath = "./AigisTools/Data/Cache/net/";
 let filelist = false;
+let urlA = null;
+let urlR = null;
 
 const COLOR = {
     reset: '\x1b[0m', bright: '\x1b[1m', dim: '\x1b[2m',
@@ -121,7 +123,7 @@ const getXML = (xmlName, raw) => {
         if (!fs.existsSync(`${filepath}/${key}`)) { dlflag = false; }
     }
     // call next step script
-    if (dlflag) {
+    if (dlflag && filelist) {
         // console.log(child_process.execSync(`xcopy .\\AigisTools ..\\AigisTools /Y /S /I`).toString());
         child_process.exec(`cd ..&start 2.1_AigisLoader.bat`);
         setTimeout(() => { process.exit(); }, 1000);
@@ -137,13 +139,15 @@ module.exports = {
         if (responseDetail.response.body.length == 0) return null;
 
         let url = requestDetail.url;
+        const size = responseDetail.response.body?.length || 0;
+        const sizeStr = parseInt(size / 1024).toString().padStart(8, ' ');
         // console.log(url);
 
         // filelist url
-        if (url.indexOf('/1fp32igvpoxnb521p9dqypak5cal0xv0') != -1 ||
-            url.indexOf('/2iofz514jeks1y44k7al2ostm43xj085') != -1) {
+        if (url.includes('/1fp32igvpoxnb521p9dqypak5cal0xv0') ||
+            url.includes('/2iofz514jeks1y44k7al2ostm43xj085')) {
             // get AigisR/Aigis file list
-            console.log(`${COLOR.fgRed}${url}${COLOR.reset}`);
+            console.log(`${sizeStr} ${COLOR.fgRed}${url}${COLOR.reset}`);
 
             // update filepath
             // get Thursday date
@@ -161,18 +165,16 @@ module.exports = {
             let commitName = `update${month}${date}`;
 
             // get 2 version url
-            let urlR = url.replace('/2iofz514jeks1y44k7al2ostm43xj085', '/1fp32igvpoxnb521p9dqypak5cal0xv0');
-            let urlA = url.replace('/1fp32igvpoxnb521p9dqypak5cal0xv0', '/2iofz514jeks1y44k7al2ostm43xj085');
-
+            urlA = urlA || url.includes('/2iofz514jeks1y44k7al2ostm43xj085') ? url : null;
+            urlR = urlR || url.includes('/1fp32igvpoxnb521p9dqypak5cal0xv0') ? url : null;
 
             // get filepath
             xmlspath = `../AigisTools/Data/XML`;
             // check dir
             if (!fs.existsSync(xmlspath)) { fs.mkdirSync(xmlspath, { recursive: true }); }
             // Desktop A/R.txt
-            fs.writeFile(`${xmlspath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt has been saved!`); });
-            fs.writeFile(`${xmlspath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt has been saved!`); });
-
+            if (urlA) { fs.writeFile(`${xmlspath}/Desktop A.txt`, urlA, (err) => console.log(err || `Desktop A.txt has been saved!`)); }
+            if (urlR) { fs.writeFile(`${xmlspath}/Desktop R.txt`, urlR, (err) => console.log(err || `Desktop R.txt has been saved!`)); }
             fs.writeFile(`../4_push.bat`, [
                 `git add -A\ngit commit -m ${commitName}\ngit push\n`,
                 `cd .\\AigisTools\n`,
@@ -184,25 +186,25 @@ module.exports = {
             filepath = `../AigisTools/Data/XML/${folderName}`;
             // check dir
             if (!fs.existsSync(filepath)) { fs.mkdirSync(filepath, { recursive: true }); }
-            else {
+            /*else {
                 console.log(`${COLOR.fgRed}${COLOR.bright}found ${filepath} folder, plz delete old version first!!${COLOR.reset}`);
                 return null;
                 // for debug
                 fs.renameSync(filepath, filepath + "_");
                 fs.mkdirSync(filepath, { recursive: true });
-            }
+            }//*/
             // Desktop A/R.txt
-            fs.writeFile(`${filepath}/Desktop A.txt`, urlA, (err) => { if (err) console.log(err); else console.log(`Desktop A.txt backup has been saved!`); });
-            fs.writeFile(`${filepath}/Desktop R.txt`, urlR, (err) => { if (err) console.log(err); else console.log(`Desktop R.txt backup has been saved!`); });
+            if (urlA) { fs.writeFile(`${filepath}/Desktop A.txt`, urlA, (err) => console.log(err || `Desktop A.txt has been saved!`)); }
+            if (urlR) { fs.writeFile(`${filepath}/Desktop R.txt`, urlR, (err) => console.log(err || `Desktop R.txt has been saved!`)); }
 
 
-            filelist = true;
+            filelist = urlA && urlR;
             return null;
         }
 
         // get xml
         else if (/\/(\S{8})$/.test(url)) {
-            console.log(`${COLOR.fgYellow}${url}${COLOR.reset}`);
+            console.log(`${sizeStr} ${COLOR.fgYellow}${url}${COLOR.reset}`);
 
             let [, xmlName] = url.match(/\/(\S{8})$/);
             getXML(xmlName, responseDetail.response.body);
@@ -210,7 +212,7 @@ module.exports = {
         }
 
         // else {
-        //     console.log(url);
+        //     console.log(`${sizeStr} ${url}`);
         // }
 
         return null;
@@ -222,7 +224,7 @@ module.exports = {
             "all.millennium-war.net:443",    // Aigis units information / missions information
             "drc1bk94f7rq8.cloudfront.net:443"
         ];
-        return (hostlist.indexOf(requestDetail.host) != -1);
+        return (hostlist.includes(requestDetail.host));
         // console.log(requestDetail.host)
         // return true;
     }
