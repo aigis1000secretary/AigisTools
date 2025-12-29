@@ -1,4 +1,4 @@
-var maxCid = 2654;
+var maxCid = 2673;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2394,5 +2394,24 @@ var charaData = [
 	{	"id": 2651,	"name": "華の四神 玄武",	"rare": 4,	"classID": 150000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "2651_00",	"imgaw": "2651_01"	},
 	{	"id": 2652,	"name": "華の四神 朱雀",	"rare": 5,	"classID": 165600,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2652_00",	"imgaw": "2652_01"	},
 	{	"id": 2653,	"name": "華の四神朱雀移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2653_00"	},
-	{	"id": 2654,	"name": "申公豹",	"rare": 5,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2654_00",	"imgaw": "2654_01"	}
+	{	"id": 2654,	"name": "申公豹",	"rare": 5,	"classID": 7300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2654_00",	"imgaw": "2654_01"	},
+	{	"id": 2655,	"name": "月夜の亜神 月夜弥命",	"rare": 5,	"classID": 165700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2655_00",	"imgaw": "2655_01"	},
+	{	"id": 2656,	"name": "天頂運輸シトー",	"rare": 5,	"classID": 162400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2656_00",	"imgaw": "2656_01"	},
+	{	"id": 2657,	"name": "新春の巫女ヒミコ",	"rare": 5,	"classID": 10700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2657_00",	"imgaw": "2657_01"	},
+	{	"id": 2658,	"name": "新年の黒翼ルキファ",	"rare": 10,	"classID": 134100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2658_00",	"imgaw": "2658_01"	},
+	{	"id": 2659,	"name": "星を詠む新年ソラス",	"rare": 10,	"classID": 15200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2659_00",	"imgaw": "2659_01"	},
+	{	"id": 2660,	"name": "迎春奇術リズリー",	"rare": 5,	"classID": 13600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 101,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2660_00",	"imgaw": "2660_01"	},
+	{	"id": 2661,	"name": "除夜の冥神ヘカティエ",	"rare": 5,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 101,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2661_00",	"imgaw": "2661_01"	},
+	{	"id": 2662,	"name": "メカゴブリンクイーンの飛行傀儡",	"rare": 3,	"classID": 165800,	"sortGroupID": 20,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2662_00"	},
+	{	"id": 2663,	"name": "王子【神馬】",	"rare": 5,	"classID": 300000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2663_00"	},
+	{	"id": 2664,	"name": "ちびデステリカ",	"rare": 3,	"classID": 175500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2664_00"	},
+	{	"id": 2665,	"name": "ちびウルスラ",	"rare": 3,	"classID": 21000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2665_00"	},
+	{	"id": 2666,	"name": "除夜の冥神ヘカティエ射程指定トークン",	"rare": 5,	"classID": 165900,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2666_00"	},
+	{	"id": 2667,	"name": "メカゴブリンクイーンの飛行傀儡移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2667_00"	},
+	{	"id": 2668,	"name": "天頂運輸シトートークン",	"rare": 5,	"classID": 162500,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2668_00"	},
+	{	"id": 2669,	"name": "天頂運輸シトー覚醒トークン",	"rare": 5,	"classID": 162520,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2669_00"	},
+	{	"id": 2670,	"name": "マレス人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2670_00"	},
+	{	"id": 2671,	"name": "おとし玉(馬)",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2671_00"	},
+	{	"id": 2672,	"name": "ツクヨミ移動トークン",	"rare": 5,	"classID": 166000,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2672_00"	},
+	{	"id": 2673,	"name": "除夜の冥神ヘカティエ第二B射程指定トークン",	"rare": 5,	"classID": 165980,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2673_00"	}
 ]
