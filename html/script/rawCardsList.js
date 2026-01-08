@@ -2402,7 +2402,7 @@ var charaData = [
 	{	"id": 2659,	"name": "星を詠む新年ソラス",	"rare": 10,	"classID": 15200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 101,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2659_00",	"imgaw": "2659_01"	},
 	{	"id": 2660,	"name": "迎春奇術リズリー",	"rare": 5,	"classID": 13600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 101,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2660_00",	"imgaw": "2660_01"	},
 	{	"id": 2661,	"name": "除夜の冥神ヘカティエ",	"rare": 5,	"classID": 19300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 101,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2661_00",	"imgaw": "2661_01"	},
-	{	"id": 2662,	"name": "メカゴブリンクイーンの飛行傀儡",	"rare": 3,	"classID": 165800,	"sortGroupID": 20,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2662_00"	},
+	{	"id": 2662,	"name": "メカゴブリンクイーンの飛行傀儡",	"rare": 3,	"classID": 165800,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2662_00"	},
 	{	"id": 2663,	"name": "王子【神馬】",	"rare": 5,	"classID": 300000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2663_00"	},
 	{	"id": 2664,	"name": "ちびデステリカ",	"rare": 3,	"classID": 175500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2664_00"	},
 	{	"id": 2665,	"name": "ちびウルスラ",	"rare": 3,	"classID": 21000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2665_00"	},
