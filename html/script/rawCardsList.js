@@ -1,4 +1,4 @@
-var maxCid = 2673;
+var maxCid = 2685;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2413,5 +2413,14 @@ var charaData = [
 	{	"id": 2670,	"name": "マレス人形",	"rare": 5,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2670_00"	},
 	{	"id": 2671,	"name": "おとし玉(馬)",	"rare": 3,	"classID": 8,	"sortGroupID": 10,	"placeType": 0,	"kind": 3,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2671_00"	},
 	{	"id": 2672,	"name": "ツクヨミ移動トークン",	"rare": 5,	"classID": 166000,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2672_00"	},
-	{	"id": 2673,	"name": "除夜の冥神ヘカティエ第二B射程指定トークン",	"rare": 5,	"classID": 165980,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2673_00"	}
+	{	"id": 2673,	"name": "除夜の冥神ヘカティエ第二B射程指定トークン",	"rare": 5,	"classID": 165980,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2673_00"	},
+	{	"id": 2674,	"name": "狛犬温泉コマ",	"rare": 5,	"classID": 19000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 109,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2674_00",	"imgaw": "2674_01"	},
+	{	"id": 2675,	"name": "停滞の湯シラヌイ",	"rare": 4,	"classID": 128500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 109,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2675_00",	"imgaw": "2675_01"	},
+	{	"id": 2676,	"name": "風水の湯クーシン",	"rare": 4,	"classID": 11200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 9,	"genus": 109,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2676_00",	"imgaw": "2676_01"	},
+	{	"id": 2677,	"name": "湯船の獅子",	"rare": 5,	"classID": 127500,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2677_00"	},
+	{	"id": 2678,	"name": "湯船の大獅子",	"rare": 5,	"classID": 127530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2678_00"	},
+	{	"id": 2679,	"name": "湯船の大獅子【神威】",	"rare": 5,	"classID": 127570,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2679_00"	},
+	{	"id": 2680,	"name": "湯船の大獅子【邪祓】",	"rare": 5,	"classID": 127580,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2680_00"	},
+	{	"id": 2681,	"name": "温泉ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2684_00"	},
+	{	"id": 2685,	"name": "ちびガレア",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2685_00"	}
 ]
