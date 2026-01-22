@@ -1,4 +1,4 @@
-var maxCid = 2685;
+var maxCid = 2687;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2421,6 +2421,8 @@ var charaData = [
 	{	"id": 2678,	"name": "湯船の大獅子",	"rare": 5,	"classID": 127530,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2678_00"	},
 	{	"id": 2679,	"name": "湯船の大獅子【神威】",	"rare": 5,	"classID": 127570,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2679_00"	},
 	{	"id": 2680,	"name": "湯船の大獅子【邪祓】",	"rare": 5,	"classID": 127580,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2680_00"	},
-	{	"id": 2681,	"name": "温泉ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2684_00"	},
-	{	"id": 2685,	"name": "ちびガレア",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2685_00"	}
+	{	"id": 2681,	"name": "温泉ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 109,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2684_00"	},
+	{	"id": 2685,	"name": "ちびガレア",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2685_00"	},
+	{	"id": 2686,	"name": "駒鳥の射手ロビン",	"rare": 4,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2686_00"	},
+	{	"id": 2687,	"name": "魔教の信徒シャラランカ",	"rare": 4,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2687_00",	"imgaw": "2687_01"	}
 ]
