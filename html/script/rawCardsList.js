@@ -1,4 +1,4 @@
-var maxCid = 2687;
+var maxCid = 2696;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2424,5 +2424,13 @@ var charaData = [
 	{	"id": 2681,	"name": "温泉ぬりかべ分身",	"rare": 5,	"classID": 128600,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 109,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2684_00"	},
 	{	"id": 2685,	"name": "ちびガレア",	"rare": 3,	"classID": 20100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2685_00"	},
 	{	"id": 2686,	"name": "駒鳥の射手ロビン",	"rare": 4,	"classID": 18800,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2686_00"	},
-	{	"id": 2687,	"name": "魔教の信徒シャラランカ",	"rare": 4,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2687_00",	"imgaw": "2687_01"	}
+	{	"id": 2687,	"name": "魔教の信徒シャラランカ",	"rare": 4,	"classID": 12500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2687_00",	"imgaw": "2687_01"	},
+	{	"id": 2688,	"name": "時を手繰る者マイズ",	"rare": 11,	"classID": 166100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2688_00",	"imgaw": "2688_01"	},
+	{	"id": 2689,	"name": "カカオ豆の魔物",	"rare": 3,	"classID": 300100,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 102,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2689_00"	},
+	{	"id": 2690,	"name": "警備局長レストレイン",	"rare": 5,	"classID": 141300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2690_00",	"imgaw": "2690_01"	},
+	{	"id": 2691,	"name": "ちびトリシャ",	"rare": 3,	"classID": 170600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2691_00"	},
+	{	"id": 2692,	"name": "ちびサクラ",	"rare": 3,	"classID": 22800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2692_00"	},
+	{	"id": 2693,	"name": "天才美少女魔道士リナ",	"rare": 5,	"classID": 40200,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2694,	"name": "燈火の魔術師フレンディア",	"rare": 5,	"classID": 40200,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2695,	"name": "カカオ豆の魔物",	"rare": 3,	"classID": 300100,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 102,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2696_00"	}
 ]
