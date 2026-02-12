@@ -20700,5 +20700,27 @@
   "urlName": "%cb%e2%c6%b3%a4%ce%b7%f5%a5%cb%a5%c7%a5%a3%a5%ab",
   "rarity": "ブラック",
   "class": "魔法剣の使い手"
+ },
+ {
+  "name": "時を手繰る者マイズ【白金英傑】",
+  "subName": "マイズ",
+  "ability": "",
+  "ability_aw": "",
+  "skill": "",
+  "skill_aw": "",
+  "urlName": "%bb%fe%a4%f2%bc%ea%b7%ab%a4%eb%bc%d4%a5%de%a5%a4%a5%ba%a1%da%c7%f2%b6%e2%b1%d1%b7%e6%a1%db",
+  "rarity": "プラチナ",
+  "class": "時間の操者"
+ },
+ {
+  "name": "ちび迅天君",
+  "subName": "ちび迅天君",
+  "ability": "▹電絶陣\n死亡時撤退扱い、攻撃を数回当てた敵を麻痺させるトークンを設置したマスに移動し、移動中に攻撃力1.5倍で突進攻撃",
+  "ability_aw": "",
+  "skill": "▹迅雷脚\n30秒攻撃力1.8倍、攻撃速度が大幅上昇し、攻撃後の待ち時間が短縮",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%bf%d7%c5%b7%b7%af",
+  "rarity": "ゴールド",
+  "class": "ちび飛電客"
  }
 ]
