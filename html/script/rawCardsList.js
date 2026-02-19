@@ -1,4 +1,4 @@
-var maxCid = 2715;
+var maxCid = 2721;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2449,5 +2449,11 @@ var charaData = [
 	{	"id": 2710,	"name": "泥岩竜",	"rare": 5,	"classID": 300740,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2713,	"name": "時を手繰る者マイズ",	"rare": 10,	"classID": 166100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2714,	"name": "ちび迅天君",	"rare": 3,	"classID": 250100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 9,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2714_00"	},
-	{	"id": 2715,	"name": "ちび迅天君移動用トークン",	"rare": 3,	"classID": 166400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2715_00"	}
+	{	"id": 2715,	"name": "ちび迅天君移動用トークン",	"rare": 3,	"classID": 166400,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2715_00"	},
+	{	"id": 2716,	"name": "恋愛工作員シネイド",	"rare": 5,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 102,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2717,	"name": "恋する発明家レクテ",	"rare": 4,	"classID": 16600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2718,	"name": "恋慕の姫海賊アネリア",	"rare": 4,	"classID": 10400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2719,	"name": "恋する発明家レクテトークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2720,	"name": "ビターキャット",	"rare": 5,	"classID": 301300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2721,	"name": "ビターベリーキャット",	"rare": 5,	"classID": 301320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
