@@ -165,8 +165,8 @@ module.exports = {
             let commitName = `update${month}${date}`;
 
             // get 2 version url
-            urlA = urlA || url.includes('/2iofz514jeks1y44k7al2ostm43xj085') ? url : null;
-            urlR = urlR || url.includes('/1fp32igvpoxnb521p9dqypak5cal0xv0') ? url : null;
+            if (url.includes('/2iofz514jeks1y44k7al2ostm43xj085')) { urlA = url; }
+            if (url.includes('/1fp32igvpoxnb521p9dqypak5cal0xv0')) { urlR = url; }
 
             // get filepath
             xmlspath = `../AigisTools/Data/XML`;
