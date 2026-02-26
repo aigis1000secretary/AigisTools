@@ -1,4 +1,4 @@
-var maxCid = 2721;
+var maxCid = 2732;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2455,5 +2455,16 @@ var charaData = [
 	{	"id": 2718,	"name": "恋慕の姫海賊アネリア",	"rare": 4,	"classID": 10400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2719,	"name": "恋する発明家レクテトークン",	"rare": 5,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2720,	"name": "ビターキャット",	"rare": 5,	"classID": 301300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2721,	"name": "ビターベリーキャット",	"rare": 5,	"classID": 301320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2721,	"name": "ビターベリーキャット",	"rare": 5,	"classID": 301320,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2722,	"name": "雪枝の猛き長オヴィー",	"rare": 5,	"classID": 301400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2723,	"name": "大海の歌声ルクシエ",	"rare": 5,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2724,	"name": "孤高の魔竜ヴァローナ",	"rare": 5,	"classID": 702,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2725,	"name": "迅雷の娘シュン",	"rare": 4,	"classID": 301500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2726,	"name": "白皇大祭ヴィラヘルム",	"rare": 5,	"classID": 143800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2727,	"name": "ナイトメアハウス",	"rare": 3,	"classID": 301600,	"sortGroupID": 30,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2728,	"name": "大海の歌声ルクシエ移動用トークン",	"rare": 3,	"classID": 166500,	"sortGroupID": 20,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2729,	"name": "ちびラウラ",	"rare": 3,	"classID": 30600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2730,	"name": "ちびベアッカ",	"rare": 3,	"classID": 225700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2731,	"name": "スケルトン部隊",	"rare": 3,	"classID": 166600,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2732,	"name": "ヴァンパイアベヒモス",	"rare": 3,	"classID": 166700,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
