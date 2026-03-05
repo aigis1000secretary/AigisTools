@@ -82,7 +82,7 @@ const getIconImage = function (filepath) {
 
     // get file id/type
     // C:\LineBot\AigisTools3.4\out\files\ico_01.aar\002_ico_00_unit_01.atx\frames\002_001.png
-    let [, type, id] = filepath.match(/ico_(\d+)\.[\s\S]+\/(\d+)_001.png/);
+    let [, type, id] = filepath.match(/ico_(\d+)_\d+\.aar\/.+\/(\d+)_001.png/);
     // console.log(`getIconImage(${filepath})`)
 
     // copy file
@@ -328,11 +328,7 @@ const aigisCardsList = async function () {
     console.log(`aigisCardsList start...`);
 
     // get icon png list
-    let icons = [].concat(
-        getFileList(resourcesPath + "/ico_00.aar"),
-        getFileList(resourcesPath + "/ico_01.aar"),
-        getFileList(resourcesPath + "/ico_02.aar"),
-        getFileList(resourcesPath + "/ico_03.aar"))
+    let icons = resourceList.filter(p => p.includes("/ico_") && p.includes(".png"));
 
     let textFormat = function (str) {
 
@@ -880,10 +876,10 @@ const aigisCardsList = async function () {
             // get image md5&get giles
             let img, imgaw, imgaw2A, imgaw2B;
             let iconName = "/" + id.toString().padStart(3, "0") + "_001.png";
-            img = getIconImage(icons.find(file => (/ico_00\.aar/.test(file) && file.indexOf(iconName) != -1)));
-            imgaw = getIconImage(icons.find(file => (/ico_01\.aar/.test(file) && file.indexOf(iconName) != -1)));
-            imgaw2A = getIconImage(icons.find(file => (/ico_02\.aar/.test(file) && file.indexOf(iconName) != -1)));
-            imgaw2B = getIconImage(icons.find(file => (/ico_03\.aar/.test(file) && file.indexOf(iconName) != -1)));
+            img = getIconImage(icons.find(file => (/ico_00_\d+\.aar/.test(file) && file.indexOf(iconName) != -1)));
+            imgaw = getIconImage(icons.find(file => (/ico_01_\d+\.aar/.test(file) && file.indexOf(iconName) != -1)));
+            imgaw2A = getIconImage(icons.find(file => (/ico_02_\d+\.aar/.test(file) && file.indexOf(iconName) != -1)));
+            imgaw2B = getIconImage(icons.find(file => (/ico_03_\d+\.aar/.test(file) && file.indexOf(iconName) != -1)));
 
             // no any img
             // if (!img && !imgaw && !imgaw2A && !imgaw2B) { continue; }
@@ -1406,6 +1402,7 @@ const aigisQuestsList = async () => {
 
     // check map image usefull
     {
+        await sleep(1000);
         let dataList = Object.keys(mapLocationList);
         let imgList = fs.readdirSync(mapsOutputPath);
         let md5List = [];
