@@ -3270,6 +3270,7 @@ let questList = [
 	{	"id": "910001/9904",	"map": "910001_0004",	"missionTitle": "練習用ミッション1",	"questName": "耐久演習(貫通)",	"missionID": 910001,	"questID": 9904,	"location": "00",	"entry": "00",	"life": 99,	"startUP": 500,	"unitLimit": 10},
 	{	"id": "910001/9905",	"map": "910001_0005",	"missionTitle": "練習用ミッション1",	"questName": "木人演習(飛行)",	"missionID": 910001,	"questID": 9905,	"location": "00",	"entry": "00",	"life": 99,	"startUP": 500,	"unitLimit": 10},
 	{	"id": "910001/9906",	"map": "910001_0006",	"missionTitle": "練習用ミッション1",	"questName": "木人演習(百木人組手)",	"missionID": 910001,	"questID": 9906,	"location": "00",	"entry": "00",	"life": 99,	"startUP": 15,	"unitLimit": 10},
+	{	"id": "910001/9907",	"map": "910001_0007",	"missionTitle": "練習用ミッション1",	"questName": "木人演習(範囲)",	"missionID": 910001,	"questID": 9907,	"location": "00",	"entry": "00",	"life": 99,	"startUP": 500,	"unitLimit": 10},
 	{	"id": "920151/7158",	"map": "920151_3475",	"missionTitle": "縛られた空、解放の戦端",	"questName": "鳥人の集落へ",	"missionID": 920151,	"questID": 7158,	"location": "00",	"entry": "00",	"life": 25,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920151/7159",	"map": "920151_3476",	"missionTitle": "縛られた空、解放の戦端",	"questName": "集落を襲う天兵",	"missionID": 920151,	"questID": 7159,	"location": "00",	"entry": "00",	"life": 35,	"startUP": 10,	"unitLimit": 8},
 	{	"id": "920151/7160",	"map": "920151_3477",	"missionTitle": "縛られた空、解放の戦端",	"questName": "鎧をまといし天界兵",	"missionID": 920151,	"questID": 7160,	"location": "00",	"entry": "00",	"life": 20,	"startUP": 10,	"unitLimit": 8},
