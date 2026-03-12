@@ -1,4 +1,4 @@
-var maxCid = 2735;
+var maxCid = 2748;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2469,5 +2469,16 @@ var charaData = [
 	{	"id": 2732,	"name": "ヴァンパイアベヒモス",	"rare": 3,	"classID": 166700,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2733,	"name": "災禍を鎮める者ウスキアス",	"rare": 11,	"classID": 166800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2733_00",	"imgaw": "2733_01"	},
 	{	"id": 2734,	"name": "災禍を鎮める者ウスキアス",	"rare": 10,	"classID": 166800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2735,	"name": "ちびズィズィー",	"rare": 3,	"classID": 182100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2735_00"	}
+	{	"id": 2735,	"name": "ちびズィズィー",	"rare": 3,	"classID": 182100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2735_00"	},
+	{	"id": 2736,	"name": "暗き太陽の亜神ヒュリオン",	"rare": 5,	"classID": 301800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2736_00",	"imgaw": "2736_01"	},
+	{	"id": 2737,	"name": "帝国大治癒士エリアス",	"rare": 5,	"classID": 10200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2737_00",	"imgaw": "2737_01"	},
+	{	"id": 2738,	"name": "帝国薬草師フルス",	"rare": 4,	"classID": 19700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2738_00",	"imgaw": "2738_01"	},
+	{	"id": 2739,	"name": "赫き復讐の亜神ティシファ",	"rare": 5,	"classID": 301700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2739_00",	"imgaw": "2739_01"	},
+	{	"id": 2740,	"name": "帝国の狼巫アネット",	"rare": 4,	"classID": 12900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2740_00",	"imgaw": "2740_01"	},
+	{	"id": 2741,	"name": "帝国守護神官ルチア",	"rare": 5,	"classID": 2200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2741_00",	"imgaw": "2741_01"	},
+	{	"id": 2742,	"name": "忍法ウルスラ遁術集",	"rare": 3,	"classID": 302000,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2748_00"	},
+	{	"id": 2743,	"name": "ちびスフィンクス",	"rare": 3,	"classID": 50600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 5,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2743_00"	},
+	{	"id": 2744,	"name": "自家製ハーブ",	"rare": 5,	"classID": 166900,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2744_00"	},
+	{	"id": 2745,	"name": "黒炎",	"rare": 5,	"classID": 301900,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2746,	"name": "滅びの紅炎",	"rare": 5,	"classID": 301920,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
