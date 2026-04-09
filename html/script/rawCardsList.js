@@ -1,4 +1,4 @@
-var maxCid = 2770;
+var maxCid = 2771;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2501,5 +2501,6 @@ var charaData = [
 	{	"id": 2767,	"name": "古き海の遣いカルティラ",	"rare": 5,	"classID": 303400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2767_00",	"imgaw": "2767_01"	},
 	{	"id": 2768,	"name": "太古の眷属",	"rare": 5,	"classID": 303500,	"sortGroupID": 20,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2768_00"	},
 	{	"id": 2769,	"name": "狂乱の眷属",	"rare": 5,	"classID": 303530,	"sortGroupID": 20,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2769_00"	},
-	{	"id": 2770,	"name": "超次元槍騎士コメット",	"rare": 5,	"classID": 1100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2770_00"	}
+	{	"id": 2770,	"name": "超次元槍騎士コメット",	"rare": 5,	"classID": 1100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2770_00"	},
+	{	"id": 2771,	"name": "ちびダークアンナ",	"rare": 3,	"classID": 174900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2771_00"	}
 ]
