@@ -1,4 +1,4 @@
-var maxCid = 2793;
+var maxCid = 2807;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2515,5 +2515,11 @@ var charaData = [
 	{	"id": 2781,	"name": "ちびツキコ",	"rare": 3,	"classID": 34200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2781_00"	},
 	{	"id": 2782,	"name": "ちびポタル",	"rare": 3,	"classID": 118700,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2782_00"	},
 	{	"id": 2792,	"name": "王立コロッセオ",	"rare": 3,	"classID": 303700,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2792_00"	},
-	{	"id": 2793,	"name": "ちびアトナテス",	"rare": 3,	"classID": 221700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2793_00"	}
+	{	"id": 2793,	"name": "ちびアトナテス",	"rare": 3,	"classID": 221700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2793_00"	},
+	{	"id": 2794,	"name": "刀匠マサムネ",	"rare": 4,	"classID": 5200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2794_00",	"imgaw": "2794_01"	},
+	{	"id": 2795,	"name": "虚ろの幻花ファルタリア",	"rare": 5,	"classID": 19500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2795_00",	"imgaw": "2795_01"	},
+	{	"id": 2796,	"name": "荒野の保安官ドミナ",	"rare": 5,	"classID": 304000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2796_00",	"imgaw": "2796_01"	},
+	{	"id": 2797,	"name": "災夜の亜神ラシュマシュ(幻影)",	"rare": 5,	"classID": 303800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2805_00"	},
+	{	"id": 2798,	"name": "大海神の娘 乙姫(幻影)",	"rare": 5,	"classID": 303900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2806_00"	},
+	{	"id": 2801,	"name": "赤炉の亜神ヘスティス(幻影)",	"rare": 5,	"classID": 167330,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2807_00"	}
 ]
