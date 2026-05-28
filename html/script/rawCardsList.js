@@ -1,4 +1,4 @@
-var maxCid = 2807;
+var maxCid = 2821;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2270,7 +2270,7 @@ var charaData = [
 	{	"id": 2516,	"name": "白狼シュナフタ",	"rare": 5,	"classID": 147200,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2516_00"	},
 	{	"id": 2517,	"name": "番の白狼シュナフタ",	"rare": 5,	"classID": 147230,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2517_00"	},
 	{	"id": 2521,	"name": "歴史を彷徨う者ロイジィ",	"rare": 11,	"classID": 163000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2521_00",	"imgaw": "2521_01"	},
-	{	"id": 2522,	"name": "歴史を彷徨う者ロイジィ",	"rare": 10,	"classID": 163000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2522,	"name": "歴史を彷徨う者ロイジィ",	"rare": 10,	"classID": 163000,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2522_00",	"imgaw": "2522_01"	},
 	{	"id": 2523,	"name": "王国ファッションショー",	"rare": 3,	"classID": 147300,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2523_00"	},
 	{	"id": 2524,	"name": "白き熊戦士マータン",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2025,	"isEvent": 0,	"isToken": 0,	"img": "2524_00",	"imgaw": "2524_01"	},
 	{	"id": 2525,	"name": "風雲大華フーコ",	"rare": 4,	"classID": 6200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2025,	"isEvent": 1,	"isToken": 1,	"img": "2525_00"	},
@@ -2521,5 +2521,16 @@ var charaData = [
 	{	"id": 2796,	"name": "荒野の保安官ドミナ",	"rare": 5,	"classID": 304000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2796_00",	"imgaw": "2796_01"	},
 	{	"id": 2797,	"name": "災夜の亜神ラシュマシュ(幻影)",	"rare": 5,	"classID": 303800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2805_00"	},
 	{	"id": 2798,	"name": "大海神の娘 乙姫(幻影)",	"rare": 5,	"classID": 303900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2806_00"	},
-	{	"id": 2801,	"name": "赤炉の亜神ヘスティス(幻影)",	"rare": 5,	"classID": 167330,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2807_00"	}
+	{	"id": 2801,	"name": "赤炉の亜神ヘスティス(幻影)",	"rare": 5,	"classID": 167330,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2807_00"	},
+	{	"id": 2808,	"name": "遺物拾いのプリヤンカ",	"rare": 5,	"classID": 304200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2808_00",	"imgaw": "2808_01"	},
+	{	"id": 2809,	"name": "天宇寿女命",	"rare": 5,	"classID": 167700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2809_00",	"imgaw": "2809_01"	},
+	{	"id": 2810,	"name": "稀代の陰陽師セイメイ",	"rare": 5,	"classID": 167500,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2810_00",	"imgaw": "2810_01"	},
+	{	"id": 2811,	"name": "闘気の格闘家ダン",	"rare": 5,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2811_00",	"imgaw": "2811_01"	},
+	{	"id": 2812,	"name": "流転の刻詠リンネ",	"rare": 11,	"classID": 167400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2812_00",	"imgaw": "2812_01"	},
+	{	"id": 2813,	"name": "ちびリンクス",	"rare": 3,	"classID": 35400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2813_00"	},
+	{	"id": 2814,	"name": "ちびシルヴァーナ",	"rare": 3,	"classID": 175500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2814_00"	},
+	{	"id": 2815,	"name": "冒険者パーティー",	"rare": 3,	"classID": 304100,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2815_00"	},
+	{	"id": 2816,	"name": "十二天将",	"rare": 5,	"classID": 167600,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2819_00"	},
+	{	"id": 2820,	"name": "天宇寿女命トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2820_00"	},
+	{	"id": 2821,	"name": "天宇寿女命覚醒トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2821_00"	}
 ]
