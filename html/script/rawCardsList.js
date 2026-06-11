@@ -1,4 +1,4 @@
-var maxCid = 2821;
+var maxCid = 2826;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2532,5 +2532,10 @@ var charaData = [
 	{	"id": 2815,	"name": "冒険者パーティー",	"rare": 3,	"classID": 304100,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2815_00"	},
 	{	"id": 2816,	"name": "十二天将",	"rare": 5,	"classID": 167600,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2819_00"	},
 	{	"id": 2820,	"name": "天宇寿女命トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2820_00"	},
-	{	"id": 2821,	"name": "天宇寿女命覚醒トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2821_00"	}
+	{	"id": 2821,	"name": "天宇寿女命覚醒トークン",	"rare": 5,	"classID": 40500,	"sortGroupID": 20,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2821_00"	},
+	{	"id": 2822,	"name": "誓いの鍛冶師グラティア",	"rare": 4,	"classID": 5200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 104,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2822_00",	"imgaw": "2822_01"	},
+	{	"id": 2823,	"name": "贖罪の花嫁ラウラ",	"rare": 5,	"classID": 10500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 104,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2823_00",	"imgaw": "2823_01"	},
+	{	"id": 2824,	"name": "番う嫁竜カルペム",	"rare": 5,	"classID": 141300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 104,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2824_00",	"imgaw": "2824_01"	},
+	{	"id": 2825,	"name": "王子【婚礼】",	"rare": 5,	"classID": 304300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 104,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2825_00"	},
+	{	"id": 2826,	"name": "ちびベヒモス",	"rare": 3,	"classID": 50700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2826_00"	}
 ]
