@@ -2522,7 +2522,7 @@ var charaData = [
 	{	"id": 2797,	"name": "災夜の亜神ラシュマシュ(幻影)",	"rare": 5,	"classID": 303800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2805_00"	},
 	{	"id": 2798,	"name": "大海神の娘 乙姫(幻影)",	"rare": 5,	"classID": 303900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2806_00"	},
 	{	"id": 2801,	"name": "赤炉の亜神ヘスティス(幻影)",	"rare": 5,	"classID": 167330,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2807_00"	},
-	{	"id": 2808,	"name": "遺物拾いのプリヤンカ",	"rare": 5,	"classID": 304200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2808_00",	"imgaw": "2808_01"	},
+	{	"id": 2808,	"name": "遺物拾いのプリヤンカ",	"rare": 5,	"classID": 304200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2808_00",	"imgaw": "2808_01"	},
 	{	"id": 2809,	"name": "天宇寿女命",	"rare": 5,	"classID": 167700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2809_00",	"imgaw": "2809_01"	},
 	{	"id": 2810,	"name": "稀代の陰陽師セイメイ",	"rare": 5,	"classID": 167500,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2810_00",	"imgaw": "2810_01"	},
 	{	"id": 2811,	"name": "闘気の格闘家ダン",	"rare": 5,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2811_00",	"imgaw": "2811_01"	},
