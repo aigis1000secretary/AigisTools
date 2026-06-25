@@ -1,4 +1,4 @@
-var maxCid = 2826;
+var maxCid = 2833;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2537,5 +2537,12 @@ var charaData = [
 	{	"id": 2823,	"name": "贖罪の花嫁ラウラ",	"rare": 5,	"classID": 10500,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 104,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2823_00",	"imgaw": "2823_01"	},
 	{	"id": 2824,	"name": "番う嫁竜カルペム",	"rare": 5,	"classID": 141300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 104,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2824_00",	"imgaw": "2824_01"	},
 	{	"id": 2825,	"name": "王子【婚礼】",	"rare": 5,	"classID": 304300,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 104,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2825_00"	},
-	{	"id": 2826,	"name": "ちびベヒモス",	"rare": 3,	"classID": 50700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2826_00"	}
+	{	"id": 2826,	"name": "ちびベヒモス",	"rare": 3,	"classID": 50700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2826_00"	},
+	{	"id": 2827,	"name": "華麗なる魔剣シャルロット",	"rare": 5,	"classID": 1600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2827_00",	"imgaw": "2827_01"	},
+	{	"id": 2828,	"name": "紅玉の精鋭射手ポミエ",	"rare": 5,	"classID": 10000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2828_00",	"imgaw": "2828_01"	},
+	{	"id": 2829,	"name": "メカジーラトス",	"rare": 3,	"classID": 304400,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2829_00"	},
+	{	"id": 2830,	"name": "大天使長ミルノ",	"rare": 5,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2830_00",	"imgaw": "2830_01"	},
+	{	"id": 2831,	"name": "厄災の悪魔少女エフネ",	"rare": 5,	"classID": 125600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2831_00",	"imgaw": "2831_01"	},
+	{	"id": 2832,	"name": "ちびヨユキ",	"rare": 3,	"classID": 250300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2832_00"	},
+	{	"id": 2833,	"name": "ちびアクアマリー",	"rare": 3,	"classID": 31100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2833_00"	}
 ]
