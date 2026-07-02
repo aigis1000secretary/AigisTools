@@ -1,4 +1,4 @@
-var maxCid = 2833;
+var maxCid = 2848;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -1381,7 +1381,7 @@ var charaData = [
 	{	"id": 1468,	"name": "世界を超える者エフトラ",	"rare": 10,	"classID": 150900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1468_00",	"imgaw": "1468_01"	},
 	{	"id": 1469,	"name": "生命を謳う者イムラウ",	"rare": 11,	"classID": 151000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 0,	"isToken": 0,	"img": "1469_00",	"imgaw": "1469_01"	},
 	{	"id": 1470,	"name": "生命を謳う者イムラウ",	"rare": 10,	"classID": 151000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 0,	"img": "1470_00",	"imgaw": "1470_01"	},
-	{	"id": 1471,	"name": "バリアトークン",	"rare": 5,	"classID": 151100,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "2039_00"	},
+	{	"id": 1471,	"name": "バリアトークン",	"rare": 5,	"classID": 151100,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "2845_00"	},
 	{	"id": 1472,	"name": "【スライム娘】リン",	"rare": 5,	"classID": 41800,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1473,	"name": "【ペガサス娘】スズ",	"rare": 5,	"classID": 41900,	"sortGroupID": 20,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 1474,	"name": "【カッパードラゴン娘】セレン",	"rare": 5,	"classID": 42000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
@@ -2544,5 +2544,17 @@ var charaData = [
 	{	"id": 2830,	"name": "大天使長ミルノ",	"rare": 5,	"classID": 1700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2830_00",	"imgaw": "2830_01"	},
 	{	"id": 2831,	"name": "厄災の悪魔少女エフネ",	"rare": 5,	"classID": 125600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2831_00",	"imgaw": "2831_01"	},
 	{	"id": 2832,	"name": "ちびヨユキ",	"rare": 3,	"classID": 250300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2832_00"	},
-	{	"id": 2833,	"name": "ちびアクアマリー",	"rare": 3,	"classID": 31100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2833_00"	}
+	{	"id": 2833,	"name": "ちびアクアマリー",	"rare": 3,	"classID": 31100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2833_00"	},
+	{	"id": 2834,	"name": "夏日の調べホルミース",	"rare": 5,	"classID": 159600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2834_00",	"imgaw": "2834_01"	},
+	{	"id": 2835,	"name": "真夏の征服者ヴィラヘルム",	"rare": 5,	"classID": 143800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2835_00",	"imgaw": "2835_01"	},
+	{	"id": 2836,	"name": "バカンスナイト ヘイズル",	"rare": 5,	"classID": 4800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2836_00",	"imgaw": "2836_01"	},
+	{	"id": 2837,	"name": "真夏の風雷クーコ&レミィ",	"rare": 5,	"classID": 304500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2837_00",	"imgaw": "2837_01"	},
+	{	"id": 2838,	"name": "上善如水 太上老君",	"rare": 5,	"classID": 136900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2838_00",	"imgaw": "2838_01"	},
+	{	"id": 2839,	"name": "渚に響く号砲ハリンヘイム",	"rare": 4,	"classID": 11300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2839_00",	"imgaw": "2839_01"	},
+	{	"id": 2840,	"name": "溟海の魔将アブグルント",	"rare": 4,	"classID": 125300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2840_00",	"imgaw": "2840_01"	},
+	{	"id": 2841,	"name": "千年後の海ヴィディア",	"rare": 10,	"classID": 138800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2841_00",	"imgaw": "2841_01"	},
+	{	"id": 2842,	"name": "浜辺の神託イムラウ",	"rare": 10,	"classID": 151000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2842_00",	"imgaw": "2842_01"	},
+	{	"id": 2843,	"name": "海竜機兵ダグマール",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2843_00",	"imgaw": "2843_01"	},
+	{	"id": 2844,	"name": "常夏の聖霊女王グラディス",	"rare": 5,	"classID": 68,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2844_00"	},
+	{	"id": 2846,	"name": "上善如水 太上老君（分身）",	"rare": 5,	"classID": 304630,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 105,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
