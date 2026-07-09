@@ -1,4 +1,4 @@
-var maxCid = 2848;
+var maxCid = 2849;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2556,5 +2556,6 @@ var charaData = [
 	{	"id": 2842,	"name": "浜辺の神託イムラウ",	"rare": 10,	"classID": 151000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2842_00",	"imgaw": "2842_01"	},
 	{	"id": 2843,	"name": "海竜機兵ダグマール",	"rare": 5,	"classID": 150700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2843_00",	"imgaw": "2843_01"	},
 	{	"id": 2844,	"name": "常夏の聖霊女王グラディス",	"rare": 5,	"classID": 68,	"sortGroupID": 10,	"placeType": 0,	"kind": 2,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2844_00"	},
-	{	"id": 2846,	"name": "上善如水 太上老君（分身）",	"rare": 5,	"classID": 304630,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 105,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2846,	"name": "上善如水 太上老君（分身）",	"rare": 5,	"classID": 304630,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 105,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2849,	"name": "ちびストレイ",	"rare": 3,	"classID": 30000,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2849_00"	}
 ]

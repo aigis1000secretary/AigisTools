@@ -21624,5 +21624,16 @@
   "urlName": "%be%ef%b2%c6%a4%ce%c0%bb%ce%ee%bd%f7%b2%a6%a5%b0%a5%e9%a5%c7%a5%a3%a5%b9",
   "rarity": "ブラック",
   "class": "聖霊"
+ },
+ {
+  "name": "ちびストレイ",
+  "subName": "ちびストレイ",
+  "ability": "",
+  "ability_aw": "",
+  "skill": "▹ダブルショット\n15秒2連続で攻撃",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%a5%b9%a5%c8%a5%ec%a5%a4",
+  "rarity": "ゴールド",
+  "class": "アーチャー"
  }
 ]
