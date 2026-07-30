@@ -1,4 +1,4 @@
-var maxCid = 2857;
+var maxCid = 2861;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2565,5 +2565,9 @@ var charaData = [
 	{	"id": 2854,	"name": "idolenessラタ★キュウビ",	"rare": 5,	"classID": 304900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 2,	"genus": 111,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2854_00",	"imgaw": "2854_01"	},
 	{	"id": 2855,	"name": "雪姫親衛隊",	"rare": 4,	"classID": 304800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2856,	"name": "魔導ドローン（ファン）",	"rare": 5,	"classID": 167800,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2856_00"	},
-	{	"id": 2857,	"name": "idolenessラタ★キュウビ_射程指定トークン",	"rare": 5,	"classID": 168000,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2857_00"	}
+	{	"id": 2857,	"name": "idolenessラタ★キュウビ_射程指定トークン",	"rare": 5,	"classID": 168000,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2857_00"	},
+	{	"id": 2858,	"name": "ＦＭ／ＤＨＭＺシャーク",	"rare": 3,	"classID": 168100,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2858_00"	},
+	{	"id": 2859,	"name": "ちびイヨ",	"rare": 3,	"classID": 30700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2859_00"	},
+	{	"id": 2860,	"name": "ちびサティン",	"rare": 3,	"classID": 238000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2860_00"	},
+	{	"id": 2861,	"name": "ＦＭ／ＤＨＭＺシャーク移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2861_00"	}
 ]
