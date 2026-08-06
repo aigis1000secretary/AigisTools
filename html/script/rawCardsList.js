@@ -1,4 +1,4 @@
-var maxCid = 2861;
+var maxCid = 2866;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2563,11 +2563,15 @@ var charaData = [
 	{	"id": 2852,	"name": "氷雪系アイドル ユキヒメ",	"rare": 4,	"classID": 167900,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 8,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2852_00",	"imgaw": "2852_01"	},
 	{	"id": 2853,	"name": "機甲偶像アージェ★アルタ",	"rare": 5,	"classID": 304700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 111,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2853_00",	"imgaw": "2853_01"	},
 	{	"id": 2854,	"name": "idolenessラタ★キュウビ",	"rare": 5,	"classID": 304900,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": 2,	"genus": 111,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2854_00",	"imgaw": "2854_01"	},
-	{	"id": 2855,	"name": "雪姫親衛隊",	"rare": 4,	"classID": 304800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2855,	"name": "雪姫親衛隊",	"rare": 5,	"classID": 304800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 8,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
 	{	"id": 2856,	"name": "魔導ドローン（ファン）",	"rare": 5,	"classID": 167800,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2856_00"	},
 	{	"id": 2857,	"name": "idolenessラタ★キュウビ_射程指定トークン",	"rare": 5,	"classID": 168000,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 111,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2857_00"	},
 	{	"id": 2858,	"name": "ＦＭ／ＤＨＭＺシャーク",	"rare": 3,	"classID": 168100,	"sortGroupID": 40,	"placeType": 3,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2858_00"	},
 	{	"id": 2859,	"name": "ちびイヨ",	"rare": 3,	"classID": 30700,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2859_00"	},
 	{	"id": 2860,	"name": "ちびサティン",	"rare": 3,	"classID": 238000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2860_00"	},
-	{	"id": 2861,	"name": "ＦＭ／ＤＨＭＺシャーク移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2861_00"	}
+	{	"id": 2861,	"name": "ＦＭ／ＤＨＭＺシャーク移動用トークン",	"rare": 3,	"classID": 17000,	"sortGroupID": 20,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2861_00"	},
+	{	"id": 2862,	"name": "雪枝の夏マータン",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2862_00",	"imgaw": "2862_01"	},
+	{	"id": 2863,	"name": "ダーク夏祭りリッチ",	"rare": 5,	"classID": 154400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2863_00",	"imgaw": "2863_01"	},
+	{	"id": 2864,	"name": "久遠の思い出エターナー",	"rare": 5,	"classID": 10800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2864_00",	"imgaw": "2864_01"	},
+	{	"id": 2866,	"name": "刈リ取ル者タチ",	"rare": 5,	"classID": 305000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
