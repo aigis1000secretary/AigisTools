@@ -21756,5 +21756,16 @@
   "urlName": "%b5%d7%b1%f3%a4%ce%bb%d7%a4%a4%bd%d0%a5%a8%a5%bf%a1%bc%a5%ca%a1%bc",
   "rarity": "ブラック",
   "class": "ビショップ"
+ },
+ {
+  "name": "ちびリカルド",
+  "subName": "ちびリカルド",
+  "ability": "",
+  "ability_aw": "",
+  "skill": "▹エクセレントソード\n90秒攻撃力1.4倍、射程1.4倍",
+  "skill_aw": "",
+  "urlName": "%a4%c1%a4%d3%a5%ea%a5%ab%a5%eb%a5%c9",
+  "rarity": "ゴールド",
+  "class": "魔法剣士"
  }
 ]

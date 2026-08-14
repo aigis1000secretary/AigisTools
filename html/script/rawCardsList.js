@@ -1,4 +1,4 @@
-var maxCid = 2866;
+var maxCid = 2867;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2573,5 +2573,6 @@ var charaData = [
 	{	"id": 2862,	"name": "雪枝の夏マータン",	"rare": 4,	"classID": 133700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2862_00",	"imgaw": "2862_01"	},
 	{	"id": 2863,	"name": "ダーク夏祭りリッチ",	"rare": 5,	"classID": 154400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2863_00",	"imgaw": "2863_01"	},
 	{	"id": 2864,	"name": "久遠の思い出エターナー",	"rare": 5,	"classID": 10800,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 105,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2864_00",	"imgaw": "2864_01"	},
-	{	"id": 2866,	"name": "刈リ取ル者タチ",	"rare": 5,	"classID": 305000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2866,	"name": "刈リ取ル者タチ",	"rare": 5,	"classID": 305000,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2867,	"name": "ちびリカルド",	"rare": 3,	"classID": 21600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2867_00"	}
 ]
