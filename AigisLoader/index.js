@@ -536,12 +536,16 @@ const aigisCardsList = async function () {
                 .replace(/CheckUnitInBattleSomeMatch\(.+\(\).+\)/g, true)  // 滿足特定條件的人數
                 .replace(/GetEntryUnitCount\(\)/g, 6)  // 下場人數
                 .replace(/GetSysVer\(\)\s*[<=>]+\s*\d+/g, false)
-                .replace(/GetSallyCount\(\)\s*[<=>]+\s*\d+/g, false);
+                .replace(/GetSallyCount\(\)\s*[<=>]+\s*\d+/g, false)
+
+                .replace(`;)`, `)`);
 
             try {
                 return eval(iExpression);
             } catch (e) {
-                console.log(skillID, iExpression)
+                console.log(skillID, `iExpression`);
+                console.log(ele._ExpressionActivate);
+                console.log(iExpression);
                 throw e;
             }
         });
