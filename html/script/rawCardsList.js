@@ -1,4 +1,4 @@
-var maxCid = 2870;
+var maxCid = 2879;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2577,5 +2577,14 @@ var charaData = [
 	{	"id": 2867,	"name": "ちびリカルド",	"rare": 3,	"classID": 21600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2867_00"	},
 	{	"id": 2868,	"name": "創滅を舞う者ケルドラ",	"rare": 11,	"classID": 305200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 11,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2868_00",	"imgaw": "2868_01"	},
 	{	"id": 2869,	"name": "創滅を舞う者ケルドラ",	"rare": 10,	"classID": 305200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 11,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2870,	"name": "遺宝狩りカーヴィヤ",	"rare": 5,	"classID": 304200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2870_00",	"imgaw": "2870_01"	}
+	{	"id": 2870,	"name": "遺宝狩りカーヴィヤ",	"rare": 5,	"classID": 304200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2870_00",	"imgaw": "2870_01"	},
+	{	"id": 2871,	"name": "狂風大祭ズィズィー",	"rare": 5,	"classID": 162100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2871_00",	"imgaw": "2871_01"	},
+	{	"id": 2872,	"name": "チェインソンガール",	"rare": 5,	"classID": 305300,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2872_00",	"imgaw": "2872_01"	},
+	{	"id": 2873,	"name": "天眼の呪い師アナーニャ",	"rare": 4,	"classID": 305600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 11,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2873_00",	"imgaw": "2873_01"	},
+	{	"id": 2874,	"name": "聖杯付喪神グリアル",	"rare": 5,	"classID": 150200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2874_00",	"imgaw": "2874_01"	},
+	{	"id": 2875,	"name": "四神の長 黄龍",	"rare": 5,	"classID": 305500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2875_00",	"imgaw": "2875_01"	},
+	{	"id": 2876,	"name": "ダミー９",	"rare": 5,	"classID": 300000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2877,	"name": "ダークダイオージ",	"rare": 3,	"classID": 305400,	"sortGroupID": 30,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2877_00"	},
+	{	"id": 2878,	"name": "ちびメルアビス",	"rare": 3,	"classID": 31600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2878_00"	},
+	{	"id": 2879,	"name": "ちびファニュア",	"rare": 3,	"classID": 22800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2879_00"	}
 ]

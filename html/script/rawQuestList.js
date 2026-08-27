@@ -3318,6 +3318,7 @@ let questList = [
 	{	"id": "100004/1405",	"map": "1055",	"missionTitle": "第四章　東の国",	"questName": "風神退治",	"missionID": 100004,	"questID": 1405,	"location": "00",	"entry": "00",	"life": 30,	"startUP": 10,	"unitLimit": 10},
 	{	"id": "100004/1406",	"map": "1056",	"missionTitle": "第四章　東の国",	"questName": "落ち武者たちの行進",	"missionID": 100004,	"questID": 1406,	"location": "00",	"entry": "00",	"life": 15,	"startUP": 10,	"unitLimit": 10},
 	{	"id": "100004/1407",	"map": "1057",	"missionTitle": "第四章　東の国",	"questName": "雷神襲来",	"missionID": 100004,	"questID": 1407,	"location": "00",	"entry": "00",	"life": 30,	"startUP": 10,	"unitLimit": 10},
+	{	"id": "410576/25000",	"map": "7470",	"missionTitle": "第１6回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410576,	"questID": 25000,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
 	{	"id": "410399/7940",	"map": "4108",	"missionTitle": "第１０回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410399,	"questID": 7940,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
 	{	"id": "410400/8161",	"map": "4109",	"missionTitle": "第１１回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410400,	"questID": 8161,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
 	{	"id": "410462/8326",	"map": "4176",	"missionTitle": "第１２回人気投票ミッション",	"questName": "強襲ミッション",	"missionID": 410462,	"questID": 8326,	"location": "00",	"entry": "00",	"life": 50,	"startUP": 100,	"unitLimit": 10},
