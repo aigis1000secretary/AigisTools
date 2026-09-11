@@ -1,4 +1,4 @@
-var maxCid = 2880;
+var maxCid = 2884;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2587,5 +2587,9 @@ var charaData = [
 	{	"id": 2877,	"name": "ダークダイオージ",	"rare": 3,	"classID": 305400,	"sortGroupID": 30,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2877_00"	},
 	{	"id": 2878,	"name": "ちびメルアビス",	"rare": 3,	"classID": 31600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2878_00"	},
 	{	"id": 2879,	"name": "ちびファニュア",	"rare": 3,	"classID": 22800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2879_00"	},
-	{	"id": 2880,	"name": "ちびロゼルヌ",	"rare": 3,	"classID": 23030,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2880_00"	}
+	{	"id": 2880,	"name": "ちびロゼルヌ",	"rare": 3,	"classID": 23030,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2880_00"	},
+	{	"id": 2881,	"name": "公家大名ノリモチ",	"rare": 4,	"classID": 305700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2881_00",	"imgaw": "2881_01"	},
+	{	"id": 2882,	"name": "ちび森の守護獣",	"rare": 3,	"classID": 50800,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2882_00"	},
+	{	"id": 2883,	"name": "近衛大将カラスマル",	"rare": 5,	"classID": 305700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2883_00",	"imgaw": "2883_01"	},
+	{	"id": 2884,	"name": "雨刀付喪神ムラサメ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2884_00",	"imgaw": "2884_01"	}
 ]
