@@ -1,4 +1,4 @@
-var maxCid = 2887;
+var maxCid = 2896;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2583,7 +2583,7 @@ var charaData = [
 	{	"id": 2873,	"name": "天眼の呪い師アナーニャ",	"rare": 4,	"classID": 305600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 11,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2873_00",	"imgaw": "2873_01"	},
 	{	"id": 2874,	"name": "聖杯付喪神グリアル",	"rare": 5,	"classID": 150200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2874_00",	"imgaw": "2874_01"	},
 	{	"id": 2875,	"name": "四神の長 黄龍",	"rare": 5,	"classID": 305500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2875_00",	"imgaw": "2875_01"	},
-	{	"id": 2876,	"name": "ダミー９",	"rare": 5,	"classID": 300000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2876,	"name": "原初森林の番人",	"rare": 5,	"classID": 306400,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2876_00"	},
 	{	"id": 2877,	"name": "ダークダイオージ",	"rare": 3,	"classID": 305400,	"sortGroupID": 30,	"placeType": 1,	"kind": 100,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2877_00"	},
 	{	"id": 2878,	"name": "ちびメルアビス",	"rare": 3,	"classID": 31600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2878_00"	},
 	{	"id": 2879,	"name": "ちびファニュア",	"rare": 3,	"classID": 22800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2879_00"	},
@@ -2594,5 +2594,14 @@ var charaData = [
 	{	"id": 2884,	"name": "雨刀付喪神ムラサメ",	"rare": 5,	"classID": 130400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2884_00",	"imgaw": "2884_01"	},
 	{	"id": 2885,	"name": "T.O.W.E.R. typeA",	"rare": 5,	"classID": 305800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2885_00",	"imgaw": "2885_01"	},
 	{	"id": 2886,	"name": "Tactical Drone",	"rare": 5,	"classID": 305900,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
-	{	"id": 2887,	"name": "Terminal Drone",	"rare": 5,	"classID": 305920,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2887,	"name": "Terminal Drone",	"rare": 5,	"classID": 305920,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2888,	"name": "天眼国の侍女ニハラ",	"rare": 4,	"classID": 2800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 11,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2888_00",	"imgaw": "2888_01"	},
+	{	"id": 2889,	"name": "武林大会",	"rare": 3,	"classID": 306500,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2889_00"	},
+	{	"id": 2890,	"name": "可憐白猫ノヴァリス",	"rare": 5,	"classID": 306100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2890_00",	"imgaw": "2890_01"	},
+	{	"id": 2891,	"name": "白光の守護者アルティア",	"rare": 11,	"classID": 306000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2891_00",	"imgaw": "2891_01"	},
+	{	"id": 2892,	"name": "ちびリタ",	"rare": 3,	"classID": 30000,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2892_00"	},
+	{	"id": 2893,	"name": "ちびスプラ",	"rare": 3,	"classID": 32100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2893_00"	},
+	{	"id": 2894,	"name": "愛らしき白猫",	"rare": 5,	"classID": 306200,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2894_00"	},
+	{	"id": 2895,	"name": "青薔薇の猫",	"rare": 5,	"classID": 306300,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2895_00"	},
+	{	"id": 2896,	"name": "天眼の貴族ラージヴィール",	"rare": 5,	"classID": 306600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
