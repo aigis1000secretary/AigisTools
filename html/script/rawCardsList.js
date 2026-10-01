@@ -1,4 +1,4 @@
-var maxCid = 2896;
+var maxCid = 2904;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -577,7 +577,7 @@ var charaData = [
 	{	"id": 585,	"name": "ちびアリシア",	"rare": 3,	"classID": 23200,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 1,	"genus": 108,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "585_00"	},
 	{	"id": 586,	"name": "闇使いチャーミィ",	"rare": 4,	"classID": 4000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "586_00",	"imgaw": "586_01",	"imgaw2B": "586_03"	},
 	{	"id": 587,	"name": "蒼角の鬼娘リンドウ",	"rare": 4,	"classID": 4700,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "587_00",	"imgaw": "587_01",	"imgaw2A": "587_02"	},
-	{	"id": 588,	"name": "ハニー",	"rare": 5,	"classID": 59,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"assign": 0,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "588_00"	},
+	{	"id": 588,	"name": "ハニー",	"rare": 5,	"classID": 59,	"sortGroupID": 10,	"placeType": 0,	"kind": 4,	"assign": 12,	"genus": 0,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "588_00"	},
 	{	"id": 589,	"name": "一途な武王姫アリス",	"rare": 5,	"classID": 1400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "589_00",	"imgaw": "589_01"	},
 	{	"id": 590,	"name": "恋する召喚士リノ",	"rare": 4,	"classID": 11100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2018,	"isEvent": 0,	"isToken": 0,	"img": "590_00",	"imgaw": "590_01"	},
 	{	"id": 591,	"name": "甘菓子の魔女リュリュ",	"rare": 4,	"classID": 10300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 102,	"year": 2018,	"isEvent": 1,	"isToken": 0,	"img": "591_00",	"imgaw": "591_01",	"imgaw2B": "591_03"	},
@@ -1610,8 +1610,8 @@ var charaData = [
 	{	"id": 1760,	"name": "魔人サテラ",	"rare": 5,	"classID": 136500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1760_00",	"imgaw": "1760_01"	},
 	{	"id": 1761,	"name": "見当かなみ",	"rare": 5,	"classID": 136400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2023,	"isEvent": 0,	"isToken": 0,	"img": "1761_00",	"imgaw": "1761_01"	},
 	{	"id": 1762,	"name": "ちびドゥマルデ",	"rare": 3,	"classID": 30200,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1762_00"	},
-	{	"id": 1763,	"name": "ランス",	"rare": 5,	"classID": 43100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1763_00"	},
-	{	"id": 1764,	"name": "シーザー",	"rare": 5,	"classID": 136600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1764_00"	},
+	{	"id": 1763,	"name": "ランス",	"rare": 5,	"classID": 43100,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 12,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1763_00"	},
+	{	"id": 1764,	"name": "シーザー",	"rare": 5,	"classID": 136600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 12,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1764_00"	},
 	{	"id": 1766,	"name": "きらめく聖樹トークン",	"rare": 5,	"classID": 134700,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2022,	"isEvent": 1,	"isToken": 1,	"img": "1766_00"	},
 	{	"id": 1767,	"name": "カカオの木",	"rare": 5,	"classID": 153700,	"sortGroupID": 30,	"placeType": 2,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 1,	"img": "1767_00"	},
 	{	"id": 1768,	"name": "戦の聖霊プロエ",	"rare": 5,	"classID": 3900,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 0,	"year": 2023,	"isEvent": 1,	"isToken": 0,	"img": "1768_00",	"imgaw": "1768_01"	},
@@ -2603,5 +2603,12 @@ var charaData = [
 	{	"id": 2893,	"name": "ちびスプラ",	"rare": 3,	"classID": 32100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2893_00"	},
 	{	"id": 2894,	"name": "愛らしき白猫",	"rare": 5,	"classID": 306200,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2894_00"	},
 	{	"id": 2895,	"name": "青薔薇の猫",	"rare": 5,	"classID": 306300,	"sortGroupID": 40,	"placeType": 3,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2895_00"	},
-	{	"id": 2896,	"name": "天眼の貴族ラージヴィール",	"rare": 5,	"classID": 306600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
+	{	"id": 2896,	"name": "天眼の貴族ラージヴィール",	"rare": 5,	"classID": 306600,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2897,	"name": "人類軍総統ランス",	"rare": 5,	"classID": 306700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2897_00",	"imgaw": "2897_01"	},
+	{	"id": 2898,	"name": "人類軍総統ランス",	"rare": 4,	"classID": 306700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2898_00",	"imgaw": "2898_01"	},
+	{	"id": 2899,	"name": "志津香の弟子アウローラ",	"rare": 5,	"classID": 168200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2899_00",	"imgaw": "2899_01"	},
+	{	"id": 2900,	"name": "シィル・プライン",	"rare": 5,	"classID": 168300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2900_00",	"imgaw": "2900_01"	},
+	{	"id": 2901,	"name": "リア・パラパラ・リーザス",	"rare": 5,	"classID": 168400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2901_00",	"imgaw": "2901_01"	},
+	{	"id": 2902,	"name": "シルキィ・リトルレーズン",	"rare": 5,	"classID": 306800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2902_00",	"imgaw": "2902_01"	},
+	{	"id": 2903,	"name": "リック・アディスン",	"rare": 5,	"classID": 306900,	"sortGroupID": 40,	"placeType": 1,	"kind": 2,	"assign": 12,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2904_00"	}
 ]
