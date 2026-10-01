@@ -537,8 +537,10 @@ const aigisCardsList = async function () {
                 .replace(/GetEntryUnitCount\(\)/g, 6)  // 下場人數
                 .replace(/GetSysVer\(\)\s*[<=>]+\s*\d+/g, false)
                 .replace(/GetSallyCount\(\)\s*[<=>]+\s*\d+/g, false)
+                .replace(/GetEntryAssignCount\([^\)]+\)/g, 0)  // 下場人數
 
-                .replace(`;)`, `)`);
+                .replace(`;)`, `)`)
+                .replace(`true0`, true);
 
             try {
                 return eval(iExpression);
@@ -808,6 +810,7 @@ const aigisCardsList = async function () {
                 // ランス10-決戦-
                 case 581: case 1758: case 1759: case 1760: case 1761:
                 case 2155: case 2156: case 2157: case 2158: case 2159: case 2162:
+                case 2897: case 2897: case 2898: case 2899: case 2900: case 2901: case 2902: case 2903:
                     { assign = -1; } break;
 
                 // // 真・恋姫†夢想-革命
@@ -1123,6 +1126,8 @@ const aigisQuestsList = async () => {
                 let titleID = missionCfg.TitleID;
                 let _name = missionCfg.Name || ((titleID != undefined) ? missionNameText[titleID].Data_Text : null) || "NULL";
                 let missionID = missionCfg.MissionID;
+
+                if ([undefined, 400470].includes(missionID)) { continue; }
 
                 let questID = missionCfg.QuestID || missionCfg.QuestIdList || false;
                 questID = questID ? questID.split(',') : [];
