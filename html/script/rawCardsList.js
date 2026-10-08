@@ -1,4 +1,4 @@
-var maxCid = 2904;
+var maxCid = 2905;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2608,7 +2608,8 @@ var charaData = [
 	{	"id": 2898,	"name": "人類軍総統ランス",	"rare": 4,	"classID": 306700,	"sortGroupID": 20,	"placeType": 1,	"kind": 0,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2898_00",	"imgaw": "2898_01"	},
 	{	"id": 2899,	"name": "志津香の弟子アウローラ",	"rare": 5,	"classID": 168200,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2899_00",	"imgaw": "2899_01"	},
 	{	"id": 2900,	"name": "シィル・プライン",	"rare": 5,	"classID": 168300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2900_00",	"imgaw": "2900_01"	},
-	{	"id": 2901,	"name": "リア・パラパラ・リーザス",	"rare": 5,	"classID": 168400,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2901_00",	"imgaw": "2901_01"	},
+	{	"id": 2901,	"name": "リア・パラパラ・リーザス",	"rare": 5,	"classID": 168400,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2901_00",	"imgaw": "2901_01"	},
 	{	"id": 2902,	"name": "シルキィ・リトルレーズン",	"rare": 5,	"classID": 306800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2902_00",	"imgaw": "2902_01"	},
-	{	"id": 2903,	"name": "リック・アディスン",	"rare": 5,	"classID": 306900,	"sortGroupID": 40,	"placeType": 1,	"kind": 2,	"assign": 12,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2904_00"	}
+	{	"id": 2903,	"name": "リック・アディスン",	"rare": 5,	"classID": 306900,	"sortGroupID": 40,	"placeType": 1,	"kind": 2,	"assign": 12,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2904_00"	},
+	{	"id": 2905,	"name": "ちびヒュープ",	"rare": 3,	"classID": 169800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2905_00"	}
 ]
