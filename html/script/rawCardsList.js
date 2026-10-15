@@ -1,4 +1,4 @@
-var maxCid = 2905;
+var maxCid = 2911;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2611,5 +2611,10 @@ var charaData = [
 	{	"id": 2901,	"name": "リア・パラパラ・リーザス",	"rare": 5,	"classID": 168400,	"sortGroupID": 40,	"placeType": 3,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2901_00",	"imgaw": "2901_01"	},
 	{	"id": 2902,	"name": "シルキィ・リトルレーズン",	"rare": 5,	"classID": 306800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": -1,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2902_00",	"imgaw": "2902_01"	},
 	{	"id": 2903,	"name": "リック・アディスン",	"rare": 5,	"classID": 306900,	"sortGroupID": 40,	"placeType": 1,	"kind": 2,	"assign": 12,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2904_00"	},
-	{	"id": 2905,	"name": "ちびヒュープ",	"rare": 3,	"classID": 169800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2905_00"	}
+	{	"id": 2905,	"name": "ちびヒュープ",	"rare": 3,	"classID": 169800,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2905_00"	},
+	{	"id": 2906,	"name": "秋祭の召喚士ヴェルティ",	"rare": 4,	"classID": 13300,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2906_00",	"imgaw": "2906_01"	},
+	{	"id": 2907,	"name": "ハロウィン王子",	"rare": 5,	"classID": 307000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 106,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2907_00"	},
+	{	"id": 2908,	"name": "狼装の盗賊ベルナ",	"rare": 5,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2908_00",	"imgaw": "2908_01"	},
+	{	"id": 2909,	"name": "木乃伊侍イロハ",	"rare": 4,	"classID": 800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 106,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2909_00",	"imgaw": "2909_01"	},
+	{	"id": 2910,	"name": "狼装の盗賊ベルナ_トークン",	"rare": 5,	"classID": 168500,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 106,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2911_00"	}
 ]
