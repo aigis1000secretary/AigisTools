@@ -1,4 +1,4 @@
-var maxCid = 2911;
+var maxCid = 2924;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2616,5 +2616,15 @@ var charaData = [
 	{	"id": 2907,	"name": "ハロウィン王子",	"rare": 5,	"classID": 307000,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 106,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2907_00"	},
 	{	"id": 2908,	"name": "狼装の盗賊ベルナ",	"rare": 5,	"classID": 400,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 106,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2908_00",	"imgaw": "2908_01"	},
 	{	"id": 2909,	"name": "木乃伊侍イロハ",	"rare": 4,	"classID": 800,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 8,	"genus": 106,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2909_00",	"imgaw": "2909_01"	},
-	{	"id": 2910,	"name": "狼装の盗賊ベルナ_トークン",	"rare": 5,	"classID": 168500,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 106,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2911_00"	}
+	{	"id": 2910,	"name": "狼装の盗賊ベルナ_トークン",	"rare": 5,	"classID": 168500,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 0,	"genus": 106,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2911_00"	},
+	{	"id": 2912,	"name": "炎獄の咎イクセリス",	"rare": 4,	"classID": 10100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2912_00",	"imgaw": "2912_01"	},
+	{	"id": 2913,	"name": "帝国お料理教室",	"rare": 3,	"classID": 308000,	"sortGroupID": 20,	"placeType": 1,	"kind": 100,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2913_00"	},
+	{	"id": 2914,	"name": "影の女帝騎士ディアナ",	"rare": 5,	"classID": 309000,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2914_00",	"imgaw": "2914_01"	},
+	{	"id": 2915,	"name": "影の帝国参謀レオナ",	"rare": 5,	"classID": 168600,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2915_00",	"imgaw": "2915_01"	},
+	{	"id": 2916,	"name": "帝国精鋭遊撃兵ローザ",	"rare": 5,	"classID": 12100,	"sortGroupID": 30,	"placeType": 2,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2916_00",	"imgaw": "2916_01"	},
+	{	"id": 2917,	"name": "帝国巨鎚チレン",	"rare": 4,	"classID": 142600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2917_00",	"imgaw": "2917_01"	},
+	{	"id": 2918,	"name": "帝国白狼兵サスキア",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2918_00",	"imgaw": "2918_01"	},
+	{	"id": 2919,	"name": "影鴉",	"rare": 5,	"classID": 168700,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2922_00"	},
+	{	"id": 2923,	"name": "プラチナ_帝国新ソルジャー(旧：北の大国ソルジャー)_トークン",	"rare": 5,	"classID": 168800,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2923_00"	},
+	{	"id": 2924,	"name": "帝国精鋭遊撃兵ローザ_ターゲットマーカー",	"rare": 5,	"classID": 121800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2924_00"	}
 ]
