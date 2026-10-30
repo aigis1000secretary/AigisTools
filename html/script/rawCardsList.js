@@ -1,4 +1,4 @@
-var maxCid = 2924;
+var maxCid = 2930;
 var charaData = [
 	{	"id": 1,	"name": "主人公",	"rare": 5,	"classID": 9900,	"sortGroupID": 25,	"placeType": 1,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "001_00"	},
 	{	"id": 2,	"name": "一般兵A【弓】",	"rare": 0,	"classID": 10001,	"sortGroupID": 30,	"placeType": 2,	"kind": 0,	"assign": 1,	"genus": 0,	"year": 2013,	"isEvent": 1,	"isToken": 0,	"img": "002_00"	},
@@ -2626,5 +2626,11 @@ var charaData = [
 	{	"id": 2918,	"name": "帝国白狼兵サスキア",	"rare": 4,	"classID": 100,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2918_00",	"imgaw": "2918_01"	},
 	{	"id": 2919,	"name": "影鴉",	"rare": 5,	"classID": 168700,	"sortGroupID": 30,	"placeType": 4,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2922_00"	},
 	{	"id": 2923,	"name": "プラチナ_帝国新ソルジャー(旧：北の大国ソルジャー)_トークン",	"rare": 5,	"classID": 168800,	"sortGroupID": 40,	"placeType": 4,	"kind": 2,	"assign": 2,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2923_00"	},
-	{	"id": 2924,	"name": "帝国精鋭遊撃兵ローザ_ターゲットマーカー",	"rare": 5,	"classID": 121800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2924_00"	}
+	{	"id": 2924,	"name": "帝国精鋭遊撃兵ローザ_ターゲットマーカー",	"rare": 5,	"classID": 121800,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "2924_00"	},
+	{	"id": 2925,	"name": "召喚士たちの総攻撃",	"rare": 3,	"classID": 168900,	"sortGroupID": 30,	"placeType": 2,	"kind": 100,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 0,	"isToken": 0,	"img": "2925_00"	},
+	{	"id": 2926,	"name": "ちびラクシャーサ",	"rare": 3,	"classID": 23500,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 0,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2926_00"	},
+	{	"id": 2927,	"name": "ちび胡喜美",	"rare": 3,	"classID": 107600,	"sortGroupID": 20,	"placeType": 1,	"kind": 1,	"assign": 9,	"genus": 108,	"year": 2026,	"isEvent": 1,	"isToken": 0,	"img": "2927_00"	},
+	{	"id": 2928,	"name": "サラマンダー",	"rare": 3,	"classID": 309100,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2929,	"name": "世界樹の梢",	"rare": 3,	"classID": 309200,	"sortGroupID": 30,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	},
+	{	"id": 2930,	"name": "アークデーモン",	"rare": 3,	"classID": 309300,	"sortGroupID": 20,	"placeType": 1,	"kind": 2,	"assign": 0,	"genus": 0,	"year": 2026,	"isEvent": 1,	"isToken": 1,	"img": "c80ae4db8b6b09123493ceea8b63ccc2"	}
 ]
